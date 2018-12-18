@@ -1,0 +1,69 @@
+
+Fmriprep on ADS5226
+
+Container: /projects/adapt_lab/shared/containers/poldracklab_fmriprep_latest-2017-12-07-ba92e815fc4e.img
+
+Subject directory: /projects/adapt_lab/shared/ADS/data/BIDS_data
+
+Starting on: rest
+
+
+181218-17:38:25,151 workflow IMPORTANT:
+	 
+    Running fMRIPREP version 1.0.0:
+      * BIDS dataset path: /projects/adapt_lab/shared/ADS/data/BIDS_data.
+      * Participant list: ['ADS5226'].
+      * Run identifier: 20181218-173825_2ff2b8a0-a6fb-40d3-a910-a0f8f5673acf.
+    
+181218-17:38:29,953 workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5226/ses-wave2/func/sub-ADS5226_ses-wave2_task-rest_bold.nii.gz" (0.05 GB / 510 TRs).
+181218-17:38:30,392 workflow IMPORTANT:
+	 Slice-timing correction will be included.
+181218-17:38:31,20 workflow WARNING:
+	 No fieldmaps found or they were ignored, building base workflow for dataset /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5226/ses-wave2/func/sub-ADS5226_ses-wave2_task-rest_bold.nii.gz.
+181218-17:38:31,231 workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+181218-17:38:32,286 workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5226/ses-wave3/func/sub-ADS5226_ses-wave3_task-rest_bold.nii.gz" (0.05 GB / 510 TRs).
+181218-17:38:32,680 workflow IMPORTANT:
+	 Slice-timing correction will be included.
+181218-17:38:33,194 workflow WARNING:
+	 No fieldmaps found or they were ignored, building base workflow for dataset /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5226/ses-wave3/func/sub-ADS5226_ses-wave3_task-rest_bold.nii.gz.
+181218-17:38:33,373 workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+181218-17:39:11,518 workflow WARNING:
+	 [Node] Exception "fmriprep_wf.fsdir" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/fsdir)
+181218-17:39:11,522 workflow ERROR:
+	 Node fsdir failed to run on host n059.
+181218-17:39:11,522 workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/logs/crash-20181218-173911-pettitta-fsdir-30e3dd67-f954-4492-9849-eca38a261530.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/multiproc.py", line 310, in _send_procs_to_workers
+    self.procs[jobid].run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 404, in run
+    self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 508, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 639, in _run_command
+    result = self._interface.run()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/interfaces/base/core.py", line 485, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/interfaces/bids.py", line 357, in _run_interface
+    copytree(source, dest)
+  File "/usr/local/miniconda/lib/python3.6/shutil.py", line 309, in copytree
+    os.makedirs(dst)
+  File "/usr/local/miniconda/lib/python3.6/os.py", line 220, in makedirs
+    mkdir(name, mode)
+FileExistsError: [Errno 17] File exists: '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/fsaverage'
+
+181218-17:39:23,356 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.anat_template_wf.t1_merge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_template_wf/t1_merge".
+181218-17:39:23,412 workflow INFO:
+	 [Node] Running "t1_merge" ("fmriprep.interfaces.freesurfer.StructuralReference"), a CommandLine Interface with command:
+mri_robust_template --satit --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5226/ses-wave2/anat/sub-ADS5226_ses-wave2_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform1/sub-ADS5226_ses-wave3_T1w_ras.nii.gz --inittp 1 --iscale --template sub-ADS5226_ses-wave2_T1w_template.nii.gz --subsample 200 --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp1.lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp2.lta.
+
+
+
+done
+
+-------------------------------
