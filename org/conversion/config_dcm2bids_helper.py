@@ -17,7 +17,7 @@ repo_path = "/projects/adapt_lab/shared/ADS"
 # These variables are used in the main script and need to be defined here. They need to exist prior to running the script
 dicomdir = os.path.join(repo_path, "data", "dicoms")
 niidir = os.path.join(repo_path, "data", "BIDS_data") # where the niftis will be put
-codedir = os.path.join(repo_path, "Scripts") # Contains subject_list.txt, config file, and dcm2bids_batch.py
+codedir = os.path.join(repo_path, "Scripts", "org", "conversion") # Contains subject_list.txt, config file, and dcm2bids_batch.py
 logdir = os.path.join(codedir, "logs_helper")
 
 # Set error log outputs
@@ -35,4 +35,4 @@ group = "adapt_lab"
 study = "ADS"
 
 # If false, set the singularity image. Else, set to "NA"
-singularity_image =  os.path.join(os.sep, "projects", group,"shared", study, "Scripts", "Dcm2Bids-master.simg")
+singularity_image =  "/projects/adapt_lab/shared/containers/Dcm2Bids-master.simg"

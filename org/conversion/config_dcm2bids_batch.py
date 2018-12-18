@@ -24,7 +24,7 @@ repo_path = "/projects/adapt_lab/shared/ADS"
 # Set directories
 # These variables are used in the main script and need to be defined here. They need to exist prior to running the script.
 dicomdir = os.path.join(repo_path, "data", "dicoms")
-codedir = os.path.join(repo_path, "Scripts") # Contains subject_list.txt, config file, and dcm2bids_batch.py
+codedir = os.path.join(repo_path, "Scripts", "org", "conversion") # Contains subject_list.txt, config file, and dcm2bids_batch.py
 configfile = os.path.join(codedir, "study_config.json")  # path to and name of config file
 
 # These variables are also used in the main script and need to be defined here.
@@ -33,7 +33,7 @@ niidir = os.path.join(repo_path, "data", "BIDS_data") # where the niftis will be
 logdir = os.path.join(niidir, "logs_dcm2bids")
 outputlog = os.path.join(logdir, "outputlog_dcmn2bids" + datetime.now().strftime("%Y%m%d-%H%M") + ".txt")
 errorlog = os.path.join(logdir, "errorlog_dcm2bids" + datetime.now().strftime("%Y%m%d-%H%M") + ".txt")
-image = os.path.join(repo_path, "Scripts", "Dcm2Bids-master.simg")
+image = "/projects/adapt_lab/shared/containers/Dcm2Bids-master.simg"
 
 
 # Source the subject list (needs to be in your current working directory)
