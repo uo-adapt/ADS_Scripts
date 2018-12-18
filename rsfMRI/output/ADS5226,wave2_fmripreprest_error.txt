@@ -1,20 +1,27 @@
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int16 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int32 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/multiproc.py", line 310, in _send_procs_to_workers
+    self.procs[jobid].run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 380, in run
+    os.remove(hashfile)
+FileNotFoundError: [Errno 2] No such file or directory: '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/func_preproc_ses_wave3_task_rest_wf/func_reports_wf/ds_validation_report/_0x89386fb8e1ff8efb1958eccc1cdd830d.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/bin/fmriprep", line 11, in <module>
+    load_entry_point('fmriprep==1.0.0', 'console_scripts', 'fmriprep')()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/cli/run.py", line 259, in main
+    fmriprep_wf.run(**plugin_settings)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/workflows.py", line 581, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/base.py", line 185, in run
+    self._send_procs_to_workers(updatehash=updatehash, graph=graph)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/multiproc.py", line 315, in _send_procs_to_workers
+    result={'result': None, 'traceback': traceback}
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/base.py", line 224, in _clean_queue
+    result=result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/base.py", line 210, in _report_crash
+    return report_crash(node, traceback=tb)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/tools.py", line 28, in report_crash
+    if node.result and getattr(node.result, 'runtime'):
+AttributeError: 'NoneType' object has no attribute 'runtime'

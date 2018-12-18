@@ -1,2 +1,20 @@
-/usr/local/miniconda/lib/python3.6/site-packages/nilearn/image/resampling.py:518: UserWarning: Casting data from int16 to float32
-  warnings.warn("Casting data from %s to %s" % (data.dtype.name, aux))
+Traceback (most recent call last):
+  File "/usr/local/miniconda/bin/fmriprep", line 11, in <module>
+    load_entry_point('fmriprep==1.0.0', 'console_scripts', 'fmriprep')()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/cli/run.py", line 259, in main
+    fmriprep_wf.run(**plugin_settings)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/workflows.py", line 581, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/base.py", line 185, in run
+    self._send_procs_to_workers(updatehash=updatehash, graph=graph)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/multiproc.py", line 303, in _send_procs_to_workers
+    if self._local_hash_check(jobid, graph):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/base.py", line 338, in _local_hash_check
+    hash_exists, _, _, _ = self.procs[jobid].hash_exists()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 272, in hash_exists
+    hashed_inputs, hashvalue = self._get_hashval()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 435, in _get_hashval
+    self._get_inputs()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 490, in _get_inputs
+    output_value = results.outputs.get()[output_name]
+AttributeError: 'NoneType' object has no attribute 'get'
