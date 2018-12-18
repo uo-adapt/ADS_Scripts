@@ -61,3 +61,82 @@ FileExistsError: [Errno 17] File exists: '/projects/adapt_lab/shared/ADS/data/BI
 181218-17:39:25,111 workflow INFO:
 	 [Node] Running "t1_merge" ("fmriprep.interfaces.freesurfer.StructuralReference"), a CommandLine Interface with command:
 mri_robust_template --satit --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave2/anat/sub-ADS1021_ses-wave2_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform1/sub-ADS1021_ses-wave3_T1w_ras.nii.gz --inittp 1 --iscale --template sub-ADS1021_ses-wave2_T1w_template.nii.gz --subsample 200 --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp1.lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp2.lta.
+181218-17:48:15,581 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_merge".
+181218-17:48:18,556 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_reorient" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_reorient".
+181218-17:48:18,612 workflow INFO:
+	 [Node] Running "t1_reorient" ("fmriprep.interfaces.images.Reorient").
+181218-17:48:20,303 workflow INFO:
+	 [Node] Setting-up "_lta_to_fsl0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl0".
+181218-17:48:20,482 workflow INFO:
+	 [Node] Setting-up "_lta_to_fsl1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl1".
+181218-17:48:20,495 workflow INFO:
+	 [Node] Running "_lta_to_fsl0" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp1.lta --outfsl /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl0/out.mat.
+181218-17:48:20,887 workflow INFO:
+	 [Node] Running "_lta_to_fsl1" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp2.lta --outfsl /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl1/out.mat.
+181218-17:48:21,35 workflow INFO:
+	 [Node] Finished "_lta_to_fsl0".
+181218-17:48:21,564 workflow INFO:
+	 [Node] Finished "_lta_to_fsl1".
+181218-17:48:24,6 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.lta_to_fsl" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl".
+181218-17:48:24,224 workflow INFO:
+	 [Node] Setting-up "_lta_to_fsl0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl0".
+181218-17:48:24,225 workflow INFO:
+	 Collecting precomputed outputs
+181218-17:48:24,225 workflow INFO:
+	 [Node] Cached "_lta_to_fsl0".
+181218-17:48:24,232 workflow INFO:
+	 [Node] Setting-up "_lta_to_fsl1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/lta_to_fsl/mapflow/_lta_to_fsl1".
+181218-17:48:24,232 workflow INFO:
+	 Collecting precomputed outputs
+181218-17:48:24,233 workflow INFO:
+	 [Node] Cached "_lta_to_fsl1".
+181218-17:48:24,305 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.lta_to_fsl".
+181218-17:48:40,551 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_reorient".
+181218-17:48:41,770 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.skullstrip_ants_wf.t1_skull_strip" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/skullstrip_ants_wf/t1_skull_strip".
+181218-17:48:42,219 workflow INFO:
+	 [Node] Running "t1_skull_strip" ("niworkflows.nipype.interfaces.ants.segmentation.BrainExtraction"), a CommandLine Interface with command:
+antsBrainExtraction.sh -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_reorient/sub-ADS1021_ses-wave2_T1w_template_ras.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/skullstrip_ants_wf/t1_skull_strip/T_template0_BrainCerebellumProbabilityMask.nii.gz -e /niworkflows_data/ants_oasis_template_ras/T_template0.nii.gz -d 3 -f /niworkflows_data/ants_oasis_template_ras/T_template0_BrainCerebellumRegistrationMask.nii.gz -s nii.gz -k 1 -o highres001_ -q 1.
+181218-17:48:42,249 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.recon_config" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/recon_config".
+181218-17:48:42,298 workflow INFO:
+	 [Node] Running "recon_config" ("fmriprep.interfaces.freesurfer.FSDetectInputs").
+181218-17:48:42,359 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.recon_config".
+181218-17:48:49,663 workflow INFO:
+	 [Node] Setting-up "_fsl_to_itk0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk0".
+181218-17:48:49,684 workflow INFO:
+	 [Node] Setting-up "_fsl_to_itk1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk1".
+181218-17:48:49,977 workflow INFO:
+	 [Node] Running "_fsl_to_itk1" ("niworkflows.nipype.interfaces.c3.C3dAffineTool"), a CommandLine Interface with command:
+c3d_affine_tool -ref /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_reorient/sub-ADS1021_ses-wave2_T1w_template_ras.nii.gz -src /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave3/anat/sub-ADS1021_ses-wave3_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/concat_affines/mapflow/_concat_affines1/concat.mat -fsl2ras -oitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk1/affine.txt.
+181218-17:48:50,153 workflow INFO:
+	 [Node] Running "_fsl_to_itk0" ("niworkflows.nipype.interfaces.c3.C3dAffineTool"), a CommandLine Interface with command:
+c3d_affine_tool -ref /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_reorient/sub-ADS1021_ses-wave2_T1w_template_ras.nii.gz -src /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave2/anat/sub-ADS1021_ses-wave2_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/concat_affines/mapflow/_concat_affines0/concat.mat -fsl2ras -oitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk0/affine.txt.
+181218-17:49:08,609 workflow INFO:
+	 [Node] Finished "_fsl_to_itk1".
+181218-17:49:09,812 workflow INFO:
+	 [Node] Finished "_fsl_to_itk0".
+181218-17:49:11,777 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.fsl_to_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk".
+181218-17:49:11,882 workflow INFO:
+	 [Node] Setting-up "_fsl_to_itk0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk0".
+181218-17:49:11,883 workflow INFO:
+	 Collecting precomputed outputs
+181218-17:49:11,884 workflow INFO:
+	 [Node] Cached "_fsl_to_itk0".
+181218-17:49:11,890 workflow INFO:
+	 [Node] Setting-up "_fsl_to_itk1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/fsl_to_itk/mapflow/_fsl_to_itk1".
+181218-17:49:11,891 workflow INFO:
+	 Collecting precomputed outputs
+181218-17:49:11,891 workflow INFO:
+	 [Node] Cached "_fsl_to_itk1".
+181218-17:49:11,958 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.fsl_to_itk".
