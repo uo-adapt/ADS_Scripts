@@ -13,7 +13,7 @@ module load fsl
 
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
-scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI"
+scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc"
 outputdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc"
 
 # Select options
