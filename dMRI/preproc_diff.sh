@@ -75,7 +75,7 @@ invwarp --ref=../mprage_brain.nii.gz --warp=struct2mni_warp.nii.gz --out=mni2str
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
 cd "$outputdir"/"${subid}"/ses-wave2/dwi
-dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals
+dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
 cd "$outputdir"/"${subid}"/ses-wave2/anat/reg
 echo "${subid}" linear registration FA map to mprage
