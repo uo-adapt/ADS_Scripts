@@ -787,3 +787,246 @@ lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/wo
 lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt.
 181219-21:59:33,113 workflow INFO:
 	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+181220-00:05:17,517 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.skullstrip_ants_wf.t1_skull_strip".
+181220-00:05:20,21 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.t1_seg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg".
+181220-00:05:20,100 workflow INFO:
+	 [Node] Running "t1_seg" ("niworkflows.nipype.interfaces.fsl.preprocess.FAST"), a CommandLine Interface with command:
+fast -N -p -g -S 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg/highres001_BrainExtractionBrain.nii.gz.
+181220-00:05:22,304 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
+181220-00:05:22,439 workflow INFO:
+	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted").
+181220-00:05:22,485 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+181220-00:05:23,667 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.t1_2_mni" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni".
+181220-00:05:23,669 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/gen_ref".
+181220-00:05:23,708 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+181220-00:05:23,709 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/gen_ref".
+181220-00:05:23,758 workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference").
+181220-00:05:23,783 workflow INFO:
+	 [Node] Running "t1_2_mni" ("niworkflows.interfaces.registration.RobustMNINormalizationRPT").
+181220-00:05:23,817 workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference").
+181220-00:05:23,935 interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5115 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+181220-00:05:23,968 workflow INFO:
+	 [Node] Running "autorecon2_vol" ("niworkflows.nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5115 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill.
+181220-00:05:23,970 interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5115 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+181220-00:05:41,805 workflow WARNING:
+	 [Node] Exception "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol)
+181220-00:05:42,782 workflow ERROR:
+	 Node autorecon2_vol failed to run on host n024.
+181220-00:05:42,804 workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS5115/log/20181219-205844_33426d31-5fbf-40ca-bdd3-691589d92022/crash-20181220-000542-pettitta-autorecon2_vol-58e1eacb-a670-41ee-b598-e1d569beacc9.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/plugins/multiproc.py", line 62, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 404, in run
+    self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 508, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/pipeline/engine/nodes.py", line 639, in _run_command
+    result = self._interface.run()
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/interfaces/base/core.py", line 485, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/interfaces/base/core.py", line 973, in _run_interface
+    self.raise_exception(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/nipype/interfaces/base/core.py", line 912, in raise_exception
+    **runtime.dictcopy()))
+RuntimeError: Command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5115 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+Standard output:
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+Actual FREESURFER_HOME /opt/freesurfer
+-rw-rw-r-- 1 pettitta adapt_lab 179316 Dec 19 16:45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115/scripts/recon-all.log
+Linux n024 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+ERROR: it appears that recon-all is already running
+for sub-ADS5115 based on the presence of /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115/scripts/IsRunning.rh. It could
+also be that recon-all was running at one point but
+died in an unexpected way. If it is the case that there
+is a process running, you can kill it and start over or
+just let it run. If the process has died, you should type:
+
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115/scripts/IsRunning.rh
+
+and re-run. Or you can add -no-isrunning to the recon-all
+command-line. The contents of this file are:
+----------------------------------------------------------
+------------------------------
+SUBJECT sub-ADS5115
+HEMI    rh
+DATE Wed Dec 19 16:45:45 UTC 2018
+USER pettitta
+HOST n045
+PROCESSID 94311 
+PROCESSOR x86_64
+OS Linux
+Linux n045 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+$Id: recon-all,v 1.580.2.16 2017/01/18 14:11:24 zkaufman Exp $
+----------------------------------------------------------
+Standard error:
+
+Return code: 1
+
+181220-00:05:54,562 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.gen_ref".
+181220-00:05:54,573 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.gen_ref".
+181220-00:06:09,2 niworkflows INFO:
+	 Estimating initial transform using AffineInitializer
+181220-00:29:51,64 niworkflows INFO:
+	 Loading settings from file /usr/local/miniconda/lib/python3.6/site-packages/niworkflows/data/t1-mni_registration_precise_000.json.
+181220-00:29:51,88 niworkflows INFO:
+	 Retry #0, commandline: 
+antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initial-moving-transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/transform.mat, 0 ] --initialize-transforms-per-stage 0 --interpolation LanczosWindowedSinc --output [ ants_t1_to_mni, ants_t1_to_mni_Warped.nii.gz ] --transform Rigid[ 0.05 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 56, Regular, 0.25 ] --convergence [ 100x100, 1e-06, 20 ] --smoothing-sigmas 2.0x1.0vox --shrink-factors 2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform Affine[ 0.08 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 56, Regular, 0.25 ] --convergence [ 100x100, 1e-06, 20 ] --smoothing-sigmas 1.0x0.0vox --shrink-factors 2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform SyN[ 0.1, 3.0, 0.0 ] --metric CC[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 4, None, 1 ] --convergence [ 100x70x50x20, 1e-06, 10 ] --smoothing-sigmas 3.0x2.0x1.0x0.0vox --shrink-factors 8x4x2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.005, 0.995 ]  --write-composite-transform 1
+181220-02:48:09,884 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.t1_seg".
+181220-02:48:14,301 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.seg2msks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/seg2msks".
+181220-02:48:14,382 workflow INFO:
+	 [Node] Running "seg2msks" ("niworkflows.nipype.interfaces.utility.wrappers.Function").
+181220-02:48:22,130 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/wm_roi".
+181220-02:48:22,225 workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-02:48:22,493 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/wm_roi".
+181220-02:48:22,505 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/csf_roi".
+181220-02:48:22,550 workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-02:48:22,609 workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-02:48:22,701 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/csf_roi".
+181220-02:48:22,742 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+181220-02:48:22,763 workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-02:48:22,797 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+181220-02:48:22,809 workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs").
+181220-02:48:22,886 workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs").
+181220-02:51:17,620 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.seg2msks".
+181220-02:51:32,696 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.seg_rpt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/seg_rpt".
+181220-02:51:32,839 workflow INFO:
+	 [Node] Running "seg_rpt" ("niworkflows.interfaces.masks.ROIsPlot").
+181220-02:51:52,618 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi".
+181220-02:51:53,31 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi".
+181220-02:52:06,383 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+181220-02:52:07,305 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+181220-02:52:16,155 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/acc_roi".
+181220-02:52:16,331 workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-02:52:18,138 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/acc_roi".
+181220-02:52:18,305 workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181220-03:10:51,527 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.wm_roi".
+181220-03:10:51,843 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.wm_roi".
+181220-03:13:40,444 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.acc_roi".
+181220-03:13:42,111 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.acc_roi".
+181220-04:05:35,982 niworkflows INFO:
+	 Successful spatial normalization (retry #0).
+181220-04:05:35,983 niworkflows INFO:
+	 Report - setting fixed (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz) and moving (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mni_Warped.nii.gz) images
+181220-04:05:35,984 niworkflows INFO:
+	 Generating visual report
+181220-04:06:13,819 niworkflows INFO:
+	 Successfully created report (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/report.svg)
+181220-04:06:14,4 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.t1_2_mni".
+181220-04:06:22,903 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_mask".
+181220-04:06:23,60 workflow INFO:
+	 [Node] Running "mni_mask" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/skullstrip_ants_wf/t1_skull_strip/highres001_BrainExtractionMask.nii.gz --interpolation NearestNeighbor --output highres001_BrainExtractionMask_trans.nii.gz --reference-image /niworkflows_data/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5.
+181220-04:06:23,316 workflow INFO:
+	 [Node] Setting-up "_mni_tpms1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms1".
+181220-04:06:23,318 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_seg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_seg".
+181220-04:06:23,343 workflow INFO:
+	 [Node] Setting-up "_mni_tpms0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms0".
+181220-04:06:23,358 workflow INFO:
+	 [Node] Setting-up "_mni_tpms2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms2".
+181220-04:06:23,364 workflow INFO:
+	 [Node] Running "mni_seg" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg/highres001_BrainExtractionBrain_seg.nii.gz --interpolation NearestNeighbor --output highres001_BrainExtractionBrain_seg_trans.nii.gz --reference-image /niworkflows_data/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5.
+181220-04:06:23,369 workflow INFO:
+	 [Node] Running "_mni_tpms1" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg/highres001_BrainExtractionBrain_prob_1.nii.gz --interpolation Linear --output highres001_BrainExtractionBrain_prob_1_trans.nii.gz --reference-image /niworkflows_data/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5.
+181220-04:06:23,399 workflow INFO:
+	 [Node] Running "_mni_tpms0" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg/highres001_BrainExtractionBrain_prob_0.nii.gz --interpolation Linear --output highres001_BrainExtractionBrain_prob_0_trans.nii.gz --reference-image /niworkflows_data/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5.
+181220-04:06:23,419 workflow INFO:
+	 [Node] Running "_mni_tpms2" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_seg/highres001_BrainExtractionBrain_prob_2.nii.gz --interpolation Linear --output highres001_BrainExtractionBrain_prob_2_trans.nii.gz --reference-image /niworkflows_data/mni_icbm152_nlin_asym_09c/1mm_T1.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5.
+181220-04:06:47,621 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_mask".
+181220-04:06:50,613 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_seg".
+181220-04:06:53,563 workflow INFO:
+	 [Node] Finished "_mni_tpms0".
+181220-04:06:53,770 workflow INFO:
+	 [Node] Finished "_mni_tpms1".
+181220-04:06:53,842 workflow INFO:
+	 [Node] Finished "_mni_tpms2".
+181220-04:06:58,829 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_tpms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms".
+181220-04:06:58,933 workflow INFO:
+	 [Node] Setting-up "_mni_tpms0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms0".
+181220-04:06:58,934 workflow INFO:
+	 Collecting precomputed outputs
+181220-04:06:58,934 workflow INFO:
+	 [Node] Cached "_mni_tpms0".
+181220-04:06:58,940 workflow INFO:
+	 [Node] Setting-up "_mni_tpms1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms1".
+181220-04:06:58,941 workflow INFO:
+	 Collecting precomputed outputs
+181220-04:06:58,941 workflow INFO:
+	 [Node] Cached "_mni_tpms1".
+181220-04:06:58,947 workflow INFO:
+	 [Node] Setting-up "_mni_tpms2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5115_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms2".
+181220-04:06:58,947 workflow INFO:
+	 Collecting precomputed outputs
+181220-04:06:58,948 workflow INFO:
+	 [Node] Cached "_mni_tpms2".
+181220-04:06:59,7 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.mni_tpms".
+181220-04:13:37,512 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.seg_rpt".
+181220-04:13:40,988 workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS5115_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol
+181220-04:13:41,94 cli WARNING:
+	 Errors occurred while generating reports for participants: ADS5115 (1).
+
+
+
+done
+
+-------------------------------
