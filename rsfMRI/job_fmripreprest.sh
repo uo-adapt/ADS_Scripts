@@ -33,7 +33,7 @@ echo -e "\n"
 
 export FS_LICENSE="${group_dir}""${study}"/Scripts/sMRI/license.txt
 
-singularity run --bind "${group_dir}":"${group_dir}" $image $bids_dir $derivatives participant --participant_label $subid -w $working_dir -t $task --use-aroma --write-graph --longitudinal --output-space {'T1w','template','fsaverage5','fsnative'} --fs-license-file $FS_LICENSE
+singularity run --bind "${group_dir}":"${group_dir}" $image $bids_dir $derivatives participant --participant_label $subid -w $working_dir -t $task --use-aroma --write-graph --longitudinal --output-space {'T1w','template','fsaverage5','fsnative'} --mem-mb 100000 --fs-license-file $FS_LICENSE
 
 echo -e "\n"
 echo -e "\ndone"
