@@ -31,7 +31,7 @@ task="rest"
 echo -e "\nStarting on: $task"
 echo -e "\n"
 
-export FS_LICENSE=/projects/dsnlab/shared/tag/TAG_scripts/sMRI/license.txt
+export FS_LICENSE=/projects/adapt_lab/shared/ADS/Scripts/sMRI/license.txt
 
 singularity run --bind "${group_dir}":"${group_dir}" ${image} ${bids_dir} ${derivatives} participant \
 --participant_label ${subid} \

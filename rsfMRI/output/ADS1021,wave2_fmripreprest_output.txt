@@ -1,33 +1,258 @@
 
 Fmriprep on ADS1021
 
-Container: /projects/adapt_lab/shared/containers/fmriprep-1.2.5.simg
+Container: /projects/adapt_lab/shared/containers/poldracklab_fmriprep_latest-2017-12-07-ba92e815fc4e.img
 
 Subject directory: /projects/adapt_lab/shared/ADS/data/BIDS_data
 
 Starting on: rest
 
 
-
-<--- Last few GCs --->
-
-[92331:0x24b5f20]   477091 ms: Mark-sweep 1391.9 (1406.2) -> 1391.8 (1406.2) MB, 24.2 / 0.0 ms  (average mu = 0.916, current mu = 0.001) last resort GC in old space requested
-[92331:0x24b5f20]   477114 ms: Mark-sweep 1391.8 (1406.2) -> 1391.8 (1406.2) MB, 22.0 / 0.0 ms  (average mu = 0.844, current mu = 0.001) last resort GC in old space requested
-
-
-<--- JS stacktrace --->
-
-==== JS stack trace =========================================
-
-    0: ExitFrame [pc: 0x20e35e0dc01d]
-Security context: 0x2582e5c1e681 <JSObject>
-    1: stringSlice(aka stringSlice) [0x47a4b39b9d1] [buffer.js:595] [bytecode=0x47a4b3be771 offset=91](this=0x3647762026f1 <undefined>,buf=0x3ea45507a5e9 <Uint8Array map = 0x3284bebcd8e9>,encoding=0x2582e5c3c3c9 <String[4]: utf8>,start=0,end=2761313)
-    2: oncomplete(aka readFileAfterClose) [0x5fa69a86e9] [internal/fs/read_file_context.js:~31] [pc=0x20e35e4...
-
-Making sure the input data is BIDS compliant (warnings can be ignored in most cases).
-
-
-
-done
-
--------------------------------
+181221-19:40:58,104 workflow IMPORTANT:
+	 
+    Running fMRIPREP version 1.0.0:
+      * BIDS dataset path: /projects/adapt_lab/shared/ADS/data/BIDS_data.
+      * Participant list: ['ADS1021'].
+      * Run identifier: 20181221-194058_8bafda3f-b5d9-4fb5-a65b-ae49dd883de4.
+    
+181221-19:41:00,721 workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave2/func/sub-ADS1021_ses-wave2_task-rest_bold.nii.gz" (0.05 GB / 510 TRs).
+181221-19:41:01,144 workflow IMPORTANT:
+	 Slice-timing correction will be included.
+181221-19:41:01,648 workflow WARNING:
+	 No fieldmaps found or they were ignored, building base workflow for dataset /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave2/func/sub-ADS1021_ses-wave2_task-rest_bold.nii.gz.
+181221-19:41:01,824 workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+181221-19:41:02,792 workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave3/func/sub-ADS1021_ses-wave3_task-rest_bold.nii.gz" (0.05 GB / 510 TRs).
+181221-19:41:03,187 workflow IMPORTANT:
+	 Slice-timing correction will be included.
+181221-19:41:03,610 workflow WARNING:
+	 No fieldmaps found or they were ignored, building base workflow for dataset /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave3/func/sub-ADS1021_ses-wave3_task-rest_bold.nii.gz.
+181221-19:41:03,786 workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+181221-19:41:39,321 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_preproc_report_wf.pre_tsnr" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_preproc_report_wf/pre_tsnr".
+181221-19:41:39,327 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.create_custom_slice_timing_file" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/create_custom_slice_timing_file".
+181221-19:41:39,329 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_preproc_report_wf.pre_tsnr" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_preproc_report_wf/pre_tsnr".
+181221-19:41:39,335 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.create_custom_slice_timing_file" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/create_custom_slice_timing_file".
+181221-19:41:39,352 workflow INFO:
+	 [Node] Running "pre_tsnr" ("niworkflows.nipype.algorithms.confounds.TSNR").
+181221-19:41:39,370 workflow INFO:
+	 [Node] Running "pre_tsnr" ("niworkflows.nipype.algorithms.confounds.TSNR").
+181221-19:41:39,397 workflow INFO:
+	 [Node] Running "create_custom_slice_timing_file" ("niworkflows.nipype.interfaces.utility.wrappers.Function").
+181221-19:41:39,422 workflow INFO:
+	 [Node] Running "create_custom_slice_timing_file" ("niworkflows.nipype.interfaces.utility.wrappers.Function").
+181221-19:41:39,506 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.create_custom_slice_timing_file".
+181221-19:41:39,522 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.create_custom_slice_timing_file".
+181221-19:41:43,39 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.validate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate".
+181221-19:41:43,49 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.validate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate".
+181221-19:41:43,95 workflow INFO:
+	 [Node] Running "validate" ("fmriprep.interfaces.images.ValidateImage").
+181221-19:41:43,119 workflow INFO:
+	 [Node] Running "validate" ("fmriprep.interfaces.images.ValidateImage").
+181221-19:41:44,40 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.bidssrc" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/bidssrc".
+181221-19:41:44,158 workflow INFO:
+	 [Node] Running "bidssrc" ("fmriprep.interfaces.bids.BIDSDataGrabber").
+181221-19:41:44,160 interface WARNING:
+	 No 't2w' images found for sub-<undefined>
+181221-19:41:44,160 interface WARNING:
+	 No 'sbref' images found for sub-<undefined>
+181221-19:41:44,237 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.bidssrc".
+181221-19:41:47,581 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_preproc_report_wf.pre_tsnr".
+181221-19:41:47,620 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_preproc_report_wf.pre_tsnr".
+181221-19:41:49,475 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_template_dimensions" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_template_dimensions".
+181221-19:41:49,551 workflow INFO:
+	 [Node] Running "t1_template_dimensions" ("fmriprep.interfaces.images.TemplateDimensions").
+181221-19:41:49,703 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_template_dimensions".
+181221-19:41:52,612 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_derivatives_wf.t1_name" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_derivatives_wf/t1_name".
+181221-19:41:52,682 workflow INFO:
+	 [Node] Running "t1_name" ("niworkflows.nipype.interfaces.utility.wrappers.Function").
+181221-19:41:52,762 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_derivatives_wf.t1_name".
+181221-19:41:56,835 workflow INFO:
+	 [Node] Setting-up "_t1_conform0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform0".
+181221-19:41:56,862 workflow INFO:
+	 [Node] Setting-up "_t1_conform1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform1".
+181221-19:41:56,896 workflow INFO:
+	 [Node] Running "_t1_conform0" ("fmriprep.interfaces.images.Conform").
+181221-19:41:56,901 workflow INFO:
+	 [Node] Running "_t1_conform1" ("fmriprep.interfaces.images.Conform").
+181221-19:41:57,48 workflow INFO:
+	 [Node] Finished "_t1_conform0".
+181221-19:41:58,689 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.validate".
+181221-19:41:58,855 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.validate".
+181221-19:42:04,176 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/gen_ref".
+181221-19:42:04,274 workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.registration.EstimateReferenceImage").
+181221-19:42:04,449 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/gen_ref".
+181221-19:42:04,538 workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.registration.EstimateReferenceImage").
+181221-19:42:05,791 interface INFO:
+	 stderr 2018-12-21T19:42:05.791536:++ 3dvolreg: AFNI version=Debian-16.2.07~dfsg.1-5~nd16.04+1 (Jun 12 2017) [64-bit]
+181221-19:42:05,791 interface INFO:
+	 stderr 2018-12-21T19:42:05.791536:++ Authored by: RW Cox
+181221-19:42:05,792 interface INFO:
+	 stderr 2018-12-21T19:42:05.791999:++ 3dvolreg: AFNI version=Debian-16.2.07~dfsg.1-5~nd16.04+1 (Jun 12 2017) [64-bit]
+181221-19:42:05,792 interface INFO:
+	 stderr 2018-12-21T19:42:05.791999:++ Authored by: RW Cox
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:  such as /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/gen_ref/slice.nii.gz,
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:  or viewing/combining it with volumes of differing obliquity,
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:  you should consider running: 
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:     3dWarp -deoblique 
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:  on this and  other oblique datasets in the same session.
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437: See 3dWarp -help for details.
+181221-19:42:05,892 interface INFO:
+	 stderr 2018-12-21T19:42:05.892437:++ Oblique dataset:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/gen_ref/slice.nii.gz is 4.785283 degrees from plumb.
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:  such as /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/gen_ref/slice.nii.gz,
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:  or viewing/combining it with volumes of differing obliquity,
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:  you should consider running: 
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:     3dWarp -deoblique 
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:  on this and  other oblique datasets in the same session.
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992: See 3dWarp -help for details.
+181221-19:42:05,893 interface INFO:
+	 stderr 2018-12-21T19:42:05.892992:++ Oblique dataset:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/gen_ref/slice.nii.gz is 5.160955 degrees from plumb.
+181221-19:42:05,894 interface INFO:
+	 stderr 2018-12-21T19:42:05.894404:++ Coarse del was 10, replaced with 2
+181221-19:42:05,894 interface INFO:
+	 stderr 2018-12-21T19:42:05.894803:++ Coarse del was 10, replaced with 2
+181221-19:42:41,171 interface INFO:
+	 stderr 2018-12-21T19:42:41.171726:++ Max displacement in automask = 0.34 (mm) at sub-brick 18
+181221-19:42:41,179 interface INFO:
+	 stderr 2018-12-21T19:42:41.171726:++ Max delta displ  in automask = 0.19 (mm) at sub-brick 10
+181221-19:42:41,225 interface INFO:
+	 stderr 2018-12-21T19:42:41.225323:++ Max displacement in automask = 0.24 (mm) at sub-brick 11
+181221-19:42:41,225 interface INFO:
+	 stderr 2018-12-21T19:42:41.225323:++ Max delta displ  in automask = 0.14 (mm) at sub-brick 15
+181221-19:42:42,755 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.gen_ref".
+181221-19:42:42,771 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.gen_ref".
+181221-19:42:44,454 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+181221-19:42:44,464 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+181221-19:42:44,586 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.slice_timing_correction" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/slice_timing_correction".
+181221-19:42:44,587 workflow INFO:
+	 [Node] Running "n4_correct" ("niworkflows.nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/gen_ref/ref_image.nii.gz --output ref_image_corrected.nii.gz.
+181221-19:42:44,594 workflow INFO:
+	 [Node] Running "n4_correct" ("niworkflows.nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/gen_ref/ref_image.nii.gz --output ref_image_corrected.nii.gz.
+181221-19:42:44,609 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.slice_timing_correction" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/slice_timing_correction".
+181221-19:42:44,648 workflow INFO:
+	 [Node] Running "slice_timing_correction" ("niworkflows.nipype.interfaces.afni.preprocess.TShift"), a CommandLine Interface with command:
+3dTshift -ignore 0 -prefix sub-ADS1021_ses-wave2_task-rest_bold_valid_tshift.nii.gz -tpattern @/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/create_custom_slice_timing_file/timings.1D -TR 1.4s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/slice_timing_correction/sub-ADS1021_ses-wave2_task-rest_bold_valid.nii.gz.
+181221-19:42:44,655 workflow INFO:
+	 [Node] Running "slice_timing_correction" ("niworkflows.nipype.interfaces.afni.preprocess.TShift"), a CommandLine Interface with command:
+3dTshift -ignore 0 -prefix sub-ADS1021_ses-wave3_task-rest_bold_valid_tshift.nii.gz -tpattern @/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/create_custom_slice_timing_file/timings.1D -TR 1.4s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/slice_timing_correction/sub-ADS1021_ses-wave3_task-rest_bold_valid.nii.gz.
+181221-19:42:44,764 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_hmc_wf/mcflirt".
+181221-19:42:44,767 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/mcflirt".
+181221-19:42:44,830 workflow INFO:
+	 [Node] Running "mcflirt" ("niworkflows.nipype.interfaces.fsl.preprocess.MCFLIRT"), a CommandLine Interface with command:
+mcflirt -in /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate/sub-ADS1021_ses-wave2_task-rest_bold_valid.nii.gz -out /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_hmc_wf/mcflirt/sub-ADS1021_ses-wave2_task-rest_bold_valid_mcf.nii.gz -reffile /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/gen_ref/ref_image.nii.gz -mats -plots.
+181221-19:42:44,839 workflow INFO:
+	 [Node] Running "mcflirt" ("niworkflows.nipype.interfaces.fsl.preprocess.MCFLIRT"), a CommandLine Interface with command:
+mcflirt -in /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate/sub-ADS1021_ses-wave3_task-rest_bold_valid.nii.gz -out /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/mcflirt/sub-ADS1021_ses-wave3_task-rest_bold_valid_mcf.nii.gz -reffile /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/gen_ref/ref_image.nii.gz -mats -plots.
+181221-19:42:52,315 workflow INFO:
+	 [Node] Finished "_t1_conform1".
+181221-19:42:57,428 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_conform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform".
+181221-19:42:57,474 workflow INFO:
+	 [Node] Setting-up "_t1_conform0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform0".
+181221-19:42:57,475 workflow INFO:
+	 Collecting precomputed outputs
+181221-19:42:57,475 workflow INFO:
+	 [Node] Cached "_t1_conform0".
+181221-19:42:57,482 workflow INFO:
+	 [Node] Setting-up "_t1_conform1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform1".
+181221-19:42:57,483 workflow INFO:
+	 Collecting precomputed outputs
+181221-19:42:57,483 workflow INFO:
+	 [Node] Cached "_t1_conform1".
+181221-19:42:57,615 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_conform".
+181221-19:43:01,393 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_template_wf.t1_merge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge".
+181221-19:43:01,481 workflow INFO:
+	 [Node] Running "t1_merge" ("fmriprep.interfaces.freesurfer.StructuralReference"), a CommandLine Interface with command:
+mri_robust_template --satit --fixtp --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1021/ses-wave2/anat/sub-ADS1021_ses-wave2_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_conform/mapflow/_t1_conform1/sub-ADS1021_ses-wave3_T1w_ras.nii.gz --inittp 1 --iscale --noit --template sub-ADS1021_ses-wave2_T1w_template.nii.gz --subsample 200 --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp1.lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_template_wf/t1_merge/tp2.lta.
+181221-19:43:52,727 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.slice_timing_correction".
+181221-19:43:52,933 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.slice_timing_correction".
+181221-19:43:59,664 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.copy_xform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/copy_xform".
+181221-19:43:59,668 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.copy_xform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/copy_xform".
+181221-19:43:59,716 workflow INFO:
+	 [Node] Running "copy_xform" ("niworkflows.interfaces.utils.CopyXForm").
+181221-19:43:59,722 workflow INFO:
+	 [Node] Running "copy_xform" ("niworkflows.interfaces.utils.CopyXForm").
+181221-19:44:11,830 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+181221-19:44:11,837 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+181221-19:44:15,271 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+181221-19:44:15,290 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+181221-19:44:15,390 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_stc_wf.copy_xform".
+181221-19:44:15,400 workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("niworkflows.nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_corrected_brain.nii.gz -f 0.20 -m.
+181221-19:44:15,406 workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("niworkflows.nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_corrected_brain.nii.gz -f 0.20 -m.
+181221-19:44:15,647 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.copy_xform".
+181221-19:44:17,466 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave2_task_rest_wf.bold_split" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_split".
+181221-19:44:17,508 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.func_preproc_ses_wave3_task_rest_wf.bold_split" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_split".
+181221-19:44:17,610 workflow INFO:
+	 [Node] Running "bold_split" ("niworkflows.nipype.interfaces.fsl.utils.Split"), a CommandLine Interface with command:
+fslsplit /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave2_task_rest_wf/bold_stc_wf/copy_xform/sub-ADS1021_ses-wave2_task-rest_bold_valid_tshift_xform.nii.gz -t.
+181221-19:44:17,660 workflow INFO:
+	 [Node] Running "bold_split" ("niworkflows.nipype.interfaces.fsl.utils.Split"), a CommandLine Interface with command:
+fslsplit /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/copy_xform/sub-ADS1021_ses-wave3_task-rest_bold_valid_tshift_xform.nii.gz -t.

@@ -11,7 +11,7 @@
 
 group_dir=/projects/adapt_lab/shared/
 #container=BIDS/SingularityContainers/poldracklab_fmriprep_latest-2017-07-20-dd77d76c5e14.img
-container=containers/fmriprep-1.2.5.simg
+container=containers/poldracklab_fmriprep_latest-2017-12-07-ba92e815fc4e.img
 study="ADS"
 
 # Set subject list
@@ -25,5 +25,5 @@ for SUBJ in $SUBJLIST; do
 #SESSID=`echo $SUBJ|awk '{print $2}' FS=","
 	
 sbatch --export ALL,subid=${SUBJ},group_dir=${group_dir},study=${study},container=${container} --job-name fmripreprest --partition=long --mem=100G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/output/"${SUBJ}"_fmripreprest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/output/"${SUBJ}"_fmripreprest_error.txt job_fmripreprest.sh
-	
+
 done
