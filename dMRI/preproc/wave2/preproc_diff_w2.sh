@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Usage: srun preproc_diff.sh subject_list_sam.txt
+#Usage: srun preproc_diff.sh subject_list.txt
 
 # This script will preprocess one diffusion imaging series with Aterior Posterior phase encoding directions.
 
@@ -13,7 +13,7 @@ module load fsl
 
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
-scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc"
+scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc/wave2"
 outputdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc"
 
 # Select options

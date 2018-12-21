@@ -11,7 +11,7 @@
 
 group_dir=/projects/adapt_lab/shared/
 #container=BIDS/SingularityContainers/poldracklab_fmriprep_latest-2017-07-20-dd77d76c5e14.img
-container=containers/poldracklab_fmriprep_latest-2017-12-07-ba92e815fc4e.img
+container=containers/fmriprep-1.2.5.simg
 study="ADS"
 
 # Set subject list
