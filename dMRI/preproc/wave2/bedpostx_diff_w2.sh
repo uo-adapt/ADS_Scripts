@@ -4,7 +4,6 @@
 
 # Load FSL
 module load fsl
-export FSLPARALLEL=slurm
 
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
