@@ -20,7 +20,7 @@ outputdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_prepro
 masks="TRUE"
 
 # Set error log file
-errorlog=""$scriptsdir"/errorlog_preprocdiff.txt"
+errorlog=""$scriptsdir"/output/errorlog_preprocdiff.txt"
 
 # Create error log file
 touch "${errorlog}"

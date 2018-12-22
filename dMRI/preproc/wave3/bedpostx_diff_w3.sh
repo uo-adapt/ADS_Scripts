@@ -17,7 +17,7 @@ bvals=""$outputdir"/"${subid}"/ses-wave3/dwi/bvals"
 b0mask=""$outputdir"/"${subid}"/ses-wave3/dwi/nodif_brain_mask.nii.gz"
 
 # Set error log file
-errorlog=""$scriptsdir"/errorlog_bedpostx.txt"
+errorlog=""$scriptsdir"/output/errorlog_bedpostx.txt"
 
 # Create error log file
 touch "${errorlog}"
