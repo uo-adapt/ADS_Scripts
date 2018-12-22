@@ -13,6 +13,6 @@ SUBJLIST=`cat ../subject_list_test.txt`
 #SUBJLIST=`cat alignment.txt`
 
 for SUBID in $SUBJLIST
- do sbatch --export all,subid=${SUBID} --job-name bedpostx --partition=long --time=03-00:00:00 --nodes=1 -o "${STUDY}"/TAG_scripts/dMRI/preproc/wave3/output/"${SUBID}"_bedpostx_w3_output.txt -e "${STUDY}"/TAG_scripts/dMRI/preproc/wave3/output/"${SUBID}"_bedpostx_w3_error.txt bedpostx_diff_w3.sh
+ do sbatch --export all,subid=${SUBID} --job-name bedpostx --partition=long --time=03-00:00:00 --nodes=1 -o "${STUDY}"/Scripts/dMRI/preproc/wave3/output/"${SUBID}"_bedpostx_w3_output.txt -e "${STUDY}"/Scripts/dMRI/preproc/wave3/output/"${SUBID}"_bedpostx_w3_error.txt bedpostx_diff_w3.sh
 done
 
