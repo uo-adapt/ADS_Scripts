@@ -3,7 +3,7 @@
 # This script fits a probabilistic diffusion model to diffusion data that have already been motion-corrected & preprocessed using preproc_diff.sh
 
 # Load FSL
-module load fsl/5.0.9
+module load fsl
 export FSLPARALLEL=slurm
 
 # Set directory names
@@ -27,7 +27,7 @@ if [[ -f "$data" && -f "$bvecs" && -f "$bvals" && -f "$b0mask" ]]; then
 # Fitting a probabilistic diffusion model
 # Note: This last command takes a couple days to run
 echo running "${subid}" bedpostx
-fsl_sub.1mod bedpostx "$outputdir"/"${subid}"/ses-wave2/dwi
+bedpostx "$outputdir"/"${subid}"/ses-wave2/dwi
 
 echo "${subid}" preprocessing completed. Next step - tractography.
 # Congratulations!  You are now ready to perform tractography.
