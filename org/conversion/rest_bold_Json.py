@@ -1,3 +1,7 @@
+# This python script adds 'TaskName: "rest"' to the end of the resting state json files 
+# If you want to use this for other tasks or multiple runs (I think) you must change 
+# line 54 f.endswith('rest_bold.json') to whatever your specif task name is
+ 
 import os
 import json
 from pprint import pprint
@@ -15,7 +19,6 @@ def main():
         for timepoint in timepoints:
             func_dir_path = os.path.join(bidsdir, subjectdir, timepoint, 'func')
             if os.path.isdir(func_dir_path):
-                func_niftis_partialpath = get_funcdir_niftis(func_dir_path, timepoint)
                 func_jsons = get_func_jsons(func_dir_path)
                 write_to_json(func_jsons, func_dir_path, TaskName)
             else:
@@ -47,16 +50,8 @@ def get_timepoints(subject: str) -> list:
     subjectdir_contents = os.listdir(subject_fullpath)
     return [f for f in subjectdir_contents if not f.startswith('.')]
 
-
-def get_funcdir_niftis(func_dir_path:str, timepoint:str) -> list:
-    """
-    Returns a list of json files in the func directory.
-    """
-    func_niftis_partialpath = [os.path.join(timepoint, 'func/', f) for f in os.listdir(func_dir_path) if f.endswith('.nii.gz')]
-    return func_niftis_partialpath
-
 def get_func_jsons(func_dir_path):
-    func_jsons = [f for f in os.listdir(func_dir_path) if f.endswith('.json')]
+    func_jsons = [f for f in os.listdir(func_dir_path) if f.endswith('rest_bold.json')]
     return func_jsons
 
 def write_to_json(func_jsons:list, func_dir_path:str,TaskName:str):
