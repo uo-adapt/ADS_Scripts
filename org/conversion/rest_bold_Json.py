@@ -6,11 +6,7 @@ from pprint import pprint
 bidsdir = os.path.join(os.sep, 'projects', 'adapt_lab', 'shared', 'ADS', 'data', 'BIDS_data')
 
 TaskName = 'rest'
-RepetitionTime = '1.4'
-EchoTime = '0.03'
-FlipAngle = '90'
-PhaseEncodingDirection = 'j-'
-EffectiveEchoSpacing = '0.000349999'
+
 
 def main():
     subjectdirs = get_subjectdirs()
@@ -21,6 +17,7 @@ def main():
             if os.path.isdir(func_dir_path):
                 func_niftis_partialpath = get_funcdir_niftis(func_dir_path, timepoint)
                 func_jsons = get_func_jsons(func_dir_path)
+                write_to_json(func_jsons, func_dir_path, TaskName)
             else:
                 continue
 
@@ -68,11 +65,6 @@ def write_to_json(func_niftis_partialpath:list, TaskName:str, RepetitionTime:str
         with open(json_path) as target_json:
             json_file = json.load(target_json)
             json_file['TaskName'] = TaskName
-            json_file['RepetitionTime'] = RepetitionTime
-            json_file['EchoTime'] = EchoTime
-            json_file['FlipAngle'] = FlipAngle
-            json_file['PhaseEncodingDirection'] = PhaseEncodingDirection
-            json_file['EffectiveEchoSpacing'] = EffectiveEchoSpacing
         with open(json_path, 'w') as target_json:
             json.dump(json_file, target_json, indent=4)
 
