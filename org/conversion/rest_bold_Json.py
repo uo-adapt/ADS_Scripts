@@ -20,6 +20,7 @@ def main():
             func_dir_path = os.path.join(bidsdir, subjectdir, timepoint, 'func')
             if os.path.isdir(func_dir_path):
                 func_niftis_partialpath = get_funcdir_niftis(func_dir_path, timepoint)
+                func_jsons = get_func_jsons(func_dir_path)
                 write_to_json(func_niftis_partialpath, TaskName, RepetitionTime, EchoTime, FlipAngle, PhaseEncodingDirection, EffectiveEchoSpacing)
             else:
                 continue
