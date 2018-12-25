@@ -59,7 +59,7 @@ def get_func_jsons(func_dir_path):
     func_jsons = [f for f in os.listdir(func_dir_path) if f.endswith('.json')]
     return func_jsons
 
-def write_to_json(TaskName:str):
+def write_to_json(func_jsons:list, func_dir_path:str,TaskName:str):
     for func_json in func_jsons:
         json_path = os.path.join(func_dir_path, func_json)
         with open(json_path) as target_json:
