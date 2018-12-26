@@ -1451,3 +1451,19 @@ mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/B
 recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5226 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer .
 181226-19:08:36,159 interface INFO:
 	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS5226 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+181226-19:29:00,480 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+181226-19:29:02,274 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+181226-19:29:02,308 workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta.
+181226-19:29:02,799 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+181226-19:29:04,495 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+181226-19:29:04,539 workflow INFO:
+	 [Node] Running "lta_2_itk" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt.
+181226-19:29:05,107 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
