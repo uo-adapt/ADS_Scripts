@@ -13,6 +13,6 @@ SUBJLIST=`cat ../subject_list_test.txt`
 #SUBJLIST=`cat alignment.txt`
 
 for SUBID in $SUBJLIST
- do sbatch --export=all,subid=${SUBID} --job-name diffpreproc --partition=short --mem-per-cpu=3G --time=3:00:00 --nodes=1 --cpus-per-task=1 -o "${STUDY}"/Scripts/dMRI/preproc/wave2/output/"${SUBID}"_diffpreproc_w2_output_.txt -e "${STUDY}"/Scripts/dMRI/preproc/wave2/output/"${SUBID}"_diffpreproc_w2_error.txt preproc_diff_w2.sh
+ do sbatch --export=all,subid=${SUBID} --job-name diffpreproc_"${SUBID}" --partition=short --mem-per-cpu=3G --time=3:00:00 --nodes=1 --cpus-per-task=1 -o "${STUDY}"/Scripts/dMRI/preproc/wave2/output/"${SUBID}"_diffpreproc_w2_output_.txt -e "${STUDY}"/Scripts/dMRI/preproc/wave2/output/"${SUBID}"_diffpreproc_w2_error.txt preproc_diff_w2.sh
 done
 

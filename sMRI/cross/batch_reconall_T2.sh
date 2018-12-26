@@ -17,5 +17,5 @@ SUBJLIST=`cat subject_list.txt`
 # 
 for SUBJ in $SUBJLIST
 do
- sbatch --export SUBID=${SUBJ} --job-name reconall --partition=short --mem-per-cpu=8G --time=24:00:00 --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/cross/output/"${SUBJ}"_wave2_reconall_output.txt -e "${STUDY}"/Scripts/sMRI/cross/output/"${SUBJ}"_wave2_reconall_error.txt job_reconall_T2.sh
+ sbatch --export SUBID=${SUBJ} --job-name reconall_"${SUBJ}" --partition=short --mem-per-cpu=8G --time=24:00:00 --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/cross/output/"${SUBJ}"_wave2_reconall_output.txt -e "${STUDY}"/Scripts/sMRI/cross/output/"${SUBJ}"_wave2_reconall_error.txt job_reconall_T2.sh
 done
