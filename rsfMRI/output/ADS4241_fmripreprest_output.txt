@@ -1047,3 +1047,55 @@ fast -N -p -g -S 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/wor
 181226-15:37:21,843 niworkflows INFO:
 	 Retry #0, commandline: 
 antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initial-moving-transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/transform.mat, 0 ] --initialize-transforms-per-stage 0 --interpolation LanczosWindowedSinc --output [ ants_t1_to_mni, ants_t1_to_mni_Warped.nii.gz ] --transform Rigid[ 0.05 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 56, Regular, 0.25 ] --convergence [ 100x100, 1e-06, 20 ] --smoothing-sigmas 2.0x1.0vox --shrink-factors 2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform Affine[ 0.08 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 56, Regular, 0.25 ] --convergence [ 100x100, 1e-06, 20 ] --smoothing-sigmas 1.0x0.0vox --shrink-factors 2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform SyN[ 0.1, 3.0, 0.0 ] --metric CC[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/fixed_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/t1_2_mni/moving_masked.nii.gz, 1, 4, None, 1 ] --convergence [ 100x70x50x20, 1e-06, 10 ] --smoothing-sigmas 3.0x2.0x1.0x0.0vox --shrink-factors 8x4x2x1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.005, 0.995 ]  --write-composite-transform 1
+181226-18:17:20,460 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.anat_preproc_wf.t1_seg".
+181226-18:17:26,920 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.anat_preproc_wf.seg2msks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/seg2msks".
+181226-18:17:27,44 workflow INFO:
+	 [Node] Running "seg2msks" ("niworkflows.nipype.interfaces.utility.wrappers.Function").
+181226-18:17:33,419 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/wm_roi".
+181226-18:17:33,496 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+181226-18:17:33,515 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/csf_roi".
+181226-18:17:33,516 workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181226-18:17:33,568 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/wm_roi".
+181226-18:17:33,576 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/csf_roi".
+181226-18:17:33,588 workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs").
+181226-18:17:33,610 workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181226-18:17:33,679 workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181226-18:17:33,742 workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181226-18:17:35,236 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+181226-18:17:35,390 workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs").
+181226-18:20:44,659 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.anat_preproc_wf.seg2msks".
+181226-18:21:01,378 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.anat_preproc_wf.seg_rpt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/anat_preproc_wf/seg_rpt".
+181226-18:21:01,501 workflow INFO:
+	 [Node] Running "seg_rpt" ("niworkflows.interfaces.masks.ROIsPlot").
+181226-18:21:21,801 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi".
+181226-18:21:22,29 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi".
+181226-18:21:36,52 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+181226-18:21:38,280 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+181226-18:21:46,533 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/acc_roi".
+181226-18:21:46,585 workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI").
+181226-18:21:50,670 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS4241_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS4241_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/acc_roi".
+181226-18:21:50,784 workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI").

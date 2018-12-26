@@ -1440,3 +1440,30 @@ mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/B
 	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
 181226-17:08:52,366 workflow INFO:
 	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted").
+181226-17:10:03,169 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+181226-17:10:03,918 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+181226-17:10:04,20 interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1021 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+181226-17:10:04,47 workflow INFO:
+	 [Node] Running "autorecon2_vol" ("niworkflows.nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1021 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer .
+181226-17:10:04,49 interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1021 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+181226-17:52:50,706 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+181226-17:52:52,688 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+181226-17:52:52,814 workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta.
+181226-17:52:52,993 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+181226-17:52:54,691 workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+181226-17:52:54,832 workflow INFO:
+	 [Node] Running "lta_2_itk" ("niworkflows.nipype.interfaces.freesurfer.utils.LTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1021_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt.
+181226-17:52:55,18 workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1021_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
