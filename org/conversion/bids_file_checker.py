@@ -18,7 +18,7 @@ Study="ADS"
 
 # Change these to your own paths/times/etc.
 parentdir = os.path.join(os.sep, "projects", Group, "shared", "ADS") # folder that contains bidsdir and codedir
-bidsdir = os.path.join(parentdir, "BIDS_data") # where the niftis will be put
+bidsdir = os.path.join(parentdir, "data", "BIDS_data") # where the niftis will be put
 codedir = os.path.join(parentdir, "Scripts", "org", "conversion") # Contains subject_list.txt, config file, and dcm2bids_batch.py
 logdir = os.path.join(codedir, "logs_checker")
 outputlog = os.path.join(logdir, "outputlog_dcmchecker" + datetime.now().strftime("%Y%m%d-%H%M") + ".txt")
