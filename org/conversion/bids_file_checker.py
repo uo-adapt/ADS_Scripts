@@ -9,7 +9,7 @@ import pathlib
 import subprocess
 import numpy as np
 from datetime import datetime
-
+import pandas as pd
 
 # Set study info (may need to change for your study)
 # These variables are used only in this file for paths. Can omit if wanted.
