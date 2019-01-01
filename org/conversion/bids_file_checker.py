@@ -21,162 +21,74 @@ parentdir = os.path.join(os.sep, "projects", Group, "shared", "ADS") # folder th
 bidsdir = os.path.join(parentdir, "data", "BIDS_data") # where the niftis will be put
 codedir = os.path.join(parentdir, "Scripts", "org", "conversion") # Contains subject_list.txt, config file, and dcm2bids_batch.py
 logdir = os.path.join(codedir, "logs_checker")
-outputlog = os.path.join(logdir, "outputlog_dcmchecker" + datetime.now().strftime("%Y%m%d-%H%M") + ".txt")
-errorlog = os.path.join(logdir, "errorlog_dcmchecker" + datetime.now().strftime("%Y%m%d-%H%M") + ".txt")
 subject_list = os.path.join(codedir,"subject_list.txt")
 
-scan_type_list = ["anat","func","dwi","fmap"]
-
-anat_files = ["T1w.json","T1w.nii.gz"]
-func_files = ["bold.json","bold.nii.gz"]
-dwi_files = ["dwi.json","dwi.nii.gz","dwi.bval","dwi.bvec"]
-fmap_files = ["magnitude1.json","magnitude1.nii.gz","magnitude2.json","magnitude2.nii.gz","phasediff.json","phasediff.nii.gz"]
+# Change these to match teh types of files you have for your study (e.g., remove fmap if you don't have field maps)
+scan_type_list = {"anat","func","dwi","fmap"}
 
 
-def main():
-	with open(subject_list) as file:
-			lines = file.readlines()  
-			for line in lines:
-				entry = line.strip()
-				subject = entry.split(",")[1]
-				subjectpath = os.path.join(bidsdir,"sub-"+subject)
-				if os.path.isdir(subjectpath):
-					if os.path.isdir(os.path.join(subjectpath,"ses-wave2")):
-						wave_2_scan_types = os.listdir(os.path.join(subjectpath,"ses-wave2"))
-						if ".DS_Store" in wave_2_scan_types:
-							wave_2_scan_types.remove(".DS_Store")
-						scan_type_missing_2 = list(set(scan_type_list)-set(wave_2_scan_types))
-						for scan_type_missing_2 in scan_type_missing_2:
-							write_to_errorlog(scan_type_missing_2 + " is missing for " + subject + ", ses-wave2" + os.linesep)
-						for scan_type in wave_2_scan_types:
-							if scan_type.startswith("anat"):
-								real_anat_list = os.listdir(os.path.join(subjectpath,"ses-wave2","anat"))
-								if ".DS_Store" in real_anat_list:
-									real_anat_list.remove(".DS_Store")
-								check_anat_files = ["sub-" + subject + "_ses-wave2_" + files for files in anat_files]
-								anat_missing_list = list(set(check_anat_files)-set(real_anat_list)) 
-								for anat_missing in anat_missing_list:
-									write_to_errorlog(anat_missing + " is missing for sub-" + subject + ", ses-wave2" + os.linesep)
-								anat_extra_list = list(set(real_anat_list)-set(check_anat_files))
-								for anat_extra in anat_extra_list:
-									write_to_errorlog(anat_extra + " is an unauthorized file in sub-" + subject + ", ses-wave2" + os.linesep)
-								del [check_anat_files,anat_missing_list,anat_extra_list]
-							elif scan_type.startswith("func"):
-								real_func_list = os.listdir(os.path.join(subjectpath,"ses-wave2","func"))
-								if ".DS_Store" in real_func_list:
-									real_func_list.remove(".DS_Store")
-								check_func_files = ["sub-" + subject + "_ses-wave2_task-rest_" + files for files in func_files]
-								func_missing_list = list(set(check_func_files)-set(real_func_list)) 
-								for func_missing in func_missing_list:
-									write_to_errorlog(func_missing + " is missing for sub-" + subject + ", ses-wave2" + os.linesep)
-								func_extra_list = list(set(real_func_list)-set(check_func_files))
-								for func_extra in func_extra_list:
-									write_to_errorlog(func_extra + " is an unauthorized file in sub-" + subject + ", ses-wave2" + os.linesep)
-								del [check_func_files,func_missing_list,func_extra_list]
-							elif scan_type.startswith("dwi"):
-								real_dwi_list = os.listdir(os.path.join(subjectpath,"ses-wave2","dwi"))
-								if ".DS_Store" in real_dwi_list:
-									real_dwi_list.remove(".DS_Store")
-								check_dwi_files = ["sub-" + subject + "_ses-wave2_" + files for files in dwi_files]
-								dwi_missing_list = list(set(check_dwi_files)-set(real_dwi_list)) 
-								for dwi_missing in dwi_missing_list:
-									write_to_errorlog(dwi_missing + " is missing for sub-" + subject + ", ses-wave2" + os.linesep)
-								dwi_extra_list = list(set(real_dwi_list)-set(check_dwi_files))
-								for dwi_extra in dwi_extra_list:
-									write_to_errorlog(dwi_extra + " is an unauthorized file in sub-" + subject + ", ses-wave2" + os.linesep)
-								del [check_dwi_files,dwi_missing_list,dwi_extra_list]
-							elif scan_type.startswith("fmap"):
-								real_fmap_list = os.listdir(os.path.join(subjectpath,"ses-wave2","fmap"))
-								if ".DS_Store" in real_fmap_list:
-									real_fmap_list.remove(".DS_Store")
-								check_fmap_files = ["sub-" + subject + "_ses-wave2_" + files for files in fmap_files]
-								fmap_missing_list = list(set(check_fmap_files)-set(real_fmap_list)) 
-								for fmap_missing in fmap_missing_list:
-									write_to_errorlog(fmap_missing + " is missing for sub-" + subject + ", ses-wave2" + os.linesep)
-								fmap_extra_list = list(set(real_fmap_list)-set(check_fmap_files))
-								for fmap_extra in fmap_extra_list:
-									write_to_errorlog(fmap_extra + " is an unauthorized file in sub-" + subject + ", ses-wave2" + os.linesep)
-								del [check_fmap_files,fmap_missing_list,fmap_extra_list]
-							else:
-								continue
-					else: 
-						write_to_errorlog(subject + " wave-2 directory does not exist" + os.linesep)
-					if os.path.isdir(os.path.join(subjectpath,"ses-wave3")):
-						wave_3_scan_types = os.listdir(os.path.join(subjectpath,"ses-wave3"))
-						if ".DS_Store" in wave_3_scan_types:
-							wave_3_scan_types.remove(".DS_Store")
-						scan_type_missing_3 = list(set(scan_type_list)-set(wave_3_scan_types))
-						for scan_type_missing_3 in scan_type_missing_3:
-							write_to_errorlog(scan_type_missing_3 + " is missing for " + subject + ", ses-wave3" + os.linesep)
-						for scan_type in wave_3_scan_types:
-							if scan_type.startswith("anat"):
-								real_anat_list = os.listdir(os.path.join(subjectpath,"ses-wave3","anat"))
-								if ".DS_Store" in real_anat_list:
-									real_anat_list.remove(".DS_Store")
-								check_anat_files = ["sub-" + subject + "_ses-wave3_" + files for files in anat_files]
-								anat_missing_list = list(set(check_anat_files)-set(real_anat_list)) 
-								for anat_missing in anat_missing_list:
-									write_to_errorlog(anat_missing + " is missing for sub-" + subject + ", ses-wave3" + os.linesep)
-								anat_extra_list = list(set(real_anat_list)-set(check_anat_files))
-								for anat_extra in anat_extra_list:
-									write_to_errorlog(anat_extra + " is an unauthorized file in sub-" + subject + ", ses-wave3" + os.linesep)
-								del [check_anat_files,anat_missing_list,anat_extra_list]
-							elif scan_type.startswith("func"):
-								real_func_list = os.listdir(os.path.join(subjectpath,"ses-wave3","func"))
-								if ".DS_Store" in real_func_list:
-									real_func_list.remove(".DS_Store")
-								check_func_files = ["sub-" + subject + "_ses-wave3_task-rest_" + files for files in func_files]
-								func_missing_list = list(set(check_func_files)-set(real_func_list)) 
-								for func_missing in func_missing_list:
-									write_to_errorlog(func_missing + " is missing for sub-" + subject + ", ses-wave3" + os.linesep)
-								func_extra_list = list(set(real_func_list)-set(check_func_files))
-								for func_extra in func_extra_list:
-									write_to_errorlog(func_extra + " is an unauthorized file in sub-" + subject + ", ses-wave3" + os.linesep)
-								del [check_func_files,func_missing_list,func_extra_list]
-							elif scan_type.startswith("dwi"):
-								real_dwi_list = os.listdir(os.path.join(subjectpath,"ses-wave3","dwi"))
-								if ".DS_Store" in real_dwi_list:
-									real_dwi_list.remove(".DS_Store")
-								check_dwi_files = ["sub-" + subject + "_ses-wave3_" + files for files in dwi_files]
-								dwi_missing_list = list(set(check_dwi_files)-set(real_dwi_list)) 
-								for dwi_missing in dwi_missing_list:
-									write_to_errorlog(dwi_missing + " is missing for sub-" + subject + ", ses-wave3" + os.linesep)
-								dwi_extra_list = list(set(real_dwi_list)-set(check_dwi_files))
-								for dwi_extra in dwi_extra_list:
-									write_to_errorlog(dwi_extra + " is an unauthorized file in sub-" + subject + ", ses-wave3" + os.linesep)
-								del [check_dwi_files,dwi_missing_list,dwi_extra_list]
-							elif scan_type.startswith("fmap"):
-								real_fmap_list = os.listdir(os.path.join(subjectpath,"ses-wave3","fmap"))
-								if ".DS_Store" in real_fmap_list:
-									real_fmap_list.remove(".DS_Store")
-								check_fmap_files = ["sub-" + subject + "_ses-wave3_" + files for files in fmap_files]
-								fmap_missing_list = list(set(check_fmap_files)-set(real_fmap_list)) 
-								for fmap_missing in fmap_missing_list:
-									write_to_errorlog(fmap_missing + " is missing for sub-" + subject + ", ses-wave3" + os.linesep)
-								fmap_extra_list = list(set(real_fmap_list)-set(check_fmap_files))
-								for fmap_extra in fmap_extra_list:
-									write_to_errorlog(fmap_extra + " is an unauthorized file in sub-" + subject + ", ses-wave3" + os.linesep)
-								del [check_fmap_files,fmap_missing_list,fmap_extra_list]
-							else:
-								continue
-					else:
-						write_to_errorlog(subject + " wave-3 directory does not exist" + os.linesep) 
-				else:
-					write_to_errorlog(subject + " directory does not exist" + os.linesep)
-				continue
+# Copy and paste the tail of each file (i.e., everything after `sub-xxx_ses-wavex_`) into their respective variable 
+d = {'anat': ["T1w.json","T1w.nii.gz"], \
+	'func': ["task-rest_bold.json","task-rest_bold.nii.gz"], \
+	'dwi': ["dwi.json","dwi.nii.gz","dwi.bval","dwi.bvec"], \
+	'fmap': ["magnitude1.json","magnitude1.nii.gz","magnitude2.json","magnitude2.nii.gz","phasediff.json","phasediff.nii.gz"]}
+
+# turns the dictionary above (`d`) into a dataframe
+scan_list = pd.DataFrame.from_dict(d, orient='index')
+scan_list = scan_list.transpose()
+
+# Each wave that should be represented. It should be noted that this script assumes the same number and type of 
+# scans are the same throughout each run. If this is not the case...good luck coding!
+waves = {"wave2","wave3"}
 
 
-def write_to_errorlog(message):
+def write_to_errorlog(message,error_type):
 	"""
-	Write a log message to the error log. Also print it to the terminal.
+	Write a log message to the error log, specific to the type of error. Also print it to the terminal.
 
 	@type message:          string
 	@param message:         Message to be printed to the log
 	"""
+	errorlog = os.path.join(logdir, error_type + "_errorlog_dcmchecker" + datetime.now().strftime("%Y%m%d-%H%M") +  ".txt")
 	with open(errorlog, 'a') as logfile:
 		logfile.write(message + os.linesep)
 	print(message)
 
-main()
+# Without further ado, here's the function!
 
-
+with open(subject_list) as file: 
+	lines = file.readlines()
+	subjects = []
+	for line in lines:
+		entry = line.strip()
+		subjects.append(entry.split(",")[1]) # Keep only subject name from the `subject_list.txt`
+	subjects = list(set(subjects)) # Removes duplicate subject names (don't worry, it'll still for check all waves)
+	for subject in subjects:
+		subjectpath = os.path.join(bidsdir,"sub-"+subject)
+		if os.path.isdir(subjectpath):
+			for wave in waves:
+				if os.path.isdir(os.path.join(subjectpath,"ses-" + wave)): # Checking to make sure that the participant has each wave
+					scan_types = os.listdir(os.path.join(subjectpath,"ses-" + wave))
+					if ".DS_Store" in scan_types: # Remove pesky hidden files
+						scan_types.remove(".DS_Store")
+					scan_type_missing = list(set(scan_type_list)-set(scan_types)) # create a list of missing scan types within a wave (e.g., "func", "anat")
+					for scan_type_missing in scan_type_missing:
+						write_to_errorlog(scan_type_missing + " is missing for " + subject + ", ses" + wave + os.linesep, error_type = scan_type_missing) # Write to error log the missing scan types
+					for scan_type in scan_types:
+						scans = os.listdir(os.path.join(subjectpath,"ses-" + wave, scan_type))
+						if ".DS_Store" in scans:
+								scans.remove(".DS_Store")
+						check_scans = ["sub-" + subject + "_ses-" + wave + "_" + file for file in scan_list[scan_type] if type(file) == str]
+						missing_list = list(set(check_scans)-set(scans)) # Create a list of missing scans within scan types
+						for missing in missing_list:
+								write_to_errorlog(missing + " is missing for sub-" + subject + ", ses-" + wave + os.linesep, error_type = scan_type)
+						extra_list = list(set(scans)-set(check_scans)) # If there are any extra scans or files that shouldn't be there, this will produce an error for it and write it to the log
+						for extra in extra_list:
+							write_to_errorlog(extra + " is an unrecognized file in sub-" + subject + ", ses-" + wave + os.linesep, error_type = scan_type)
+						del [check_scans,missing_list,extra_list] # Cleaning up the workspace
+					del [scan_types,scan_type_missing] # A little more cleaning
+				else:
+					write_to_errorlog(subject + " " + wave + " directory does not exist" + os.linesep, error_type = "wave") # Write to log if wave does not exist
+		else:
+			write_to_errorlog(subject + " directory does not exist" + os.linesep, error_type = "directory") # Write to log if participant does not exist 
+		
