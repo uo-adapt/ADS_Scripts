@@ -10,7 +10,7 @@ derivatives="${bids_dir}"/derivatives
 working_dir="${derivatives}"/working_bids_fmripreprest/
 image="${group_dir}""${container}"
 
-echo -e "\nFmriprep on $subid"
+echo -e "\nFmriprep on $subid"./
 echo -e "\nContainer: $image"
 echo -e "\nSubject directory: $bids_dir"
 
