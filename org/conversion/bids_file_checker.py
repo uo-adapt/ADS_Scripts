@@ -23,6 +23,13 @@ codedir = os.path.join(parentdir, "Scripts", "org", "conversion") # Contains sub
 logdir = os.path.join(codedir, "logs_checker")
 subject_list = os.path.join(codedir,"subject_list.txt")
 
+try:
+	# Create target Directory
+	os.mkdir(logdir)
+	print("Directory " , logdir ,  " Created ") 
+except FileExistsError:
+	print("Directory " , logdir ,  " already exists")
+
 # Change these to match teh types of files you have for your study (e.g., remove fmap if you don't have field maps)
 scan_type_list = {"anat","func","dwi","fmap"}
 
@@ -73,7 +80,7 @@ with open(subject_list) as file:
 						scan_types.remove(".DS_Store")
 					scan_type_missing = list(set(scan_type_list)-set(scan_types)) # create a list of missing scan types within a wave (e.g., "func", "anat")
 					for scan_type_missing in scan_type_missing:
-						write_to_errorlog(scan_type_missing + " is missing for " + subject + ", ses" + wave + os.linesep, error_type = scan_type_missing) # Write to error log the missing scan types
+						write_to_errorlog("sub-" + subject + " is missing a scan type in ses-" + wave + ": " + scan_type_missing + os.linesep, error_type = scan_type_missing) # Write to error log the missing scan types
 					for scan_type in scan_types:
 						scans = os.listdir(os.path.join(subjectpath,"ses-" + wave, scan_type))
 						if ".DS_Store" in scans:
@@ -81,10 +88,10 @@ with open(subject_list) as file:
 						check_scans = ["sub-" + subject + "_ses-" + wave + "_" + file for file in scan_list[scan_type] if type(file) == str]
 						missing_list = list(set(check_scans)-set(scans)) # Create a list of missing scans within scan types
 						for missing in missing_list:
-								write_to_errorlog(missing + " is missing for sub-" + subject + ", ses-" + wave + os.linesep, error_type = scan_type)
+								write_to_errorlog("sub-" + subject + " is missing a file in ses-" + wave + ": " + missing + os.linesep, error_type = scan_type)
 						extra_list = list(set(scans)-set(check_scans)) # If there are any extra scans or files that shouldn't be there, this will produce an error for it and write it to the log
 						for extra in extra_list:
-							write_to_errorlog(extra + " is an unrecognized file in sub-" + subject + ", ses-" + wave + os.linesep, error_type = scan_type)
+							write_to_errorlog("sub-" + subject + " has an unrecognized file in ses-" + wave + ": " + extra + os.linesep, error_type = scan_type)
 						del [check_scans,missing_list,extra_list] # Cleaning up the workspace
 					del [scan_types,scan_type_missing] # A little more cleaning
 				else:
