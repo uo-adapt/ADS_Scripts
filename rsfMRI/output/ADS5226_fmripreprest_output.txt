@@ -1,0 +1,33 @@
+
+Fmriprep on ADS5226./
+
+Container: /projects/adapt_lab/shared/containers/fmriprep-1.2.4.simg
+
+Subject directory: /projects/adapt_lab/shared/ADS/data/BIDS_data
+
+Starting on: rest
+
+
+
+<--- Last few GCs --->
+
+[79555:0x24b5f20]   671603 ms: Mark-sweep 1391.9 (1406.2) -> 1391.8 (1406.2) MB, 24.7 / 0.0 ms  (average mu = 0.909, current mu = 0.001) last resort GC in old space requested
+[79555:0x24b5f20]   671628 ms: Mark-sweep 1391.8 (1406.2) -> 1391.8 (1406.2) MB, 25.3 / 0.0 ms  (average mu = 0.830, current mu = 0.000) last resort GC in old space requested
+
+
+<--- JS stacktrace --->
+
+==== JS stack trace =========================================
+
+    0: ExitFrame [pc: 0x1e28f7f5c01d]
+Security context: 0x0385ae19e681 <JSObject>
+    1: stringSlice(aka stringSlice) [0x12de69b1b9d1] [buffer.js:595] [bytecode=0x12de69b3e771 offset=91](this=0x2c3293a826f1 <undefined>,buf=0x255b6dd428d9 <Uint8Array map = 0x157b294d8e9>,encoding=0x0385ae1bc3c9 <String[4]: utf8>,start=0,end=2760026)
+    2: oncomplete(aka readFileAfterClose) [0x1f3a6cf0db91] [internal/fs/read_file_context.js:~31] [pc=0x1e28...
+
+Making sure the input data is BIDS compliant (warnings can be ignored in most cases).
+
+
+
+done
+
+-------------------------------
