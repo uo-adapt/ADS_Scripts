@@ -257,3 +257,35 @@ Return code: 1
 done
 
 -------------------------------
+190107-21:21:38,893 nipype.workflow ERROR:
+	 Node autorecon2_vol failed to run on host n085.
+190107-21:21:38,927 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS5226/log/20190107-031438_df88839a-5401-4c11-882f-0f34c748751c/crash-20190107-212138-pettitta-autorecon2_vol-7331b052-cade-4d58-a770-98246498ab22.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/shutil.py", line 544, in move
+    os.rename(src, real_dst)
+FileNotFoundError: [Errno 2] No such file or directory: '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol/_0xaf8309ffb17c4d73acd635b2c3511298_unfinished.json' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol/_0xaf8309ffb17c4d73acd635b2c3511298.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 482, in run
+    hashfile_unfinished.replace('_unfinished', ''))
+  File "/usr/local/miniconda/lib/python3.6/shutil.py", line 558, in move
+    copy_function(src, real_dst)
+  File "/usr/local/miniconda/lib/python3.6/shutil.py", line 257, in copy2
+    copyfile(src, dst, follow_symlinks=follow_symlinks)
+  File "/usr/local/miniconda/lib/python3.6/shutil.py", line 120, in copyfile
+    with open(src, 'rb') as fsrc:
+FileNotFoundError: [Errno 2] No such file or directory: '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS5226_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol/_0xaf8309ffb17c4d73acd635b2c3511298_unfinished.json'
+
+190107-21:21:40,884 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS5226_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol
+
+
+
+done
+
+-------------------------------
