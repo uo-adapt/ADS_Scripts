@@ -26,6 +26,8 @@ cd $bids_dir
 #Source task list
 task="rest"
 
+# add something here
+
 #for task in $tasks; do
 
 echo -e "\nStarting on: $task"
