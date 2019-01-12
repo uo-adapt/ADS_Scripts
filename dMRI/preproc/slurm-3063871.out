@@ -12,3 +12,39 @@ Finished connection_matrices
 Did while loop 2368 times
 Done. Created fmap_rads for use with FEAT.
 Running FAST segmentation
+FLIRT pre-alignment
+Registering fieldmap to structural
+Cannot open volume fieldmap for reading!
+Image Exception : #22 :: ERROR: Could not open image fieldmap
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196320 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${fmaprads} --mask=${vout}_fieldmaprads_mask --unmaskfmap --savefmap=${vout}_fieldmaprads_unmasked --unwarpdir=${fdir}
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads_unmasked
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196322 Aborted                 (core dumped) $FSLDIR/bin/applywarp -i ${vout}_fieldmaprads_unmasked -r ${vrefhead} --premat=${vout}_fieldmap2str.mat -o ${vout}_fieldmaprads2str_pad0
+Cannot open volume epi_reg_fieldmaprads2str_pad0 for reading!
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2str_innermask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196329 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${vout}_fieldmaprads2str_pad0 --mask=${vout}_fieldmaprads2str_innermask --unmaskfmap --unwarpdir=${fdir} --savefmap=${vout}_fieldmaprads2str_dilated
+Cannot open volume epi_reg_fieldmaprads2str_dilated for reading!
+Running BBR with fieldmap
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2str
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196335 Aborted                 (core dumped) $FSLDIR/bin/flirt -ref ${vrefhead} -in ${vepi} -dof 6 -cost bbr -wmseg ${vout}_fast_wmseg -init ${vout}_init.mat -omat ${vout}.mat -out ${vout}_1vol -schedule ${FSLDIR}/etc/flirtsch/bbr.sch -echospacing ${dwell} -pedir ${pe_dir} -fieldmap ${vout}_fieldmaprads2str $wopt
+Making warp fields and applying registration to EPI series
+Could not open matrix file epi_reg.mat
+Cannot read input-matrix
+Could not open matrix file epi_reg_inv.mat
+Cannot read concat-matrix
+Could not open matrix file epi_reg_fieldmaprads2epi.mat
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads_unmasked
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196361 Aborted                 (core dumped) $FSLDIR/bin/applywarp -i ${vout}_fieldmaprads_unmasked -r ${vepi} --premat=${vout}_fieldmaprads2epi.mat -o ${vout}_fieldmaprads2epi
+Cannot open volume epi_reg_fieldmaprads2epi for reading!
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2epi_mask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196365 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${vout}_fieldmaprads2epi --mask=${vout}_fieldmaprads2epi_mask --saveshift=${vout}_fieldmaprads2epi_shift --unmaskshift --dwell=${dwell} --unwarpdir=${fdir}
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2epi_shift
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 196368 Aborted                 (core dumped) $FSLDIR/bin/convertwarp -r ${vrefhead} -s ${vout}_fieldmaprads2epi_shift --postmat=${vout}.mat -o ${vout}_warp --shiftdir=${fdir} --relout
+Image Exception : #22 :: ERROR: Could not open image epi_reg_warp
+An error occured while reading file: epi_reg_warp
