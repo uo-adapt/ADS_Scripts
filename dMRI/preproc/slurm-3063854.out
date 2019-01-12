@@ -1,0 +1,53 @@
+Loading volumes
+Phase loaded
+Magnitude loaded
+Mask loaded
+Rewrapping phase range to [-pi,pi]
+Number of phase splits = 8
+Calculating starting matrices (2369 by 2369)
+Finished connection_matrices
+7178 constraints left
+1543 constraints left
+471 constraints left
+Did while loop 2368 times
+Done. Created fmap_rads for use with FEAT.
+Running FAST segmentation
+/packages/fsl/5.0.10/install/bin/epi_reg: line 317: 180067 Killed                  $FSLDIR/bin/fast -o ${vout}_fast ${vrefbrain}
+Cannot open volume epi_reg_fast_pve_2 for reading!
+Cannot open volume epi_reg_fast_wmseg for reading!
+FLIRT pre-alignment
+Registering fieldmap to structural
+Cannot open volume fieldmap for reading!
+Image Exception : #22 :: ERROR: Could not open image fieldmap
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180437 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${fmaprads} --mask=${vout}_fieldmaprads_mask --unmaskfmap --savefmap=${vout}_fieldmaprads_unmasked --unwarpdir=${fdir}
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads_unmasked
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180440 Aborted                 (core dumped) $FSLDIR/bin/applywarp -i ${vout}_fieldmaprads_unmasked -r ${vrefhead} --premat=${vout}_fieldmap2str.mat -o ${vout}_fieldmaprads2str_pad0
+Cannot open volume epi_reg_fieldmaprads2str_pad0 for reading!
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2str_innermask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180447 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${vout}_fieldmaprads2str_pad0 --mask=${vout}_fieldmaprads2str_innermask --unmaskfmap --unwarpdir=${fdir} --savefmap=${vout}_fieldmaprads2str_dilated
+Cannot open volume epi_reg_fieldmaprads2str_dilated for reading!
+Running BBR with fieldmap
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2str
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180452 Aborted                 (core dumped) $FSLDIR/bin/flirt -ref ${vrefhead} -in ${vepi} -dof 6 -cost bbr -wmseg ${vout}_fast_wmseg -init ${vout}_init.mat -omat ${vout}.mat -out ${vout}_1vol -schedule ${FSLDIR}/etc/flirtsch/bbr.sch -echospacing ${dwell} -pedir ${pe_dir} -fieldmap ${vout}_fieldmaprads2str $wopt
+Making warp fields and applying registration to EPI series
+Could not open matrix file epi_reg.mat
+Cannot read input-matrix
+Could not open matrix file epi_reg_inv.mat
+Cannot read concat-matrix
+Could not open matrix file epi_reg_fieldmaprads2epi.mat
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads_unmasked
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180466 Aborted                 (core dumped) $FSLDIR/bin/applywarp -i ${vout}_fieldmaprads_unmasked -r ${vepi} --premat=${vout}_fieldmaprads2epi.mat -o ${vout}_fieldmaprads2epi
+Cannot open volume epi_reg_fieldmaprads2epi for reading!
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2epi_mask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180470 Aborted                 (core dumped) $FSLDIR/bin/fugue --loadfmap=${vout}_fieldmaprads2epi --mask=${vout}_fieldmaprads2epi_mask --saveshift=${vout}_fieldmaprads2epi_shift --unmaskshift --dwell=${dwell} --unwarpdir=${fdir}
+Image Exception : #22 :: ERROR: Could not open image epi_reg_fieldmaprads2epi_shift
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180474 Aborted                 (core dumped) $FSLDIR/bin/convertwarp -r ${vrefhead} -s ${vout}_fieldmaprads2epi_shift --postmat=${vout}.mat -o ${vout}_warp --shiftdir=${fdir} --relout
+/packages/fsl/5.0.10/install/bin/epi_reg: line 392: 180481 Killed                  $FSLDIR/bin/applywarp -i ${vepi} -r ${vrefhead} -o ${vout} -w ${vout}_warp --interp=spline --rel
+slurmstepd: error: Detected 2 oom-kill event(s) in step 3063854.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
