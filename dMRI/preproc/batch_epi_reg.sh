@@ -1,8 +1,12 @@
 #!/bin/bash
 #
+# This batch file calls on your subject
+# list (named subject_list_sam.txt) in the same
+# folder and will run preproc_diff.sh
+# for each subject in that list.
 
 
-	
-sbatch --job-name epi_reg --partition=short --time=10:00:00 --mem=3G epi_reg.sh --nodes=1 --cpus-per-task=1 
+sbatch --export=all --job-name epiSreg --partition=short --mem-per-cpu=3G --time=3:00:00 --nodes=1 --cpus-per-task=1 epi_reg.sh
+
 
 
