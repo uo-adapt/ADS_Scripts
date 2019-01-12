@@ -45,26 +45,24 @@ bet b0_merge_mean.nii.gz b0_bet_brain -m
 cp sub-"${subid}"_ses-wave2_dwi.bval bvals
 cp sub-"${subid}"_ses-wave2_dwi.bvec bvecs
 
-echo running "${subid}" eddy
+echo running "${subid}" eddy_correct
 eddy_correct sub-"${subid}"_ses-wave2_dwi.nii.gz sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz b0_bet_brain_mask.nii.gz
 cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
 cp sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz data.nii.gz
 
-# Registration
-cd "$outputdir"/"${subid}"/ses-wave2/
-cp -R "$datadir"/sub-"${subid}"/ses-wave2/anat .
-cd "$outputdir"/"${subid}"/ses-wave2/anat
-standard_space_roi sub-"${subid}"_ses-wave2_T1w.nii.gz mprage_ssroi -b
-# bet .2 is threshold, check to make sure okay
-bet mprage_ssroi.nii.gz mprage_brain -f .2 -m
+# [Register it to the brain extracted freesurfer output]
+
 
 # Linear registration of mprage to standard space
 mkdir reg
 cd reg
 echo "${subid}" linear registration mprage to MNI
-/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/anat/mprage_brain.nii.gz -ref /packages/fsl/5.0.10/install/data/standard/MNI152_T1_2mm_brain -out "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni -omat "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear
 
-# Non-linear warp of linear registration
+# change the -in to freesurfer brain extracted image
+/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/anat/mprage_brain.nii.gz  -ref /packages/fsl/5.0.10/install/data/standard/MNI152_T1_2mm_brain -out "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni -omat "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear
+
+# Non-linear warp of linear registration using the non brain extracted version
+# Make sure to use non brain extracted freesurfer output for the --in=
 echo warping "${subid}" registration nonlinearly
 fnirt --in=../sub-"${subid}"_ses-wave2_T1w.nii.gz --aff=struct2mni.mat --cout=struct2mni_warp --ref=/packages/fsl/5.0.10/install/data/standard/MNI152_T1_2mm_brain.nii.gz
 
@@ -76,6 +74,10 @@ invwarp --ref=../mprage_brain.nii.gz --warp=struct2mni_warp.nii.gz --out=mni2str
 echo fitting "${subid}" tensors at each voxel
 cd "$outputdir"/"${subid}"/ses-wave2/dwi
 dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
+
+# if epi_reg, B0 -> freesurfer (BET) -> use omat to register FA to freesurfer (BET)
+
+# flirt FA or use EPI_reg to brain extracted freesurfer output
 
 cd "$outputdir"/"${subid}"/ses-wave2/anat/reg
 echo "${subid}" linear registration FA map to mprage
