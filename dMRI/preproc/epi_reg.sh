@@ -1,5 +1,7 @@
 #!/bin/bash
 
+module load fsl
+
 data_dir="/projects/adapt_lab/shared/ADS/data/BIDS_data/"
 subid="sub-ADS4111"
 wave="/ses-wave2/"
