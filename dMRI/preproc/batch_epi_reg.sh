@@ -6,7 +6,7 @@
 # for each subject in that list.
 
 
-sbatch --export=all --job-name epiSreg --partition=short --mem-per-cpu=3G --time=3:00:00 --nodes=1 --cpus-per-task=1 epi_reg.sh
+sbatch --export=all --job-name epiSreg --partition=short --mem-per-cpu=25G --time=3:00:00 --nodes=1 --cpus-per-task=1 epi_reg.sh
 
 
 
