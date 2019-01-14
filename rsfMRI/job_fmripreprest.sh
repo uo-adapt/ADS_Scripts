@@ -43,6 +43,7 @@ singularity run --bind "${group_dir}":"${group_dir}" ${image} ${bids_dir} ${deri
 --mem-mb 100000 \
 --longitudinal \
 --skip_bids_validation \
+--debug -vvvv \
 --fs-license-file $FS_LICENSE
 
 echo -e "\n"
