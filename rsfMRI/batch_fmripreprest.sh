@@ -16,7 +16,7 @@ study="ADS"
 
 # Set subject list
 #SUBJLIST=`cat sublist_restw2_n84.txt`
-SUBJLIST=`cat test1.txt`
+SUBJLIST=`cat test2.txt`
 
 # 
 for SUBJ in $SUBJLIST; do
