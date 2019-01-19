@@ -18998,3 +18998,568 @@ bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmrip
 	 Progress: 545 jobs, 88/7/0 (done/running/ready), 7/450 (pending_tasks/waiting).
 190119-23:38:50,507 nipype.workflow DEBUG:
 	 Tasks currently running: 7. Pending: 7.
+190119-23:38:58,589 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190119-23:39:00,538 nipype.workflow INFO:
+	 [Job 38] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass).
+190119-23:39:00,539 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:00,541 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 1 jobs ready. Free memory (GB): 96.60/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:01,310 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate ID=39 (0.20GB, 1 threads). Free: 96.40GB, 14 threads.
+190119-23:39:01,310 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:01,310 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:01,310 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:01,311 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:01,311 nipype.workflow DEBUG:
+	 output: mask_file
+190119-23:39:01,311 nipype.workflow DEBUG:
+	 [Node] skullstrip_first_dilate - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz
+190119-23:39:01,312 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190119-23:39:01,312 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" locally: cached=False, updated=False.
+190119-23:39:01,313 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190119-23:39:01,314 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate (taskid=81).
+190119-23:39:01,393 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz
+190119-23:39:02,539 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 89/7/0 (done/running/ready), 7/449 (pending_tasks/waiting).
+190119-23:39:02,542 nipype.workflow DEBUG:
+	 Tasks currently running: 7. Pending: 7.
+190119-23:39:02,544 nipype.workflow INFO:
+	 [MultiProc] Running 7 tasks, and 0 jobs ready. Free memory (GB): 96.40/97.66, Free processors: 14/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:02,802 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190119-23:39:04,540 nipype.workflow INFO:
+	 [Job 39] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate).
+190119-23:39:04,541 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:04,543 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 1 jobs ready. Free memory (GB): 96.60/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:05,308 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask ID=40 (0.20GB, 1 threads). Free: 96.40GB, 14 threads.
+190119-23:39:05,309 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:05,309 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:05,309 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:05,371 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:05,371 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:05,371 nipype.workflow DEBUG:
+	 [Node] skullstrip_first_mask - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz
+190119-23:39:05,371 nipype.workflow DEBUG:
+	 input: mask_file
+190119-23:39:05,372 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/result_skullstrip_first_dilate.pklz
+190119-23:39:05,372 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/result_skullstrip_first_dilate.pklz
+190119-23:39:05,372 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:05,372 nipype.workflow DEBUG:
+	 [Node] skullstrip_first_mask - setting input mask_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz
+190119-23:39:05,373 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190119-23:39:05,373 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" locally: cached=False, updated=False.
+190119-23:39:05,373 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask (taskid=82).
+190119-23:39:05,716 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190119-23:39:05,855 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_brain_masked.nii.gz
+190119-23:39:06,478 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190119-23:39:06,541 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 90/7/0 (done/running/ready), 7/448 (pending_tasks/waiting).
+190119-23:39:06,541 nipype.workflow INFO:
+	 [Job 40] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask).
+190119-23:39:06,542 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:06,544 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 1 jobs ready. Free memory (GB): 96.60/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:07,2 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split".
+190119-23:39:07,230 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize ID=41 (0.20GB, 1 threads). Free: 96.40GB, 14 threads.
+190119-23:39:07,230 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:07,230 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:07,230 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/result_skullstrip_first_mask.pklz
+190119-23:39:07,230 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/result_skullstrip_first_mask.pklz
+190119-23:39:07,231 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:07,231 nipype.workflow DEBUG:
+	 [Node] unifize - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_brain_masked.nii.gz
+190119-23:39:07,231 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize".
+190119-23:39:07,231 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize" locally: cached=False, updated=False.
+190119-23:39:07,265 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize (taskid=83).
+190119-23:39:07,421 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize".
+190119-23:39:07,535 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_brain_masked.nii.gz
+190119-23:39:08,542 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 91/7/0 (done/running/ready), 7/447 (pending_tasks/waiting).
+190119-23:39:08,542 nipype.workflow INFO:
+	 [Job 22] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_split).
+190119-23:39:08,544 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:08,546 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 2 jobs ready. Free memory (GB): 96.55/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:09,352 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref ID=23 (0.30GB, 1 threads). Free: 96.25GB, 14 threads.
+190119-23:39:09,352 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:09,352 nipype.workflow DEBUG:
+	 input: moving_image
+190119-23:39:09,352 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/result_bold_split.pklz
+190119-23:39:09,353 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/result_bold_split.pklz
+190119-23:39:09,358 nipype.workflow DEBUG:
+	 output: out_files
+190119-23:39:09,407 nipype.workflow DEBUG:
+	 [Node] gen_ref - setting input moving_image = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/vol0000.nii.gz
+190119-23:39:09,408 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/gen_ref".
+190119-23:39:09,408 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref" locally: cached=False, updated=False.
+190119-23:39:09,408 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref (taskid=84).
+190119-23:39:09,408 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref ID=24 (0.30GB, 1 threads). Free: 95.95GB, 13 threads.
+190119-23:39:09,408 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:09,409 nipype.workflow DEBUG:
+	 input: moving_image
+190119-23:39:09,409 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/result_bold_split.pklz
+190119-23:39:09,409 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/result_bold_split.pklz
+190119-23:39:09,413 nipype.workflow DEBUG:
+	 output: out_files
+190119-23:39:09,414 nipype.workflow DEBUG:
+	 [Node] gen_ref - setting input moving_image = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_split/vol0000.nii.gz
+190119-23:39:09,414 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/gen_ref".
+190119-23:39:09,414 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref" locally: cached=False, updated=False.
+190119-23:39:09,414 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref (taskid=85).
+190119-23:39:09,415 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/gen_ref".
+190119-23:39:09,576 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference")
+190119-23:39:10,543 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 92/8/0 (done/running/ready), 8/445 (pending_tasks/waiting).
+190119-23:39:10,543 nipype.workflow DEBUG:
+	 Tasks currently running: 8. Pending: 8.
+190119-23:39:10,545 nipype.workflow INFO:
+	 [MultiProc] Running 8 tasks, and 0 jobs ready. Free memory (GB): 95.95/97.66, Free processors: 13/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:11,162 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref".
+190119-23:39:11,960 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize".
+190119-23:39:12,544 nipype.workflow INFO:
+	 [Job 41] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize).
+190119-23:39:12,545 nipype.workflow INFO:
+	 [Job 23] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref).
+190119-23:39:12,546 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:12,548 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 1 jobs ready. Free memory (GB): 96.45/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:13,345 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize ID=42 (0.10GB, 1 threads). Free: 96.35GB, 14 threads.
+190119-23:39:13,345 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:13,345 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:13,345 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/result_unifize.pklz
+190119-23:39:13,345 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/result_unifize.pklz
+190119-23:39:13,346 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:13,346 nipype.workflow DEBUG:
+	 [Node] fixhdr_unifize - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/uni.nii.gz
+190119-23:39:13,346 nipype.workflow DEBUG:
+	 input: hdr_file
+190119-23:39:13,346 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/result_validate_ref.pklz
+190119-23:39:13,346 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/result_validate_ref.pklz
+190119-23:39:13,347 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:13,347 nipype.workflow DEBUG:
+	 [Node] fixhdr_unifize - setting input hdr_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz
+190119-23:39:13,347 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190119-23:39:13,347 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" locally: cached=False, updated=False.
+190119-23:39:13,359 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize (taskid=86).
+190119-23:39:13,635 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/gen_ref".
+190119-23:39:13,797 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference")
+190119-23:39:14,545 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 94/7/0 (done/running/ready), 7/444 (pending_tasks/waiting).
+190119-23:39:14,545 nipype.workflow DEBUG:
+	 Tasks currently running: 7. Pending: 7.
+190119-23:39:14,547 nipype.workflow INFO:
+	 [MultiProc] Running 7 tasks, and 0 jobs ready. Free memory (GB): 96.35/97.66, Free processors: 14/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:15,160 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref".
+190119-23:39:16,546 nipype.workflow INFO:
+	 [Job 24] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.gen_ref).
+190119-23:39:16,547 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:16,549 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 0 jobs ready. Free memory (GB): 96.65/97.66, Free processors: 15/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:16,817 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190119-23:39:16,931 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190119-23:39:17,151 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190119-23:39:18,547 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 95/6/0 (done/running/ready), 6/444 (pending_tasks/waiting).
+190119-23:39:18,547 nipype.workflow INFO:
+	 [Job 42] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize).
+190119-23:39:18,548 nipype.workflow DEBUG:
+	 Tasks currently running: 5. Pending: 5.
+190119-23:39:18,551 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 1 jobs ready. Free memory (GB): 96.75/97.66, Free processors: 16/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:19,244 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass ID=43 (0.20GB, 1 threads). Free: 96.55GB, 15 threads.
+190119-23:39:19,244 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:19,244 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:19,244 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/result_fixhdr_unifize.pklz
+190119-23:39:19,244 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/result_fixhdr_unifize.pklz
+190119-23:39:19,245 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:19,245 nipype.workflow DEBUG:
+	 [Node] skullstrip_second_pass - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz
+190119-23:39:19,245 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190119-23:39:19,245 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" locally: cached=False, updated=False.
+190119-23:39:19,247 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190119-23:39:19,247 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass (taskid=87).
+190119-23:39:19,357 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190119-23:39:20,82 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190119-23:39:20,548 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 96/6/0 (done/running/ready), 6/443 (pending_tasks/waiting).
+190119-23:39:20,548 nipype.workflow INFO:
+	 [Job 43] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass).
+190119-23:39:20,549 nipype.workflow DEBUG:
+	 Tasks currently running: 5. Pending: 5.
+190119-23:39:20,551 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 1 jobs ready. Free memory (GB): 96.75/97.66, Free processors: 16/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:21,216 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2 ID=44 (0.10GB, 1 threads). Free: 96.65GB, 15 threads.
+190119-23:39:21,217 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:21,217 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:21,217 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/result_skullstrip_second_pass.pklz
+190119-23:39:21,217 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/result_skullstrip_second_pass.pklz
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 [Node] fixhdr_skullstrip2 - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform_mask.nii.gz
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 input: hdr_file
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/result_validate_ref.pklz
+190119-23:39:21,218 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/result_validate_ref.pklz
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:21,218 nipype.workflow DEBUG:
+	 [Node] fixhdr_skullstrip2 - setting input hdr_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz
+190119-23:39:21,219 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190119-23:39:21,219 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" locally: cached=False, updated=False.
+190119-23:39:21,220 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190119-23:39:21,220 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2 (taskid=88).
+190119-23:39:21,318 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190119-23:39:21,424 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190119-23:39:22,549 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 97/6/0 (done/running/ready), 6/442 (pending_tasks/waiting).
+190119-23:39:22,549 nipype.workflow INFO:
+	 [Job 44] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2).
+190119-23:39:22,550 nipype.workflow DEBUG:
+	 Tasks currently running: 5. Pending: 5.
+190119-23:39:22,553 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 1 jobs ready. Free memory (GB): 96.75/97.66, Free processors: 16/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:23,215 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks ID=45 (0.20GB, 1 threads). Free: 96.55GB, 15 threads.
+190119-23:39:23,215 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:23,215 nipype.workflow DEBUG:
+	 input: operand_file
+190119-23:39:23,215 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/result_fixhdr_skullstrip2.pklz
+190119-23:39:23,215 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/result_fixhdr_skullstrip2.pklz
+190119-23:39:23,216 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:23,216 nipype.workflow DEBUG:
+	 [Node] combine_masks - setting input operand_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz
+190119-23:39:23,216 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:23,216 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:23,216 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/result_skullstrip_first_pass.pklz
+190119-23:39:23,217 nipype.workflow DEBUG:
+	 output: mask_file
+190119-23:39:23,217 nipype.workflow DEBUG:
+	 [Node] combine_masks - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz
+190119-23:39:23,217 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190119-23:39:23,217 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks" locally: cached=False, updated=False.
+190119-23:39:23,219 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190119-23:39:23,219 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks (taskid=89).
+190119-23:39:23,338 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz
+190119-23:39:23,920 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190119-23:39:24,556 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 98/6/0 (done/running/ready), 6/441 (pending_tasks/waiting).
+190119-23:39:24,556 nipype.workflow INFO:
+	 [Job 45] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks).
+190119-23:39:24,557 nipype.workflow DEBUG:
+	 Tasks currently running: 5. Pending: 5.
+190119-23:39:24,560 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 1 jobs ready. Free memory (GB): 96.75/97.66, Free processors: 16/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:25,213 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask ID=46 (0.20GB, 1 threads). Free: 96.55GB, 15 threads.
+190119-23:39:25,213 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:25,213 nipype.workflow DEBUG:
+	 input: in_file
+190119-23:39:25,213 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/result_fixhdr_unifize.pklz
+190119-23:39:25,214 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/result_fixhdr_unifize.pklz
+190119-23:39:25,214 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:25,214 nipype.workflow DEBUG:
+	 [Node] apply_mask - setting input in_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz
+190119-23:39:25,214 nipype.workflow DEBUG:
+	 input: mask_file
+190119-23:39:25,214 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/result_combine_masks.pklz
+190119-23:39:25,215 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/result_combine_masks.pklz
+190119-23:39:25,263 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:25,263 nipype.workflow DEBUG:
+	 [Node] apply_mask - setting input mask_file = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz
+190119-23:39:25,264 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190119-23:39:25,264 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask" locally: cached=False, updated=False.
+190119-23:39:25,264 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask (taskid=90).
+190119-23:39:25,265 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190119-23:39:25,376 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190119-23:39:25,919 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190119-23:39:26,567 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 99/6/0 (done/running/ready), 6/440 (pending_tasks/waiting).
+190119-23:39:26,567 nipype.workflow INFO:
+	 [Job 46] Completed (fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask).
+190119-23:39:26,569 nipype.workflow DEBUG:
+	 Tasks currently running: 5. Pending: 5.
+190119-23:39:26,571 nipype.workflow INFO:
+	 [MultiProc] Running 5 tasks, and 1 jobs ready. Free memory (GB): 96.75/97.66, Free processors: 16/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
+190119-23:39:27,234 nipype.workflow DEBUG:
+	 Allocating fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg ID=47 (0.20GB, 8 threads). Free: 96.55GB, 8 threads.
+190119-23:39:27,234 nipype.workflow DEBUG:
+	 Setting node inputs
+190119-23:39:27,234 nipype.workflow DEBUG:
+	 input: moving_image
+190119-23:39:27,234 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/result_bet.pklz
+190119-23:39:27,235 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/result_bet.pklz
+190119-23:39:27,235 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:27,235 nipype.workflow DEBUG:
+	 [Node] fmap2ref_reg - setting input moving_image = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1223_ses-wave2_magnitude1_avg_corrected_brain.nii.gz
+190119-23:39:27,235 nipype.workflow DEBUG:
+	 input: fixed_image
+190119-23:39:27,235 nipype.workflow DEBUG:
+	 results file: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/result_apply_mask.pklz
+190119-23:39:27,236 nipype.utils DEBUG:
+	 Loading pkl: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/result_apply_mask.pklz
+190119-23:39:27,236 nipype.workflow DEBUG:
+	 output: out_file
+190119-23:39:27,236 nipype.workflow DEBUG:
+	 [Node] fmap2ref_reg - setting input fixed_image = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190119-23:39:27,238 nipype.workflow DEBUG:
+	 [Node] Directory not found "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg".
+190119-23:39:27,238 nipype.workflow DEBUG:
+	 Checking hash "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg" locally: cached=False, updated=False.
+190119-23:39:27,241 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg".
+190119-23:39:27,241 nipype.workflow DEBUG:
+	 [MultiProc] Submitted task fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg (taskid=91).
+190119-23:39:27,349 nipype.workflow INFO:
+	 [Node] Running "fmap2ref_reg" ("niworkflows.interfaces.registration.ANTSRegistrationRPT"), a CommandLine Interface with command:
+antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initialize-transforms-per-stage 0 --interpolation LanczosWindowedSinc --output [ transform, transform_Warped.nii.gz, transform_InverseWarped.nii.gz ] --transform Translation[ 0.05 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1223_ses-wave2_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 500, 1e-07, 200 ] --smoothing-sigmas 8.0mm --shrink-factors 2 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform Affine[ 0.01 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1223_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1223_ses-wave2_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 200, 1e-08, 100 ] --smoothing-sigmas 2.0mm --shrink-factors 1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.005, 0.998 ]  --write-composite-transform 1
+190119-23:39:28,568 nipype.workflow DEBUG:
+	 Progress: 545 jobs, 100/6/0 (done/running/ready), 6/439 (pending_tasks/waiting).
+190119-23:39:28,568 nipype.workflow DEBUG:
+	 Tasks currently running: 6. Pending: 6.
+190119-23:39:28,570 nipype.workflow INFO:
+	 [MultiProc] Running 6 tasks, and 0 jobs ready. Free memory (GB): 96.55/97.66, Free processors: 8/28.
+                     Currently running:
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg
+                       * _n4_correct1
+                       * _n4_correct0
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt
+                       * fmriprep_wf.single_subject_ADS1223_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt
