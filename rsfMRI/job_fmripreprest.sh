@@ -40,7 +40,6 @@ singularity run --bind "${group_dir}":"${group_dir}" ${image} ${bids_dir} ${deri
 --output-space {'T1w','template','fsaverage5','fsnative'} \
 --mem-mb 100000 \
 --skip_bids_validation \
---debug -vvvv \
 --fs-license-file $FS_LICENSE
 
 echo -e "\n"
