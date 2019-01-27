@@ -244,3 +244,1842 @@ antsBrainExtraction.sh -a /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1
 	 [Node] Running "recon_config" ("fmriprep.interfaces.freesurfer.FSDetectInputs")
 190124-16:07:06,994 nipype.workflow INFO:
 	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.recon_config".
+190124-16:07:11,565 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon1".
+190124-16:07:11,638 nipype.workflow INFO:
+	 [Node] Running "autorecon1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon1 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1005504/ses-wave3/anat/sub-ADS1005504_ses-wave3_T1w.nii.gz -noskullstrip -hires -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -expert /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon1/expert.opts
+190124-16:08:00,193 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.n4".
+190124-16:08:00,459 nipype.interface INFO:
+	 stderr 2019-01-24T16:08:00.459294:++ Max displacement in automask = 0.11 (mm) at sub-brick 11
+190124-16:08:00,459 nipype.interface INFO:
+	 stderr 2019-01-24T16:08:00.459294:++ Max delta displ  in automask = 0.13 (mm) at sub-brick 12
+190124-16:08:03,858 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.gen_ref".
+190124-16:08:11,201 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.slice_timing_correction" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/slice_timing_correction".
+190124-16:08:11,430 nipype.workflow INFO:
+	 [Node] Running "slice_timing_correction" ("nipype.interfaces.afni.preprocess.TShift"), a CommandLine Interface with command:
+3dTshift -ignore 0 -prefix sub-ADS1005504_ses-wave3_task-rest_bold_valid_tshift.nii.gz -tpattern @slice_timing.1D -TR 1.4s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/slice_timing_correction/sub-ADS1005504_ses-wave3_task-rest_bold_valid.nii.gz
+190124-16:08:13,889 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.bet" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet".
+190124-16:08:14,170 nipype.workflow INFO:
+	 [Node] Running "bet" ("niworkflows.interfaces.masks.BETRPT"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/n4/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain.nii.gz -f 0.60 -m
+190124-16:08:17,402 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.validate_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref".
+190124-16:08:17,562 nipype.workflow INFO:
+	 [Node] Running "validate_ref" ("fmriprep.interfaces.images.ValidateImage")
+190124-16:08:17,866 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.validate_ref".
+190124-16:08:26,696 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/mcflirt".
+190124-16:08:27,1 nipype.workflow INFO:
+	 [Node] Running "mcflirt" ("nipype.interfaces.fsl.preprocess.MCFLIRT"), a CommandLine Interface with command:
+mcflirt -in /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate/sub-ADS1005504_ses-wave3_task-rest_bold_valid.nii.gz -out /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/mcflirt/sub-ADS1005504_ses-wave3_task-rest_bold_valid_mcf.nii.gz -reffile /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz -mats -plots
+190124-16:08:32,844 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.init_aff" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/init_aff".
+190124-16:08:33,17 nipype.workflow INFO:
+	 [Node] Running "init_aff" ("niworkflows.interfaces.ants.AI"), a CommandLine Interface with command:
+antsAI -c [10,0.000001,10] -d 3 -x /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask.nii.gz -m Mattes[/templateflow/tpl-fMRIPrep/tpl-fMRIPrep_space-MNI_res-02_boldref.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz,32,Regular,0.200000] -o initialization.mat -p 0 -s [20.000000,0.120000] -t Affine[0.100000] -v 1
+190124-16:09:13,689 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.bet".
+190124-16:09:23,222 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.MskErode" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/MskErode".
+190124-16:09:23,480 nipype.workflow INFO:
+	 [Node] Running "MskErode" ("nipype.interfaces.fsl.maths.MathsCommand"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz -nan -kernel 2D -ero /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/MskErode/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_maths.nii.gz
+190124-16:09:27,67 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.MskErode".
+190124-16:09:30,759 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fieldmap_fov_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fieldmap_fov_mask".
+190124-16:09:30,896 nipype.workflow INFO:
+	 [Node] Running "fieldmap_fov_mask" ("fmriprep.interfaces.images.FilledImageLike")
+190124-16:09:31,102 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fieldmap_fov_mask".
+190124-16:09:37,26 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.NewMask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/NewMask".
+190124-16:09:37,171 nipype.workflow INFO:
+	 [Node] Running "NewMask" ("nipype.interfaces.fsl.maths.MultiImageMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/MskErode/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_maths.nii.gz -thr 0.5 -bin /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/NewMask/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_maths.nii.gz
+190124-16:09:38,298 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.NewMask".
+190124-16:09:42,508 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.prelude" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/prelude".
+190124-16:09:42,643 nipype.workflow INFO:
+	 [Node] Running "prelude" ("nipype.interfaces.fsl.preprocess.PRELUDE"), a CommandLine Interface with command:
+prelude --abs=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/n4/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected.nii.gz --mask=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz --phase=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/pha2rads/sub-ADS1005504_ses-wave3_phasediff_rads.nii.gz --unwrap=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/prelude/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped.nii.gz
+190124-16:09:47,403 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.prelude".
+190124-16:09:56,852 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.denoise" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/denoise".
+190124-16:09:57,18 nipype.workflow INFO:
+	 [Node] Running "denoise" ("nipype.interfaces.fsl.maths.SpatialFilter"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/prelude/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped.nii.gz -kernel sphere 3.0000 -fmedian /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/denoise/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt.nii.gz
+190124-16:10:02,537 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.denoise".
+190124-16:10:05,495 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.slice_timing_correction".
+190124-16:10:11,903 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.demean" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/demean".
+190124-16:10:12,31 nipype.workflow INFO:
+	 [Node] Running "demean" ("nipype.interfaces.utility.wrappers.Function")
+190124-16:10:12,716 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.demean".
+190124-16:10:20,559 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.copy_xform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/copy_xform".
+190124-16:10:20,657 nipype.workflow INFO:
+	 [Node] Running "copy_xform" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:10:23,182 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.Despike" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/Despike".
+190124-16:10:23,282 nipype.workflow INFO:
+	 [Node] Running "Despike" ("nipype.interfaces.fsl.preprocess.FUGUE"), a CommandLine Interface with command:
+fugue --despike --despikethreshold=2.1 --loadfmap=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/demean/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean.nii.gz --savefmap=sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_fieldmap.nii.gz --mask=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz
+190124-16:10:27,611 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.init_aff".
+190124-16:10:28,165 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.Despike".
+190124-16:10:36,766 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.ApplyMask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/ApplyMask".
+190124-16:10:36,941 nipype.workflow INFO:
+	 [Node] Running "ApplyMask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/Despike/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_fieldmap.nii.gz -nan -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/NewMask/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/ApplyMask/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_fieldmap_masked.nii.gz
+190124-16:10:38,121 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.ApplyMask".
+190124-16:10:42,679 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.norm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/norm".
+190124-16:10:42,816 nipype.workflow INFO:
+	 [Node] Running "norm" ("niworkflows.interfaces.fixes.FixHeaderRegistration"), a CommandLine Interface with command:
+antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initial-moving-transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/init_aff/initialization.mat, 0 ] --initialize-transforms-per-stage 0 --interpolation Linear --output transform --transform Affine[ 0.1 ] --metric Mattes[ /templateflow/tpl-fMRIPrep/tpl-fMRIPrep_space-MNI_res-02_boldref.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz, 1, 64, Random, 0.2 ] --convergence [ 200, 1e-09, 10 ] --smoothing-sigmas 2.0mm --shrink-factors 2 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.05, 0.98 ]  --write-composite-transform 0
+190124-16:10:42,991 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_stc_wf.copy_xform".
+190124-16:10:45,992 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_split" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_split".
+190124-16:10:46,182 nipype.workflow INFO:
+	 [Node] Running "bold_split" ("nipype.interfaces.fsl.utils.Split"), a CommandLine Interface with command:
+fslsplit /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_stc_wf/copy_xform/sub-ADS1005504_ses-wave3_task-rest_bold_valid_tshift_xform.nii.gz -t
+190124-16:10:46,273 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.Merge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/Merge".
+190124-16:10:46,387 nipype.workflow INFO:
+	 [Node] Running "Merge" ("nipype.interfaces.utility.base.Merge")
+190124-16:10:46,403 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.Merge".
+190124-16:10:48,806 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.AddEdge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/AddEdge".
+190124-16:10:48,823 nipype.workflow INFO:
+	 [Node] Running "AddEdge" ("nipype.interfaces.fsl.maths.MultiImageMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/demean/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/MskErode/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_maths.nii.gz -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/ApplyMask/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_fieldmap_masked.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/cleanup_wf/AddEdge/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths.nii.gz
+190124-16:10:50,389 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.cleanup_wf.AddEdge".
+190124-16:10:52,915 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.compfmap" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/compfmap".
+190124-16:10:52,985 nipype.workflow INFO:
+	 [Node] Running "compfmap" ("fmriprep.interfaces.fmap.Phasediff2Fieldmap")
+190124-16:10:53,404 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.phdiff_wf.compfmap".
+190124-16:11:18,332 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.norm".
+190124-16:11:18,858 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.map_brainmask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/map_brainmask".
+190124-16:11:18,990 nipype.workflow INFO:
+	 [Node] Running "map_brainmask" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask.nii.gz --interpolation MultiLabel --output tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz --transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/norm/transform0GenericAffine.mat, 1 ]
+190124-16:11:33,941 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.map_brainmask".
+190124-16:11:35,62 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190124-16:11:35,213 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/map_brainmask/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans_dil.nii.gz
+190124-16:11:36,334 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190124-16:11:37,520 nipype.interface WARNING:
+	 q-forms of reference and mask are substantially different
+190124-16:11:39,460 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+190124-16:11:39,539 nipype.workflow INFO:
+	 [Node] Running "n4_correct" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz --mask-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/check_hdr/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans_dil_hdr.nii.gz --output ref_image_valid_corrected.nii.gz
+190124-16:11:46,428 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+190124-16:11:47,267 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.get_ees" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/get_ees".
+190124-16:11:47,275 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+190124-16:11:47,298 nipype.workflow INFO:
+	 [Node] Running "get_ees" ("nipype.interfaces.utility.wrappers.Function")
+190124-16:11:47,338 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.get_ees".
+190124-16:11:47,408 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz -f 0.20 -m
+190124-16:11:59,145 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_split".
+190124-16:11:59,621 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190124-16:12:00,961 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/gen_ref".
+190124-16:12:00,963 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190124-16:12:01,20 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference")
+190124-16:12:01,52 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz
+190124-16:12:03,22 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190124-16:12:03,381 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.gen_ref".
+190124-16:12:04,970 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190124-16:12:05,139 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_brain_masked.nii.gz
+190124-16:12:05,814 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/gen_ref".
+190124-16:12:06,64 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference")
+190124-16:12:06,218 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190124-16:12:07,140 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize".
+190124-16:12:07,308 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.gen_ref".
+190124-16:12:07,407 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_brain_masked.nii.gz
+190124-16:12:12,1 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize".
+190124-16:12:13,180 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190124-16:12:13,281 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:12:13,386 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190124-16:12:15,55 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190124-16:12:15,200 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190124-16:12:16,331 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190124-16:12:21,309 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190124-16:12:21,448 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:12:21,548 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190124-16:12:23,16 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190124-16:12:23,162 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz
+190124-16:12:23,668 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190124-16:12:25,289 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190124-16:12:25,539 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190124-16:12:26,147 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190124-16:12:31,917 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg".
+190124-16:12:32,134 nipype.workflow INFO:
+	 [Node] Running "fmap2ref_reg" ("niworkflows.interfaces.registration.ANTSRegistrationRPT"), a CommandLine Interface with command:
+antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initialize-transforms-per-stage 0 --interpolation LanczosWindowedSinc --output [ transform, transform_Warped.nii.gz, transform_InverseWarped.nii.gz ] --transform Translation[ 0.05 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 500, 1e-07, 200 ] --smoothing-sigmas 8.0mm --shrink-factors 2 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform Affine[ 0.01 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 200, 1e-08, 100 ] --smoothing-sigmas 2.0mm --shrink-factors 1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.005, 0.998 ]  --write-composite-transform 1
+190124-16:16:48,982 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt".
+190124-16:16:49,348 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.normalize_motion" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/normalize_motion".
+190124-16:16:49,396 nipype.workflow INFO:
+	 [Node] Running "normalize_motion" ("niworkflows.interfaces.utils.NormalizeMotionParams")
+190124-16:16:49,444 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.normalize_motion".
+190124-16:16:51,766 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.fdisp" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/fdisp".
+190124-16:16:51,795 nipype.workflow INFO:
+	 [Node] Running "fdisp" ("nipype.algorithms.confounds.FramewiseDisplacement")
+190124-16:16:51,836 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.fdisp".
+190124-16:16:54,858 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg".
+190124-16:16:55,381 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply".
+190124-16:16:55,424 nipype.workflow INFO:
+	 [Node] Running "fmap_fov2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fieldmap_fov_mask/filled.nii.gz --interpolation NearestNeighbor --output filled_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190124-16:16:55,828 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_apply".
+190124-16:16:55,864 nipype.workflow INFO:
+	 [Node] Running "fmap2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/compfmap/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap.nii.gz --interpolation BSpline --output sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190124-16:16:56,925 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply".
+190124-16:16:58,564 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.fsl2itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/fsl2itk".
+190124-16:16:58,630 nipype.workflow INFO:
+	 [Node] Running "fsl2itk" ("fmriprep.interfaces.itk.MCFLIRT2ITK")
+190124-16:16:58,902 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply".
+190124-16:16:58,966 nipype.workflow INFO:
+	 [Node] Running "fmap_mask2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz --interpolation MultiLabel --output sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190124-16:17:09,569 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply".
+190124-16:17:11,618 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190124-16:17:11,624 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_trans_dil.nii.gz
+190124-16:17:12,326 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190124-16:17:27,879 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply".
+190124-16:17:30,85 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads".
+190124-16:17:30,115 nipype.workflow INFO:
+	 [Node] Running "torads" ("fmriprep.interfaces.fmap.FieldToRadS")
+190124-16:17:30,278 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads".
+190124-16:17:31,501 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/gen_vsm".
+190124-16:17:31,520 nipype.workflow INFO:
+	 [Node] Running "gen_vsm" ("nipype.interfaces.fsl.preprocess.FUGUE"), a CommandLine Interface with command:
+fugue --dwell=0.0003499990 --loadfmap=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad.nii.gz --mask=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz --unmaskshift --saveshift=sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked.nii.gz --unwarpdir=y-
+190124-16:17:32,244 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm".
+190124-16:17:33,471 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/demean".
+190124-16:17:33,503 nipype.workflow INFO:
+	 [Node] Running "demean" ("fmriprep.interfaces.images.DemeanImage")
+190124-16:17:33,591 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean".
+190124-16:17:38,925 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm".
+190124-16:17:38,946 nipype.workflow INFO:
+	 [Node] Running "vsm2dfm" ("fmriprep.interfaces.itk.FUGUEvsm2ANTSwarp")
+190124-16:17:39,82 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm".
+190124-16:17:39,436 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/jac_dfm".
+190124-16:17:39,501 nipype.workflow INFO:
+	 [Node] Running "jac_dfm" ("nipype.interfaces.ants.utils.CreateJacobianDeterminantImage"), a CommandLine Interface with command:
+CreateJacobianDeterminantImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz jacobian.nii.gz
+190124-16:17:42,101 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm".
+190124-16:17:42,790 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference".
+190124-16:17:42,838 nipype.workflow INFO:
+	 [Node] Running "unwarp_reference" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --interpolation LanczosWindowedSinc --output ref_image_valid_corrected_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS1005504_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz
+190124-16:17:48,426 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference".
+190124-16:17:49,595 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask".
+190124-16:17:49,607 nipype.workflow INFO:
+	 [Node] Running "apply_fov_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference/ref_image_valid_corrected_trans.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply/filled_trans.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz
+190124-16:17:50,141 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask".
+190124-16:17:53,508 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+190124-16:17:53,543 nipype.workflow INFO:
+	 [Node] Running "n4_correct" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz --mask-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/check_hdr/sub-ADS1005504_ses-wave3_magnitude1_avg_corrected_brain_mask_trans_dil_hdr.nii.gz --output ref_image_valid_corrected_trans_masked_corrected.nii.gz
+190124-16:17:58,332 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+190124-16:17:59,496 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+190124-16:17:59,525 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected_trans_masked_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -f 0.20 -m
+190124-16:18:06,788 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190124-16:18:07,594 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190124-16:18:07,611 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz
+190124-16:18:08,539 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190124-16:18:09,586 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190124-16:18:09,594 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190124-16:18:10,72 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190124-16:18:11,619 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize".
+190124-16:18:11,625 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190124-16:18:14,595 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize".
+190124-16:18:15,596 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190124-16:18:15,626 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:18:15,745 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190124-16:18:17,727 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190124-16:18:17,745 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190124-16:18:18,165 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190124-16:18:19,493 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190124-16:18:19,576 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:18:19,668 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190124-16:18:21,545 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190124-16:18:21,556 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz
+190124-16:18:21,922 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190124-16:18:23,546 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190124-16:18:23,559 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190124-16:18:23,872 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190124-16:19:19,775 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.fsl2itk".
+190124-16:19:24,889 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_transform".
+190124-16:19:24,942 nipype.workflow INFO:
+	 [Node] Running "bold_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
+190124-16:31:21,655 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_transform".
+190124-16:31:23,735 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.merge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/merge".
+190124-16:31:23,820 nipype.workflow INFO:
+	 [Node] Running "merge" ("fmriprep.interfaces.nilearn.Merge")
+190124-16:32:31,248 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.merge".
+190124-16:32:35,815 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.validate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate".
+190124-16:32:35,888 nipype.workflow INFO:
+	 [Node] Running "validate" ("fmriprep.interfaces.images.ValidateImage")
+190124-16:32:50,596 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.validate".
+190124-16:32:51,377 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/gen_ref".
+190124-16:32:51,422 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.registration.EstimateReferenceImage")
+190124-16:32:53,169 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:++ 3dvolreg: AFNI version=Debian-16.2.07~dfsg.1-5~nd16.04+1 (Jun 12 2017) [64-bit]
+190124-16:32:53,169 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:++ Authored by: RW Cox
+190124-16:32:53,169 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:** AFNI converts NIFTI_datatype=4 (INT16) in file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/gen_ref/slice.nii.gz to FLOAT32
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:     Warnings of this type will be muted for this session.
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:  such as /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/gen_ref/slice.nii.gz,
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:  or viewing/combining it with volumes of differing obliquity,
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:  you should consider running: 
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:     3dWarp -deoblique 
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:  on this and  other oblique datasets in the same session.
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559: See 3dWarp -help for details.
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:++ Oblique dataset:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/gen_ref/slice.nii.gz is 9.370015 degrees from plumb.
+190124-16:32:53,170 nipype.interface INFO:
+	 stderr 2019-01-24T16:32:53.169559:++ Coarse del was 10, replaced with 2
+190124-16:33:53,666 nipype.interface INFO:
+	 stderr 2019-01-24T16:33:53.666459:++ Max displacement in automask = 0.10 (mm) at sub-brick 18
+190124-16:33:53,666 nipype.interface INFO:
+	 stderr 2019-01-24T16:33:53.666459:++ Max delta displ  in automask = 0.13 (mm) at sub-brick 19
+190124-16:33:57,813 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.gen_ref".
+190124-16:34:00,516 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.validate_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate_ref".
+190124-16:34:00,649 nipype.workflow INFO:
+	 [Node] Running "validate_ref" ("fmriprep.interfaces.images.ValidateImage")
+190124-16:34:00,843 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.validate_ref".
+190124-16:34:01,648 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.init_aff" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/init_aff".
+190124-16:34:01,808 nipype.workflow INFO:
+	 [Node] Running "init_aff" ("niworkflows.interfaces.ants.AI"), a CommandLine Interface with command:
+antsAI -c [10,0.000001,10] -d 3 -x /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask.nii.gz -m Mattes[/templateflow/tpl-fMRIPrep/tpl-fMRIPrep_space-MNI_res-02_boldref.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz,32,Regular,0.200000] -o initialization.mat -p 0 -s [20.000000,0.120000] -t Affine[0.100000] -v 1
+190124-16:35:27,656 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon1".
+190124-16:35:30,160 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm".
+190124-16:35:30,203 nipype.workflow INFO:
+	 [Node] Running "fsnative_2_t1_xfm" ("fmriprep.interfaces.freesurfer.PatchedRobustRegister"), a CommandLine Interface with command:
+mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/T1.mgz --dst /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1005504/ses-wave3/anat/sub-ADS1005504_ses-wave3_T1w.nii.gz
+190124-16:35:41,748 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.init_aff".
+190124-16:35:44,11 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.norm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/norm".
+190124-16:35:44,176 nipype.workflow INFO:
+	 [Node] Running "norm" ("niworkflows.interfaces.fixes.FixHeaderRegistration"), a CommandLine Interface with command:
+antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initial-moving-transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/init_aff/initialization.mat, 0 ] --initialize-transforms-per-stage 0 --interpolation Linear --output transform --transform Affine[ 0.1 ] --metric Mattes[ /templateflow/tpl-fMRIPrep/tpl-fMRIPrep_space-MNI_res-02_boldref.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz, 1, 64, Random, 0.2 ] --convergence [ 200, 1e-09, 10 ] --smoothing-sigmas 2.0mm --shrink-factors 2 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.05, 0.98 ]  --write-composite-transform 0
+190124-16:36:35,189 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.norm".
+190124-16:36:35,988 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.map_brainmask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/map_brainmask".
+190124-16:36:36,156 nipype.workflow INFO:
+	 [Node] Running "map_brainmask" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask.nii.gz --interpolation MultiLabel --output tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz --transform [ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/norm/transform0GenericAffine.mat, 1 ]
+190124-16:36:47,158 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.map_brainmask".
+190124-16:36:47,980 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190124-16:36:48,131 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/map_brainmask/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans_dil.nii.gz
+190124-16:36:49,1 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190124-16:36:50,203 nipype.interface WARNING:
+	 q-forms of reference and mask are substantially different
+190124-16:36:52,111 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+190124-16:36:52,248 nipype.workflow INFO:
+	 [Node] Running "n4_correct" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/validate_ref/ref_image_valid.nii.gz --mask-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/check_hdr/tpl-MNI152NLin2009cAsym_space-MNI_res-02_brainmask_trans_dil_hdr.nii.gz --output ref_image_valid_corrected.nii.gz
+190124-16:36:58,984 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+190124-16:37:00,91 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+190124-16:37:00,233 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz -f 0.20 -m
+190124-16:37:11,286 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190124-16:37:11,999 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190124-16:37:12,158 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz
+190124-16:37:13,614 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190124-16:37:16,286 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190124-16:37:16,412 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_brain_masked.nii.gz
+190124-16:37:17,64 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190124-16:37:18,0 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize".
+190124-16:37:18,162 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_brain_masked.nii.gz
+190124-16:37:22,980 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.unifize".
+190124-16:37:24,167 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190124-16:37:24,290 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:37:24,479 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190124-16:37:26,232 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190124-16:37:26,370 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190124-16:37:27,312 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190124-16:37:28,59 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190124-16:37:28,199 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190124-16:37:28,338 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190124-16:37:30,94 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190124-16:37:30,253 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz
+190124-16:37:30,957 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190124-16:37:32,309 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.dvars" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/dvars".
+190124-16:37:32,309 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190124-16:37:32,371 nipype.workflow INFO:
+	 [Node] Running "dvars" ("nipype.algorithms.confounds.ComputeDVARS")
+190124-16:37:32,374 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190124-16:37:33,365 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190124-16:38:37,22 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.dvars".
+190124-16:41:17,596 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190124-16:41:24,674 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+190124-16:41:24,838 nipype.workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta
+190124-16:41:25,803 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190124-16:41:28,25 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+190124-16:41:28,258 nipype.workflow INFO:
+	 [Node] Running "lta_2_itk" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt
+190124-16:41:29,282 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190124-17:52:01,485 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.skullstrip_ants_wf.t1_skull_strip".
+190124-17:52:03,849 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
+190124-17:52:03,854 nipype.workflow INFO:
+	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted")
+190124-17:52:06,268 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+190124-17:52:06,606 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+190124-17:52:06,612 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-17:52:06,612 nipype.workflow INFO:
+	 [Node] Running "autorecon2_vol" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-17:52:06,615 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:29,423 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol".
+190124-21:24:32,614 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+190124-21:24:32,616 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+190124-21:24:32,628 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:32,630 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:32,635 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:32,656 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:32,667 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs0" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190124-21:24:32,672 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190125-04:58:45,423 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs1".
+190125-04:59:22,921 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs0".
+190125-04:59:23,731 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon_surfs" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs".
+190125-04:59:23,747 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+190125-04:59:23,762 nipype.interface INFO:
+	 recon-all complete : Not running
+190125-04:59:23,763 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs0" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+echo recon-all: nothing to do
+190125-04:59:23,781 nipype.interface INFO:
+	 recon-all complete : Not running
+190125-04:59:23,978 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs0".
+190125-04:59:23,984 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+190125-04:59:23,997 nipype.interface INFO:
+	 recon-all complete : Not running
+190125-04:59:23,997 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+echo recon-all: nothing to do
+190125-04:59:24,2 nipype.interface INFO:
+	 recon-all complete : Not running
+190125-04:59:24,137 nipype.workflow INFO:
+	 [Node] Finished "_autorecon_surfs1".
+190125-04:59:24,149 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon_surfs".
+190125-04:59:27,715 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon30" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon3/mapflow/_autorecon30".
+190125-04:59:27,717 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon31" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon3/mapflow/_autorecon31".
+190125-04:59:27,729 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon3 -hemi lh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-04:59:27,733 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon3 -hemi rh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-04:59:27,734 nipype.workflow INFO:
+	 [Node] Running "_autorecon30" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon3 -hemi lh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-04:59:27,739 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon3 -hemi lh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-04:59:27,751 nipype.workflow INFO:
+	 [Node] Running "_autorecon31" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon3 -hemi rh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-04:59:27,757 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon3 -hemi rh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+190125-06:05:12,609 nipype.workflow WARNING:
+	 [Node] Error on "_autorecon30" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS1005504_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon3/mapflow/_autorecon30)
+190125-06:05:13,917 nipype.workflow ERROR:
+	 Node _autorecon30 failed to run on host n020.
+190125-06:05:13,961 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1005504/log/20190124-160559_21cb2ded-ee96-4eb0-8bc2-e939a1ef41ec/crash-20190125-060513-pettitta-_autorecon30-db217b05-d20e-4fe2-8c69-f85ac638ac07.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
+    self.raise_exception(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+recon-all -autorecon3 -hemi lh -openmp 8 -subjid sub-ADS1005504 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nosphere -nosurfreg -nojacobian_white -noavgcurv -nocortparc -nopial
+Standard output:
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+Actual FREESURFER_HOME /opt/freesurfer
+-rw-rw-r-- 1 pettitta adapt_lab 151807 Jan 25 04:59 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts/recon-all.log
+Linux n020 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+'/opt/freesurfer/bin/recon-all' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Cortical ribbon mask Fri Jan 25 04:59:29 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri
+
+ mris_volmask --aseg_name aseg.presurf --label_left_white 2 --label_left_ribbon 3 --label_right_white 41 --label_right_ribbon 42 --save_ribbon sub-ADS1005504 
+
+SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+loading input data...
+computing distance to left white surface 
+computing distance to left pial surface 
+computing distance to right white surface 
+computing distance to right pial surface 
+ hemi masks overlap voxels = 231
+writing volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/ribbon.mgz
+mris_volmask took 28.93 minutes
+ writing ribbon files
+#-----------------------------------------
+#@# Parcellation Stats lh Fri Jan 25 05:28:25 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.stats -b -a ../label/lh.aparc.annot -c ../label/aparc.annot.ctab sub-ADS1005504 lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.annot.
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/wm.mgz...
+reading input surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+reading input pial surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial...
+reading input white surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 265700
+Total vertex volume 263124 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1455247 mm^3    (det: 1.338677 )
+lhCtxGM: 260166.171 359798.000  diff=-99631.8  pctdiff=-38.295
+rhCtxGM: 258403.287 357172.000  diff=-98768.7  pctdiff=-38.223
+lhCtxWM: 208890.974 301897.000  diff=-93006.0  pctdiff=-44.524
+rhCtxWM: 209951.426 304392.000  diff=-94440.6  pctdiff=-44.982
+SubCortGMVol  74950.000
+SupraTentVol  1015571.858 (1409367.000) diff=-393795.142 pctdiff=-38.776
+SupraTentVolNotVent  1004478.858 (1398274.000) diff=-393795.142 pctdiff=-39.204
+BrainSegVol  1618392.000 (1614700.000) diff=3692.000 pctdiff=0.228
+BrainSegVolNotVent  1602262.000 (1216299.858) diff=385962.142 pctdiff=24.089
+BrainSegVolNotVent  1602262.000
+CerebellumVol 203873.000
+VentChorVol   11093.000
+3rd4th5thCSF   5037.000
+CSFVol  1345.000, OptChiasmVol   115.000
+MaskVol 1969622.000
+ 2517   1361   3803  2.527 0.525     0.092     0.019       20     1.9  bankssts
+ 1102    492   1649  2.882 0.805     0.113     0.020       16     0.9  caudalanteriorcingulate
+ 4457   2305   7761  2.967 0.512     0.105     0.024       46     4.5  caudalmiddlefrontal
+ 2445   1144   2516  2.020 0.487     0.126     0.039       34     4.2  cuneus
+ 1046    547   2134  2.816 0.985     0.127     0.059       19     3.0  entorhinal
+ 6294   3241  11087  2.880 0.630     0.114     0.031       79     8.4  fusiform
+ 8119   4127  13055  2.659 0.512     0.107     0.025      103     8.3  inferiorparietal
+ 5327   2835  10331  2.990 0.692     0.111     0.035       67     7.9  inferiortemporal
+ 1689    812   2599  2.581 0.911     0.120     0.036       26     2.4  isthmuscingulate
+ 9549   4636  11680  2.209 0.566     0.116     0.030      118    11.9  lateraloccipital
+ 4376   2386   7667  2.774 0.705     0.120     0.041       59     7.8  lateralorbitofrontal
+ 5069   2529   6313  2.214 0.588     0.118     0.033       74     7.2  lingual
+ 4550   2306   6836  2.493 0.649     0.102     0.032       57     6.3  medialorbitofrontal
+ 5925   3087  10859  2.747 0.653     0.111     0.029       82     7.5  middletemporal
+ 1218    586   2188  3.184 0.798     0.100     0.028       12     1.4  parahippocampal
+ 2928   1487   4599  2.749 0.581     0.089     0.019       22     2.5  paracentral
+ 2928   1540   5336  2.814 0.554     0.097     0.028       28     3.4  parsopercularis
+ 1370    683   2718  2.826 0.796     0.132     0.053       25     3.3  parsorbitalis
+ 2329   1224   3512  2.594 0.566     0.106     0.030       25     2.7  parstriangularis
+ 2100   1024   1840  1.951 0.516     0.091     0.025       18     2.2  pericalcarine
+ 7712   3817  10120  2.239 0.698     0.100     0.023       73     7.6  postcentral
+ 1859    969   2930  2.600 0.724     0.117     0.026       25     2.1  posteriorcingulate
+ 9023   4345  14442  2.925 0.556     0.089     0.021       67     7.9  precentral
+ 7523   3941  11892  2.648 0.528     0.116     0.031       91     9.9  precuneus
+ 1093    519   1896  2.922 0.773     0.095     0.024       10     1.1  rostralanteriorcingulate
+ 9859   5080  16060  2.556 0.601     0.117     0.037      135    15.3  rostralmiddlefrontal
+15523   8045  29415  2.972 0.614     0.108     0.030      172    19.3  superiorfrontal
+ 9897   5085  14387  2.467 0.502     0.105     0.024      107     9.3  superiorparietal
+ 7836   4193  13812  2.774 0.653     0.096     0.026       81     8.5  superiortemporal
+ 9112   4755  15863  2.847 0.584     0.106     0.025       98     9.3  supramarginal
+  880    422   1901  2.824 0.808     0.134     0.055       17     2.1  frontalpole
+ 1212    689   2663  2.864 0.911     0.149     0.057       25     3.2  temporalpole
+ 1346    603   1722  2.518 0.462     0.098     0.020       13     1.0  transversetemporal
+ 4437   2281   7484  3.116 0.878     0.107     0.039       49     8.2  insula
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.pial.stats -b -a ../label/lh.aparc.annot -c ../label/aparc.annot.ctab sub-ADS1005504 lh pial 
+
+computing statistics for each annotation in ../label/lh.aparc.annot.
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/wm.mgz...
+reading input surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial...
+reading input pial surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial...
+reading input white surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 265700
+Total vertex volume 263124 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1455247 mm^3    (det: 1.338677 )
+lhCtxGM: 260166.171 359798.000  diff=-99631.8  pctdiff=-38.295
+rhCtxGM: 258403.287 357172.000  diff=-98768.7  pctdiff=-38.223
+lhCtxWM: 208890.974 301897.000  diff=-93006.0  pctdiff=-44.524
+rhCtxWM: 209951.426 304392.000  diff=-94440.6  pctdiff=-44.982
+SubCortGMVol  74950.000
+SupraTentVol  1015571.858 (1409367.000) diff=-393795.142 pctdiff=-38.776
+SupraTentVolNotVent  1004478.858 (1398274.000) diff=-393795.142 pctdiff=-39.204
+BrainSegVol  1618392.000 (1614700.000) diff=3692.000 pctdiff=0.228
+BrainSegVolNotVent  1602262.000 (1216299.858) diff=385962.142 pctdiff=24.089
+BrainSegVolNotVent  1602262.000
+CerebellumVol 203873.000
+VentChorVol   11093.000
+3rd4th5thCSF   5037.000
+CSFVol  1345.000, OptChiasmVol   115.000
+MaskVol 1969622.000
+ 2517   1540   3803  2.527 0.525     0.108     0.026       35     2.8  bankssts
+ 1102    642   1649  2.882 0.805     0.134     0.039       32     1.6  caudalanteriorcingulate
+ 4457   2792   7761  2.967 0.512     0.109     0.025       47     5.1  caudalmiddlefrontal
+ 2445   1367   2516  2.020 0.487     0.119     0.031       42     3.6  cuneus
+ 1046    885   2134  2.816 0.985     0.171     0.049       30     2.3  entorhinal
+ 6294   4298  11087  2.880 0.630     0.129     0.033       89     9.4  fusiform
+ 8119   5417  13055  2.659 0.512     0.120     0.025       92     9.4  inferiorparietal
+ 5327   3881  10331  2.990 0.692     0.136     0.037       79     9.2  inferiortemporal
+ 1689   1099   2599  2.581 0.911     0.142     0.042       36     3.0  isthmuscingulate
+ 9549   5797  11680  2.209 0.566     0.114     0.027      135    11.9  lateraloccipital
+ 4376   3118   7667  2.774 0.705     0.143     0.038       72     7.8  lateralorbitofrontal
+ 5069   3211   6313  2.214 0.588     0.124     0.032       67     7.3  lingual
+ 4550   3151   6836  2.493 0.649     0.136     0.036       69     7.8  medialorbitofrontal
+ 5925   4511  10859  2.747 0.653     0.137     0.031       67     8.9  middletemporal
+ 1218    848   2188  3.184 0.798     0.133     0.036       16     2.1  parahippocampal
+ 2928   1817   4599  2.749 0.581     0.106     0.026       28     3.4  paracentral
+ 2928   2090   5336  2.814 0.554     0.123     0.026       27     3.5  parsopercularis
+ 1370   1129   2718  2.826 0.796     0.145     0.035       22     2.3  parsorbitalis
+ 2329   1393   3512  2.594 0.566     0.115     0.028       39     2.7  parstriangularis
+ 2100    888   1840  1.951 0.516     0.104     0.029       29     2.8  pericalcarine
+ 7712   4998  10120  2.239 0.698     0.107     0.022       79     7.6  postcentral
+ 1859   1179   2930  2.600 0.724     0.132     0.038       41     2.9  posteriorcingulate
+ 9023   5331  14442  2.925 0.556     0.097     0.022       97     9.0  precentral
+ 7523   4839  11892  2.648 0.528     0.129     0.034       99    11.6  precuneus
+ 1093    726   1896  2.922 0.773     0.142     0.042       40     2.0  rostralanteriorcingulate
+ 9859   7091  16060  2.556 0.601     0.146     0.037      138    17.8  rostralmiddlefrontal
+15523  11070  29415  2.972 0.614     0.129     0.030      182    21.3  superiorfrontal
+ 9897   6207  14387  2.467 0.502     0.116     0.025      115    11.3  superiorparietal
+ 7836   5493  13812  2.774 0.653     0.121     0.028       82    10.4  superiortemporal
+ 9112   6174  15863  2.847 0.584     0.130     0.098      174    62.2  supramarginal
+  880    845   1901  2.824 0.808     0.197     0.043       13     1.9  frontalpole
+ 1212   1247   2663  2.864 0.911     0.188     0.049       15     3.0  temporalpole
+ 1346    811   1722  2.518 0.462     0.102     0.024       14     1.5  transversetemporal
+ 4437   2301   7484  3.116 0.878     0.118     0.039       86     7.9  insula
+#-----------------------------------------
+#@# Cortical Parc 2 lh Fri Jan 25 05:31:06 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-ADS1005504 lh ../surf/lh.sphere.reg /opt/freesurfer/average/lh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.a2009s.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /opt/freesurfer/average/lh.CDaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 2.9   using min determinant for regularization = 0.086
+0 singular and 762 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+89 labels changed using aseg
+relabeling using gibbs priors...
+000:  10960 changed, 171919 examined...
+001:   2607 changed, 42297 examined...
+002:    725 changed, 13560 examined...
+003:    317 changed, 4148 examined...
+004:    163 changed, 1803 examined...
+005:     80 changed, 921 examined...
+006:     34 changed, 472 examined...
+007:     22 changed, 197 examined...
+008:     11 changed, 121 examined...
+009:      5 changed, 50 examined...
+010:      2 changed, 34 examined...
+011:      0 changed, 15 examined...
+43 labels changed using aseg
+000: 333 total segments, 249 labels (3502 vertices) changed
+001: 106 total segments, 22 labels (74 vertices) changed
+002: 87 total segments, 3 labels (8 vertices) changed
+003: 84 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 44 changed)
+rationalizing unknown annotations with cortex label
+relabeling Medial_wall label...
+942 vertices marked for relabeling...
+942 labels changed in reclassification.
+writing output to ../label/lh.aparc.a2009s.annot...
+classification took 0 minutes and 43 seconds.
+#-----------------------------------------
+#@# Parcellation Stats 2 lh Fri Jan 25 05:31:49 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.a2009s.stats -b -a ../label/lh.aparc.a2009s.annot -c ../label/aparc.annot.a2009s.ctab sub-ADS1005504 lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.a2009s.annot.
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/wm.mgz...
+reading input surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+reading input pial surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial...
+reading input white surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 265700
+Total vertex volume 263124 (mask=0)
+reading colortable from annotation file...
+colortable with 76 entries read (originally Simple_surface_labels2008.txt)
+Saving annotation colortable ../label/aparc.annot.a2009s.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1455247 mm^3    (det: 1.338677 )
+lhCtxGM: 260166.171 359798.000  diff=-99631.8  pctdiff=-38.295
+rhCtxGM: 258403.287 357172.000  diff=-98768.7  pctdiff=-38.223
+lhCtxWM: 208890.974 301897.000  diff=-93006.0  pctdiff=-44.524
+rhCtxWM: 209951.426 304392.000  diff=-94440.6  pctdiff=-44.982
+SubCortGMVol  74950.000
+SupraTentVol  1015571.858 (1409367.000) diff=-393795.142 pctdiff=-38.776
+SupraTentVolNotVent  1004478.858 (1398274.000) diff=-393795.142 pctdiff=-39.204
+BrainSegVol  1618392.000 (1614700.000) diff=3692.000 pctdiff=0.228
+BrainSegVolNotVent  1602262.000 (1216299.858) diff=385962.142 pctdiff=24.089
+BrainSegVolNotVent  1602262.000
+CerebellumVol 203873.000
+VentChorVol   11093.000
+3rd4th5thCSF   5037.000
+CSFVol  1345.000, OptChiasmVol   115.000
+MaskVol 1969622.000
+ 2011   1067   3246  2.337 0.679     0.129     0.051       31     4.9  G&S_frontomargin
+ 2417   1260   3756  2.494 0.568     0.122     0.025       30     2.6  G&S_occipital_inf
+ 2618   1156   3730  2.624 0.704     0.090     0.021       24     2.4  G&S_paracentral
+ 2186   1109   3785  2.790 0.508     0.109     0.025       25     2.2  G&S_subcentral
+ 1381    666   2838  2.635 0.771     0.146     0.059       33     3.5  G&S_transv_frontopol
+ 2820   1392   4881  2.977 0.592     0.097     0.024       29     2.8  G&S_cingul-Ant
+ 1570    835   2618  2.902 0.531     0.104     0.021       15     1.3  G&S_cingul-Mid-Ant
+ 1822    991   3024  2.721 0.506     0.101     0.020       17     1.7  G&S_cingul-Mid-Post
+  767    399   1765  3.142 0.605     0.147     0.043       15     1.5  G_cingul-Post-dorsal
+  232    109    367  2.695 0.939     0.146     0.045        5     0.3  G_cingul-Post-ventral
+ 2227    994   2567  2.083 0.535     0.133     0.044       37     4.4  G_cuneus
+ 1939    994   4126  3.039 0.558     0.110     0.033       25     2.8  G_front_inf-Opercular
+  590    311   1488  3.258 0.605     0.152     0.063       15     1.6  G_front_inf-Orbital
+ 1278    644   2598  2.837 0.591     0.121     0.035       19     1.8  G_front_inf-Triangul
+ 4973   2488   9962  2.966 0.544     0.122     0.032       80     6.7  G_front_middle
+10892   5548  23192  3.117 0.621     0.118     0.036      143    17.2  G_front_sup
+  948    449   1616  3.009 1.000     0.129     0.078       17     4.1  G_Ins_lg&S_cent_ins
+  923    429   2395  3.814 0.925     0.115     0.035       14     1.5  G_insular_short
+ 2347   1143   4256  2.643 0.604     0.125     0.036       44     3.6  G_occipital_middle
+ 1792    817   2453  2.350 0.514     0.105     0.026       19     1.9  G_occipital_sup
+ 2392   1207   5032  3.078 0.538     0.135     0.039       44     3.8  G_oc-temp_lat-fusifor
+ 3612   1714   4831  2.225 0.618     0.132     0.041       72     6.4  G_oc-temp_med-Lingual
+ 2091   1012   4285  3.094 0.944     0.112     0.038       26     3.4  G_oc-temp_med-Parahip
+ 3368   1745   6896  2.797 0.650     0.138     0.055       64     8.2  G_orbital
+ 3355   1688   7093  2.971 0.568     0.128     0.036       63     4.6  G_pariet_inf-Angular
+ 4549   2281   9023  3.012 0.578     0.116     0.031       64     5.9  G_pariet_inf-Supramar
+ 3785   1927   6744  2.640 0.508     0.111     0.026       51     4.0  G_parietal_sup
+ 2698   1268   3997  2.330 0.671     0.102     0.025       28     2.7  G_postcentral
+ 3198   1409   6211  3.148 0.465     0.096     0.026       31     3.5  G_precentral
+ 3736   1943   7397  2.793 0.503     0.135     0.039       67     6.4  G_precuneus
+ 1790    862   3056  2.561 0.612     0.124     0.045       33     3.8  G_rectus
+  611    333    878  2.485 0.967     0.081     0.038        6     0.6  G_subcallosal
+  795    349   1249  2.590 0.556     0.102     0.023       10     0.8  G_temp_sup-G_T_transv
+ 2878   1480   6493  2.983 0.712     0.125     0.041       48     5.1  G_temp_sup-Lateral
+ 1076    615   2332  3.097 0.784     0.083     0.035       14     1.6  G_temp_sup-Plan_polar
+ 1227    656   2371  2.817 0.531     0.097     0.018       12     0.8  G_temp_sup-Plan_tempo
+ 2716   1429   6689  3.262 0.654     0.133     0.044       47     5.3  G_temporal_inf
+ 3403   1674   7313  2.950 0.684     0.120     0.035       61     5.3  G_temporal_middle
+  359    193    454  2.789 0.354     0.078     0.017        2     0.2  Lat_Fis-ant-Horizont
+  326    178    522  2.834 0.409     0.086     0.017        2     0.2  Lat_Fis-ant-Vertical
+ 2216   1173   2733  2.703 0.487     0.095     0.020       15     1.9  Lat_Fis-post
+ 3337   1469   3250  1.945 0.513     0.118     0.037       43     5.2  Pole_occipital
+ 2672   1424   5726  2.801 0.866     0.145     0.065       58     7.9  Pole_temporal
+ 2524   1318   2384  2.084 0.672     0.088     0.020       14     2.0  S_calcarine
+ 3623   1856   3464  2.104 0.654     0.083     0.018       16     2.7  S_central
+ 1505    814   1993  2.497 0.492     0.086     0.017        8     1.0  S_cingul-Marginalis
+  639    344   1038  3.272 0.494     0.078     0.021        3     0.5  S_circular_insula_ant
+ 1887   1033   2320  2.608 0.619     0.085     0.024       13     2.0  S_circular_insula_inf
+ 2116   1153   2631  2.787 0.563     0.083     0.017        9     1.5  S_circular_insula_sup
+ 1358    754   1718  2.551 0.473     0.082     0.013        6     0.8  S_collat_transv_ant
+  635    331    574  2.105 0.403     0.104     0.027        4     0.6  S_collat_transv_post
+ 3521   1834   4941  2.549 0.564     0.103     0.027       32     3.8  S_front_inf
+ 1247    654   1694  2.410 0.535     0.090     0.019        9     0.8  S_front_middle
+ 3353   1785   4534  2.659 0.431     0.085     0.016       19     2.2  S_front_sup
+  794    438    911  2.465 0.363     0.088     0.013        3     0.5  S_interm_prim-Jensen
+ 4495   2360   5030  2.322 0.403     0.090     0.017       32     3.2  S_intrapariet&P_trans
+  677    358    650  2.093 0.496     0.096     0.018        5     0.4  S_oc_middle&Lunatus
+ 1268    672   1390  2.265 0.422     0.094     0.017        8     0.8  S_oc_sup&transversal
+  687    371    720  2.482 0.455     0.104     0.026        6     0.6  S_occipital_ant
+ 1239    658   1577  2.826 0.536     0.091     0.019        8     1.0  S_oc-temp_lat
+ 2419   1306   3018  2.568 0.509     0.088     0.018       12     1.7  S_oc-temp_med&Lingual
+  610    321    582  2.057 0.395     0.095     0.020        3     0.5  S_orbital_lateral
+  905    498   1049  2.479 0.854     0.086     0.017        4     0.6  S_orbital_med-olfact
+ 1176    638   1439  2.433 0.732     0.103     0.034       10     1.5  S_orbital-H_Shaped
+ 2401   1241   2841  2.349 0.562     0.103     0.026       20     2.5  S_parieto_occipital
+ 1231    543    687  1.781 0.632     0.108     0.019       21     0.8  S_pericallosal
+ 3085   1664   3515  2.335 0.432     0.092     0.017       20     2.3  S_postcentral
+ 2266   1208   3270  2.785 0.499     0.090     0.018       15     1.7  S_precentral-inf-part
+ 1339    760   1900  2.782 0.344     0.082     0.017        7     1.0  S_precentral-sup-part
+ 1093    563   1127  2.247 0.421     0.075     0.014        5     0.6  S_suborbital
+ 1915   1011   2566  2.599 0.480     0.100     0.024       15     1.7  S_subparietal
+ 1477    792   1809  2.601 0.569     0.088     0.020        9     1.0  S_temporal_inf
+ 8743   4714  11902  2.512 0.481     0.089     0.017       61     6.0  S_temporal_sup
+  559    299    607  2.364 0.494     0.093     0.015        3     0.3  S_temporal_transverse
+#-----------------------------------------
+#@# Cortical Parc 3 lh Fri Jan 25 05:33:10 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ mris_ca_label -l ../label/lh.cortex.label -aseg ../mri/aseg.presurf.mgz -seed 1234 sub-ADS1005504 lh ../surf/lh.sphere.reg /opt/freesurfer/average/lh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs ../label/lh.aparc.DKTatlas.annot 
+
+setting seed for random number generator to 1234
+using ../mri/aseg.presurf.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /opt/freesurfer/average/lh.DKTaparc.atlas.acfb40.noaparc.i12.2016-08-02.gcs...
+reading color table from GCSA file....
+average std = 1.4   using min determinant for regularization = 0.020
+0 singular and 383 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+1876 labels changed using aseg
+relabeling using gibbs priors...
+000:   2525 changed, 171919 examined...
+001:    565 changed, 11234 examined...
+002:    167 changed, 3109 examined...
+003:     85 changed, 963 examined...
+004:     37 changed, 448 examined...
+005:     24 changed, 246 examined...
+006:     14 changed, 128 examined...
+007:     14 changed, 71 examined...
+008:      9 changed, 83 examined...
+009:     10 changed, 59 examined...
+010:     10 changed, 61 examined...
+011:     12 changed, 55 examined...
+012:      5 changed, 63 examined...
+013:      7 changed, 35 examined...
+014:      5 changed, 37 examined...
+015:      2 changed, 29 examined...
+016:      3 changed, 12 examined...
+017:      3 changed, 17 examined...
+018:      2 changed, 21 examined...
+019:      0 changed, 10 examined...
+338 labels changed using aseg
+000: 69 total segments, 36 labels (368 vertices) changed
+001: 33 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 3 changed)
+rationalizing unknown annotations with cortex label
+relabeling unknown label...
+relabeling corpuscallosum label...
+582 vertices marked for relabeling...
+582 labels changed in reclassification.
+writing output to ../label/lh.aparc.DKTatlas.annot...
+classification took 0 minutes and 34 seconds.
+#-----------------------------------------
+#@# Parcellation Stats 3 lh Fri Jan 25 05:33:44 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ mris_anatomical_stats -th3 -mgz -cortex ../label/lh.cortex.label -f ../stats/lh.aparc.DKTatlas.stats -b -a ../label/lh.aparc.DKTatlas.annot -c ../label/aparc.annot.DKTatlas.ctab sub-ADS1005504 lh white 
+
+computing statistics for each annotation in ../label/lh.aparc.DKTatlas.annot.
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/wm.mgz...
+reading input surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+reading input pial surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial...
+reading input white surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white...
+INFO: using TH3 volume calc
+INFO: assuming MGZ format for volumes.
+INFO: using ../label/lh.cortex.label as mask to calc cortex NumVert, SurfArea and MeanThickness.
+Using TH3 vertex volume calc
+Total face volume 265700
+Total vertex volume 263124 (mask=0)
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Saving annotation colortable ../label/aparc.annot.DKTatlas.ctab
+
+table columns are:
+    number of vertices
+    total surface area (mm^2)
+    total gray matter volume (mm^3)
+    average cortical thickness +- standard deviation (mm)
+    integrated rectified mean curvature
+    integrated rectified Gaussian curvature
+    folding index
+    intrinsic curvature index
+    structure name
+
+atlas_icv (eTIV) = 1455247 mm^3    (det: 1.338677 )
+lhCtxGM: 260166.171 359798.000  diff=-99631.8  pctdiff=-38.295
+rhCtxGM: 258403.287 357172.000  diff=-98768.7  pctdiff=-38.223
+lhCtxWM: 208890.974 301897.000  diff=-93006.0  pctdiff=-44.524
+rhCtxWM: 209951.426 304392.000  diff=-94440.6  pctdiff=-44.982
+SubCortGMVol  74950.000
+SupraTentVol  1015571.858 (1409367.000) diff=-393795.142 pctdiff=-38.776
+SupraTentVolNotVent  1004478.858 (1398274.000) diff=-393795.142 pctdiff=-39.204
+BrainSegVol  1618392.000 (1614700.000) diff=3692.000 pctdiff=0.228
+BrainSegVolNotVent  1602262.000 (1216299.858) diff=385962.142 pctdiff=24.089
+BrainSegVolNotVent  1602262.000
+CerebellumVol 203873.000
+VentChorVol   11093.000
+3rd4th5thCSF   5037.000
+CSFVol  1345.000, OptChiasmVol   115.000
+MaskVol 1969622.000
+ 1708    814   2888  2.983 0.714     0.114     0.026       24     1.6  caudalanteriorcingulate
+ 4728   2451   8232  2.956 0.512     0.105     0.024       50     4.7  caudalmiddlefrontal
+ 3418   1623   4020  2.150 0.522     0.121     0.036       47     5.3  cuneus
+  958    500   1904  2.824 0.997     0.126     0.058       17     2.7  entorhinal
+ 5327   2783   9069  2.860 0.584     0.111     0.028       61     5.9  fusiform
+ 8140   4163  13231  2.688 0.529     0.107     0.026      101     8.4  inferiorparietal
+ 5831   3060  11703  3.033 0.728     0.116     0.040       78    10.3  inferiortemporal
+ 1702    819   2599  2.599 0.902     0.118     0.035       25     2.4  isthmuscingulate
+ 9518   4631  11612  2.206 0.552     0.115     0.030      115    11.7  lateraloccipital
+ 5151   2746   8961  2.647 0.761     0.131     0.053       83    12.9  lateralorbitofrontal
+ 5204   2595   6488  2.200 0.591     0.119     0.034       77     7.5  lingual
+ 3974   1962   6075  2.502 0.676     0.105     0.037       57     6.3  medialorbitofrontal
+ 8207   4280  14568  2.695 0.646     0.108     0.029      109    10.3  middletemporal
+ 1296    624   2316  3.171 0.799     0.101     0.028       12     1.5  parahippocampal
+ 3418   1727   5651  2.828 0.597     0.089     0.020       26     2.8  paracentral
+ 2755   1452   4865  2.776 0.537     0.098     0.028       28     3.1  parsopercularis
+ 1335    689   2625  3.048 0.709     0.118     0.041       21     2.4  parsorbitalis
+ 2817   1468   4252  2.564 0.589     0.107     0.031       29     3.4  parstriangularis
+ 2102   1017   1842  1.959 0.515     0.091     0.025       18     2.2  pericalcarine
+ 8757   4359  11609  2.302 0.702     0.100     0.023       82     8.4  postcentral
+ 2242   1177   3623  2.583 0.702     0.119     0.026       32     2.6  posteriorcingulate
+ 9046   4359  14363  2.917 0.554     0.089     0.021       66     8.0  precentral
+ 7338   3853  11916  2.664 0.533     0.118     0.031       94     9.8  precuneus
+ 1561    787   2470  2.854 0.722     0.088     0.021       11     1.3  rostralanteriorcingulate
+ 7104   3644  12075  2.628 0.582     0.114     0.033       93    10.1  rostralmiddlefrontal
+16847   8717  31066  2.892 0.650     0.111     0.032      196    22.6  superiorfrontal
+ 8091   4176  11470  2.443 0.500     0.102     0.022       82     7.1  superiorparietal
+10788   5788  18984  2.753 0.680     0.102     0.029      122    12.9  superiortemporal
+ 8387   4379  14369  2.823 0.569     0.106     0.025       91     8.8  supramarginal
+ 1354    610   1730  2.517 0.462     0.098     0.020       13     1.0  transversetemporal
+ 3606   1871   6548  3.229 0.820     0.098     0.030       34     4.7  insula
+#-----------------------------------------
+#@# WM/GM Contrast lh Fri Jan 25 05:35:05 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+
+ pctsurfcon --s sub-ADS1005504 --lh-only 
+
+Log file is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts/pctsurfcon.log
+Fri Jan 25 05:35:05 UTC 2019
+setenv SUBJECTS_DIR /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+cd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts
+/opt/freesurfer/bin/pctsurfcon
+$Id: pctsurfcon,v 1.15 2016/02/12 21:43:15 zkaufman Exp $
+Linux n020 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+FREESURFER_HOME /opt/freesurfer
+mri_vol2surf --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/rawavg.mgz --hemi lh --noreshape --interp trilinear --projdist -1 --o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.wm.mgh --regheader sub-ADS1005504 --cortex
+srcvol = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/rawavg.mgz
+srcreg unspecified
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = lh
+ProjDist = -1
+reshape = 0
+interp = trilinear
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Computing registration from header.
+  Using /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/orig.mgz as target reference.
+-------- original matrix -----------
+-0.99963   0.02514  -0.01015   0.00000;
+-0.01014   0.00026   0.99995   0.00000;
+-0.02515  -0.99968  -0.00000  -0.00002;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.cortex.label
+Reading surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white
+Done reading source surface
+Mapping Source Volume onto Source Subject Surface
+ 1 -1 -1 -1
+using old
+Done mapping volume to surface
+Number of source voxels hit = 91405
+Masking with /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.cortex.label
+Writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.wm.mgh
+Dim: 171919 1 1
+mri_vol2surf --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/rawavg.mgz --hemi lh --noreshape --interp trilinear --o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.gm.mgh --projfrac 0.3 --regheader sub-ADS1005504 --cortex
+srcvol = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/rawavg.mgz
+srcreg unspecified
+srcregold = 0
+srcwarp unspecified
+surf = white
+hemi = lh
+ProjFrac = 0.3
+thickness = thickness
+reshape = 0
+interp = trilinear
+float2int = round
+GetProjMax = 0
+INFO: float2int code = 0
+Done loading volume
+Computing registration from header.
+  Using /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/orig.mgz as target reference.
+-------- original matrix -----------
+-0.99963   0.02514  -0.01015   0.00000;
+-0.01014   0.00026   0.99995   0.00000;
+-0.02515  -0.99968  -0.00000  -0.00002;
+ 0.00000   0.00000   0.00000   1.00000;
+-------- original matrix -----------
+Loading label /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.cortex.label
+Reading surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white
+Done reading source surface
+Reading thickness /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.thickness
+Done
+Mapping Source Volume onto Source Subject Surface
+ 1 0.3 0.3 0.3
+using old
+Done mapping volume to surface
+Number of source voxels hit = 107520
+Masking with /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.cortex.label
+Writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.gm.mgh
+Dim: 171919 1 1
+mri_concat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.wm.mgh /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/tmp.pctsurfcon.130148/lh.gm.mgh --paired-diff-norm --mul 100 --o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.w-g.pct.mgh
+ninputs = 2
+Checking inputs
+nframestot = 2
+Allocing output
+Done allocing
+Combining pairs
+nframes = 1
+Multiplying by 100.000000
+Writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.w-g.pct.mgh
+mri_segstats --in /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.w-g.pct.mgh --annot sub-ADS1005504 lh aparc --sum /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/stats/lh.w-g.pct.stats --snr
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --in /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.w-g.pct.mgh --annot sub-ADS1005504 lh aparc --sum /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/stats/lh.w-g.pct.stats --snr 
+sysname  Linux
+hostname n020
+machine  x86_64
+user     pettitta
+UseRobust  0
+Constructing seg from annotation
+
+Reading annotation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.aparc.annot
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Seg base 1000
+Loading /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.w-g.pct.mgh
+Vertex Area is 0.51296 mm^3
+Generating list of segmentation ids
+Found  36 segmentations
+Computing statistics for each segmentation
+
+Reporting on  35 segmentations
+Using PrintSegStat
+mri_segstats done
+Cleaning up
+#-----------------------------------------
+#@# Relabel Hypointensities Fri Jan 25 05:35:20 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri
+
+ mri_relabel_hypointensities aseg.presurf.mgz ../surf aseg.presurf.hypos.mgz 
+
+reading input surface ../surf/lh.white...
+relabeling lh hypointensities...
+2396 voxels changed to hypointensity...
+reading input surface ../surf/rh.white...
+relabeling rh hypointensities...
+2414 voxels changed to hypointensity...
+4756 hypointense voxels neighboring cortex changed
+#-----------------------------------------
+#@# AParc-to-ASeg aparc Fri Jan 25 05:36:16 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504
+
+ mri_aparc2aseg --s sub-ADS1005504 --volmask --aseg aseg.presurf.hypos --relabel mri/norm.mgz mri/transforms/talairach.m3z /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca mri/aseg.auto_noCCseg.label_intensities.txt 
+
+relabeling unlikely voxels interior to white matter surface:
+	norm: mri/norm.mgz
+	 XFORM: mri/transforms/talairach.m3z
+	GCA: /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca
+	label intensities: mri/aseg.auto_noCCseg.label_intensities.txt
+SUBJECTS_DIR /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+subject sub-ADS1005504
+outvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aparc+aseg.mgz
+useribbon 0
+baseoffset 0
+RipUnknown 0
+
+Reading lh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white
+
+Reading lh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial
+
+Loading lh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.aparc.annot
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+
+Reading rh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.white
+
+Reading rh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.pial
+
+Loading rh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/rh.aparc.annot
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Have color table for lh white annotation
+Have color table for rh white annotation
+Loading ribbon segmentation from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/ribbon.mgz
+
+Building hash of lh white
+
+Building hash of lh pial
+
+Building hash of rh white
+
+Building hash of rh pial
+
+Loading aseg from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aseg.presurf.hypos.mgz
+ASeg Vox2RAS: -----------
+-0.89844   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.89844  -115.00000;
+ 0.00000  -0.89844   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------------------------
+
+Labeling Slice
+relabeling unlikely voxels in interior of white matter
+setting orig areas to linear transform determinant scaled 8.88
+reading 47 labels from mri/aseg.auto_noCCseg.label_intensities.txt
+rescaling Left_Cerebral_White_Matter from 107 --> 106
+rescaling Left_Cerebral_Cortex from 61 --> 74
+rescaling Left_Lateral_Ventricle from 13 --> 33
+rescaling Left_Inf_Lat_Vent from 34 --> 42
+rescaling Left_Cerebellum_White_Matter from 86 --> 92
+rescaling Left_Cerebellum_Cortex from 60 --> 72
+rescaling Left_Thalamus from 94 --> 104
+rescaling Left_Thalamus_Proper from 84 --> 96
+rescaling Left_Caudate from 75 --> 90
+rescaling Left_Putamen from 80 --> 93
+rescaling Left_Pallidum from 98 --> 100
+rescaling Third_Ventricle from 25 --> 48
+rescaling Fourth_Ventricle from 22 --> 28
+rescaling Brain_Stem from 81 --> 85
+rescaling Left_Hippocampus from 57 --> 74
+rescaling Left_Amygdala from 56 --> 71
+rescaling CSF from 32 --> 69
+rescaling Left_Accumbens_area from 62 --> 73
+rescaling Left_VentralDC from 87 --> 95
+rescaling Right_Cerebral_White_Matter from 105 --> 104
+rescaling Right_Cerebral_Cortex from 58 --> 73
+rescaling Right_Lateral_Ventricle from 13 --> 28
+rescaling Right_Inf_Lat_Vent from 25 --> 30
+rescaling Right_Cerebellum_White_Matter from 87 --> 89
+rescaling Right_Cerebellum_Cortex from 59 --> 69
+rescaling Right_Thalamus_Proper from 85 --> 91
+rescaling Right_Caudate from 62 --> 86
+rescaling Right_Putamen from 80 --> 90
+rescaling Right_Pallidum from 97 --> 102
+rescaling Right_Hippocampus from 53 --> 74
+rescaling Right_Amygdala from 55 --> 73
+rescaling Right_Accumbens_area from 65 --> 85
+rescaling Right_VentralDC from 86 --> 98
+rescaling Fifth_Ventricle from 40 --> 58
+rescaling WM_hypointensities from 78 --> 78
+rescaling non_WM_hypointensities from 40 --> 44
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+ 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+ 40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59 
+ 60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79 
+ 80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 
+100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 
+120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 
+140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 
+160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 
+180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 
+200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 
+220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 nctx = 716248
+Used brute-force search on 0 voxels
+relabeling unlikely voxels in interior of white matter
+average std[0] = 7.3
+pass 1: 82 changed.
+pass 2: 8 changed.
+pass 3: 1 changed.
+pass 4: 1 changed.
+pass 5: 0 changed.
+nchanged = 0
+Writing output aseg to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aparc+aseg.mgz
+#-----------------------------------------
+#@# AParc-to-ASeg a2009s Fri Jan 25 05:45:57 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504
+
+ mri_aparc2aseg --s sub-ADS1005504 --volmask --aseg aseg.presurf.hypos --relabel mri/norm.mgz mri/transforms/talairach.m3z /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca mri/aseg.auto_noCCseg.label_intensities.txt --a2009s 
+
+relabeling unlikely voxels interior to white matter surface:
+	norm: mri/norm.mgz
+	 XFORM: mri/transforms/talairach.m3z
+	GCA: /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca
+	label intensities: mri/aseg.auto_noCCseg.label_intensities.txt
+SUBJECTS_DIR /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+subject sub-ADS1005504
+outvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aparc.a2009s+aseg.mgz
+useribbon 0
+baseoffset 10100
+RipUnknown 0
+
+Reading lh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white
+
+Reading lh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial
+
+Loading lh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.aparc.a2009s.annot
+reading colortable from annotation file...
+colortable with 76 entries read (originally Simple_surface_labels2008.txt)
+
+Reading rh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.white
+
+Reading rh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.pial
+
+Loading rh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/rh.aparc.a2009s.annot
+reading colortable from annotation file...
+colortable with 76 entries read (originally Simple_surface_labels2008.txt)
+Have color table for lh white annotation
+Have color table for rh white annotation
+Loading ribbon segmentation from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/ribbon.mgz
+
+Building hash of lh white
+
+Building hash of lh pial
+
+Building hash of rh white
+
+Building hash of rh pial
+
+Loading aseg from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aseg.presurf.hypos.mgz
+ASeg Vox2RAS: -----------
+-0.89844   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.89844  -115.00000;
+ 0.00000  -0.89844   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------------------------
+
+Labeling Slice
+relabeling unlikely voxels in interior of white matter
+setting orig areas to linear transform determinant scaled 8.88
+reading 47 labels from mri/aseg.auto_noCCseg.label_intensities.txt
+rescaling Left_Cerebral_White_Matter from 107 --> 106
+rescaling Left_Cerebral_Cortex from 61 --> 74
+rescaling Left_Lateral_Ventricle from 13 --> 33
+rescaling Left_Inf_Lat_Vent from 34 --> 42
+rescaling Left_Cerebellum_White_Matter from 86 --> 92
+rescaling Left_Cerebellum_Cortex from 60 --> 72
+rescaling Left_Thalamus from 94 --> 104
+rescaling Left_Thalamus_Proper from 84 --> 96
+rescaling Left_Caudate from 75 --> 90
+rescaling Left_Putamen from 80 --> 93
+rescaling Left_Pallidum from 98 --> 100
+rescaling Third_Ventricle from 25 --> 48
+rescaling Fourth_Ventricle from 22 --> 28
+rescaling Brain_Stem from 81 --> 85
+rescaling Left_Hippocampus from 57 --> 74
+rescaling Left_Amygdala from 56 --> 71
+rescaling CSF from 32 --> 69
+rescaling Left_Accumbens_area from 62 --> 73
+rescaling Left_VentralDC from 87 --> 95
+rescaling Right_Cerebral_White_Matter from 105 --> 104
+rescaling Right_Cerebral_Cortex from 58 --> 73
+rescaling Right_Lateral_Ventricle from 13 --> 28
+rescaling Right_Inf_Lat_Vent from 25 --> 30
+rescaling Right_Cerebellum_White_Matter from 87 --> 89
+rescaling Right_Cerebellum_Cortex from 59 --> 69
+rescaling Right_Thalamus_Proper from 85 --> 91
+rescaling Right_Caudate from 62 --> 86
+rescaling Right_Putamen from 80 --> 90
+rescaling Right_Pallidum from 97 --> 102
+rescaling Right_Hippocampus from 53 --> 74
+rescaling Right_Amygdala from 55 --> 73
+rescaling Right_Accumbens_area from 65 --> 85
+rescaling Right_VentralDC from 86 --> 98
+rescaling Fifth_Ventricle from 40 --> 58
+rescaling WM_hypointensities from 78 --> 78
+rescaling non_WM_hypointensities from 40 --> 44
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+ 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+ 40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59 
+ 60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79 
+ 80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 
+100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 
+120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 
+140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 
+160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 
+180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 
+200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 
+220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 nctx = 716428
+Used brute-force search on 0 voxels
+relabeling unlikely voxels in interior of white matter
+average std[0] = 7.3
+pass 1: 82 changed.
+pass 2: 8 changed.
+pass 3: 1 changed.
+pass 4: 1 changed.
+pass 5: 0 changed.
+nchanged = 0
+Writing output aseg to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aparc.a2009s+aseg.mgz
+#-----------------------------------------
+#@# AParc-to-ASeg DKTatlas Fri Jan 25 05:55:28 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504
+
+ mri_aparc2aseg --s sub-ADS1005504 --volmask --aseg aseg.presurf.hypos --relabel mri/norm.mgz mri/transforms/talairach.m3z /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca mri/aseg.auto_noCCseg.label_intensities.txt --annot aparc.DKTatlas --o mri/aparc.DKTatlas+aseg.mgz 
+
+relabeling unlikely voxels interior to white matter surface:
+	norm: mri/norm.mgz
+	 XFORM: mri/transforms/talairach.m3z
+	GCA: /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca
+	label intensities: mri/aseg.auto_noCCseg.label_intensities.txt
+SUBJECTS_DIR /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+subject sub-ADS1005504
+outvol mri/aparc.DKTatlas+aseg.mgz
+useribbon 0
+baseoffset 0
+RipUnknown 0
+
+Reading lh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.white
+
+Reading lh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/lh.pial
+
+Loading lh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/lh.aparc.DKTatlas.annot
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+
+Reading rh white surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.white
+
+Reading rh pial surface 
+ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/surf/rh.pial
+
+Loading rh annotations from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/label/rh.aparc.DKTatlas.annot
+reading colortable from annotation file...
+colortable with 36 entries read (originally /autofs/space/tanha_002/users/greve/fsdev.build/average/colortable_desikan_killiany.txt)
+Have color table for lh white annotation
+Have color table for rh white annotation
+Loading ribbon segmentation from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/ribbon.mgz
+
+Building hash of lh white
+
+Building hash of lh pial
+
+Building hash of rh white
+
+Building hash of rh pial
+
+Loading aseg from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri/aseg.presurf.hypos.mgz
+ASeg Vox2RAS: -----------
+-0.89844   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.89844  -115.00000;
+ 0.00000  -0.89844   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------------------------
+
+Labeling Slice
+relabeling unlikely voxels in interior of white matter
+setting orig areas to linear transform determinant scaled 8.88
+reading 47 labels from mri/aseg.auto_noCCseg.label_intensities.txt
+rescaling Left_Cerebral_White_Matter from 107 --> 106
+rescaling Left_Cerebral_Cortex from 61 --> 74
+rescaling Left_Lateral_Ventricle from 13 --> 33
+rescaling Left_Inf_Lat_Vent from 34 --> 42
+rescaling Left_Cerebellum_White_Matter from 86 --> 92
+rescaling Left_Cerebellum_Cortex from 60 --> 72
+rescaling Left_Thalamus from 94 --> 104
+rescaling Left_Thalamus_Proper from 84 --> 96
+rescaling Left_Caudate from 75 --> 90
+rescaling Left_Putamen from 80 --> 93
+rescaling Left_Pallidum from 98 --> 100
+rescaling Third_Ventricle from 25 --> 48
+rescaling Fourth_Ventricle from 22 --> 28
+rescaling Brain_Stem from 81 --> 85
+rescaling Left_Hippocampus from 57 --> 74
+rescaling Left_Amygdala from 56 --> 71
+rescaling CSF from 32 --> 69
+rescaling Left_Accumbens_area from 62 --> 73
+rescaling Left_VentralDC from 87 --> 95
+rescaling Right_Cerebral_White_Matter from 105 --> 104
+rescaling Right_Cerebral_Cortex from 58 --> 73
+rescaling Right_Lateral_Ventricle from 13 --> 28
+rescaling Right_Inf_Lat_Vent from 25 --> 30
+rescaling Right_Cerebellum_White_Matter from 87 --> 89
+rescaling Right_Cerebellum_Cortex from 59 --> 69
+rescaling Right_Thalamus_Proper from 85 --> 91
+rescaling Right_Caudate from 62 --> 86
+rescaling Right_Putamen from 80 --> 90
+rescaling Right_Pallidum from 97 --> 102
+rescaling Right_Hippocampus from 53 --> 74
+rescaling Right_Amygdala from 55 --> 73
+rescaling Right_Accumbens_area from 65 --> 85
+rescaling Right_VentralDC from 86 --> 98
+rescaling Fifth_Ventricle from 40 --> 58
+rescaling WM_hypointensities from 78 --> 78
+rescaling non_WM_hypointensities from 40 --> 44
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+ 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+ 40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59 
+ 60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79 
+ 80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 
+100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 
+120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 
+140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 
+160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 
+180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 
+200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 
+220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 nctx = 716428
+Used brute-force search on 0 voxels
+relabeling unlikely voxels in interior of white matter
+average std[0] = 7.3
+pass 1: 82 changed.
+pass 2: 8 changed.
+pass 3: 1 changed.
+pass 4: 1 changed.
+pass 5: 0 changed.
+nchanged = 0
+Writing output aseg to mri/aparc.DKTatlas+aseg.mgz
+#-----------------------------------------
+#@# APas-to-ASeg Fri Jan 25 06:04:56 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri
+
+ apas2aseg --i aparc+aseg.mgz --o aseg.mgz 
+
+Fri Jan 25 06:04:56 UTC 2019
+
+setenv SUBJECTS_DIR /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+cd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri
+/opt/freesurfer/bin/apas2aseg --i aparc+aseg.mgz --o aseg.mgz
+
+freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+$Id: apas2aseg,v 1.2 2016/02/12 21:43:14 zkaufman Exp $
+Linux n020 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+mri_binarize --i aparc+aseg.mgz --o aseg.mgz --replace 1000 3 --replace 2000 42 --replace 1001 3 --replace 2001 42 --replace 1002 3 --replace 2002 42 --replace 1003 3 --replace 2003 42 --replace 1004 3 --replace 2004 42 --replace 1005 3 --replace 2005 42 --replace 1006 3 --replace 2006 42 --replace 1007 3 --replace 2007 42 --replace 1008 3 --replace 2008 42 --replace 1009 3 --replace 2009 42 --replace 1010 3 --replace 2010 42 --replace 1011 3 --replace 2011 42 --replace 1012 3 --replace 2012 42 --replace 1013 3 --replace 2013 42 --replace 1014 3 --replace 2014 42 --replace 1015 3 --replace 2015 42 --replace 1016 3 --replace 2016 42 --replace 1017 3 --replace 2017 42 --replace 1018 3 --replace 2018 42 --replace 1019 3 --replace 2019 42 --replace 1020 3 --replace 2020 42 --replace 1021 3 --replace 2021 42 --replace 1022 3 --replace 2022 42 --replace 1023 3 --replace 2023 42 --replace 1024 3 --replace 2024 42 --replace 1025 3 --replace 2025 42 --replace 1026 3 --replace 2026 42 --replace 1027 3 --replace 2027 42 --replace 1028 3 --replace 2028 42 --replace 1029 3 --replace 2029 42 --replace 1030 3 --replace 2030 42 --replace 1031 3 --replace 2031 42 --replace 1032 3 --replace 2032 42 --replace 1033 3 --replace 2033 42 --replace 1034 3 --replace 2034 42 --replace 1035 3 --replace 2035 42
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/mri
+cmdline mri_binarize.bin --i aparc+aseg.mgz --o aseg.mgz --replace 1000 3 --replace 2000 42 --replace 1001 3 --replace 2001 42 --replace 1002 3 --replace 2002 42 --replace 1003 3 --replace 2003 42 --replace 1004 3 --replace 2004 42 --replace 1005 3 --replace 2005 42 --replace 1006 3 --replace 2006 42 --replace 1007 3 --replace 2007 42 --replace 1008 3 --replace 2008 42 --replace 1009 3 --replace 2009 42 --replace 1010 3 --replace 2010 42 --replace 1011 3 --replace 2011 42 --replace 1012 3 --replace 2012 42 --replace 1013 3 --replace 2013 42 --replace 1014 3 --replace 2014 42 --replace 1015 3 --replace 2015 42 --replace 1016 3 --replace 2016 42 --replace 1017 3 --replace 2017 42 --replace 1018 3 --replace 2018 42 --replace 1019 3 --replace 2019 42 --replace 1020 3 --replace 2020 42 --replace 1021 3 --replace 2021 42 --replace 1022 3 --replace 2022 42 --replace 1023 3 --replace 2023 42 --replace 1024 3 --replace 2024 42 --replace 1025 3 --replace 2025 42 --replace 1026 3 --replace 2026 42 --replace 1027 3 --replace 2027 42 --replace 1028 3 --replace 2028 42 --replace 1029 3 --replace 2029 42 --replace 1030 3 --replace 2030 42 --replace 1031 3 --replace 2031 42 --replace 1032 3 --replace 2032 42 --replace 1033 3 --replace 2033 42 --replace 1034 3 --replace 2034 42 --replace 1035 3 --replace 2035 42 
+sysname  Linux
+hostname n020
+machine  x86_64
+user     pettitta
+
+input      aparc+aseg.mgz
+frame      0
+nErode3d   0
+nErode2d   0
+output     aseg.mgz
+Binarizing based on threshold
+min        -infinity
+max        +infinity
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Replacing 72
+ 1:  1000    3
+ 2:  2000   42
+ 3:  1001    3
+ 4:  2001   42
+ 5:  1002    3
+ 6:  2002   42
+ 7:  1003    3
+ 8:  2003   42
+ 9:  1004    3
+10:  2004   42
+11:  1005    3
+12:  2005   42
+13:  1006    3
+14:  2006   42
+15:  1007    3
+16:  2007   42
+17:  1008    3
+18:  2008   42
+19:  1009    3
+20:  2009   42
+21:  1010    3
+22:  2010   42
+23:  1011    3
+24:  2011   42
+25:  1012    3
+26:  2012   42
+27:  1013    3
+28:  2013   42
+29:  1014    3
+30:  2014   42
+31:  1015    3
+32:  2015   42
+33:  1016    3
+34:  2016   42
+35:  1017    3
+36:  2017   42
+37:  1018    3
+38:  2018   42
+39:  1019    3
+40:  2019   42
+41:  1020    3
+42:  2020   42
+43:  1021    3
+44:  2021   42
+45:  1022    3
+46:  2022   42
+47:  1023    3
+48:  2023   42
+49:  1024    3
+50:  2024   42
+51:  1025    3
+52:  2025   42
+53:  1026    3
+54:  2026   42
+55:  1027    3
+56:  2027   42
+57:  1028    3
+58:  2028   42
+59:  1029    3
+60:  2029   42
+61:  1030    3
+62:  2030   42
+63:  1031    3
+64:  2031   42
+65:  1032    3
+66:  2032   42
+67:  1033    3
+68:  2033   42
+69:  1034    3
+70:  2034   42
+71:  1035    3
+72:  2035   42
+Found 0 values in range
+Counting number of voxels in first frame
+Found 0 voxels in final mask
+Count: 0 0.000000 16777216 0.000000
+mri_binarize done
+ 
+Started at Fri Jan 25 06:04:56 UTC 2019 
+Ended   at Fri Jan 25 06:05:05 UTC 2019
+Apas2aseg-Run-Time-Sec 9
+ 
+apas2aseg Done
+#--------------------------------------------
+#@# ASeg Stats Fri Jan 25 06:05:05 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504
+
+ mri_segstats --seg mri/aseg.mgz --sum stats/aseg.stats --pv mri/norm.mgz --empty --brainmask mri/brainmask.mgz --brain-vol-from-seg --excludeid 0 --excl-ctxgmwm --supratent --subcortgray --in mri/norm.mgz --in-intensity-name norm --in-intensity-units MR --etiv --surf-wm-vol --surf-ctx-vol --totalgray --euler --ctab /opt/freesurfer/ASegStatsLUT.txt --subject sub-ADS1005504 
+
+
+$Id: mri_segstats.c,v 1.121 2016/05/31 17:27:11 greve Exp $
+cwd 
+cmdline mri_segstats --seg mri/aseg.mgz --sum stats/aseg.stats --pv mri/norm.mgz --empty --brainmask mri/brainmask.mgz --brain-vol-from-seg --excludeid 0 --excl-ctxgmwm --supratent --subcortgray --in mri/norm.mgz --in-intensity-name norm --in-intensity-units MR --etiv --surf-wm-vol --surf-ctx-vol --totalgray --euler --ctab /opt/freesurfer/ASegStatsLUT.txt --subject sub-ADS1005504 
+sysname  Linux
+hostname n020
+machine  x86_64
+user     pettitta
+UseRobust  0
+atlas_icv (eTIV) = 1455247 mm^3    (det: 1.338677 )
+mghRead(mri/aseg.mgz): could not read 262144 bytes at slice 110
+Computing euler number
+orig.nofix lheno =  -88, rheno = -88
+orig.nofix lhholes =   45, rhholes = 45
+Loading mri/aseg.mgz
+No such file or directory
+ERROR: loading mri/aseg.mgz
+Linux n020 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-ADS1005504 exited with ERRORS at Fri Jan 25 06:05:12 UTC 2019
+
+For more details, see the log file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1005504/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Standard error:
+
+Return code: 1
+
+190125-06:20:19,654 nipype.workflow INFO:
+	 [Node] Finished "_autorecon31".
+190125-06:20:21,672 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS1005504_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon3
+
+
+
+done
+
+-------------------------------
