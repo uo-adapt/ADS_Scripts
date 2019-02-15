@@ -806,3 +806,339 @@ fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_
 190215-20:52:51,970 nipype.workflow INFO:
 	 [Node] Running "fmap2ref_reg" ("niworkflows.interfaces.registration.ANTSRegistrationRPT"), a CommandLine Interface with command:
 antsRegistration --collapse-output-transforms 1 --dimensionality 3 --float 1 --initialize-transforms-per-stage 0 --interpolation LanczosWindowedSinc --output [ transform, transform_Warped.nii.gz, transform_InverseWarped.nii.gz ] --transform Translation[ 0.05 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 500, 1e-07, 200 ] --smoothing-sigmas 8.0mm --shrink-factors 2 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --transform Affine[ 0.01 ] --metric Mattes[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz, /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain.nii.gz, 1, 64, Random, 0.5 ] --convergence [ 200, 1e-08, 100 ] --smoothing-sigmas 2.0mm --shrink-factors 1 --use-estimate-learning-rate-once 1 --use-histogram-matching 1 --winsorize-image-intensities [ 0.005, 0.998 ]  --write-composite-transform 1
+190215-20:56:26,531 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.mcflirt".
+190215-20:56:28,377 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.normalize_motion" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_hmc_wf/normalize_motion".
+190215-20:56:28,385 nipype.workflow INFO:
+	 [Node] Running "normalize_motion" ("niworkflows.interfaces.utils.NormalizeMotionParams")
+190215-20:56:28,538 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.normalize_motion".
+190215-20:56:28,708 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.fsl2itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_hmc_wf/fsl2itk".
+190215-20:56:28,914 nipype.workflow INFO:
+	 [Node] Running "fsl2itk" ("fmriprep.interfaces.itk.MCFLIRT2ITK")
+190215-20:56:31,968 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.fdisp" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/fdisp".
+190215-20:56:31,997 nipype.workflow INFO:
+	 [Node] Running "fdisp" ("nipype.algorithms.confounds.FramewiseDisplacement")
+190215-20:56:32,76 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.fdisp".
+190215-20:57:06,125 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg".
+190215-20:57:08,904 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply".
+190215-20:57:08,916 nipype.workflow INFO:
+	 [Node] Running "fmap_fov2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fieldmap_fov_mask/filled.nii.gz --interpolation NearestNeighbor --output filled_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:09,794 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply".
+190215-20:57:09,810 nipype.workflow INFO:
+	 [Node] Running "fmap_mask2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask.nii.gz --interpolation MultiLabel --output sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:09,969 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_apply".
+190215-20:57:09,986 nipype.workflow INFO:
+	 [Node] Running "fmap2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/phdiff_wf/compfmap/sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap.nii.gz --interpolation BSpline --output sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:10,511 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_reg".
+190215-20:57:11,600 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply".
+190215-20:57:13,6 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply".
+190215-20:57:13,25 nipype.workflow INFO:
+	 [Node] Running "fmap_fov2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fieldmap_fov_mask/filled.nii.gz --interpolation NearestNeighbor --output filled_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:14,435 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_fov2ref_apply".
+190215-20:57:14,524 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply".
+190215-20:57:14,529 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_apply".
+190215-20:57:14,534 nipype.workflow INFO:
+	 [Node] Running "fmap_mask2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/bet/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask.nii.gz --interpolation MultiLabel --output sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:14,544 nipype.workflow INFO:
+	 [Node] Running "fmap2ref_apply" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/phdiff_wf/compfmap/sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap.nii.gz --interpolation BSpline --output sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap2ref_reg/transformComposite.h5
+190215-20:57:21,408 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply".
+190215-20:57:23,678 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190215-20:57:23,692 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask_trans_dil.nii.gz
+190215-20:57:24,895 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190215-20:57:31,476 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap_mask2ref_apply".
+190215-20:57:33,572 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190215-20:57:33,587 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask_trans_dil.nii.gz
+190215-20:57:34,825 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190215-20:57:57,259 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.mcflirt".
+190215-20:57:59,489 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.normalize_motion" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/normalize_motion".
+190215-20:57:59,502 nipype.workflow INFO:
+	 [Node] Running "normalize_motion" ("niworkflows.interfaces.utils.NormalizeMotionParams")
+190215-20:57:59,538 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.normalize_motion".
+190215-20:58:00,736 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.fsl2itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_hmc_wf/fsl2itk".
+190215-20:58:00,861 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply".
+190215-20:58:00,933 nipype.workflow INFO:
+	 [Node] Running "fsl2itk" ("fmriprep.interfaces.itk.MCFLIRT2ITK")
+190215-20:58:02,967 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.fdisp" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/fdisp".
+190215-20:58:02,974 nipype.workflow INFO:
+	 [Node] Running "fdisp" ("nipype.algorithms.confounds.FramewiseDisplacement")
+190215-20:58:03,16 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.fdisp".
+190215-20:58:04,884 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.fmap2ref_apply".
+190215-20:58:07,660 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads".
+190215-20:58:07,756 nipype.workflow INFO:
+	 [Node] Running "torads" ("fmriprep.interfaces.fmap.FieldToRadS")
+190215-20:58:08,135 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads".
+190215-20:58:10,348 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads".
+190215-20:58:10,398 nipype.workflow INFO:
+	 [Node] Running "torads" ("fmriprep.interfaces.fmap.FieldToRadS")
+190215-20:58:10,605 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.torads".
+190215-20:58:10,687 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/gen_vsm".
+190215-20:58:10,703 nipype.workflow INFO:
+	 [Node] Running "gen_vsm" ("nipype.interfaces.fsl.preprocess.FUGUE"), a CommandLine Interface with command:
+fugue --dwell=0.0003499990 --loadfmap=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads/sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad.nii.gz --mask=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask_trans.nii.gz --unmaskshift --saveshift=sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked.nii.gz --unwarpdir=y-
+190215-20:58:11,811 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm".
+190215-20:58:12,590 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/gen_vsm".
+190215-20:58:12,614 nipype.workflow INFO:
+	 [Node] Running "gen_vsm" ("nipype.interfaces.fsl.preprocess.FUGUE"), a CommandLine Interface with command:
+fugue --dwell=0.0003499990 --loadfmap=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/torads/sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad.nii.gz --mask=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_mask2ref_apply/sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask_trans.nii.gz --unmaskshift --saveshift=sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked.nii.gz --unwarpdir=y-
+190215-20:58:14,18 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.gen_vsm".
+190215-20:58:15,333 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/demean".
+190215-20:58:15,462 nipype.workflow INFO:
+	 [Node] Running "demean" ("fmriprep.interfaces.images.DemeanImage")
+190215-20:58:15,646 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean".
+190215-20:58:16,908 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/demean".
+190215-20:58:16,954 nipype.workflow INFO:
+	 [Node] Running "demean" ("fmriprep.interfaces.images.DemeanImage")
+190215-20:58:17,108 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.demean".
+190215-20:58:17,929 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm".
+190215-20:58:18,52 nipype.workflow INFO:
+	 [Node] Running "vsm2dfm" ("fmriprep.interfaces.itk.FUGUEvsm2ANTSwarp")
+190215-20:58:18,245 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm".
+190215-20:58:19,196 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm".
+190215-20:58:19,417 nipype.workflow INFO:
+	 [Node] Running "vsm2dfm" ("fmriprep.interfaces.itk.FUGUEvsm2ANTSwarp")
+190215-20:58:19,599 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.vsm2dfm".
+190215-20:58:20,905 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference".
+190215-20:58:20,908 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/jac_dfm".
+190215-20:58:20,914 nipype.workflow INFO:
+	 [Node] Running "unwarp_reference" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --interpolation LanczosWindowedSinc --output ref_image_valid_corrected_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz
+190215-20:58:20,922 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference".
+190215-20:58:20,933 nipype.workflow INFO:
+	 [Node] Running "jac_dfm" ("nipype.interfaces.ants.utils.CreateJacobianDeterminantImage"), a CommandLine Interface with command:
+CreateJacobianDeterminantImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz jacobian.nii.gz
+190215-20:58:20,953 nipype.workflow INFO:
+	 [Node] Running "unwarp_reference" ("niworkflows.interfaces.registration.ANTSApplyTransformsRPT"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --interpolation LanczosWindowedSinc --output ref_image_valid_corrected_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS9304_ses-wave3_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz
+190215-20:58:21,59 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/jac_dfm".
+190215-20:58:21,120 nipype.workflow INFO:
+	 [Node] Running "jac_dfm" ("nipype.interfaces.ants.utils.CreateJacobianDeterminantImage"), a CommandLine Interface with command:
+CreateJacobianDeterminantImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/vsm2dfm/sub-ADS9304_ses-wave2_phasediff_rads_unwrapped_filt_demean_maths_fmap_trans_rad_vsm_unmasked_demeaned_antswarp.nii.gz jacobian.nii.gz
+190215-20:58:25,345 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm".
+190215-20:58:25,763 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.jac_dfm".
+190215-20:58:29,898 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference".
+190215-20:58:30,350 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.unwarp_reference".
+190215-20:58:32,943 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask".
+190215-20:58:32,944 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask".
+190215-20:58:32,952 nipype.workflow INFO:
+	 [Node] Running "apply_fov_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference/ref_image_valid_corrected_trans.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply/filled_trans.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz
+190215-20:58:32,957 nipype.workflow INFO:
+	 [Node] Running "apply_fov_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/unwarp_reference/ref_image_valid_corrected_trans.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/fmap_fov2ref_apply/filled_trans.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz
+190215-20:58:33,745 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask".
+190215-20:58:33,780 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.apply_fov_mask".
+190215-20:58:38,52 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+190215-20:58:38,65 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct".
+190215-20:58:38,91 nipype.workflow INFO:
+	 [Node] Running "n4_correct" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz --mask-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/check_hdr/sub-ADS9304_ses-wave2_magnitude1_avg_corrected_brain_mask_trans_dil_hdr.nii.gz --output ref_image_valid_corrected_trans_masked_corrected.nii.gz
+190215-20:58:38,98 nipype.workflow INFO:
+	 [Node] Running "n4_correct" ("nipype.interfaces.ants.segmentation.N4BiasFieldCorrection"), a CommandLine Interface with command:
+N4BiasFieldCorrection -d 3 --input-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/apply_fov_mask/ref_image_valid_corrected_trans_masked.nii.gz --mask-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/check_hdr/sub-ADS9304_ses-wave3_magnitude1_avg_corrected_brain_mask_trans_dil_hdr.nii.gz --output ref_image_valid_corrected_trans_masked_corrected.nii.gz
+190215-20:58:44,144 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+190215-20:58:44,606 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.n4_correct".
+190215-20:58:46,182 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+190215-20:58:46,183 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass".
+190215-20:58:46,217 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected_trans_masked_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -f 0.20 -m
+190215-20:58:46,222 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_pass" ("nipype.interfaces.fsl.preprocess.BET"), a CommandLine Interface with command:
+bet /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/n4_correct/ref_image_valid_corrected_trans_masked_corrected.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -f 0.20 -m
+190215-20:58:59,872 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190215-20:59:00,154 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_pass".
+190215-20:59:02,214 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190215-20:59:02,215 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate".
+190215-20:59:02,224 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz
+190215-20:59:02,230 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -kernel sphere 6.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz
+190215-20:59:03,952 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190215-20:59:04,114 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_dilate".
+190215-20:59:05,858 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190215-20:59:05,861 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask".
+190215-20:59:05,878 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190215-20:59:05,887 nipype.workflow INFO:
+	 [Node] Running "skullstrip_first_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_dilate/ref_image_valid_corrected_trans_masked_corrected_brain_mask_dil.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_mask/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190215-20:59:06,694 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190215-20:59:06,808 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_first_mask".
+190215-20:59:08,312 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize".
+190215-20:59:08,315 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize".
+190215-20:59:08,348 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190215-20:59:08,354 nipype.workflow INFO:
+	 [Node] Running "unifize" ("nipype.interfaces.afni.utils.Unifize"), a CommandLine Interface with command:
+3dUnifize -clfrac 0.2 -rbt 18.3 65.0 90.0 -prefix uni.nii.gz -T2 -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/unifize/ref_image_valid_corrected_trans_masked_corrected_brain_masked.nii.gz
+190215-20:59:13,685 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize".
+190215-20:59:13,957 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.unifize".
+190215-20:59:16,35 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190215-20:59:16,37 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize".
+190215-20:59:16,60 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190215-20:59:16,78 nipype.workflow INFO:
+	 [Node] Running "fixhdr_unifize" ("niworkflows.interfaces.utils.CopyXForm")
+190215-20:59:16,240 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190215-20:59:16,253 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_unifize".
+190215-20:59:17,956 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190215-20:59:17,958 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass".
+190215-20:59:17,977 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190215-20:59:17,987 nipype.workflow INFO:
+	 [Node] Running "skullstrip_second_pass" ("nipype.interfaces.afni.preprocess.Automask"), a CommandLine Interface with command:
+3dAutomask -apply_prefix uni_xform_masked.nii.gz -dilate 1 -prefix uni_xform_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_second_pass/uni_xform.nii.gz
+190215-20:59:19,147 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190215-20:59:19,251 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.skullstrip_second_pass".
+190215-20:59:22,200 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190215-20:59:22,201 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2".
+190215-20:59:22,212 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190215-20:59:22,214 nipype.workflow INFO:
+	 [Node] Running "fixhdr_skullstrip2" ("niworkflows.interfaces.utils.CopyXForm")
+190215-20:59:22,330 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190215-20:59:22,336 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.fixhdr_skullstrip2".
+190215-20:59:24,38 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190215-20:59:24,58 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz
+190215-20:59:24,148 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks".
+190215-20:59:24,165 nipype.workflow INFO:
+	 [Node] Running "combine_masks" ("nipype.interfaces.fsl.maths.BinaryMaths"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/skullstrip_first_pass/ref_image_valid_corrected_trans_masked_corrected_brain_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_skullstrip2/uni_xform_mask_xform.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz
+190215-20:59:24,752 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190215-20:59:24,867 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.combine_masks".
+190215-20:59:26,102 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190215-20:59:26,106 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask".
+190215-20:59:26,121 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190215-20:59:26,127 nipype.workflow INFO:
+	 [Node] Running "apply_mask" ("nipype.interfaces.fsl.maths.ApplyMask"), a CommandLine Interface with command:
+fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/fixhdr_unifize/uni_xform.nii.gz -mas /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_trans_masked_corrected_brain_mask_maths.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/sdc_wf/sdc_unwarp_wf/enhance_and_skullstrip_bold_wf/apply_mask/uni_xform_masked.nii.gz
+190215-20:59:26,697 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190215-20:59:27,32 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.sdc_wf.sdc_unwarp_wf.enhance_and_skullstrip_bold_wf.apply_mask".
+190215-21:00:38,406 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_hmc_wf.fsl2itk".
+190215-21:00:42,18 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave2_task_rest_wf.bold_bold_trans_wf.bold_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave2_task_rest_wf/bold_bold_trans_wf/bold_transform".
+190215-21:00:42,93 nipype.workflow INFO:
+	 [Node] Running "bold_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
+190215-21:02:39,972 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_hmc_wf.fsl2itk".
+190215-21:02:46,568 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9304_wf.func_preproc_ses_wave3_task_rest_wf.bold_bold_trans_wf.bold_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9304_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_transform".
+190215-21:02:46,868 nipype.workflow INFO:
+	 [Node] Running "bold_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
