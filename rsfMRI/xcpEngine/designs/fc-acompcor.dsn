@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
 ###################################################################
 
 
@@ -33,7 +33,7 @@
 ###################################################################
 
 analysis=fc_$(whoami)
-design=/data/jux/BBL/projects/testACT/script/designfiles/fc-acompcor.dsn
+design=
 sequence=anatomical
 standard=MNI%2x2x2
 
@@ -41,13 +41,13 @@ standard=MNI%2x2x2
 # PIPELINE
 ###################################################################
 
-pipeline=prestats,confound2,regress,fcon,reho,alff,roiquant,norm,qcfc
+pipeline=prestats,confound2,regress,fcon,reho,alff,seed,roiquant,norm
 
 ###################################################################
 # 1 PRESTATS
 ###################################################################
 
-prestats_rerun[1]=1
+prestats_rerun[1]=0
 prestats_cleanup[1]=1
 prestats_process[1]=FMP
 
@@ -66,9 +66,10 @@ confound2_aroma[2]=0
 confound2_past[2]=0
 confound2_dx[2]=1
 confound2_sq[2]=1
+confound2_custom[2]=
 confound2_censor[2]=0
 confound2_censor_contig[2]=0
-confound2_rerun[2]=1
+confound2_rerun[2]=0
 confound2_cleanup[2]=1
 
 ###################################################################
@@ -96,7 +97,7 @@ regress_process[3]=DMT-TMP-REG
 # 4 FCON
 ###################################################################
 
-fcon_atlas[4]=power264
+fcon_atlas[4]=all
 fcon_metric[4]=corrcoef
 fcon_thr[4]=N
 fcon_window[4]=10
@@ -127,26 +128,29 @@ alff_rerun[6]=0
 alff_cleanup[6]=1
 
 ###################################################################
-# 7 ROIQUANT
+# 7 SEED
 ###################################################################
 
-roiquant_atlas[7]=power264
-roiquant_globals[7]=1
-roiquant_vol[7]=0
-roiquant_rerun[7]=0
-roiquant_cleanup[7]=1
+seed_lib[7]=
+seed_metric[7]=corrcoef
+seed_sptf[7]=susan
+seed_smo[7]=6
+seed_rerun[7]=1
+seed_cleanup[7]=1
 
 ###################################################################
-# 8 NORM
+# 8 ROIQUANT
 ###################################################################
-norm_primary[8]=1
-norm_rerun[8]=0
-norm_cleanup[8]=1
 
-##################################################################
-# 9 QCFC
+roiquant_atlas[8]=all
+roiquant_globals[8]=1
+roiquant_vol[8]=0
+roiquant_rerun[8]=0
+roiquant_cleanup[8]=1
+
 ###################################################################
-qcfc_atlas[9]=power264
-qcfc_sig[9]=fdr
-qcfc_rerun[9]=0
-qcfc_cleanup[9]=1
+# 9 NORM
+###################################################################
+norm_primary[9]=1
+norm_rerun[9]=0
+norm_cleanup[9]=1

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
 ###################################################################
 
 
@@ -34,7 +34,7 @@
 
 analysis=task_$(whoami)
 design=${XCPEDIR}/designs/task.dsn
-sequence=anatomical
+sequence=nback
 standard=MNI%2x2x2
 
 ###################################################################
@@ -47,7 +47,7 @@ pipeline=task,roiquant,norm
 # 1 TASK
 ###################################################################
 
-task_design[1]=task.fsf
+task_design[1]=${fsf[sub]}
 task_fmriprep[1]=1
 task_rerun[1]=N
 task_cleanup[1]=Y
