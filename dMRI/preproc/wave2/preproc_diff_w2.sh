@@ -51,24 +51,15 @@ cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
 cp sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz data.nii.gz
 
 # [Register it to the brain extracted freesurfer output]
-
+# convert freesurfer brain.mgz to nifti 
+# MRI Convert to nifti
+# fslrieront2std brain.nii.gz brain_reor
 
 # Linear registration of mprage to standard space
 mkdir reg
 cd reg
 echo "${subid}" linear registration mprage to MNI
 
-# change the -in to freesurfer brain extracted image
-/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/anat/mprage_brain.nii.gz  -ref /packages/fsl/5.0.10/install/data/standard/MNI152_T1_2mm_brain -out "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni -omat "$outputdir"/"${subid}"/ses-wave2/anat/reg/struct2mni.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 12  -interp trilinear
-
-# Non-linear warp of linear registration using the non brain extracted version
-# Make sure to use non brain extracted freesurfer output for the --in=
-echo warping "${subid}" registration nonlinearly
-fnirt --in=../sub-"${subid}"_ses-wave2_T1w.nii.gz --aff=struct2mni.mat --cout=struct2mni_warp --ref=/packages/fsl/5.0.10/install/data/standard/MNI152_T1_2mm_brain.nii.gz
-
-# Inverting non-linear warp
-echo inverting "${subid}" non-linear warp
-invwarp --ref=../mprage_brain.nii.gz --warp=struct2mni_warp.nii.gz --out=mni2struct_warp
 
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
@@ -81,7 +72,7 @@ dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
 cd "$outputdir"/"${subid}"/ses-wave2/anat/reg
 echo "${subid}" linear registration FA map to mprage
-/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-wave2/anat/mprage_brain.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-wave2/anat/[freesurfer brain] -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
 
 # Inverse of transformation above (i.e., creating image to transform standard-space masks into diffusion space)
 echo inverting "${subid}" FA-to-structural transformation
