@@ -1,62 +1,148 @@
 Some packages in this Docker container are non-free
 If you are considering commercial use of this container, please consult the relevant license:
 https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Licence
--d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv,/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 1 -i $TMPDIR -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv,/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 1 -i $TMPDIR
+-d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 1 -i $TMPDIR -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 1 -i $TMPDIR
 
 Constructing a pipeline based on user specifications
 ····································································
 · [D][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn]
 · [I][$TMPDIR]
-· [C]Missing or empty cohort file
-· [C]Aborting
-___________________________________________________________________
+· [C][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS1421.csv]
+· [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data]
+· [M][Executing serially]
+····································································
+
+Checking general dependencies
+····································································
+· Version AFNI           AFNI_18.2.13) 
+· Version ANTs           2.2.0.dev815-g0740f 
+· Version FSL            fsl-5.0.10 
+· Version C3D            1.1.0 
+· Version JQ             jq-1.5
+· Version XCP Engine     xcpEngine-v0.7.0-prerelease
+· R version              3.3.3 
+· R scripting front-end  3.3.3 
+· · RNifti version       0.8.1
+· · optparse version     1.6.0
+· · pracma version       2.1.4
+· · signal version       0.7.6
+····································································
+All general dependencies are present.
+
+Checking environment
+All environmental variables are defined.
+
+Checking module-specific dependencies
 
 
-   Usage: xcpEngine -d <design> <options>
-
-   Compulsory arguments:
-    -d : Primary design file for pipeline:
-         The design file specifies the pipeline modules to
-         be included in the current analysis and configures
-         any parameters necessary to run the modules.
-    -c : Cohort file for pipeline input:
-         A comma-separated catalogue of the analytic sample.
-         Each row corresponds to a subject, and each column
-         corresponds either to an identifier or to an input.
-    -o : Parent directory for pipeline output:
-         A valid path on the current filesystem specifying
-         the directory wherein all output from the current
-         analysis will be written.
-
-   Optional arguments:
-    -m : Execution mode:
-         Input can either be 's' (for serial execution on a
-         single machine)[default], 'c' (for execution on a
-         computing cluster) or a path to a file (for execution
-         on a computing cluster, subject to the specifications
-         defined in the file).
-    -i : Scratch space for pipeline intermediates:
-         Some systems operate more quickly when temporary
-         files are written in a dedicated scratch space. This
-         argument enables a scratch space for intermediates.
-    -r : Root directory for inputs:
-         If all paths defined in the cohort file are defined
-         relative to a root directory, then this argument will
-         define the root directory. Otherwise, all paths will
-         be treated as absolute.
-    -t : Trace:
-         Integer value ( 0 - 3 ) that indicates the level
-         of verbosity during module execution. Higher
-         levels reduce readability but provide useful
-         information for troubleshooting.
-         0  [default]: Human-readable explanations of
-            processing steps and error traces only.
-         1: Explicitly trace module-level computations.
-            Print a workflow map when execution completes.
-         2: Explicitly trace module- and utility-level
-            computations.
-         3: All commands called by the module and all
-            children are traced and explicitly replicated
-            in a log file.
 
 
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+#  [0;31m☭[0m                      XCP [0;31m★ ★ ★[0m ENGINE                     [0;31m☭[0m  #
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m LOCALISER [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#                                                                 #
+#  ☭                   XCP ENGINE LOCALISER                    ☭  #
+#                                                                 #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################
+source space map '' is not an image
+····································································
+Processing step complete:
+Localising subject metadata...
+····································································
+Processing step complete:
+Localising image
+····································································
+Processing step complete:
+Localising design
+
+
+Localiser complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m struc [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+#                                                                 #
+#  ☭               STRUCTURAL PROCESSING MODULE                ☭  #
+#                                                                 #
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/sub-ADS1421.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc]
+NATIVE:LPI TEMPLATE:RPI
+WM[4]
+WM 4
+---------------------  Running antsCorticalThickness.sh on n022  ---------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsBrainExtraction.sh -d 3 -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421~TEMP~_RPI.nii.gz -e /xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz -f /xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz -m /xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_ -k 0 -s nii.gz -q 0 -u 0 -z 0
+ 
+Will run Atropos segmentation with K=3. Classes labeled in order of mean intensity. Assuming CSF=1, GM=2, WM=3
+
+---------------------  Running antsBrainExtraction.sh on n022  ---------------------
+
+--------------------------------------------------------------------------------------
+ Bias correction of anatomical images (pre brain extraction)
+   1) pre-process by truncating the image intensities
+   2) run N4
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_N4Truncated0.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421~TEMP~_RPI.nii.gz 0.01 0.999 256
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_N4Truncated0.nii.gz -s 4 -c [50x50x50x50,0.0000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_N4Corrected0.nii.gz --verbose 1
+
+Running N4 for 3-dimensional images.
+
+Mask not read.  Using the entire image as the mask.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 0.000428389 (threshold = 1e-07)
+  Iteration 2 (of 50).   Current convergence value = 0.000388076 (threshold = 1e-07)
