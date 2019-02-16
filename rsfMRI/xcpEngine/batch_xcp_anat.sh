@@ -8,11 +8,11 @@
 # Set group and study variables
 
 group_dir=/projects/adapt_lab/shared
-study="SHARP"
+study="ADS"
 
 # Point to the FULL cohort file that we'll be pulling from
 
-FULL_COHORT=/projects/adapt_lab/shared/SHARP/SHARP_Scripts/rsfMRI/xcpEngine/anat_cohort.csv
+FULL_COHORT=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv
 
 # This creates an array so that it can be called in the for loop below. I'm sure there's a more elegant way to do this but this is what I got
 
@@ -36,7 +36,7 @@ echo $LINE >> $TEMP_COHORT # Writes the subject specific row to the file
 ses=${TEMP_COHORT#*,}
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses} --job-name xcp_anat_"${ID}" --partition=long --mem=10G -o "${group_dir}"/"${study}"/SHARP_Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/SHARP_Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses} --job-name xcp_anat_"${ID}" --partition=long --mem=10G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
 
 
 done

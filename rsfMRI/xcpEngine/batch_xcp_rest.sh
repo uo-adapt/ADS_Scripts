@@ -6,11 +6,11 @@
 # Set group and study variables
 
 group_dir=/projects/adapt_lab/shared
-study="SHARP"
+study="ADS"
 
 # Point to the FULL cohort file that we'll be pulling from
 
-FULL_COHORT=/projects/adapt_lab/shared/SHARP/SHARP_Scripts/rsfMRI/xcpEngine/rest_cohort.csv
+FULL_COHORT=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv
 
 # This creates an array so that it can be called in the for loop below. I'm sure there's a more elegant way to do this but this is what I got
 
@@ -36,7 +36,7 @@ ses=${ses%%,*}
 run=${TEMP_COHORT##*,}
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run} --job-name xcp_rest_"${ID}" --partition=long --mem=40G -o "${group_dir}"/"${study}"/SHARP_Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/SHARP_Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run} --job-name xcp_rest_"${ID}" --partition=long --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
 
 
 done

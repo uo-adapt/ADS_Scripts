@@ -6,9 +6,9 @@ import csv
 # Set study info (may need to change for your study)
 # These variables are used only in this file for paths. Can omit if wanted.
 group = "adapt_lab"
-study = "SHARP"
+study = "ADS"
 PI = "Allen"
-scriptsFolder = "SHARP_Scripts"
+scriptsFolder = "Scripts"
 
 # The following variables are used in the main script and need to be defined here. 
 # They need to exist prior to running the script
@@ -16,12 +16,12 @@ scriptsFolder = "SHARP_Scripts"
 # Directories
 parentdir = os.path.join(os.sep, "projects", group, "shared", study) 
 codedir = os.path.join(parentdir, scriptsFolder, "rsfMRI", "xcpEngine") 
-fmriprepdir = os.path.join(parentdir,"bids_data","derivatives","fmriprep")
+fmriprepdir = os.path.join(parentdir,"data","BIDS_data","derivatives","fmriprep")
 
 
 # Each wave that should be represented. It should be noted that this script assumes the same number and type of 
 # scans are the same throughout each run. If this is not the case...good luck coding!
-waves = {"ses-1"}
+waves = {"ses-2","ses-3"}
 
 
 # Change this to either be anatomical (anat) or functional (func)
