@@ -21,7 +21,6 @@ fmriprepdir = os.path.join(parentdir,"data","BIDS_data","derivatives","fmriprep"
 
 # Each wave that should be represented. It should be noted that this script assumes the same number and type of 
 # scans are the same throughout each run. If this is not the case...good luck coding!
-waves = {"ses-2","ses-3"}
 
 
 # Change this to either be anatomical (anat) or functional (func)
@@ -35,13 +34,13 @@ subjectdir_contents.sort()
 
 with open(os.path.join(codedir, preproc + '_cohort.csv'),'w',newline='') as f1:
 	writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
-	head = ["id0,id1,img"]
+	head = ["id0,img"]
 	writer.writerow(head)
-	for subject, wave in [(subject,wave) for subject in subjectdir_contents for wave in waves]:
+	for subject in subjectdir_contents:
 		subjectpath = os.path.join(fmriprepdir,subject)
 		if os.path.isdir(subjectpath):
 			filepath = os.path.join(subjectpath,preproc,subject + "_desc-preproc_T1w.nii.gz")
 			if os.path.isfile(filepath):
-				row = [subject + "," + wave + "," + filepath]
+				row = [subject + "," + filepath]
 				writer.writerow(row)
 				
