@@ -33,10 +33,10 @@ echo $LINE >> $TEMP_COHORT # Writes the subject specific row to the file
 
 # This gets the session, becasue I couldn't figure out a way to pass a variable with a comma in it, so we'll just have to put them together in the job script
 
-ses=${TEMP_COHORT#*,}
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses} --job-name xcp_anat_"${ID}" --partition=long --mem=10G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
+
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT} --job-name xcp_anat_"${ID}" --partition=long --mem=10G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
 
 
 done

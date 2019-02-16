@@ -17,7 +17,7 @@ HOME=/projects/adapt_lab/shared/ADS
 
 singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
    -d ${HOME}/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn \
-   -c "${TEMP_COHORT}",${ses} \
+   -c "${TEMP_COHORT}" \
    -o ${HOME}/data/BIDS_data/derivatives/xcpEngine/data \
    -t 1 \
    -i \$TMPDIR
