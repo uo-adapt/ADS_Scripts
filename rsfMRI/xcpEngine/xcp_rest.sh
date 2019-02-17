@@ -16,7 +16,7 @@ SIMG=/projects/adapt_lab/shared/containers/xcpEngine.simg
 HOME=/projects/adapt_lab/shared/ADS
 
 singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
-   -d ${HOME}/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201901170904.dsn \
+   -d ${HOME}/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA+GSR_201902171323.dsn \
    -c "${TEMP_COHORT}",${ses},${run} \
    -o ${HOME}/data/BIDS_data/derivatives/xcpEngine/data \
    -t 1 \
