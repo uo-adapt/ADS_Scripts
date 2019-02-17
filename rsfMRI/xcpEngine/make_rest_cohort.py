@@ -22,7 +22,6 @@ xcpdir = os.path.join(parentdir,"data","BIDS_data","derivatives","xcpEngine","da
 # Each wave that should be represented. It should be noted that this script assumes the same number and type of 
 # scans are the same throughout each run. If this is not the case...good luck coding!
 waves = {"ses-1"}
-runs = {"run-01","run-02"}
 tasks = {"rest"}
 
 
@@ -41,13 +40,13 @@ for task in tasks:
         writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
         head = ["id0,id1,id2,img,antsct"]
         writer.writerow(head)
-        for subject, wave, run in [(subject,wave,run) for subject in subjectdir_contents for wave in waves for run in runs]:
+        for subject, wave in [(subject,wave) for subject in subjectdir_contents for wave in waves]:
             subjectpath = os.path.join(fmriprepdir,subject)
             if os.path.isdir(subjectpath):
                 wavepath = os.path.join(subjectpath,wave)
                 if os.path.isdir(wavepath):
-                    filepath = os.path.join(wavepath,preproc,subject + "_" + wave + "_task-" + task + "_"+ run + "_space-T1w_desc-preproc_bold.nii.gz")
+                    filepath = os.path.join(wavepath,preproc,subject + "_" + wave + "_task-" + task + "_space-T1w_desc-preproc_bold.nii.gz")
                     if os.path.isfile(filepath):
-                        row = [subject + "," + wave + "," + run + "," + filepath + "," + os.path.join(xcpdir,subject,wave,"struc")]
+                        row = [subject + "," + wave + "," + filepath + "," + os.path.join(xcpdir,subject,wave,"struc")]
                         writer.writerow(row)
                         
