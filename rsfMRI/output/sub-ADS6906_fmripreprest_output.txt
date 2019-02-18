@@ -3106,3 +3106,210 @@ antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shar
 	 [Node] "_update_metadata3" found cached.
 190217-22:54:17,701 nipype.workflow INFO:
 	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_surf_wf.update_metadata".
+190218-01:09:52,924 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.anat_preproc_wf.t1_2_mni".
+190218-01:09:55,834 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.anat_preproc_wf.mni_mask" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_mask".
+190218-01:09:55,847 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.mrg_xfms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/carpetplot_wf/mrg_xfms".
+190218-01:09:55,869 nipype.workflow INFO:
+	 [Node] Running "mrg_xfms" ("nipype.interfaces.utility.base.Merge")
+190218-01:09:55,872 nipype.workflow INFO:
+	 [Node] Running "mni_mask" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/surface_recon_wf/refine/highres001_N4Corrected0_rbrainmask.nii.gz --interpolation MultiLabel --output highres001_N4Corrected0_rbrainmask_trans.nii.gz --reference-image /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5
+190218-01:09:55,887 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.mrg_xfms".
+190218-01:09:58,674 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.mrg_xfms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/carpetplot_wf/mrg_xfms".
+190218-01:09:58,720 nipype.workflow INFO:
+	 [Node] Running "mrg_xfms" ("nipype.interfaces.utility.base.Merge")
+190218-01:09:58,734 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.mrg_xfms".
+190218-01:10:02,34 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.anat_preproc_wf.mni_seg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_seg".
+190218-01:10:02,84 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.resample_parc" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/carpetplot_wf/resample_parc".
+190218-01:10:02,85 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.mask_mni_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/mask_mni_tfm".
+190218-01:10:02,151 nipype.workflow INFO:
+	 [Node] Running "mni_seg" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_seg/highres001_N4Corrected0_masked_seg.nii.gz --interpolation MultiLabel --output highres001_N4Corrected0_masked_seg_trans.nii.gz --reference-image /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5
+190218-01:10:02,239 nipype.workflow INFO:
+	 [Node] Running "resample_parc" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_label-carpet_atlas.nii.gz --interpolation MultiLabel --output tpl-MNI152NLin2009cAsym_space-MNI_res-01_label-carpet_atlas_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_inv/affine.txt --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniInverseComposite.h5
+190218-01:10:02,269 nipype.workflow INFO:
+	 [Node] Running "mask_mni_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --interpolation MultiLabel --output ref_image_valid_corrected_brain_mask_maths_trans.nii.gz --reference-image /templateflow/tpl-MNI152Lin/tpl-MNI152Lin_space-MNI_res-02_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5 --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt
+190218-01:10:02,288 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_to_mni_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_to_mni_transform".
+190218-01:10:02,394 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.mask_mni_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/mask_mni_tfm".
+190218-01:10:02,429 nipype.workflow INFO:
+	 [Node] Running "bold_to_mni_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
+190218-01:10:02,435 nipype.workflow INFO:
+	 [Node] Running "mask_mni_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --interpolation MultiLabel --output ref_image_valid_corrected_brain_mask_maths_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/gen_ref/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w_reference.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5 --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt
+190218-01:10:02,714 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_to_mni_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_to_mni_transform".
+190218-01:10:02,745 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.resample_parc" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/carpetplot_wf/resample_parc".
+190218-01:10:02,746 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.mask_mni_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/mask_mni_tfm".
+190218-01:10:02,794 nipype.workflow INFO:
+	 [Node] Running "resample_parc" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_label-carpet_atlas.nii.gz --interpolation MultiLabel --output tpl-MNI152NLin2009cAsym_space-MNI_res-01_label-carpet_atlas_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_inv/affine.txt --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniInverseComposite.h5
+190218-01:10:02,800 nipype.workflow INFO:
+	 [Node] Running "mask_mni_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --interpolation MultiLabel --output ref_image_valid_corrected_brain_mask_maths_trans.nii.gz --reference-image /templateflow/tpl-MNI152Lin/tpl-MNI152Lin_space-MNI_res-02_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5 --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt
+190218-01:10:02,822 nipype.workflow INFO:
+	 [Node] Running "bold_to_mni_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
+190218-01:10:02,843 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.mask_mni_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/mask_mni_tfm".
+190218-01:10:02,844 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms0".
+190218-01:10:02,845 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms1".
+190218-01:10:02,866 nipype.workflow INFO:
+	 [Node] Running "_mni_tpms0" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_seg/highres001_N4Corrected0_masked_prob_0.nii.gz --interpolation Linear --output highres001_N4Corrected0_masked_prob_0_trans.nii.gz --reference-image /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5
+190218-01:10:02,866 nipype.workflow INFO:
+	 [Node] Running "mask_mni_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_bold_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/combine_masks/ref_image_valid_corrected_brain_mask_maths.nii.gz --interpolation MultiLabel --output ref_image_valid_corrected_brain_mask_maths_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/gen_ref/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w_reference.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5 --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/fsl2itk_fwd/affine.txt
+190218-01:10:02,867 nipype.workflow INFO:
+	 [Node] Running "_mni_tpms1" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_seg/highres001_N4Corrected0_masked_prob_1.nii.gz --interpolation Linear --output highres001_N4Corrected0_masked_prob_1_trans.nii.gz --reference-image /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5
+190218-01:10:09,847 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.resample_parc".
+190218-01:10:12,970 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.mask_mni_tfm".
+190218-01:10:18,757 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.conf_plot" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/carpetplot_wf/conf_plot".
+190218-01:10:18,902 nipype.workflow INFO:
+	 [Node] Running "conf_plot" ("fmriprep.interfaces.confounds.FMRISummary")
+190218-01:10:23,213 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190218-01:10:23,245 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/mask_mni_tfm/ref_image_valid_corrected_brain_mask_maths_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/ref_image_valid_corrected_brain_mask_maths_trans_dil.nii.gz
+190218-01:10:27,48 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190218-01:10:29,678 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms2".
+190218-01:10:29,699 nipype.workflow INFO:
+	 [Node] Running "_mni_tpms2" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --dimensionality 3 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_seg/highres001_N4Corrected0_masked_prob_2.nii.gz --interpolation Linear --output highres001_N4Corrected0_masked_prob_2_trans.nii.gz --reference-image /templateflow/tpl-MNI152NLin2009cAsym/tpl-MNI152NLin2009cAsym_space-MNI_res-01_T1w.nii.gz --transform /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/t1_2_mni/ants_t1_to_mniComposite.h5
+190218-01:10:42,418 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.resample_parc".
+190218-01:10:47,619 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.conf_plot" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/carpetplot_wf/conf_plot".
+190218-01:10:47,640 nipype.workflow INFO:
+	 [Node] Running "conf_plot" ("fmriprep.interfaces.confounds.FMRISummary")
+190218-01:11:02,301 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.mask_mni_tfm".
+190218-01:11:02,695 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.mask_mni_tfm".
+190218-01:11:07,23 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190218-01:11:07,36 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/mask_mni_tfm/ref_image_valid_corrected_brain_mask_maths_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/ref_image_valid_corrected_brain_mask_maths_trans_dil.nii.gz
+190218-01:11:10,160 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190218-01:11:10,173 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/mask_mni_tfm/ref_image_valid_corrected_brain_mask_maths_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/ref_image_valid_corrected_brain_mask_maths_trans_dil.nii.gz
+190218-01:11:13,691 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190218-01:11:18,680 nipype.workflow INFO:
+	 [Node] Finished "_mni_tpms0".
+190218-01:11:18,782 nipype.workflow INFO:
+	 [Node] Finished "_mni_tpms1".
+190218-01:11:25,717 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.carpetplot_wf.conf_plot".
+190218-01:11:37,50 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190218-01:11:47,857 nipype.workflow INFO:
+	 [Node] Finished "_mni_tpms2".
+190218-01:11:49,841 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.carpetplot_wf.conf_plot".
+190218-01:11:51,356 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.anat_preproc_wf.mni_tpms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms".
+190218-01:11:51,362 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms0".
+190218-01:11:51,364 nipype.workflow INFO:
+	 [Node] Cached "_mni_tpms0" - collecting precomputed outputs
+190218-01:11:51,364 nipype.workflow INFO:
+	 [Node] "_mni_tpms0" found cached.
+190218-01:11:51,365 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms1".
+190218-01:11:51,366 nipype.workflow INFO:
+	 [Node] Cached "_mni_tpms1" - collecting precomputed outputs
+190218-01:11:51,366 nipype.workflow INFO:
+	 [Node] "_mni_tpms1" found cached.
+190218-01:11:51,367 nipype.workflow INFO:
+	 [Node] Setting-up "_mni_tpms2" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/anat_preproc_wf/mni_tpms/mapflow/_mni_tpms2".
+190218-01:11:51,368 nipype.workflow INFO:
+	 [Node] Cached "_mni_tpms2" - collecting precomputed outputs
+190218-01:11:51,368 nipype.workflow INFO:
+	 [Node] "_mni_tpms2" found cached.
+190218-01:11:51,392 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.anat_preproc_wf.mni_tpms".
+190218-01:14:23,917 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.mask_mni_tfm".
+190218-01:14:30,472 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate".
+190218-01:14:30,554 nipype.workflow INFO:
+	 [Node] Running "pre_mask_dilate" ("nipype.interfaces.fsl.maths.DilateImage"), a CommandLine Interface with command:
+fslmaths -dt char /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/mask_mni_tfm/ref_image_valid_corrected_brain_mask_maths_trans.nii.gz -kernel sphere 3.0000 -dilF /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_reference_wf/enhance_and_skullstrip_bold_wf/pre_mask_dilate/ref_image_valid_corrected_brain_mask_maths_trans_dil.nii.gz
+190218-01:14:55,74 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_reference_wf.enhance_and_skullstrip_bold_wf.pre_mask_dilate".
+190218-01:14:58,785 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.ica_aroma_wf.bold_mni_trans_wf.bold_to_mni_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/ica_aroma_wf/bold_mni_trans_wf/bold_to_mni_transform".
+190218-01:14:58,984 nipype.workflow INFO:
+	 [Node] Running "bold_to_mni_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
+190218-01:31:46,721 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_to_mni_transform".
+190218-01:31:49,752 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.merge" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/merge".
+190218-01:31:50,178 nipype.workflow INFO:
+	 [Node] Running "merge" ("fmriprep.interfaces.nilearn.Merge")
+190218-01:35:42,953 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.merge".
+190218-01:35:53,711 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.validate" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/validate".
+190218-01:35:53,715 nipype.workflow INFO:
+	 [Node] Running "validate" ("fmriprep.interfaces.images.ValidateImage")
+190218-01:35:53,830 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.validate".
+190218-01:35:59,525 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/gen_ref".
+190218-01:35:59,529 nipype.workflow INFO:
+	 [Node] Running "gen_ref" ("niworkflows.interfaces.registration.EstimateReferenceImage")
+190218-01:36:06,201 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:++ 3dvolreg: AFNI version=Debian-16.2.07~dfsg.1-5~nd16.04+1 (Jun 12 2017) [64-bit]
+190218-01:36:06,202 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:++ Authored by: RW Cox
+190218-01:36:06,202 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:** AFNI converts NIFTI_datatype=4 (INT16) in file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/gen_ref/slice.nii.gz to FLOAT32
+190218-01:36:06,202 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:     Warnings of this type will be muted for this session.
+190218-01:36:06,202 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:     Set AFNI_NIFTI_TYPE_WARN to YES to see them all, NO to see none.
+190218-01:36:06,202 nipype.interface INFO:
+	 stderr 2019-02-18T01:36:06.201716:++ Coarse del was 10, replaced with 4
+190218-01:41:33,951 nipype.interface INFO:
+	 stderr 2019-02-18T01:41:33.951403:++ Max displacement in automask = 0.31 (mm) at sub-brick 16
+190218-01:41:33,951 nipype.interface INFO:
+	 stderr 2019-02-18T01:41:33.951403:++ Max delta displ  in automask = 0.24 (mm) at sub-brick 9
+190218-01:41:53,31 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.gen_ref".
+190218-01:41:57,589 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.validate_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave3_task_rest_wf/bold_mni_trans_wf/bold_reference_wf/validate_ref".
+190218-01:41:57,592 nipype.workflow INFO:
+	 [Node] Running "validate_ref" ("fmriprep.interfaces.images.ValidateImage")
+190218-01:41:57,604 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave3_task_rest_wf.bold_mni_trans_wf.bold_reference_wf.validate_ref".
+190218-01:42:05,708 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6906_wf.func_preproc_ses_wave2_task_rest_wf.bold_mni_trans_wf.bold_to_mni_transform" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6906_wf/func_preproc_ses_wave2_task_rest_wf/bold_mni_trans_wf/bold_to_mni_transform".
+190218-01:42:05,912 nipype.workflow INFO:
+	 [Node] Running "bold_to_mni_transform" ("fmriprep.interfaces.itk.MultiApplyTransforms")
