@@ -1597,3 +1597,2677 @@ recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc
 recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
 190216-22:02:05,654 nipype.interface INFO:
 	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190219-17:29:07,198 nipype.workflow WARNING:
+	 [Node] Error on "_autorecon_surfs1" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1)
+190219-17:29:07,867 nipype.workflow ERROR:
+	 Node _autorecon_surfs1 failed to run on host n048.
+190219-17:29:07,932 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS9622/log/20190216-015202_78fa2fec-10b5-4e71-b6d7-c8040916db17/crash-20190219-172907-pettitta-_autorecon_surfs1-d8db5053-43ca-47b3-8e98-e5d6a78a6bf1.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
+    self.raise_exception(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+Standard output:
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+Actual FREESURFER_HOME /opt/freesurfer
+Linux n048 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+'/opt/freesurfer/bin/recon-all' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all.local-copy'
+#--------------------------------------------
+#@# Tessellate rh Sat Feb 16 22:02:07 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mri_pretess ../mri/filled.mgz 127 ../mri/norm.mgz ../mri/filled-pretess127.mgz 
+
+
+Iteration Number : 1
+pass   1 (xy+):   6 found -   6 modified     |    TOTAL:   6
+pass   2 (xy+):   0 found -   6 modified     |    TOTAL:   6
+pass   1 (xy-):  10 found -  10 modified     |    TOTAL:  16
+pass   2 (xy-):   0 found -  10 modified     |    TOTAL:  16
+pass   1 (yz+):   3 found -   3 modified     |    TOTAL:  19
+pass   2 (yz+):   0 found -   3 modified     |    TOTAL:  19
+pass   1 (yz-):  25 found -  25 modified     |    TOTAL:  44
+pass   2 (yz-):   0 found -  25 modified     |    TOTAL:  44
+pass   1 (xz+):   4 found -   4 modified     |    TOTAL:  48
+pass   2 (xz+):   0 found -   4 modified     |    TOTAL:  48
+pass   1 (xz-):   3 found -   3 modified     |    TOTAL:  51
+pass   2 (xz-):   0 found -   3 modified     |    TOTAL:  51
+Iteration Number : 1
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 1
+pass   1 (++):   8 found -   8 modified     |    TOTAL:   8
+pass   2 (++):   0 found -   8 modified     |    TOTAL:   8
+pass   1 (+-):   2 found -   2 modified     |    TOTAL:  10
+pass   2 (+-):   0 found -   2 modified     |    TOTAL:  10
+pass   1 (--):   7 found -   7 modified     |    TOTAL:  17
+pass   2 (--):   0 found -   7 modified     |    TOTAL:  17
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:  17
+Iteration Number : 2
+pass   1 (xy+):   1 found -   1 modified     |    TOTAL:   1
+pass   2 (xy+):   0 found -   1 modified     |    TOTAL:   1
+pass   1 (xy-):   0 found -   0 modified     |    TOTAL:   1
+pass   1 (yz+):   0 found -   0 modified     |    TOTAL:   1
+pass   1 (yz-):   1 found -   1 modified     |    TOTAL:   2
+pass   2 (yz-):   0 found -   1 modified     |    TOTAL:   2
+pass   1 (xz+):   0 found -   0 modified     |    TOTAL:   2
+pass   1 (xz-):   0 found -   0 modified     |    TOTAL:   2
+Iteration Number : 2
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 2
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (--):   1 found -   1 modified     |    TOTAL:   1
+pass   2 (--):   0 found -   1 modified     |    TOTAL:   1
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   1
+Iteration Number : 3
+pass   1 (xy+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xy-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (yz-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz+):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (xz-):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 3
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+++):   0 found -   0 modified     |    TOTAL:   0
+Iteration Number : 3
+pass   1 (++):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (+-):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (--):   0 found -   0 modified     |    TOTAL:   0
+pass   1 (-+):   0 found -   0 modified     |    TOTAL:   0
+
+Total Number of Modified Voxels = 71 (out of 3639364: 0.001951)
+Ambiguous edge configurations... 
+
+mri_pretess done
+
+
+ mri_tessellate ../mri/filled-pretess127.mgz 127 ../surf/rh.orig.nofix 
+
+$Id: mri_tessellate.c,v 1.38.2.1 2016/07/26 18:46:38 zkaufman Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+slice 60: 4326 vertices, 4545 faces
+slice 70: 14816 vertices, 15269 faces
+slice 80: 31755 vertices, 32379 faces
+slice 90: 52601 vertices, 53247 faces
+slice 100: 73217 vertices, 73973 faces
+slice 110: 98843 vertices, 99817 faces
+slice 120: 128833 vertices, 130020 faces
+slice 130: 163605 vertices, 164923 faces
+slice 140: 199388 vertices, 200583 faces
+slice 150: 233769 vertices, 235033 faces
+slice 160: 264831 vertices, 266095 faces
+slice 170: 299052 vertices, 300294 faces
+slice 180: 329242 vertices, 330420 faces
+slice 190: 360438 vertices, 361681 faces
+slice 200: 391752 vertices, 393078 faces
+slice 210: 427434 vertices, 428945 faces
+slice 220: 464466 vertices, 465816 faces
+slice 230: 493865 vertices, 495252 faces
+slice 240: 527228 vertices, 528561 faces
+slice 250: 558437 vertices, 559865 faces
+slice 260: 588841 vertices, 590247 faces
+slice 270: 617761 vertices, 619137 faces
+slice 280: 648938 vertices, 650366 faces
+slice 290: 678118 vertices, 679533 faces
+slice 300: 708203 vertices, 709684 faces
+slice 310: 737262 vertices, 738847 faces
+slice 320: 766294 vertices, 767737 faces
+slice 330: 791657 vertices, 793112 faces
+slice 340: 816909 vertices, 818349 faces
+slice 350: 839736 vertices, 841092 faces
+slice 360: 859784 vertices, 860914 faces
+slice 370: 877927 vertices, 879123 faces
+slice 380: 894296 vertices, 895444 faces
+slice 390: 909916 vertices, 910966 faces
+slice 400: 923374 vertices, 924427 faces
+slice 410: 936068 vertices, 936994 faces
+slice 420: 944329 vertices, 945145 faces
+slice 430: 949442 vertices, 950109 faces
+slice 440: 950140 vertices, 950712 faces
+slice 450: 950140 vertices, 950712 faces
+slice 460: 950140 vertices, 950712 faces
+slice 470: 950140 vertices, 950712 faces
+slice 480: 950140 vertices, 950712 faces
+slice 490: 950140 vertices, 950712 faces
+slice 500: 950140 vertices, 950712 faces
+slice 510: 950140 vertices, 950712 faces
+using the conformed surface RAS to save vertex points...
+writing ../surf/rh.orig.nofix
+using vox2ras matrix:
+-0.44922   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.44922  -115.00000;
+ 0.00000  -0.44922   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+
+ rm -f ../mri/filled-pretess127.mgz 
+
+
+ mris_extract_main_component ../surf/rh.orig.nofix ../surf/rh.orig.nofix 
+
+
+counting number of connected components...
+   950140 voxel in cpt #1: X=-572 [v=950140,e=2852136,f=1901424] located at (28.982418, -12.737063, 26.080036)
+For the whole surface: X=-572 [v=950140,e=2852136,f=1901424]
+One single component has been found
+nothing to do
+done
+
+#--------------------------------------------
+#@# Smooth1 rh Sat Feb 16 22:03:48 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_smooth -nw -seed 1234 ../surf/rh.orig.nofix ../surf/rh.smoothwm.nofix 
+
+setting seed for random number generator to 1234
+smoothing surface tessellation for 10 iterations...
+smoothing complete - recomputing first and second fundamental forms...
+#--------------------------------------------
+#@# Inflation1 rh Sat Feb 16 22:04:59 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_inflate -no-save-sulc -n 50 ../surf/rh.smoothwm.nofix ../surf/rh.inflated.nofix 
+
+niterations = 50
+Not saving sulc
+Reading ../surf/rh.smoothwm.nofix
+avg radius = 49.9 mm, total surface area = 114866 mm^2
+writing inflated surface to ../surf/rh.inflated.nofix
+inflation took 56.1 minutes
+
+step 000: RMS=0.117 (target=0.015)   
+step 005: RMS=0.095 (target=0.015)   
+step 010: RMS=0.079 (target=0.015)   
+step 015: RMS=0.070 (target=0.015)   
+step 020: RMS=0.064 (target=0.015)   
+step 025: RMS=0.060 (target=0.015)   
+step 030: RMS=0.056 (target=0.015)   
+step 035: RMS=0.053 (target=0.015)   
+step 040: RMS=0.051 (target=0.015)   
+step 045: RMS=0.049 (target=0.015)   
+step 050: RMS=0.048 (target=0.015)   
+step 055: RMS=0.047 (target=0.015)   
+step 060: RMS=0.046 (target=0.015)   
+step 065: RMS=0.045 (target=0.015)   
+step 070: RMS=0.045 (target=0.015)   
+step 075: RMS=0.044 (target=0.015)   
+step 080: RMS=0.044 (target=0.015)   
+step 085: RMS=0.043 (target=0.015)   
+step 090: RMS=0.043 (target=0.015)   
+step 095: RMS=0.043 (target=0.015)   
+step 100: RMS=0.042 (target=0.015)   
+step 105: RMS=0.042 (target=0.015)   
+step 110: RMS=0.042 (target=0.015)   
+step 115: RMS=0.042 (target=0.015)   
+step 120: RMS=0.041 (target=0.015)   
+step 125: RMS=0.041 (target=0.015)   
+step 130: RMS=0.041 (target=0.015)   
+step 135: RMS=0.041 (target=0.015)   
+step 140: RMS=0.041 (target=0.015)   
+step 145: RMS=0.041 (target=0.015)   
+step 150: RMS=0.041 (target=0.015)   
+step 155: RMS=0.041 (target=0.015)   
+step 160: RMS=0.041 (target=0.015)   
+step 165: RMS=0.041 (target=0.015)   
+step 170: RMS=0.040 (target=0.015)   
+step 175: RMS=0.040 (target=0.015)   
+step 180: RMS=0.040 (target=0.015)   
+step 185: RMS=0.040 (target=0.015)   
+step 190: RMS=0.040 (target=0.015)   
+step 195: RMS=0.040 (target=0.015)   
+step 200: RMS=0.040 (target=0.015)   
+step 205: RMS=0.040 (target=0.015)   
+step 210: RMS=0.040 (target=0.015)   
+step 215: RMS=0.040 (target=0.015)   
+step 220: RMS=0.040 (target=0.015)   
+step 225: RMS=0.040 (target=0.015)   
+step 230: RMS=0.040 (target=0.015)   
+step 235: RMS=0.040 (target=0.015)   
+step 240: RMS=0.040 (target=0.015)   
+step 245: RMS=0.040 (target=0.015)   
+step 250: RMS=0.040 (target=0.015)   
+step 255: RMS=0.041 (target=0.015)   
+step 260: RMS=0.041 (target=0.015)   
+step 265: RMS=0.042 (target=0.015)   
+step 270: RMS=0.042 (target=0.015)   
+step 275: RMS=0.042 (target=0.015)   
+step 280: RMS=0.042 (target=0.015)   
+step 285: RMS=0.042 (target=0.015)   
+step 290: RMS=0.042 (target=0.015)   
+step 295: RMS=0.042 (target=0.015)   
+step 300: RMS=0.042 (target=0.015)   
+inflation complete.
+Not saving sulc
+mris_inflate utimesec    1572.608460
+mris_inflate stimesec    4.342801
+mris_inflate ru_maxrss   1486696
+mris_inflate ru_ixrss    0
+mris_inflate ru_idrss    0
+mris_inflate ru_isrss    0
+mris_inflate ru_minflt   5755347
+mris_inflate ru_majflt   0
+mris_inflate ru_nswap    0
+mris_inflate ru_inblock  0
+mris_inflate ru_oublock  0
+mris_inflate ru_msgsnd   0
+mris_inflate ru_msgrcv   0
+mris_inflate ru_nsignals 0
+mris_inflate ru_nvcsw    71877
+mris_inflate ru_nivcsw   130455
+#--------------------------------------------
+#@# QSphere rh Sat Feb 16 23:01:08 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_sphere -q -seed 1234 ../surf/rh.inflated.nofix ../surf/rh.qsphere.nofix 
+
+doing quick spherical unfolding.
+setting seed for random number genererator to 1234
+$Id: mris_sphere.c,v 1.61 2016/01/20 23:42:15 greve Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading original vertex positions...
+unfolding cortex into spherical form...
+surface projected - minimizing metric distortion...
+vertex spacing 0.39 +- 0.25 (0.00-->4.71) (max @ vno 426334 --> 426354)
+face area 0.00 +- 0.01 (-0.08-->0.17)
+
+== Number of threads available to mris_sphere for OpenMP = 8 == 
+scaling brain by 0.254...
+inflating to sphere (rms error < 2.00)
+000: dt: 0.0000, rms radial error=176.546, avgs=0
+005/300: dt: 0.9000, rms radial error=176.286, avgs=0
+010/300: dt: 0.9000, rms radial error=175.726, avgs=0
+015/300: dt: 0.9000, rms radial error=174.991, avgs=0
+020/300: dt: 0.9000, rms radial error=174.152, avgs=0
+025/300: dt: 0.9000, rms radial error=173.255, avgs=0
+030/300: dt: 0.9000, rms radial error=172.324, avgs=0
+035/300: dt: 0.9000, rms radial error=171.376, avgs=0
+040/300: dt: 0.9000, rms radial error=170.421, avgs=0
+045/300: dt: 0.9000, rms radial error=169.462, avgs=0
+050/300: dt: 0.9000, rms radial error=168.505, avgs=0
+055/300: dt: 0.9000, rms radial error=167.554, avgs=0
+060/300: dt: 0.9000, rms radial error=166.605, avgs=0
+065/300: dt: 0.9000, rms radial error=165.662, avgs=0
+070/300: dt: 0.9000, rms radial error=164.722, avgs=0
+075/300: dt: 0.9000, rms radial error=163.788, avgs=0
+080/300: dt: 0.9000, rms radial error=162.859, avgs=0
+085/300: dt: 0.9000, rms radial error=161.935, avgs=0
+090/300: dt: 0.9000, rms radial error=161.017, avgs=0
+095/300: dt: 0.9000, rms radial error=160.104, avgs=0
+100/300: dt: 0.9000, rms radial error=159.196, avgs=0
+105/300: dt: 0.9000, rms radial error=158.293, avgs=0
+110/300: dt: 0.9000, rms radial error=157.395, avgs=0
+115/300: dt: 0.9000, rms radial error=156.502, avgs=0
+120/300: dt: 0.9000, rms radial error=155.615, avgs=0
+125/300: dt: 0.9000, rms radial error=154.732, avgs=0
+130/300: dt: 0.9000, rms radial error=153.855, avgs=0
+135/300: dt: 0.9000, rms radial error=152.982, avgs=0
+140/300: dt: 0.9000, rms radial error=152.115, avgs=0
+145/300: dt: 0.9000, rms radial error=151.252, avgs=0
+150/300: dt: 0.9000, rms radial error=150.394, avgs=0
+155/300: dt: 0.9000, rms radial error=149.542, avgs=0
+160/300: dt: 0.9000, rms radial error=148.694, avgs=0
+165/300: dt: 0.9000, rms radial error=147.851, avgs=0
+170/300: dt: 0.9000, rms radial error=147.013, avgs=0
+175/300: dt: 0.9000, rms radial error=146.179, avgs=0
+180/300: dt: 0.9000, rms radial error=145.350, avgs=0
+185/300: dt: 0.9000, rms radial error=144.526, avgs=0
+190/300: dt: 0.9000, rms radial error=143.707, avgs=0
+195/300: dt: 0.9000, rms radial error=142.892, avgs=0
+200/300: dt: 0.9000, rms radial error=142.082, avgs=0
+205/300: dt: 0.9000, rms radial error=141.276, avgs=0
+210/300: dt: 0.9000, rms radial error=140.475, avgs=0
+215/300: dt: 0.9000, rms radial error=139.679, avgs=0
+220/300: dt: 0.9000, rms radial error=138.887, avgs=0
+225/300: dt: 0.9000, rms radial error=138.099, avgs=0
+230/300: dt: 0.9000, rms radial error=137.316, avgs=0
+235/300: dt: 0.9000, rms radial error=136.538, avgs=0
+240/300: dt: 0.9000, rms radial error=135.763, avgs=0
+245/300: dt: 0.9000, rms radial error=134.993, avgs=0
+250/300: dt: 0.9000, rms radial error=134.228, avgs=0
+255/300: dt: 0.9000, rms radial error=133.467, avgs=0
+260/300: dt: 0.9000, rms radial error=132.710, avgs=0
+265/300: dt: 0.9000, rms radial error=131.957, avgs=0
+270/300: dt: 0.9000, rms radial error=131.209, avgs=0
+275/300: dt: 0.9000, rms radial error=130.465, avgs=0
+280/300: dt: 0.9000, rms radial error=129.725, avgs=0
+285/300: dt: 0.9000, rms radial error=128.990, avgs=0
+290/300: dt: 0.9000, rms radial error=128.258, avgs=0
+295/300: dt: 0.9000, rms radial error=127.531, avgs=0
+300/300: dt: 0.9000, rms radial error=126.808, avgs=0
+
+spherical inflation complete.
+epoch 1 (K=10.0), pass 1, starting sse = 128197.45
+taking momentum steps...
+taking momentum steps...
+taking momentum steps...
+pass 1 complete, delta sse/iter = 0.00/10 = 0.00001
+epoch 2 (K=40.0), pass 1, starting sse = 29629.45
+taking momentum steps...
+taking momentum steps...
+taking momentum steps...
+pass 1 complete, delta sse/iter = 0.00/10 = 0.00000
+epoch 3 (K=160.0), pass 1, starting sse = 5734.55
+taking momentum steps...
+taking momentum steps...
+taking momentum steps...
+pass 1 complete, delta sse/iter = 0.00/10 = 0.00000
+epoch 4 (K=640.0), pass 1, starting sse = 765.92
+taking momentum steps...
+taking momentum steps...
+taking momentum steps...
+pass 1 complete, delta sse/iter = 0.01/10 = 0.00136
+final distance error %30.24
+writing spherical brain to ../surf/rh.qsphere.nofix
+spherical transformation took 0.99 hours
+mris_sphere utimesec    1668.801385
+mris_sphere stimesec    2.958674
+mris_sphere ru_maxrss   1487280
+mris_sphere ru_ixrss    0
+mris_sphere ru_idrss    0
+mris_sphere ru_isrss    0
+mris_sphere ru_minflt   3402655
+mris_sphere ru_majflt   0
+mris_sphere ru_nswap    0
+mris_sphere ru_inblock  0
+mris_sphere ru_oublock  0
+mris_sphere ru_msgsnd   0
+mris_sphere ru_msgrcv   0
+mris_sphere ru_nsignals 0
+mris_sphere ru_nvcsw    66955
+mris_sphere ru_nivcsw   140599
+FSRUNTIME@ mris_sphere  0.9865 hours 1 threads
+#--------------------------------------------
+#@# Fix Topology Copy rh Sun Feb 17 00:00:20 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ cp ../surf/rh.orig.nofix ../surf/rh.orig 
+
+
+ cp ../surf/rh.inflated.nofix ../surf/rh.inflated 
+
+#@# Fix Topology rh Sun Feb 17 00:00:21 UTC 2019
+
+ mris_fix_topology -rusage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/touch/rusage.mris_fix_topology.rh.dat -mgz -sphere qsphere.nofix -ga -seed 1234 sub-ADS9622 rh 
+
+reading spherical homeomorphism from 'qsphere.nofix'
+using genetic algorithm with optimized parameters
+setting seed for random number genererator to 1234
+
+*************************************************************
+Topology Correction Parameters
+retessellation mode:           genetic search
+number of patches/generation : 10
+number of generations :        10
+surface mri loglikelihood coefficient :         1.0
+volume mri loglikelihood coefficient :          10.0
+normal dot loglikelihood coefficient :          1.0
+quadratic curvature loglikelihood coefficient : 1.0
+volume resolution :                             2
+eliminate vertices during search :              1
+initial patch selection :                       1
+select all defect vertices :                    0
+ordering dependant retessellation:              0
+use precomputed edge table :                    0
+smooth retessellated patch :                    2
+match retessellated patch :                     1
+verbose mode :                                  0
+
+*************************************************************
+INFO: assuming .mgz format
+$Id: mris_fix_topology.c,v 1.50.2.1 2016/10/27 22:25:58 zkaufman Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+before topology correction, eno=-572 (nv=950140, nf=1901424, ne=2852136, g=287)
+using quasi-homeomorphic spherical map to tessellate cortical surface...
+
+Correction of the Topology
+Finding true center and radius of Spherical Surface...done
+Surface centered at (0,0,0) with radius 100.0 in 8 iterations
+marking ambiguous vertices...
+139361 ambiguous faces found in tessellation
+segmenting defects...
+174 defects found, arbitrating ambiguous regions...
+analyzing neighboring defects...
+      -merging segment 18 into 9
+      -merging segment 26 into 9
+      -merging segment 16 into 15
+      -merging segment 21 into 15
+      -merging segment 20 into 19
+      -merging segment 23 into 19
+      -merging segment 89 into 84
+      -merging segment 98 into 94
+      -merging segment 128 into 118
+      -merging segment 131 into 130
+      -merging segment 138 into 130
+      -merging segment 143 into 130
+      -merging segment 144 into 130
+      -merging segment 165 into 164
+      -merging segment 167 into 164
+159 defects to be corrected 
+0 vertices coincident
+reading input surface /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.qsphere.nofix...
+reading brain volume from brain...
+reading wm segmentation from wm...
+Computing Initial Surface Statistics
+      -face       loglikelihood: -9.0170  (-4.5085)
+      -vertex     loglikelihood: -5.3240  (-2.6620)
+      -normal dot loglikelihood: -3.4543  (-3.4543)
+      -quad curv  loglikelihood: -6.8220  (-3.4110)
+      Total Loglikelihood : -24.6173
+
+CORRECTING DEFECT 0 (vertices=202, convex hull=73, v0=5095)
+After retessellation of defect 0 (v0=5095), euler #=-146 (875349,2616139,1740644) : difference with theory (-156) = -10 
+
+CORRECTING DEFECT 1 (vertices=98, convex hull=79, v0=11028)
+After retessellation of defect 1 (v0=11028), euler #=-145 (875356,2616198,1740697) : difference with theory (-155) = -10 
+
+CORRECTING DEFECT 2 (vertices=89, convex hull=47, v0=14315)
+After retessellation of defect 2 (v0=14315), euler #=-144 (875357,2616222,1740721) : difference with theory (-154) = -10 
+
+CORRECTING DEFECT 3 (vertices=62, convex hull=42, v0=22656)
+After retessellation of defect 3 (v0=22656), euler #=-143 (875358,2616240,1740739) : difference with theory (-153) = -10 
+
+CORRECTING DEFECT 4 (vertices=75, convex hull=41, v0=31898)
+After retessellation of defect 4 (v0=31898), euler #=-142 (875363,2616272,1740767) : difference with theory (-152) = -10 
+
+CORRECTING DEFECT 5 (vertices=46, convex hull=80, v0=35717)
+After retessellation of defect 5 (v0=35717), euler #=-141 (875367,2616320,1740812) : difference with theory (-151) = -10 
+
+CORRECTING DEFECT 6 (vertices=1049, convex hull=433, v0=45616)
+After retessellation of defect 6 (v0=45616), euler #=-140 (875437,2616747,1741170) : difference with theory (-150) = -10 
+
+CORRECTING DEFECT 7 (vertices=78, convex hull=69, v0=55737)
+After retessellation of defect 7 (v0=55737), euler #=-139 (875440,2616789,1741210) : difference with theory (-149) = -10 
+
+CORRECTING DEFECT 8 (vertices=127, convex hull=135, v0=56148)
+After retessellation of defect 8 (v0=56148), euler #=-138 (875450,2616882,1741294) : difference with theory (-148) = -10 
+
+CORRECTING DEFECT 9 (vertices=28708, convex hull=3917, v0=66825)
+XL defect detected...
+After retessellation of defect 9 (v0=66825), euler #=-143 (876102,2621033,1744788) : difference with theory (-147) = -4 
+
+CORRECTING DEFECT 10 (vertices=209, convex hull=106, v0=67693)
+After retessellation of defect 10 (v0=67693), euler #=-142 (876116,2621127,1744869) : difference with theory (-146) = -4 
+
+CORRECTING DEFECT 11 (vertices=81, convex hull=80, v0=69689)
+After retessellation of defect 11 (v0=69689), euler #=-141 (876122,2621180,1744917) : difference with theory (-145) = -4 
+
+CORRECTING DEFECT 12 (vertices=56, convex hull=88, v0=77741)
+After retessellation of defect 12 (v0=77741), euler #=-140 (876130,2621243,1744973) : difference with theory (-144) = -4 
+
+CORRECTING DEFECT 13 (vertices=6, convex hull=29, v0=79381)
+After retessellation of defect 13 (v0=79381), euler #=-139 (876131,2621253,1744983) : difference with theory (-143) = -4 
+
+CORRECTING DEFECT 14 (vertices=62, convex hull=72, v0=84200)
+After retessellation of defect 14 (v0=84200), euler #=-138 (876134,2621295,1745023) : difference with theory (-142) = -4 
+
+CORRECTING DEFECT 15 (vertices=736, convex hull=301, v0=101177)
+After retessellation of defect 15 (v0=101177), euler #=-136 (876157,2621534,1745241) : difference with theory (-141) = -5 
+
+CORRECTING DEFECT 16 (vertices=2393, convex hull=243, v0=113587)
+After retessellation of defect 16 (v0=113587), euler #=-135 (876176,2621712,1745401) : difference with theory (-140) = -5 
+
+CORRECTING DEFECT 17 (vertices=167, convex hull=182, v0=127718)
+After retessellation of defect 17 (v0=127718), euler #=-132 (876190,2621847,1745525) : difference with theory (-139) = -7 
+
+CORRECTING DEFECT 18 (vertices=130, convex hull=94, v0=158580)
+After retessellation of defect 18 (v0=158580), euler #=-131 (876199,2621917,1745587) : difference with theory (-138) = -7 
+
+CORRECTING DEFECT 19 (vertices=115, convex hull=114, v0=178285)
+After retessellation of defect 19 (v0=178285), euler #=-130 (876207,2621992,1745655) : difference with theory (-137) = -7 
+
+CORRECTING DEFECT 20 (vertices=27, convex hull=60, v0=191536)
+After retessellation of defect 20 (v0=191536), euler #=-129 (876211,2622030,1745690) : difference with theory (-136) = -7 
+
+CORRECTING DEFECT 21 (vertices=31, convex hull=39, v0=194957)
+After retessellation of defect 21 (v0=194957), euler #=-128 (876213,2622049,1745708) : difference with theory (-135) = -7 
+
+CORRECTING DEFECT 22 (vertices=2573, convex hull=275, v0=199835)
+After retessellation of defect 22 (v0=199835), euler #=-129 (876250,2622298,1745919) : difference with theory (-134) = -5 
+
+CORRECTING DEFECT 23 (vertices=19, convex hull=15, v0=208426)
+After retessellation of defect 23 (v0=208426), euler #=-128 (876250,2622306,1745928) : difference with theory (-133) = -5 
+
+CORRECTING DEFECT 24 (vertices=158, convex hull=26, v0=208643)
+After retessellation of defect 24 (v0=208643), euler #=-127 (876250,2622314,1745937) : difference with theory (-132) = -5 
+
+CORRECTING DEFECT 25 (vertices=233, convex hull=120, v0=219332)
+After retessellation of defect 25 (v0=219332), euler #=-126 (876257,2622388,1746005) : difference with theory (-131) = -5 
+
+CORRECTING DEFECT 26 (vertices=29, convex hull=43, v0=219555)
+After retessellation of defect 26 (v0=219555), euler #=-125 (876259,2622414,1746030) : difference with theory (-130) = -5 
+
+CORRECTING DEFECT 27 (vertices=71, convex hull=77, v0=226208)
+After retessellation of defect 27 (v0=226208), euler #=-124 (876262,2622459,1746073) : difference with theory (-129) = -5 
+
+CORRECTING DEFECT 28 (vertices=83, convex hull=78, v0=226432)
+After retessellation of defect 28 (v0=226432), euler #=-123 (876269,2622515,1746123) : difference with theory (-128) = -5 
+
+CORRECTING DEFECT 29 (vertices=152, convex hull=66, v0=226460)
+After retessellation of defect 29 (v0=226460), euler #=-122 (876272,2622549,1746155) : difference with theory (-127) = -5 
+
+CORRECTING DEFECT 30 (vertices=57, convex hull=76, v0=230162)
+After retessellation of defect 30 (v0=230162), euler #=-121 (876276,2622591,1746194) : difference with theory (-126) = -5 
+
+CORRECTING DEFECT 31 (vertices=41, convex hull=62, v0=233926)
+After retessellation of defect 31 (v0=233926), euler #=-120 (876281,2622633,1746232) : difference with theory (-125) = -5 
+
+CORRECTING DEFECT 32 (vertices=5, convex hull=29, v0=236207)
+After retessellation of defect 32 (v0=236207), euler #=-119 (876281,2622641,1746241) : difference with theory (-124) = -5 
+
+CORRECTING DEFECT 33 (vertices=20, convex hull=31, v0=243052)
+After retessellation of defect 33 (v0=243052), euler #=-118 (876282,2622653,1746253) : difference with theory (-123) = -5 
+
+CORRECTING DEFECT 34 (vertices=130, convex hull=69, v0=245972)
+After retessellation of defect 34 (v0=245972), euler #=-117 (876285,2622690,1746288) : difference with theory (-122) = -5 
+
+CORRECTING DEFECT 35 (vertices=42, convex hull=40, v0=252219)
+After retessellation of defect 35 (v0=252219), euler #=-116 (876288,2622713,1746309) : difference with theory (-121) = -5 
+
+CORRECTING DEFECT 36 (vertices=34, convex hull=70, v0=254886)
+After retessellation of defect 36 (v0=254886), euler #=-115 (876292,2622751,1746344) : difference with theory (-120) = -5 
+
+CORRECTING DEFECT 37 (vertices=58, convex hull=47, v0=255179)
+After retessellation of defect 37 (v0=255179), euler #=-114 (876295,2622774,1746365) : difference with theory (-119) = -5 
+
+CORRECTING DEFECT 38 (vertices=59, convex hull=54, v0=278363)
+After retessellation of defect 38 (v0=278363), euler #=-113 (876299,2622804,1746392) : difference with theory (-118) = -5 
+
+CORRECTING DEFECT 39 (vertices=29, convex hull=38, v0=301942)
+After retessellation of defect 39 (v0=301942), euler #=-112 (876299,2622820,1746409) : difference with theory (-117) = -5 
+
+CORRECTING DEFECT 40 (vertices=2895, convex hull=413, v0=314795)
+After retessellation of defect 40 (v0=314795), euler #=-111 (876362,2623219,1746746) : difference with theory (-116) = -5 
+
+CORRECTING DEFECT 41 (vertices=37, convex hull=33, v0=320157)
+After retessellation of defect 41 (v0=320157), euler #=-110 (876364,2623236,1746762) : difference with theory (-115) = -5 
+
+CORRECTING DEFECT 42 (vertices=48, convex hull=24, v0=320553)
+After retessellation of defect 42 (v0=320553), euler #=-109 (876365,2623244,1746770) : difference with theory (-114) = -5 
+
+CORRECTING DEFECT 43 (vertices=104, convex hull=111, v0=335215)
+After retessellation of defect 43 (v0=335215), euler #=-108 (876374,2623326,1746844) : difference with theory (-113) = -5 
+
+CORRECTING DEFECT 44 (vertices=13690, convex hull=2711, v0=351086)
+XL defect detected...
+After retessellation of defect 44 (v0=351086), euler #=-112 (876493,2625139,1748534) : difference with theory (-112) = 0 
+
+CORRECTING DEFECT 45 (vertices=28, convex hull=23, v0=355033)
+After retessellation of defect 45 (v0=355033), euler #=-111 (876493,2625144,1748540) : difference with theory (-111) = 0 
+
+CORRECTING DEFECT 46 (vertices=5, convex hull=15, v0=358568)
+After retessellation of defect 46 (v0=358568), euler #=-110 (876494,2625151,1748547) : difference with theory (-110) = 0 
+
+CORRECTING DEFECT 47 (vertices=150, convex hull=61, v0=359793)
+normal vector of length zero at vertex 930658 with 3 faces
+normal vector of length zero at vertex 930658 with 3 faces
+After retessellation of defect 47 (v0=359793), euler #=-109 (876507,2625217,1748601) : difference with theory (-109) = 0 
+
+CORRECTING DEFECT 48 (vertices=45, convex hull=94, v0=369098)
+After retessellation of defect 48 (v0=369098), euler #=-108 (876515,2625282,1748659) : difference with theory (-108) = 0 
+
+CORRECTING DEFECT 49 (vertices=307, convex hull=327, v0=371943)
+After retessellation of defect 49 (v0=371943), euler #=-107 (876527,2625479,1748845) : difference with theory (-107) = 0 
+
+CORRECTING DEFECT 50 (vertices=27, convex hull=55, v0=376683)
+After retessellation of defect 50 (v0=376683), euler #=-106 (876533,2625518,1748879) : difference with theory (-106) = 0 
+
+CORRECTING DEFECT 51 (vertices=16, convex hull=54, v0=378629)
+After retessellation of defect 51 (v0=378629), euler #=-105 (876535,2625545,1748905) : difference with theory (-105) = 0 
+
+CORRECTING DEFECT 52 (vertices=37, convex hull=70, v0=382560)
+After retessellation of defect 52 (v0=382560), euler #=-104 (876538,2625579,1748937) : difference with theory (-104) = 0 
+
+CORRECTING DEFECT 53 (vertices=778, convex hull=178, v0=390691)
+After retessellation of defect 53 (v0=390691), euler #=-103 (876559,2625730,1749068) : difference with theory (-103) = 0 
+
+CORRECTING DEFECT 54 (vertices=156, convex hull=53, v0=398020)
+After retessellation of defect 54 (v0=398020), euler #=-102 (876567,2625783,1749114) : difference with theory (-102) = 0 
+
+CORRECTING DEFECT 55 (vertices=40, convex hull=47, v0=401064)
+After retessellation of defect 55 (v0=401064), euler #=-101 (876571,2625812,1749140) : difference with theory (-101) = 0 
+
+CORRECTING DEFECT 56 (vertices=9, convex hull=27, v0=401251)
+After retessellation of defect 56 (v0=401251), euler #=-100 (876572,2625823,1749151) : difference with theory (-100) = 0 
+
+CORRECTING DEFECT 57 (vertices=30, convex hull=35, v0=405441)
+After retessellation of defect 57 (v0=405441), euler #=-99 (876575,2625842,1749168) : difference with theory (-99) = 0 
+
+CORRECTING DEFECT 58 (vertices=48, convex hull=77, v0=405836)
+After retessellation of defect 58 (v0=405836), euler #=-98 (876580,2625888,1749210) : difference with theory (-98) = 0 
+
+CORRECTING DEFECT 59 (vertices=269, convex hull=204, v0=408505)
+After retessellation of defect 59 (v0=408505), euler #=-97 (876595,2626026,1749334) : difference with theory (-97) = 0 
+
+CORRECTING DEFECT 60 (vertices=62, convex hull=40, v0=408979)
+After retessellation of defect 60 (v0=408979), euler #=-96 (876596,2626043,1749351) : difference with theory (-96) = 0 
+
+CORRECTING DEFECT 61 (vertices=6, convex hull=28, v0=409296)
+After retessellation of defect 61 (v0=409296), euler #=-95 (876596,2626050,1749359) : difference with theory (-95) = 0 
+
+CORRECTING DEFECT 62 (vertices=28, convex hull=23, v0=417131)
+After retessellation of defect 62 (v0=417131), euler #=-94 (876598,2626060,1749368) : difference with theory (-94) = 0 
+
+CORRECTING DEFECT 63 (vertices=20, convex hull=47, v0=420114)
+After retessellation of defect 63 (v0=420114), euler #=-93 (876601,2626086,1749392) : difference with theory (-93) = 0 
+
+CORRECTING DEFECT 64 (vertices=57, convex hull=70, v0=423670)
+After retessellation of defect 64 (v0=423670), euler #=-92 (876605,2626126,1749429) : difference with theory (-92) = 0 
+
+CORRECTING DEFECT 65 (vertices=50, convex hull=40, v0=441570)
+After retessellation of defect 65 (v0=441570), euler #=-91 (876606,2626141,1749444) : difference with theory (-91) = 0 
+
+CORRECTING DEFECT 66 (vertices=111, convex hull=32, v0=443798)
+After retessellation of defect 66 (v0=443798), euler #=-90 (876607,2626161,1749464) : difference with theory (-90) = 0 
+
+CORRECTING DEFECT 67 (vertices=263, convex hull=114, v0=447486)
+After retessellation of defect 67 (v0=447486), euler #=-89 (876620,2626259,1749550) : difference with theory (-89) = 0 
+
+CORRECTING DEFECT 68 (vertices=37, convex hull=34, v0=447545)
+After retessellation of defect 68 (v0=447545), euler #=-88 (876622,2626277,1749567) : difference with theory (-88) = 0 
+
+CORRECTING DEFECT 69 (vertices=6, convex hull=26, v0=453609)
+After retessellation of defect 69 (v0=453609), euler #=-87 (876623,2626287,1749577) : difference with theory (-87) = 0 
+
+CORRECTING DEFECT 70 (vertices=67, convex hull=68, v0=463049)
+After retessellation of defect 70 (v0=463049), euler #=-86 (876629,2626337,1749622) : difference with theory (-86) = 0 
+
+CORRECTING DEFECT 71 (vertices=54, convex hull=40, v0=465387)
+After retessellation of defect 71 (v0=465387), euler #=-85 (876632,2626361,1749644) : difference with theory (-85) = 0 
+
+CORRECTING DEFECT 72 (vertices=32, convex hull=60, v0=467436)
+After retessellation of defect 72 (v0=467436), euler #=-84 (876635,2626392,1749673) : difference with theory (-84) = 0 
+
+CORRECTING DEFECT 73 (vertices=90, convex hull=72, v0=468875)
+After retessellation of defect 73 (v0=468875), euler #=-83 (876641,2626439,1749715) : difference with theory (-83) = 0 
+
+CORRECTING DEFECT 74 (vertices=55, convex hull=22, v0=470137)
+After retessellation of defect 74 (v0=470137), euler #=-82 (876642,2626449,1749725) : difference with theory (-82) = 0 
+
+CORRECTING DEFECT 75 (vertices=131, convex hull=55, v0=470254)
+After retessellation of defect 75 (v0=470254), euler #=-81 (876647,2626487,1749759) : difference with theory (-81) = 0 
+
+CORRECTING DEFECT 76 (vertices=56, convex hull=55, v0=470497)
+After retessellation of defect 76 (v0=470497), euler #=-81 (876653,2626530,1749796) : difference with theory (-80) = 1 
+
+CORRECTING DEFECT 77 (vertices=58, convex hull=79, v0=472285)
+After retessellation of defect 77 (v0=472285), euler #=-80 (876661,2626586,1749845) : difference with theory (-79) = 1 
+
+CORRECTING DEFECT 78 (vertices=831, convex hull=604, v0=472409)
+After retessellation of defect 78 (v0=472409), euler #=-78 (876709,2627055,1750268) : difference with theory (-78) = 0 
+
+CORRECTING DEFECT 79 (vertices=22, convex hull=29, v0=481493)
+After retessellation of defect 79 (v0=481493), euler #=-77 (876710,2627067,1750280) : difference with theory (-77) = 0 
+
+CORRECTING DEFECT 80 (vertices=56, convex hull=92, v0=487152)
+After retessellation of defect 80 (v0=487152), euler #=-76 (876715,2627120,1750329) : difference with theory (-76) = 0 
+
+CORRECTING DEFECT 81 (vertices=87, convex hull=54, v0=487263)
+After retessellation of defect 81 (v0=487263), euler #=-75 (876716,2627142,1750351) : difference with theory (-75) = 0 
+
+CORRECTING DEFECT 82 (vertices=51, convex hull=74, v0=490609)
+After retessellation of defect 82 (v0=490609), euler #=-74 (876721,2627195,1750400) : difference with theory (-74) = 0 
+
+CORRECTING DEFECT 83 (vertices=5, convex hull=30, v0=513018)
+After retessellation of defect 83 (v0=513018), euler #=-73 (876722,2627206,1750411) : difference with theory (-73) = 0 
+
+CORRECTING DEFECT 84 (vertices=6, convex hull=23, v0=513394)
+After retessellation of defect 84 (v0=513394), euler #=-72 (876722,2627213,1750419) : difference with theory (-72) = 0 
+
+CORRECTING DEFECT 85 (vertices=30, convex hull=27, v0=527746)
+After retessellation of defect 85 (v0=527746), euler #=-71 (876723,2627224,1750430) : difference with theory (-71) = 0 
+
+CORRECTING DEFECT 86 (vertices=68, convex hull=80, v0=528011)
+After retessellation of defect 86 (v0=528011), euler #=-70 (876731,2627283,1750482) : difference with theory (-70) = 0 
+
+CORRECTING DEFECT 87 (vertices=122, convex hull=120, v0=529066)
+After retessellation of defect 87 (v0=529066), euler #=-68 (876736,2627357,1750553) : difference with theory (-69) = -1 
+
+CORRECTING DEFECT 88 (vertices=11, convex hull=23, v0=531857)
+After retessellation of defect 88 (v0=531857), euler #=-67 (876736,2627370,1750567) : difference with theory (-68) = -1 
+
+CORRECTING DEFECT 89 (vertices=27, convex hull=52, v0=536505)
+After retessellation of defect 89 (v0=536505), euler #=-66 (876740,2627403,1750597) : difference with theory (-67) = -1 
+
+CORRECTING DEFECT 90 (vertices=8, convex hull=27, v0=537558)
+After retessellation of defect 90 (v0=537558), euler #=-65 (876740,2627410,1750605) : difference with theory (-66) = -1 
+
+CORRECTING DEFECT 91 (vertices=7, convex hull=12, v0=541873)
+After retessellation of defect 91 (v0=541873), euler #=-64 (876741,2627416,1750611) : difference with theory (-65) = -1 
+
+CORRECTING DEFECT 92 (vertices=31, convex hull=31, v0=553514)
+After retessellation of defect 92 (v0=553514), euler #=-63 (876743,2627431,1750625) : difference with theory (-64) = -1 
+
+CORRECTING DEFECT 93 (vertices=7, convex hull=21, v0=554603)
+After retessellation of defect 93 (v0=554603), euler #=-62 (876744,2627440,1750634) : difference with theory (-63) = -1 
+
+CORRECTING DEFECT 94 (vertices=84, convex hull=38, v0=565592)
+After retessellation of defect 94 (v0=565592), euler #=-61 (876747,2627463,1750655) : difference with theory (-62) = -1 
+
+CORRECTING DEFECT 95 (vertices=18, convex hull=28, v0=566114)
+After retessellation of defect 95 (v0=566114), euler #=-60 (876750,2627480,1750670) : difference with theory (-61) = -1 
+
+CORRECTING DEFECT 96 (vertices=164, convex hull=30, v0=567359)
+After retessellation of defect 96 (v0=567359), euler #=-59 (876753,2627499,1750687) : difference with theory (-60) = -1 
+
+CORRECTING DEFECT 97 (vertices=33, convex hull=24, v0=568772)
+After retessellation of defect 97 (v0=568772), euler #=-58 (876755,2627510,1750697) : difference with theory (-59) = -1 
+
+CORRECTING DEFECT 98 (vertices=35, convex hull=46, v0=573290)
+After retessellation of defect 98 (v0=573290), euler #=-57 (876756,2627531,1750718) : difference with theory (-58) = -1 
+
+CORRECTING DEFECT 99 (vertices=36, convex hull=69, v0=577322)
+After retessellation of defect 99 (v0=577322), euler #=-56 (876760,2627574,1750758) : difference with theory (-57) = -1 
+
+CORRECTING DEFECT 100 (vertices=6, convex hull=25, v0=578498)
+After retessellation of defect 100 (v0=578498), euler #=-55 (876760,2627580,1750765) : difference with theory (-56) = -1 
+
+CORRECTING DEFECT 101 (vertices=35, convex hull=36, v0=581510)
+After retessellation of defect 101 (v0=581510), euler #=-54 (876761,2627597,1750782) : difference with theory (-55) = -1 
+
+CORRECTING DEFECT 102 (vertices=135, convex hull=68, v0=581856)
+After retessellation of defect 102 (v0=581856), euler #=-53 (876767,2627642,1750822) : difference with theory (-54) = -1 
+
+CORRECTING DEFECT 103 (vertices=47, convex hull=77, v0=583291)
+After retessellation of defect 103 (v0=583291), euler #=-52 (876769,2627677,1750856) : difference with theory (-53) = -1 
+
+CORRECTING DEFECT 104 (vertices=65, convex hull=29, v0=600400)
+After retessellation of defect 104 (v0=600400), euler #=-51 (876770,2627693,1750872) : difference with theory (-52) = -1 
+
+CORRECTING DEFECT 105 (vertices=232, convex hull=82, v0=603259)
+After retessellation of defect 105 (v0=603259), euler #=-50 (876778,2627750,1750922) : difference with theory (-51) = -1 
+
+CORRECTING DEFECT 106 (vertices=6, convex hull=32, v0=608064)
+After retessellation of defect 106 (v0=608064), euler #=-49 (876778,2627760,1750933) : difference with theory (-50) = -1 
+
+CORRECTING DEFECT 107 (vertices=8, convex hull=16, v0=616958)
+After retessellation of defect 107 (v0=616958), euler #=-48 (876779,2627767,1750940) : difference with theory (-49) = -1 
+
+CORRECTING DEFECT 108 (vertices=167, convex hull=32, v0=622581)
+After retessellation of defect 108 (v0=622581), euler #=-47 (876781,2627785,1750957) : difference with theory (-48) = -1 
+
+CORRECTING DEFECT 109 (vertices=124, convex hull=94, v0=624699)
+After retessellation of defect 109 (v0=624699), euler #=-46 (876790,2627855,1751019) : difference with theory (-47) = -1 
+
+CORRECTING DEFECT 110 (vertices=293, convex hull=146, v0=624893)
+After retessellation of defect 110 (v0=624893), euler #=-44 (876800,2627954,1751110) : difference with theory (-46) = -2 
+
+CORRECTING DEFECT 111 (vertices=45, convex hull=37, v0=625258)
+After retessellation of defect 111 (v0=625258), euler #=-43 (876802,2627976,1751131) : difference with theory (-45) = -2 
+
+CORRECTING DEFECT 112 (vertices=21, convex hull=31, v0=631684)
+After retessellation of defect 112 (v0=631684), euler #=-42 (876804,2627991,1751145) : difference with theory (-44) = -2 
+
+CORRECTING DEFECT 113 (vertices=91, convex hull=103, v0=635124)
+After retessellation of defect 113 (v0=635124), euler #=-42 (876817,2628079,1751220) : difference with theory (-43) = -1 
+
+CORRECTING DEFECT 114 (vertices=5, convex hull=17, v0=644346)
+After retessellation of defect 114 (v0=644346), euler #=-41 (876817,2628081,1751223) : difference with theory (-42) = -1 
+
+CORRECTING DEFECT 115 (vertices=25, convex hull=23, v0=647812)
+After retessellation of defect 115 (v0=647812), euler #=-40 (876818,2628093,1751235) : difference with theory (-41) = -1 
+
+CORRECTING DEFECT 116 (vertices=20, convex hull=58, v0=650535)
+After retessellation of defect 116 (v0=650535), euler #=-39 (876822,2628127,1751266) : difference with theory (-40) = -1 
+
+CORRECTING DEFECT 117 (vertices=23, convex hull=36, v0=650651)
+After retessellation of defect 117 (v0=650651), euler #=-38 (876823,2628143,1751282) : difference with theory (-39) = -1 
+
+CORRECTING DEFECT 118 (vertices=376, convex hull=177, v0=650833)
+After retessellation of defect 118 (v0=650833), euler #=-37 (876835,2628271,1751399) : difference with theory (-38) = -1 
+
+CORRECTING DEFECT 119 (vertices=338, convex hull=142, v0=656558)
+After retessellation of defect 119 (v0=656558), euler #=-36 (876838,2628347,1751473) : difference with theory (-37) = -1 
+
+CORRECTING DEFECT 120 (vertices=67, convex hull=81, v0=663700)
+After retessellation of defect 120 (v0=663700), euler #=-35 (876845,2628402,1751522) : difference with theory (-36) = -1 
+
+CORRECTING DEFECT 121 (vertices=7930, convex hull=1267, v0=663719)
+XL defect detected...
+After retessellation of defect 121 (v0=663719), euler #=-34 (877046,2629739,1752659) : difference with theory (-35) = -1 
+
+CORRECTING DEFECT 122 (vertices=508, convex hull=379, v0=673936)
+After retessellation of defect 122 (v0=673936), euler #=-33 (877100,2630094,1752961) : difference with theory (-34) = -1 
+
+CORRECTING DEFECT 123 (vertices=174, convex hull=59, v0=677392)
+After retessellation of defect 123 (v0=677392), euler #=-32 (877104,2630127,1752991) : difference with theory (-33) = -1 
+
+CORRECTING DEFECT 124 (vertices=127, convex hull=109, v0=685794)
+After retessellation of defect 124 (v0=685794), euler #=-31 (877113,2630202,1753058) : difference with theory (-32) = -1 
+
+CORRECTING DEFECT 125 (vertices=281, convex hull=139, v0=688319)
+After retessellation of defect 125 (v0=688319), euler #=-30 (877122,2630302,1753150) : difference with theory (-31) = -1 
+
+CORRECTING DEFECT 126 (vertices=7, convex hull=14, v0=688516)
+After retessellation of defect 126 (v0=688516), euler #=-29 (877122,2630305,1753154) : difference with theory (-30) = -1 
+
+CORRECTING DEFECT 127 (vertices=9, convex hull=12, v0=691298)
+After retessellation of defect 127 (v0=691298), euler #=-28 (877122,2630307,1753157) : difference with theory (-29) = -1 
+
+CORRECTING DEFECT 128 (vertices=35, convex hull=28, v0=715387)
+After retessellation of defect 128 (v0=715387), euler #=-27 (877124,2630320,1753169) : difference with theory (-28) = -1 
+
+CORRECTING DEFECT 129 (vertices=19, convex hull=51, v0=718074)
+After retessellation of defect 129 (v0=718074), euler #=-26 (877125,2630339,1753188) : difference with theory (-27) = -1 
+
+CORRECTING DEFECT 130 (vertices=83, convex hull=80, v0=720788)
+After retessellation of defect 130 (v0=720788), euler #=-25 (877134,2630404,1753245) : difference with theory (-26) = -1 
+
+CORRECTING DEFECT 131 (vertices=33, convex hull=65, v0=721200)
+After retessellation of defect 131 (v0=721200), euler #=-24 (877139,2630447,1753284) : difference with theory (-25) = -1 
+
+CORRECTING DEFECT 132 (vertices=77, convex hull=35, v0=729835)
+After retessellation of defect 132 (v0=729835), euler #=-23 (877143,2630471,1753305) : difference with theory (-24) = -1 
+
+CORRECTING DEFECT 133 (vertices=339, convex hull=131, v0=730111)
+After retessellation of defect 133 (v0=730111), euler #=-22 (877155,2630578,1753401) : difference with theory (-23) = -1 
+
+CORRECTING DEFECT 134 (vertices=23, convex hull=41, v0=730204)
+After retessellation of defect 134 (v0=730204), euler #=-21 (877155,2630591,1753415) : difference with theory (-22) = -1 
+
+CORRECTING DEFECT 135 (vertices=29, convex hull=29, v0=730348)
+After retessellation of defect 135 (v0=730348), euler #=-20 (877156,2630606,1753430) : difference with theory (-21) = -1 
+
+CORRECTING DEFECT 136 (vertices=79, convex hull=99, v0=732497)
+After retessellation of defect 136 (v0=732497), euler #=-19 (877161,2630668,1753488) : difference with theory (-20) = -1 
+
+CORRECTING DEFECT 137 (vertices=332, convex hull=180, v0=733017)
+After retessellation of defect 137 (v0=733017), euler #=-19 (877178,2630829,1753632) : difference with theory (-19) = 0 
+
+CORRECTING DEFECT 138 (vertices=54, convex hull=65, v0=733501)
+After retessellation of defect 138 (v0=733501), euler #=-18 (877184,2630873,1753671) : difference with theory (-18) = 0 
+
+CORRECTING DEFECT 139 (vertices=168, convex hull=77, v0=736253)
+After retessellation of defect 139 (v0=736253), euler #=-17 (877190,2630924,1753717) : difference with theory (-17) = 0 
+
+CORRECTING DEFECT 140 (vertices=11, convex hull=20, v0=745340)
+After retessellation of defect 140 (v0=745340), euler #=-16 (877192,2630935,1753727) : difference with theory (-16) = 0 
+
+CORRECTING DEFECT 141 (vertices=48, convex hull=61, v0=745863)
+After retessellation of defect 141 (v0=745863), euler #=-15 (877198,2630978,1753765) : difference with theory (-15) = 0 
+
+CORRECTING DEFECT 142 (vertices=263, convex hull=60, v0=751821)
+After retessellation of defect 142 (v0=751821), euler #=-14 (877205,2631025,1753806) : difference with theory (-14) = 0 
+
+CORRECTING DEFECT 143 (vertices=54, convex hull=42, v0=757134)
+After retessellation of defect 143 (v0=757134), euler #=-13 (877211,2631062,1753838) : difference with theory (-13) = 0 
+
+CORRECTING DEFECT 144 (vertices=75, convex hull=41, v0=757165)
+After retessellation of defect 144 (v0=757165), euler #=-12 (877213,2631084,1753859) : difference with theory (-12) = 0 
+
+CORRECTING DEFECT 145 (vertices=155, convex hull=94, v0=757709)
+After retessellation of defect 145 (v0=757709), euler #=-11 (877219,2631147,1753917) : difference with theory (-11) = 0 
+
+CORRECTING DEFECT 146 (vertices=386, convex hull=141, v0=780176)
+After retessellation of defect 146 (v0=780176), euler #=-12 (877231,2631264,1754021) : difference with theory (-10) = 2 
+
+CORRECTING DEFECT 147 (vertices=176, convex hull=91, v0=793279)
+After retessellation of defect 147 (v0=793279), euler #=-11 (877236,2631318,1754071) : difference with theory (-9) = 2 
+
+CORRECTING DEFECT 148 (vertices=86, convex hull=47, v0=800940)
+After retessellation of defect 148 (v0=800940), euler #=-10 (877238,2631339,1754091) : difference with theory (-8) = 2 
+
+CORRECTING DEFECT 149 (vertices=15, convex hull=23, v0=806374)
+After retessellation of defect 149 (v0=806374), euler #=-9 (877239,2631348,1754100) : difference with theory (-7) = 2 
+
+CORRECTING DEFECT 150 (vertices=83, convex hull=52, v0=808937)
+After retessellation of defect 150 (v0=808937), euler #=-8 (877241,2631378,1754129) : difference with theory (-6) = 2 
+
+CORRECTING DEFECT 151 (vertices=391, convex hull=240, v0=813180)
+After retessellation of defect 151 (v0=813180), euler #=-5 (877255,2631541,1754281) : difference with theory (-5) = 0 
+
+CORRECTING DEFECT 152 (vertices=18, convex hull=48, v0=818175)
+After retessellation of defect 152 (v0=818175), euler #=-4 (877256,2631561,1754301) : difference with theory (-4) = 0 
+
+CORRECTING DEFECT 153 (vertices=198, convex hull=77, v0=859701)
+After retessellation of defect 153 (v0=859701), euler #=-3 (877262,2631611,1754346) : difference with theory (-3) = 0 
+
+CORRECTING DEFECT 154 (vertices=25, convex hull=62, v0=868374)
+After retessellation of defect 154 (v0=868374), euler #=-2 (877265,2631644,1754377) : difference with theory (-2) = 0 
+
+CORRECTING DEFECT 155 (vertices=282, convex hull=182, v0=889889)
+After retessellation of defect 155 (v0=889889), euler #=-1 (877283,2631791,1754507) : difference with theory (-1) = 0 
+
+CORRECTING DEFECT 156 (vertices=22, convex hull=21, v0=903954)
+After retessellation of defect 156 (v0=903954), euler #=0 (877284,2631801,1754517) : difference with theory (0) = 0 
+
+CORRECTING DEFECT 157 (vertices=22, convex hull=70, v0=934218)
+After retessellation of defect 157 (v0=934218), euler #=1 (877286,2631833,1754548) : difference with theory (1) = 0 
+
+CORRECTING DEFECT 158 (vertices=25, convex hull=46, v0=949750)
+After retessellation of defect 158 (v0=949750), euler #=2 (877288,2631858,1754572) : difference with theory (2) = 0 
+computing original vertex metric properties...
+storing new metric properties...
+computing tessellation statistics...
+vertex spacing 0.41 +- 0.16 (0.02-->33.33) (max @ vno 107755 --> 305427)
+face area 0.00 +- 0.00 (0.00-->0.00)
+performing soap bubble on retessellated vertices for 0 iterations...
+vertex spacing 0.41 +- 0.16 (0.02-->33.33) (max @ vno 107755 --> 305427)
+face area 0.00 +- 0.00 (0.00-->0.00)
+tessellation finished, orienting corrected surface...
+519 mutations (36.2%), 916 crossovers (63.8%), 998 vertices were eliminated
+building final representation...
+72852 vertices and 0 faces have been removed from triangulation
+after topology correction, eno=2 (nv=877288, nf=1754572, ne=2631858, g=0)
+writing corrected surface to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.orig...
+
+0.000 % of the vertices (0 vertices) exhibit an orientation change
+topology fixing took 2246.3 minutes
+0 defective edges
+removing intersecting faces
+000: 4694 intersecting
+001: 341 intersecting
+002: 225 intersecting
+003: 205 intersecting
+004: 193 intersecting
+005: 175 intersecting
+006: 165 intersecting
+007: 156 intersecting
+008: 146 intersecting
+expanding nbhd size to 2
+009: 146 intersecting
+010: 128 intersecting
+expanding nbhd size to 3
+011: 129 intersecting
+012: 91 intersecting
+expanding nbhd size to 4
+013: 91 intersecting
+014: 72 intersecting
+015: 70 intersecting
+016: 67 intersecting
+017: 57 intersecting
+expanding nbhd size to 5
+018: 61 intersecting
+expanding nbhd size to 6
+019: 72 intersecting
+020: 61 intersecting
+expanding nbhd size to 7
+021: 67 intersecting
+022: 56 intersecting
+expanding nbhd size to 8
+023: 59 intersecting
+expanding nbhd size to 9
+024: 63 intersecting
+025: 58 intersecting
+026: 53 intersecting
+027: 50 intersecting
+028: 48 intersecting
+expanding nbhd size to 10
+029: 49 intersecting
+030: 42 intersecting
+expanding nbhd size to 11
+031: 45 intersecting
+032: 36 intersecting
+033: 31 intersecting
+034: 26 intersecting
+035: 14 intersecting
+036: 8 intersecting
+037: 4 intersecting
+mris_fix_topology utimesec    44625.810078
+mris_fix_topology stimesec    5.115230
+mris_fix_topology ru_maxrss   2975252
+mris_fix_topology ru_ixrss    0
+mris_fix_topology ru_idrss    0
+mris_fix_topology ru_isrss    0
+mris_fix_topology ru_minflt   1585485
+mris_fix_topology ru_majflt   0
+mris_fix_topology ru_nswap    0
+mris_fix_topology ru_inblock  0
+mris_fix_topology ru_oublock  0
+mris_fix_topology ru_msgsnd   0
+mris_fix_topology ru_msgrcv   0
+mris_fix_topology ru_nsignals 0
+mris_fix_topology ru_nvcsw    36921
+mris_fix_topology ru_nivcsw   3765539
+FSRUNTIME@ mris_fix_topology rh 37.4376 hours 1 threads
+
+ mris_euler_number ../surf/rh.orig 
+
+euler # = v-e+f = 2g-2: 877288 - 2631858 + 1754572 = 2 --> 0 holes
+      F =2V-4:          1754572 = 1754576-4 (0)
+      2E=3F:            5263716 = 5263716 (0)
+
+total defect index = 0
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_remove_intersection ../surf/rh.orig ../surf/rh.orig 
+
+intersection removal took 0.14 hours
+removing intersecting faces
+000: 1221 intersecting
+001: 340 intersecting
+002: 223 intersecting
+003: 191 intersecting
+expanding nbhd size to 2
+004: 200 intersecting
+005: 173 intersecting
+006: 160 intersecting
+007: 148 intersecting
+008: 128 intersecting
+009: 106 intersecting
+010: 102 intersecting
+011: 86 intersecting
+012: 56 intersecting
+013: 55 intersecting
+expanding nbhd size to 3
+014: 56 intersecting
+expanding nbhd size to 4
+015: 56 intersecting
+expanding nbhd size to 5
+016: 69 intersecting
+expanding nbhd size to 6
+017: 70 intersecting
+expanding nbhd size to 7
+018: 72 intersecting
+019: 51 intersecting
+expanding nbhd size to 8
+020: 55 intersecting
+021: 50 intersecting
+expanding nbhd size to 9
+022: 53 intersecting
+expanding nbhd size to 10
+023: 55 intersecting
+expanding nbhd size to 11
+024: 70 intersecting
+025: 62 intersecting
+026: 48 intersecting
+expanding nbhd size to 12
+027: 48 intersecting
+028: 43 intersecting
+029: 40 intersecting
+030: 38 intersecting
+031: 32 intersecting
+032: 24 intersecting
+033: 16 intersecting
+034: 3 intersecting
+writing corrected surface to ../surf/rh.orig
+
+ rm ../surf/rh.inflated 
+
+#--------------------------------------------
+#@# Make White Surf rh Mon Feb 18 13:35:21 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -whiteonly -mgz -T1 brain.finalsurfs sub-ADS9622 rh 
+
+using white.preaparc as white matter name...
+only generating white matter surface
+using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
+not using aparc to prevent surfaces crossing the midline
+INFO: assuming MGZ format for volumes.
+using brain.finalsurfs as T1 volume...
+$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
+$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/mri/filled.mgz...
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/mri/brain.finalsurfs.mgz...
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/mri/../mri/aseg.presurf.mgz...
+reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/mri/wm.mgz...
+49502 bright wm thresholded.
+2886 bright non-wm voxels segmented.
+reading original surface position from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.orig...
+computing class statistics...
+border white:   1925290 voxels (1.43%)
+border gray     1986767 voxels (1.48%)
+WM (99.0): 100.0 +- 5.0 [70.0 --> 110.0]
+GM (89.0) : 88.8 +- 6.0 [30.0 --> 110.0]
+setting MIN_GRAY_AT_WHITE_BORDER to 78.0 (was 70)
+setting MAX_BORDER_WHITE to 115.0 (was 105)
+setting MIN_BORDER_WHITE to 84.0 (was 85)
+setting MAX_CSF to 72.1 (was 40)
+setting MAX_GRAY to 105.0 (was 95)
+setting MAX_GRAY_AT_CSF_BORDER to 78.0 (was 75)
+setting MIN_GRAY_AT_CSF_BORDER to 66.1 (was 40)
+repositioning cortical surface to gray/white boundary
+smoothing T1 volume with sigma = 2.000
+vertex spacing 0.39 +- 0.11 (0.01-->7.50) (max @ vno 305427 --> 875913)
+face area 0.06 +- 0.04 (0.00-->11.87)
+mean absolute distance = 0.42 +- 0.73
+37143 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+spring scale = 2.23
+using class modes intead of means, discounting robust sigmas....
+intensity peaks found at WM=110+-1.7,    GM=84+-5.2
+mean inside = 102.0, mean outside = 86.8
+smoothing surface for 5 iterations...
+inhibiting deformation at non-cortical midline structures...
+mean border=97.0, 941 (941) missing vertices, mean dist -0.3 [0.5 (%71.0)->0.2 (%29.0))]
+%72 local maxima, %22 large gradients and % 1 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=2.0, host= n048, nav=4, nbrs=2, l_repulse=5.000, l_tspring=4.955, l_nspring=1.113, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 0.000000
+desired_rms_height 0.000000
+momentum 0.000000
+nbhd_size 0
+max_nbrs 0
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 1
+randomSeed 0
+
+smoothing T1 volume with sigma = 1.000
+vertex spacing 0.47 +- 0.17 (0.03-->7.48) (max @ vno 305427 --> 875913)
+face area 0.06 +- 0.05 (0.00-->9.04)
+mean absolute distance = 0.30 +- 0.53
+24085 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=12931457.0, rms=4.856
+001: dt: 0.5000, sse=9599590.0, rms=3.642 (25.002%)
+002: dt: 0.5000, sse=9692380.0, rms=3.311 (9.080%)
+003: dt: 0.5000, sse=10019475.0, rms=3.119 (5.809%)
+004: dt: 0.5000, sse=10035130.0, rms=3.041 (2.484%)
+005: dt: 0.5000, sse=10039814.0, rms=2.981 (1.981%)
+rms = 2.96, time step reduction 1 of 3 to 0.250...
+006: dt: 0.5000, sse=9810245.0, rms=2.962 (0.625%)
+007: dt: 0.2500, sse=9677139.0, rms=2.843 (4.046%)
+008: dt: 0.2500, sse=9489988.0, rms=2.773 (2.431%)
+rms = 2.74, time step reduction 2 of 3 to 0.125...
+009: dt: 0.2500, sse=9424866.0, rms=2.739 (1.256%)
+rms = 2.72, time step reduction 3 of 3 to 0.062...
+010: dt: 0.1250, sse=8852649.0, rms=2.719 (0.706%)
+positioning took 17.0 minutes
+inhibiting deformation at non-cortical midline structures...
+mean border=97.8, 2673 (372) missing vertices, mean dist -0.2 [0.3 (%67.5)->0.2 (%32.5))]
+%83 local maxima, %11 large gradients and % 1 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=1.0, host= n048, nav=2, nbrs=2, l_repulse=5.000, l_tspring=4.955, l_nspring=1.113, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.500
+vertex spacing 0.47 +- 0.17 (0.03-->7.50) (max @ vno 305427 --> 875913)
+face area 0.08 +- 0.06 (0.00-->11.84)
+mean absolute distance = 0.25 +- 0.40
+24990 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=10352952.0, rms=3.013
+011: dt: 0.5000, sse=10714624.0, rms=2.757 (8.490%)
+rms = 2.72, time step reduction 1 of 3 to 0.250...
+012: dt: 0.5000, sse=10551532.0, rms=2.721 (1.306%)
+013: dt: 0.2500, sse=10258045.0, rms=2.547 (6.417%)
+014: dt: 0.2500, sse=10079992.0, rms=2.476 (2.752%)
+015: dt: 0.2500, sse=9916405.0, rms=2.425 (2.088%)
+rms = 2.39, time step reduction 2 of 3 to 0.125...
+016: dt: 0.2500, sse=9802094.0, rms=2.391 (1.374%)
+rms = 2.35, time step reduction 3 of 3 to 0.062...
+017: dt: 0.1250, sse=9299945.0, rms=2.346 (1.915%)
+positioning took 11.8 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 1 vertex label from ripped group
+mean border=98.2, 2973 (270) missing vertices, mean dist -0.1 [0.3 (%60.5)->0.2 (%39.5))]
+%86 local maxima, % 8 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.5, host= n048, nav=1, nbrs=2, l_repulse=5.000, l_tspring=4.955, l_nspring=1.113, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+smoothing T1 volume with sigma = 0.250
+vertex spacing 0.46 +- 0.16 (0.04-->7.49) (max @ vno 305427 --> 875913)
+face area 0.08 +- 0.06 (0.00-->12.04)
+mean absolute distance = 0.23 +- 0.35
+24319 vertices more than 2 sigmas from mean.
+averaging target values for 5 iterations...
+000: dt: 0.0000, sse=9418539.0, rms=2.497
+018: dt: 0.5000, sse=10157586.0, rms=2.446 (2.040%)
+rms = 2.48, time step reduction 1 of 3 to 0.250...
+019: dt: 0.2500, sse=7913297.0, rms=2.319 (5.188%)
+020: dt: 0.2500, sse=9835533.0, rms=2.215 (4.522%)
+rms = 2.24, time step reduction 2 of 3 to 0.125...
+rms = 2.18, time step reduction 3 of 3 to 0.062...
+021: dt: 0.1250, sse=8416485.0, rms=2.176 (1.750%)
+positioning took 18.6 minutes
+inhibiting deformation at non-cortical midline structures...
+removing 4 vertex label from ripped group
+removing 1 vertex label from ripped group
+mean border=98.4, 3176 (214) missing vertices, mean dist -0.1 [0.3 (%57.5)->0.2 (%42.5))]
+%87 local maxima, % 7 large gradients and % 0 min vals, 0 gradients ignored
+tol=1.0e-04, sigma=0.2, host= n048, nav=0, nbrs=2, l_repulse=5.000, l_tspring=4.955, l_nspring=1.113, l_intensity=0.200, l_curv=1.000
+mom=0.00, dt=0.50
+writing white matter surface to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.white.preaparc...
+000: dt: 0.0000, sse=8402582.0, rms=2.267
+rms = 2.28, time step reduction 1 of 3 to 0.250...
+022: dt: 0.2500, sse=7393586.0, rms=2.156 (4.890%)
+023: dt: 0.2500, sse=9555421.0, rms=2.001 (7.194%)
+rms = 2.04, time step reduction 2 of 3 to 0.125...
+rms = 1.97, time step reduction 3 of 3 to 0.062...
+024: dt: 0.1250, sse=8172207.5, rms=1.973 (1.408%)
+positioning took 27.9 minutes
+generating cortex label...
+169 non-cortical segments detected
+only using segment with 40887 vertices
+erasing segment 0 (vno[0] = 50901)
+erasing segment 1 (vno[0] = 57009)
+erasing segment 2 (vno[0] = 76927)
+erasing segment 3 (vno[0] = 77157)
+erasing segment 4 (vno[0] = 79796)
+erasing segment 5 (vno[0] = 84614)
+erasing segment 6 (vno[0] = 88983)
+erasing segment 7 (vno[0] = 89830)
+erasing segment 8 (vno[0] = 101343)
+erasing segment 9 (vno[0] = 112526)
+erasing segment 10 (vno[0] = 114482)
+erasing segment 11 (vno[0] = 119889)
+erasing segment 12 (vno[0] = 121814)
+erasing segment 13 (vno[0] = 122353)
+erasing segment 14 (vno[0] = 124529)
+erasing segment 15 (vno[0] = 127193)
+erasing segment 16 (vno[0] = 152672)
+erasing segment 17 (vno[0] = 157186)
+erasing segment 18 (vno[0] = 163100)
+erasing segment 19 (vno[0] = 168948)
+erasing segment 20 (vno[0] = 171788)
+erasing segment 21 (vno[0] = 181860)
+erasing segment 22 (vno[0] = 183294)
+erasing segment 23 (vno[0] = 196853)
+erasing segment 24 (vno[0] = 201501)
+erasing segment 25 (vno[0] = 217302)
+erasing segment 26 (vno[0] = 220338)
+erasing segment 27 (vno[0] = 220408)
+erasing segment 28 (vno[0] = 224272)
+erasing segment 29 (vno[0] = 228373)
+erasing segment 30 (vno[0] = 231038)
+erasing segment 31 (vno[0] = 234333)
+erasing segment 32 (vno[0] = 239125)
+erasing segment 33 (vno[0] = 239591)
+erasing segment 34 (vno[0] = 249970)
+erasing segment 35 (vno[0] = 250042)
+erasing segment 36 (vno[0] = 275909)
+erasing segment 37 (vno[0] = 282120)
+erasing segment 38 (vno[0] = 290977)
+erasing segment 40 (vno[0] = 314351)
+erasing segment 41 (vno[0] = 322733)
+erasing segment 42 (vno[0] = 326189)
+erasing segment 43 (vno[0] = 331289)
+erasing segment 44 (vno[0] = 334200)
+erasing segment 45 (vno[0] = 340367)
+erasing segment 46 (vno[0] = 341164)
+erasing segment 47 (vno[0] = 344256)
+erasing segment 48 (vno[0] = 347498)
+erasing segment 49 (vno[0] = 348299)
+erasing segment 50 (vno[0] = 348417)
+erasing segment 51 (vno[0] = 349440)
+erasing segment 52 (vno[0] = 351871)
+erasing segment 53 (vno[0] = 353047)
+erasing segment 54 (vno[0] = 359565)
+erasing segment 55 (vno[0] = 362123)
+erasing segment 56 (vno[0] = 362137)
+erasing segment 57 (vno[0] = 362584)
+erasing segment 58 (vno[0] = 365161)
+erasing segment 59 (vno[0] = 369357)
+erasing segment 60 (vno[0] = 377078)
+erasing segment 61 (vno[0] = 385445)
+erasing segment 62 (vno[0] = 390154)
+erasing segment 63 (vno[0] = 394684)
+erasing segment 64 (vno[0] = 396761)
+erasing segment 65 (vno[0] = 398501)
+erasing segment 66 (vno[0] = 400541)
+erasing segment 67 (vno[0] = 400759)
+erasing segment 68 (vno[0] = 408451)
+erasing segment 69 (vno[0] = 408585)
+erasing segment 70 (vno[0] = 412212)
+erasing segment 71 (vno[0] = 415314)
+erasing segment 72 (vno[0] = 431687)
+erasing segment 73 (vno[0] = 431698)
+erasing segment 74 (vno[0] = 432682)
+erasing segment 75 (vno[0] = 440237)
+erasing segment 76 (vno[0] = 440250)
+erasing segment 77 (vno[0] = 446679)
+erasing segment 78 (vno[0] = 450308)
+erasing segment 79 (vno[0] = 453628)
+erasing segment 80 (vno[0] = 467464)
+erasing segment 81 (vno[0] = 480422)
+erasing segment 82 (vno[0] = 491719)
+erasing segment 83 (vno[0] = 499553)
+erasing segment 84 (vno[0] = 508936)
+erasing segment 85 (vno[0] = 511705)
+erasing segment 86 (vno[0] = 522877)
+erasing segment 87 (vno[0] = 528389)
+erasing segment 88 (vno[0] = 531313)
+erasing segment 89 (vno[0] = 539333)
+erasing segment 90 (vno[0] = 550188)
+erasing segment 91 (vno[0] = 553836)
+erasing segment 92 (vno[0] = 554959)
+erasing segment 93 (vno[0] = 559423)
+erasing segment 94 (vno[0] = 563236)
+erasing segment 95 (vno[0] = 567212)
+erasing segment 96 (vno[0] = 567409)
+erasing segment 97 (vno[0] = 577803)
+erasing segment 98 (vno[0] = 584729)
+erasing swriting smoothed curvature to rh.curv
+egment 99 (vno[0] = 595087)
+erasing segment 100 (vno[0] = 595240)
+erasing segment 101 (vno[0] = 599451)
+erasing segment 102 (vno[0] = 599477)
+erasing segment 103 (vno[0] = 604733)
+erasing segment 104 (vno[0] = 606394)
+erasing segment 105 (vno[0] = 613074)
+erasing segment 106 (vno[0] = 616750)
+erasing segment 107 (vno[0] = 617660)
+erasing segment 108 (vno[0] = 620845)
+erasing segment 109 (vno[0] = 623716)
+erasing segment 110 (vno[0] = 625150)
+erasing segment 111 (vno[0] = 628038)
+erasing segment 112 (vno[0] = 637509)
+erasing segment 113 (vno[0] = 637656)
+erasing segment 114 (vno[0] = 640674)
+erasing segment 115 (vno[0] = 641903)
+erasing segment 116 (vno[0] = 642930)
+erasing segment 117 (vno[0] = 642944)
+erasing segment 118 (vno[0] = 644619)
+erasing segment 119 (vno[0] = 645904)
+erasing segment 120 (vno[0] = 648107)
+erasing segment 121 (vno[0] = 648138)
+erasing segment 122 (vno[0] = 648315)
+erasing segment 123 (vno[0] = 650565)
+erasing segment 124 (vno[0] = 652968)
+erasing segment 125 (vno[0] = 657066)
+erasing segment 126 (vno[0] = 659944)
+erasing segment 127 (vno[0] = 660799)
+erasing segment 128 (vno[0] = 660893)
+erasing segment 129 (vno[0] = 670634)
+erasing segment 130 (vno[0] = 671207)
+erasing segment 131 (vno[0] = 671444)
+erasing segment 132 (vno[0] = 676946)
+erasing segment 133 (vno[0] = 679443)
+erasing segment 134 (vno[0] = 681242)
+erasing segment 135 (vno[0] = 686967)
+erasing segment 136 (vno[0] = 689707)
+erasing segment 137 (vno[0] = 689716)
+erasing segment 138 (vno[0] = 702427)
+erasing segment 139 (vno[0] = 724138)
+erasing segment 140 (vno[0] = 727208)
+erasing segment 141 (vno[0] = 730688)
+erasing segment 142 (vno[0] = 730696)
+erasing segment 143 (vno[0] = 732381)
+erasing segment 144 (vno[0] = 735315)
+erasing segment 145 (vno[0] = 737783)
+erasing segment 146 (vno[0] = 742384)
+erasing segment 147 (vno[0] = 743935)
+erasing segment 148 (vno[0] = 745969)
+erasing segment 149 (vno[0] = 746833)
+erasing segment 150 (vno[0] = 757828)
+erasing segment 151 (vno[0] = 757861)
+erasing segment 152 (vno[0] = 759442)
+erasing segment 153 (vno[0] = 760035)
+erasing segment 154 (vno[0] = 766919)
+erasing segment 155 (vno[0] = 767092)
+erasing segment 156 (vno[0] = 767132)
+erasing segment 157 (vno[0] = 792181)
+erasing segment 158 (vno[0] = 799670)
+erasing segment 159 (vno[0] = 802780)
+erasing segment 160 (vno[0] = 811003)
+erasing segment 161 (vno[0] = 811803)
+erasing segment 162 (vno[0] = 815575)
+erasing segment 163 (vno[0] = 816019)
+erasing segment 164 (vno[0] = 819296)
+erasing segment 165 (vno[0] = 823812)
+erasing segment 166 (vno[0] = 837699)
+erasing segment 167 (vno[0] = 860008)
+erasing segment 168 (vno[0] = 877088)
+writing cortex label to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/label/rh.cortex.label...
+writing curvature file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.curv
+writing smoothed area to rh.area
+writing curvature file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf/rh.area
+vertex spacing 0.45 +- 0.16 (0.01-->7.52) (max @ vno 305427 --> 875913)
+face area 0.08 +- 0.06 (0.00-->12.26)
+refinement took 116.5 minutes
+#--------------------------------------------
+#@# Smooth2 rh Mon Feb 18 15:31:53 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_smooth -n 3 -nw -seed 1234 ../surf/rh.white.preaparc ../surf/rh.smoothwm 
+
+smoothing for 3 iterations
+setting seed for random number generator to 1234
+smoothing surface tessellation for 3 iterations...
+smoothing complete - recomputing first and second fundamental forms...
+#--------------------------------------------
+#@# Inflation2 rh Mon Feb 18 15:35:57 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_inflate -rusage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/touch/rusage.mris_inflate.rh.dat -n 50 ../surf/rh.smoothwm ../surf/rh.inflated 
+
+niterations = 50
+Reading ../surf/rh.smoothwm
+avg radius = 49.8 mm, total surface area = 117607 mm^2
+writing inflated surface to ../surf/rh.inflated
+writing sulcal depths to ../surf/rh.sulc
+
+step 000: RMS=0.130 (target=0.015)   
+step 005: RMS=0.095 (target=0.015)   
+step 010: RMS=0.076 (target=0.015)   
+step 015: RMS=0.064 (target=0.015)   
+step 020: RMS=0.056 (target=0.015)   
+step 025: RMS=0.049 (target=0.015)   
+step 030: RMS=0.044 (target=0.015)   
+step 035: RMS=0.039 (target=0.015)   
+step 040: RMS=0.036 (target=0.015)   
+step 045: RMS=0.033 (target=0.015)   
+step 050: RMS=0.031 (target=0.015)   
+step 055: RMS=0.028 (target=0.015)   
+step 060: RMS=0.027 (target=0.015)   
+step 065: RMS=0.025 (target=0.015)   
+step 070: RMS=0.024 (target=0.015)   
+step 075: RMS=0.023 (target=0.015)   
+step 080: RMS=0.022 (target=0.015)   
+step 085: RMS=0.021 (target=0.015)   
+step 090: RMS=0.021 (target=0.015)   
+step 095: RMS=0.020 (target=0.015)   
+step 100: RMS=0.019 (target=0.015)   
+step 105: RMS=0.019 (target=0.015)   
+step 110: RMS=0.018 (target=0.015)   
+step 115: RMS=0.018 (target=0.015)   
+step 120: RMS=0.017 (target=0.015)   
+step 125: RMS=0.017 (target=0.015)   
+step 130: RMS=0.016 (target=0.015)   
+step 135: RMS=0.016 (target=0.015)   
+step 140: RMS=0.015 (target=0.015)   
+step 145: RMS=0.015 (target=0.015)   
+inflation complete.
+inflation took 41.6 minutes
+mris_inflate utimesec    971.268306
+mris_inflate stimesec    3.469842
+mris_inflate ru_maxrss   1372076
+mris_inflate ru_ixrss    0
+mris_inflate ru_idrss    0
+mris_inflate ru_isrss    0
+mris_inflate ru_minflt   4101605
+mris_inflate ru_majflt   0
+mris_inflate ru_nswap    0
+mris_inflate ru_inblock  0
+mris_inflate ru_oublock  0
+mris_inflate ru_msgsnd   0
+mris_inflate ru_msgrcv   0
+mris_inflate ru_nsignals 0
+mris_inflate ru_nvcsw    53364
+mris_inflate ru_nivcsw   79946
+#--------------------------------------------
+#@# Curv .H and .K rh Mon Feb 18 16:17:36 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf
+
+ mris_curvature -w rh.white.preaparc 
+
+total integrated curvature = 1744.501*4pi (21922.049) --> -1744 handles
+ICI = 3034.4, FI = 13570.0, variation=332922.447
+writing Gaussian curvature to ./rh.white.preaparc.K...done.
+writing mean curvature to ./rh.white.preaparc.H...done.
+rm -f rh.white.H
+ln -s rh.white.preaparc.H rh.white.H
+rm -f rh.white.K
+ln -s rh.white.preaparc.K rh.white.K
+
+ mris_curvature -thresh .999 -n -a 5 -w -distances 10 10 rh.inflated 
+
+normalizing curvature values.
+averaging curvature patterns 5 times.
+sampling 10 neighbors out to a distance of 10 mm
+2543 vertices thresholded to be in k1 ~ [-0.49 0.38], k2 ~ [-0.16 0.10]
+total integrated curvature = 0.201*4pi (2.524) --> 1 handles
+ICI = 3.4, FI = 39.9, variation=613.560
+1058 vertices thresholded to be in [-0.02 0.04]
+writing Gaussian curvature to ./rh.inflated.K...thresholding curvature at 99.90% level
+curvature mean = 0.000, std = 0.002
+956 vertices thresholded to be in [-0.25 0.21]
+done.
+writing mean curvature to ./rh.inflated.H...curvature mean = -0.016, std = 0.042
+done.
+
+#-----------------------------------------
+#@# Curvature Stats rh Mon Feb 18 17:10:07 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/surf
+
+ mris_curvature_stats -m --writeCurvatureFiles -G -o ../stats/rh.curv.stats -F smoothwm sub-ADS9622 rh curv sulc 
+
+             Toggling save flag on curvature files                       [ ok ]
+                 Outputting results using filestem   [ ../stats/rh.curv.stats ]
+             Toggling save flag on curvature files                       [ ok ]
+                                   Setting surface  [ sub-ADS9622/rh.smoothwm ]
+                                Reading surface...                       [ ok ]
+                                   Setting texture                     [ curv ]
+                                Reading texture...                       [ ok ]
+                                   Setting texture                     [ sulc ]
+                                Reading texture...Gb_filter = 0
+                       [ ok ]
+      Calculating Discrete Principal Curvatures...
+   Determining geometric order for vertex faces... [####################] [ ok ]
+                      Determining KH curvatures... [####################] [ ok ]
+                    Determining k1k2 curvatures... [####################] [ ok ]
+                                   deltaViolations                     [ 2395 ]
+Gb_filter = 0
+#--------------------------------------------
+#@# Sphere rh Mon Feb 18 17:13:14 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts
+
+ mris_sphere -rusage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/touch/rusage.mris_sphere.rh.dat -seed 1234 ../surf/rh.inflated ../surf/rh.sphere 
+
+setting seed for random number genererator to 1234
+$Id: mris_sphere.c,v 1.61 2016/01/20 23:42:15 greve Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading original vertex positions...
+unfolding cortex into spherical form...
+surface projected - minimizing metric distortion...
+
+== Number of threads available to mris_sphere for OpenMP = 8 == 
+scaling brain by 0.257...
+MRISunfold() max_passes = 1 -------
+tol=5.0e-01, sigma=0.0, host= n048, nav=1024, nbrs=2, l_area=1.000, l_dist=1.000
+using quadratic fit line minimization
+complete_dist_mat 0
+rms 0
+smooth_averages 0
+remove_neg 0
+ico_order 0
+which_surface 0
+target_radius 0.000000
+nfields 0
+scale 1.000000
+desired_rms_height -1.000000
+momentum 0.900000
+nbhd_size 7
+max_nbrs 8
+niterations 25
+nsurfaces 0
+SURFACES 3
+flags 0 (0)
+use curv 0
+no sulc 0
+no rigid align 0
+mris->nsize 2
+mris->hemisphere 1
+randomSeed 1234
+
+--------------------
+  mrisRemoveNegativeArea()
+pass 1: epoch 1 of 3 starting distance error %20.04
+pass 1: epoch 2 of 3 starting distance error %19.68
+unfolding complete - removing small folds...
+starting distance error %18.97
+removing remaining folds...
+final distance error %19.00
+MRISunfold() return, current seed 1234
+-01: dt=0.0000, 13563 negative triangles
+208: dt=0.9900, 13563 negative triangles
+209: dt=0.9900, 10269 negative triangles
+210: dt=0.9900, 9988 negative triangles
+211: dt=0.9900, 9555 negative triangles
+212: dt=0.9900, 9397 negative triangles
+213: dt=0.9900, 9206 negative triangles
+214: dt=0.9900, 9087 negative triangles
+215: dt=0.9900, 8983 negative triangles
+216: dt=0.9900, 8932 negative triangles
+217: dt=0.9900, 8795 negative triangles
+218: dt=0.9900, 8763 negative triangles
+219: dt=0.9900, 8600 negative triangles
+220: dt=0.9900, 8608 negative triangles
+221: dt=0.9900, 8520 negative triangles
+222: dt=0.9900, 8497 negative triangles
+223: dt=0.9900, 8433 negative triangles
+224: dt=0.9900, 8388 negative triangles
+225: dt=0.9900, 8345 negative triangles
+226: dt=0.9900, 8296 negative triangles
+227: dt=0.9900, 8279 negative triangles
+228: dt=0.9900, 8238 negative triangles
+229: dt=0.9900, 8192 negative triangles
+230: dt=0.9900, 8093 negative triangles
+231: dt=0.9900, 8066 negative triangles
+232: dt=0.9900, 8021 negative triangles
+233: dt=0.9900, 7998 negative triangles
+234: dt=0.9900, 7944 negative triangles
+235: dt=0.9900, 7881 negative triangles
+236: dt=0.9900, 7870 negative triangles
+237: dt=0.9900, 7798 negative triangles
+238: dt=0.9900, 7740 negative triangles
+239: dt=0.9900, 7662 negative triangles
+240: dt=0.9900, 7646 negative triangles
+241: dt=0.9900, 7591 negative triangles
+242: dt=0.9900, 7561 negative triangles
+243: dt=0.9900, 7565 negative triangles
+244: dt=0.9900, 7527 negative triangles
+245: dt=0.9900, 7464 negative triangles
+246: dt=0.9900, 7384 negative triangles
+247: dt=0.9900, 7384 negative triangles
+248: dt=0.9900, 7357 negative triangles
+249: dt=0.9900, 7345 negative triangles
+250: dt=0.9900, 7260 negative triangles
+251: dt=0.9900, 7229 negative triangles
+252: dt=0.9900, 7210 negative triangles
+253: dt=0.9900, 7178 negative triangles
+254: dt=0.9900, 7131 negative triangles
+255: dt=0.9900, 7104 negative triangles
+256: dt=0.9900, 7065 negative triangles
+257: dt=0.9900, 7013 negative triangles
+258: dt=0.9900, 6989 negative triangles
+259: dt=0.9900, 6955 negative triangles
+260: dt=0.9900, 6924 negative triangles
+261: dt=0.9900, 6914 negative triangles
+262: dt=0.9900, 6929 negative triangles
+263: dt=0.9900, 6889 negative triangles
+264: dt=0.9900, 6846 negative triangles
+265: dt=0.9900, 6817 negative triangles
+266: dt=0.9900, 6806 negative triangles
+267: dt=0.9900, 6757 negative triangles
+268: dt=0.9900, 6724 negative triangles
+269: dt=0.9900, 6695 negative triangles
+270: dt=0.9900, 6665 negative triangles
+271: dt=0.9900, 6657 negative triangles
+272: dt=0.9900, 6650 negative triangles
+273: dt=0.9900, 6590 negative triangles
+274: dt=0.9900, 6594 negative triangles
+275: dt=0.9900, 6587 negative triangles
+276: dt=0.9900, 6566 negative triangles
+277: dt=0.9900, 6526 negative triangles
+278: dt=0.9900, 6477 negative triangles
+279: dt=0.9900, 6476 negative triangles
+280: dt=0.9900, 6464 negative triangles
+281: dt=0.9900, 6454 negative triangles
+282: dt=0.9900, 6398 negative triangles
+283: dt=0.9900, 6404 negative triangles
+284: dt=0.9900, 6352 negative triangles
+285: dt=0.9900, 6329 negative triangles
+286: dt=0.9900, 6274 negative triangles
+287: dt=0.9900, 6269 negative triangles
+288: dt=0.9900, 6228 negative triangles
+289: dt=0.9900, 6246 negative triangles
+290: dt=0.9900, 6226 negative triangles
+291: dt=0.9900, 6208 negative triangles
+292: dt=0.9900, 6182 negative triangles
+293: dt=0.9900, 6208 negative triangles
+294: dt=0.9900, 6134 negative triangles
+295: dt=0.9900, 6107 negative triangles
+296: dt=0.9900, 6084 negative triangles
+297: dt=0.9900, 6059 negative triangles
+298: dt=0.9900, 6050 negative triangles
+299: dt=0.9900, 5987 negative triangles
+300: dt=0.9900, 6008 negative triangles
+301: dt=0.9900, 6002 negative triangles
+302: dt=0.9900, 5974 negative triangles
+303: dt=0.9900, 5952 negative triangles
+304: dt=0.9900, 5926 negative triangles
+305: dt=0.9900, 5929 negative triangles
+306: dt=0.9900, 5922 negative triangles
+307: dt=0.9900, 5892 negative triangles
+308: dt=0.9900, 5926 negative triangles
+309: dt=0.9900, 5917 negative triangles
+310: dt=0.9900, 5920 negative triangles
+311: dt=0.9900, 5903 negative triangles
+312: dt=0.9900, 5910 negative triangles
+313: dt=0.9900, 5868 negative triangles
+314: dt=0.9900, 5861 negative triangles
+315: dt=0.9900, 5855 negative triangles
+316: dt=0.9900, 5844 negative triangles
+317: dt=0.9900, 5846 negative triangles
+318: dt=0.9900, 5829 negative triangles
+319: dt=0.9900, 5816 negative triangles
+320: dt=0.9900, 5805 negative triangles
+321: dt=0.9900, 5838 negative triangles
+322: dt=0.9900, 5839 negative triangles
+323: dt=0.9900, 5836 negative triangles
+324: dt=0.9900, 5814 negative triangles
+325: dt=0.9900, 5791 negative triangles
+326: dt=0.9900, 5810 negative triangles
+327: dt=0.9900, 5761 negative triangles
+328: dt=0.9900, 5791 negative triangles
+329: dt=0.9900, 5778 negative triangles
+330: dt=0.9900, 5807 negative triangles
+331: dt=0.9900, 5787 negative triangles
+332: dt=0.9900, 5789 negative triangles
+333: dt=0.9900, 5765 negative triangles
+334: dt=0.9900, 5799 negative triangles
+335: dt=0.9900, 5772 negative triangles
+336: dt=0.9900, 5795 negative triangles
+337: dt=0.9405, 5794 negative triangles
+338: dt=0.9405, 5771 negative triangles
+339: dt=0.9405, 5750 negative triangles
+340: dt=0.9405, 5757 negative triangles
+341: dt=0.9405, 5762 negative triangles
+342: dt=0.9405, 5722 negative triangles
+343: dt=0.9405, 5762 negative triangles
+344: dt=0.9405, 5768 negative triangles
+345: dt=0.9405, 5764 negative triangles
+346: dt=0.9405, 5758 negative triangles
+347: dt=0.9405, 5762 negative triangles
+348: dt=0.9405, 5750 negative triangles
+349: dt=0.9405, 5764 negative triangles
+350: dt=0.9405, 5743 negative triangles
+351: dt=0.9405, 5726 negative triangles
+352: dt=0.8935, 5757 negative triangles
+353: dt=0.8935, 5736 negative triangles
+354: dt=0.8935, 5745 negative triangles
+355: dt=0.8935, 5772 negative triangles
+356: dt=0.8935, 5722 negative triangles
+357: dt=0.8935, 5746 negative triangles
+358: dt=0.8935, 5761 negative triangles
+359: dt=0.8935, 5740 negative triangles
+360: dt=0.8935, 5742 negative triangles
+361: dt=0.8935, 5735 negative triangles
+362: dt=0.8935, 5700 negative triangles
+363: dt=0.8935, 5730 negative triangles
+364: dt=0.8935, 5680 negative triangles
+365: dt=0.8935, 5658 negative triangles
+366: dt=0.8935, 5656 negative triangles
+367: dt=0.8935, 5649 negative triangles
+368: dt=0.8935, 5684 negative triangles
+369: dt=0.8935, 5684 negative triangles
+370: dt=0.8935, 5679 negative triangles
+371: dt=0.8935, 5670 negative triangles
+372: dt=0.8935, 5689 negative triangles
+373: dt=0.8935, 5711 negative triangles
+374: dt=0.8935, 5685 negative triangles
+375: dt=0.8935, 5687 negative triangles
+376: dt=0.8935, 5701 negative triangles
+377: dt=0.8488, 5680 negative triangles
+378: dt=0.8488, 5657 negative triangles
+379: dt=0.8488, 5656 negative triangles
+380: dt=0.8488, 5681 negative triangles
+381: dt=0.8488, 5668 negative triangles
+382: dt=0.8488, 5671 negative triangles
+383: dt=0.8488, 5659 negative triangles
+384: dt=0.8488, 5670 negative triangles
+385: dt=0.8488, 5641 negative triangles
+386: dt=0.8488, 5647 negative triangles
+387: dt=0.8488, 5630 negative triangles
+388: dt=0.8488, 5625 negative triangles
+389: dt=0.8488, 5635 negative triangles
+390: dt=0.8488, 5606 negative triangles
+391: dt=0.8488, 5604 negative triangles
+392: dt=0.8488, 5613 negative triangles
+393: dt=0.8488, 5577 negative triangles
+394: dt=0.8488, 5608 negative triangles
+395: dt=0.8488, 5595 negative triangles
+396: dt=0.8488, 5594 negative triangles
+397: dt=0.8488, 5602 negative triangles
+398: dt=0.8488, 5594 negative triangles
+399: dt=0.8488, 5606 negative triangles
+400: dt=0.8488, 5579 negative triangles
+401: dt=0.8488, 5585 negative triangles
+402: dt=0.8488, 5614 negative triangles
+403: dt=0.8064, 5604 negative triangles
+404: dt=0.8064, 5610 negative triangles
+405: dt=0.8064, 5610 negative triangles
+406: dt=0.8064, 5600 negative triangles
+407: dt=0.8064, 5587 negative triangles
+408: dt=0.8064, 5623 negative triangles
+409: dt=0.8064, 5610 negative triangles
+410: dt=0.8064, 5605 negative triangles
+411: dt=0.8064, 5577 negative triangles
+412: dt=0.8064, 5595 negative triangles
+413: dt=0.7660, 5586 negative triangles
+414: dt=0.7660, 5604 negative triangles
+415: dt=0.7660, 5593 negative triangles
+416: dt=0.7660, 5587 negative triangles
+417: dt=0.7660, 5595 negative triangles
+418: dt=0.7660, 5602 negative triangles
+419: dt=0.7660, 5608 negative triangles
+420: dt=0.7660, 5610 negative triangles
+421: dt=0.7660, 5600 negative triangles
+422: dt=0.7660, 5612 negative triangles
+423: dt=0.7277, 5601 negative triangles
+424: dt=0.7277, 5600 negative triangles
+425: dt=0.7277, 5585 negative triangles
+426: dt=0.7277, 5598 negative triangles
+427: dt=0.7277, 5585 negative triangles
+428: dt=0.7277, 5599 negative triangles
+429: dt=0.7277, 5588 negative triangles
+430: dt=0.7277, 5616 negative triangles
+431: dt=0.7277, 5598 negative triangles
+432: dt=0.7277, 5599 negative triangles
+433: dt=0.6914, 5593 negative triangles
+434: dt=0.6914, 5602 negative triangles
+435: dt=0.6914, 5615 negative triangles
+436: dt=0.6914, 5609 negative triangles
+437: dt=0.6914, 5612 negative triangles
+438: dt=0.6914, 5591 negative triangles
+439: dt=0.6914, 5609 negative triangles
+440: dt=0.6914, 5607 negative triangles
+441: dt=0.6914, 5586 negative triangles
+442: dt=0.6914, 5612 negative triangles
+443: dt=0.6568, 5596 negative triangles
+expanding nbhd size to 1
+444: dt=0.9900, 5598 negative triangles
+445: dt=0.9900, 5550 negative triangles
+446: dt=0.9900, 5513 negative triangles
+447: dt=0.9900, 5437 negative triangles
+448: dt=0.9900, 5429 negative triangles
+449: dt=0.9900, 5396 negative triangles
+450: dt=0.9900, 5379 negative triangles
+451: dt=0.9900, 5364 negative triangles
+452: dt=0.9900, 5351 negative triangles
+453: dt=0.9900, 5333 negative triangles
+454: dt=0.9900, 5325 negative triangles
+455: dt=0.9900, 5309 negative triangles
+456: dt=0.9900, 5279 negative triangles
+457: dt=0.9900, 5269 negative triangles
+458: dt=0.9900, 5280 negative triangles
+459: dt=0.9900, 5255 negative triangles
+460: dt=0.9900, 5243 negative triangles
+461: dt=0.9900, 5232 negative triangles
+462: dt=0.9900, 5225 negative triangles
+463: dt=0.9900, 5223 negative triangles
+464: dt=0.9900, 5208 negative triangles
+465: dt=0.9900, 5231 negative triangles
+466: dt=0.9900, 5204 negative triangles
+467: dt=0.9900, 5207 negative triangles
+468: dt=0.9900, 5201 negative triangles
+469: dt=0.9900, 5197 negative triangles
+470: dt=0.9900, 5192 negative triangles
+471: dt=0.9900, 5164 negative triangles
+472: dt=0.9900, 5171 negative triangles
+473: dt=0.9900, 5172 negative triangles
+474: dt=0.9900, 5173 negative triangles
+475: dt=0.9900, 5154 negative triangles
+476: dt=0.9900, 5160 negative triangles
+477: dt=0.9900, 5135 negative triangles
+478: dt=0.9900, 5138 negative triangles
+479: dt=0.9900, 5130 negative triangles
+480: dt=0.9900, 5144 negative triangles
+481: dt=0.9900, 5130 negative triangles
+482: dt=0.9900, 5133 negative triangles
+483: dt=0.9900, 5114 negative triangles
+484: dt=0.9900, 5123 negative triangles
+485: dt=0.9900, 5122 negative triangles
+486: dt=0.9900, 5112 negative triangles
+487: dt=0.9900, 5111 negative triangles
+488: dt=0.9900, 5117 negative triangles
+489: dt=0.9900, 5101 negative triangles
+490: dt=0.9900, 5103 negative triangles
+491: dt=0.9900, 5113 negative triangles
+492: dt=0.9900, 5101 negative triangles
+493: dt=0.9900, 5113 negative triangles
+494: dt=0.9900, 5101 negative triangles
+495: dt=0.9900, 5095 negative triangles
+496: dt=0.9900, 5101 negative triangles
+497: dt=0.9900, 5084 negative triangles
+498: dt=0.9900, 5080 negative triangles
+499: dt=0.9900, 5094 negative triangles
+500: dt=0.9900, 5100 negative triangles
+501: dt=0.9900, 5077 negative triangles
+502: dt=0.9900, 5071 negative triangles
+503: dt=0.9900, 5077 negative triangles
+504: dt=0.9900, 5088 negative triangles
+505: dt=0.9900, 5090 negative triangles
+506: dt=0.9900, 5098 negative triangles
+507: dt=0.9900, 5107 negative triangles
+508: dt=0.9900, 5094 negative triangles
+509: dt=0.9900, 5095 negative triangles
+510: dt=0.9900, 5090 negative triangles
+511: dt=0.9900, 5082 negative triangles
+512: dt=0.9405, 5075 negative triangles
+513: dt=0.9405, 5092 negative triangles
+514: dt=0.9405, 5073 negative triangles
+515: dt=0.9405, 5075 negative triangles
+516: dt=0.9405, 5070 negative triangles
+517: dt=0.9405, 5077 negative triangles
+518: dt=0.9405, 5076 negative triangles
+519: dt=0.9405, 5074 negative triangles
+520: dt=0.9405, 5064 negative triangles
+521: dt=0.9405, 5074 negative triangles
+522: dt=0.9405, 5070 negative triangles
+523: dt=0.9405, 5077 negative triangles
+524: dt=0.9405, 5068 negative triangles
+525: dt=0.9405, 5061 negative triangles
+526: dt=0.9405, 5074 negative triangles
+527: dt=0.9405, 5067 negative triangles
+528: dt=0.9405, 5060 negative triangles
+529: dt=0.9405, 5069 negative triangles
+530: dt=0.9405, 5056 negative triangles
+531: dt=0.9405, 5056 negative triangles
+532: dt=0.9405, 5070 negative triangles
+533: dt=0.9405, 5056 negative triangles
+534: dt=0.9405, 5048 negative triangles
+535: dt=0.9405, 5040 negative triangles
+536: dt=0.9405, 5039 negative triangles
+537: dt=0.9405, 5033 negative triangles
+538: dt=0.9405, 5028 negative triangles
+539: dt=0.9405, 5024 negative triangles
+540: dt=0.9405, 5014 negative triangles
+541: dt=0.9405, 5016 negative triangles
+542: dt=0.9405, 5009 negative triangles
+543: dt=0.9405, 5002 negative triangles
+544: dt=0.9405, 5005 negative triangles
+545: dt=0.9405, 5006 negative triangles
+546: dt=0.9405, 5010 negative triangles
+547: dt=0.9405, 5006 negative triangles
+548: dt=0.9405, 5015 negative triangles
+549: dt=0.9405, 5012 negative triangles
+550: dt=0.9405, 5010 negative triangles
+551: dt=0.9405, 5008 negative triangles
+552: dt=0.9405, 5000 negative triangles
+553: dt=0.9405, 4990 negative triangles
+554: dt=0.9405, 4998 negative triangles
+555: dt=0.9405, 4995 negative triangles
+556: dt=0.9405, 4980 negative triangles
+557: dt=0.9405, 4974 negative triangles
+558: dt=0.9405, 4963 negative triangles
+559: dt=0.9405, 4967 negative triangles
+560: dt=0.9405, 4968 negative triangles
+561: dt=0.9405, 4960 negative triangles
+562: dt=0.9405, 4956 negative triangles
+563: dt=0.9405, 4954 negative triangles
+564: dt=0.9405, 4955 negative triangles
+565: dt=0.9405, 4973 negative triangles
+566: dt=0.9405, 4963 negative triangles
+567: dt=0.9405, 4978 negative triangles
+568: dt=0.9405, 4973 negative triangles
+569: dt=0.9405, 4978 negative triangles
+570: dt=0.9405, 4983 negative triangles
+571: dt=0.9405, 4982 negative triangles
+572: dt=0.9405, 4970 negative triangles
+573: dt=0.8935, 4976 negative triangles
+574: dt=0.8935, 4987 negative triangles
+575: dt=0.8935, 4961 negative triangles
+576: dt=0.8935, 4952 negative triangles
+577: dt=0.8935, 4965 negative triangles
+578: dt=0.8935, 4974 negative triangles
+579: dt=0.8935, 4981 negative triangles
+580: dt=0.8935, 4977 negative triangles
+581: dt=0.8935, 4978 negative triangles
+582: dt=0.8935, 4970 negative triangles
+583: dt=0.8935, 4970 negative triangles
+584: dt=0.8935, 4958 negative triangles
+585: dt=0.8935, 4964 negative triangles
+586: dt=0.8488, 4961 negative triangles
+587: dt=0.8488, 4960 negative triangles
+588: dt=0.8488, 4971 negative triangles
+589: dt=0.8488, 4959 negative triangles
+590: dt=0.8488, 4962 negative triangles
+591: dt=0.8488, 4960 negative triangles
+592: dt=0.8488, 4956 negative triangles
+593: dt=0.8488, 4949 negative triangles
+594: dt=0.8488, 4954 negative triangles
+595: dt=0.8488, 4973 negative triangles
+596: dt=0.8488, 4967 negative triangles
+597: dt=0.8488, 4969 negative triangles
+598: dt=0.8488, 4959 negative triangles
+599: dt=0.8488, 4975 negative triangles
+600: dt=0.8488, 4981 negative triangles
+601: dt=0.8488, 4977 negative triangles
+602: dt=0.8488, 4980 negative triangles
+603: dt=0.8064, 4971 negative triangles
+604: dt=0.8064, 4968 negative triangles
+605: dt=0.8064, 4970 negative triangles
+606: dt=0.8064, 4973 negative triangles
+607: dt=0.8064, 4968 negative triangles
+608: dt=0.8064, 4966 negative triangles
+609: dt=0.8064, 4961 negative triangles
+610: dt=0.8064, 4968 negative triangles
+611: dt=0.8064, 4965 negative triangles
+612: dt=0.8064, 4968 negative triangles
+613: dt=0.7660, 4978 negative triangles
+614: dt=0.7660, 4971 negative triangles
+615: dt=0.7660, 4962 negative triangles
+616: dt=0.7660, 4963 negative triangles
+617: dt=0.7660, 4960 negative triangles
+618: dt=0.7660, 4951 negative triangles
+619: dt=0.7660, 4957 negative triangles
+620: dt=0.7660, 4962 negative triangles
+621: dt=0.7660, 4954 negative triangles
+622: dt=0.7660, 4952 negative triangles
+623: dt=0.7277, 4966 negative triangles
+624: dt=0.7277, 4947 negative triangles
+625: dt=0.7277, 4945 negative triangles
+626: dt=0.7277, 4945 negative triangles
+627: dt=0.7277, 4939 negative triangles
+628: dt=0.7277, 4935 negative triangles
+629: dt=0.7277, 4939 negative triangles
+630: dt=0.7277, 4928 negative triangles
+631: dt=0.7277, 4929 negative triangles
+632: dt=0.7277, 4918 negative triangles
+633: dt=0.7277, 4920 negative triangles
+634: dt=0.7277, 4927 negative triangles
+635: dt=0.7277, 4927 negative triangles
+636: dt=0.7277, 4927 negative triangles
+637: dt=0.7277, 4923 negative triangles
+638: dt=0.7277, 4924 negative triangles
+639: dt=0.7277, 4906 negative triangles
+640: dt=0.7277, 4905 negative triangles
+641: dt=0.7277, 4909 negative triangles
+642: dt=0.7277, 4915 negative triangles
+643: dt=0.7277, 4920 negative triangles
+644: dt=0.7277, 4908 negative triangles
+645: dt=0.7277, 4910 negative triangles
+646: dt=0.7277, 4902 negative triangles
+647: dt=0.7277, 4898 negative triangles
+648: dt=0.7277, 4899 negative triangles
+649: dt=0.7277, 4892 negative triangles
+650: dt=0.7277, 4889 negative triangles
+651: dt=0.7277, 4879 negative triangles
+652: dt=0.7277, 4881 negative triangles
+653: dt=0.7277, 4877 negative triangles
+654: dt=0.7277, 4883 negative triangles
+655: dt=0.7277, 4869 negative triangles
+656: dt=0.7277, 4873 negative triangles
+657: dt=0.7277, 4876 negative triangles
+658: dt=0.7277, 4886 negative triangles
+659: dt=0.7277, 4880 negative triangles
+660: dt=0.7277, 4875 negative triangles
+661: dt=0.7277, 4867 negative triangles
+662: dt=0.7277, 4859 negative triangles
+663: dt=0.7277, 4855 negative triangles
+664: dt=0.7277, 4850 negative triangles
+665: dt=0.7277, 4843 negative triangles
+666: dt=0.7277, 4842 negative triangles
+667: dt=0.7277, 4836 negative triangles
+668: dt=0.7277, 4855 negative triangles
+669: dt=0.7277, 4856 negative triangles
+670: dt=0.7277, 4854 negative triangles
+671: dt=0.7277, 4840 negative triangles
+672: dt=0.7277, 4844 negative triangles
+673: dt=0.7277, 4846 negative triangles
+674: dt=0.7277, 4853 negative triangles
+675: dt=0.7277, 4842 negative triangles
+676: dt=0.7277, 4836 negative triangles
+677: dt=0.7277, 4824 negative triangles
+678: dt=0.7277, 4818 negative triangles
+679: dt=0.7277, 4828 negative triangles
+680: dt=0.7277, 4822 negative triangles
+681: dt=0.7277, 4820 negative triangles
+682: dt=0.7277, 4825 negative triangles
+683: dt=0.7277, 4823 negative triangles
+684: dt=0.7277, 4817 negative triangles
+685: dt=0.7277, 4807 negative triangles
+686: dt=0.7277, 4804 negative triangles
+687: dt=0.7277, 4791 negative triangles
+688: dt=0.7277, 4796 negative triangles
+689: dt=0.7277, 4815 negative triangles
+690: dt=0.7277, 4816 negative triangles
+691: dt=0.7277, 4805 negative triangles
+692: dt=0.7277, 4796 negative triangles
+693: dt=0.7277, 4808 negative triangles
+694: dt=0.7277, 4801 negative triangles
+695: dt=0.7277, 4800 negative triangles
+696: dt=0.7277, 4795 negative triangles
+697: dt=0.6914, 4801 negative triangles
+698: dt=0.6914, 4798 negative triangles
+699: dt=0.6914, 4793 negative triangles
+700: dt=0.6914, 4793 negative triangles
+701: dt=0.6914, 4794 negative triangles
+702: dt=0.6914, 4794 negative triangles
+703: dt=0.6914, 4788 negative triangles
+704: dt=0.6914, 4789 negative triangles
+705: dt=0.6914, 4786 negative triangles
+706: dt=0.6914, 4779 negative triangles
+707: dt=0.6914, 4780 negative triangles
+708: dt=0.6914, 4787 negative triangles
+709: dt=0.6914, 4785 negative triangles
+710: dt=0.6914, 4775 negative triangles
+711: dt=0.6914, 4783 negative triangles
+712: dt=0.6914, 4787 negative triangles
+713: dt=0.6914, 4780 negative triangles
+714: dt=0.6914, 4764 negative triangles
+715: dt=0.6914, 4764 negative triangles
+716: dt=0.6914, 4762 negative triangles
+717: dt=0.6914, 4777 negative triangles
+718: dt=0.6914, 4765 negative triangles
+719: dt=0.6914, 4759 negative triangles
+720: dt=0.6914, 4746 negative triangles
+721: dt=0.6914, 4747 negative triangles
+722: dt=0.6914, 4758 negative triangles
+723: dt=0.6914, 4750 negative triangles
+724: dt=0.6914, 4752 negative triangles
+725: dt=0.6914, 4753 negative triangles
+726: dt=0.6914, 4742 negative triangles
+727: dt=0.6914, 4743 negative triangles
+728: dt=0.6914, 4739 negative triangles
+729: dt=0.6914, 4745 negative triangles
+730: dt=0.6914, 4723 negative triangles
+731: dt=0.6914, 4722 negative triangles
+732: dt=0.6914, 4713 negative triangles
+733: dt=0.6914, 4715 negative triangles
+734: dt=0.6914, 4722 negative triangles
+735: dt=0.6914, 4720 negative triangles
+736: dt=0.6914, 4715 negative triangles
+737: dt=0.6914, 4706 negative triangles
+738: dt=0.6914, 4718 negative triangles
+739: dt=0.6914, 4709 negative triangles
+740: dt=0.6914, 4706 negative triangles
+741: dt=0.6914, 4703 negative triangles
+742: dt=0.6914, 4708 negative triangles
+743: dt=0.6914, 4691 negative triangles
+744: dt=0.6914, 4702 negative triangles
+745: dt=0.6914, 4698 negative triangles
+746: dt=0.6914, 4705 negative triangles
+747: dt=0.6914, 4692 negative triangles
+748: dt=0.6914, 4688 negative triangles
+749: dt=0.6914, 4694 negative triangles
+750: dt=0.6914, 4689 negative triangles
+751: dt=0.6914, 4693 negative triangles
+752: dt=0.6914, 4684 negative triangles
+753: dt=0.6914, 4676 negative triangles
+754: dt=0.6914, 4677 negative triangles
+755: dt=0.6914, 4691 negative triangles
+756: dt=0.6914, 4675 negative triangles
+757: dt=0.6914, 4683 negative triangles
+758: dt=0.6914, 4686 negative triangles
+759: dt=0.6914, 4687 negative triangles
+760: dt=0.6914, 4674 negative triangles
+761: dt=0.6914, 4677 negative triangles
+762: dt=0.6914, 4678 negative triangles
+763: dt=0.6914, 4679 negative triangles
+764: dt=0.6914, 4665 negative triangles
+765: dt=0.6914, 4661 negative triangles
+766: dt=0.6914, 4659 negative triangles
+767: dt=0.6914, 4662 negative triangles
+768: dt=0.6914, 4652 negative triangles
+769: dt=0.6914, 4654 negative triangles
+770: dt=0.6914, 4660 negative triangles
+771: dt=0.6914, 4658 negative triangles
+772: dt=0.6914, 4657 negative triangles
+773: dt=0.6914, 4657 negative triangles
+774: dt=0.6914, 4644 negative triangles
+775: dt=0.6914, 4644 negative triangles
+776: dt=0.6914, 4637 negative triangles
+777: dt=0.6914, 4650 negative triangles
+778: dt=0.6914, 4640 negative triangles
+779: dt=0.6914, 4630 negative triangles
+780: dt=0.6914, 4643 negative triangles
+781: dt=0.6914, 4645 negative triangles
+782: dt=0.6914, 4632 negative triangles
+783: dt=0.6914, 4631 negative triangles
+784: dt=0.6914, 4637 negative triangles
+785: dt=0.6914, 4629 negative triangles
+786: dt=0.6914, 4618 negative triangles
+787: dt=0.6914, 4619 negative triangles
+788: dt=0.6914, 4623 negative triangles
+789: dt=0.6914, 4622 negative triangles
+790: dt=0.6914, 4609 negative triangles
+791: dt=0.6914, 4615 negative triangles
+792: dt=0.6914, 4616 negative triangles
+793: dt=0.6914, 4598 negative triangles
+794: dt=0.6914, 4600 negative triangles
+795: dt=0.6914, 4591 negative triangles
+796: dt=0.6914, 4584 negative triangles
+797: dt=0.6914, 4591 negative triangles
+798: dt=0.6914, 4588 negative triangles
+799: dt=0.6914, 4582 negative triangles
+800: dt=0.6914, 4576 negative triangles
+801: dt=0.6914, 4570 negative triangles
+802: dt=0.6914, 4570 negative triangles
+803: dt=0.6914, 4569 negative triangles
+804: dt=0.6914, 4578 negative triangles
+805: dt=0.6914, 4584 negative triangles
+806: dt=0.6914, 4565 negative triangles
+807: dt=0.6914, 4564 negative triangles
+808: dt=0.6914, 4563 negative triangles
+809: dt=0.6914, 4546 negative triangles
+810: dt=0.6914, 4551 negative triangles
+811: dt=0.6914, 4543 negative triangles
+812: dt=0.6914, 4545 negative triangles
+813: dt=0.6914, 4542 negative triangles
+814: dt=0.6914, 4543 negative triangles
+815: dt=0.6914, 4532 negative triangles
+816: dt=0.6914, 4533 negative triangles
+817: dt=0.6914, 4528 negative triangles
+818: dt=0.6914, 4519 negative triangles
+819: dt=0.6914, 4536 negative triangles
+820: dt=0.6914, 4523 negative triangles
+821: dt=0.6914, 4522 negative triangles
+822: dt=0.6914, 4520 negative triangles
+823: dt=0.6914, 4518 negative triangles
+824: dt=0.6914, 4517 negative triangles
+825: dt=0.6914, 4513 negative triangles
+826: dt=0.6914, 4517 negative triangles
+827: dt=0.6914, 4508 negative triangles
+828: dt=0.6914, 4496 negative triangles
+829: dt=0.6914, 4489 negative triangles
+830: dt=0.6914, 4492 negative triangles
+831: dt=0.6914, 4481 negative triangles
+832: dt=0.6914, 4494 negative triangles
+833: dt=0.6914, 4490 negative triangles
+834: dt=0.6914, 4481 negative triangles
+835: dt=0.6914, 4475 negative triangles
+836: dt=0.6914, 4468 negative triangles
+837: dt=0.6914, 4463 negative triangles
+838: dt=0.6914, 4463 negative triangles
+839: dt=0.6914, 4460 negative triangles
+840: dt=0.6914, 4457 negative triangles
+841: dt=0.6914, 4445 negative triangles
+842: dt=0.6914, 4435 negative triangles
+843: dt=0.6914, 4442 negative triangles
+844: dt=0.6914, 4435 negative triangles
+845: dt=0.6914, 4427 negative triangles
+846: dt=0.6914, 4429 negative triangles
+847: dt=0.6914, 4415 negative triangles
+848: dt=0.6914, 4413 negative triangles
+849: dt=0.6914, 4416 negative triangles
+850: dt=0.6914, 4409 negative triangles
+851: dt=0.6914, 4399 negative triangles
+852: dt=0.6914, 4411 negative triangles
+853: dt=0.6914, 4407 negative triangles
+854: dt=0.6914, 4395 negative triangles
+855: dt=0.6914, 4398 negative triangles
+856: dt=0.6914, 4389 negative triangles
+857: dt=0.6914, 4390 negative triangles
+858: dt=0.6914, 4390 negative triangles
+859: dt=0.6914, 4382 negative triangles
+860: dt=0.6914, 4382 negative triangles
+861: dt=0.6914, 4383 negative triangles
+862: dt=0.6914, 4379 negative triangles
+863: dt=0.6914, 4375 negative triangles
+864: dt=0.6914, 4384 negative triangles
+865: dt=0.6914, 4389 negative triangles
+866: dt=0.6914, 4378 negative triangles
+867: dt=0.6914, 4364 negative triangles
+868: dt=0.6914, 4362 negative triangles
+869: dt=0.6914, 4354 negative triangles
+870: dt=0.6914, 4347 negative triangles
+871: dt=0.6914, 4349 negative triangles
+872: dt=0.6914, 4350 negative triangles
+873: dt=0.6914, 4341 negative triangles
+874: dt=0.6914, 4336 negative triangles
+875: dt=0.6914, 4326 negative triangles
+876: dt=0.6914, 4330 negative triangles
+877: dt=0.6914, 4336 negative triangles
+878: dt=0.6914, 4318 negative triangles
+879: dt=0.6914, 4323 negative triangles
+880: dt=0.6914, 4316 negative triangles
+881: dt=0.6914, 4306 negative triangles
+882: dt=0.6914, 4314 negative triangles
+883: dt=0.6914, 4293 negative triangles
+884: dt=0.6914, 4291 negative triangles
+885: dt=0.6914, 4293 negative triangles
+886: dt=0.6914, 4286 negative triangles
+887: dt=0.6914, 4287 negative triangles
+888: dt=0.6914, 4269 negative triangles
+889: dt=0.6914, 4274 negative triangles
+890: dt=0.6914, 4273 negative triangles
+891: dt=0.6914, 4274 negative triangles
+892: dt=0.6914, 4268 negative triangles
+893: dt=0.6914, 4266 negative triangles
+894: dt=0.6914, 4268 negative triangles
+895: dt=0.6914, 4263 negative triangles
+896: dt=0.6914, 4252 negative triangles
+897: dt=0.6914, 4254 negative triangles
+898: dt=0.6914, 4255 negative triangles
+899: dt=0.6914, 4240 negative triangles
+900: dt=0.6914, 4244 negative triangles
+901: dt=0.6914, 4226 negative triangles
+902: dt=0.6914, 4240 negative triangles
+903: dt=0.6914, 4241 negative triangles
+904: dt=0.6914, 4234 negative triangles
+905: dt=0.6914, 4226 negative triangles
+906: dt=0.6914, 4234 negative triangles
+907: dt=0.6914, 4215 negative triangles
+908: dt=0.6914, 4214 negative triangles
+909: dt=0.6914, 4213 negative triangles
+910: dt=0.6914, 4202 negative triangles
+911: dt=0.6914, 4201 negative triangles
+912: dt=0.6914, 4195 negative triangles
+913: dt=0.6914, 4189 negative triangles
+914: dt=0.6914, 4180 negative triangles
+915: dt=0.6914, 4168 negative triangles
+916: dt=0.6914, 4170 negative triangles
+917: dt=0.6914, 4176 negative triangles
+918: dt=0.6914, 4167 negative triangles
+919: dt=0.6914, 4172 negative triangles
+920: dt=0.6914, 4159 negative triangles
+921: dt=0.6914, 4159 negative triangles
+922: dt=0.6914, 4155 negative triangles
+923: dt=0.6914, 4168 negative triangles
+924: dt=0.6914, 4157 negative triangles
+925: dt=0.6914, 4149 negative triangles
+926: dt=0.6914, 4145 negative triangles
+927: dt=0.6914, 4164 negative triangles
+928: dt=0.6914, 4148 negative triangles
+929: dt=0.6914, 4146 negative triangles
+930: dt=0.6914, 4132 negative triangles
+931: dt=0.6914, 4133 negative triangles
+932: dt=0.6914, 4128 negative triangles
+933: dt=0.6914, 4120 negative triangles
+934: dt=0.6914, 4125 negative triangles
+935: dt=0.6914, 4122 negative triangles
+936: dt=0.6914, 4106 negative triangles
+937: dt=0.6914, 4110 negative triangles
+938: dt=0.6914, 4117 negative triangles
+939: dt=0.6914, 4103 negative triangles
+940: dt=0.6914, 4108 negative triangles
+941: dt=0.6914, 4088 negative triangles
+942: dt=0.6914, 4083 negative triangles
+943: dt=0.6914, 4088 negative triangles
+944: dt=0.6914, 4081 negative triangles
+945: dt=0.6914, 4088 negative triangles
+946: dt=0.6914, 4070 negative triangles
+947: dt=0.6914, 4077 negative triangles
+948: dt=0.6914, 4070 negative triangles
+949: dt=0.6914, 4072 negative triangles
+950: dt=0.6914, 4064 negative triangles
+951: dt=0.6914, 4070 negative triangles
+952: dt=0.6914, 4061 negative triangles
+953: dt=0.6914, 4057 negative triangles
+954: dt=0.6914, 4056 negative triangles
+955: dt=0.6914, 4051 negative triangles
+956: dt=0.6914, 4046 negative triangles
+957: dt=0.6914, 4042 negative triangles
+958: dt=0.6914, 4036 negative triangles
+959: dt=0.6914, 4041 negative triangles
+960: dt=0.6914, 4027 negative triangles
+961: dt=0.6914, 4024 negative triangles
+962: dt=0.6914, 4030 negative triangles
+963: dt=0.6914, 4020 negative triangles
+964: dt=0.6914, 4010 negative triangles
+965: dt=0.6914, 4015 negative triangles
+966: dt=0.6914, 4010 negative triangles
+967: dt=0.6914, 4005 negative triangles
+968: dt=0.6914, 4004 negative triangles
+969: dt=0.6914, 3991 negative triangles
+970: dt=0.6914, 3987 negative triangles
+971: dt=0.6914, 3975 negative triangles
+972: dt=0.6914, 3977 negative triangles
+973: dt=0.6914, 3964 negative triangles
+974: dt=0.6914, 3974 negative triangles
+975: dt=0.6914, 3977 negative triangles
+976: dt=0.6914, 3964 negative triangles
+977: dt=0.6914, 3950 negative triangles
+978: dt=0.6914, 3965 negative triangles
+979: dt=0.6914, 3947 negative triangles
+980: dt=0.6914, 3946 negative triangles
+981: dt=0.6914, 3951 negative triangles
+982: dt=0.6914, 3941 negative triangles
+983: dt=0.6914, 3948 negative triangles
+984: dt=0.6914, 3949 negative triangles
+985: dt=0.6914, 3941 negative triangles
+986: dt=0.6914, 3923 negative triangles
+987: dt=0.6914, 3935 negative triangles
+988: dt=0.6914, 3922 negative triangles
+989: dt=0.6914, 3924 negative triangles
+990: dt=0.6914, 3912 negative triangles
+991: dt=0.6914, 3919 negative triangles
+992: dt=0.6914, 3903 negative triangles
+993: dt=0.6914, 3909 negative triangles
+994: dt=0.6914, 3897 negative triangles
+995: dt=0.6914, 3906 negative triangles
+996: dt=0.6914, 3901 negative triangles
+997: dt=0.6914, 3891 negative triangles
+998: dt=0.6914, 3882 negative triangles
+999: dt=0.6914, 3890 negative triangles
+1000: dt=0.6914, 3874 negative triangles
+1001: dt=0.6914, 3863 negative triangles
+1002: dt=0.6914, 3872 negative triangles
+1003: dt=0.6914, 3872 negative triangles
+1004: dt=0.6914, 3871 negative triangles
+1005: dt=0.6914, 3862 negative triangles
+1006: dt=0.6914, 3856 negative triangles
+1007: dt=0.6914, 3859 negative triangles
+1008: dt=0.6914, 3843 negative triangles
+1009: dt=0.6914, 3833 negative triangles
+1010: dt=0.6914, 3851 negative triangles
+1011: dt=0.6914, 3841 negative triangles
+1012: dt=0.6914, 3826 negative triangles
+1013: dt=0.6914, 3818 negative triangles
+1014: dt=0.6914, 3810 negative triangles
+1015: dt=0.6914, 3807 negative triangles
+1016: dt=0.6914, 3809 negative triangles
+1017: dt=0.6914, 3801 negative triangles
+1018: dt=0.6914, 3799 negative triangles
+1019: dt=0.6914, 3792 negative triangles
+1020: dt=0.6914, 3789 negative triangles
+1021: dt=0.6914, 3789 negative triangles
+1022: dt=0.6914, 3785 negative triangles
+1023: dt=0.6914, 3787 negative triangles
+1024: dt=0.6914, 3778 negative triangles
+1025: dt=0.6914, 3771 negative triangles
+1026: dt=0.6914, 3768 negative triangles
+1027: dt=0.6914, 3761 negative triangles
+1028: dt=0.6914, 3761 negative triangles
+1029: dt=0.6914, 3752 negative triangles
+1030: dt=0.6914, 3750 negative triangles
+1031: dt=0.6914, 3755 negative triangles
+1032: dt=0.6914, 3750 negative triangles
+1033: dt=0.6914, 3733 negative triangles
+1034: dt=0.6914, 3737 negative triangles
+1035: dt=0.6914, 3741 negative triangles
+1036: dt=0.6914, 3738 negative triangles
+1037: dt=0.6914, 3733 negative triangles
+1038: dt=0.6914, 3729 negative triangles
+1039: dt=0.6914, 3726 negative triangles
+1040: dt=0.6914, 3712 negative triangles
+1041: dt=0.6914, 3716 negative triangles
+1042: dt=0.6914, 3705 negative triangles
+1043: dt=0.6914, 3701 negative triangles
+1044: dt=0.6914, 3697 negative triangles
+1045: dt=0.6914, 3696 negative triangles
+1046: dt=0.6914, 3682 negative triangles
+1047: dt=0.6914, 3681 negative triangles
+1048: dt=0.6914, 3681 negative triangles
+1049: dt=0.6914, 3676 negative triangles
+1050: dt=0.6914, 3670 negative triangles
+1051: dt=0.6914, 3666 negative triangles
+1052: dt=0.6914, 3664 negative triangles
+1053: dt=0.6914, 3661 negative triangles
+1054: dt=0.6914, 3649 negative triangles
+1055: dt=0.6914, 3668 negative triangles
+1056: dt=0.6914, 3653 negative triangles
+1057: dt=0.6914, 3646 negative triangles
+1058: dt=0.6914, 3637 negative triangles
+1059: dt=0.6914, 3636 negative triangles
+1060: dt=0.6914, 3632 negative triangles
+1061: dt=0.6914, 3617 negative triangles
+1062: dt=0.6914, 3631 negative triangles
+1063: dt=0.6914, 3607 negative triangles
+1064: dt=0.6914, 3610 negative triangles
+1065: dt=0.6914, 3605 negative triangles
+1066: dt=0.6914, 3596 negative triangles
+1067: dt=0.6914, 3591 negative triangles
+1068: dt=0.6914, 3593 negative triangles
+1069: dt=0.6914, 3587 negative triangles
+1070: dt=0.6914, 3581 negative triangles
+1071: dt=0.6914, 3588 negative triangles
+1072: dt=0.6914, 3568 negative triangles
+1073: dt=0.6914, 3561 negative triangles
+1074: dt=0.6914, 3571 negative triangles
+1075: dt=0.6914, 3569 negative triangles
+1076: dt=0.6914, 3554 negative triangles
+1077: dt=0.6914, 3550 negative triangles
+1078: dt=0.6914, 3548 negative triangles
+1079: dt=0.6914, 3535 negative triangles
+1080: dt=0.6914, 3539 negative triangles
+1081: dt=0.6914, 3540 negative triangles
+1082: dt=0.6914, 3527 negative triangles
+1083: dt=0.6914, 3547 negative triangles
+1084: dt=0.6914, 3536 negative triangles
+1085: dt=0.6914, 3521 negative triangles
+1086: dt=0.6914, 3528 negative triangles
+1087: dt=0.6914, 3508 negative triangles
+1088: dt=0.6914, 3508 negative triangles
+1089: dt=0.6914, 3502 negative triangles
+1090: dt=0.6914, 3501 negative triangles
+1091: dt=0.6914, 3494 negative triangles
+1092: dt=0.6914, 3485 negative triangles
+1093: dt=0.6914, 3484 negative triangles
+1094: dt=0.6914, 3477 negative triangles
+1095: dt=0.6914, 3474 negative triangles
+1096: dt=0.6914, 3467 negative triangles
+1097: dt=0.6914, 3476 negative triangles
+1098: dt=0.6914, 3461 negative triangles
+1099: dt=0.6914, 3454 negative triangles
+1100: dt=0.6914, 3444 negative triangles
+1101: dt=0.6914, 3456 negative triangles
+1102: dt=0.6914, 3442 negative triangles
+1103: dt=0.6914, 3435 negative triangles
+1104: dt=0.6914, 3445 negative triangles
+1105: dt=0.6914, 3436 negative triangles
+1106: dt=0.6914, 3429 negative triangles
+1107: dt=0.6914, 3428 negative triangles
+1108: dt=0.6914, 3417 negative triangles
+1109: dt=0.6914, 3419 negative triangles
+1110: dt=0.6914, 3401 negative triangles
+1111: dt=0.6914, 3410 negative triangles
+1112: dt=0.6914, 3404 negative triangles
+1113: dt=0.6914, 3396 negative triangles
+1114: dt=0.6914, 3380 negative triangles
+1115: dt=0.6914, 3380 negative triangles
+1116: dt=0.6914, 3368 negative triangles
+1117: dt=0.6914, 3369 negative triangles
+1118: dt=0.6914, 3351 negative triangles
+1119: dt=0.6914, 3346 negative triangles
+1120: dt=0.6914, 3326 negative triangles
+1121: dt=0.6914, 3327 negative triangles
+1122: dt=0.6914, 3318 negative triangles
+1123: dt=0.6914, 3311 negative triangles
+1124: dt=0.6914, 3312 negative triangles
+1125: dt=0.6914, 3304 negative triangles
+1126: dt=0.6914, 3299 negative triangles
+1127: dt=0.6914, 3296 negative triangles
+1128: dt=0.6914, 3285 negative triangles
+1129: dt=0.6914, 3272 negative triangles
+1130: dt=0.6914, 3273 negative triangles
+1131: dt=0.6914, 3250 negative triangles
+1132: dt=0.6914, 3255 negative triangles
+1133: dt=0.6914, 3244 negative triangles
+1134: dt=0.6914, 3245 negative triangles
+1135: dt=0.6914, 3223 negative triangles
+1136: dt=0.6914, 3218 negative triangles
+1137: dt=0.6914, 3206 negative triangles
+1138: dt=0.6914, 3206 negative triangles
+1139: dt=0.6914, 3190 negative triangles
+1140: dt=0.6914, 3177 negative triangles
+1141: dt=0.6914, 3164 negative triangles
+1142: dt=0.6914, 3159 negative triangles
+1143: dt=0.6914, 3157 negative triangles
+1144: dt=0.6914, 3147 negative triangles
+1145: dt=0.6914, 3133 negative triangles
+1146: dt=0.6914, 3125 negative triangles
+1147: dt=0.6914, 3125 negative triangles
+1148: dt=0.6914, 3108 negative triangles
+1149: dt=0.6914, 3104 negative triangles
+1150: dt=0.6914, 3095 negative triangles
+1151: dt=0.6914, 3099 negative triangles
+1152: dt=0.6914, 3093 negative triangles
+1153: dt=0.6914, 3085 negative triangles
+1154: dt=0.6914, 3086 negative triangles
+1155: dt=0.6914, 3070 negative triangles
+1156: dt=0.6914, 3050 negative triangles
+1157: dt=0.6914, 3049 negative triangles
+1158: dt=0.6914, 3036 negative triangles
+1159: dt=0.6914, 3046 negative triangles
+1160: dt=0.6914, 3034 negative triangles
+1161: dt=0.6914, 3011 negative triangles
+1162: dt=0.6914, 3004 negative triangles
+1163: dt=0.6914, 2996 negative triangles
+1164: dt=0.6914, 2986 negative triangles
+1165: dt=0.6914, 3001 negative triangles
+1166: dt=0.6914, 2986 negative triangles
+1167: dt=0.6914, 2972 negative triangles
+1168: dt=0.6914, 2966 negative triangles
+1169: dt=0.6914, 2951 negative triangles
+1170: dt=0.6914, 2951 negative triangles
+1171: dt=0.6914, 2942 negative triangles
+1172: dt=0.6914, 2933 negative triangles
+1173: dt=0.6914, 2918 negative triangles
+1174: dt=0.6914, 2921 negative triangles
+1175: dt=0.6914, 2913 negative triangles
+1176: dt=0.6914, 2906 negative triangles
+1177: dt=0.6914, 2888 negative triangles
+1178: dt=0.6914, 2894 negative triangles
+1179: dt=0.6914, 2889 negative triangles
+1180: dt=0.6914, 2880 negative triangles
+1181: dt=0.6914, 2875 negative triangles
+1182: dt=0.6914, 2848 negative triangles
+1183: dt=0.6914, 2844 negative triangles
+1184: dt=0.6914, 2845 negative triangles
+1185: dt=0.6914, 2844 negative triangles
+1186: dt=0.6914, 2846 negative triangles
+1187: dt=0.6914, 2844 negative triangles
+1188: dt=0.6914, 2824 negative triangles
+1189: dt=0.6914, 2826 negative triangles
+1190: dt=0.6914, 2813 negative triangles
+1191: dt=0.6914, 2815 negative triangles
+1192: dt=0.6914, 2813 negative triangles
+1193: dt=0.6914, 2801 negative triangles
+1194: dt=0.6914, 2795 negative triangles
+1195: dt=0.6914, 2794 negative triangles
+1196: dt=0.6914, 2805 negative triangles
+1197: dt=0.6914, 2794 negative triangles
+1198: dt=0.6914, 2772 negative triangles
+1199: dt=0.6914, 2770 negative triangles
+1200: dt=0.6914, 2769 negative triangles
+1201: dt=0.6914, 2754 negative triangles
+1202: dt=0.6914, 2753 negative triangles
+1203: dt=0.6914, 2754 negative triangles
+1204: dt=0.6914, 2743 negative triangles
+1205: dt=0.6914, 2743 negative triangles
+1206: dt=0.6914, 2736 negative triangles
+1207: dt=0.6914, 2723 negative triangles
+1208: dt=0.6914, 2720 negative triangles
+1209: 2719 negative triangles
+writing spherical brain to ../surf/rh.sphere
+spherical transformation took 24.26 hours
+mris_sphere utimesec    42965.887077
+mris_sphere stimesec    28.832796
+mris_sphere ru_maxrss   1872492
+mris_sphere ru_ixrss    0
+mris_sphere ru_idrss    0
+mris_sphere ru_isrss    0
+mris_sphere ru_minflt   7379193
+mris_sphere ru_majflt   0
+mris_sphere ru_nswap    0
+mris_sphere ru_inblock  0
+mris_sphere ru_oublock  0
+mris_sphere ru_msgsnd   0
+mris_sphere ru_msgrcv   0
+mris_sphere ru_nsignals 0
+mris_sphere ru_nvcsw    2234653
+mris_sphere ru_nivcsw   3631821
+FSRUNTIME@ mris_sphere 24.2641 hours 1 threads
+Linux n048 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-ADS9622 exited with ERRORS at Tue Feb 19 17:29:06 UTC 2019
+tee: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all-rh.log: Disk quota exceeded
+
+For more details, see the log file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all-rh.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Standard error:
+tee: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all-rh.log: Disk quota exceeded
+tee: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all-rh.log: Disk quota exceeded
+tee: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all-rh.log: Disk quota exceeded
+Return code: 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 641, in _run_command
+    _save_resultfile(result, outdir, self.name)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 310, in save_resultfile
+    savepkl(resultsfile, result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 732, in savepkl
+    pkl_file.close()
+  File "/usr/local/miniconda/lib/python3.6/gzip.py", line 319, in close
+    myfileobj.close()
+OSError: [Errno 122] Disk quota exceeded
+
+190219-18:06:00,823 nipype.workflow WARNING:
+	 [Node] Error on "_autorecon_surfs0" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0)
+
+
+
+done
+
+-------------------------------

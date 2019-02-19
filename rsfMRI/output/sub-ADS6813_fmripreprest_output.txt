@@ -2065,3 +2065,477 @@ antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shar
 	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.gen_ref" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_t1_trans_wf/gen_ref".
 190218-20:14:09,701 nipype.workflow INFO:
 	 [Node] Running "gen_ref" ("niworkflows.interfaces.utils.GenerateSamplingReference")
+190218-20:21:06,655 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.gen_ref".
+190218-20:21:48,614 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.aparc_t1w_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_t1_trans_wf/aparc_t1w_tfm".
+190218-20:22:12,599 nipype.workflow INFO:
+	 [Node] Running "aparc_t1w_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/surface_recon_wf/segs_to_native_aparc_aseg/tonii/aparc+aseg_vol_out.nii.gz --interpolation MultiLabel --output aparc+aseg_vol_out_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_t1_trans_wf/gen_ref/highres001_N4Corrected0_masked_reference.nii.gz -t identity
+190218-20:31:48,55 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.aparc_t1w_tfm".
+190218-20:33:58,57 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.aseg_t1w_tfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_t1_trans_wf/aseg_t1w_tfm".
+190218-20:34:26,822 nipype.workflow INFO:
+	 [Node] Running "aseg_t1w_tfm" ("niworkflows.interfaces.fixes.FixHeaderApplyTransforms"), a CommandLine Interface with command:
+antsApplyTransforms --default-value 0 --float 1 --input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/surface_recon_wf/segs_to_native_aseg/tonii/aseg_vol_out.nii.gz --interpolation MultiLabel --output aseg_vol_out_trans.nii.gz --reference-image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_t1_trans_wf/gen_ref/highres001_N4Corrected0_masked_reference.nii.gz -t identity
+190218-20:40:36,517 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_t1_trans_wf.aseg_t1w_tfm".
+190218-20:42:01,453 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.recon_report".
+190218-20:42:07,593 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.t1_seg" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/t1_seg".
+190218-20:42:20,707 nipype.workflow INFO:
+	 [Node] Running "t1_seg" ("nipype.interfaces.fsl.preprocess.FAST"), a CommandLine Interface with command:
+fast -N -p -g -S 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/t1_seg/highres001_N4Corrected0_masked.nii.gz
+190218-21:56:03,70 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.t1_seg".
+190218-21:58:07,813 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/wm_roi".
+190218-21:58:09,206 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/csf_roi".
+190218-21:58:09,415 nipype.workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-21:58:20,379 nipype.workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-21:59:47,46 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.csf_roi".
+190218-22:05:02,878 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.wm_roi".
+190218-22:06:01,271 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.wm_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/wm_roi".
+190218-22:06:09,778 nipype.workflow INFO:
+	 [Node] Running "wm_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-22:13:36,415 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.wm_roi".
+190218-22:14:37,869 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/csf_roi".
+190218-22:14:47,862 nipype.workflow INFO:
+	 [Node] Running "csf_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-22:16:18,54 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.csf_roi".
+190218-22:17:08,607 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+190218-22:17:27,184 nipype.workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs")
+190218-22:20:00,979 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+190218-22:20:50,30 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_confounds_wf/acc_roi".
+190218-22:21:16,102 nipype.workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-22:28:25,24 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_confounds_wf.acc_roi".
+190218-22:28:49,882 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.seg_rpt" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/seg_rpt".
+190218-22:29:26,286 nipype.workflow INFO:
+	 [Node] Running "seg_rpt" ("niworkflows.interfaces.masks.ROIsPlot")
+190218-23:35:19,63 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.mri_coreg".
+190218-23:36:16,919 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.bbregister" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister".
+190218-23:36:28,383 nipype.workflow INFO:
+	 [Node] Running "bbregister" ("fmriprep.interfaces.freesurfer.PatchedBBRegisterRPT"), a CommandLine Interface with command:
+bbregister --t2 --6 --init-reg /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/mri_coreg/registration.lta --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta --reg /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.dat --o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg.nii.gz --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz --s sub-ADS6813
+190218-23:38:08,380 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/tpms_add_csf_wm".
+190218-23:38:18,544 nipype.workflow INFO:
+	 [Node] Running "tpms_add_csf_wm" ("fmriprep.interfaces.utils.AddTPMs")
+190218-23:40:57,669 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.tpms_add_csf_wm".
+190218-23:41:59,222 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.acc_roi" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_confounds_wf/acc_roi".
+190218-23:42:06,132 nipype.workflow INFO:
+	 [Node] Running "acc_roi" ("fmriprep.interfaces.utils.TPM2ROI")
+190218-23:42:13,400 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.mri_coreg".
+190218-23:43:13,637 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.bbregister" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister".
+190218-23:43:26,671 nipype.workflow INFO:
+	 [Node] Running "bbregister" ("fmriprep.interfaces.freesurfer.PatchedBBRegisterRPT"), a CommandLine Interface with command:
+bbregister --t2 --6 --init-reg /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/mri_coreg/registration.lta --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta --reg /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.dat --o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg.nii.gz --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz --s sub-ADS6813
+190218-23:49:19,688 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_confounds_wf.acc_roi".
+190219-00:45:33,721 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970:
+190219-00:45:33,771 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970:Matrix from LTA:
+190219-00:45:33,772 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970: 0.99904   0.00939   0.04288   3.72324;
+190219-00:45:33,772 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970:-0.04241  -0.04541   0.99807  -39.17897;
+190219-00:45:33,772 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970: 0.01132  -0.99892  -0.04497  -2.42371;
+190219-00:45:33,772 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:32.191970: 0.00000   0.00000   0.00000   1.00000;
+190219-00:45:46,855 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:
+190219-00:45:49,490 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS6813/mri/brainmask.mgz
+190219-00:45:49,889 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:movvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz
+190219-00:45:49,892 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:targvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS6813/mri/brainmask.mgz
+190219-00:45:49,892 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:outvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_warped.nii.gz
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:regfile /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:invert 0
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:tal    0
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:talres 2
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:regheader 0
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:noresample 0
+190219-00:45:49,941 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:interp  nearest (0)
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:precision  float (3)
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:Gdiag_no  -1
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:Synth      0
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:SynthSeed  1550954476
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:Final tkRAS-to-tkRAS Matrix is:
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.99904   0.00939   0.04288   3.72324;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:-0.04241  -0.04541   0.99807  -39.17897;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.01132  -0.99892  -0.04497  -2.42371;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.00000   0.00000   0.00000   1.00000;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973:Vox2Vox Matrix is:
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.13677   0.00587  -0.00129  -5.32219;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.00155  -0.00616   0.13676  -1.09220;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.00381  -0.08967  -0.00408   27.18864;
+190219-00:45:49,963 nipype.interface INFO:
+	 stdout 2019-02-19T00:45:45.882973: 0.00000   0.00000   0.00000   1.00000;
+190219-00:46:36,700 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393:
+190219-00:46:37,488 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393:Matrix from LTA:
+190219-00:46:37,488 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393: 0.99358  -0.09011   0.06836  -0.71811;
+190219-00:46:37,488 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393:-0.07129  -0.02972   0.99701  -38.11919;
+190219-00:46:37,489 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393:-0.08781  -0.99549  -0.03595   1.99654;
+190219-00:46:37,489 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:36.478393: 0.00000   0.00000   0.00000   1.00000;
+190219-00:46:45,216 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:44.980279:
+190219-00:46:45,229 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:44.980279:Resampling
+190219-00:46:45,229 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:44.980279:Output registration matrix is identity
+190219-00:46:45,229 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:44.980279:
+190219-00:46:45,229 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:44.980279:mri_vol2vol done
+190219-00:46:55,581 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:
+190219-00:46:55,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS6813/mri/brainmask.mgz
+190219-00:46:55,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:movvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked.nii.gz
+190219-00:46:55,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:targvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS6813/mri/brainmask.mgz
+190219-00:46:55,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:outvol /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_warped.nii.gz
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:regfile /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:invert 0
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:tal    0
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:talres 2
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:regheader 0
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:noresample 0
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:interp  nearest (0)
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:precision  float (3)
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:Gdiag_no  -1
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:Synth      0
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:SynthSeed  1551116996
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:Final tkRAS-to-tkRAS Matrix is:
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939: 0.99358  -0.09011   0.06836  -0.71809;
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:-0.07129  -0.02972   0.99701  -38.11917;
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:-0.08781  -0.99549  -0.03595   1.99655;
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939: 0.00000   0.00000   0.00000   1.00000;
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:Vox2Vox Matrix is:
+190219-00:46:55,808 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939: 0.13603   0.00936   0.01234  -8.15785;
+190219-00:46:55,809 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939:-0.01202  -0.00492   0.13629   0.83948;
+190219-00:46:55,809 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939: 0.00641  -0.08958  -0.00267   26.35126;
+190219-00:46:55,809 nipype.interface INFO:
+	 stdout 2019-02-19T00:46:53.485939: 0.00000   0.00000   0.00000   1.00000;
+190219-00:47:50,729 nipype.interface INFO:
+	 stdout 2019-02-19T00:47:48.999745:
+190219-00:47:50,773 nipype.interface INFO:
+	 stdout 2019-02-19T00:47:48.999745:Resampling
+190219-00:47:50,773 nipype.interface INFO:
+	 stdout 2019-02-19T00:47:48.999745:Output registration matrix is identity
+190219-00:47:50,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:47:48.999745:
+190219-00:47:50,807 nipype.interface INFO:
+	 stdout 2019-02-19T00:47:48.999745:mri_vol2vol done
+190219-01:19:05,812 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.seg_rpt".
+190219-03:30:17,765 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.bbregister".
+190219-03:30:17,597 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.bbregister".
+190219-03:32:07,79 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1".
+190219-03:32:07,80 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1".
+190219-03:32:07,81 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0".
+190219-03:32:13,464 nipype.workflow INFO:
+	 [Node] Running "_lta_ras2ras0" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0/out.lta
+190219-03:32:13,534 nipype.workflow INFO:
+	 [Node] Running "_lta_ras2ras1" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/mri_coreg/registration.lta --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1/out.lta
+190219-03:32:13,536 nipype.workflow INFO:
+	 [Node] Running "_lta_ras2ras1" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/mri_coreg/registration.lta --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1/out.lta
+190219-03:33:13,237 nipype.workflow INFO:
+	 [Node] Finished "_lta_ras2ras1".
+190219-03:33:13,284 nipype.workflow INFO:
+	 [Node] Finished "_lta_ras2ras0".
+190219-03:33:13,286 nipype.workflow INFO:
+	 [Node] Finished "_lta_ras2ras1".
+190219-03:33:48,113 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.lta_ras2ras" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras".
+190219-03:34:01,343 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0".
+190219-03:34:01,835 nipype.workflow INFO:
+	 [Node] Cached "_lta_ras2ras0" - collecting precomputed outputs
+190219-03:34:02,713 nipype.workflow INFO:
+	 [Node] "_lta_ras2ras0" found cached.
+190219-03:34:03,727 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1".
+190219-03:34:07,200 nipype.workflow INFO:
+	 [Node] Cached "_lta_ras2ras1" - collecting precomputed outputs
+190219-03:34:07,616 nipype.workflow INFO:
+	 [Node] "_lta_ras2ras1" found cached.
+190219-03:34:08,587 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.lta_ras2ras".
+190219-03:34:29,425 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.compare_transforms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/compare_transforms".
+190219-03:34:37,524 nipype.workflow INFO:
+	 [Node] Running "compare_transforms" ("nipype.interfaces.utility.wrappers.Function")
+190219-03:35:00,394 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.compare_transforms".
+190219-03:36:00,761 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0".
+190219-03:36:01,8 nipype.workflow INFO:
+	 [Node] Running "_lta_ras2ras0" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0/out.lta
+190219-03:36:22,212 nipype.workflow INFO:
+	 [Node] Finished "_lta_ras2ras0".
+190219-03:37:06,602 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.lta_ras2ras" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras".
+190219-03:37:09,380 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras0".
+190219-03:37:14,446 nipype.workflow INFO:
+	 [Node] Cached "_lta_ras2ras0" - collecting precomputed outputs
+190219-03:37:14,979 nipype.workflow INFO:
+	 [Node] "_lta_ras2ras0" found cached.
+190219-03:37:15,924 nipype.workflow INFO:
+	 [Node] Setting-up "_lta_ras2ras1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/lta_ras2ras/mapflow/_lta_ras2ras1".
+190219-03:37:21,306 nipype.workflow INFO:
+	 [Node] Cached "_lta_ras2ras1" - collecting precomputed outputs
+190219-03:37:22,398 nipype.workflow INFO:
+	 [Node] "_lta_ras2ras1" found cached.
+190219-03:37:33,674 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.lta_ras2ras".
+190219-03:37:51,951 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.compare_transforms" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave3_task_rest_wf/bold_reg_wf/bbreg_wf/compare_transforms".
+190219-03:37:56,863 nipype.workflow INFO:
+	 [Node] Running "compare_transforms" ("nipype.interfaces.utility.wrappers.Function")
+190219-03:43:33,728 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.lta_concat" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_concat".
+190219-03:43:37,779 nipype.workflow INFO:
+	 [Node] Running "lta_concat" ("fmriprep.interfaces.freesurfer.PatchedConcatenateLTA"), a CommandLine Interface with command:
+mri_concatenate_lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/bbregister/uni_xform_masked_bbreg_sub-ADS6813.lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta out.lta
+190219-03:44:43,145 nipype.workflow WARNING:
+	 [Node] Error on "fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.lta_concat" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/func_preproc_ses_wave2_task_rest_wf/bold_reg_wf/bbreg_wf/lta_concat)
+190219-03:44:47,591 nipype.workflow ERROR:
+	 Node lta_concat failed to run on host n022.
+190219-03:44:47,891 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6813/log/20190213-061142_0f5a0e81-3fa2-4f5e-8c7b-dd99be5b9822/crash-20190219-034447-pettitta-lta_concat-f4def068-bd0d-4024-ad4a-69c7dc925796.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 655, in _run_command
+    _save_resultfile(result, outdir, self.name)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 310, in save_resultfile
+    savepkl(resultsfile, result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 732, in savepkl
+    pkl_file.close()
+  File "/usr/local/miniconda/lib/python3.6/gzip.py", line 319, in close
+    myfileobj.close()
+OSError: [Errno 122] Disk quota exceeded
+
+190219-03:44:55,255 nipype.workflow ERROR:
+	 Node compare_transforms failed to run on host n022.
+190219-03:44:55,412 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6813/log/20190213-061142_0f5a0e81-3fa2-4f5e-8c7b-dd99be5b9822/crash-20190219-034455-pettitta-compare_transforms-10571e5f-e986-49a6-98ff-efc4e55e189b.txt
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 484, in run
+    self, report_type='postexec', is_mapnode=isinstance(self, MapNode))
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 232, in write_report
+    fp.write('\n'.join(lines))
+OSError: [Errno 122] Disk quota exceeded
+
+190219-04:51:29,573 nipype.workflow WARNING:
+	 [Node] Error on "_midthickness1" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/surface_recon_wf/gifti_surface_wf/midthickness/mapflow/_midthickness1)
+190219-04:51:34,772 nipype.workflow ERROR:
+	 Node _midthickness1 failed to run on host n022.
+190219-04:51:35,653 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6813/log/20190213-061142_0f5a0e81-3fa2-4f5e-8c7b-dd99be5b9822/crash-20190219-045135-pettitta-_midthickness1-40db2919-5128-4ad0-9586-63d579719619.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 655, in _run_command
+    _save_resultfile(result, outdir, self.name)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 310, in save_resultfile
+    savepkl(resultsfile, result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 732, in savepkl
+    pkl_file.close()
+  File "/usr/local/miniconda/lib/python3.6/gzip.py", line 319, in close
+    myfileobj.close()
+OSError: [Errno 122] Disk quota exceeded
+
+190219-07:47:41,249 nipype.workflow WARNING:
+	 [Node] Error on "_midthickness0" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/surface_recon_wf/gifti_surface_wf/midthickness/mapflow/_midthickness0)
+190219-07:47:44,253 nipype.workflow ERROR:
+	 Node _midthickness0 failed to run on host n022.
+190219-07:47:44,356 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6813/log/20190213-061142_0f5a0e81-3fa2-4f5e-8c7b-dd99be5b9822/crash-20190219-074744-pettitta-_midthickness0-c7127bf4-e6f8-43a4-8d3d-2351c282b3b8.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 655, in _run_command
+    _save_resultfile(result, outdir, self.name)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 310, in save_resultfile
+    savepkl(resultsfile, result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 732, in savepkl
+    pkl_file.close()
+  File "/usr/local/miniconda/lib/python3.6/gzip.py", line 319, in close
+    myfileobj.close()
+OSError: [Errno 122] Disk quota exceeded
+
+190219-11:30:06,462 nipype.workflow WARNING:
+	 [Node] Error on "fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.t1_2_mni" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS6813_wf/anat_preproc_wf/t1_2_mni)
+190219-11:30:06,550 nipype.workflow ERROR:
+	 Node t1_2_mni failed to run on host n022.
+190219-11:30:06,559 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6813/log/20190213-061142_0f5a0e81-3fa2-4f5e-8c7b-dd99be5b9822/crash-20190219-113006-pettitta-t1_2_mni-dc98b82e-404e-4e23-ac85-20afeb39917e.txt
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/interfaces/mni.py", line 171, in _run_interface
+    '.nipype-%04d' % self.retry)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/niworkflows/interfaces/mni.py", line 525, in _write_outputs
+    print(stream, file=outf)
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 641, in _run_command
+    _save_resultfile(result, outdir, self.name)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/utils.py", line 310, in save_resultfile
+    savepkl(resultsfile, result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 732, in savepkl
+    pkl_file.close()
+  File "/usr/local/miniconda/lib/python3.6/gzip.py", line 319, in close
+    myfileobj.close()
+OSError: [Errno 122] Disk quota exceeded
+
+190219-11:30:08,762 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave2_task_rest_wf.bold_reg_wf.bbreg_wf.lta_concat
+190219-11:30:08,796 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS6813_wf.func_preproc_ses_wave3_task_rest_wf.bold_reg_wf.bbreg_wf.compare_transforms
+190219-11:30:08,797 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.surface_recon_wf.gifti_surface_wf.midthickness
+190219-11:30:08,797 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.surface_recon_wf.gifti_surface_wf.midthickness
+190219-11:30:08,798 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS6813_wf.anat_preproc_wf.t1_2_mni
+
+
+
+done
+
+-------------------------------

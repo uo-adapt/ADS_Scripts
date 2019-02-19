@@ -45,3 +45,54 @@ Captured warning (<class 'ImportWarning'>): can't resolve package from __spec__ 
 /usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
   return f(*args, **kwds)
 Captured warning (<class 'PendingDeprecationWarning'>): the matrix subclass is not the recommended way to represent matrices or deal with linear algebra (see https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html). Please adjust your code to use regular ndarray.
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/cli/run.py", line 431, in main
+    fmriprep_wf.run(**plugin_settings)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/workflows.py", line 597, in run
+    runner.run(execgraph, updatehash=updatehash, config=self.config)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 162, in run
+    self._clean_queue(jobid, graph, result=result))
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 223, in _clean_queue
+    crashfile = self._report_crash(self.procs[jobid], result=result)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/base.py", line 209, in _report_crash
+    return report_crash(node, traceback=tb)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/tools.py", line 59, in report_crash
+    crash2txt(crashfile, dict(node=node, traceback=traceback))
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/utils/filemanip.py", line 695, in crash2txt
+    fp.write(''.join(record['traceback']))
+OSError: [Errno 122] Disk quota exceeded
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/miniconda/bin/fmriprep", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/cli/run.py", line 440, in main
+    sentry_sdk=sentry_sdk)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 348, in generate_reports
+    for subject_label in subject_list
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 348, in <listcomp>
+    for subject_label in subject_list
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 336, in run_reports
+    report = Report(reportlet_path, config, out_dir, run_uuid, out_filename, sentry_sdk=sentry_sdk)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 72, in __init__
+    self._load_config(config)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 78, in _load_config
+    self.index(config['sections'])
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 120, in index
+    self.index_error_dir(error_dir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 128, in index_error_dir
+    crash_info = read_crashfile(str(crashfile))
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/utils/misc.py", line 67, in read_crashfile
+    return _read_txt(path)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/utils/misc.py", line 90, in _read_txt
+    if lines[0].startswith('Node'):
+IndexError: list index out of range
+Sentry is attempting to send 1 pending error messages
+Waiting up to 2.0 seconds
+Press Ctrl-C to quit
+Captured warning (<class 'ResourceWarning'>): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.20.11.62', 49627), raddr=('35.188.42.15', 443)>
