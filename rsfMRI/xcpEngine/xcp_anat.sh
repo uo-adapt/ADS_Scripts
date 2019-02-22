@@ -19,7 +19,7 @@ singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
    -d ${HOME}/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn \
    -c "${TEMP_COHORT}" \
    -o ${HOME}/data/BIDS_data/derivatives/xcpEngine/data \
-   -t 1 \
+   -t 3 \
    -i \$TMPDIR
 
 rm "${TEMP_COHORT}",${ses}
