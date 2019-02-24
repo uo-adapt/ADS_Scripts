@@ -1,0 +1,1370 @@
+Lmod has detected the following error: These module(s) exist but cannot be
+loaded as requested: "c3d"
+   Try: "module spider c3d" to see how to load the module(s).
+
+
+
+++ export SHELLOPTS
+++ declare -A declared_d declared_o declared_c declared_s declared_q
+++ subject_parse sub-ADS6513,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS6513.csv
+++ local abs_test i id_vals idx subject_vals subject_vars v val_full
+++ unset subject 'prefix[sub]' 'out[sub]'
+++ cohort_vars=()
+++ subject_vals=(${1//,/ })
+++ read -r subject_vars
+++ subject_vars=(${subject_vars//,/ })
+++ i=0
+++ for v in "${subject_vars[@]}"
+++ contains id0 '^id[0-9]*$'
+++ [[ id0 =~ ^id[0-9]*$ ]]
+++ idx=0
+++ eval 'subject[idx]=${subject_vals[i]}'
++++ subject[idx]=sub-ADS6513
+++ id_vals=("${id_vals[@]}" "${subject[idx]}")
+++ ((  i++  ))
+++ for v in "${subject_vars[@]}"
+++ contains img '^id[0-9]*$'
+++ [[ img =~ ^id[0-9]*$ ]]
+++ cohort_vars+=(${v}[${sub}])
+++ eval 'img[9001]=${subject_vals[i]}'
++++ img[9001]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd
+++ [[ -n '' ]]
+++ ((  i++  ))
+++ ((  1 == 0  ))
++++ join_by , sub-ADS6513
++++ local d=,
++++ shift
++++ echo -n sub-ADS6513
++++ shift
++++ printf %s
+++ ids[sub]=sub-ADS6513
++++ join_by _ sub-ADS6513
++++ local d=_
++++ shift
++++ echo -n sub-ADS6513
++++ shift
++++ printf %s
+++ prefix[sub]=sub-ADS6513
++++ join_by / sub-ADS6513
++++ local d=/
++++ shift
++++ echo -n sub-ADS6513
++++ shift
++++ printf %s
+++ out[sub]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513
+++ source /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn
++++ analysis=struc-ACCELERATOR
++++ design=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201902161344.dsn
++++ sequence=anatomical
++++ standard=MNI%1x1x1
++++ pipeline=struc,gmd,jlf,roiquant,qcanat
++++ struc_denoise_anat[1]=1
++++ struc_prior_weight[1]=0.25
++++ struc_posterior_formulation[1]='Socrates[1]'
++++ struc_keepBEImages[1]=0
++++ struc_floating_point[1]=0
++++ struc_random_seed[1]=0
++++ struc_bspline[1]=0
++++ struc_fit[1]=0.3
++++ struc_quick[1]=0
++++ struc_seg_priors[1]=1
++++ struc_rerun[1]=0
++++ struc_cleanup[1]=1
++++ struc_process[1]=ACT
++++ gmd_rerun[2]=0
++++ gmd_cleanup[2]=1
++++ newAntsPath[3]=/data/joy/BBL/applications/ANTsJLF_201603/bin/
++++ jlf_keep_warps[3]=0
++++ jlf_extract[3]=1
++++ jlf_quick[3]=1
++++ jlf_cohort[3]=SexBalanced20
++++ jlf_parallel[3]=none
++++ jlf_rerun[3]=0
++++ jlf_cleanup[3]=1
++++ roiquant_atlas[4]=miccai
++++ roiquant_vol[4]=1
++++ roiquant_rerun[4]=0
++++ roiquant_cleanup[4]=1
++++ qcanat_gm[5]=Y
++++ qcanat_gm_val[5]=2,4
++++ qcanat_wm[5]=Y
++++ qcanat_wm_val[5]=3
++++ qcanat_csf[5]=Y
++++ qcanat_csf_val[5]=1
++++ qcanat_cort[5]=Y
++++ qcanat_cort_val[5]=4
++++ qcanat_rerun[5]=0
++++ qcanat_cleanup[5]=1
+++ source /xcpEngine-master/core/defineLogs
++++ [[ -z '' ]]
++++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/struc-ACCELERATOR_201902230343_sub-ADS6513LOG
++++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/struc-ACCELERATOR_201902230343_sub-ADS6513LOG
++++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/struc-ACCELERATOR_201902230343_sub-ADS6513LOG-process
++++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/struc-ACCELERATOR_201902230343_sub-ADS6513LOG-process
++++ [[ -n localiser ]]
++++ [[ -n /xcpEngine-master/core/CONSOLE_MODULE_RC ]]
++++ echo '
+
+'
++++ printx /xcpEngine-master/core/CONSOLE_MODULE_RC
++++ local 'file=
+
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#                                                                 #
+#  ☭$(${XCPEDIR}/core/padAndCentreString 59 ${mod_name})☭  #
+#                                                                 #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################'
++++ eval 'echo -e "
+
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#                                                                 #
+#  ☭$(${XCPEDIR}/core/padAndCentreString 59 ${mod_name})☭  #
+#                                                                 #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################"'
++++++ /xcpEngine-master/core/padAndCentreString 59 XCP ENGINE LOCALISER
++ length=59
++ shift 1
++ string='XCP ENGINE LOCALISER'
++ pad=39
++ pad=19
++++ seq 1 19
+++ printf '%.0s ' 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
++ pad='                   '
++ string='                   XCP ENGINE LOCALISER                   '
++ ((  58 < 59  ))
++ string='                   XCP ENGINE LOCALISER                    '
++ printf '                   XCP ENGINE LOCALISER                    '
+++++ echo -e '
+
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#                                                                 #
+#  ☭                   XCP ENGINE LOCALISER                    ☭  #
+#                                                                 #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################'
++++ echo '
+
+'
++ routine @1 Localising subject metadata...
++ signpost=@1
++ routine_map='
+· @1'
++ shift
++ routine_description='Localising subject metadata...'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1 '
++ [[ -n Localising subject metadata... ]]
++ eval 'echo -e "
+
+
+Current processing step:
+${vid}${routine_description}
+····································································"'
+++ echo -e '
+
+
+Current processing step:
+@1 Localising subject metadata...
+····································································'
+
+
+
+Current processing step:
+@1 Localising subject metadata...
+····································································
++ subroutine @1.1 '[Parsing' subject 'identifiers]'
++ signpost=@1.1
++ routine_map='
+· @1
+· @1.1'
++ shift
++ local 'subroutine_description=[Parsing subject identifiers]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.1 '
++ [[ -n [Parsing subject identifiers] ]]
++ echo '· @1.1 [Parsing subject identifiers]'
+· @1.1 [Parsing subject identifiers]
++ source /xcpEngine-master/core/assignDirect
+++ for a in "${asgt[@]}"
+++ contains out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group '^-'
+++ [[ out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group =~ ^- ]]
++++ strslice out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group 1 =
++++ local bounds c d domains e i l m o q r s sliced
++++ i=out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ shift
++++ [[ -n 1 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 1
++++ [[ 1 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n = ]]
++++ is_integer =
++++ [[ = =~ ^-?[0-9]+$ ]]
++++ d==
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=1
++++ sliced=(${i//${d}/ })
++++ ((  1 >  2  ))
++++ ((  1 >  2  ))
++++ ((  1 < -2  ))
++++ ((  1 < -2  ))
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=0
++++ e=0
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o=out_group
++++ c=' out_group'
+++++ echo out_group
++++ c=out_group
++++ i=out_group
++++ i=out_group
++++ unset c
++++ [[ -n '' ]]
++++ echo out_group
+++ a_var=out_group
++++ strslice out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group 2 =
++++ local bounds c d domains e i l m o q r s sliced
++++ i=out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ shift
++++ [[ -n 2 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 2
++++ [[ 2 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n = ]]
++++ is_integer =
++++ [[ = =~ ^-?[0-9]+$ ]]
++++ d==
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=2
++++ sliced=(${i//${d}/ })
++++ ((  2 >  2  ))
++++ ((  2 >  2  ))
++++ ((  2 < -2  ))
++++ ((  2 < -2  ))
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=1
++++ e=1
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ c=' /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group'
+++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ c=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
++++ unset c
++++ [[ -n '' ]]
++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
+++ a_val=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
+++ eval 'out_group=${a_val}'
++++ out_group=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group
+++ for a in "${asgt[@]}"
+++ contains atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json '^-'
+++ [[ atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json =~ ^- ]]
++++ strslice atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json 1 =
++++ local bounds c d domains e i l m o q r s sliced
++++ i=atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ shift
++++ [[ -n 1 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 1
++++ [[ 1 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n = ]]
++++ is_integer =
++++ [[ = =~ ^-?[0-9]+$ ]]
++++ d==
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=1
++++ sliced=(${i//${d}/ })
++++ ((  1 >  2  ))
++++ ((  1 >  2  ))
++++ ((  1 < -2  ))
++++ ((  1 < -2  ))
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=0
++++ e=0
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o=atlas_orig
++++ c=' atlas_orig'
+++++ echo atlas_orig
++++ c=atlas_orig
++++ i=atlas_orig
++++ i=atlas_orig
++++ unset c
++++ [[ -n '' ]]
++++ echo atlas_orig
+++ a_var=atlas_orig
++++ strslice atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json 2 =
++++ local bounds c d domains e i l m o q r s sliced
++++ i=atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ shift
++++ [[ -n 2 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 2
++++ [[ 2 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n = ]]
++++ is_integer =
++++ [[ = =~ ^-?[0-9]+$ ]]
++++ d==
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=2
++++ sliced=(${i//${d}/ })
++++ ((  2 >  2  ))
++++ ((  2 >  2  ))
++++ ((  2 < -2  ))
++++ ((  2 < -2  ))
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=1
++++ e=1
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ c=' /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json'
+++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ c=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++++ unset c
++++ [[ -n '' ]]
++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
+++ a_val=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
+++ eval 'atlas_orig=${a_val}'
++++ atlas_orig=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/atlas.json
++ subroutine @1.1a '[Creating' output 'directory]'
++ signpost=@1.1a
++ routine_map='
+· @1
+· @1.1
+· @1.1a'
++ shift
++ local 'subroutine_description=[Creating output directory]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.1a '
++ [[ -n [Creating output directory] ]]
++ echo '· @1.1a [Creating output directory]'
+· @1.1a [Creating output directory]
++ subroutine @1.1b '[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513]'
++ signpost=@1.1b
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b'
++ shift
++ local 'subroutine_description=[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.1b '
++ [[ -n [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513] ]]
++ echo '· @1.1b [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513]'
+· @1.1b [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513]
++ outdir=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513
++ mkdir -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513
++ subroutine @1.2 '[Initialising' space 'mapping]'
++ signpost=@1.2
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2'
++ shift
++ local 'subroutine_description=[Initialising space mapping]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.2 '
++ [[ -n [Initialising space mapping] ]]
++ echo '· @1.2 [Initialising space mapping]'
+· @1.2 [Initialising space mapping]
++ output spaces sub-ADS6513_spaces.json
++ local path
++ [[ s == \/ ]]
++ [[ sub-ADS6513_spaces.json == null ]]
++ path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++ eval 'spaces[0]=${path}'
+++ spaces[0]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++ declared_o[${1}]=spaces
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++ echo '{}'
++ subroutine @1.3 '[Initialising' derivative 'maps]'
++ signpost=@1.3
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3'
++ shift
++ local 'subroutine_description=[Initialising derivative maps]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.3 '
++ [[ -n [Initialising derivative maps] ]]
++ echo '· @1.3 [Initialising derivative maps]'
+· @1.3 [Initialising derivative maps]
++ output aux_imgs sub-ADS6513_derivatives.json
++ local path
++ [[ s == \/ ]]
++ [[ sub-ADS6513_derivatives.json == null ]]
++ path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_derivatives.json
++ eval 'aux_imgs[0]=${path}'
+++ aux_imgs[0]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_derivatives.json
++ declared_o[${1}]=aux_imgs
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_derivatives.json
++ echo '{}'
++ subroutine @1.4 '[Initialising' atlas 'system]'
++ signpost=@1.4
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4'
++ shift
++ local 'subroutine_description=[Initialising atlas system]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.4 '
++ [[ -n [Initialising atlas system] ]]
++ echo '· @1.4 [Initialising atlas system]'
+· @1.4 [Initialising atlas system]
++ mkdir -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_atlas
++ output atlas sub-ADS6513_atlas/sub-ADS6513_atlas.json
++ local path
++ [[ s == \/ ]]
++ [[ sub-ADS6513_atlas/sub-ADS6513_atlas.json == null ]]
++ path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_atlas/sub-ADS6513_atlas.json
++ eval 'atlas[0]=${path}'
+++ atlas[0]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_atlas/sub-ADS6513_atlas.json
++ declared_o[${1}]=atlas
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_atlas/sub-ADS6513_atlas.json
++ echo '{}'
++ subroutine @1.5 Ingress
++ signpost=@1.5
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5'
++ shift
++ local subroutine_description=Ingress
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.5 '
++ [[ -n Ingress ]]
++ echo '· @1.5 Ingress'
+· @1.5 Ingress
++ for var in "${cohort_vars[@]}"
++ [[ ! -s /xcpEngine-master/core/ingress/img.ing ]]
++ continue
++ source /xcpEngine-master/core/initSpace
+++ tag=@1.5
+++ [[ -z anatomical ]]
+++ [[ -z '' ]]
+++ space[$sub]=sub-ADS6513_anatomical
+++ subroutine @1.5.1 '[Native' space: 'sub-ADS6513_anatomical]'
+++ signpost=@1.5.1
+++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1'
+++ shift
+++ local 'subroutine_description=[Native space: sub-ADS6513_anatomical]'
+++ verbose
+++ [[ -n 3 ]]
+++ ((  3 != 0  ))
+++ local 'vid=@1.5.1 '
+++ [[ -n [Native space: sub-ADS6513_anatomical] ]]
+++ echo '· @1.5.1 [Native space: sub-ADS6513_anatomical]'
+· @1.5.1 [Native space: sub-ADS6513_anatomical]
+++ standard=(${standard//_via_/ })
+++ for i in "${!standard[@]}"
+++ std=MNI
++++ abspath /xcpEngine-master/space/MNI/MNI_space.json
++++ local p path
+++++ ls -d1 /xcpEngine-master/space/MNI/MNI_space.json
++++ local path=/xcpEngine-master/space/MNI/MNI_space.json
++++ for p in ${path}
++++ [[ -d /xcpEngine-master/space/MNI/MNI_space.json ]]
++++ [[ -f /xcpEngine-master/space/MNI/MNI_space.json ]]
++++ [[ /xcpEngine-master/space/MNI/MNI_space.json == */* ]]
+++++ cd /xcpEngine-master/space/MNI
+++++ pwd
++++ echo /xcpEngine-master/space/MNI/MNI_space.json
+++ space_standard=/xcpEngine-master/space/MNI/MNI_space.json
+++ ((  i == 0  ))
+++ [[ -s /xcpEngine-master/space/MNI/MNI_space.json ]]
+++ subroutine @1.5.2a '[Standard' space: 'MNI]'
+++ signpost=@1.5.2a
+++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a'
+++ shift
+++ local 'subroutine_description=[Standard space: MNI]'
+++ verbose
+++ [[ -n 3 ]]
+++ ((  3 != 0  ))
+++ local 'vid=@1.5.2a '
+++ [[ -n [Standard space: MNI] ]]
+++ echo '· @1.5.2a [Standard space: MNI]'
+· @1.5.2a [Standard space: MNI]
+++ import_metadata /xcpEngine-master/space/MNI/MNI_space.json to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
+++ local meta_new meta_floating
+++ meta_floating='{}'
+++ [[ /xcpEngine-master/space/MNI/MNI_space.json != to ]]
+++ [[ -s /xcpEngine-master/space/MNI/MNI_space.json ]]
++++ printx /xcpEngine-master/space/MNI/MNI_space.json
++++ local 'file={
+  "MNI%1x1x1": {
+    "Map": "${BRAINSPACE}/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "${BRAINSPACE}/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "${BRAINSPACE}/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "${BRAINSPACE}/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "${BRAINSPACE}/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "${BRAINSPACE}/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "${BRAINSPACE}/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "${BRAINSPACE}/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "${BRAINSPACE}/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "${BRAINSPACE}/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "${BRAINSPACE}/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++++ eval 'echo -e "{
+  \"MNI%1x1x1\": {
+    \"Map\": \"${BRAINSPACE}/MNI/MNI-1x1x1.nii.gz\",
+    \"MaskDilated\": \"${BRAINSPACE}/MNI/MNI-1x1x1MaskDilated.nii.gz\",
+    \"BrainPrior\": \"${BRAINSPACE}/MNI/MNI-1x1x1BrainPrior.nii.gz\",
+    \"MapHead\": \"${BRAINSPACE}/MNI/MNI-1x1x1Head.nii.gz\",
+    \"Mask\": \"${BRAINSPACE}/MNI/MNI-1x1x1Mask.nii.gz\",
+    \"Priors\": \"${BRAINSPACE}/MNI/MNI_priors/MNI-priors-%03d.nii.gz\",
+    \"LeftHemisphere\": \"${BRAINSPACE}/MNI/MNI-1x1x1LeftHemisphere.nii.gz\",
+    \"RightHemisphere\": \"${BRAINSPACE}/MNI/MNI-1x1x1RightHemisphere.nii.gz\",
+    \"Citation\": \"${BRAINSPACE}/MNI/MNI_reference.bib\"
+  },
+  \"MNI%2x2x2\": {
+    \"Map\": \"${BRAINSPACE}/MNI/MNI-2x2x2.nii.gz\",
+    \"MapHead\": \"${BRAINSPACE}/MNI/MNI-2x2x2Head.nii.gz\"
+  }
+}"'
+++++ echo -e '{
+  "MNI%1x1x1": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ meta_new='{
+  "MNI%1x1x1": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ [[ -z {
+  "MNI%1x1x1": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+} ]]
++++ json_merge meta_floating meta_new
++++ /xcpEngine-master/thirdparty/jq/jq-linux64 -s '(.|.[0]) * (.|.[1])'
++++ echo '{}' '{' '"MNI%1x1x1":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",' '"MaskDilated":' '"/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"BrainPrior":' '"/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",' '"Priors":' '"/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"LeftHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"RightHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",' '"Citation":' '"/xcpEngine-master/space/MNI/MNI_reference.bib"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
+++ meta_floating='{
+  "MNI%1x1x1": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ meta_new=
+++ shift
+++ [[ to != to ]]
+++ [[ -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json ]]
++++ printx /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++++ local 'file={}'
++++ eval 'echo -e "{}"'
+++++ echo -e '{}'
+++ meta_new='{}'
+++ [[ -z {} ]]
++++ json_merge meta_floating meta_new
++++ /xcpEngine-master/thirdparty/jq/jq-linux64 -s '(.|.[0]) * (.|.[1])'
++++ echo '{' '"MNI%1x1x1":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",' '"MaskDilated":' '"/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"BrainPrior":' '"/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",' '"Priors":' '"/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"LeftHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"RightHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",' '"Citation":' '"/xcpEngine-master/space/MNI/MNI_reference.bib"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}' '{}'
+++ meta_floating='{
+  "MNI%1x1x1": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
+++ json_print meta_floating
+++ /xcpEngine-master/thirdparty/jq/jq-linux64 --sort-keys .
+++ echo '{' '"MNI%1x1x1":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",' '"MaskDilated":' '"/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"BrainPrior":' '"/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",' '"Priors":' '"/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"LeftHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"RightHemisphere":' '"/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz",' '"Citation":' '"/xcpEngine-master/space/MNI/MNI_reference.bib"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
+++++ space_get MNI%1x1x1 Map
+++++ [[ -n '' ]]
++++++ cat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
+++++ local 'spc={
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++++ json_get spc MNI%1x1x1 Map
+++++ ((  3 == 3  ))
++++++ /xcpEngine-master/thirdparty/jq/jq-linux64 --raw-output '."MNI%1x1x1"."Map"'
++++++ echo '{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++++ eval echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++++ echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++++ ((  3 == 2  ))
++++ abspath /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ local p path
+++++ ls -d1 /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ local path=/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ for p in ${path}
++++ [[ -d /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz ]]
++++ [[ -f /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz ]]
++++ [[ /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz == */* ]]
+++++ cd /xcpEngine-master/space/MNI
+++++ pwd
++++ echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++ template=/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++ normalise=1
+++ standard=MNI%1x1x1
+++ str_targ=MNI%1x1x1
+++++ space_get MNI%1x1x1 Map
+++++ [[ -n '' ]]
++++++ cat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
+++++ local 'spc={
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++++ json_get spc MNI%1x1x1 Map
+++++ ((  3 == 3  ))
++++++ /xcpEngine-master/thirdparty/jq/jq-linux64 --raw-output '."MNI%1x1x1"."Map"'
++++++ echo '{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine-master/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine-master/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine-master/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine-master/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine-master/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine-master/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++++ eval echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++++ echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++++ ((  3 == 2  ))
++++ abspath /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ local p path
+++++ ls -d1 /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ local path=/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ for p in ${path}
++++ [[ -d /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz ]]
++++ [[ -f /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz ]]
++++ [[ /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz == */* ]]
+++++ cd /xcpEngine-master/space/MNI
+++++ pwd
++++ echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++ str_temp=/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++ configure structural sub-ADS6513_anatomical
+++ eval 'structural[0]="${@:2}"'
++++ structural[0]=sub-ADS6513_anatomical
+++ declared_c[${1}]=structural
+++ [[ -z '' ]]
+++ xfms='  
+                              
+                              
+                              '
+++ [[ -z '' ]]
+++ ixfms='  
+                              
+                              
+                              '
+++ [[ -n   
+                              
+                              
+                               ]]
+++ subroutine @1.5.3a '[Anatomical' space: 'sub-ADS6513_anatomical]'
+++ signpost=@1.5.3a
+++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a'
+++ shift
+++ local 'subroutine_description=[Anatomical space: sub-ADS6513_anatomical]'
+++ verbose
+++ [[ -n 3 ]]
+++ ((  3 != 0  ))
+++ local 'vid=@1.5.3a '
+++ [[ -n [Anatomical space: sub-ADS6513_anatomical] ]]
+++ echo '· @1.5.3a [Anatomical space: sub-ADS6513_anatomical]'
+· @1.5.3a [Anatomical space: sub-ADS6513_anatomical]
++++ echo
+++ xfms=
++++ echo
+++ ixfms=
+++ xfms=
+++ ixfms=
+++ is_image
+++ [[ -n '' ]]
+++ /xcpEngine-master/utils/spaceMetadata -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json -f MNI%1x1x1:/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz -m sub-ADS6513_anatomical: -x -i -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++ source /xcpEngine-master/core/constants
+++ readonly 'RED=\033[0;31m'
+++ RED='\033[0;31m'
+++ readonly 'CYA=\033[0;36m'
+++ CYA='\033[0;36m'
+++ readonly 'LGR=\033[0;37m'
+++ LGR='\033[0;37m'
+++ readonly 'RCL=\033[0m'
+++ RCL='\033[0m'
+++ readonly ORIENTATION_ITK=RAI
+++ ORIENTATION_ITK=RAI
+++ readonly SIGMA=2.35482004503
+++ SIGMA=2.35482004503
+++ readonly PI=3.14159265359
+++ PI=3.14159265359
+++ readonly NBASE=2.71828182846
+++ NBASE=2.71828182846
+++ readonly PHI=1.61803398875
+++ PHI=1.61803398875
+++ [[ ! -d '' ]]
+++ readonly BRAINSPACE=/xcpEngine-master/space
+++ BRAINSPACE=/xcpEngine-master/space
+++ [[ ! -d '' ]]
+++ readonly BRAINATLAS=/xcpEngine-master/atlas
+++ BRAINATLAS=/xcpEngine-master/atlas
+++ [[ -z /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/struc-ACCELERATOR_201902230343_sub-ADS6513LOG-process ]]
+++ unset s d a
+++ declare -A s d a
++ source /xcpEngine-master/core/functions/library.sh
+++ LIBRARY=/xcpEngine-master/core/functions
+++ source /xcpEngine-master/core/functions/abort_stream
+++ source /xcpEngine-master/core/functions/abspath
+++ source /xcpEngine-master/core/functions/add_reference
+++ source /xcpEngine-master/core/functions/apply_exec
+++ source /xcpEngine-master/core/functions/arithmetic
+++ source /xcpEngine-master/core/functions/assign
+++ source /xcpEngine-master/core/functions/atlas
+++ source /xcpEngine-master/core/functions/atlas_check
+++ source /xcpEngine-master/core/functions/atlas_parse
+++ source /xcpEngine-master/core/functions/atlas_set
+++ source /xcpEngine-master/core/functions/cleanup
+++ source /xcpEngine-master/core/functions/configure
+++ source /xcpEngine-master/core/functions/configures
+++ source /xcpEngine-master/core/functions/contains
+++ source /xcpEngine-master/core/functions/define
+++ source /xcpEngine-master/core/functions/derivative
+++ source /xcpEngine-master/core/functions/derivative_cxt
+++ source /xcpEngine-master/core/functions/derivative_floats
+++ source /xcpEngine-master/core/functions/derivative_inherit
+++ source /xcpEngine-master/core/functions/derivative_parse
+++ source /xcpEngine-master/core/functions/derivative_set
+++ source /xcpEngine-master/core/functions/doi2bib
+++ source /xcpEngine-master/core/functions/echo_cmd
+++ source /xcpEngine-master/core/functions/exec_afni
+++ source /xcpEngine-master/core/functions/exec_ants
+++ source /xcpEngine-master/core/functions/exec_c3d
+++ source /xcpEngine-master/core/functions/exec_fsl
+++ source /xcpEngine-master/core/functions/exec_sys
+++ source /xcpEngine-master/core/functions/exec_xcp
+++ source /xcpEngine-master/core/functions/final
+++ source /xcpEngine-master/core/functions/import_image
+++ source /xcpEngine-master/core/functions/import_metadata
+++ source /xcpEngine-master/core/functions/input
+++ source /xcpEngine-master/core/functions/is_1D
+++ source /xcpEngine-master/core/functions/is_image
+++ source /xcpEngine-master/core/functions/is_integer
+++ source /xcpEngine-master/core/functions/is+integer
+++ source /xcpEngine-master/core/functions/is_numeric
+++ source /xcpEngine-master/core/functions/is+numeric
+++ source /xcpEngine-master/core/functions/join_by
+++ source /xcpEngine-master/core/functions/json_get
+++ source /xcpEngine-master/core/functions/json_get_array
+++ source /xcpEngine-master/core/functions/json_keys
+++ source /xcpEngine-master/core/functions/json_merge
+++ source /xcpEngine-master/core/functions/json_multiset
+++ source /xcpEngine-master/core/functions/json_object
+++ source /xcpEngine-master/core/functions/json_print
+++ source /xcpEngine-master/core/functions/json_rm
+++ source /xcpEngine-master/core/functions/json_set
+++ source /xcpEngine-master/core/functions/json_set_array
+++ source /xcpEngine-master/core/functions/lc_prefix
+++ source /xcpEngine-master/core/functions/load_atlas
+++ source /xcpEngine-master/core/functions/load_derivatives
+++ source /xcpEngine-master/core/functions/matchexact
+++ source /xcpEngine-master/core/functions/matching
+++ source /xcpEngine-master/core/functions/ninstances
+++ source /xcpEngine-master/core/functions/output
+++ source /xcpEngine-master/core/functions/printx
+++ source /xcpEngine-master/core/functions/proc_afni
+++ source /xcpEngine-master/core/functions/proc_ants
+++ source /xcpEngine-master/core/functions/proc_c3d
+++ source /xcpEngine-master/core/functions/proc_cmd
+++ source /xcpEngine-master/core/functions/proc_fsl
+++ source /xcpEngine-master/core/functions/proc_xcp
+++ source /xcpEngine-master/core/functions/process
+++ source /xcpEngine-master/core/functions/processed
+++ source /xcpEngine-master/core/functions/qc
+++ source /xcpEngine-master/core/functions/quality_metric
+++ source /xcpEngine-master/core/functions/repeat
+++ source /xcpEngine-master/core/functions/require
+++ source /xcpEngine-master/core/functions/rerun
+++ source /xcpEngine-master/core/functions/rln
+++ source /xcpEngine-master/core/functions/routine
+++ source /xcpEngine-master/core/functions/routine_end
+++ source /xcpEngine-master/core/functions/set_space
+++ source /xcpEngine-master/core/functions/space_get
+++ source /xcpEngine-master/core/functions/space_set
+++ source /xcpEngine-master/core/functions/strslice
+++ source /xcpEngine-master/core/functions/subroutine
+++ source /xcpEngine-master/core/functions/subject_parse
+++ source /xcpEngine-master/core/functions/transform_set
+++ source /xcpEngine-master/core/functions/verbose
+++ source /xcpEngine-master/core/functions/warpspace
+++ source /xcpEngine-master/core/functions/write_atlas
+++ source /xcpEngine-master/core/functions/write_config_safe
+++ source /xcpEngine-master/core/functions/write_config
+++ source /xcpEngine-master/core/functions/write_derivative
+++ source /xcpEngine-master/core/functions/write_output
+++ source /xcpEngine-master/core/functions/zscore_image
++ [[ ! -s /xcpEngine-master/thirdparty/jq/jq-linux64 ]]
++ combine_only=0
++ unset sourceSpace
++ declare -A sourceSpace
++ getopts o:d:m:f:x:i:s:t OPTION
++ case $OPTION in
++ out=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_spaces.json
++ getopts o:d:m:f:x:i:s:t OPTION
++ case $OPTION in
++ fixed=(${OPTARG//:/ })
+++ eval echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++++ echo /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++ is_image /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++ [[ -n /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz ]]
++++ readlink -f /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+++ /opt/fsl-5.0.10/bin/imtest /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
++ ((  1 == 1  ))
++ getopts o:d:m:f:x:i:s:t OPTION
++ case $OPTION in
++ moving=(${OPTARG//:/ })
+++ eval echo
++++ echo
++ source_space_map=
++ is_image
++ [[ -n '' ]]
++ echo 'source space map '\'''\'' is not an image'
++ exit
++ subroutine @1.5 '[Priming' analytic 'audit]'
++ signpost=@1.5
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5'
++ shift
++ local 'subroutine_description=[Priming analytic audit]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.5 '
++ [[ -n [Priming analytic audit] ]]
++ echo '· @1.5 [Priming analytic audit]'
+· @1.5 [Priming analytic audit]
++ audit[sub]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/sub-ADS6513_audit.csv
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_logs/sub-ADS6513_audit.csv
+++ echo 0
++ id_vars=0
+++ echo id0
++ id_vars=id0
++ audit_var=id0,localiser,struc,gmd,jlf,roiquant,qcanat
+++ ninstances , struc,gmd,jlf,roiquant,qcanat
+++ local char=,
+++ shift
++++ echo struc,gmd,jlf,roiquant,qcanat
+++ local string=struc,gmd,jlf,roiquant,qcanat
+++ reduced=,,,,
+++ printf 4
++ num_mods=6
++++ seq 1 6
+++ printf ,0%.0s 1 2 3 4 5 6
++ audit_val=sub-ADS6513,0,0,0,0,0,0
++ echo id0,localiser,struc,gmd,jlf,roiquant,qcanat
++ echo sub-ADS6513,0,0,0,0,0,0
++ subroutine @1.6 '[Priming' quality 'assessment]'
++ signpost=@1.6
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6'
++ shift
++ local 'subroutine_description=[Priming quality assessment]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@1.6 '
++ [[ -n [Priming quality assessment] ]]
++ echo '· @1.6 [Priming quality assessment]'
+· @1.6 [Priming quality assessment]
++ quality=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_quality.csv
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513_quality.csv
++ echo id0
++ echo sub-ADS6513
++ routine_end
++ [[ -n Localising subject metadata... ]]
++ eval 'echo -e "····································································
+Processing step complete:
+${routine_description}"'
+++ echo -e '····································································
+Processing step complete:
+Localising subject metadata...'
++ unset routine_description
++ routine @2 Localising image
++ signpost=@2
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6
+· @2'
++ shift
++ routine_description='Localising image'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@2 '
++ [[ -n Localising image ]]
++ eval 'echo -e "
+
+
+Current processing step:
+${vid}${routine_description}
+····································································"'
+++ echo -e '
+
+
+Current processing step:
+@2 Localising image
+····································································'
+
+
+
+Current processing step:
+@2 Localising image
+····································································
++ subroutine @2.1 '[Verifying' that images are 'present]'
++ signpost=@2.1
++ routine_map='
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6
+· @2
+· @2.1'
++ shift
++ local 'subroutine_description=[Verifying that images are present]'
++ verbose
++ [[ -n 3 ]]
++ ((  3 != 0  ))
++ local 'vid=@2.1 '
++ [[ -n [Verifying that images are present] ]]
++ echo '· @2.1 [Verifying that images are present]'
+· @2.1 [Verifying that images are present]
++ is_image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd
++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd ]]
++++ readlink -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd
+++ /opt/fsl-5.0.10/bin/imtest /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd
++ ((  0 == 1  ))
++ abort_stream 'The primary analyte is not a valid image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd'
++ local errdir=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error
++ [[ ! -d /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error ]]
++ ERR_ROOT=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error/struc-ACCELERATOR-201902230343
++ local 'error=
+· [A major error has occurred.]
+· [The processing stream will now abort.]
+· [Preparing diagnostics]
+····································································
+
+
+
+Module Workflow Map
+····································································
+
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6
+· @2
+· @2.1
+· ERROR
+····································································
+
+
+
+····································································
+· [An error occurred while processing module localiser.]
+· [The error was detected at signpost @2.1.]
+· [The most recent command logged was]
+· []
+· [For additional details, view the processing log. For improved]
+· [diagnostics, increment verbosity using the -t option.]
+· []
+· [The primary analyte is not a valid image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd]
+· []
+· [stream abort]
+····································································
+
+'
++ echo '
+· [A major error has occurred.]
+· [The processing stream will now abort.]
+· [Preparing diagnostics]
+····································································
+
+
+
+Module Workflow Map
+····································································
+
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6
+· @2
+· @2.1
+· ERROR
+····································································
+
+
+
+····································································
+· [An error occurred while processing module localiser.]
+· [The error was detected at signpost @2.1.]
+· [The most recent command logged was]
+· []
+· [For additional details, view the processing log. For improved]
+· [diagnostics, increment verbosity using the -t option.]
+· []
+· [The primary analyte is not a valid image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd]
+· []
+· [stream abort]
+····································································
+
+'
++ echo '
+· [A major error has occurred.]
+· [The processing stream will now abort.]
+· [Preparing diagnostics]
+····································································
+
+
+
+Module Workflow Map
+····································································
+
+· @1
+· @1.1
+· @1.1a
+· @1.1b
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.5.1
+· @1.5.2a
+· @1.5.3a
+· @1.5
+· @1.6
+· @2
+· @2.1
+· ERROR
+····································································
+
+
+
+····································································
+· [An error occurred while processing module localiser.]
+· [The error was detected at signpost @2.1.]
+· [The most recent command logged was]
+· []
+· [For additional details, view the processing log. For improved]
+· [diagnostics, increment verbosity using the -t option.]
+· []
+· [The primary analyte is not a valid image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS6513/anat/sub-ADS6513_desc-preproc_T1w.nii.gzadd]
+· []
+· [stream abort]
+····································································
+
+'
++ exit 1
+rm: cannot remove ‘/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS6513.csv,’: No such file or directory
