@@ -182,3 +182,382 @@ MultiStartOptimizerv4Template (0x2108a10): An exception occurred in sub-optimiza
        Max N4->Atropos iters. = 5
        use clock random seed  = 0
 
+                             -   -   -
+>> ln -sf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111~TEMP~_RPI_ACT.nii.gz
+
+
+
+Current processing step:
+@8 Quality assessment
+····································································
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainNormalizedToTemplate.nii.gz -bin /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_str2stdmask.nii.gz
+· @8.1 [Computing registration quality metrics]
+                             -   -   -
+>> ${XCPEDIR}/utils/maskOverlap.R -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_str2stdmask.nii.gz -r /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz
+· [Cross-correlation:    0.9554031 ]
+· [Coverage:             0.999121 ]
+· [Jaccard coefficient:  0.9349127 ]
+· [Dice coefficient:     0.9663616 ]
+· @8.2 [Preparing slicewise rendering]
+                             -   -   -
+>> ${XCPEDIR}/utils/regslicer -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainNormalizedToTemplate.nii.gz -t /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111~TEMP~_RPI -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_str2std
+· @0.3 
+                             -   -   -
+>> imcp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz
+/bin/cp: '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz' and '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz' are the same file
+                             -   -   -
+>> ${XCPEDIR}/utils/spaceMetadata -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_spaces.json -f MNI%1x1x1:/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz -m sub-ADS4111_anatomical:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate0GenericAffine.mat,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate1Warp.nii.gz -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject0Warp.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject1GenericAffine.mat -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_spaces.json
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz
+                             -   -   -
+>> 11-10-1
+                             -   -   -
+>> 11-1
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat/sub-ADS4111_desc-preproc_T1w.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_raw.nii.gz
+                             -   -   -
+>> 12-7-1
+                             -   -   -
+>> 12-1
+
+
+
+Current processing step:
+@1 Computing 3-class segmentation
+····································································
+· @1.1 Performing 3 Atropos iterations
+· @1.2 Iteration 1: initialising segmentation
+                             -   -   -
+>> Atropos -d 3 -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz -i KMeans[3] -c [5,0] -m [0,1x1x1] -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainExtractionMask.nii.gz -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos0.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos0-priorImage0%02d.nii.gz]
+· @1.3 Iteration 2: refining segmentation
+                             -   -   -
+>> Atropos -d 3 -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz -i PriorProbabilityImages[3,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos0-priorImage0%02d.nii.gz,0.0] -k Gaussian -p Socrates[1] --use-partial-volume-likelihoods 0 -c [12,0.00001] -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainExtractionMask.nii.gz -m [0,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos1-priorImage0%02d.nii.gz]
+· @1.3 Iteration 3: refining segmentation
+                             -   -   -
+>> Atropos -d 3 -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz -i PriorProbabilityImages[3,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos1-priorImage0%02d.nii.gz,0.0] -k Gaussian -p Socrates[1] --use-partial-volume-likelihoods 0 -c [12,0.00001] -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainExtractionMask.nii.gz -m [0,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2-priorImage0%02d.nii.gz]
+· @1.4 Reorganising output
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_segmentation3class.nii.gz
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2-priorImage001.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_probabilityCSF.nii.gz
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2-priorImage002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_probabilityGM.nii.gz
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111~TEMP~-atropos2-priorImage003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_probabilityWM.nii.gz
+
+
+
+Current processing step:
+@2 Mapping grey matter density
+····································································
+· @2.1 Defining tissue boundaries
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_segmentation3class.nii.gz -thr 2 -uthr 2 -bin -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_probabilityGM.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_gmd.nii.gz
+· @2.2 Estimating mean GMD
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/gmd/sub-ADS4111_gmd.nii.gz -M
+
+
+
+Current processing step:
+@1 ANTs Joint Label Fusion
+····································································
+· @1.1 Cohort: SexBalanced20
+· @1.2 Using brains only
+· @1.4 Assembling cohort
+· @1.5 Configuring parallelisation
+· @1.6a Executing joint label fusion routine
+· @1.6b Delegating control to antsJointLabelFusion
+                             -   -   -
+>> antsJointLabelFusion.sh -d 3 -q 1 -f 0 -j 2 -k 0 -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_ -c 0 -g /xcpEngine-master/thirdparty/oasis30/Brains/1000.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1000.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1001.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1001.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1002.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1002.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1003.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1003.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1004.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1004.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1005.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1005.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1006.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1006.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1007.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1007.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1009.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1009.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1010.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1010.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1013.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1013.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1015.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1015.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1017.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1017.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1019.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1019.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1036.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1036.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1104.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1104.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1113.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1113.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1116.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1116.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1119.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1119.nii.gz -g /xcpEngine-master/thirdparty/oasis30/Brains/1122.nii.gz -l /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1122.nii.gz
+mkdir: cannot create directory ‘/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf’: File exists
+** ERROR: NWAD: wrote only 8847008 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 8847008 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 91094688 of 334495744 bytes to file
+** ERROR: NWAD: wrote only 43351712 of 148897792 bytes to file
+Transform reader for /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_1Warp.nii.gz caught an ITK exception:
+
+itk::ExceptionObject (0x1fb1c10)
+Location: "unknown" 
+File: /tmp/ANTs/build/ITKv4/Modules/IO/TransformBase/include/itkTransformFileReader.hxx
+Line: 88
+Description: itk::ERROR: TransformFileReaderTemplate(0x1fa96f0): Could not create Transform IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_1Warp.nii.gz
+  Tried to create one of the following:
+    HDF5TransformIOTemplate
+    HDF5TransformIOTemplate
+    MatlabTransformIOTemplate
+    MatlabTransformIOTemplate
+    TxtTransformIOTemplate
+    TxtTransformIOTemplate
+  You probably failed to set a file suffix, or
+    set the suffix to an unsupported type.
+
+
+terminate called after throwing an instance of 'itk::ExceptionObject'
+  what():  /tmp/ANTs/build/ITKv4/Modules/IO/PNG/src/itkPNGImageIO.cxx:107:
+itk::ERROR: PNGImageIO(0x1574660): PNGImageIO failed to read header for file: 
+Reason: fread read only 0 instead of 8
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1005_5.sh: line 3: 124914 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_Warped.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_Warped.nii.gz 1 1 1
+terminate called after throwing an instance of 'itk::ImageFileReaderException'
+  what():  /tmp/ANTs/build/ITKv4-install/include/ITK-4.11/itkImageFileReader.hxx:143:
+ Could not create IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_WarpedLabels.nii.gz
+The file doesn't exist. 
+Filename = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_WarpedLabels.nii.gz
+
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1005_5.sh: line 4: 124922 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_WarpedLabels.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1005_5_WarpedLabels.nii.gz 1 1 1
+** ERROR: NWAD: wrote only 8060576 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 8060576 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 90996384 of 334495744 bytes to file
+** ERROR: NWAD: wrote only 48987808 of 163577856 bytes to file
+Transform reader for /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_1Warp.nii.gz caught an ITK exception:
+
+itk::ExceptionObject (0x1fb1c10)
+Location: "unknown" 
+File: /tmp/ANTs/build/ITKv4/Modules/IO/TransformBase/include/itkTransformFileReader.hxx
+Line: 88
+Description: itk::ERROR: TransformFileReaderTemplate(0x1fa96f0): Could not create Transform IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_1Warp.nii.gz
+  Tried to create one of the following:
+    HDF5TransformIOTemplate
+    HDF5TransformIOTemplate
+    MatlabTransformIOTemplate
+    MatlabTransformIOTemplate
+    TxtTransformIOTemplate
+    TxtTransformIOTemplate
+  You probably failed to set a file suffix, or
+    set the suffix to an unsupported type.
+
+
+terminate called after throwing an instance of 'itk::ExceptionObject'
+  what():  /tmp/ANTs/build/ITKv4/Modules/IO/PNG/src/itkPNGImageIO.cxx:107:
+itk::ERROR: PNGImageIO(0x1574660): PNGImageIO failed to read header for file: 
+Reason: fread read only 0 instead of 8
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1006_6.sh: line 3: 134305 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_Warped.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_Warped.nii.gz 1 1 1
+terminate called after throwing an instance of 'itk::ImageFileReaderException'
+  what():  /tmp/ANTs/build/ITKv4-install/include/ITK-4.11/itkImageFileReader.hxx:143:
+ Could not create IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_WarpedLabels.nii.gz
+The file doesn't exist. 
+Filename = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_WarpedLabels.nii.gz
+
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1006_6.sh: line 4: 134316 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_WarpedLabels.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1006_6_WarpedLabels.nii.gz 1 1 1
+** ERROR: NWAD: wrote only 9371296 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 9371296 of 1003487232 bytes to file
+** ERROR: NWAD: wrote only 91029152 of 334495744 bytes to file
+** ERROR: NWAD: wrote only 52690592 of 167772160 bytes to file
+Transform reader for /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_1Warp.nii.gz caught an ITK exception:
+
+itk::ExceptionObject (0x1fb1c10)
+Location: "unknown" 
+File: /tmp/ANTs/build/ITKv4/Modules/IO/TransformBase/include/itkTransformFileReader.hxx
+Line: 88
+Description: itk::ERROR: TransformFileReaderTemplate(0x1fa96f0): Could not create Transform IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_1Warp.nii.gz
+  Tried to create one of the following:
+    HDF5TransformIOTemplate
+    HDF5TransformIOTemplate
+    MatlabTransformIOTemplate
+    MatlabTransformIOTemplate
+    TxtTransformIOTemplate
+    TxtTransformIOTemplate
+  You probably failed to set a file suffix, or
+    set the suffix to an unsupported type.
+
+
+terminate called after throwing an instance of 'itk::ExceptionObject'
+  what():  /tmp/ANTs/build/ITKv4/Modules/IO/PNG/src/itkPNGImageIO.cxx:107:
+itk::ERROR: PNGImageIO(0x1574660): PNGImageIO failed to read header for file: 
+Reason: fread read only 0 instead of 8
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1007_7.sh: line 3: 143726 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_Warped.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_Warped.nii.gz 1 1 1
+terminate called after throwing an instance of 'itk::ImageFileReaderException'
+  what():  /tmp/ANTs/build/ITKv4-install/include/ITK-4.11/itkImageFileReader.hxx:143:
+ Could not create IO object for reading file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_WarpedLabels.nii.gz
+The file doesn't exist. 
+Filename = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_WarpedLabels.nii.gz
+
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1007_7.sh: line 4: 143736 Aborted                 (core dumped) /opt/ants-2.2.0//CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_WarpedLabels.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_1007_7_WarpedLabels.nii.gz 1 1 1
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1009_8.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1009_8.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1009_8.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1009_8.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1009_8.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1010_9.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1010_9.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1010_9.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1010_9.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1010_9.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1013_10.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1013_10.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1013_10.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1013_10.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1013_10.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1015_11.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1015_11.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1015_11.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1015_11.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1015_11.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1017_12.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1017_12.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1017_12.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1017_12.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1017_12.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1019_13.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1019_13.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1019_13.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1019_13.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1019_13.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1036_14.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1036_14.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1036_14.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1036_14.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1036_14.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1104_15.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1104_15.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1104_15.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1104_15.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1104_15.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1113_16.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1113_16.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1113_16.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1113_16.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1113_16.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1116_17.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1116_17.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1116_17.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1116_17.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1116_17.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1119_18.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1119_18.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1119_18.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1119_18.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1119_18.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 594: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1122_19.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 595: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1122_19.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 596: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1122_19.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 597: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1122_19.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/job_1122_19.sh: No such file or directory
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 712: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_JLF.sh: Disk quota exceeded
+/opt/ants-2.2.0//antsJointLabelFusion.sh: line 713: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_JLF.sh: Disk quota exceeded
+bash: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_JLF.sh: No such file or directory
+
+
+
+Current processing step:
+@2 Preparing grey matter intersection
+····································································
+· @2.1 Generating non-CSF mask
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz -v 2:6 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-thresholdedImage.nii.gz
+· @2.2 Generating ventricular CSF mask
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz -v 4,11,46,51,52 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskCSF.nii.gz
+Error in readNifti(refImgPath) : 
+  Failed to read image from path /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz
+Calls: readNifti -> .Call
+In addition: Warning message:
+In readNifti(refImgPath) :
+  nifti_image_read: failed to find header file for '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz'
+Execution halted
+· @2.3 Generating ventral diencephalon mask
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz -v 61,62 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskVD.nii.gz
+Error in readNifti(refImgPath) : 
+  Failed to read image from path /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz
+Calls: readNifti -> .Call
+In addition: Warning message:
+In readNifti(refImgPath) :
+  nifti_image_read: failed to find header file for '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz'
+Execution halted
+· @2.4 Dilating ventricular CSF mask
+                             -   -   -
+>> 3dmask_tool -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskCSF.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskCSF_dil.nii.gz -dilate_input 2
+· @2.5 Union of vCSF, VDC, and non-CSF masks
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-thresholdedImage.nii.gz -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskCSF_dil.nii.gz -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskVD.nii.gz -bin /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-thresholdedImage.nii.gz
+Image Exception : #22 :: ERROR: Could not open image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-binMaskCSF_dil
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/xcpEngine-master/core/functions/exec_fsl: line 1: 143940 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
+· @2.6 Excising extraventricular CSF from labels
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111~TEMP~-thresholdedImage.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_LabelsGMIntersect.nii.gz
+Image Exception : #22 :: ERROR: Could not open image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/jlf/sub-ADS4111_Labels
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/xcpEngine-master/core/functions/exec_fsl: line 1: 143961 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/roiquant/sub-ADS4111_referenceVolume.nii.gz
+                             -   -   -
+>> 12-10-1
+                             -   -   -
+>> 12-1
+/xcpEngine-master/modules/roiquant/roiquant.mod: line 95: ((: == 1 : syntax error: operand expected (error token is "== 1 ")
+
+
+
+Current processing step:
+@1 Extracting tissue masks
+····································································
+· @1.1a Successfully identified cerebral cortex
+· @1.1b Extracting cerebral cortex
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz -v 4 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_cortexMask.nii.gz
+· @1.1a Successfully identified white matter
+· @1.1b Extracting white matter
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz -v 3 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_wmMask.nii.gz
+· @1.1a Successfully identified grey matter
+· @1.1b Extracting grey matter
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz -v 2,4 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_gmMask.nii.gz
+· @1.1a Successfully identified cerebrospinal fluid
+· @1.1b Extracting cerebrospinal fluid
+                             -   -   -
+>> ${XCPEDIR}/utils/val2mask.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz -v 1 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_csfMask.nii.gz
+
+
+
+Current processing step:
+@2 Determining image foreground/background
+····································································
+· @2.1 Attempting warp to subject space
+                             -   -   -
+>> rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_mniCoords.sclib
+rm: cannot remove '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_mniCoords.sclib': No such file or directory
+                             -   -   -
+>> ${XCPEDIR}/utils/pointTransform -v -i /xcpEngine-master/modules/qcanat/mniCoords.sclib -s /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate0GenericAffine.mat -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate1Warp.nii.gz -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /xcpEngine-master/modules/qcanat/mniForeGroundMask.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg.nii.gz -n NearestNeighbor -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject1GenericAffine.mat -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject0Warp.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/sclib2csv.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_mniCoords.sclib -c sclib2csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_landmarksCoords.csv
+· @2.5 Removing neck and nose from background
+                             -   -   -
+>> ${XCPEDIR}/utils/extendMaskInferior.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-extend.nii.gz -c /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_landmarksCoords.csv
+· @2.6 Classifying sinuses as background
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-extend.nii.gz -sub 1 -abs /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-3.nii.gz
+                             -   -   -
+>> ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-4.nii.gz GetLargestComponent /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-3.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-3.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-5.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-extend.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111~TEMP~-fg-5.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_foreground.nii.gz
+
+
+
+Current processing step:
+@3 Computing measures of anatomical quality
+····································································
+· @3.1 Using cortical mask
+                             -   -   -
+>> ${XCPEDIR}/utils/qcanat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat/sub-ADS4111_desc-preproc_T1w.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_gmMask.nii.gz -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_wmMask.nii.gz -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_foreground.nii.gz -c /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/qcanat/sub-ADS4111_cortexMask.nii.gz
+· [Foreground-background energy ratio:   0.8849977 ]
+· [Signal-to-noise ratio:                1.45243 ]
+· [Contrast-to-noise ratio:              0.1026978 ]
+· [Cortical contrasts:                   0.002444999 ]
+· [Entropy focus criterion:              0.655244 ]
+· [Grey matter kurtosis:                 4.549127 ]
+· [Grey matter skewness:                 0.9272158 ]
+· [White matter kurtosis:                5.685125 ]
+· [White matter skewness:                -0.8427563 ]
+· [Background kurtosis:                  3.166756 ]
+· [Background skewness:                  0.8206251 ]
+· @3.2 Organising estimates
+rm: cannot remove ‘/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS4111.csv,’: No such file or directory
