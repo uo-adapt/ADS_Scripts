@@ -5505,3 +5505,1879 @@ The composite transform comprises the following transforms (in order):
 Default pixel value: 0
 Interpolation type: GaussianInterpolateImageFunction
 Output warped image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with brain registration:  0h 35m 38s
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsAtroposN4.sh -d 3 -b Socrates[1] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513~TEMP~_RPI.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -m 3 -n 5 -c 6 -y 2 -y 3 -y 4 -y 5 -y 6 -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz -w 0.25 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_Brain -u 0 -g 1 -k 0 -s nii.gz -z 0
+---------------------  Running antsAtroposN4.sh on n034  ---------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513~TEMP~_RPI.nii.gz 0.025 0.995 256 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/DenoiseImage -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1
+
+Running for 3-dimensional images.
+
+*********10*********20*********30*********40*********50*********60*********70*********80*********90*********
+
+   AdaptiveNonLocalMeansDenoisingImageFilter (0x16828a0)
+     RTTI typeinfo:   itk::AdaptiveNonLocalMeansDenoisingImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<unsigned char, 3u> >
+     Reference Count: 1
+     Modified Time: 328
+     Debug: Off
+     Object Name: 
+     Observers: 
+       ProgressEvent(Command)
+     Inputs: 
+       Primary: (0x168cff0) *
+       _1: (0)
+     Indexed Inputs: 
+       0: Primary (0x168cff0)
+       1: _1 (0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x16821b0)
+     Indexed Outputs: 
+       0: Primary (0x16821b0)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 1
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 291
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 27
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+Using mean squares to measure the patch similarity.
+     Neighborhood search radius = [3, 3, 3]
+     Neighborhood patch radius = [1, 1, 1]
+     Using Gaussian noise model.
+     Epsilon = 1e-05
+     Mean threshold = 0.95
+     Variance threshold = 0.5
+     Smoothing variance = 2
+     Neighborhood radius for local mean and variance = [1, 1, 1]
+Elapsed time: 11239.1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -s 2 -c [50x50x50x50,0.0000000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+
+Running N4 for 3-dimensional images.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 7.49198e-05 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 7.49081e-05 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 7.48841e-05 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 7.48457e-05 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 7.48429e-05 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 7.48363e-05 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 7.48362e-05 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 7.48077e-05 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 7.48234e-05 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 7.48373e-05 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 7.48794e-05 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 7.49027e-05 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 7.49066e-05 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 7.49258e-05 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 7.49778e-05 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 7.49961e-05 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 7.50384e-05 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 7.50785e-05 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 7.5109e-05 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 7.51665e-05 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 7.51533e-05 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 7.52006e-05 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 7.52592e-05 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 7.52984e-05 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 7.5295e-05 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 7.53347e-05 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 7.53596e-05 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 7.53995e-05 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 7.54497e-05 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 7.54029e-05 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 7.54163e-05 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 7.53986e-05 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 7.54355e-05 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 7.542e-05 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 7.5415e-05 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 7.54093e-05 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 7.53758e-05 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 7.53935e-05 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 7.53581e-05 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 7.53851e-05 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 7.53273e-05 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 7.52916e-05 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 7.52654e-05 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 7.52394e-05 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 7.52145e-05 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 7.51757e-05 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 7.51102e-05 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 7.50821e-05 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 7.50617e-05 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 7.4978e-05 (threshold = 1e-10)
+Current level = 2
+  Iteration 1 (of 50).   Current convergence value = 0.000204563 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.000202896 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.000201022 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.000199316 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.000197557 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.000195709 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.00019383 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.00019199 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000190192 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000188324 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000186423 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.00018457 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000182766 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.000180996 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000179408 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000177871 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000176508 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000175278 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000174078 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000172913 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000171631 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000170348 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000169104 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000167898 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000166472 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000165056 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.000163681 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000162335 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.00016095 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000159602 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000158202 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000156901 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000155524 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000154109 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000152679 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000151199 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.000149952 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000148498 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000147295 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000145785 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.000144483 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000143034 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000130784 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000119538 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000109567 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000100679 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 9.31004e-05 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 8.67524e-05 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 8.16172e-05 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 7.75995e-05 (threshold = 1e-10)
+Current level = 3
+  Iteration 1 (of 50).   Current convergence value = 0.000608353 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.000574197 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.000547084 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.000528235 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.000512874 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.000500942 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.0004907 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.000482863 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000475782 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000469453 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000465609 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.000462972 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000460311 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.000458594 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000455526 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000452689 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000448282 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000443705 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000439419 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000435577 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000429205 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000421769 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000414784 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000405499 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000396648 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.00038754 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.00037903 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000371049 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.00036334 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000356209 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000349292 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000342922 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.0003365 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000329997 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000323682 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000317904 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.000312159 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000306568 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000301347 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000296523 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.00028978 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000276928 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000267801 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000262929 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000265251 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000275448 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.000292866 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000316668 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000345489 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000335253 (threshold = 1e-10)
+Current level = 4
+  Iteration 1 (of 50).   Current convergence value = 0.00143902 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.00121343 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.00106632 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.000976562 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.000930416 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.000915286 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.000917773 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.000930443 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000946347 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000960339 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000969817 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.000974162 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000974244 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.000873812 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000791012 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000763161 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000804725 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000936236 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.00106349 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000907113 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000803511 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000739107 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000703393 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000686851 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.00068098 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000680786 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.000681602 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.00068267 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.000682689 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000680616 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000674568 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000667766 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000660195 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000651852 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000609584 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000566266 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.00056006 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000598234 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000681478 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000809021 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.00096634 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.00112142 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000993083 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000897586 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000826185 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000772124 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.000730521 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000701215 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000678029 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000659053 (threshold = 1e-10)
+   N4BiasFieldCorrectionImageFilter (0x16f7ee0)
+     RTTI typeinfo:   itk::N4BiasFieldCorrectionImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 876
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x170ba80) *
+       _1: (0x1719d80)
+       _2: (0x1705180)
+     Indexed Inputs: 
+       0: Primary (0x170ba80)
+       1: _1 (0x1719d80)
+       2: _2 (0x1705180)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x1700c90)
+     Indexed Outputs: 
+       0: Primary (0x1700c90)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 142
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Mask label: 1
+     Number of histogram bins: 200
+     Wiener filter noise: 0.01
+     Bias field FWHM: 0.15
+     Maximum number of iterations: [50, 50, 50, 50]
+     Convergence threshold: 1e-10
+     Spline order: 3
+     Number of fitting levels: [4, 4, 4]
+     Number of control points: [4, 5, 5]
+     CurrentConvergenceMeasurement: 0.000659053
+     CurrentLevel: 4
+     ElapsedIterations: 51
+     LogBiasFieldControlPointLattice: 
+       Image (0x170ee50)
+         RTTI typeinfo:   itk::Image<itk::Vector<float, 1u>, 3u>
+         Reference Count: 1
+         Modified Time: 3666422724
+         Debug: Off
+         Object Name: 
+         Observers: 
+           none
+         Source: (none)
+         Source output name: (none)
+         Release Data: Off
+         Data Released: False
+         Global Release Data: Off
+         PipelineMTime: 0
+         UpdateMTime: 0
+         RealTimeStamp: 0 seconds 
+         LargestPossibleRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         BufferedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         RequestedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         Spacing: [24.7499, 24.9316, 24.9316]
+         Origin: [-24.7499, 24.9316, -24.9316]
+         Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         IndexToPointMatrix: 
+24.7499 0 0
+0 -24.9316 0
+0 0 24.9316
+
+         PointToIndexMatrix: 
+0.0404041 0 0
+0 -0.0401097 0
+0 0 0.0401097
+
+         Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         PixelContainer: 
+           ImportImageContainer (0x170cda0)
+             RTTI typeinfo:   itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >
+             Reference Count: 1
+             Modified Time: 3666422725
+             Debug: Off
+             Object Name: 
+             Observers: 
+               none
+             Pointer: 0x1fe92a0
+             Container manages memory: true
+             Size: 3971
+             Capacity: 3971
+Elapsed time: 2641.87
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz Normalize /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 1000
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/Atropos -d 3 -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -c [5,0.0] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -i PriorProbabilityImages[6,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz,0.25] -k Gaussian -m [0.1,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors%03d.nii.gz] -r 0 -p Socrates[0]
+
+Running Atropos for 3-dimensional images.
+
+Progress: 
+  Iteration 0 (of 5): posterior probability = 0 (annealing temperature = 1)
+  Iteration 1 (of 5): posterior probability = 0.95284 (annealing temperature = 1)
+  Iteration 2 (of 5): posterior probability = 0.960351 (annealing temperature = 1)
+  Iteration 3 (of 5): posterior probability = 0.962177 (annealing temperature = 1)
+  Iteration 4 (of 5): posterior probability = 0.964303 (annealing temperature = 1)
+
+Writing output:
+  Writing posterior image (class 1)
+  Writing posterior image (class 2)
+  Writing posterior image (class 3)
+  Writing posterior image (class 4)
+  Writing posterior image (class 5)
+  Writing posterior image (class 6)
+
+  AtroposSegmentationImageFilter (0x199e070)
+    RTTI typeinfo:   itk::ants::AtroposSegmentationImageFilter<itk::Image<float, 3u>, itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >
+    Reference Count: 1
+    Modified Time: 5281276
+    Debug: Off
+    Object Name: 
+    Observers: 
+      IterationEvent(Command)
+    Inputs: 
+      Primary: (0x19bd2e0) *
+      _1: (0x19bd050)
+      _2: (0x19aa060)
+    Indexed Inputs: 
+      0: Primary (0x19bd2e0)
+      1: _1 (0x19bd050)
+      2: _2 (0x19aa060)
+    Required Input Names: Primary
+    NumberOfRequiredInputs: 1
+    Outputs: 
+      Primary: (0x19a9d70)
+    Indexed Outputs: 
+      0: Primary (0x19a9d70)
+    NumberOfRequiredOutputs: 1
+    Number Of Threads: 28
+    ReleaseDataFlag: Off
+    ReleaseDataBeforeUpdateFlag: Off
+    AbortGenerateData: Off
+    Progress: 0
+    Multithreader: 
+      RTTI typeinfo:   itk::MultiThreader
+      Reference Count: 1
+      Modified Time: 208
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Thread Count: 28
+      Global Maximum Number Of Threads: 128
+      Global Default Number Of Threads: 28
+    CoordinateTolerance: 1e-06
+    DirectionTolerance: 1e-06
+    Maximum number of iterations: 5
+    Convergence threshold: 0
+    Number of tissue classes: 6
+    Number of partial volume classes: 0
+    Minimize memory usage: false
+    Initialization strategy: Prior probability images
+      Use Euclidean distance for prior labels: false
+    Posterior probability formulation: Socrates
+      initial annealing temperature = 1
+      annealing rate = 1
+      minimum annealing temperature = 0.1
+    MRF parameters
+      MRF smoothing factor = 0.1
+      MRF radius = [1, 1, 1]
+    Use asynchronous updating of the labels.
+      ICM parameters
+        maximum ICM code = 14
+        maximum number of ICM iterations = 1
+    No outlier handling.
+    Adaptive smoothing weights: [0]
+    B-spline smoothing
+      spline order = 3
+      number of levels = [6, 6, 6]
+      number of initial control points = [4, 4, 4]
+    Tissue class 1: proportion = 0.166667
+      GaussianListSampleFunction (0x19c6c90)
+        mean = [123.25607490029529], covariance = [15926.7]
+    Tissue class 2: proportion = 0.166667
+      GaussianListSampleFunction (0x19c2540)
+        mean = [242.36138857064574], covariance = [45440.1]
+    Tissue class 3: proportion = 0.166667
+      GaussianListSampleFunction (0x19bfa40)
+        mean = [368.8772303591655], covariance = [4619.4]
+    Tissue class 4: proportion = 0.166667
+      GaussianListSampleFunction (0x19c2690)
+        mean = [389.14060187194326], covariance = [1125.03]
+    Tissue class 5: proportion = 0.166667
+      GaussianListSampleFunction (0x19c2700)
+        mean = [417.32141213267204], covariance = [272.997]
+    Tissue class 6: proportion = 0.166667
+      GaussianListSampleFunction (0x19ae730)
+        mean = [388.7231050639723], covariance = [23539.6]
+Elapsed time: 2277.53
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513~TEMP~_RPI.nii.gz 0.025 0.995 256 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/DenoiseImage -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1
+
+Running for 3-dimensional images.
+
+*********10*********20*********30*********40*********50*********60*********70*********80*********90*********
+
+   AdaptiveNonLocalMeansDenoisingImageFilter (0x16828a0)
+     RTTI typeinfo:   itk::AdaptiveNonLocalMeansDenoisingImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<unsigned char, 3u> >
+     Reference Count: 1
+     Modified Time: 328
+     Debug: Off
+     Object Name: 
+     Observers: 
+       ProgressEvent(Command)
+     Inputs: 
+       Primary: (0x168cff0) *
+       _1: (0)
+     Indexed Inputs: 
+       0: Primary (0x168cff0)
+       1: _1 (0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x16821b0)
+     Indexed Outputs: 
+       0: Primary (0x16821b0)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 1
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 291
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 27
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+Using mean squares to measure the patch similarity.
+     Neighborhood search radius = [3, 3, 3]
+     Neighborhood patch radius = [1, 1, 1]
+     Using Gaussian noise model.
+     Epsilon = 1e-05
+     Mean threshold = 0.95
+     Variance threshold = 0.5
+     Smoothing variance = 2
+     Neighborhood radius for local mean and variance = [1, 1, 1]
+Elapsed time: 5398.14
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -s 2 -c [50x50x50x50,0.0000000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+
+Running N4 for 3-dimensional images.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 2
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 3
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 4
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+   N4BiasFieldCorrectionImageFilter (0x16f7ee0)
+     RTTI typeinfo:   itk::N4BiasFieldCorrectionImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 876
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x170ba80) *
+       _1: (0x1719d80)
+       _2: (0x1705180)
+     Indexed Inputs: 
+       0: Primary (0x170ba80)
+       1: _1 (0x1719d80)
+       2: _2 (0x1705180)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x1700c90)
+     Indexed Outputs: 
+       0: Primary (0x1700c90)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 142
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Mask label: 1
+     Number of histogram bins: 200
+     Wiener filter noise: 0.01
+     Bias field FWHM: 0.15
+     Maximum number of iterations: [50, 50, 50, 50]
+     Convergence threshold: 1e-10
+     Spline order: 3
+     Number of fitting levels: [4, 4, 4]
+     Number of control points: [4, 5, 5]
+     CurrentConvergenceMeasurement: 0
+     CurrentLevel: 4
+     ElapsedIterations: 2
+     LogBiasFieldControlPointLattice: 
+       Image (0x170d950)
+         RTTI typeinfo:   itk::Image<itk::Vector<float, 1u>, 3u>
+         Reference Count: 1
+         Modified Time: 73334113
+         Debug: Off
+         Object Name: 
+         Observers: 
+           none
+         Source: (none)
+         Source output name: (none)
+         Release Data: Off
+         Data Released: False
+         Global Release Data: Off
+         PipelineMTime: 0
+         UpdateMTime: 0
+         RealTimeStamp: 0 seconds 
+         LargestPossibleRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         BufferedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         RequestedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         Spacing: [24.7499, 24.9316, 24.9316]
+         Origin: [-24.7499, 24.9316, -24.9316]
+         Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         IndexToPointMatrix: 
+24.7499 0 0
+0 -24.9316 0
+0 0 24.9316
+
+         PointToIndexMatrix: 
+0.0404041 0 0
+0 -0.0401097 0
+0 0 0.0401097
+
+         Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         PixelContainer: 
+           ImportImageContainer (0x170d720)
+             RTTI typeinfo:   itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >
+             Reference Count: 1
+             Modified Time: 73334114
+             Debug: Off
+             Object Name: 
+             Observers: 
+               none
+             Pointer: 0x171a2a0
+             Container manages memory: true
+             Size: 3971
+             Capacity: 3971
+Elapsed time: 66.1397
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz Normalize /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 1000
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors001.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/Atropos -d 3 -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -c [5,0.0] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -i PriorProbabilityImages[6,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz,0.25] -k Gaussian -m [0.1,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors%03d.nii.gz] -r 0 -p Socrates[1]
+
+Running Atropos for 3-dimensional images.
+
+Progress: 
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPreviousIteration.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration001.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration006.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with segmentation (posterior prob. converged):  6h 8m 42s
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+ Done with N4 <-> Atropos processing
+ Script executed in 22122 seconds
+ 6h 8m 42s
+--------------------------------------------------------------------------------------
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsAtroposN4.sh -d 3 -b Socrates[1] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -m 2 -n 5 -c 6 -y 2 -y 3 -y 4 -y 5 -y 6 -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz -w 0.25 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_Brain -u 0 -g 1 -k 0 -s nii.gz -z 0
+---------------------  Running antsAtroposN4.sh on n034  ---------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationConvergence.txt
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 0.025 0.995 256 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/DenoiseImage -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1
+
+Running for 3-dimensional images.
+
+*********10*********20*********30*********40*********50*********60*********70*********80*********90*********
+
+   AdaptiveNonLocalMeansDenoisingImageFilter (0x16828a0)
+     RTTI typeinfo:   itk::AdaptiveNonLocalMeansDenoisingImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<unsigned char, 3u> >
+     Reference Count: 1
+     Modified Time: 328
+     Debug: Off
+     Object Name: 
+     Observers: 
+       ProgressEvent(Command)
+     Inputs: 
+       Primary: (0x168cff0) *
+       _1: (0)
+     Indexed Inputs: 
+       0: Primary (0x168cff0)
+       1: _1 (0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x16821b0)
+     Indexed Outputs: 
+       0: Primary (0x16821b0)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 1
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 291
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 27
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+Using mean squares to measure the patch similarity.
+     Neighborhood search radius = [3, 3, 3]
+     Neighborhood patch radius = [1, 1, 1]
+     Using Gaussian noise model.
+     Epsilon = 1e-05
+     Mean threshold = 0.95
+     Variance threshold = 0.5
+     Smoothing variance = 2
+     Neighborhood radius for local mean and variance = [1, 1, 1]
+Elapsed time: 384.736
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -s 2 -c [50x50x50x50,0.0000000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+
+Running N4 for 3-dimensional images.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 2
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 3
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 4
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+   N4BiasFieldCorrectionImageFilter (0x16f7ee0)
+     RTTI typeinfo:   itk::N4BiasFieldCorrectionImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 876
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x170ba80) *
+       _1: (0x1719d80)
+       _2: (0x1705180)
+     Indexed Inputs: 
+       0: Primary (0x170ba80)
+       1: _1 (0x1719d80)
+       2: _2 (0x1705180)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x1700c90)
+     Indexed Outputs: 
+       0: Primary (0x1700c90)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 142
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Mask label: 1
+     Number of histogram bins: 200
+     Wiener filter noise: 0.01
+     Bias field FWHM: 0.15
+     Maximum number of iterations: [50, 50, 50, 50]
+     Convergence threshold: 1e-10
+     Spline order: 3
+     Number of fitting levels: [4, 4, 4]
+     Number of control points: [4, 5, 5]
+     CurrentConvergenceMeasurement: 0
+     CurrentLevel: 4
+     ElapsedIterations: 2
+     LogBiasFieldControlPointLattice: 
+       Image (0x170c5e0)
+         RTTI typeinfo:   itk::Image<itk::Vector<float, 1u>, 3u>
+         Reference Count: 1
+         Modified Time: 6664389
+         Debug: Off
+         Object Name: 
+         Observers: 
+           none
+         Source: (none)
+         Source output name: (none)
+         Release Data: Off
+         Data Released: False
+         Global Release Data: Off
+         PipelineMTime: 0
+         UpdateMTime: 0
+         RealTimeStamp: 0 seconds 
+         LargestPossibleRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         BufferedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         RequestedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         Spacing: [24.7499, 24.9316, 24.9316]
+         Origin: [-24.7499, 24.9316, -24.9316]
+         Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         IndexToPointMatrix: 
+24.7499 0 0
+0 -24.9316 0
+0 0 24.9316
+
+         PointToIndexMatrix: 
+0.0404041 0 0
+0 -0.0401097 0
+0 0 0.0401097
+
+         Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         PixelContainer: 
+           ImportImageContainer (0x170fd80)
+             RTTI typeinfo:   itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >
+             Reference Count: 1
+             Modified Time: 6664390
+             Debug: Off
+             Object Name: 
+             Observers: 
+               none
+             Pointer: 0x19647a0
+             Container manages memory: true
+             Size: 3971
+             Capacity: 3971
+Elapsed time: 38.2014
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz Normalize /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 1000
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/Atropos -d 3 -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -c [5,0.0] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -i PriorProbabilityImages[6,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz,0.25] -k Gaussian -m [0.1,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors%03d.nii.gz] -r 0 -p Socrates[0]
+
+Running Atropos for 3-dimensional images.
+
+Progress: 
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 0.025 0.995 256 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/DenoiseImage -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1
+
+Running for 3-dimensional images.
+
+*********10*********20*********30*********40*********50*********60*********70*********80*********90*********
+
+   AdaptiveNonLocalMeansDenoisingImageFilter (0x16828a0)
+     RTTI typeinfo:   itk::AdaptiveNonLocalMeansDenoisingImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<unsigned char, 3u> >
+     Reference Count: 1
+     Modified Time: 328
+     Debug: Off
+     Object Name: 
+     Observers: 
+       ProgressEvent(Command)
+     Inputs: 
+       Primary: (0x168cff0) *
+       _1: (0)
+     Indexed Inputs: 
+       0: Primary (0x168cff0)
+       1: _1 (0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x16821b0)
+     Indexed Outputs: 
+       0: Primary (0x16821b0)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 1
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 291
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 27
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+Using mean squares to measure the patch similarity.
+     Neighborhood search radius = [3, 3, 3]
+     Neighborhood patch radius = [1, 1, 1]
+     Using Gaussian noise model.
+     Epsilon = 1e-05
+     Mean threshold = 0.95
+     Variance threshold = 0.5
+     Smoothing variance = 2
+     Neighborhood radius for local mean and variance = [1, 1, 1]
+Elapsed time: 353.554
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -s 2 -c [50x50x50x50,0.0000000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+
+Running N4 for 3-dimensional images.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 2
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 3
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+Current level = 4
+  Iteration 1 (of 50).   Current convergence value = 0 (threshold = 1e-10)
+   N4BiasFieldCorrectionImageFilter (0x16f7ee0)
+     RTTI typeinfo:   itk::N4BiasFieldCorrectionImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 876
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x170ba80) *
+       _1: (0x1719d80)
+       _2: (0x1705180)
+     Indexed Inputs: 
+       0: Primary (0x170ba80)
+       1: _1 (0x1719d80)
+       2: _2 (0x1705180)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x1700c90)
+     Indexed Outputs: 
+       0: Primary (0x1700c90)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 142
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Mask label: 1
+     Number of histogram bins: 200
+     Wiener filter noise: 0.01
+     Bias field FWHM: 0.15
+     Maximum number of iterations: [50, 50, 50, 50]
+     Convergence threshold: 1e-10
+     Spline order: 3
+     Number of fitting levels: [4, 4, 4]
+     Number of control points: [4, 5, 5]
+     CurrentConvergenceMeasurement: 0
+     CurrentLevel: 4
+     ElapsedIterations: 2
+     LogBiasFieldControlPointLattice: 
+       Image (0x170c5e0)
+         RTTI typeinfo:   itk::Image<itk::Vector<float, 1u>, 3u>
+         Reference Count: 1
+         Modified Time: 6664389
+         Debug: Off
+         Object Name: 
+         Observers: 
+           none
+         Source: (none)
+         Source output name: (none)
+         Release Data: Off
+         Data Released: False
+         Global Release Data: Off
+         PipelineMTime: 0
+         UpdateMTime: 0
+         RealTimeStamp: 0 seconds 
+         LargestPossibleRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         BufferedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         RequestedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         Spacing: [24.7499, 24.9316, 24.9316]
+         Origin: [-24.7499, 24.9316, -24.9316]
+         Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         IndexToPointMatrix: 
+24.7499 0 0
+0 -24.9316 0
+0 0 24.9316
+
+         PointToIndexMatrix: 
+0.0404041 0 0
+0 -0.0401097 0
+0 0 0.0401097
+
+         Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         PixelContainer: 
+           ImportImageContainer (0x170fd80)
+             RTTI typeinfo:   itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >
+             Reference Count: 1
+             Modified Time: 6664390
+             Debug: Off
+             Object Name: 
+             Observers: 
+               none
+             Pointer: 0x19647a0
+             Container manages memory: true
+             Size: 3971
+             Capacity: 3971
+Elapsed time: 38.1904
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz Normalize /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz 1000
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors001.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/Atropos -d 3 -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz -c [5,0.0] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz --verbose 1 -i PriorProbabilityImages[6,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped%03d.nii.gz,0.25] -k Gaussian -m [0.1,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors%03d.nii.gz] -r 0 -p Socrates[1]
+
+Running Atropos for 3-dimensional images.
+
+Progress: 
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriors006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationWeightMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with segmentation (exceeded max. iterations):  0h 16m 21s
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+ Done with N4 <-> Atropos processing
+ Script executed in 981 seconds
+ 0h 16m 21s
+--------------------------------------------------------------------------------------
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionPrior0GenericAffine.mat
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionBrain.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationMaskDilated.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedTemplateBrain.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPriorWarped006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPrior1Warp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPrior1InverseWarp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentationPrior0GenericAffine.mat
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with brain segmentation:  6h 25m 3s
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+ Registration brain masked /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz to /xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz 
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainSegmentation0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_BrainExtractionMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsRegistration -d 3 -v 1 -u 1 -w [0.01,0.99] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_SubjectToTemplate -r [/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1] --float 0 -m MI[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,32,Regular,0.25] -c [1000x500x250x100,1e-8,10] -t Rigid[0.1] -f 8x4x2x1 -s 3x2x1x0 -m MI[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,32,Regular,0.25] -c [1000x500x250x100,1e-8,10] -t Affine[0.1] -f 8x4x2x1 -s 3x2x1x0 -m CC[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,4] -c [100x100x70x20,1e-9,15] -t SyN[0.1,3,0] -f 6x4x2x1 -s 3x2x1x0
+All_Command_lines_OK
+Using double precision for computations.
+ERROR: command exited with nonzero status 1
+Command: /opt/ants-2.2.0/antsRegistration -d 3 -v 1 -u 1 -w [0.01,0.99] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_SubjectToTemplate -r [/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1] --float 0 -m MI[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,32,Regular,0.25] -c [1000x500x250x100,1e-8,10] -t Rigid[0.1] -f 8x4x2x1 -s 3x2x1x0 -m MI[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,32,Regular,0.25] -c [1000x500x250x100,1e-8,10] -t Affine[0.1] -f 8x4x2x1 -s 3x2x1x0 -m CC[/xcpEngine-master/space/MNI/MNI-1x1x1.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/struc/sub-ADS6513_ExtractedBrain0N4.nii.gz,1,4] -c [100x100x70x20,1e-9,15] -t SyN[0.1,3,0] -f 6x4x2x1 -s 3x2x1x0
+
+····································································
+Processing step complete:
+ANTs cortical thickness pipeline
+___________________________________________________________________
+
+
+Usage: regslicer -i <input> -o <output> <options>
+
+Compulsory arguments:
+ -s : Source image
+      The image that has been registered to the target
+      
+ -t : Target image
+      The registration target
+
+ -o : Output
+      The path where the visual aid will be written.
+      
+Optional arguments:
+ -i : Intermediate root [default = output]
+      The path where temporary files (intermediates) will
+      be written
+
+
+····································································
+Processing step complete:
+Quality assessment
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· @0
+· @0.1a
+· @0.1b
+· @0.1c
+· @0.1d
+· @1
+· @1.1a
+· @1.1b
+· @1.1c
+· @1.x
+· @8
+· @8.1
+· @8.2
+· @0.3
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m gmd [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+#                                                                 #
+#  ☭                GREY MATTER DENSITY MODULE                 ☭  #
+#                                                                 #
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/gmd]
+····································································
+Processing step complete:
+Computing 3-class segmentation
+····································································
+Processing step complete:
+Mapping grey matter density
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @1.3
+· @1.3
+· @1.4
+· @2
+· @2.1
+· @2.2
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m jlf [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+#                                                                 #
+#  ☭                 JOINT LABEL FUSION MODULE                 ☭  #
+#                                                                 #
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf]
+
+--------------------------------------------------------------------------------------
+ Start JLFization
+--------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------
+ Parameters
+--------------------------------------------------------------------------------------
+ ANTSPATH is /opt/ants-2.2.0/
+
+ Dimensionality:           3
+ Output prefix:            /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_
+ Posteriors format:        
+ Target image:             /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513.nii.gz
+ Atlas images:             /xcpEngine-master/thirdparty/oasis30/Brains/1000.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1001.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1002.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1003.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1004.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1005.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1006.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1007.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1009.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1010.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1013.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1015.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1017.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1019.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1036.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1104.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1113.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1116.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1119.nii.gz /xcpEngine-master/thirdparty/oasis30/Brains/1122.nii.gz
+ Atlas labels:             /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1000.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1001.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1002.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1003.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1004.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1005.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1006.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1007.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1009.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1010.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1013.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1015.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1017.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1019.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1036.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1104.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1113.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1116.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1119.nii.gz /xcpEngine-master/thirdparty/oasis30/MICCAI2012ChallengeLabels/1122.nii.gz
+ Transformation:           s
+
+ Keep all images:          0
+ Processing type:          0
+ Number of cpu cores:      2
+--------------------------------------------------------------------------------------
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1000_0.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1001_1.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1002_2.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1003_3.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1004_4.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1005_5.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1006_6.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1007_7.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1009_8.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1010_9.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1013_10.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1015_11.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1017_12.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1019_13.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1036_14.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1104_15.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1113_16.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1116_17.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1119_18.sh
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/job_1122_19.sh
+
+--------------------------------------------------------------------------------------
+ Starting JLF
+--------------------------------------------------------------------------------------
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1000_0_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1001_1_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1002_2_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1003_3_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1004_4_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1005_5_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1006_6_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1007_7_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1009_8_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1010_9_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1013_10_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1015_11_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1017_12_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1019_13_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1036_14_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1104_15_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1113_16_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1116_17_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1119_18_Warped.nii.gz
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/jlf/sub-ADS6513_1122_19_Warped.nii.gz
+Error:  At least 2 warped image/label pairs needs to exist for jointFusion.
+····································································
+Processing step complete:
+ANTs Joint Label Fusion
+····································································
+Processing step complete:
+Preparing grey matter intersection
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @1.4
+· @1.5
+· @1.6a
+· @1.6b
+· @2
+· @2.1
+· @2.2
+· @2.3
+· @2.4
+· @2.5
+· @2.6
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m roiquant [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#                                                                 #
+#  ☭             ATLAS-BASED QUANTIFICATION MODULE             ☭  #
+#                                                                 #
+#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/roiquant]
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:                     
+                         [0;31m★[0m qcanat [0;31m★[0m                             
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+#                                                                 #
+#  ☭      VOLUMETRIC ANATOMICAL QUALITY ASSESSMENT MODULE      ☭  #
+#                                                                 #
+# ✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡✡ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/sub-ADS6513.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS6513/qcanat]
+····································································
+Processing step complete:
+Extracting tissue masks
+All_Command_lines_OK
+Using single precision for computations.
+····································································
+Processing step complete:
+Determining image foreground/background
+····································································
+Processing step complete:
+Computing measures of anatomical quality
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @2
+· @2.1
+· @2.2
+· @2.3
+· @2.4
+· @2.5
+· @2.6
+· @3
+· @3.2
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+#                                                                 #
+#  [0;31m☭[0m                     ANALYSIS COMPLETE                     [0;31m☭[0m  #
+#                                                                 #
+#  [0;31m☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭[0m  #
+###################################################################
