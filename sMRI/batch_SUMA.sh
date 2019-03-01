@@ -12,7 +12,7 @@ STUDY=/projects/adapt_lab/shared/ADS
 
 # Set subject list
 #SUBJLIST=`cat sub_test.txt`
-SUBJLIST=`cat sublist_restw2_n84.txt`
+SUBJLIST=`cat sub_test.txt`
 # 
 for SUBJ in $SUBJLIST
 do
