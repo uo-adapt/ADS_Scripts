@@ -13,5 +13,5 @@ STUDY=/projects/adapt_lab/shared/ADS
 SUBJLIST=`cat  sub_test.txt`
 
 for SUBJ in $SUBJLIST
- do sbatch --export ALL,SUBID=${SUBJ},STUDY=${STUDY} --job-name rsfMRIproc_w2_"${SUBJ}" --partition=short --mem-per-cpu=8G --cpus-per-task=1 -o "${STUDY}"/Scripts/rsfMRI/afni_proc/wave_2/output/"${SUBJ}"_rsfMRIproc_w2_output.txt -e "${STUDY}"/Scripts/rsfMRI/afni_proc/wave_2/output/"${SUBJ}"_rsfMRIproc_w2_error.txt job_rsfMRIproc_w2.tcsh
+ do sbatch --export ALL,SUBID=${SUBJ},STUDY=${STUDY} --job-name suma_"${SUBJ}" --partition=short --mem-per-cpu=8G --cpus-per-task=1 -o "${STUDY}"/Scripts/rsfMRI/afni_proc/output/"${SUBJ}"_suma_output.txt -e "${STUDY}"/Scripts/rsfMRI/afni_proc/output/"${SUBJ}"_suma_error.txt job_suma.tcsh
 done

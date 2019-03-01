@@ -22,18 +22,21 @@ echo ${SUBID}
 # set subject and group identifiers
 set subj="${SUBID}"
 echo $subj
-set group_id=tag
+set group_id=ADS
 echo $group_id
+set wave=ses-wave2
 set pipeline=rsfMRI_preproc_wave2
+set STUDY="${STUDY}"
+set data_dir="${STUDY}"/data/BIDS_data/
 
 # set data directories
-set top_dir=/projects/dsnlab/shared/"${group_id}"
+set top_dir="${STUDY}"
 echo $top_dir
-set anat_dir=$top_dir/bids_data/derivatives/freesurfer/$subj/SUMA
+set anat_dir=$data_dir/derivatives/freesurfer/$subj/SUMA
 echo $anat_dir
-set epi_dir=$top_dir/bids_data/"$subj"/ses-wave2/func
+set epi_dir=$data_dir/"$subj"/"${wave}"/func
 echo $epi_dir
-set rsfMRI_output=$top_dir/bids_data/derivatives/$pipeline
+set rsfMRI_output=$data_dir/derivatives/$pipeline
 echo $rsfMRI_output
 
 # create subject folder
@@ -60,7 +63,7 @@ afni_proc.py -subj_id $subj                                \
 -anat_follower_ROI FSvent epi $anat_dir/"${subj}"_vent.nii.gz           \
 -anat_follower_ROI FSWe epi $anat_dir/"${subj}"_WM.nii.gz            \
 -anat_follower_erode FSvent FSWe                           \
--dsets $epi_dir/"${subj}"_ses-wave2_task-rest_run-0?_bold.nii.gz \
+-dsets $epi_dir/"${subj}"_"${wave}"_task-rest_run-0?_bold.nii.gz \
 -tcat_remove_first_trs 5                                  \
 -volreg_align_to MIN_OUTLIER                               \
 -volreg_align_e2a                                          \
