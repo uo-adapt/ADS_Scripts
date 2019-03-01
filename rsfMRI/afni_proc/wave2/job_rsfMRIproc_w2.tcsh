@@ -27,16 +27,16 @@ echo $group_id
 set wave=ses-wave2
 set pipeline=rsfMRI_preproc_wave2
 set STUDY="${STUDY}"
-set data_dir="${STUDY}"/data/BIDS_data/
+set bids_dir="${STUDY}"/data/BIDS_data/
 
 # set data directories
 set top_dir="${STUDY}"
 echo $top_dir
-set anat_dir=$data_dir/derivatives/freesurfer/$subj/SUMA
+set anat_dir=$bids_dir/derivatives/freesurfer/$subj/SUMA
 echo $anat_dir
-set epi_dir=$data_dir/"$subj"/"${wave}"/func
+set epi_dir=$bids_dir/"$subj"/"${wave}"/func
 echo $epi_dir
-set rsfMRI_output=$data_dir/derivatives/$pipeline
+set rsfMRI_output=$bids_dir/derivatives/$pipeline
 echo $rsfMRI_output
 
 # create subject folder
