@@ -1,4 +1,4 @@
-job_SUMA.sh ran on Sun Mar  3 14:22:46 PST 2019 
+job_SUMA.sh ran on Sun Mar  3 14:28:33 PST 2019 
 
 Setting Up Freesurfer6.0
 
@@ -11,11 +11,232 @@ The Subject Directory is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivativ
 Now in this directory: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021
 
 Running SUMA Make Spec on sub-ADS1021
-failure: will not overwrite files: 
-        './SUMA/sub-ADS1021_SurfVol.nii'
+++ creating directory './SUMA' for results...
+-- found 6 LH surfaces
+-- found 6 RH surfaces
+mri_convert.bin -ot nii /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/mri/orig.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/orig.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/mri/orig.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/orig.nii...
+++ created AFNI file './SUMA/sub-ADS1021_SurfVol.nii'
+Made roi label table for AFNI - fs_table.niml.lt
+mri_convert.bin -ot nii mri/T1.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/T1.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/T1.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/T1.nii...
+mri_convert.bin -ot nii mri/aparc+aseg.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aparc+aseg.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/aparc+aseg.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aparc+aseg.nii...
+Program 3dmerge 
+3dmerge: edit and combine 3D datasets, by RW Cox
+++ editing input dataset in memory (64.0 MB)
+.
 
-please remove these files if you want to rerun the script.
-program failure: exiting...
+Notice: SessionAtlases.niml already exists, appending to it aparc+aseg_rank.
+mri_convert.bin -ot nii mri/aparc.a2009s+aseg.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aparc.a2009s+aseg.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/aparc.a2009s+aseg.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aparc.a2009s+aseg.nii...
 
+Notice: SessionAtlases.niml already exists, appending to it aparc.a2009s+aseg.
+Program 3dmerge 
+3dmerge: edit and combine 3D datasets, by RW Cox
+++ editing input dataset in memory (64.0 MB)
+.
 
-Creating ventricle and white matter masks
+Notice: SessionAtlases.niml already exists, appending to it aparc.a2009s+aseg_rank.
+mri_convert.bin -ot nii mri/aseg.auto.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aseg.auto.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/aseg.auto.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aseg.auto.nii...
+mri_convert.bin -ot nii mri/aseg.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aseg.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/aseg.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/aseg.nii...
+
+Notice: SessionAtlases.niml already exists, appending to it aseg.
+Program 3dmerge 
+3dmerge: edit and combine 3D datasets, by RW Cox
+++ editing input dataset in memory (64.0 MB)
+.
+
+Notice: SessionAtlases.niml already exists, appending to it aseg_rank.
+mri_convert.bin -ot nii mri/brain.finalsurfs.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brain.finalsurfs.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/brain.finalsurfs.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brain.finalsurfs.nii...
+mri_convert.bin -ot nii mri/brain.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brain.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/brain.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brain.nii...
+mri_convert.bin -ot nii mri/brainmask.auto.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brainmask.auto.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/brainmask.auto.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brainmask.auto.nii...
+mri_convert.bin -ot nii mri/brainmask.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brainmask.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/brainmask.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/brainmask.nii...
+mri_convert.bin -ot nii mri/norm.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/norm.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/norm.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/norm.nii...
+mri_convert.bin -ot nii mri/nu.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/nu.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/nu.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/nu.nii...
+mri_convert.bin -ot nii mri/lh.ribbon.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/lh.ribbon.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/lh.ribbon.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/lh.ribbon.nii...
+mri_convert.bin -ot nii mri/rh.ribbon.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/rh.ribbon.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/rh.ribbon.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/rh.ribbon.nii...
+mri_convert.bin -ot nii mri/wm.asegedit.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.asegedit.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/wm.asegedit.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.asegedit.nii...
+mri_convert.bin -ot nii mri/wm.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/wm.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.nii...
+mri_convert.bin -ot nii mri/wm.seg.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.seg.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/wm.seg.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, -1.81899e-12, -9.31323e-10)
+j_ras = (9.31323e-10, -2.18279e-11, -1)
+k_ras = (-1.81899e-12, 1, -2.18275e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1021_ses-wave2.long.sub-ADS1021/./SUMA/wm.seg.nii...
+-- running 'mris_convert lh.smoothwm lh.smoothwm.asc'
+Saving lh.smoothwm.asc as a surface
+Reading lh.smoothwm.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert lh.pial lh.pial.asc'
+Saving lh.pial.asc as a surface
+Reading lh.pial.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert lh.inflated lh.inflated.asc'
+Saving lh.inflated.asc as a surface
+Reading lh.inflated.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert lh.sphere lh.sphere.asc'
+Saving lh.sphere.asc as a surface
+Reading lh.sphere.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert lh.white lh.white.asc'
+Saving lh.white.asc as a surface
+Reading lh.white.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert lh.sphere.reg lh.sphere.reg.asc'
+Saving lh.sphere.reg.asc as a surface
+Reading lh.sphere.reg.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.smoothwm rh.smoothwm.asc'
+Saving rh.smoothwm.asc as a surface
+Reading rh.smoothwm.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.pial rh.pial.asc'
+Saving rh.pial.asc as a surface
+Reading rh.pial.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.inflated rh.inflated.asc'
+Saving rh.inflated.asc as a surface
+Reading rh.inflated.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.sphere rh.sphere.asc'
+Saving rh.sphere.asc as a surface
+Reading rh.sphere.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.white rh.white.asc'
+Saving rh.white.asc as a surface
+Reading rh.white.asc ...
+Performing affine transform...
+Writing surface...
+-- running 'mris_convert rh.sphere.reg rh.sphere.reg.asc'
+Saving rh.sphere.reg.asc as a surface
+Reading rh.sphere.reg.asc ...
+Performing affine transform...
+Writing surface...
+++ created spec file'./SUMA/sub-ADS1021_lh.spec'
+++ created spec file'./SUMA/sub-ADS1021_rh.spec'
+++ created spec file'./SUMA/sub-ADS1021_both.spec'
+
+------------------------------------------------------------------
+Running MapIcosahedron for both hemispheres at ld values of 141 60
