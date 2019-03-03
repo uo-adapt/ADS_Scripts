@@ -25,6 +25,8 @@ echo -e "\nThe Subject Directory is $SUBJECTS_DIR"
 
 cd $SUBJECTS_DIR/$SUBID
 
+echo -e "\nNow in this directory: $SUBJECTS_DIR/$SUBID"
+
 echo -e "\nRunning SUMA Make Spec on ${SUBID}"
 
 @SUMA_Make_Spec_FS -sid "${SUBID}" -NIFTI
