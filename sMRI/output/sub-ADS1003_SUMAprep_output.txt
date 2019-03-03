@@ -1,0 +1,68 @@
+job_SUMA.sh ran on Sat Mar  2 21:02:36 PST 2019 
+
+Setting Up Freesurfer6.0
+
+Setting up AFNI
+
+Freesurfer Home is /packages/freesurfer/6.0.0/freesurfer
+
+The Subject Directory is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+
+Running SUMA Make Spec on sub-ADS1003
+++ creating directory './SUMA' for results...
+-- found 1 LH surfaces
+-- found 6 RH surfaces
+No COR files, converting mri/orig.mgz ...
+mri_convert.bin -ot cor mri/orig.mgz mri/orig 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/orig.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 6.58e-10, 8.29282e-09)
+j_ras = (0, 0, -1)
+k_ras = (3.74554e-10, 1, 6.47877e-11)
+Reslicing using trilinear interpolation 
+writing to mri/orig...
+ERROR: failure writing mri/orig as volume type 0
+mri_convert.bin -ot nii /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/mri/orig.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/orig.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/mri/orig.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 6.58e-10, 8.29282e-09)
+j_ras = (0, 0, -1)
+k_ras = (3.74554e-10, 1, 6.47877e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/orig.nii...
+ERROR: failure writing /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/orig.nii as volume type 24
+++ created AFNI file './SUMA/sub-ADS1003_SurfVol.nii'
+Made roi label table for AFNI - fs_table.niml.lt
+mri_convert.bin -ot nii mri/T1.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/T1.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/T1.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 6.58e-10, 8.29282e-09)
+j_ras = (0, 0, -1)
+k_ras = (3.74554e-10, 1, 6.47877e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/T1.nii...
+ERROR: failure writing /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/T1.nii as volume type 24
+mri_convert.bin -ot nii mri/aseg.auto.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/aseg.auto.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/aseg.auto.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 6.58e-10, 8.29282e-09)
+j_ras = (0, 0, -1)
+k_ras = (3.74554e-10, 1, 6.47877e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/aseg.auto.nii...
+ERROR: failure writing /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/aseg.auto.nii as volume type 24
+mri_convert.bin -ot nii mri/brain.finalsurfs.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/brain.finalsurfs.nii 
+$Id: mri_convert.c,v 1.226 2016/02/26 16:15:24 mreuter Exp $
+reading from mri/brain.finalsurfs.mgz...
+TR=1900.00, TE=0.00, TI=0.00, flip angle=0.00
+i_ras = (-1, 6.58e-10, 8.29282e-09)
+j_ras = (0, 0, -1)
+k_ras = (3.74554e-10, 1, 6.47877e-11)
+writing to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/brain.finalsurfs.nii...
+ERROR: failure writing /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/brain.finalsurfs.nii as volume type 24
+mri_convert.bin -ot nii mri/brain.mgz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/brain.nii 
+ERROR: failure writing /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003/./SUMA/brain.nii as volume type 24
+-- running 'mris_convert lh.inflated lh.inflated.asc'
+Saving lh.inflated.asc as a surface
+
