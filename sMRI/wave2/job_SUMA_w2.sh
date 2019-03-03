@@ -23,9 +23,9 @@ echo -e "\nFreesurfer Home is $FREESURFER_HOME"
 
 echo -e "\nThe Subject Directory is $SUBJECTS_DIR"
 
-cd $SUBJECTS_DIR/$SUBID_ses-wave2.long.$SUBID
+cd $SUBJECTS_DIR/"${SUBID}"_ses-wave2.long.$SUBID
 
-echo -e "\nNow in this directory: $SUBJECTS_DIR/$SUBID_ses-wave2.long.$SUBID"
+echo -e "\nNow in this directory: $SUBJECTS_DIR/${SUBID}_ses-wave2.long.$SUBID"
 
 echo -e "\nRunning SUMA Make Spec on ${SUBID}"
 
