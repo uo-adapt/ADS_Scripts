@@ -3983,3 +3983,645 @@ END   <<<<<<<<<<<<<<<<<<<<
 
 BEGIN >>>>>>>>>>>>>>>>>>>>
 /opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTmp.nii.gz ME /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionCSF.nii.gz 10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz addtozero /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTmp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/MultiplyImages 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz 2 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz addtozero /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionWM.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ThresholdImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 3 3 1 0
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ThresholdImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTmp.nii.gz 2 2 1 0
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz addtozero /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTmp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz ME /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 2
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz GetLargestComponent /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz MD /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 4
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz FillHoles /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 2
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz addtozero /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPriorWarped.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz MD /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 5
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz ME /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 5
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionWM.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionWM.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionCSF.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionCSF.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPriorWarped.nii.gz PadImage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPriorWarped.nii.gz -10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/MultiplyImages 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_N4Corrected0.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with brain extraction:  0h 48m 51s
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPriorWarped.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPrior1Warp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPrior1InverseWarp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTmp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionGM.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionCSF.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionSegmentation.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionInitialAffine.mat
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionInitialAffineMoving.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionInitialAffineFixed.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionLaplacian.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionTemplateLaplacian.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionWM.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_N4Truncated0.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_N4Corrected0.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ThresholdImage 3 /xcpEngine-master/space/MNI/MNI-1x1x1BrainPrior.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz 0.1 1.01 1 0
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz m /xcpEngine-master/space/MNI/MNI-1x1x1Head.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Brain segmentation using the following steps:
+   1) Register /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz and /xcpEngine-master/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705~TEMP~_RPI.nii.gz
+   2) Warp priors to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705~TEMP~_RPI.nii.gz
+   3) N-tissue segmentation using Atropos and N4
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationMaskDilated.nii.gz MD /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 20
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz 1 1 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz 1 1 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/CopyImageHeaderInformation /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationMaskDilated.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationMaskDilated.nii.gz 1 1 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsRegistration -d 3 -u 1 -w [0.01,0.99] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationPrior --float 0 --verbose 1 -r [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPrior0GenericAffine.mat,1] -x [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationMaskDilated.nii.gz] -m MI[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz,1,32,Regular,0.25] -c [1000x500x250x100,1e-8,10] -t Affine[0.1] -f 8x4x2x1 -s 4x2x1x0 -m CC[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz,1,4] -c [100x100x70x20,1e-9,15] -t SyN[0.1,3,0] -f 6x4x2x1 -s 3x2x1x0
+All_Command_lines_OK
+Using double precision for computations.
+=============================================================================
+The composite transform comprises the following transforms (in order): 
+  1. inverse of /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionPrior0GenericAffine.mat (type = AffineTransform)
+=============================================================================
+  Reading mask(s).
+    Registration stage 0
+      Fixed mask = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationMaskDilated.nii.gz
+  number of levels = 4
+  number of levels = 4
+  fixed image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz
+  moving image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz
+  fixed image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionBrain.nii.gz
+  moving image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedTemplateBrain.nii.gz
+Dimension = 3
+Number of stages = 2
+Use Histogram Matching true
+Winsorize image intensities true
+Lower quantile = 0.01
+Upper quantile = 0.99
+Stage 1 State
+   Image metric = Mattes
+     Fixed image = Image (0x36a9820)
+  RTTI typeinfo:   itk::Image<double, 3u>
+  Reference Count: 2
+  Modified Time: 1671
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 0
+  UpdateMTime: 1495
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  Spacing: [0.900001, 0.449219, 0.449219]
+  Origin: [-82.2546, 83.0205, -115.898]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+0.900001 0 0
+0 -0.449219 0
+0 0 0.449219
+
+  PointToIndexMatrix: 
+1.11111 0 0
+0 -2.22609 0
+0 0 2.22609
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x36a8eb0)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, double>
+      Reference Count: 1
+      Modified Time: 1492
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x2aaaae918010
+      Container manages memory: true
+      Size: 41811968
+      Capacity: 41811968
+
+     Moving image = Image (0x36a9ab0)
+  RTTI typeinfo:   itk::Image<double, 3u>
+  Reference Count: 2
+  Modified Time: 1672
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 0
+  UpdateMTime: 1669
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  Spacing: [1, 1, 1]
+  Origin: [-90, 126, -72]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 1
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x36a9d40)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, double>
+      Reference Count: 1
+      Modified Time: 1666
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x2aaac2819010
+      Container manages memory: true
+      Size: 7221032
+      Capacity: 7221032
+
+     Weighting = 1
+     Sampling strategy = regular
+     Number of bins = 32
+     Radius = 4
+     Sampling percentage  = 0.25
+   Transform = Affine
+     Gradient step = 0.1
+     Update field sigma (voxel space) = 0
+     Total field sigma (voxel space) = 0
+     Update field time sigma = 0
+     Total field time sigma  = 0
+     Number of time indices = 0
+     Number of time point samples = 0
+Stage 2 State
+   Image metric = CC
+     Fixed image = Image (0x36ac100)
+  RTTI typeinfo:   itk::Image<double, 3u>
+  Reference Count: 2
+  Modified Time: 2023
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 0
+  UpdateMTime: 1847
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [176, 464, 512]
+  Spacing: [0.900001, 0.449219, 0.449219]
+  Origin: [-82.2546, 83.0205, -115.898]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+0.900001 0 0
+0 -0.449219 0
+0 0 0.449219
+
+  PointToIndexMatrix: 
+1.11111 0 0
+0 -2.22609 0
+0 0 2.22609
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x36ac390)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, double>
+      Reference Count: 1
+      Modified Time: 1844
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x2aaac5f31010
+      Container manages memory: true
+      Size: 41811968
+      Capacity: 41811968
+
+     Moving image = Image (0x36ac3f0)
+  RTTI typeinfo:   itk::Image<double, 3u>
+  Reference Count: 2
+  Modified Time: 2024
+  Debug: Off
+  Object Name: 
+  Observers: 
+    none
+  Source: (none)
+  Source output name: (none)
+  Release Data: Off
+  Data Released: False
+  Global Release Data: Off
+  PipelineMTime: 0
+  UpdateMTime: 2021
+  RealTimeStamp: 0 seconds 
+  LargestPossibleRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  BufferedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  RequestedRegion: 
+    Dimension: 3
+    Index: [0, 0, 0]
+    Size: [182, 218, 182]
+  Spacing: [1, 1, 1]
+  Origin: [-90, 126, -72]
+  Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  IndexToPointMatrix: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PointToIndexMatrix: 
+1 0 0
+0 -1 0
+0 0 1
+
+  Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+  PixelContainer: 
+    ImportImageContainer (0x36b2800)
+      RTTI typeinfo:   itk::ImportImageContainer<unsigned long, double>
+      Reference Count: 1
+      Modified Time: 2018
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Pointer: 0x2aaad9e32010
+      Container manages memory: true
+      Size: 7221032
+      Capacity: 7221032
+
+     Weighting = 1
+     Sampling strategy = none
+     Number of bins = 32
+     Radius = 4
+     Sampling percentage  = 1
+   Transform = SyN
+     Gradient step = 0.1
+     Update field sigma (voxel space) = 3
+     Total field sigma (voxel space) = 0
+     Update field time sigma = 0
+     Total field time sigma  = 0
+     Number of time indices = 0
+     Number of time point samples = 0
+Registration using 2 total stages.
+
+Stage 0
+  iterations = 1000x500x250x100
+  convergence threshold = 1e-08
+  convergence window size = 10
+  number of levels = 4
+  using the Mattes MI metric (number of bins = 32, weight = 1)
+  preprocessing:  winsorizing the image intensities
+  preprocessing:  histogram matching the images
+  Shrink factors (level 1 out of 4): [4, 8, 8]
+  Shrink factors (level 2 out of 4): [2, 4, 4]
+  Shrink factors (level 3 out of 4): [1, 2, 2]
+  Shrink factors (level 4 out of 4): [1, 1, 1]
+  smoothing sigmas per level: [4, 2, 1, 0]
+  regular sampling (percentage = 0.25)
+
+*** Running AffineTransform registration ***
+
+DIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_LAST
+ 2DIAGNOSTIC,     1, -6.414817866710e-01, 1.797693134862e+308, 2.0165e+01, 2.0165e+01, 
+ 2DIAGNOSTIC,     2, -6.431467459732e-01, 1.797693134862e+308, 2.0261e+01, 9.5876e-02, 
+ 2DIAGNOSTIC,     3, -6.454762936518e-01, 1.797693134862e+308, 2.0356e+01, 9.5191e-02, 
+ 2DIAGNOSTIC,     4, -6.485433293817e-01, 1.797693134862e+308, 2.0458e+01, 1.0196e-01, 
+ 2DIAGNOSTIC,     5, -6.518242343929e-01, 1.797693134862e+308, 2.0557e+01, 9.8606e-02, 
+ 2DIAGNOSTIC,     6, -6.550515211772e-01, 1.797693134862e+308, 2.0652e+01, 9.5286e-02, 
+ 2DIAGNOSTIC,     7, -6.582720546645e-01, 1.797693134862e+308, 2.0747e+01, 9.5246e-02, 
+ 2DIAGNOSTIC,     8, -6.609020684464e-01, 1.797693134862e+308, 2.0865e+01, 1.1730e-01, 
+ 2DIAGNOSTIC,     9, -6.626670934200e-01, 1.797693134862e+308, 2.1013e+01, 1.4816e-01, 
+ 2DIAGNOSTIC,    10, -6.632076125849e-01, 2.383056983988e-03, 2.1119e+01, 1.0676e-01, 
+ 2DIAGNOSTIC,    11, -6.635850497108e-01, 2.002486434787e-03, 2.1268e+01, 1.4817e-01, 
+ 2DIAGNOSTIC,    12, -6.638682903413e-01, 1.576512961139e-03, 2.1422e+01, 1.5472e-01, 
+ 2DIAGNOSTIC,    13, -6.640016782592e-01, 1.155289507752e-03, 2.1521e+01, 9.9063e-02, 
+ 2DIAGNOSTIC,    14, -6.640561545535e-01, 7.857286289341e-04, 2.1620e+01, 9.8413e-02, 
+ 2DIAGNOSTIC,    15, -6.643738988046e-01, 4.976747434410e-04, 2.1860e+01, 2.4024e-01, 
+ 2DIAGNOSTIC,    16, -6.643999354268e-01, 2.872628203895e-04, 2.1959e+01, 9.8418e-02, 
+ 2DIAGNOSTIC,    17, -6.644243617770e-01, 1.568917447930e-04, 2.2062e+01, 1.0299e-01, 
+ 2DIAGNOSTIC,    18, -6.644540382863e-01, 8.978082149892e-05, 2.2160e+01, 9.8199e-02, 
+ 2DIAGNOSTIC,    19, -6.644847821959e-01, 6.224672402622e-05, 2.2257e+01, 9.7752e-02, 
+ 2DIAGNOSTIC,    20, -6.645098107772e-01, 4.383014570874e-05, 2.2362e+01, 1.0452e-01, 
+ 2DIAGNOSTIC,    21, -6.644985148564e-01, 3.062269287688e-05, 2.2478e+01, 1.1641e-01, 
+ 2DIAGNOSTIC,    22, -6.645121791429e-01, 2.177825786243e-05, 2.2576e+01, 9.7730e-02, 
+ 2DIAGNOSTIC,    23, -6.644783208457e-01, 1.370847551330e-05, 2.2710e+01, 1.3401e-01, 
+ 2DIAGNOSTIC,    24, -6.644635304619e-01, 5.727836953399e-06, 2.2858e+01, 1.4816e-01, 
+ 2DIAGNOSTIC,    25, -6.644440663014e-01, 3.113282740282e-06, 2.2969e+01, 1.1040e-01, 
+ 2DIAGNOSTIC,    26, -6.644093700290e-01, 3.860565469319e-07, 2.3068e+01, 9.9258e-02, 
+DIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_LAST
+ 2DIAGNOSTIC,     1, -5.722684580104e-01, 1.797693134862e+308, 3.4001e+01, 1.0933e+01, 
+ 2DIAGNOSTIC,     2, -5.731910239489e-01, 1.797693134862e+308, 3.4829e+01, 8.2811e-01, 
+ 2DIAGNOSTIC,     3, -5.744275734046e-01, 1.797693134862e+308, 3.5667e+01, 8.3742e-01, 
+ 2DIAGNOSTIC,     4, -5.759084413145e-01, 1.797693134862e+308, 3.6494e+01, 8.2765e-01, 
+ 2DIAGNOSTIC,     5, -5.773639450756e-01, 1.797693134862e+308, 3.7329e+01, 8.3426e-01, 
+ 2DIAGNOSTIC,     6, -5.783630117841e-01, 1.797693134862e+308, 3.8168e+01, 8.3912e-01, 
+ 2DIAGNOSTIC,     7, -5.786986438478e-01, 1.797693134862e+308, 3.9708e+01, 1.5401e+00, 
+ 2DIAGNOSTIC,     8, -5.787323638010e-01, 1.797693134862e+308, 4.0550e+01, 8.4245e-01, 
+ 2DIAGNOSTIC,     9, -5.787534899557e-01, 1.797693134862e+308, 4.1912e+01, 1.3613e+00, 
+ 2DIAGNOSTIC,    10, -5.787548302943e-01, 7.836839893677e-04, 4.2922e+01, 1.0102e+00, 
+ 2DIAGNOSTIC,    11, -5.787515559203e-01, 5.418562032171e-04, 4.3932e+01, 1.0102e+00, 
+ 2DIAGNOSTIC,    12, -5.787504280095e-01, 3.298453868516e-04, 4.4775e+01, 8.4334e-01, 
+ 2DIAGNOSTIC,    13, -5.787506094507e-01, 1.674580797190e-04, 4.5605e+01, 8.2979e-01, 
+ 2DIAGNOSTIC,    14, -5.787564885653e-01, 6.475984882968e-05, 4.6616e+01, 1.0114e+00, 
+ 2DIAGNOSTIC,    15, -5.787577597064e-01, 1.709469264592e-05, 4.7628e+01, 1.0112e+00, 
+ 2DIAGNOSTIC,    16, -5.787686353808e-01, 4.826582638590e-06, 4.8641e+01, 1.0132e+00, 
+ 2DIAGNOSTIC,    17, -5.787736438120e-01, 3.580221251603e-06, 4.9653e+01, 1.0117e+00, 
+ 2DIAGNOSTIC,    18, -5.787704488798e-01, 3.131683162398e-06, 5.0659e+01, 1.0061e+00, 
+ 2DIAGNOSTIC,    19, -5.787736761786e-01, 3.238313091680e-06, 5.1501e+01, 8.4272e-01, 
+ 2DIAGNOSTIC,    20, -5.787807607256e-01, 3.395221550621e-06, 5.2512e+01, 1.0104e+00, 
+ 2DIAGNOSTIC,    21, -5.787875142985e-01, 3.443966853880e-06, 5.3518e+01, 1.0065e+00, 
+ 2DIAGNOSTIC,    22, -5.787940726005e-01, 3.427980343002e-06, 5.4703e+01, 1.1848e+00, 
+ 2DIAGNOSTIC,    23, -5.787910890480e-01, 3.169467080892e-06, 5.5714e+01, 1.0110e+00, 
+ 2DIAGNOSTIC,    24, -5.787917312790e-01, 2.906750661461e-06, 5.6727e+01, 1.0131e+00, 
+ 2DIAGNOSTIC,    25, -5.787856731822e-01, 2.414608824913e-06, 5.7565e+01, 8.3821e-01, 
+ 2DIAGNOSTIC,    26, -5.787881242345e-01, 2.102116688572e-06, 5.8401e+01, 8.3586e-01, 
+ 2DIAGNOSTIC,    27, -5.787912674775e-01, 1.878463247819e-06, 5.9413e+01, 1.0113e+00, 
+ 2DIAGNOSTIC,    28, -5.787917115596e-01, 1.556024683970e-06, 6.0424e+01, 1.0114e+00, 
+ 2DIAGNOSTIC,    29, -5.787934564151e-01, 1.301881772782e-06, 6.1434e+01, 1.0098e+00, 
+ 2DIAGNOSTIC,    30, -5.787920799586e-01, 1.137921262370e-06, 6.2446e+01, 1.0121e+00, 
+ 2DIAGNOSTIC,    31, -5.787880825018e-01, 1.018248914908e-06, 6.3279e+01, 8.3357e-01, 
+ 2DIAGNOSTIC,    32, -5.787891512703e-01, 1.024975923969e-06, 6.4289e+01, 1.0097e+00, 
+ 2DIAGNOSTIC,    33, -5.787883788898e-01, 9.698620873771e-07, 6.5126e+01, 8.3668e-01, 
+ 2DIAGNOSTIC,    34, -5.787844891784e-01, 8.734541693221e-07, 6.6132e+01, 1.0065e+00, 
+ 2DIAGNOSTIC,    35, -5.787794648760e-01, 6.346835113823e-07, 6.6971e+01, 8.3841e-01, 
+ 2DIAGNOSTIC,    36, -5.787755303866e-01, 4.164200368591e-07, 6.7802e+01, 8.3172e-01, 
+ 2DIAGNOSTIC,    37, -5.787765581019e-01, 3.095843312921e-07, 6.8823e+01, 1.0208e+00, 
+ 2DIAGNOSTIC,    38, -5.787721196539e-01, 2.057373524079e-07, 6.9834e+01, 1.0108e+00, 
+ 2DIAGNOSTIC,    39, -5.787667971624e-01, 1.245430750335e-07, 7.1016e+01, 1.1818e+00, 
+ 2DIAGNOSTIC,    40, -5.787653149008e-01, 8.250149118733e-08, 7.2033e+01, 1.0171e+00, 
+DIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_LAST
+ 2DIAGNOSTIC,     1, -5.354561699219e-01, 1.797693134862e+308, 8.4778e+01, 1.2745e+01, 
+ 2DIAGNOSTIC,     2, -5.359702268752e-01, 1.797693134862e+308, 8.9203e+01, 4.4254e+00, 
+ 2DIAGNOSTIC,     3, -5.364374208090e-01, 1.797693134862e+308, 9.3633e+01, 4.4294e+00, 
+ 2DIAGNOSTIC,     4, -5.367367267426e-01, 1.797693134862e+308, 9.8057e+01, 4.4246e+00, 
+ 2DIAGNOSTIC,     5, -5.369894060216e-01, 1.797693134862e+308, 1.0249e+02, 4.4318e+00, 
+ 2DIAGNOSTIC,     6, -5.374211791472e-01, 1.797693134862e+308, 1.0842e+02, 5.9310e+00, 
+ 2DIAGNOSTIC,     7, -5.375765857796e-01, 1.797693134862e+308, 1.1284e+02, 4.4202e+00, 
+ 2DIAGNOSTIC,     8, -5.376104934086e-01, 1.797693134862e+308, 1.1802e+02, 5.1835e+00, 
+ 2DIAGNOSTIC,     9, -5.376311576420e-01, 1.797693134862e+308, 1.2621e+02, 8.1885e+00, 
+ 2DIAGNOSTIC,    10, -5.376320302215e-01, 2.632791343809e-04, 1.3139e+02, 5.1782e+00, 
+ 2DIAGNOSTIC,    11, -5.376340584781e-01, 1.785580276961e-04, 1.3582e+02, 4.4252e+00, 
+ 2DIAGNOSTIC,    12, -5.376358493554e-01, 1.145417136779e-04, 1.4175e+02, 5.9319e+00, 
+ 2DIAGNOSTIC,    13, -5.376369118535e-01, 6.935258144244e-05, 1.4693e+02, 5.1833e+00, 
+ 2DIAGNOSTIC,    14, -5.376368017187e-01, 3.585795351992e-05, 1.5210e+02, 5.1723e+00, 
+ 2DIAGNOSTIC,    15, -5.376368090279e-01, 1.232697297979e-05, 1.5653e+02, 4.4229e+00, 
+ 2DIAGNOSTIC,    16, -5.376372464636e-01, 4.971779411819e-06, 1.6171e+02, 5.1841e+00, 
+ 2DIAGNOSTIC,    17, -5.376371179113e-01, 3.016383086397e-06, 1.6689e+02, 5.1769e+00, 
+ 2DIAGNOSTIC,    18, -5.376372618989e-01, 2.156917542490e-06, 1.7132e+02, 4.4295e+00, 
+ 2DIAGNOSTIC,    19, -5.376377166661e-01, 1.940749738166e-06, 1.7575e+02, 4.4301e+00, 
+ 2DIAGNOSTIC,    20, -5.376385305842e-01, 1.765256286840e-06, 1.8018e+02, 4.4296e+00, 
+ 2DIAGNOSTIC,    21, -5.376393307763e-01, 1.659965441950e-06, 1.8460e+02, 4.4219e+00, 
