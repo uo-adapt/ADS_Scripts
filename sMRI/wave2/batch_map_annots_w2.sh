@@ -8,7 +8,7 @@
 # directories.
 #
 # Set your study
-STUDY=/projects/dsnlab/shared/tag
+STUDY=/projects/adapt_lab/shared/ADS
 
 # Set subject list
 SUBJLIST=`cat sub_test.txt`
