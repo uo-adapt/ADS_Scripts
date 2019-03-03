@@ -4,4 +4,116 @@ loaded as requested: "c3d"
 
 
 
-rm: cannot remove ‘/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS4111.csv,’: No such file or directory
+Error: writing output failed: Disk quota exceeded
+/xcpEngine-master/core/functions/printx: line 3: echo: write error: Disk quota exceeded
+++ export SHELLOPTS
+++ declare -A declared_d declared_o declared_c declared_s declared_q
+++ subject_parse sub-ADS4111,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat/sub-ADS4111_desc-preproc_T1w.nii.gz /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat_cohort.csv.sub-ADS4111.csv
+++ local abs_test i id_vals idx subject_vals subject_vars v val_full
+++ unset subject 'prefix[sub]' 'out[sub]'
+++ cohort_vars=()
+++ subject_vals=(${1//,/ })
+++ read -r subject_vars
+++ subject_vars=(${subject_vars//,/ })
+++ i=0
+++ for v in "${subject_vars[@]}"
+++ contains id0 '^id[0-9]*$'
+++ [[ id0 =~ ^id[0-9]*$ ]]
+++ idx=0
+++ eval 'subject[idx]=${subject_vals[i]}'
++++ subject[idx]=sub-ADS4111
+++ id_vals=("${id_vals[@]}" "${subject[idx]}")
+++ ((  i++  ))
+++ for v in "${subject_vars[@]}"
+++ contains img '^id[0-9]*$'
+++ [[ img =~ ^id[0-9]*$ ]]
+++ cohort_vars+=(${v}[${sub}])
+++ eval 'img[9001]=${subject_vals[i]}'
++++ img[9001]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat/sub-ADS4111_desc-preproc_T1w.nii.gz
+++ [[ -n '' ]]
+++ ((  i++  ))
+++ ((  1 == 0  ))
++++ join_by , sub-ADS4111
++++ local d=,
++++ shift
++++ echo -n sub-ADS4111
++++ shift
++++ printf %s
+++ ids[sub]=sub-ADS4111
++++ join_by _ sub-ADS4111
++++ local d=_
++++ shift
++++ echo -n sub-ADS4111
++++ shift
++++ printf %s
+++ prefix[sub]=sub-ADS4111
++++ join_by / sub-ADS4111
++++ local d=/
++++ shift
++++ echo -n sub-ADS4111
++++ shift
++++ printf %s
+++ out[sub]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111
+++ source /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201903031016.dsn
++++ analysis=struc-ACCELERATOR
++++ design=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/anat-Complete+_201903031016.dsn
++++ sequence=anatomical
++++ standard=MNI%1x1x1
++++ pipeline=struc,gmd,jlf,roiquant,qcanat
++++ struc_denoise_anat[1]=1
++++ struc_prior_weight[1]=0.25
++++ struc_posterior_formulation[1]='Socrates[1]'
++++ struc_keepBEImages[1]=0
++++ struc_floating_point[1]=0
++++ struc_random_seed[1]=0
++++ struc_bspline[1]=0
++++ struc_fit[1]=0.3
++++ struc_quick[1]=0
++++ struc_seg_priors[1]=1
++++ struc_rerun[1]=0
++++ struc_cleanup[1]=1
++++ struc_process[1]=ACT
++++ gmd_rerun[2]=0
++++ gmd_cleanup[2]=1
++++ newAntsPath[3]=/data/joy/BBL/applications/ANTsJLF_201603/bin/
++++ jlf_keep_warps[3]=0
++++ jlf_extract[3]=1
++++ jlf_quick[3]=1
++++ jlf_cohort[3]=SexBalanced20
++++ jlf_parallel[3]=none
++++ jlf_rerun[3]=0
++++ jlf_cleanup[3]=1
++++ roiquant_atlas[4]=miccai
++++ roiquant_vol[4]=1
++++ roiquant_rerun[4]=0
++++ roiquant_cleanup[4]=1
++++ qcanat_gm[5]=Y
++++ qcanat_gm_val[5]=2,4
++++ qcanat_wm[5]=Y
++++ qcanat_wm_val[5]=3
++++ qcanat_csf[5]=Y
++++ qcanat_csf_val[5]=1
++++ qcanat_cort[5]=Y
++++ qcanat_cort_val[5]=4
++++ qcanat_rerun[5]=0
++++ qcanat_cleanup[5]=1
+++ source /xcpEngine-master/core/defineLogs
++++ [[ -z '' ]]
++++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_logs/struc-ACCELERATOR_201903032315_sub-ADS4111LOG
++++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_logs/struc-ACCELERATOR_201903032315_sub-ADS4111LOG
++++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_logs/struc-ACCELERATOR_201903032315_sub-ADS4111LOG-process
++++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/sub-ADS4111_logs/struc-ACCELERATOR_201903032315_sub-ADS4111LOG-process
++++ [[ -n localiser ]]
++++ [[ -n /xcpEngine-master/core/CONSOLE_MODULE_RC ]]
++++ echo '
+
+'
+
+
++ length=59
+
+
+
+
+
+
