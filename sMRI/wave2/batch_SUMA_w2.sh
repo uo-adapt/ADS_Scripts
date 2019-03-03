@@ -16,6 +16,6 @@ SUBJLIST=`cat sub_test.txt`
 # 
 for SUBJ in $SUBJLIST
 do
- sbatch --export ALL,SUBID=${SUBJ},STUDY=${STUDY} --job-name SUMAprep_"${SUBJ}" --partition=short --time=1:00:00 --mem-per-cpu=2G --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/output/"${SUBJ}"_SUMAprep_w2_output.txt -e "${STUDY}"/Scripts/sMRI/wave2/"${SUBJ}"_SUMAprep_w2_error.txt job_SUMA_w2.sh
+ sbatch --export ALL,SUBID=${SUBJ},STUDY=${STUDY} --job-name SUMAprep_"${SUBJ}" --partition=short --time=1:00:00 --mem-per-cpu=2G --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/wave2/output/"${SUBJ}"_SUMAprep_w2_output.txt -e "${STUDY}"/Scripts/sMRI/wave2/output/"${SUBJ}"_SUMAprep_w2_error.txt job_SUMA_w2.sh
 done
 
