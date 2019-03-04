@@ -63,7 +63,7 @@ afni_proc.py -subj_id $subj                                \
 -anat_follower_ROI FSvent epi $anat_dir/"${subj}"_vent.nii.gz           \
 -anat_follower_ROI FSWe epi $anat_dir/"${subj}"_WM.nii.gz            \
 -anat_follower_erode FSvent FSWe                           \
--dsets $epi_dir/"${subj}"_"${wave}"_task-rest_run-0?_bold.nii.gz \
+-dsets $epi_dir/"${subj}"_"${wave}"_task-rest_bold.nii.gz \
 -tcat_remove_first_trs 5                                  \
 -volreg_align_to MIN_OUTLIER                               \
 -volreg_align_e2a                                          \
