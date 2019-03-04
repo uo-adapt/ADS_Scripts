@@ -92,3 +92,112 @@ end
 ++ 3dbucket: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
 align_epi_anat.py -anat2epi -anat sub-ADS1021_SurfVol+orig -save_skullstrip -suffix _al_junk -epi vr_base_min_outlier+orig -epi_base 0 -epi_strip 3dAutomask -giant_move -cost lpc+ZZ -volreg off -tshift off
 ++ 3dcopy: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ 3dWarp: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: RW Cox
+++ Output dataset ./__tt_sub-ADS1021_SurfVol_ns_ob+orig.BRIK
+++ 3dbucket: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ 3dAutomask: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: Emperor Zhark
+[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+  such as ./__tt_vr_base_min_outlier_ts+orig.BRIK,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:./__tt_vr_base_min_outlier_ts+orig.BRIK is 4.785283 degrees from plumb.
+++ Loading dataset ./__tt_vr_base_min_outlier_ts+orig
+++ Forming automask
+ + Fixed clip level = 269.533813
+ + Used gradual clip level = 228.548996 .. 324.477997
+ + Number voxels above clip level = 24417
+ + Clustering voxels ...
+ + Largest cluster has 24175 voxels
+ + Clustering voxels ...
+ + Largest cluster has 23425 voxels
+ + Filled   323 voxels in small holes; now have 23748 voxels
+ + Clustering voxels ...
+ + Largest cluster has 23747 voxels
+ + Clustering non-brain voxels ...
+ + Clustering voxels ...
+ + Largest cluster has 74556 voxels
+ + Mask now has 23748 voxels
+++ 23748 voxels in the mask [out of 98304: 24.16%]
+++ first  13 x-planes are zero [from R]
+++ last   13 x-planes are zero [from L]
+++ first   5 y-planes are zero [from P]
+++ last    5 y-planes are zero [from A]
+++ first   0 z-planes are zero [from I]
+++ last    1 z-planes are zero [from S]
+++ applying mask to original data
+++ Writing masked data
+++ Output dataset ./__tt_vr_base_min_outlier_ts_ns+orig.BRIK
+++ CPU time = 0.000000 sec
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ././__tt_vr_base_min_outlier_ts_ns_wt+orig.BRIK
+++ 3dAllineate: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: Zhark the Registrator
+++ lpc+ parameters: hel=0.40 mi=0.20 nmi=0.20 crA=0.40 ov=0.40 [to be zeroed at Final iteration]
+[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+  such as ./__tt_vr_base_min_outlier_ts_ns_wt+orig.BRIK,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:./__tt_vr_base_min_outlier_ts_ns_wt+orig.BRIK is 4.785283 degrees from plumb.
+++ Oblique dataset:./__tt_vr_base_min_outlier_ts_ns+orig.BRIK is 4.785283 degrees from plumb.
+++ Source dataset: ./__tt_sub-ADS1021_SurfVol_ns_ob+orig.HEAD
+++ Base dataset:   ./__tt_vr_base_min_outlier_ts_ns+orig.HEAD
+++ Loading datasets
+++ 1651473 voxels in -source_automask+2
+++ Zero-pad: zbot=4 ztop=3
+++ 23748 voxels [18.7%] in weight mask
+++ Output dataset ./__tt_sub-ADS1021_SurfVol_ns_ob_al_junk_wtal+orig.BRIK
+++ Number of points for matching = 23748
+++ NOTE: base and source coordinate systems have different handedness
+ +       Orientations: base=Left handed (RPI); source=Right handed (RAI)
+++ Local correlation: blok type = 'RHDD(14.2219)'
+++ -lpc+ parameters: hel=0.40 mi=0.20 nmi=0.20 crA=0.40 ov=0.40 [to be zeroed at Final iteration]
+++ base center of mass = 31.509 31.199 15.138 (index)
+ + source center of mass = 126.427 140.425 138.492 (index)
+ + source-target CM = 0.643 6.230 -15.113 (xyz)
+ + center of mass shifts = 0.643 6.230 -15.113
+++ shift param auto-range: -65.7..67.0 -60.1..72.6 -63.3..33.0
+ + Range param#4 [z-angle] = -6.000000 .. 6.000000
+ + Range param#5 [x-angle] = -6.000000 .. 6.000000
+ + Range param#6 [y-angle] = -6.000000 .. 6.000000
+ + Range param#1 [x-shift] = -9.357452 .. 10.642548
+ + Range param#2 [y-shift] = -3.769852 .. 16.230148
+ + Range param#3 [z-shift] = -25.112904 .. -5.112904
+ + Range param#4 [z-angle] = -45.000000 .. 45.000000
+ + Range param#5 [x-angle] = -45.000000 .. 45.000000
+ + Range param#6 [y-angle] = -45.000000 .. 45.000000
+ + Range param#1 [x-shift] = -39.357452 .. 40.642548
+ + Range param#2 [y-shift] = -33.769852 .. 46.230148
+ + Range param#3 [z-shift] = -55.112904 .. 24.887096
+ + 12 free parameters
+++ Normalized convergence radius = 0.000481
+++ changing output grid spacing to 1.0000 mm
+++ OpenMP thread count = 1
+++ ======= Allineation of 1 sub-bricks using Local Pearson Signed + Others =======
+ + source mask has 1651473 [out of 20315457] voxels
+ + base mask has 33501 [out of 126976] voxels
+++ ========== sub-brick #0 ========== [total CPU to here=0.0 s]
+++ *** Coarse pass begins ***
+ + * Enter alignment setup routine
+ + - copying base image
+ + - copying source image
+ + - Smoothing base; radius=5.00
+ + - Smoothing source; radius=5.00
+ + !source mask fill: ubot=22 usiz=35.5
+ + - copying weight image
+ + - using 23748 points from base image [use_all=2]
+ + * Exit alignment setup routine
+ + - Search for coarse starting parameters
+ +  - histogram: source clip 24.6478 .. 93.5673; base clip 182.176 .. 787.182
+ +  - versus source range 4.89211 .. 93.0854; base range 0 .. 848.595
+ + 20751 total points stored in 183 'RHDD(15.0752)' bloks
+ + - number of free params = 6
+ + - Testing (64+61)*64 params:#o+o-.+-o--..-+.-++$
