@@ -10,7 +10,7 @@ echo "job_vols2timecourses_w2.sh ran on $(date) $line"
 
 echo -e "\nSetting Up Freesurfer6.0"
 
-source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer_w2.sh
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh
 
 echo -e "\nSetting up AFNI"
 
