@@ -159,3 +159,64 @@ Program 3dmerge
 3dmerge: edit and combine 3D datasets, by RW Cox
 ++ editing input dataset in memory (1183.1 MB)
 .........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+++ 3dABoverlap: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+#A=./full_mask.sub-ADS1021+orig.BRIK  B=./mask_anat.sub-ADS1021+orig.BRIK
+#A           #B           #(A uni B)   #(A int B)   #(A \ B)     #(B \ A)     %(A \ B)    %(B \ A)    Rx(B/A)    Ry(B/A)    Rz(B/A)
+44103        58460        59103        43460        643          15000         1.4580     25.6586     1.0009     1.6433     0.9468
+0.847479	
+total number of censored TRs (simple form) = 53
+-- no warnings for correlation matrix (cut = 0.400) --
+Program 3dmerge 
+3dmerge: edit and combine 3D datasets, by RW Cox
+++ editing input dataset in memory (1183.1 MB)
+.........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+-- GCOR =  0.0377541
+average errts FWHM blurs: 0 0 0 0
+average errts ACF blurs: 0.696139 2.60051 8.31879 6.8674
+** failed to guess at any stats dset, resting state?
+   (else X-matrix file "X.xmat.1D" may not apply)
+++ writing ss review basic:          @ss_review_basic
+** no stats_dset dset, cannot drive view_stats, skipping...
+++ writing ss review driver:         @ss_review_driver
+++ writing ss review drive commands: @ss_review_driver_commands
+
+subject ID                : sub-ADS1021
+TRs removed (per run)     : 5
+num stim classes provided : 0
+final anatomy dset        : anat_final.sub-ADS1021+orig.HEAD
+final stats dset          : NO_STATS
+final errts dset          : errts.sub-ADS1021.fanaticor+orig.HEAD
+final voxel resolution    : 3.000000	3.000000	3.000000
+
+motion limit              : 0.2
+num TRs above mot limit   : 28
+average motion (per TR)   : 0.0925306
+average censored motion   : 0.0789912
+max motion displacement   : 5.04446
+max censored displacement : 5.04446
+outlier limit             : 0.1
+average outlier frac (TR) : 0.00532727
+num TRs above out limit   : 1
+
+num runs found            : 1
+num TRs per run           : 505
+num TRs per run (applied) : 452
+num TRs per run (censored): 53
+fraction censored per run : 0.10495
+TRs total (uncensored)    : 505
+TRs total                 : 452
+degrees of freedom used   : 255
+degrees of freedom left   : 197
+
+TRs censored              : 53
+censor fraction           : 0.104950
+num regs of interest      : 0
+
+TSNR average              : 212.733
+global correlation (GCOR) : 0.0377541
+anat/EPI mask Dice coef   : 0.847479
+blur estimates (ACF)      : 0.696139 2.60051 8.31879
+blur estimates (FWHM)     : 0 0 0
+
+
+execution finished: Mon Mar  4 21:45:42 PST 2019

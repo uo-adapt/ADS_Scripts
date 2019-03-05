@@ -781,3 +781,297 @@ foreach run ( 01 )
 ++ Authored by: Emperor Zhark
 ++ Loading dataset pb03.sub-ADS1021.r01.blur+orig
 ++ Forming automask
+ + Fixed clip level = 264.635956
+ + Used gradual clip level = 225.318222 .. 314.398438
+ + Number voxels above clip level = 44803
+ + Clustering voxels ...
+ + Largest cluster has 44579 voxels
+ + Clustering voxels ...
+ + Largest cluster has 43786 voxels
+ + Filled   263 voxels in small holes; now have 44049 voxels
+ + Filled     5 voxels in large holes; now have 44054 voxels
+ + Clustering voxels ...
+ + Largest cluster has 44050 voxels
+ + Clustering non-brain voxels ...
+ + Clustering voxels ...
+ + Largest cluster has 570022 voxels
+ + Mask now has 44103 voxels
+++ 44103 voxels in the mask [out of 614125: 7.18%]
+++ first  21 x-planes are zero [from R]
+++ last   21 x-planes are zero [from L]
+++ first  21 y-planes are zero [from S]
+++ last   28 y-planes are zero [from I]
+++ first  14 z-planes are zero [from P]
+++ last   11 z-planes are zero [from A]
+++ Output dataset ./rm.mask_r01+orig.BRIK
+++ CPU time = 0.000000 sec
+end
+3dmask_tool -inputs rm.mask_r01+orig.HEAD -union -prefix full_mask.sub-ADS1021
+++ processing 1 input datasets...
+++ padding all datasets by 0 (for dilations)
+++ frac 0 over 1 volumes gives min count 0
+++ voxel limits: 0 clipped, 44103 survived, 570022 were zero
+++ writing result full_mask.sub-ADS1021...
+++ Output dataset ./full_mask.sub-ADS1021+orig.BRIK
+3dresample -master full_mask.sub-ADS1021+orig -input sub-ADS1021_SurfVol_ns+orig -prefix rm.resam.anat
+3dmask_tool -dilate_input 5 -5 -fill_holes -input rm.resam.anat+orig -prefix mask_anat.sub-ADS1021
+++ no -frac option: defaulting to -union
+++ processing 1 input datasets...
+++ padding all datasets by 5 (for dilations)
+++ frac 0 over 1 volumes gives min count 0
+++ voxel limits: 0 clipped, 58460 survived, 555665 were zero
+++ filled 0 holes (0 voxels)
+++ writing result mask_anat.sub-ADS1021...
+++ Output dataset ./mask_anat.sub-ADS1021+orig.BRIK
+3dmask_tool -input full_mask.sub-ADS1021+orig mask_anat.sub-ADS1021+orig -inter -prefix mask_epi_anat.sub-ADS1021
+++ processing 2 input datasets...
+++ padding all datasets by 0 (for dilations)
+++ frac 1 over 2 volumes gives min count 2
+++ voxel limits: 15643 clipped, 43460 survived, 555022 were zero
+++ writing result mask_epi_anat.sub-ADS1021...
+++ Output dataset ./mask_epi_anat.sub-ADS1021+orig.BRIK
+tee out.mask_ae_overlap.txt
+3dABoverlap -no_automask full_mask.sub-ADS1021+orig mask_anat.sub-ADS1021+orig
+tee out.mask_ae_dice.txt
+3ddot -dodice full_mask.sub-ADS1021+orig mask_anat.sub-ADS1021+orig
+foreach run ( 01 )
+3dTstat -prefix rm.mean_r01 pb03.sub-ADS1021.r01.blur+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./rm.mean_r01+orig.BRIK
+3dcalc -a pb03.sub-ADS1021.r01.blur+orig -b rm.mean_r01+orig -c full_mask.sub-ADS1021+orig -expr c * min(200, a/b*100)*step(a)*step(b) -prefix pb04.sub-ADS1021.r01.scale
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./pb04.sub-ADS1021.r01.scale+orig.BRIK
+end
+1d_tool.py -infile dfile_rall.1D -set_nruns 1 -demean -write motion_demean.1D
+1d_tool.py -infile dfile_rall.1D -set_nruns 1 -derivative -demean -write motion_deriv.1D
+1d_tool.py -infile dfile_rall.1D -set_nruns 1 -show_censor_count -censor_prev_TR -censor_motion 0.2 motion_sub-ADS1021
+1deval -a motion_sub-ADS1021_censor.1D -b outcount_sub-ADS1021_censor.1D -expr a*b
+1dBport -nodata 505 1.4 -band 0.009 0.2 -invert -nozero
+++ Block length: 505
+ + Frequency indexes: blocklen=505 :: 1 2 3 4 5 6 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 240 241 242 243 244 245 246 247 248 249 250 251 252
+set ktrs = `1d_tool.py -infile censor_${subj}_combined_2.1D                
+                       -show_trs_uncensored encoded`
+1d_tool.py -infile censor_sub-ADS1021_combined_2.1D -show_trs_uncensored encoded
+foreach run ( 01 )
+1d_tool.py -set_run_lengths 505 -select_runs 01 -infile censor_sub-ADS1021_combined_2.1D -write rm.censor.r01.1D
+3dTproject -polort 5 -prefix rm.det_pcin_r01 -censor rm.censor.r01.1D -cenmode KILL -input pb02.sub-ADS1021.r01.volreg+orig
+++ 3dTproject: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: Cox the Algebraic (Linear)
+++ input time points = 505 ; censored = 53 ; remaining = 452
+++ Setting up regressors
+++ 1 Blocks * 6 polynomials -- 6 polort regressors
+++ 452 retained time points MINUS 6 regressors ==> 446 D.O.F. left
+++ no -mask option ==> processing all 614125 voxels in dataset
+++ Compute pseudo-inverse of fixed orts
+++ Loading dataset
+[7m*+ WARNING:[0m 3dTproject input data :: 442422 vectors are constant
+++ Starting project-orization
+++ Convert results to output dataset
+++ Output dataset ./rm.det_pcin_r01+orig.BRIK
+++ ===== clock time = 1h 43m 17s 192ms
+end
+3dTcat -prefix rm.det_pcin_rall rm.det_pcin_r01+orig.HEAD
+++ 3dTcat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ elapsed time = 1.5 s
+3dpc -mask follow_ROI_FSvent+orig -pcsave 3 -prefix rm.ROIPC.FSvent rm.det_pcin_rall+orig
+++ 3dpc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+1d_tool.py -censor_fill_parent censor_sub-ADS1021_combined_2.1D -infile rm.ROIPC.FSvent_vec.1D -write ROIPC.FSvent.1D
+3dDeconvolve -input pb04.sub-ADS1021.r01.scale+orig.HEAD -mask full_mask.sub-ADS1021+orig -censor censor_sub-ADS1021_combined_2.1D -ortvec bandpass_rall.1D bandpass -ortvec ROIPC.FSvent.1D ROIPC.FSvent -polort 5 -num_stimts 12 -stim_file 1 motion_demean.1D[0] -stim_base 1 -stim_label 1 roll_01 -stim_file 2 motion_demean.1D[1] -stim_base 2 -stim_label 2 pitch_01 -stim_file 3 motion_demean.1D[2] -stim_base 3 -stim_label 3 yaw_01 -stim_file 4 motion_demean.1D[3] -stim_base 4 -stim_label 4 dS_01 -stim_file 5 motion_demean.1D[4] -stim_base 5 -stim_label 5 dL_01 -stim_file 6 motion_demean.1D[5] -stim_base 6 -stim_label 6 dP_01 -stim_file 7 motion_deriv.1D[0] -stim_base 7 -stim_label 7 roll_02 -stim_file 8 motion_deriv.1D[1] -stim_base 8 -stim_label 8 pitch_02 -stim_file 9 motion_deriv.1D[2] -stim_base 9 -stim_label 9 yaw_02 -stim_file 10 motion_deriv.1D[3] -stim_base 10 -stim_label 10 dS_02 -stim_file 11 motion_deriv.1D[4] -stim_base 11 -stim_label 11 dL_02 -stim_file 12 motion_deriv.1D[5] -stim_base 12 -stim_label 12 dP_02 -fout -tout -x1D X.xmat.1D -xjpeg X.jpg -x1D_uncensored X.nocensor.xmat.1D -fitts fitts.sub-ADS1021 -errts errts.sub-ADS1021 -x1D_stop -bucket stats.sub-ADS1021
+++ 3dDeconvolve extending num_stimts from 12 to 249 due to -ortvec
+++ 3dDeconvolve: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: B. Douglas Ward, et al.
+++ Skipping check for initial transients
+++ Input polort=5; Longest run=707.0 s; Recommended minimum polort=5 ++ OK ++
+++ Number of time points: 505 (before censor) ; 452 (after)
+ + Number of parameters:  255 [255 baseline ; 0 signal]
+++ Memory required for output bricks = 2,483,521,500 bytes (about 2.5 billion [giga])
+++ Wrote matrix image to file X.jpg
+++ Wrote matrix values to file X.xmat.1D
+++ ========= Things you can do with the matrix file =========
+++ (a) Linear regression with ARMA(1,1) modeling of serial correlation:
+
+3dREMLfit -matrix X.xmat.1D -input pb04.sub-ADS1021.r01.scale+orig.HEAD \
+ -mask full_mask.sub-ADS1021+orig -fout -tout \
+ -Rbuck stats.sub-ADS1021_REML -Rvar stats.sub-ADS1021_REMLvar \
+ -Rfitts fitts.sub-ADS1021_REML -Rerrts errts.sub-ADS1021_REML -verb
+ 
+++ N.B.: 3dREMLfit command above written to file stats.REML_cmd
+++ (b) Visualization/analysis of the matrix via ExamineXmat.R
+++ (c) Synthesis of sub-model datasets using 3dSynthesize
+++ ==========================================================
+++ Wrote matrix values to file X.nocensor.xmat.1D
+++ ----- Signal+Baseline matrix condition [X] (452x255):  506.632  ++ OK ++
+++ ----- Baseline-only matrix condition [X] (452x255):  506.632  ++ OK ++
+++ ----- stim_base-only matrix condition [X] (452x249):  10.0421  ++ VERY GOOD ++
+++ ----- polort-only matrix condition [X] (452x6):  1.07232  ++ VERY GOOD ++
+++ 3dDeconvolve exits: -x1D_stop option was invoked
+3dTproject -polort 0 -input pb04.sub-ADS1021.r01.scale+orig.HEAD -mask full_mask.sub-ADS1021+orig -censor censor_sub-ADS1021_combined_2.1D -cenmode ZERO -ort X.nocensor.xmat.1D -prefix errts.sub-ADS1021.tproject
+++ 3dTproject: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: Cox the Algebraic (Linear)
+++ input time points = 505 ; censored = 53 ; remaining = 452
+++ Setting up regressors
+++ 1 Blocks * 1 polynomials -- 1 polort regressors
+ + -- 255 other fixed ort regressors
+++ 452 retained time points MINUS 256 regressors ==> 196 D.O.F. left
+++ 44103 voxels in the spatial mask
+++ 1 fixed ort vectors (out of 256 original) discarded as all zero, after censoring
+++ Compute pseudo-inverse of fixed orts
+++ Loading dataset
+++ Starting project-orization
+++ Convert results to output dataset
+++ Output dataset ./errts.sub-ADS1021.tproject+orig.BRIK
+++ ===== clock time = 29m 53s 287ms
+if ( 0 != 0 ) then
+tee out.cormat_warn.txt
+1d_tool.py -show_cormat_warnings -infile X.xmat.1D
+3dTcat -prefix all_runs.sub-ADS1021 pb04.sub-ADS1021.r01.scale+orig.HEAD
+++ 3dTcat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ elapsed time = 3.0 s
+3dTcat -prefix rm.all_runs.volreg pb02.sub-ADS1021.r01.volreg+orig.HEAD
+++ 3dTcat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ elapsed time = 1.8 s
+3dcalc -a rm.all_runs.volreg+orig -b follow_ROI_FSWe+orig -expr a*bool(b) -datum float -prefix rm.all_runs.volreg.mask
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.all_runs.volreg.mask+orig.BRIK
+3dmerge -1blur_fwhm 30 -doall -prefix Local_FSWe_rall rm.all_runs.volreg.mask+orig
+++ 3dmerge: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ default -1dindex = 0
+++ default -1tindex = 1
+-- Wrote edited dataset: ./Local_FSWe_rall+orig.BRIK
+3dTproject -polort 0 -input pb04.sub-ADS1021.r01.scale+orig.HEAD -mask full_mask.sub-ADS1021+orig -censor censor_sub-ADS1021_combined_2.1D -cenmode ZERO -dsort Local_FSWe_rall+orig -ort X.nocensor.xmat.1D -prefix errts.sub-ADS1021.fanaticor
+++ 3dTproject: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: Cox the Algebraic (Linear)
+++ input time points = 505 ; censored = 53 ; remaining = 452
+++ Setting up regressors
+++ 1 Blocks * 1 polynomials -- 1 polort regressors
+ + -- 255 other fixed ort regressors
+ + -- 1 voxel-wise dsort regressors
+++ 452 retained time points MINUS 257 regressors ==> 195 D.O.F. left
+++ 44103 voxels in the spatial mask
+++ 1 fixed ort vectors (out of 256 original) discarded as all zero, after censoring
+++ Compute pseudo-inverse of fixed orts
+++ Loading datasets
+++ Starting project-orization
+++ Convert results to output dataset
+++ Output dataset ./errts.sub-ADS1021.fanaticor+orig.BRIK
+++ ===== clock time = 28m 8s 866ms
+3dTstat -mean -prefix rm.signal.all all_runs.sub-ADS1021+orig[0..45,48..94,97..121,124..130,133,136..158,161..167,170..174,179,180,183..195,198,199,202..205,209..213,216,217,220..225,228..234,238..245,248..275,278..280,283..289,292..334,337..370,374..421,424..452,455..504]
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./rm.signal.all+orig.BRIK
+3dTstat -stdev -prefix rm.noise.all errts.sub-ADS1021.fanaticor+orig[0..45,48..94,97..121,124..130,133,136..158,161..167,170..174,179,180,183..195,198,199,202..205,209..213,216,217,220..225,228..234,238..245,248..275,278..280,283..289,292..334,337..370,374..421,424..452,455..504]
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./rm.noise.all+orig.BRIK
+3dcalc -a rm.signal.all+orig -b rm.noise.all+orig -c full_mask.sub-ADS1021+orig -expr c*a/b -prefix TSNR.sub-ADS1021
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./TSNR.sub-ADS1021+orig.BRIK
+3dTnorm -norm2 -prefix rm.errts.unit errts.sub-ADS1021.fanaticor+orig
+++ 3dTnorm: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: RW Cox
+++ Output dataset ./rm.errts.unit+orig.BRIK
+3dmaskave -quiet -mask full_mask.sub-ADS1021+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 44103 voxels survive the mask
+3dTstat -sos -prefix - gmean.errts.unit.1D'
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+echo -- GCOR = `cat out.gcor.1D`
+cat out.gcor.1D
+3dcalc -a rm.errts.unit+orig -b gmean.errts.unit.1D -expr a*b -prefix rm.DP
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP+orig.BRIK
+3dTstat -sum -prefix corr_brain rm.DP+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_brain+orig.BRIK
+3dcalc -a follow_ROI_aeseg+orig -b full_mask.sub-ADS1021+orig -expr a*b -prefix rm.fm.aeseg
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.fm.aeseg+orig.BRIK
+3dmaskave -q -mask rm.fm.aeseg+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 40952 voxels survive the mask
+3dcalc -a rm.errts.unit+orig -b mean.unit.aeseg.1D -expr a*b -prefix rm.DP.aeseg
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP.aeseg+orig.BRIK
+3dTstat -sum -prefix corr_af_aeseg rm.DP.aeseg+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_af_aeseg+orig.BRIK
+3dcalc -a follow_ROI_FSvent+orig -b full_mask.sub-ADS1021+orig -expr a*b -prefix rm.fm.FSvent
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.fm.FSvent+orig.BRIK
+3dmaskave -q -mask rm.fm.FSvent+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 438 voxels survive the mask
+3dcalc -a rm.errts.unit+orig -b mean.unit.FSvent.1D -expr a*b -prefix rm.DP.FSvent
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP.FSvent+orig.BRIK
+3dTstat -sum -prefix corr_af_FSvent rm.DP.FSvent+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_af_FSvent+orig.BRIK
+set reg_cols = `1d_tool.py -infile X.nocensor.xmat.1D -show_indices_interest`
+1d_tool.py -infile X.nocensor.xmat.1D -show_indices_interest
+3dTstat -sum -prefix sum_ideal.1D X.nocensor.xmat.1D[0..$]
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+++ Output dataset ./sum_ideal.1D
+1dcat X.nocensor.xmat.1D[0..$]
+touch blur_est.sub-ADS1021.1D
+mkdir files_ACF
+touch blur.errts.1D
+foreach run ( 01 )
+set trs = `1d_tool.py -infile X.xmat.1D -show_trs_uncensored encoded   
+                          -show_trs_run $run`
+1d_tool.py -infile X.xmat.1D -show_trs_uncensored encoded -show_trs_run 01
+if ( 0..45,48..94,97..121,124..130,133,136..158,161..167,170..174,179,180,183..195,198,199,202..205,209..213,216,217,220..225,228..234,238..245,248..275,278..280,283..289,292..334,337..370,374..421,424..452,455..504 ==  ) continue
+3dFWHMx -detrend -mask full_mask.sub-ADS1021+orig -ACF files_ACF/out.3dFWHMx.ACF.errts.r01.1D errts.sub-ADS1021.fanaticor+orig[0..45,48..94,97..121,124..130,133,136..158,161..167,170..174,179,180,183..195,198,199,202..205,209..213,216,217,220..225,228..234,238..245,248..275,278..280,283..289,292..334,337..370,374..421,424..452,455..504]
+++ 3dFWHMx: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: The Bob
+++ Number of voxels in mask = 44103
+++ detrending start: 33 baseline funcs, 452 time points
+ + detrending done (0.00 CPU s thus far)
+++ start ACF calculations out to radius = 14.34 mm
+ + ACF done (0.00 CPU s thus far)
+++ ACF 1D file [radius ACF mixed_model gaussian_NEWmodel] written to files_ACF/out.3dFWHMx.ACF.errts.r01.1D
+++ 1dplot: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: RWC et al.
+ + and 1dplot-ed to file files_ACF/out.3dFWHMx.ACF.errts.r01.1D.png
+end
+set blurs = ( `3dTstat -mean -prefix - blur.errts.1D'{0..$(2)}'\'` )
+3dTstat -mean -prefix - blur.errts.1D{0..$(2)}'
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset has 1 sub-brick ==> -tdiff is turned off
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+echo average errts FWHM blurs: 0 0 0 0
+echo 0 0 0 0   # errts FWHM blur estimates
+set blurs = ( `3dTstat -mean -prefix - blur.errts.1D'{1..$(2)}'\'` )
+3dTstat -mean -prefix - blur.errts.1D{1..$(2)}'
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset has 1 sub-brick ==> -tdiff is turned off
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+echo average errts ACF blurs: 0.696139 2.60051 8.31879 6.8674
+echo 0.696139 2.60051 8.31879 6.8674   # errts ACF blur estimates
+gen_epi_review.py -script @epi_review.sub-ADS1021 -dsets pb00.sub-ADS1021.r01.tcat+orig.HEAD
+gen_ss_review_scripts.py -mot_limit 0.2 -out_limit 0.1 -errts_dset errts.sub-ADS1021.fanaticor+orig.HEAD -exit0
+rm -f rm.all_runs.volreg.mask+orig.BRIK rm.all_runs.volreg.mask+orig.HEAD rm.all_runs.volreg+orig.BRIK rm.all_runs.volreg+orig.HEAD rm.censor.r01.1D rm.det_pcin_r01+orig.BRIK rm.det_pcin_r01+orig.HEAD rm.det_pcin_rall+orig.BRIK rm.det_pcin_rall+orig.HEAD rm.DP.aeseg+orig.BRIK rm.DP.aeseg+orig.HEAD rm.DP.FSvent+orig.BRIK rm.DP.FSvent+orig.HEAD rm.DP+orig.BRIK rm.DP+orig.HEAD rm.epi.1.r01+orig.BRIK rm.epi.1.r01+orig.HEAD rm.epi.all1+orig.BRIK rm.epi.all1+orig.HEAD rm.epi.min.r01+orig.BRIK rm.epi.min.r01+orig.HEAD rm.epi.nomask.r01+orig.BRIK rm.epi.nomask.r01+orig.HEAD rm.epi.volreg.r01+orig.BRIK rm.epi.volreg.r01+orig.HEAD rm.errts.unit+orig.BRIK rm.errts.unit+orig.HEAD rm.fm.aeseg+orig.BRIK rm.fm.aeseg+orig.HEAD rm.fm.FSvent+orig.BRIK rm.fm.FSvent+orig.HEAD rm.mask_r01+orig.BRIK rm.mask_r01+orig.HEAD rm.mean_r01+orig.BRIK rm.mean_r01+orig.HEAD rm.noise.all+orig.BRIK rm.noise.all+orig.HEAD rm.out.cen.r01.1D rm.resam.anat+orig.BRIK rm.resam.anat+orig.HEAD rm.ROIPC.FSvent00.1D rm.ROIPC.FSvent01.1D rm.ROIPC.FSvent02.1D rm.ROIPC.FSvent_eig.1D rm.ROIPC.FSvent+orig.BRIK rm.ROIPC.FSvent+orig.HEAD rm.ROIPC.FSvent_vec.1D rm.signal.all+orig.BRIK rm.signal.all+orig.HEAD
+tee out.ss_review.sub-ADS1021.txt
+if ( -e @ss_review_basic ) ./@ss_review_basic
+./@ss_review_basic
+cd ..
+echo execution finished: `date`
+date
