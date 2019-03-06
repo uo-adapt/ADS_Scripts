@@ -8107,4 +8107,627 @@ BEGIN >>>>>>>>>>>>>>>>>>>>
 
 Running for 3-dimensional images.
 
-****
+*********10*********20*********30*********40*********50*********60*********70*********80*********90*********
+
+   AdaptiveNonLocalMeansDenoisingImageFilter (0x16828a0)
+     RTTI typeinfo:   itk::AdaptiveNonLocalMeansDenoisingImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<unsigned char, 3u> >
+     Reference Count: 1
+     Modified Time: 328
+     Debug: Off
+     Object Name: 
+     Observers: 
+       ProgressEvent(Command)
+     Inputs: 
+       Primary: (0x168cff0) *
+       _1: (0)
+     Indexed Inputs: 
+       0: Primary (0x168cff0)
+       1: _1 (0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x16821b0)
+     Indexed Outputs: 
+       0: Primary (0x16821b0)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 1
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 291
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 27
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+Using mean squares to measure the patch similarity.
+     Neighborhood search radius = [3, 3, 3]
+     Neighborhood patch radius = [1, 1, 1]
+     Using Gaussian noise model.
+     Epsilon = 1e-05
+     Mean threshold = 0.95
+     Variance threshold = 0.5
+     Smoothing variance = 2
+     Neighborhood radius for local mean and variance = [1, 1, 1]
+Elapsed time: 10390.4
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/N4BiasFieldCorrection -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainExtractionMask.nii.gz -s 2 -c [50x50x50x50,0.0000000001] -b [200] -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz --verbose 1 -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationWeightMask.nii.gz
+
+Running N4 for 3-dimensional images.
+
+Specified spline distance: 200mm
+  original image size:  [176, 464, 512]
+  padded image size:  [223, 891, 891]
+  number of control points:  [4, 5, 5]
+
+Current level = 1
+  Iteration 1 (of 50).   Current convergence value = 0.000661112 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.000653656 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.000646283 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.000638842 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.000630953 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.000623586 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.000615257 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.000607159 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000599425 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000591768 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000584395 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.000577446 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000570267 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.000563551 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000556266 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000549399 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000542607 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000535627 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000528938 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000521851 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000515025 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000508077 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000501266 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000494171 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000487259 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000479572 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.000472711 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000465841 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.000459383 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000452622 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000446257 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000440297 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000434115 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000428717 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000422801 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000417056 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.000410974 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000405618 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000400328 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000394267 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.000389719 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000384447 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000380552 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000375181 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000371016 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000366003 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.000362351 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000357334 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000353386 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000348311 (threshold = 1e-10)
+Current level = 2
+  Iteration 1 (of 50).   Current convergence value = 0.00129006 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.00124308 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.00119664 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.00115197 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.00110877 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.0010659 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.00102446 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.000983514 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000941517 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000902 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000864138 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.000827556 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000792894 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.00075957 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000727196 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000696319 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000665798 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000635535 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000607677 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.00058007 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000554598 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000534384 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.00051831 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000502622 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000487207 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000471914 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.000457463 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000443322 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.000429054 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000415175 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000402188 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000389816 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000377717 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000366046 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000355238 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000344206 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.000333593 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000323551 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000313401 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000304254 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.000294866 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000285676 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000276952 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000268521 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000260129 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000251939 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.00024475 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000237495 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000230456 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000223872 (threshold = 1e-10)
+Current level = 3
+  Iteration 1 (of 50).   Current convergence value = 0.0010305 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.000971781 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.000929416 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.00089733 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.000872355 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.000851293 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.000831142 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.000809747 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.000798872 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.000792074 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.000784003 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.000774499 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.000764189 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.000754419 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.000742884 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000732236 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000722101 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000712608 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000700704 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000685684 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000673065 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.00066102 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000650197 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000641916 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000633646 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000623788 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.00061405 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000605399 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.00059672 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000589913 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000583348 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000578234 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000574813 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.00057012 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.000565482 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000560784 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.000560543 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000562443 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000563807 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.00056574 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.00056872 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000571306 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000573637 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000576608 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000580003 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000583432 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.000587043 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000591765 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000597003 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000603063 (threshold = 1e-10)
+Current level = 4
+  Iteration 1 (of 50).   Current convergence value = 0.00183749 (threshold = 1e-10)
+  Iteration 2 (of 50).   Current convergence value = 0.00182687 (threshold = 1e-10)
+  Iteration 3 (of 50).   Current convergence value = 0.00185096 (threshold = 1e-10)
+  Iteration 4 (of 50).   Current convergence value = 0.00189765 (threshold = 1e-10)
+  Iteration 5 (of 50).   Current convergence value = 0.00192856 (threshold = 1e-10)
+  Iteration 6 (of 50).   Current convergence value = 0.00195012 (threshold = 1e-10)
+  Iteration 7 (of 50).   Current convergence value = 0.001962 (threshold = 1e-10)
+  Iteration 8 (of 50).   Current convergence value = 0.00195014 (threshold = 1e-10)
+  Iteration 9 (of 50).   Current convergence value = 0.00182081 (threshold = 1e-10)
+  Iteration 10 (of 50).   Current convergence value = 0.0017097 (threshold = 1e-10)
+  Iteration 11 (of 50).   Current convergence value = 0.00157611 (threshold = 1e-10)
+  Iteration 12 (of 50).   Current convergence value = 0.00143893 (threshold = 1e-10)
+  Iteration 13 (of 50).   Current convergence value = 0.0013022 (threshold = 1e-10)
+  Iteration 14 (of 50).   Current convergence value = 0.00117809 (threshold = 1e-10)
+  Iteration 15 (of 50).   Current convergence value = 0.00106955 (threshold = 1e-10)
+  Iteration 16 (of 50).   Current convergence value = 0.000979192 (threshold = 1e-10)
+  Iteration 17 (of 50).   Current convergence value = 0.000908688 (threshold = 1e-10)
+  Iteration 18 (of 50).   Current convergence value = 0.000853881 (threshold = 1e-10)
+  Iteration 19 (of 50).   Current convergence value = 0.000812779 (threshold = 1e-10)
+  Iteration 20 (of 50).   Current convergence value = 0.000782478 (threshold = 1e-10)
+  Iteration 21 (of 50).   Current convergence value = 0.000760294 (threshold = 1e-10)
+  Iteration 22 (of 50).   Current convergence value = 0.000742576 (threshold = 1e-10)
+  Iteration 23 (of 50).   Current convergence value = 0.000728926 (threshold = 1e-10)
+  Iteration 24 (of 50).   Current convergence value = 0.000718358 (threshold = 1e-10)
+  Iteration 25 (of 50).   Current convergence value = 0.000709653 (threshold = 1e-10)
+  Iteration 26 (of 50).   Current convergence value = 0.000702204 (threshold = 1e-10)
+  Iteration 27 (of 50).   Current convergence value = 0.000695539 (threshold = 1e-10)
+  Iteration 28 (of 50).   Current convergence value = 0.000689681 (threshold = 1e-10)
+  Iteration 29 (of 50).   Current convergence value = 0.000684569 (threshold = 1e-10)
+  Iteration 30 (of 50).   Current convergence value = 0.000679447 (threshold = 1e-10)
+  Iteration 31 (of 50).   Current convergence value = 0.000674185 (threshold = 1e-10)
+  Iteration 32 (of 50).   Current convergence value = 0.000668493 (threshold = 1e-10)
+  Iteration 33 (of 50).   Current convergence value = 0.000662076 (threshold = 1e-10)
+  Iteration 34 (of 50).   Current convergence value = 0.000654747 (threshold = 1e-10)
+  Iteration 35 (of 50).   Current convergence value = 0.00064612 (threshold = 1e-10)
+  Iteration 36 (of 50).   Current convergence value = 0.000635999 (threshold = 1e-10)
+  Iteration 37 (of 50).   Current convergence value = 0.00062453 (threshold = 1e-10)
+  Iteration 38 (of 50).   Current convergence value = 0.000612244 (threshold = 1e-10)
+  Iteration 39 (of 50).   Current convergence value = 0.000598467 (threshold = 1e-10)
+  Iteration 40 (of 50).   Current convergence value = 0.000584546 (threshold = 1e-10)
+  Iteration 41 (of 50).   Current convergence value = 0.0005705 (threshold = 1e-10)
+  Iteration 42 (of 50).   Current convergence value = 0.000556679 (threshold = 1e-10)
+  Iteration 43 (of 50).   Current convergence value = 0.000543665 (threshold = 1e-10)
+  Iteration 44 (of 50).   Current convergence value = 0.000531793 (threshold = 1e-10)
+  Iteration 45 (of 50).   Current convergence value = 0.000520509 (threshold = 1e-10)
+  Iteration 46 (of 50).   Current convergence value = 0.000510298 (threshold = 1e-10)
+  Iteration 47 (of 50).   Current convergence value = 0.000501005 (threshold = 1e-10)
+  Iteration 48 (of 50).   Current convergence value = 0.000492829 (threshold = 1e-10)
+  Iteration 49 (of 50).   Current convergence value = 0.000485453 (threshold = 1e-10)
+  Iteration 50 (of 50).   Current convergence value = 0.000479209 (threshold = 1e-10)
+   N4BiasFieldCorrectionImageFilter (0x16f7ee0)
+     RTTI typeinfo:   itk::N4BiasFieldCorrectionImageFilter<itk::Image<float, 3u>, itk::Image<float, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 876
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x170ba80) *
+       _1: (0x1719d80)
+       _2: (0x1705180)
+     Indexed Inputs: 
+       0: Primary (0x170ba80)
+       1: _1 (0x1719d80)
+       2: _2 (0x1705180)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 1
+     Outputs: 
+       Primary: (0x1700c90)
+     Indexed Outputs: 
+       0: Primary (0x1700c90)
+     NumberOfRequiredOutputs: 1
+     Number Of Threads: 28
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::MultiThreader
+       Reference Count: 1
+       Modified Time: 142
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Thread Count: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Mask label: 1
+     Number of histogram bins: 200
+     Wiener filter noise: 0.01
+     Bias field FWHM: 0.15
+     Maximum number of iterations: [50, 50, 50, 50]
+     Convergence threshold: 1e-10
+     Spline order: 3
+     Number of fitting levels: [4, 4, 4]
+     Number of control points: [4, 5, 5]
+     CurrentConvergenceMeasurement: 0.000479209
+     CurrentLevel: 4
+     ElapsedIterations: 51
+     LogBiasFieldControlPointLattice: 
+       Image (0x170ee50)
+         RTTI typeinfo:   itk::Image<itk::Vector<float, 1u>, 3u>
+         Reference Count: 1
+         Modified Time: 3980527724
+         Debug: Off
+         Object Name: 
+         Observers: 
+           none
+         Source: (none)
+         Source output name: (none)
+         Release Data: Off
+         Data Released: False
+         Global Release Data: Off
+         PipelineMTime: 0
+         UpdateMTime: 0
+         RealTimeStamp: 0 seconds 
+         LargestPossibleRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         BufferedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         RequestedRegion: 
+           Dimension: 3
+           Index: [0, 0, 0]
+           Size: [11, 19, 19]
+         Spacing: [24.7499, 24.9316, 24.9316]
+         Origin: [-24.7499, 24.9316, -24.9316]
+         Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         IndexToPointMatrix: 
+24.7499 0 0
+0 -24.9316 0
+0 0 24.9316
+
+         PointToIndexMatrix: 
+0.0404041 0 0
+0 -0.0401097 0
+0 0 0.0401097
+
+         Inverse Direction: 
+1 0 0
+0 -1 0
+0 0 1
+
+         PixelContainer: 
+           ImportImageContainer (0x170cda0)
+             RTTI typeinfo:   itk::ImportImageContainer<unsigned long, itk::Vector<float, 1u> >
+             Reference Count: 1
+             Modified Time: 3980527725
+             Debug: Off
+             Object Name: 
+             Observers: 
+               none
+             Pointer: 0x1fe92a0
+             Container manages memory: true
+             Size: 3971
+             Capacity: 3971
+Elapsed time: 2772.75
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz Normalize /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz 1000
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors001.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors006.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/Atropos -d 3 -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainExtractionMask.nii.gz -c [5,0.0] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz --verbose 1 -i PriorProbabilityImages[6,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped%03d.nii.gz,0.25] -k Gaussian -m [0.1,1x1x1] -o [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors%03d.nii.gz] -r 0 -p Socrates[1]
+
+Running Atropos for 3-dimensional images.
+
+Progress: 
+  Iteration 0 (of 5): posterior probability = 0 (annealing temperature = 1)
+  Iteration 1 (of 5): posterior probability = 0.959571 (annealing temperature = 1)
+  Iteration 2 (of 5): posterior probability = 0.965353 (annealing temperature = 1)
+  Iteration 3 (of 5): posterior probability = 0.967626 (annealing temperature = 1)
+  Iteration 4 (of 5): posterior probability = 0.968731 (annealing temperature = 1)
+
+Writing output:
+  Writing posterior image (class 1)
+  Writing posterior image (class 2)
+  Writing posterior image (class 3)
+  Writing posterior image (class 4)
+  Writing posterior image (class 5)
+  Writing posterior image (class 6)
+
+  AtroposSegmentationImageFilter (0x199e070)
+    RTTI typeinfo:   itk::ants::AtroposSegmentationImageFilter<itk::Image<float, 3u>, itk::Image<unsigned int, 3u>, itk::Image<unsigned int, 3u> >
+    Reference Count: 1
+    Modified Time: 5569195
+    Debug: Off
+    Object Name: 
+    Observers: 
+      IterationEvent(Command)
+    Inputs: 
+      Primary: (0x19bd2e0) *
+      _1: (0x19bd050)
+      _2: (0x19aa060)
+    Indexed Inputs: 
+      0: Primary (0x19bd2e0)
+      1: _1 (0x19bd050)
+      2: _2 (0x19aa060)
+    Required Input Names: Primary
+    NumberOfRequiredInputs: 1
+    Outputs: 
+      Primary: (0x19a9d70)
+    Indexed Outputs: 
+      0: Primary (0x19a9d70)
+    NumberOfRequiredOutputs: 1
+    Number Of Threads: 28
+    ReleaseDataFlag: Off
+    ReleaseDataBeforeUpdateFlag: Off
+    AbortGenerateData: Off
+    Progress: 0
+    Multithreader: 
+      RTTI typeinfo:   itk::MultiThreader
+      Reference Count: 1
+      Modified Time: 208
+      Debug: Off
+      Object Name: 
+      Observers: 
+        none
+      Thread Count: 28
+      Global Maximum Number Of Threads: 128
+      Global Default Number Of Threads: 28
+    CoordinateTolerance: 1e-06
+    DirectionTolerance: 1e-06
+    Maximum number of iterations: 5
+    Convergence threshold: 0
+    Number of tissue classes: 6
+    Number of partial volume classes: 0
+    Minimize memory usage: false
+    Initialization strategy: Prior probability images
+      Use Euclidean distance for prior labels: false
+    Posterior probability formulation: Socrates
+      initial annealing temperature = 1
+      annealing rate = 1
+      minimum annealing temperature = 0.1
+    MRF parameters
+      MRF smoothing factor = 0.1
+      MRF radius = [1, 1, 1]
+    Use asynchronous updating of the labels.
+      ICM parameters
+        maximum ICM code = 14
+        maximum number of ICM iterations = 1
+    No outlier handling.
+    Adaptive smoothing weights: [0]
+    B-spline smoothing
+      spline order = 3
+      number of levels = [6, 6, 6]
+      number of initial control points = [4, 4, 4]
+    Tissue class 1: proportion = 0.154645
+      GaussianListSampleFunction (0x19c6c90)
+        mean = [282.5200644740781], covariance = [36786.6]
+    Tissue class 2: proportion = 0.44693
+      GaussianListSampleFunction (0x19c2540)
+        mean = [423.41529589815747], covariance = [22184]
+    Tissue class 3: proportion = 0.270971
+      GaussianListSampleFunction (0x19bfa40)
+        mean = [577.8890140755699], covariance = [4272.99]
+    Tissue class 4: proportion = 0.0180178
+      GaussianListSampleFunction (0x19c2690)
+        mean = [530.4046515959362], covariance = [1959.76]
+    Tissue class 5: proportion = 0.00806179
+      GaussianListSampleFunction (0x19c2700)
+        mean = [585.4202381718222], covariance = [1101.62]
+    Tissue class 6: proportion = 0.0989458
+      GaussianListSampleFunction (0x19ae730)
+        mean = [474.2128386327585], covariance = [19362.7]
+Elapsed time: 2436.61
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriors006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationWeightMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration001.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration005.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPosteriorsPreviousIteration006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPreviousIteration.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with segmentation (exceeded max. iterations):  13h 22m 27s
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+ Done with N4 <-> Atropos processing
+ Script executed in 48147 seconds
+ 13h 22m 27s
+--------------------------------------------------------------------------------------
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsAtroposN4.sh -d 3 -b Socrates[1] -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainExtractionMask.nii.gz -m 2 -n 5 -c 6 -y 2 -y 3 -y 4 -y 5 -y 6 -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped%03d.nii.gz -w 0.25 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_Brain -u 0 -g 1 -k 0 -s nii.gz -z 0
+---------------------  Running antsAtroposN4.sh on n074  ---------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationWeightMask.nii.gz PureTissueN4WeightMask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped004.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped005.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationPriorWarped006.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentationConvergence.txt
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz TruncateImageIntensity /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz 0.025 0.995 256 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainExtractionMask.nii.gz 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/DenoiseImage -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/struc/sub-ADS1421_BrainSegmentation0N4.nii.gz --verbose 1
+
+Running for 3-dimensional images.
+
+*********10*********20*********30*********40*********50*********60*********70*********80*********90****
