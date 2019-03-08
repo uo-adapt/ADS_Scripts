@@ -17,9 +17,9 @@ HOME=/projects/adapt_lab/shared/ADS
 
 singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
    -d ${HOME}/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA+GSR_201903060958.dsn \
-   -c "${TEMP_COHORT}",${ses},${run} \
+   -c "${TEMP_COHORT}",${ses} \
    -o ${HOME}/data/BIDS_data/derivatives/xcpEngine/data \
    -t 1 \
    -i \$TMPDIR
 
-rm "${TEMP_COHORT}",${ses},${run}
+rm "${TEMP_COHORT}",${ses}
