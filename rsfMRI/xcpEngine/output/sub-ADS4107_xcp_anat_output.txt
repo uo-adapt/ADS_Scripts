@@ -12415,3 +12415,73 @@ XXDIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_L
  1DIAGNOSTIC,    16, -8.616783457152e-01, 5.902032837087e-04, 6.1392e+03, 2.3689e+02, 
  1DIAGNOSTIC,    17, -8.621555635071e-01, 5.126300542809e-04, 6.3747e+03, 2.3554e+02, 
  1DIAGNOSTIC,    18, -8.626014380908e-01, 4.461397648373e-04, 6.6096e+03, 2.3483e+02, 
+ 1DIAGNOSTIC,    19, -8.630257889996e-01, 3.891985301743e-04, 6.8437e+03, 2.3412e+02, 
+ 1DIAGNOSTIC,    20, -8.634246666814e-01, 3.403647183735e-04, 7.0791e+03, 2.3542e+02, 
+  Elapsed time (stage 2): 7087
+
+
+Total elapsed time: 9308
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_SubjectToTemplate1InverseWarp.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_TemplateToSubject0Warp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/antsApplyTransforms -d 3 -o Linear[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_TemplateToSubject1GenericAffine.mat,1] -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_SubjectToTemplate0GenericAffine.mat --verbose 1
+Using double precision for computations.
+=============================================================================
+The composite transform comprises the following transforms (in order): 
+  1. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_SubjectToTemplate0GenericAffine.mat (type = AffineTransform)
+=============================================================================
+Default pixel value: 0
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with registration:  2h 35m 34s
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_ExtractedBrain0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/CreateJacobianDeterminantImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_SubjectToTemplate1Warp.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_SubjectToTemplateLogJacobian.nii.gz 1 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Cortical thickness using DiReCT (KellyKapowski)
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors003.nii.gz + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_BrainSegmentationPosteriors004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessSegmentation.nii.gz ReplaceVoxelValue /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_BrainSegmentation.nii.gz 4 4 3
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-2.2.0/KellyKapowski -d 3 -s [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessSegmentation.nii.gz,2,3] --verbose 1 -g /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors002.nii.gz -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThicknessPosteriors003.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/struc/sub-ADS4107_CorticalThickness.nii.gz -c [45,0.0,10] -r 0.025 -m 1.5 -n 10 -b 0 -t 10
+Running DiReCT for 3-dimensional images.
+
+  Iteration 1 (of 45).  Current energy = 1.  
