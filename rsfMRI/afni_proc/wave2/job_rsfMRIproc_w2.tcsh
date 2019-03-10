@@ -56,7 +56,7 @@ endif
 # run afni_proc.py to create a single subject processing script
 afni_proc.py -subj_id $subj                                \
 -script $pipeline.proc.$subj -scr_overwrite                          \
--blocks despike align volreg blur mask scale regress      \
+-blocks despike align volreg mask scale regress      \
 -copy_anat $anat_dir/"${subj}"_SurfVol.nii.gz                          \
 -anat_follower_ROI aaseg anat $anat_dir/aparc.a2009s+aseg_rank.nii.gz   \
 -anat_follower_ROI aeseg epi  $anat_dir/aparc.a2009s+aseg_rank.nii.gz   \
@@ -69,7 +69,6 @@ afni_proc.py -subj_id $subj                                \
 -volreg_align_e2a                                          \
 -align_opts_aea -giant_move -cost lpc+ZZ                   \
 -volreg_interp -Fourier \
--blur_size 2                            \
 -mask_apply epi \
 -mask_test_overlap yes \
 -scale_max_val 200 \
@@ -81,7 +80,6 @@ afni_proc.py -subj_id $subj                                \
 -regress_censor_motion 0.2                                \
 -regress_bandpass 0.009 0.2                               \
 -regress_apply_mot_types demean deriv                      \
--regress_run_clustsim no                                  \
--regress_est_blur_errts
+-regress_run_clustsim no                                  
 
 tcsh -xef $pipeline.proc.$subj
