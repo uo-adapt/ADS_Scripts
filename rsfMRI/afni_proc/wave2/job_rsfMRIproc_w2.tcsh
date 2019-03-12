@@ -72,7 +72,7 @@ afni_proc.py -subj_id $subj                                \
 -mask_epi_anat yes \
 -mask_test_overlap yes \
 -scale_max_val 200 \
--regress_compute_gcor \
+-regress_compute_gcor yes \
 -regress_ROI_PC FSvent 3                                   \
 -regress_make_corr_vols aeseg FSvent                       \
 -regress_anaticor_fast                                     \
