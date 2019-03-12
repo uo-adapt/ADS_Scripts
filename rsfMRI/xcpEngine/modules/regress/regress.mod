@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
-
 ###################################################################
 # SPECIFIC MODULE HEADER
 # This module executes confound regression and censoring.
@@ -45,6 +44,13 @@ qc n_volumes_censored nVolCensored  ${prefix}_nVolumesCensored.txt
 
 input       confmat as confproc
 input       censor
+
+
+if [[ -n ${spatialsmooth} ]]; then 
+
+   regress_smo[cxt]=${spatialsmooth}
+
+fi
 
 smooth_spatial_prime                ${regress_smo[cxt]}
 ts_process_prime
@@ -109,6 +115,30 @@ unset buffer
 
 subroutine                    @0.1
 
+if [[ -n ${spatialsmooth} ]]; then 
+
+   regress_smo[cxt]=${spatialsmooth}
+
+fi
+
+if [[ ${regress} == despike ]]; then 
+      regress_process[cxt]=DMT-DSP-TMP-REG 
+    elif [[ ${regress} == censor ]]; then 
+     censor[cxt]=1
+     else 
+     echo "Default settings will be applied "
+fi
+
+if [[ -n ${temporalfilter} ]]; then
+  
+   regress_hipass[cxt]=$( echo ${temporalfilter} |  cut -d, -f1)
+   regress_lopass[cxt]=$( echo ${temporalfilter} |  cut -d, -f2)
+
+fi
+
+tr=`fslinfo ${img[sub]}  | grep ^pixdim4`
+TR=${tr##* }
+echo $TR
 ###################################################################
 # Parse the control sequence to determine what routine to run next.
 # Available routines include:
@@ -199,7 +229,8 @@ while (( ${#rem} > 0 ))
       routine                 @2    Temporally filtering image and confounds
       filter_temporal         --SIGNPOST=${signpost}              \
                               --FILTER=${regress_tmpf[cxt]}       \
-                              --INPUT=${intermediate}             \
+                              --INPUT=${intermediate}.nii.gz             \
+                              --TR=${TR} \
                               --OUTPUT=${intermediate}_${cur}     \
                               --CONFIN=${confproc[cxt]}           \
                               --CONFOUT=${intermediate}_${cur}_confmat.1D \
@@ -286,6 +317,8 @@ while (( ${#rem} > 0 ))
             -ort     ${confproc[cxt]}       \
             ${locals}                       \
             -prefix  %OUTPUT
+ 
+        exec_fsl fslmaths ${mask[sub]} -mul ${intermediate}_${cur} ${intermediate}_${cur}
          intermediate=${intermediate}_${cur}
       fi
       routine_end

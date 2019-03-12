@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
 
 
@@ -33,20 +33,21 @@
 ###################################################################
 
 analysis=fc_$(whoami)
-design=
+design=/data/jux/BBL/projects/testACT/script/designfiles/fc-24p.dsn
 standard=MNI%2x2x2
+sequence=anatomical
 
 ###################################################################
 # PIPELINE
 ###################################################################
 
-pipeline=prestats,confound2,regress,fcon,reho,alff,seed,roiquant,norm
+pipeline=prestats,confound2,regress,fcon,reho,alff,roiquant,norm,qcfc
 
 ###################################################################
 # 1 PRESTATS
 ###################################################################
 
-prestats_rerun[1]=0
+prestats_rerun[1]=1
 prestats_cleanup[1]=1
 prestats_process[1]=FMP
 
@@ -100,8 +101,6 @@ regress_process[3]=DMT-TMP-REG
 fcon_atlas[4]=all
 fcon_metric[4]=corrcoef
 fcon_thr[4]=N
-fcon_window[4]=10
-fcon_pad[4]=FALSE
 fcon_rerun[4]=0
 fcon_cleanup[4]=1
 
@@ -128,28 +127,26 @@ alff_rerun[6]=0
 alff_cleanup[6]=1
 
 ###################################################################
-# 7 SEED
+# 7 ROIQUANT
 ###################################################################
 
-seed_lib[7]=
-seed_metric[7]=corrcoef
-seed_sptf[7]=susan
-seed_smo[7]=6
-seed_rerun[7]=1
-seed_cleanup[7]=1
-###################################################################
-# 8 ROIQUANT
-###################################################################
-
-roiquant_atlas[8]=all
-roiquant_globals[8]=1
-roiquant_vol[8]=0
-roiquant_rerun[8]=0
-roiquant_cleanup[8]=1
+roiquant_atlas[7]=all
+roiquant_globals[7]=1
+roiquant_vol[7]=0
+roiquant_rerun[7]=0
+roiquant_cleanup[7]=1
 
 ###################################################################
-# 9 NORM
+# 8 NORM
 ###################################################################
-norm_primary[9]=1
-norm_rerun[9]=0
-norm_cleanup[9]=1
+norm_primary[8]=1
+norm_rerun[8]=0
+norm_cleanup[8]=1
+
+##################################################################
+# 9 QCFC
+###################################################################
+qcfc_atlas[9]=power264
+qcfc_sig[9]=fdr
+qcfc_rerun[9]=0
+qcfc_cleanup[9]=1

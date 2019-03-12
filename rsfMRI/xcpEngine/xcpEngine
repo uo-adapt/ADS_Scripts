@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
+source $FSLDIR/etc/fslconf/fsl.sh
+IN_CONTAINER=0
 
+if [[ -d /xcpEngine ]]
+then
+  IN_CONTAINER=1
+  source activate neuro
+  echo "[Detected that xcp is in a container]"
+fi
+export IN_CONTAINER
 
+echo "Received options:" $@
+args=`echo $@`
 ###################################################################
 # Р Ћ 2015-2017
 ###################################################################
@@ -21,9 +32,6 @@
                adrose@mail.med.upenn.edu
  PI:           Ted Satterthwaite
                sattertt@mail.med.upenn.edu
-
- What is XCP short for? Nobody knows what the X represents, but
- CP almost certainly stands for Communist Party.
 
  This program is free software: you can redistribute it and/or
  modify it under the terms of the GNU General Public License as
@@ -55,11 +63,10 @@
   * Other packages may be required for implementation of specific
     strategies, e.g. for denoising.
 
- XCP v0.6.0 ACCELERATOR
 
 XCPENGINE
 ###################################################################
-echo $@
+
 
 [[ -z    ${XCPEDIR}    ]] \
 && echo  "[XCPEDIR is undefined. Aborting.]"                && exit
@@ -70,7 +77,6 @@ source   ${XCPEDIR}/core/functions/cluster_submit
 usage(){
 cat << endstream
 ___________________________________________________________________
-
 
    Usage: `basename $0` -d <design> <options>
 
@@ -130,6 +136,11 @@ trace=0
 ###################################################################
 # Parse arguments
 ###################################################################
+if [ "$1" == '"$@"' ]
+then
+  shift
+fi
+
 while getopts "d:i:c:o:m:r:t:a:uhv" OPTION
    do
    case $OPTION in
@@ -170,14 +181,23 @@ while getopts "d:i:c:o:m:r:t:a:uhv" OPTION
 done
 shift $((OPTIND-1))
 
-
-
-
-
 ###################################################################
 # Validate and parse the design and cohort files.
 # All pipeline variables are available after validation.
 ###################################################################
+echo \$XCPEDIR is $XCPEDIR
+export XCPEDIR
+
+###################################################################
+# Check the inputs
+python ${XCPEDIR}/checks/check_inputs.py ${args}
+if [ $? -eq 0 ]; then
+    echo OK
+else
+    echo Your inputs would result in a failed pipeline. Exiting.
+    exit 1
+fi
+
 echo \
 "
 Constructing a pipeline based on user specifications
@@ -189,9 +209,6 @@ source ${XCPEDIR}/core/validateOutput
 source ${XCPEDIR}/core/validateMode
 echo \
 "····································································"
-
-
-
 
 
 ###################################################################
@@ -225,11 +242,11 @@ printx         ${XCPEDIR}/core/ENVCHECK >> ${versions}
 
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 #
 # EXECUTE THE PIPELINE
 #
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
 printx         ${XCPEDIR}/core/CONSOLE_HEADER
 
