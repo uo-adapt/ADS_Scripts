@@ -3,33 +3,33 @@ Setting up AFNI
 Tue Mar 12 15:13:59 PDT 2019
 /bin/bash
 4
-sub-ADS5115
-sub-ADS5115
+sub-ADS1421
+sub-ADS1421
 ADS
 /projects/adapt_lab/shared/ADS
-/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA
-/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5115/ses-wave2/func
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA
+/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1421/ses-wave2/func
 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_preproc_wave2
 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_preproc_wave2 /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/afni_proc/wave2 
-Directory for "$subj" exists
+"$subj" folder created
 ** error: arg #53 (-regress_compute_gcor) requires 1 params, found 0
 ----------------------------------------------------------------------
 ** failed command (get_user_opts):
 
-  afni_proc.py -subj_id sub-ADS5115 -script                                                                                                          \
-      rsfMRI_preproc_wave2.proc.sub-ADS5115 -scr_overwrite -blocks despike                                                                           \
+  afni_proc.py -subj_id sub-ADS1421 -script                                                                                                          \
+      rsfMRI_preproc_wave2.proc.sub-ADS1421 -scr_overwrite -blocks despike                                                                           \
       align volreg mask scale regress -copy_anat                                                                                                     \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA/sub-ADS5115_SurfVol.nii.gz    \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA/sub-ADS1421_SurfVol.nii.gz    \
       -anat_follower_ROI aaseg anat                                                                                                                  \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA/aparc.a2009s+aseg_rank.nii.gz \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA/aparc.a2009s+aseg_rank.nii.gz \
       -anat_follower_ROI aeseg epi                                                                                                                   \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA/aparc.a2009s+aseg_rank.nii.gz \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA/aparc.a2009s+aseg_rank.nii.gz \
       -anat_follower_ROI FSvent epi                                                                                                                  \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA/sub-ADS5115_vent.nii.gz       \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA/sub-ADS1421_vent.nii.gz       \
       -anat_follower_ROI FSWe epi                                                                                                                    \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS5115_ses-wave2.long.sub-ADS5115/SUMA/sub-ADS5115_WM.nii.gz         \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1421_ses-wave2.long.sub-ADS1421/SUMA/sub-ADS1421_WM.nii.gz         \
       -anat_follower_erode FSvent FSWe -dsets                                                                                                        \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS5115/ses-wave2/func/sub-ADS5115_ses-wave2_task-rest_bold.nii.gz                           \
+      /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1421/ses-wave2/func/sub-ADS1421_ses-wave2_task-rest_bold.nii.gz                           \
       -tcat_remove_first_trs 5 -volreg_align_to MIN_OUTLIER -volreg_align_e2a                                                                        \
       -align_opts_aea -giant_move -cost lpc+ZZ -volreg_interp -Fourier                                                                               \
       -mask_epi_anat yes -mask_test_overlap yes -scale_max_val 200                                                                                   \
