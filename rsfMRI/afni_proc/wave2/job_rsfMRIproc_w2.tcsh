@@ -69,9 +69,10 @@ afni_proc.py -subj_id $subj                                \
 -volreg_align_e2a                                          \
 -align_opts_aea -giant_move -cost lpc+ZZ                   \
 -volreg_interp -Fourier \
--mask_apply epi \
+-mask_epi_anat \
 -mask_test_overlap yes \
 -scale_max_val 200 \
+-regress_compute_gcor \
 -regress_ROI_PC FSvent 3                                   \
 -regress_make_corr_vols aeseg FSvent                       \
 -regress_anaticor_fast                                     \
