@@ -1,6 +1,6 @@
 -e 
 Setting up AFNI
-Tue Mar 12 15:15:59 PDT 2019
+Tue Mar 12 15:17:59 PDT 2019
 /bin/bash
 4
 sub-ADS1705
@@ -12,30 +12,44 @@ ADS
 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_preproc_wave2
 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_preproc_wave2 /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/afni_proc/wave2 
 Directory for "$subj" exists
-** error: arg #53 (-regress_compute_gcor) requires 1 params, found 0
-----------------------------------------------------------------------
-** failed command (get_user_opts):
+-- applying input view as +orig
+** warning: removing first 5 TRs from beginning of each run
+   --> the stimulus timing files must reflect the removal of these TRs
+** WARNING: anat follower does not seem to exist: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz
+   originally from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz
+** warning: have duplicate anat follower: aparc.a2009s+aseg_rank.nii.gz
+** WARNING: anat follower does not seem to exist: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz
+   originally from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz
+** WARNING: anat follower does not seem to exist: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_vent.nii.gz
+   originally from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_vent.nii.gz
+** WARNING: anat follower does not seem to exist: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_WM.nii.gz
+   originally from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_WM.nii.gz
+-- will use min outlier volume as motion base
+-- tcat: reps is now 505
+++ updating polort to 5, from run len 707.0 s
+-- volreg: using base dset vr_base_min_outlier+orig
+++ volreg: applying volreg/epi2anat xforms to isotropic 3 mm voxels
+-- applying anat warps to 3 dataset(s): aparc.a2009s+aseg_rank, sub-ADS1705_vent, sub-ADS1705_WM
+++ mask: using epi_anat mask in place of EPI one
+-- have 4 ROI dict entries ...
+-- will apply motion types: demean, deriv
+-- have 1 PC ROIs to regress: FSvent
+-- no 3dClustSim (since no blur estimation)
+-- using default: will not apply EPI Automask
+   (see 'MASKING NOTE' from the -help for details)
 
-  afni_proc.py -subj_id sub-ADS1705 -script                                                                                                          \
-      rsfMRI_preproc_wave2.proc.sub-ADS1705 -scr_overwrite -blocks despike                                                                           \
-      align volreg mask scale regress -copy_anat                                                                                                     \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_SurfVol.nii.gz    \
-      -anat_follower_ROI aaseg anat                                                                                                                  \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz \
-      -anat_follower_ROI aeseg epi                                                                                                                   \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/aparc.a2009s+aseg_rank.nii.gz \
-      -anat_follower_ROI FSvent epi                                                                                                                  \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_vent.nii.gz       \
-      -anat_follower_ROI FSWe epi                                                                                                                    \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1705_ses-wave2.long.sub-ADS1705/SUMA/sub-ADS1705_WM.nii.gz         \
-      -anat_follower_erode FSvent FSWe -dsets                                                                                                        \
-      /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS1705/ses-wave2/func/sub-ADS1705_ses-wave2_task-rest_bold.nii.gz                           \
-      -tcat_remove_first_trs 5 -volreg_align_to MIN_OUTLIER -volreg_align_e2a                                                                        \
-      -align_opts_aea -giant_move -cost lpc+ZZ -volreg_interp -Fourier                                                                               \
-      -mask_epi_anat yes -mask_test_overlap yes -scale_max_val 200                                                                                   \
-      -regress_compute_gcor -regress_ROI_PC FSvent 3 -regress_make_corr_vols                                                                         \
-      aeseg FSvent -regress_anaticor_fast -regress_anaticor_label FSWe                                                                               \
-      -regress_censor_outliers 0.1 -regress_censor_motion 0.2                                                                                        \
-      -regress_bandpass 0.009 0.2 -regress_apply_mot_types demean deriv                                                                              \
-      -regress_run_clustsim no
-----------------------------------------------------------------------
+-------------------------------------
+** warning have only 1 run to analyze
+-------------------------------------
+
+--> script is file: rsfMRI_preproc_wave2.proc.sub-ADS1705
+    consider the script execution command: 
+
+      tcsh -xef rsfMRI_preproc_wave2.proc.sub-ADS1705 |& tee output.rsfMRI_preproc_wave2.proc.sub-ADS1705
+
+auto-generated by afni_proc.py, Tue Mar 12 15:17:59 2019
+(version 6.16, July 5, 2018)
+execution started: Tue Mar 12 15:18:00 PDT 2019
+Precompiled binary linux_openmp_64: Jul  6 2018 (Version AFNI_18.2.04)
+-- is current: afni_history as new as: 03 May 2018
+               most recent entry is:   05 Jul 2018
