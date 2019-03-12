@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
-###################################################################
-
-###################################################################
+##################################################################
 # SPECIFIC MODULE HEADER
 # This module assesses quality of functional connectivity data
 ###################################################################
@@ -150,9 +146,6 @@ if [[ ! -s ${voxts[cxt]} ]] \
    routine_end
 
 
-
-
-
    routine                    @3    Preparing summary graphics
 
    subroutine                 @3.1  Acquiring arguments
@@ -181,11 +174,25 @@ if [[ ! -s ${voxts[cxt]} ]] \
    ###################################################################
    # Assemble the remaining arguments.
    ###################################################################
+     if (( ${censor[sub]} == 1 )) 
+      then
+      subroutine                    @5.21  correct the rms and fd
+      exec_xcp 1mask.R -i ${rel_rms[sub]} -m  ${tmask[sub]} -o ${intermediate}_rms1.1D
+      exec_xcp 1mask.R -i ${fd[sub]} -m  ${tmask[sub]} -o ${intermediate}_fd.1D
+      exec_xcp 1mask.R -i ${dvars[sub]} -m  ${tmask[sub]} -o ${intermediate}_dvar.1D
+
+     else 
+      exec_sys cp ${dvars[sub]} ${intermediate}_dvar.1D
+      exec_sys cp ${fd[sub]} ${intermediate}_fd.1D
+      exec_sys cp ${rel_rms[sub]} ${intermediate}_rms1.1D
+    fi
+   
+    
    is_image ${intermediate}-dn-rs.nii.gz \
                                  && dn_arg=",${intermediate}-dn-rs.nii.gz"
-   is_1D ${dvars[sub]}           &&  ts_1d="${ts_1d}DV:${dvars[sub]}:${dv_thresh},"
-   is_1D ${rel_rms[sub]}         &&  ts_1d="${ts_1d}RMS:${rel_rms[sub]}:${rms_thresh},"
-   is_1D ${fd[sub]}              &&  ts_1d="${ts_1d}FD:${fd[sub]}:${fd_thresh},"
+   is_1D ${dvars[sub]}           &&  ts_1d="${ts_1d}DV:${intermediate}_dvar.1D:${dv_thresh},"
+   is_1D ${rel_rms[sub]}         &&  ts_1d="${ts_1d}RMS:${intermediate}_rms1.1D:${rms_thresh},"
+   is_1D ${fd[sub]}              &&  ts_1d="${ts_1d}FD:${intermediate}_fd.1D:${fd_thresh},"
 
    [[ -n ${qcfc_custom[cxt]} ]]  &&  ts_1d="${ts_1d}${qcfc_custom[cxt]},"
 
@@ -210,10 +217,10 @@ fi
 
 
 
-
 ###################################################################
 # Loss of temporal DOF
 ###################################################################
+
 routine                       @4    Estimating loss of temporal degrees of freedom
 unset    v  q
 declare -A  q
@@ -246,7 +253,6 @@ routine_end
 
 
 
-
 ###################################################################
 # DVARS for denoised time series
 ###################################################################
@@ -255,18 +261,26 @@ if ! is_1D ${dvars_post[cxt]} \
    then
    routine                       @5    Estimating post-processing DVARS
    subroutine                    @5.1  [Computing DVARS]
-   warpspace   ${meanIntensityBrain[sub]}                \
-               ${intermediate}-meanIntensityBrain.nii.gz \
+   warpspace   ${referenceVolumeBrain[sub]}                \
+               ${intermediate}-referenceVolumeBrain.nii.gz \
                ${space[sub]}:${dn_space[cxt]}
    (( ${demeaned[sub]} == 1 )) && dm="-d 1"
+
    exec_xcp dvars                \
       -i    ${denoised[sub]}     \
       -o    ${dvars_root[cxt]}   \
       -s    ${intermediate}      \
       ${dm}                      \
-      -b    ${intermediate}-meanIntensityBrain.nii.gz
-   subroutine                    @5.2  Correlating DVARS against movement
-   exec_xcp featureCorrelation.R -i "${dvars_post[cxt]},${rel_rms[sub]}" \
+      -b    ${intermediate}-referenceVolumeBrain.nii.gz
+    if (( ${censor[sub]} != 0 )) 
+      then
+      subroutine                    @5.21  correct the rms
+      exec_xcp 1mask.R -i ${rel_rms[sub]} -m  ${tmask[sub]} -o ${intermediate}_rms.1D 
+   else 
+      exec_sys cp ${rel_rms[sub]} ${intermediate}_rms.1D
+   fi
+
+    exec_xcp featureCorrelation.R -i "${dvars_post[cxt]},${intermediate}_rms.1D" \
                                  >>  ${dv_mo_cor_post[cxt]}
    routine_end
 fi

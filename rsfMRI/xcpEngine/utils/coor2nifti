@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
 
 ###################################################################
@@ -14,7 +14,7 @@
 ###################################################################
 source ${XCPEDIR}/core/constants
 source ${XCPEDIR}/core/functions/library.sh
-
+source ${XCPEDIR}/core/global
 ###################################################################
 # Usage function
 ###################################################################
@@ -125,16 +125,11 @@ subroutine                    @u.1
   
  
    ################################################################
-   # Generate a solid ellipsoid (a sphere in true physical space)
-   #  * Note that each additional node wraps the expression from
-   #    all previous nodes in a multiplier that zeroes the values
-   #    inside the new node before the new node is added. This
-   #    will result in a much slower module, but is necessary to
-   #    ensure that there is no overlap.
+   # Gnenerate mask
    ################################################################
-   subroutine                 @u.10
+   subroutine                 @u.10 3 cordinates to mask 
 
-   3dUndump -master ${template} -srad ${radius} -prefix ${out} -xyz /tmp/cord.1D
+    exec_afni 3dUndump -master ${template} -srad ${radius} -prefix ${out} -xyz /tmp/cord.1D
    
    rm -rf /tmp/cord.1D
    ################################################################

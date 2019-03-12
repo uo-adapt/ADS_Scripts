@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ###################################################################
-#  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  ☭  #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
 
 ###################################################################
@@ -46,20 +46,35 @@ qc nuisance_ct    nNuisanceParameters      ${prefix}_modelParameterCount.txt
 qc rel_max_rms    relMaxRMSMotion          mc/${prefix}_relMaxRMS.txt
 qc rel_mean_rms   relMeanRMSMotion         mc/${prefix}_relMeanRMS.txt
 
+
+ 
+if [[ -f  ${outdir}/${prefix}_confmat.1D ]] \
+    && ! rerun 
+    then
+    echo "CONFOUND MODEL MODULE  has been run"
+    echo " if you change the design file make sure you  set rerun=1"
+    exit 1
+fi
+
+
+
+if [[ -n ${fd_thresh} ]]; then 
+     
+   confound2_framewise[cxt]=${fd_thresh}
+
+fi
+
+
 temporal_mask_prime
 exec_sys mkdir -p ${outdir}/mc
+
+
 
 
 << DICTIONARY
 to be written
 
 DICTIONARY
-
-
-
-
-
-
 
 
 
@@ -91,7 +106,7 @@ temporal_mask  --SIGNPOST=${signpost}        \
                --INPUT=${img[sub]}           \
                --RPS=${rps[cxt]}             \
                --RMS=${rel_rms[cxt]}         \
-               --THRESH=${confound2_framewise[cxt]}
+               --THRESH=${framewise[cxt]}
 
 
 ###################################################################
@@ -111,8 +126,23 @@ subroutine        @1.3  relative mean motion
 
 
 
+# select the file 
 
-
+ if [[ ${confound} == 24p ]] ; then 
+    confound2_rps[cxt]=1; confound2_sq[cxt]=2; confound2_dx[cxt]=1
+    elif [[ $confound  == 36p ]]; then
+      confound2_rps[cxt]=1; confound2_sq[cxt]=2; confound2_dx[cxt]=1
+      confound2_wm[cxt]=1; confound2_csf[cxt]=1; confound2_gsr[cxt]=1
+    elif [[ $confound == aroma ]]; then
+      confound2_wm[cxt]=1; confound2_csf[cxt]=1; confound2_aroma[cxt]=1;
+    elif [[ $confound == acompcor ]]; then
+    confound2_rps[cxt]=1; confound2_acompcor[cxt]=1; confound2_dx[cxt]=1;
+    elif [[ $confound == tcompcor ]] ; then 
+    confound2_tcompcor[cxt] = 1
+    else 
+    echo "The xcpEngine will regress the motion parameters"
+fi
+ 
 
 ###################################################################
 # REALIGNMENT PARAMETERS
