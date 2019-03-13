@@ -963,3 +963,68 @@ tee out.cormat_warn.txt
 3dTnorm -norm2 -prefix rm.errts.unit errts.sub-ADS5115.fanaticor+orig
 ++ 3dTnorm: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
 ++ Authored by: RW Cox
+++ Output dataset ./rm.errts.unit+orig.BRIK
+3dmaskave -quiet -mask full_mask.sub-ADS5115+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 34200 voxels survive the mask
+3dTstat -sos -prefix - gmean.errts.unit.1D'
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+echo -- GCOR = `cat out.gcor.1D`
+cat out.gcor.1D
+3dcalc -a rm.errts.unit+orig -b gmean.errts.unit.1D -expr a*b -prefix rm.DP
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP+orig.BRIK
+3dTstat -sum -prefix corr_brain rm.DP+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_brain+orig.BRIK
+3dcalc -a follow_ROI_aeseg+orig -b full_mask.sub-ADS5115+orig -expr a*b -prefix rm.fm.aeseg
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.fm.aeseg+orig.BRIK
+3dmaskave -q -mask rm.fm.aeseg+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 27869 voxels survive the mask
+3dcalc -a rm.errts.unit+orig -b mean.unit.aeseg.1D -expr a*b -prefix rm.DP.aeseg
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP.aeseg+orig.BRIK
+3dTstat -sum -prefix corr_af_aeseg rm.DP.aeseg+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_af_aeseg+orig.BRIK
+3dcalc -a follow_ROI_FSvent+orig -b full_mask.sub-ADS5115+orig -expr a*b -prefix rm.fm.FSvent
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.fm.FSvent+orig.BRIK
+3dmaskave -q -mask rm.fm.FSvent+orig rm.errts.unit+orig
+++ 3dmaskave: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
++++ 56 voxels survive the mask
+3dcalc -a rm.errts.unit+orig -b mean.unit.FSvent.1D -expr a*b -prefix rm.DP.FSvent
+++ 3dcalc: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: A cast of thousands
+++ Output dataset ./rm.DP.FSvent+orig.BRIK
+3dTstat -sum -prefix corr_af_FSvent rm.DP.FSvent+orig
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+++ Output dataset ./corr_af_FSvent+orig.BRIK
+set reg_cols = `1d_tool.py -infile X.nocensor.xmat.1D -show_indices_interest`
+1d_tool.py -infile X.nocensor.xmat.1D -show_indices_interest
+3dTstat -sum -prefix sum_ideal.1D X.nocensor.xmat.1D[0..$]
+++ 3dTstat: AFNI version=AFNI_18.2.04 (Jul  6 2018) [64-bit]
+++ Authored by: KR Hammett & RW Cox
+[7m*+ WARNING:[0m Input dataset is not 3D+time; assuming TR=1.0
+++ Output dataset ./sum_ideal.1D
+1dcat X.nocensor.xmat.1D[0..$]
+gen_epi_review.py -script @epi_review.sub-ADS5115 -dsets pb00.sub-ADS5115.r01.tcat+orig.HEAD
+gen_ss_review_scripts.py -mot_limit 0.2 -out_limit 0.1 -errts_dset errts.sub-ADS5115.fanaticor+orig.HEAD -exit0
+rm -f rm.all_runs.volreg.mask+orig.BRIK rm.all_runs.volreg.mask+orig.HEAD rm.all_runs.volreg+orig.BRIK rm.all_runs.volreg+orig.HEAD rm.censor.r01.1D rm.det_pcin_r01+orig.BRIK rm.det_pcin_r01+orig.HEAD rm.det_pcin_rall+orig.BRIK rm.det_pcin_rall+orig.HEAD rm.DP.aeseg+orig.BRIK rm.DP.aeseg+orig.HEAD rm.DP.FSvent+orig.BRIK rm.DP.FSvent+orig.HEAD rm.DP+orig.BRIK rm.DP+orig.HEAD rm.epi.1.r01+orig.BRIK rm.epi.1.r01+orig.HEAD rm.epi.all1+orig.BRIK rm.epi.all1+orig.HEAD rm.epi.min.r01+orig.BRIK rm.epi.min.r01+orig.HEAD rm.epi.nomask.r01+orig.BRIK rm.epi.nomask.r01+orig.HEAD rm.epi.volreg.r01+orig.BRIK rm.epi.volreg.r01+orig.HEAD rm.errts.unit+orig.BRIK rm.errts.unit+orig.HEAD rm.fm.aeseg+orig.BRIK rm.fm.aeseg+orig.HEAD rm.fm.FSvent+orig.BRIK rm.fm.FSvent+orig.HEAD rm.mask_r01+orig.BRIK rm.mask_r01+orig.HEAD rm.mean_r01+orig.BRIK rm.mean_r01+orig.HEAD rm.noise.all+orig.BRIK rm.noise.all+orig.HEAD rm.out.cen.r01.1D rm.resam.anat+orig.BRIK rm.resam.anat+orig.HEAD rm.ROIPC.FSvent00.1D rm.ROIPC.FSvent01.1D rm.ROIPC.FSvent02.1D rm.ROIPC.FSvent_eig.1D rm.ROIPC.FSvent+orig.BRIK rm.ROIPC.FSvent+orig.HEAD rm.ROIPC.FSvent_vec.1D rm.signal.all+orig.BRIK rm.signal.all+orig.HEAD
+tee out.ss_review.sub-ADS5115.txt
+if ( -e @ss_review_basic ) ./@ss_review_basic
+./@ss_review_basic
+cd ..
+echo execution finished: `date`
+date
