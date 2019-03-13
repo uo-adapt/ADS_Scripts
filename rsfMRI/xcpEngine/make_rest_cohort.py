@@ -21,7 +21,7 @@ xcpdir = os.path.join(parentdir,"data","BIDS_data","derivatives","xcpEngine","da
 
 # Each wave that should be represented. It should be noted that this script assumes the same number and type of 
 # scans are the same throughout each run. If this is not the case...good luck coding!
-waves = {"ses-2","ses-3"}
+waves = {"ses-wave2","ses-wave3"}
 tasks = {"rest"}
 
 
