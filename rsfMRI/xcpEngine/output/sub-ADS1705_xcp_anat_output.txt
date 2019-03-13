@@ -9626,3 +9626,665 @@ BEGIN >>>>>>>>>>>>>>>>>>>>
 Running DiReCT for 3-dimensional images.
 
   Iteration 1 (of 45).  Current energy = 1.  
+  Iteration 2 (of 45).  Current energy = 1.  
+  Iteration 3 (of 45).  Current energy = 1.  
+  Iteration 4 (of 45).  Current energy = 1.  
+  Iteration 5 (of 45).  Current energy = 1.  
+  Iteration 6 (of 45).  Current energy = 1.  
+  Iteration 7 (of 45).  Current energy = 1.  
+  Iteration 8 (of 45).  Current energy = 1.  
+  Iteration 9 (of 45).  Current energy = 1.  
+  Iteration 10 (of 45).  Current energy = 1.  (convergence value = -3.18099e-06, threshold = 0)
+   ImageToImageFilter (0x555555c09ad0)
+     RTTI typeinfo:   itk::DiReCTImageFilter<itk::Image<unsigned int, 3u>, itk::Image<float, 3u> >
+     Reference Count: 1
+     Modified Time: 159185
+     Debug: Off
+     Object Name: 
+     Observers: 
+       IterationEvent(Command)
+     Inputs: 
+       Primary: (0x555555c141a0) *
+       _1: (0x555555c1d1d0)
+       _2: (0x555555c145c0)
+     Indexed Inputs: 
+       0: Primary (0x555555c141a0)
+       1: _1 (0x555555c1d1d0)
+       2: _2 (0x555555c145c0)
+     Required Input Names: Primary
+     NumberOfRequiredInputs: 3
+     Outputs: 
+       Primary: (0x555555c30770)
+       _1: (0x555555c2ea30)
+     Indexed Outputs: 
+       0: Primary (0x555555c30770)
+       1: _1 (0x555555c2ea30)
+     NumberOfRequiredOutputs: 1
+     Number Of Work Units: 112
+     ReleaseDataFlag: Off
+     ReleaseDataBeforeUpdateFlag: Off
+     AbortGenerateData: Off
+     Progress: 0
+     Multithreader: 
+       RTTI typeinfo:   itk::PoolMultiThreader
+       Reference Count: 1
+       Modified Time: 193
+       Debug: Off
+       Object Name: 
+       Observers: 
+         none
+       Number of Work Units: 112
+       Number of Threads: 28
+       Global Maximum Number Of Threads: 128
+       Global Default Number Of Threads: 28
+       Global Default Threader Type: PoolMultiThreader
+       SingleMethod: 0
+       SingleData: 0
+     DynamicMultiThreading: On
+     CoordinateTolerance: 1e-06
+     DirectionTolerance: 1e-06
+     Gray matter label = 2
+     White matter label = 3
+     Maximum number of iterations = 45
+     Thickness prior estimate = 10
+     Smoothing variance = 1
+     Smoothing velocity field variance = 1.5
+     Number of integration points = 10
+     Maximum number of invert displacement field iterations = 20
+     Initial gradient step = 0.025
+     Current gradient step = 0.025
+     Convergence threshold = 0
+     Convergence window size = 10
+     Time smoothing variance = 1
+DiReCT elapsed time: 11968.3
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessPosteriors002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessPosteriors003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessSegmentation.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with cortical thickness estimation:  3h 19m 32s
+--------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------
+Compute summary measurements
+--------------------------------------------------------------------------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/antsApplyTransforms -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThickness.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessNormalizedToTemplate.nii.gz -r /xcpEngine/space/MNI/MNI-1x1x1.nii.gz -n Gaussian -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate1Warp.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate0GenericAffine.mat --float 0 --verbose 1
+Using double precision for computations.
+Input scalar image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThickness.nii.gz
+Reference image: /xcpEngine/space/MNI/MNI-1x1x1.nii.gz
+=============================================================================
+The composite transform comprises the following transforms (in order): 
+  1. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate0GenericAffine.mat (type = AffineTransform)
+  2. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate1Warp.nii.gz (type = DisplacementFieldTransform)
+=============================================================================
+Default pixel value: 0
+Interpolation type: GaussianInterpolateImageFunction
+Output warped image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessNormalizedToTemplate.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ThresholdImage 3 /xcpEngine/space/MNI/MNI-1x1x1.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_RegistrationTemplateBrainMask.nii.gz 1E-6 Inf
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedBrain0N4.nii.gz m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/antsApplyTransforms -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedBrain0N4.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainNormalizedToTemplate.nii.gz -r /xcpEngine/space/MNI/MNI-1x1x1.nii.gz -n Linear -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate1Warp.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate0GenericAffine.mat --float 0 --verbose 1
+Using double precision for computations.
+Input scalar image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ExtractedBrain0N4.nii.gz
+Reference image: /xcpEngine/space/MNI/MNI-1x1x1.nii.gz
+=============================================================================
+The composite transform comprises the following transforms (in order): 
+  1. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate0GenericAffine.mat (type = AffineTransform)
+  2. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_SubjectToTemplate1Warp.nii.gz (type = DisplacementFieldTransform)
+=============================================================================
+Default pixel value: 0
+Interpolation type: LinearInterpolateImageFunction
+Output warped image: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainNormalizedToTemplate.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+--------------------------------------------------------------------------------------
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ResampleImageBySpacing 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMaskResampled.nii.gz 1 1 1 0 0 1
+ spacing [0.900001, 0.449219, 0.449219] dim 3
+ spacing2 [1, 1, 1]
+ out space [1, 1, 1]
+ output size [158, 208, 230] spc [1, 1, 1]
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ResampleImageBySpacing 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4Resampled.nii.gz 1 1 1
+ spacing [0.900001, 0.449219, 0.449219] dim 3
+ spacing2 [1, 1, 1]
+ smoothing by : 0.11111 dir 0
+ smoothing by : 1.22609 dir 1
+ smoothing by : 1.22609 dir 2
+ out space [1, 1, 1]
+ output size [158, 208, 230] spc [1, 1, 1]
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ResampleImageBySpacing 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThickness.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotResampled.nii.gz 1 1 1
+ spacing [0.900001, 0.449219, 0.449219] dim 3
+ spacing2 [1, 1, 1]
+ smoothing by : 0.11111 dir 0
+ smoothing by : 1.22609 dir 1
+ smoothing by : 1.22609 dir 2
+ out space [1, 1, 1]
+ output size [158, 208, 230] spc [1, 1, 1]
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ResampleImageBySpacing 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationResampled.nii.gz 1 1 1 0 0 1
+ spacing [0.900001, 0.449219, 0.449219] dim 3
+ spacing2 [1, 1, 1]
+ out space [1, 1, 1]
+ output size [158, 208, 230] spc [1, 1, 1]
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ThresholdImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotResampled.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessMask.nii.gz 0 0 0 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ConvertScalarImageToRGB 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotResampled.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotRGB.nii.gz none hot none 0 10
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/CreateTiledMosaic -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4Resampled.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotRGB.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessTiledMosaic.png -a 1.0 -t -1x-1 -d z -p mask -s [2,mask,mask] -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessMask.nii.gz
+Slices[2]: 115
+Rows:  10
+Columns:  12
+Processing slice 0
+Processing slice 2
+Processing slice 4
+Processing slice 6
+Processing slice 8
+Processing slice 10
+Processing slice 12
+Processing slice 14
+Processing slice 16
+Processing slice 18
+Processing slice 20
+Processing slice 22
+Processing slice 24
+Processing slice 26
+Processing slice 28
+Processing slice 30
+Processing slice 32
+Processing slice 34
+Processing slice 36
+Processing slice 38
+Processing slice 40
+Processing slice 42
+Processing slice 44
+Processing slice 46
+Processing slice 48
+Processing slice 50
+Processing slice 52
+Processing slice 54
+Processing slice 56
+Processing slice 58
+Processing slice 60
+Processing slice 62
+Processing slice 64
+Processing slice 66
+Processing slice 68
+Processing slice 70
+Processing slice 72
+Processing slice 74
+Processing slice 76
+Processing slice 78
+Processing slice 80
+Processing slice 82
+Processing slice 84
+Processing slice 86
+Processing slice 88
+Processing slice 90
+Processing slice 92
+Processing slice 94
+Processing slice 96
+Processing slice 98
+Processing slice 100
+Processing slice 102
+Processing slice 104
+Processing slice 106
+Processing slice 108
+Processing slice 110
+Processing slice 112
+Processing slice 114
+Processing slice 116
+Processing slice 118
+Processing slice 120
+Processing slice 122
+Processing slice 124
+Processing slice 126
+Processing slice 128
+Processing slice 130
+Processing slice 132
+Processing slice 134
+Processing slice 136
+Processing slice 138
+Processing slice 140
+Processing slice 142
+Processing slice 144
+Processing slice 146
+Processing slice 148
+Processing slice 150
+Processing slice 152
+Processing slice 154
+Processing slice 156
+Processing slice 158
+Processing slice 160
+Processing slice 162
+Processing slice 164
+Processing slice 166
+Processing slice 168
+Processing slice 170
+Processing slice 172
+Processing slice 174
+Processing slice 176
+Processing slice 178
+Processing slice 180
+Processing slice 182
+Processing slice 184
+Processing slice 186
+Processing slice 188
+Processing slice 190
+Processing slice 192
+Processing slice 194
+Processing slice 196
+Processing slice 198
+Processing slice 200
+Processing slice 202
+Processing slice 204
+Processing slice 206
+Processing slice 208
+Processing slice 210
+Processing slice 212
+Processing slice 214
+Processing slice 216
+Processing slice 218
+Processing slice 220
+Processing slice 222
+Processing slice 224
+Processing slice 226
+Processing slice 228
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ConvertScalarImageToRGB 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationResampled.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationRGB.nii.gz none custom /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ItkSnapColormap.txt 0 6
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/CreateTiledMosaic -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4Resampled.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationRGB.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationTiledMosaic.png -a 0.3 -t -1x-1 -d 2 -p mask -s [2,mask,mask] -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMaskResampled.nii.gz
+Slices[2]: 83
+Rows:  9
+Columns:  10
+Processing slice 43
+Processing slice 45
+Processing slice 47
+Processing slice 49
+Processing slice 51
+Processing slice 53
+Processing slice 55
+Processing slice 57
+Processing slice 59
+Processing slice 61
+Processing slice 63
+Processing slice 65
+Processing slice 67
+Processing slice 69
+Processing slice 71
+Processing slice 73
+Processing slice 75
+Processing slice 77
+Processing slice 79
+Processing slice 81
+Processing slice 83
+Processing slice 85
+Processing slice 87
+Processing slice 89
+Processing slice 91
+Processing slice 93
+Processing slice 95
+Processing slice 97
+Processing slice 99
+Processing slice 101
+Processing slice 103
+Processing slice 105
+Processing slice 107
+Processing slice 109
+Processing slice 111
+Processing slice 113
+Processing slice 115
+Processing slice 117
+Processing slice 119
+Processing slice 121
+Processing slice 123
+Processing slice 125
+Processing slice 127
+Processing slice 129
+Processing slice 131
+Processing slice 133
+Processing slice 135
+Processing slice 137
+Processing slice 139
+Processing slice 141
+Processing slice 143
+Processing slice 145
+Processing slice 147
+Processing slice 149
+Processing slice 151
+Processing slice 153
+Processing slice 155
+Processing slice 157
+Processing slice 159
+Processing slice 161
+Processing slice 163
+Processing slice 165
+Processing slice 167
+Processing slice 169
+Processing slice 171
+Processing slice 173
+Processing slice 175
+Processing slice 177
+Processing slice 179
+Processing slice 181
+Processing slice 183
+Processing slice 185
+Processing slice 187
+Processing slice 189
+Processing slice 191
+Processing slice 193
+Processing slice 195
+Processing slice 197
+Processing slice 199
+Processing slice 201
+Processing slice 203
+Processing slice 205
+Processing slice 207
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotRGB.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessMask.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationRGB.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_ItkSnapColormap.txt
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentation0N4Resampled.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_CorticalThicknessHotResampled.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainExtractionMaskResampled.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/struc/sub-ADS1705_BrainSegmentationResampled.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+checkOutputExists
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with ANTs processing pipeline: stage 0
+ Script executed in 98214 seconds
+ 27h 16m 54s
+--------------------------------------------------------------------------------------
+····································································
+Processing step complete:
+ANTs cortical thickness pipeline
+····································································
+Processing step complete:
+Quality assessment
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· @0
+· @0.1a
+· @0.1b
+· @0.1c
+· @0.1d
+· @1
+· @1.1a
+· @1.1b
+· @1.1c
+· @1.x
+· @8
+· @8.1
+· @8.2
+· @0.3
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m gmd [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗ #
+#                                                                 #
+#  ⊗                GREY MATTER DENSITY MODULE                 ⊗  #
+#                                                                 #
+# ⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/sub-ADS1705.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/gmd]
+····································································
+Processing step complete:
+Computing 3-class segmentation
+····································································
+Processing step complete:
+Mapping grey matter density
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @1.3
+· @1.3
+· @1.4
+· @2
+· @2.1
+· @2.2
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m roiquant [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗             ATLAS-BASED QUANTIFICATION MODULE             ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/sub-ADS1705.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/roiquant]
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m qcanat [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+###################################################################
+# ⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗ #
+#                                                                 #
+#  ⊗      VOLUMETRIC ANATOMICAL QUALITY ASSESSMENT MODULE      ⊗  #
+#                                                                 #
+# ⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗⊗ #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/sub-ADS1705.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1705/qcanat]
+····································································
+Processing step complete:
+Extracting tissue masks
+····································································
+Processing step complete:
+Determining image foreground/background
+····································································
+Processing step complete:
+Computing measures of anatomical quality
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @1.1a
+· @1.1b
+· @2
+· @2.1
+· @2.5
+· @2.6
+· @3
+· @3.1
+· @3.2
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+#  [0;31m⊗[0m                     ANALYSIS COMPLETE                     [0;31m⊗[0m  #
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
