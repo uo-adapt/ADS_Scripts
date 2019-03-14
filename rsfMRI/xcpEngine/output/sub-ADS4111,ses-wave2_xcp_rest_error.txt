@@ -1,0 +1,14 @@
+Lmod has detected the following error: These module(s) exist but cannot be
+loaded as requested: "c3d"
+   Try: "module spider c3d" to see how to load the module(s).
+
+
+
+Traceback (most recent call last):
+  File "/xcpEngine/checks/check_inputs.py", line 264, in <module>
+    sys.exit(main())
+  File "/xcpEngine/checks/check_inputs.py", line 125, in main
+    check_cohort_file(cohort_file, relative_dir)
+  File "/xcpEngine/checks/check_inputs.py", line 217, in check_cohort_file
+    cant_use = ''.join(illegal_chars.groups())
+AttributeError: 'set' object has no attribute 'groups'
