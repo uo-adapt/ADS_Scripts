@@ -47,6 +47,6 @@ for task in tasks:
                 if os.path.isdir(wavepath):
                     filepath = os.path.join(wavepath,preproc,subject + "_" + wave + "_task-" + task + "_space-T1w_desc-preproc_bold.nii.gz")
                     if os.path.isfile(filepath):
-                        row = [subject + "," + wave + "," + filepath + "," + os.path.join(xcpdir,subject,wave,"struc")]
+                        row = [subject + "," + wave + "," + filepath + "," + os.path.join(xcpdir,subject,"struc")]
                         writer.writerow(row)
                         
