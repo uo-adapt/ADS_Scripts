@@ -22,4 +22,3 @@ singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
    -t 3 \
    -i \$TMPDIR
 
-rm "${TEMP_COHORT}",${ses}
