@@ -142,10 +142,10 @@ loaded as requested: "c3d"
 +++ qcfc_cleanup[9]=1
 ++ source /xcpEngine/core/defineLogs
 +++ [[ -z '' ]]
-+++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG
-+++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG
-+++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG-process
-+++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG-process
++++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG
++++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG
++++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG-process
++++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG-process
 +++ [[ -n localiser ]]
 +++ [[ -n /xcpEngine/core/CONSOLE_MODULE_RC ]]
 +++ echo '
@@ -607,10 +607,10 @@ Current processing step:
 ++ i=(${ing[i]})
 ++ i[1]='/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
 ++ case ${i[0]} in
-++ contains '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz' %INT
-++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz =~ %INT ]]
-++ contains '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz' %IDS
-++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz =~ %IDS ]]
+++ contains /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz %INT
+++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz =~ %INT ]]
+++ contains /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz %IDS
+++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz =~ %IDS ]]
 ++ [[ -z '' ]]
 ++ [[ -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz ]]
 ++ contains struct '^\!'
@@ -1202,7 +1202,7 @@ Current processing step:
 ++ [[ ! -d '' ]]
 ++ readonly BRAINATLAS=/xcpEngine/atlas
 ++ BRAINATLAS=/xcpEngine/atlas
-++ [[ -z /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG-process ]]
+++ [[ -z /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG-process ]]
 ++ unset s d a
 ++ declare -A s d a
 + source /xcpEngine/core/functions/library.sh
@@ -1319,19 +1319,471 @@ Current processing step:
 + for i in ${moving[1]//,/ }
 + i=(${i//\=/ })
 + [[ -z '' ]]
-+ i[1]='/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
++ i[1]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
 + i[0]=Map
-+ sourceSpace[${i[0]}]='/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-++ eval echo '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-+++ echo '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-+ source_space_map='/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-+ is_image '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-+ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz ]]
-+++ readlink -f '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-++ /opt/fsl-5.0.10/bin/imtest '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat/*ExtractedBrain0N4.nii.gz'
++ sourceSpace[${i[0]}]=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ eval echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ source_space_map=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ is_image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz ]]
++++ readlink -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ /opt/fsl-5.0.10/bin/imtest /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat/sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ ((  1 == 1  ))
++ getopts o:d:m:f:x:i:s:t OPTION
++ case $OPTION in
++ transforms=-i
++ getopts o:d:m:f:x:i:s:t OPTION
++ case $OPTION in
++ space=(${OPTARG//,/ })
++ [[ ! -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ getopts o:d:m:f:x:i:s:t OPTION
++ [[ -z /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json != /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
+++ eval echo /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++++ echo /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++ fixed1=/xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+++ eval echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ source_space_map=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ [[ -n '' ]]
++ [[ -n sub-ADS1421_ses-wave3_anatomical ]]
++ is_image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz ]]
++++ readlink -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ /opt/fsl-5.0.10/bin/imtest /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat/sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ ((  1 == 1  ))
++ is_image /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++ [[ -n /xcpEngine/space/MNI/MNI-2x2x2.nii.gz ]]
++++ readlink -f /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+++ /opt/fsl-5.0.10/bin/imtest /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++ ((  1 == 1  ))
++ [[ -z -i ]]
++ meta=from_custom
++ matchexact /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ local i
++ local match=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ shift
++ [[ -z /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ for i in ${@}
++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json == /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ return 0
++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ subroutine @u.2
++ signpost=@u.2
++ routine_map='
+· @u.2'
++ shift
++ local subroutine_description=
++ verbose
++ [[ -n '' ]]
++ [[ -n '' ]]
++ verbose
++ [[ -n '' ]]
++ for s in "${space[@]}"
++ subroutine @u.2.1
++ signpost=@u.2.1
++ routine_map='
+· @u.2
+· @u.2.1'
++ shift
++ local subroutine_description=
++ verbose
++ [[ -n '' ]]
++ [[ -n '' ]]
++ verbose
++ [[ -n '' ]]
++ import_metadata /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ local meta_new meta_floating
++ meta_floating='{}'
++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json != to ]]
++ [[ -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
+++ printx /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
+++ local 'file={
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ eval 'echo -e "{
+  \"MNI%1x1x1\": {
+    \"BrainPrior\": \"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz\",
+    \"Citation\": \"/xcpEngine/space/MNI/MNI_reference.bib\",
+    \"LeftHemisphere\": \"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz\",
+    \"Map\": \"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz\",
+    \"MapHead\": \"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz\",
+    \"Mask\": \"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz\",
+    \"MaskDilated\": \"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz\",
+    \"Priors\": \"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz\",
+    \"RightHemisphere\": \"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz\"
+  },
+  \"MNI%2x2x2\": {
+    \"Map\": \"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz\",
+    \"MapHead\": \"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz\"
+  }
+}"'
++++ echo -e '{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ meta_new='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ [[ -z {
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+} ]]
+++ json_merge meta_floating meta_new
+++ /xcpEngine/thirdparty/jq/jq-linux64 -s '(.|.[0]) * (.|.[1])'
+++ echo '{}' '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
++ meta_floating='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ meta_new=
++ shift
++ [[ to != to ]]
++ [[ -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
+++ printx /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
+++ local 'file={
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
+++ eval 'echo -e "{
+  \"MNI%1x1x1\": {
+    \"BrainPrior\": \"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz\",
+    \"Citation\": \"/xcpEngine/space/MNI/MNI_reference.bib\",
+    \"LeftHemisphere\": \"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz\",
+    \"Map\": \"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz\",
+    \"MapHead\": \"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz\",
+    \"Mask\": \"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz\",
+    \"MaskDilated\": \"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz\",
+    \"Priors\": \"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz\",
+    \"RightHemisphere\": \"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz\"
+  },
+  \"MNI%2x2x2\": {
+    \"Map\": \"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz\",
+    \"MapHead\": \"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz\"
+  }
+}"'
++++ echo -e '{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ meta_new='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ [[ -z {
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+} ]]
+++ json_merge meta_floating meta_new
+++ /xcpEngine/thirdparty/jq/jq-linux64 -s '(.|.[0]) * (.|.[1])'
+++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}' '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
++ meta_floating='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ json_print meta_floating
++ /xcpEngine/thirdparty/jq/jq-linux64 --sort-keys .
++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
 + ((  0 == 1  ))
-+ echo 'source space map '\''/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'\'' is not an image'
-+ exit
++ case ${meta} in
++ subroutine @u.4
++ signpost=@u.4
++ routine_map='
+· @u.2
+· @u.2.1
+· @u.4'
++ shift
++ local subroutine_description=
++ verbose
++ [[ -n '' ]]
++ [[ -n '' ]]
++ verbose
++ [[ -n '' ]]
++ subroutine @u.5
++ signpost=@u.5
++ routine_map='
+· @u.2
+· @u.2.1
+· @u.4
+· @u.5'
++ shift
++ local subroutine_description=
++ verbose
++ [[ -n '' ]]
++ [[ -n '' ]]
++ verbose
++ [[ -n '' ]]
++ [[ ! -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json ]]
++ space_set /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json MNI%2x2x2 Map /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++ local space_chk space_new space_old spaces spaces_path
++ spaces_path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ shift
+++ cat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ spaces='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ ((  3 == 1  ))
+++ json_get '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}' MNI%2x2x2
+++ ((  31 == 3  ))
+++ ((  31 == 2  ))
++ space_chk=
++ [[ '' == null ]]
++ json_set spaces MNI%2x2x2 Map /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
++ json_new=($(echo ${!1}|$JQ_PATH --raw-output '."'"${2}"'" += {"'"${3}"'": "'"${4}"'"}'))
+++ /xcpEngine/thirdparty/jq/jq-linux64 --raw-output '."MNI%2x2x2" += {"Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz"}'
+++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
++ local json_new
++ ((  4 == 4  ))
++ eval 'spaces=${json_new[@]}'
+++ spaces='{ "MNI%1x1x1": { "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz", "Citation": "/xcpEngine/space/MNI/MNI_reference.bib", "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz", "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz", "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz", "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz", "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz", "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz" }, "MNI%2x2x2": { "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz" } }'
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ json_print spaces
++ /xcpEngine/thirdparty/jq/jq-linux64 --sort-keys .
++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
++ for i in ${!sourceSpace[@]}
++ space_set /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json sub-ADS1421_ses-wave3_anatomical Map /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ local space_chk space_new space_old spaces spaces_path
++ spaces_path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ shift
+++ cat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ spaces='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  }
+}'
++ ((  3 == 1  ))
+++ json_get '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}' sub-ADS1421_ses-wave3_anatomical
+++ ((  31 == 3  ))
+++ ((  31 == 2  ))
++ space_chk=
++ [[ '' == null ]]
++ json_set spaces sub-ADS1421_ses-wave3_anatomical Map /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++ json_new=($(echo ${!1}|$JQ_PATH --raw-output '."'"${2}"'" += {"'"${3}"'": "'"${4}"'"}'))
+++ /xcpEngine/thirdparty/jq/jq-linux64 --raw-output '."sub-ADS1421_ses-wave3_anatomical" += {"Map": "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz"}'
+++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '}' '}'
++ local json_new
++ ((  4 == 4  ))
++ eval 'spaces=${json_new[@]}'
+++ spaces='{ "MNI%1x1x1": { "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz", "Citation": "/xcpEngine/space/MNI/MNI_reference.bib", "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz", "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz", "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz", "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz", "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz", "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz" }, "MNI%2x2x2": { "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz" }, "sub-ADS1421_ses-wave3_anatomical": { "Map": "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz" } }'
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ json_print spaces
++ /xcpEngine/thirdparty/jq/jq-linux64 --sort-keys .
++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '},' '"sub-ADS1421_ses-wave3_anatomical":' '{' '"Map":' '"/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz"' '}' '}'
++ moving[0]=sub-ADS1421_ses-wave3_anatomical
++ fixed[0]=MNI
++ transform_set /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json itk:-i sub-ADS1421_ses-wave3_anatomical MNI
++ local itk dramms fsl source spaces spaces_path target transform transform_chk
++ itk=TransformANTs
++ fsl=TransformFSL
++ dramms=TransformDRAMMS
++ spaces_path=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ shift
+++ cat /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ spaces='{
+  "MNI%1x1x1": {
+    "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",
+    "Citation": "/xcpEngine/space/MNI/MNI_reference.bib",
+    "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",
+    "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",
+    "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",
+    "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",
+    "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",
+    "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"
+  },
+  "MNI%2x2x2": {
+    "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",
+    "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"
+  },
+  "sub-ADS1421_ses-wave3_anatomical": {
+    "Map": "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz"
+  }
+}'
++ transform=($(echo ${1/:/ }))
+++ echo itk -i
++ source=sub-ADS1421_ses-wave3_anatomical
++ target=MNI
+++ json_get spaces_fixed sub-ADS1421_ses-wave3_anatomical:MNI
+++ ((  2 == 3  ))
+++ ((  2 == 2  ))
+++ /xcpEngine/thirdparty/jq/jq-linux64 --raw-output '{"sub-ADS1421_ses-wave3_anatomical:MNI":."sub-ADS1421_ses-wave3_anatomical:MNI"}'
+++ echo ''
++ transform_chk=
++ [[ '' == null ]]
++ json_set_array spaces sub-ADS1421_ses-wave3_anatomical:MNI TransformANTs -i
++ local elements=-i
++ json_new=($(echo ${!1}|$JQ_PATH '."'"${2}"'" += {"'"${3}"'": [ "'"${elements}"'" ] }'))
+++ /xcpEngine/thirdparty/jq/jq-linux64 '."sub-ADS1421_ses-wave3_anatomical:MNI" += {"TransformANTs": [ "-i" ] }'
+++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '},' '"sub-ADS1421_ses-wave3_anatomical":' '{' '"Map":' '"/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz"' '}' '}'
++ local json_new
++ ((  4 == 4  ))
++ eval 'spaces=${json_new[@]}'
+++ spaces='{ "MNI%1x1x1": { "BrainPrior": "/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz", "Citation": "/xcpEngine/space/MNI/MNI_reference.bib", "LeftHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz", "Map": "/xcpEngine/space/MNI/MNI-1x1x1.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz", "Mask": "/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz", "MaskDilated": "/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz", "Priors": "/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz", "RightHemisphere": "/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz" }, "MNI%2x2x2": { "Map": "/xcpEngine/space/MNI/MNI-2x2x2.nii.gz", "MapHead": "/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz" }, "sub-ADS1421_ses-wave3_anatomical": { "Map": "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz" }, "sub-ADS1421_ses-wave3_anatomical:MNI": { "TransformANTs": [ "-i" ] } }'
++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_spaces.json
++ json_print spaces
++ /xcpEngine/thirdparty/jq/jq-linux64 --sort-keys .
++ echo '{' '"MNI%1x1x1":' '{' '"BrainPrior":' '"/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz",' '"Citation":' '"/xcpEngine/space/MNI/MNI_reference.bib",' '"LeftHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1LeftHemisphere.nii.gz",' '"Map":' '"/xcpEngine/space/MNI/MNI-1x1x1.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz",' '"Mask":' '"/xcpEngine/space/MNI/MNI-1x1x1Mask.nii.gz",' '"MaskDilated":' '"/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz",' '"Priors":' '"/xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz",' '"RightHemisphere":' '"/xcpEngine/space/MNI/MNI-1x1x1RightHemisphere.nii.gz"' '},' '"MNI%2x2x2":' '{' '"Map":' '"/xcpEngine/space/MNI/MNI-2x2x2.nii.gz",' '"MapHead":' '"/xcpEngine/space/MNI/MNI-2x2x2Head.nii.gz"' '},' '"sub-ADS1421_ses-wave3_anatomical":' '{' '"Map":' '"/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz"' '},' '"sub-ADS1421_ses-wave3_anatomical:MNI":' '{' '"TransformANTs":' '[' '"-i"' ']' '}' '}'
++ [[ -n '' ]]
 + subroutine @1.5 '[Priming' analytic 'audit]'
 + signpost=@1.5
 + routine_map='
@@ -1537,11 +1989,15 @@ Current processing step:
 ++ ((  0 == 1  ))
 ++ for v in "${cohort_vars[@]}"
 ++ vx=struct
-++ is_image '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz ]]
-++++ readlink -f '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
-+++ /opt/fsl-5.0.10/bin/imtest '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat/*ExtractedBrain0N4.nii.gz'
-++ ((  0 == 1  ))
+++ is_image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ [[ -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz ]]
+++++ readlink -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
++++ /opt/fsl-5.0.10/bin/imtest /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat/sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ ((  1 == 1  ))
+++ [[ struct != img ]]
+++ tgt=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
+++ imgs='img[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3.nii.gz struct[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz'
+++ unset tgt
 ++ for v in "${cohort_vars[@]}"
 ++ vx=struct_head
 ++ is_image '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*BrainSegmentation0N4.nii.gz'
@@ -1695,6 +2151,144 @@ Current processing step:
 ++ rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3.nii.gz
 ++ case ${flag_imtype}${flag_orient} in
 ++ ln -sf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/ses-wave3/func/sub-ADS1421_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3.nii.gz
+++ for i in ${imgs}
+++ ori=0
+++ ipl=NN
++++ strslice 'struct[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz' 1 :
++++ local bounds c d domains e i l m o q r s sliced
++++ i='struct[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz'
++++ shift
++++ [[ -n 1 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 1
++++ [[ 1 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n : ]]
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ d=:
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=1
++++ sliced=(${i//${d}/ })
++++ ((  1 >  2  ))
++++ ((  1 >  2  ))
++++ ((  1 < -2  ))
++++ ((  1 < -2  ))
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 1
++++ [[ 1 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=0
++++ e=0
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o='struct[9001]'
++++ c=' struct[9001]'
+++++ echo 'struct[9001]'
++++ c='struct[9001]'
++++ i='struct[9001]'
++++ i='struct[9001]'
++++ unset c
++++ [[ -n '' ]]
++++ echo 'struct[9001]'
+++ var='struct[9001]'
++++ strslice 'struct[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz' 2 :
++++ local bounds c d domains e i l m o q r s sliced
++++ i='struct[9001]:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz'
++++ shift
++++ [[ -n 2 ]]
++++ d=,
++++ domains=(${1//,/ })
++++ shift
++++ for m in "${domains[@]}"
++++ bounds=(${m//:/ })
++++ is_integer 2
++++ [[ 2 =~ ^-?[0-9]+$ ]]
++++ q=(${1//:/ })
++++ q=(${q//,/ })
++++ [[ -n : ]]
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ d=:
++++ shift
++++ is_integer
++++ [[ '' =~ ^-?[0-9]+$ ]]
++++ bounds[1]=2
++++ sliced=(${i//${d}/ })
++++ ((  2 >  2  ))
++++ ((  2 >  2  ))
++++ ((  2 < -2  ))
++++ ((  2 < -2  ))
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ s=+
++++ is+integer 2
++++ [[ 2 =~ ^[0-9]+$ ]]
++++ e=+
++++ case ${s}${e} in
++++ s=1
++++ e=1
++++ r=0
++++ unset o bounds
++++ is+integer 0
++++ [[ 0 =~ ^[0-9]+$ ]]
++++ l=1
++++ o=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
++++ c=' /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz'
+++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
++++ c=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
++++ i=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
++++ unset c
++++ [[ -n '' ]]
++++ echo /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
+++ tgt=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
+++ import_image 'struct[9001]' /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz --ORIENT=0 --INTERPOL=NN
+++ local ori=0
+++ local interpol=linear
+++ local 'var=struct[9001]'
+++ local tgt=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz
+++ local 'src=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//*ExtractedBrain0N4.nii.gz'
+++ shift 2
+++ ((  2 > 0  ))
+++ contains --ORIENT=0 '^--ORIENT='
+++ [[ --ORIENT=0 =~ ^--ORIENT= ]]
+++ local ori=0
+++ contains --ORIENT=0 '^--INTERPOL='
+++ [[ --ORIENT=0 =~ ^--INTERPOL= ]]
+++ shift
+++ ((  1 > 0  ))
+++ contains --INTERPOL=NN '^--ORIENT='
+++ [[ --INTERPOL=NN =~ ^--ORIENT= ]]
+++ contains --INTERPOL=NN '^--INTERPOL='
+++ [[ --INTERPOL=NN =~ ^--INTERPOL= ]]
+++ local interpol=NN
+++ shift
+++ ((  0 > 0  ))
+++ contains /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz '.nii.gz$'
+++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz =~ .nii.gz$ ]]
+++ flag_imtype=0
++++ /opt/afni-latest/@GetAfniOrient /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/anat//sub-ADS1421_desc-preproc_T1w_ExtractedBrain0N4.nii.gz
+++ [[ LPI == RPI ]]
+++ flag_orient=1
+++ ((  ori == 0  ))
+++ flag_orient=0
+++ [[ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/import/sub-ADS1421_ses-wave3_struct.nii.gz != /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3.nii.gz ]]
+++ [[ 00 != 00 ]]
+++ return
 + routine_end
 + [[ -n Localising image ]]
 + eval 'echo -e "····································································
@@ -2462,10 +3056,10 @@ Localiser complete'
 ++ out=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3
 ++ source /xcpEngine/core/defineLogs
 +++ [[ -z '' ]]
-+++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG
-+++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG
-+++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG-process
-+++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171744_sub-ADS1421_ses-wave3LOG-process
++++ export log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG
++++ log=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG
++++ export log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG-process
++++ log_proc=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3_logs/fc_pettitta_201903171749_sub-ADS1421_ses-wave3LOG-process
 +++ [[ -n prestats ]]
 +++ [[ -n /xcpEngine/core/CONSOLE_MODULE_RC ]]
 +++ echo '
@@ -5659,7 +6253,7 @@ Current processing step:
 + abort_stream 'Processing failed to produce required output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/prestats/sub-ADS1421_ses-wave3~TEMP~_RPI_DVO.nii.gz'
 + local errdir=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error
 + [[ ! -d /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error ]]
-+ ERR_ROOT=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error/fc_pettitta-201903171744
++ ERR_ROOT=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/group/error/fc_pettitta-201903171749
 + local 'error=
 · [A major error has occurred.]
 · [The processing stream will now abort.]
