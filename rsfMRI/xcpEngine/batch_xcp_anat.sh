@@ -36,7 +36,7 @@ echo $LINE >> $TEMP_COHORT # Writes the subject specific row to the file
 
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT} --job-name xcp_anat_"${ID}" --partition=long --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT} --job-name xcp_anat_"${ID}" --partition=long --time=48:00:00 --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_anat_error.txt xcp_anat.sh
 
 
 done
