@@ -12346,3 +12346,93 @@ XXDIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_L
  1DIAGNOSTIC,    68, -9.053214728011e-01, 7.498478278925e-06, 2.7442e+03, 3.3264e+01, 
  1DIAGNOSTIC,    69, -9.053629667366e-01, 7.194667012723e-06, 2.7775e+03, 3.3321e+01, 
  1DIAGNOSTIC,    70, -9.053979201839e-01, 6.900742846483e-06, 2.8106e+03, 3.3083e+01, 
+XXDIAGNOSTIC,Iteration,metricValue,convergenceValue,ITERATION_TIME_INDEX,SINCE_LAST
+ 1DIAGNOSTIC,     1, -8.665457804172e-01, 1.797693134862e+308, 3.0781e+03, 2.6755e+02, 
+ 1DIAGNOSTIC,     2, -8.679327315016e-01, 1.797693134862e+308, 3.3459e+03, 2.6777e+02, 
+ 1DIAGNOSTIC,     3, -8.696890643038e-01, 1.797693134862e+308, 3.6097e+03, 2.6380e+02, 
+ 1DIAGNOSTIC,     4, -8.713568157441e-01, 1.797693134862e+308, 3.8740e+03, 2.6431e+02, 
+ 1DIAGNOSTIC,     5, -8.728987439205e-01, 1.797693134862e+308, 4.1397e+03, 2.6571e+02, 
+ 1DIAGNOSTIC,     6, -8.743877984631e-01, 1.797693134862e+308, 4.4041e+03, 2.6438e+02, 
+ 1DIAGNOSTIC,     7, -8.757923054164e-01, 1.797693134862e+308, 4.6695e+03, 2.6542e+02, 
+ 1DIAGNOSTIC,     8, -8.770829580297e-01, 1.797693134862e+308, 4.9351e+03, 2.6558e+02, 
+ 1DIAGNOSTIC,     9, -8.782476592981e-01, 1.797693134862e+308, 5.2008e+03, 2.6572e+02, 
+ 1DIAGNOSTIC,    10, -8.792113637897e-01, 1.797693134862e+308, 5.4672e+03, 2.6635e+02, 
+ 1DIAGNOSTIC,    11, -8.801839844670e-01, 1.797693134862e+308, 5.7340e+03, 2.6682e+02, 
+ 1DIAGNOSTIC,    12, -8.809984480663e-01, 1.797693134862e+308, 6.0009e+03, 2.6693e+02, 
+ 1DIAGNOSTIC,    13, -8.818422701321e-01, 1.797693134862e+308, 6.2675e+03, 2.6661e+02, 
+ 1DIAGNOSTIC,    14, -8.825245664038e-01, 1.797693134862e+308, 6.5331e+03, 2.6559e+02, 
+ 1DIAGNOSTIC,    15, -8.831560713169e-01, 7.912736889842e-04, 6.8005e+03, 2.6737e+02, 
+ 1DIAGNOSTIC,    16, -8.837515827850e-01, 6.893573006998e-04, 7.0664e+03, 2.6594e+02, 
+ 1DIAGNOSTIC,    17, -8.843084381500e-01, 5.956288366587e-04, 7.3345e+03, 2.6808e+02, 
+ 1DIAGNOSTIC,    18, -8.848388897221e-01, 5.151367618087e-04, 7.6021e+03, 2.6757e+02, 
+ 1DIAGNOSTIC,    19, -8.853455481457e-01, 4.464595194348e-04, 7.8686e+03, 2.6648e+02, 
+ 1DIAGNOSTIC,    20, -8.858252665401e-01, 3.878521412462e-04, 8.1366e+03, 2.6801e+02, 
+  Elapsed time (stage 2): 8142
+
+
+Total elapsed time: 9365
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate1InverseWarp.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject0Warp.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/antsApplyTransforms -d 3 -o Linear[/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_TemplateToSubject1GenericAffine.mat,1] -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate0GenericAffine.mat --verbose 1
+Using double precision for computations.
+=============================================================================
+The composite transform comprises the following transforms (in order): 
+  1. /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate0GenericAffine.mat (type = AffineTransform)
+=============================================================================
+Default pixel value: 0
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Done with registration:  2h 36m 31s
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_ExtractedBrain0N4.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/CreateJacobianDeterminantImage 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplate1Warp.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_SubjectToTemplateLogJacobian.nii.gz 1 1
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+
+--------------------------------------------------------------------------------------
+ Cortical thickness using DiReCT (KellyKapowski)
+--------------------------------------------------------------------------------------
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentationPosteriors002.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors002.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentationPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors003.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors003.nii.gz + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors003.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentationPosteriors004.nii.gz
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessSegmentation.nii.gz ReplaceVoxelValue /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_BrainSegmentation.nii.gz 4 4 3
+END   <<<<<<<<<<<<<<<<<<<<
+
+
+BEGIN >>>>>>>>>>>>>>>>>>>>
+/opt/ants-latest/bin/KellyKapowski -d 3 -s [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessSegmentation.nii.gz,2,3] --verbose 1 -g /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors002.nii.gz -w /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThicknessPosteriors003.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/struc/sub-ADS4111_CorticalThickness.nii.gz -c [45,0.0,10] -r 0.025 -m 1.5 -n 10 -b 0 -t 10
+Running DiReCT for 3-dimensional images.
+
+  Iteration 1 (of 45).  Current energy = 1.  
+  Iteration 2 (of 45).  Current energy = 1.  
