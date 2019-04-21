@@ -68,7 +68,7 @@ Checking module-specific dependencies
 #                                                                 #
 #  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
-source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4107/anat//*ExtractedBrain0N4.nii.gz' is not an image
+source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4107/anat//struc/*ExtractedBrain0N4.nii.gz' is not an image
 ····································································
 Processing step complete:
 Localising subject metadata...
@@ -111,18 +111,12 @@ Localiser complete
 
 [I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2.nii.gz]
 [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats]
-NATIVE:LPI TEMPLATE:RPI
-
-Usage: fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize>
-       fslroi <input> <output> <tmin> <tsize>
-
-       fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize> <tmin> <tsize>
-Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a size will set it to the full image extent for that dimension.
-
-· [A major error has occurred.]
-· [The processing stream will now abort.]
-· [Preparing diagnostics]
+NATIVE: TEMPLATE:
+No non steady state volumes
+source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2_struct.nii.gz' is not an image
 ····································································
+Processing step complete:
+getting data from frmiprep directory
 
 
 
@@ -134,31 +128,18 @@ Module Workflow Map
 · @0.1b
 · @0.1c
 · @0.1d
-· @0.1e
 · @0.1f
 · @0.1
-· @1
-· @1.1
-· @1.4
-· ERROR
+· @
+· @
+· @
+· @
+· @0.2
+· FINISH
 ····································································
 
 
-
-····································································
-· [An error occurred while processing module prestats.]
-· [The error was detected at signpost @1.4.]
-· [The most recent command logged was]
-· [fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2~TEMP~.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2~TEMP~_DVO.nii.gz]
-· [For additional details, view the processing log. For improved]
-· [diagnostics, increment verbosity using the -t option.]
-· []
-· [Processing failed to produce required output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2~TEMP~_DVO.nii.gz]
-· []
-· [stream abort]
-····································································
-
-
+Module complete
 
 
 
@@ -175,11 +156,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+#                                                                 #
+#  ·                   CONFOUND MODEL MODULE                   ·  #
+#                                                                 #
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -196,11 +214,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                CONFOUND REGRESSION MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -217,11 +272,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗               FUNCTIONAL CONNECTOME MODULE                ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -238,11 +330,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                REGIONAL HOMOGENEITY MODULE                ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -259,11 +388,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗      AMPLITUDE OF LOW-FREQUENCY FLUCTUATIONS MODULE       ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -280,11 +446,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗             ATLAS-BASED QUANTIFICATION MODULE             ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -301,11 +504,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                IMAGE NORMALISATION MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 
@@ -322,11 +562,48 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4107_ses-wave2 removed from analysis]
-····································································
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗           FUNCTIONAL QUALITY ASSESSMENT MODULE            ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+___________________________________________________________________
+
+Usage for pipeline module:
+<module_name>.mod -d <design> <options>
+
+Compulsory arguments:
+ -d : Localised design file for pipeline:
+      Includes all specifications for processing routines
+      to be run as part of the current pipeline. Use the
+      localiser to localise it to all subjects. (Localisation
+      is automatically completed by the pipeline Engine.)
+ -c : Context in pipeline:
+      Input should be a positive integer that denotes
+      the overall position of the module in the
+      analytic pipeline.
+
+Optional arguments:
+ -t : Trace status:
+      Integer value ( 0 - 3 ) that indicates the level
+      of verbosity during module execution. Higher
+      levels reduce readability but provide useful
+      information for troubleshooting.
+      0  [default]: Human-readable explanations of
+         processing steps and error traces only.
+      1: Explicitly trace module-level computations.
+         Print a workflow map when execution completes.
+      2: Explicitly trace module- and utility-level
+         computations.
+      3: All commands called by the module and all
+         children are traced and explicitly replicated
+         in a log file. This log file can then be used
+         to debug output.
 
 
 

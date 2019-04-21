@@ -68,7 +68,7 @@ Checking module-specific dependencies
 #                                                                 #
 #  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
 ###################################################################
-source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat//*ExtractedBrain0N4.nii.gz' is not an image
+source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/anat//struc/*ExtractedBrain0N4.nii.gz' is not an image
 ····································································
 Processing step complete:
 Localising subject metadata...
@@ -112,17 +112,11 @@ Localiser complete
 [I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
 [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats]
 NATIVE:LPI TEMPLATE:RPI
-
-Usage: fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize>
-       fslroi <input> <output> <tmin> <tsize>
-
-       fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize> <tmin> <tsize>
-Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a size will set it to the full image extent for that dimension.
-
-· [A major error has occurred.]
-· [The processing stream will now abort.]
-· [Preparing diagnostics]
+No non steady state volumes
+source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_struct.nii.gz' is not an image
 ····································································
+Processing step complete:
+getting data from frmiprep directory
 
 
 
@@ -137,28 +131,16 @@ Module Workflow Map
 · @0.1e
 · @0.1f
 · @0.1
-· @1
-· @1.1
-· @1.4
-· ERROR
+· @
+· @
+· @
+· @
+· @0.2
+· FINISH
 ····································································
 
 
-
-····································································
-· [An error occurred while processing module prestats.]
-· [The error was detected at signpost @1.4.]
-· [The most recent command logged was]
-· [fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_DVO.nii.gz]
-· [For additional details, view the processing log. For improved]
-· [diagnostics, increment verbosity using the -t option.]
-· []
-· [Processing failed to produce required output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_DVO.nii.gz]
-· []
-· [stream abort]
-····································································
-
-
+Module complete
 
 
 
@@ -175,165 +157,17 @@ Module Workflow Map
 
 [Delegating control to module]
 
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
 
 
 ###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
 #                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m regress [0;31m★[0m
+#  ·                   CONFOUND MODEL MODULE                   ·  #
 #                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
 ###################################################################
 
 
 
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m fcon [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m reho [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m alff [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m roiquant [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m norm [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-                  CURRENTLY PROCESSING MODULE:
-                         [0;31m★[0m qcfc [0;31m★[0m
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
-
-
-
-[Delegating control to module]
-
-····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
-····································································
-
-
-
-###################################################################
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-#                                                                 #
-#  [0;31m⊗[0m                     ANALYSIS COMPLETE                     [0;31m⊗[0m  #
-#                                                                 #
-#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
-###################################################################
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2]
