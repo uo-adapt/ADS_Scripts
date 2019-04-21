@@ -714,3 +714,100 @@ Current processing step:
                              -   -   -
 >> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -sub 0.171100 -div 0.078251 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_rehoZ_sm2.nii.gz
 · @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Spatially filtering image
+····································································
+· @1.1 
+· @1.2 [Configuring SUSAN]
+· @1.4 
+· @1.6 
+· @1.7a 
+
+
+
+Current processing step:
+@2 Amplitude of low-frequency fluctuations
+····································································
+· @2.0 At smoothness 0 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz
+· @2.5 Computing square root of amplitudes
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz -sqrt /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz
+· @2.6 Extracting power spectrum at the low frequency band
+                             -   -   -
+>> 0.01*510*1.400000
+                             -   -   -
+>> 0.08*510*1.400000
+                             -   -   -
+>> 7.14000000-1
+                             -   -   -
+>> 57.12000000-7.14000000+1
+· @2.7a 0.01 Hz is approximately position 6
+· @2.7b of the power spectrum. There are about 51 frequency
+· @2.7d positions corresponding to the passband (0.08 - 0.01 Hz)
+· @2.7e in the power spectrum.
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SLOW.nii.gz 6 51
+· @2.8 Computing the amplitude of low-frequency fluctuations (ALFF)
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SLOW.nii.gz -Tmean -mul 51 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz
+· @2.9 Standardising ALFF values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -sub 4339.535105 -div 2756.516017 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alffZ.nii.gz
+· @2.0 At smoothness 2 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz
+· @2.5 Computing square root of amplitudes
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz -sqrt /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz
+· @2.6 Extracting power spectrum at the low frequency band
+                             -   -   -
+>> 0.01*510*1.400000
+                             -   -   -
+>> 0.08*510*1.400000
+                             -   -   -
+>> 7.14000000-1
+                             -   -   -
+>> 57.12000000-7.14000000+1
+· @2.7a 0.01 Hz is approximately position 6
+· @2.7b of the power spectrum. There are about 51 frequency
+· @2.7d positions corresponding to the passband (0.08 - 0.01 Hz)
+· @2.7e in the power spectrum.
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SLOW.nii.gz 6 51
