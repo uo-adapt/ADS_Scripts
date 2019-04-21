@@ -296,3 +296,153 @@ Current processing step:
 >> 1071.991821 *3/4
                              -   -   -
 >> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_residualised.nii.gz 803.99386575000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2_referenceVolumeBrain.nii.gz 803.99386575000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_img_sm2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_img_sm2.nii.gz_usan_size.nii.gz
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/prestats/sub-ADS4107_ses-wave2_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/sub-ADS4107_ses-wave2_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Functional connectome: aal116
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> fslstats /xcpEngine/atlas/aal116/aal116MNI.nii.gz -R
+                             -   -   -
+>> 9170.000000<=1
+Error in if (visited[t] == 1) { : argument is of length zero
+Execution halted
+· @1.3 Computing network timeseries
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/roi2ts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_aal116.nii.gz -l /xcpEngine/atlas/aal116/aal116NodeIndex.1D
+Error in readNifti(roipath) : 
+  Failed to read image from path /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_aal116.nii.gz
+Calls: readNifti -> .Call
+In addition: Warning message:
+In readNifti(roipath) :
+  nifti_image_read: failed to find header file for '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_aal116.nii.gz'
+Execution halted
+· @1.4 Computing adjacency matrix
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_network.txt
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116.net
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_missing.txt
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_ts.1D
+Error in read.table(tsPath, header = F) : no lines available in input
+Calls: as.matrix -> unname -> read.table
+Execution halted
+                             -   -   -
+>> ${XCPEDIR}/utils/adjmat2pajek.R -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_network.txt -t N
+Error in read.table(amatPath, header = F) : no lines available in input
+Calls: as.matrix -> read.table
+Execution halted
+· @1.5 Determining node coverage
+                             -   -   -
+>> ${XCPEDIR}/utils/missingIdx.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/aal116/sub-ADS4107_ses-wave2_aal116_network.txt
+Error in read.table(opt$input, header = F) : no lines available in input
+Calls: as.matrix -> read.table
+Execution halted
+
+
+
+Current processing step:
+@1 Functional connectome: glasser360
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> fslstats /xcpEngine/atlas/glasser360/glasser360MNI.nii.gz -R
+                             -   -   -
+>> 360.000000<=1
+Error in if (visited[t] == 1) { : argument is of length zero
+Execution halted
+· @1.3 Computing network timeseries
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/roi2ts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_glasser360.nii.gz -l /xcpEngine/atlas/glasser360/glasser360NodeIndex.1D
+Error in readNifti(roipath) : 
+  Failed to read image from path /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_glasser360.nii.gz
+Calls: readNifti -> .Call
+In addition: Warning message:
+In readNifti(roipath) :
+  nifti_image_read: failed to find header file for '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_glasser360.nii.gz'
+Execution halted
+· @1.4 Computing adjacency matrix
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_network.txt
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360.net
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_missing.txt
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_ts.1D
+Error in read.table(tsPath, header = F) : no lines available in input
+Calls: as.matrix -> unname -> read.table
+Execution halted
+                             -   -   -
+>> ${XCPEDIR}/utils/adjmat2pajek.R -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_network.txt -t N
+Error in read.table(amatPath, header = F) : no lines available in input
+Calls: as.matrix -> read.table
+Execution halted
+· @1.5 Determining node coverage
+                             -   -   -
+>> ${XCPEDIR}/utils/missingIdx.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/glasser360/sub-ADS4107_ses-wave2_glasser360_network.txt
+Error in read.table(opt$input, header = F) : no lines available in input
+Calls: as.matrix -> read.table
+Execution halted
+
+
+
+Current processing step:
+@1 Functional connectome: gordon333
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> fslstats /xcpEngine/atlas/gordon333/gordon333MNI.nii.gz -R
+                             -   -   -
+>> 333.000000<=1
+Error in if (visited[t] == 1) { : argument is of length zero
+Execution halted
+· @1.3 Computing network timeseries
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/gordon333/sub-ADS4107_ses-wave2_gordon333_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/roi2ts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_gordon333.nii.gz -l /xcpEngine/atlas/gordon333/gordon333NodeIndex.1D
+Error in readNifti(roipath) : 
+  Failed to read image from path /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_gordon333.nii.gz
+Calls: readNifti -> .Call
+In addition: Warning message:
+In readNifti(roipath) :
+  nifti_image_read: failed to find header file for '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/sub-ADS4107_ses-wave2_atlas/sub-ADS4107_ses-wave2_gordon333.nii.gz'
+Execution halted
+· @1.4 Computing adjacency matrix
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/gordon333/sub-ADS4107_ses-wave2_gordon333_network.txt
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/gordon333/sub-ADS4107_ses-wave2_gordon333.net
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/gordon333/sub-ADS4107_ses-wave2_gordon333_missing.txt
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/fcon/gordon333/sub-ADS4107_ses-wave2_gordon333_ts.1D
