@@ -242,3 +242,57 @@ Current processing step:
 >> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP.nii.gz
                              -   -   -
 >> ${XCPEDIR}/utils/genfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP.nii.gz -f butterworth -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_mask.nii.gz -c 0.01 -l 0.08 -r 1 -d 2
+· @u.8.3 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_confmat.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/1dGenfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_confmat.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_confmat.1D -f butterworth -t 1.400000 -c 0.01 -l 0.08 -r 1 -d 2
+
+
+
+Current processing step:
+@4 Converting BOLD timeseries to confound residuals
+····································································
+· @4.2 
+· @4.3 
+                             -   -   -
+>> mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_confmat.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_confmat.1D
+· @4.5 [Computing confound correlations]
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_confmat.1D
+· @4.6 [Executing detrend]
+                             -   -   -
+>> 3dTproject -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP.nii.gz -ort /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_confmat.1D -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_REG.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_REG /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_REG
+· @0.2 
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3~TEMP~_DMT_TMP_REG.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_residualised.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4107/ses-wave3/func/sub-ADS4107_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_residualised.nii.gz -t 1.400000
+
+
+
+Current processing step:
+@6 Spatially filtering image
+····································································
+· @6.1 
+· @6.2 [Configuring SUSAN]
+· @6.4 
+· @6.6 
+· @6.10a [Filter: susan]
+· @6.10b [Smoothing kernel: 2 mm]
+· @6.11 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_img_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_referenceVolumeBrain.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_referenceVolumeBrain.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_mask.nii.gz -p 50
+                             -   -   -
+>> 782.298035 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_residualised.nii.gz 586.72352625000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/prestats/sub-ADS4107_ses-wave3_referenceVolumeBrain.nii.gz 586.72352625000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave3/regress/sub-ADS4107_ses-wave3_img_sm2.nii.gz
