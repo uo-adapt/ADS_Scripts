@@ -19,5 +19,4 @@ HOME=/projects/adapt_lab/shared/ADS
 bash xcpEngine -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn \
 	-c "${TEMP_COHORT}",${ses} \
 	-o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data \
-	-t 2 \
-	-r /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine \
+	-t 2 
