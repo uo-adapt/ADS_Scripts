@@ -101,3 +101,200 @@ Current processing step:
 · @ generate new /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2_spaces.json with spaceMetadata
                              -   -   -
 >> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/prepocessed.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_FMP.nii.gz
+· @ Quality assessment
+                             -   -   -
+>> ${XCPEDIR}/utils/maskOverlap.R -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_segmentation.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolumeBrain.nii.gz
+· [Cross-correlation:    0.9430333 ]
+· [Coverage:             1 ]
+· [Jaccard coefficient:  0.9227246 ]
+· [Dice coefficient:     0.9598094 ]
+· @0.2 
+                             -   -   -
+>> imcp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_FMP.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/ses-wave2/func/sub-ADS4111_ses-wave2_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz -t 1.400000
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz -overwrite
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_preprocessed.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+                             -   -   -
+>> mkdir -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc
+
+
+
+Current processing step:
+@1 Generating confound matrix
+····································································
+· @1.1 Generating temporal mask
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j stdVARS -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_dvars-std.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j rps -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_realignment.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j fd -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relRMS.1D
+· @1.1.1 [Computing framewise displacement]
+                             -   -   -
+>> ${XCPEDIR}/utils/fd.R -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_realignment.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_fd.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_spatial_sd.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_ts_quality_index.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_ts_outliers.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz -S
+                             -   -   -
+>> 3dTqual -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> 3dToutcount -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relRMS.1D
+· @1.1.3 [Selecting quality criteria]
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2-nFlags.1D
+· @1.1.5 [Applying framewise threshold to time series]
+                             -   -   -
+>> ${XCPEDIR}/utils/tmask.R -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2-nFlags.1D -t 0.5 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_tmask.1D -m 0
+· @1.1.6 [Evaluating data quality]
+· @1.2 relative maximum motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relRMS.1D -o max -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relMaxRMS.txt
+· @1.3 relative mean motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relRMS.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/mc/sub-ADS4111_ses-wave2_relMeanRMS.txt
+· @1.5 Including csf
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j csf -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_csf.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x null -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_csf.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D
+· @1.7 Including gsr
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j gsr -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_gsr.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_gsr.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D
+· @1.8 Including wm
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j wm -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_wm.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_wm.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D
+· @1.6 Including aroma
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_fmriconf.tsv -j aroma -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_aroma.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_aroma.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+
+
+
+Current processing step:
+@2 Validating confound model
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_modelParameterCount.txt
+· @2.1a 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+· @0.1 
+
+
+
+Current processing step:
+@7 Demeaning and detrending BOLD timeseries
+····································································
+· @7.2 
+· @7.5a [Applying polynomial detrend]
+· @7.5b [Order: 2]
+                             -   -   -
+>> ${XCPEDIR}/utils/dmdt.R -d 2 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz
+· @7.6 [Executing detrend: Confound matrix]
+                             -   -   -
+>> ${XCPEDIR}/utils/1dDMDT.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2/sub-ADS4111_ses-wave2_confmat.1D -d 2 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_confmat.1D
+
+
+
+Current processing step:
+@2 Temporally filtering image and confounds
+····································································
+· @2.2 
+· @2.3 
+· @2.5 
+· @2.6 
+· @2.8 
+· @2.12a [butterworth filter]
+· @2.12b [High pass frequency: 0.01]
+· @2.12c [Low pass frequency: 0.08]
+                             -   -   -
+>> ${XCPEDIR}/utils/tfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP.nii.gz -a 1.400000 -f butterworth -h 0.01 -l 0.08 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -r 1 -d 2 -1 confmat:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_confmat.1D
+                             -   -   -
+>> remove_ext /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT.nii.gz pixdim4
+· @u.4 
+· @u.8 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/genfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP.nii.gz -f butterworth -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -c 0.01 -l 0.08 -r 1 -d 2
+· @u.8.3 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_confmat.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/1dGenfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_confmat.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_confmat.1D -f butterworth -t 1.400000 -c 0.01 -l 0.08 -r 1 -d 2
+
+
+
+Current processing step:
+@4 Converting BOLD timeseries to confound residuals
+····································································
+· @4.2 
+· @4.3 
+                             -   -   -
+>> mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_confmat.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_confmat.1D
+· @4.5 [Computing confound correlations]
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_confmat.1D
+· @4.6 [Executing detrend]
+                             -   -   -
+>> 3dTproject -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP.nii.gz -ort /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_confmat.1D -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_REG.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_REG /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_REG
+· @0.2 
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2~TEMP~_DMT_TMP_REG.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/ses-wave2/func/sub-ADS4111_ses-wave2_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz -t 1.400000
+
+
+
+Current processing step:
+@6 Spatially filtering image
+····································································
+· @6.1 
+· @6.2 [Configuring SUSAN]
+· @6.4 
+· @6.6 
+· @6.10a [Filter: susan]
+· @6.10b [Smoothing kernel: 2 mm]
+· @6.11 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolumeBrain.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolumeBrain.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -p 50
+                             -   -   -
+>> 1026.249023 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz 769.68676725000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolumeBrain.nii.gz 769.68676725000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz
