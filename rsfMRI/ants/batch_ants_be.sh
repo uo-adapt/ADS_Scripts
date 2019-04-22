@@ -23,6 +23,6 @@ for SUBJ in $SUBJLIST; do
 #SUBID=`echo $SUBJ|awk '{print $1}' FS=","`
 #SESSID=`echo $SUBJ|awk '{print $2}' FS=","
 	
-sbatch --export ALL,subid=${SUBJ},group_dir=${group_dir},study=${study} --job-name ants_be_"${SUBJ}" --partition=long --mem=100G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/ants/output/"${SUBJ}"_ants_be_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/ants/output/"${SUBJ}"_ants_be_error.txt ants_be.sh
+sbatch --export ALL,subid=${SUBJ},group_dir=${group_dir},study=${study} --job-name ants_be_"${SUBJ}" --partition=short --time=2:00:00 --mem=15G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/ants/output/"${SUBJ}"_ants_be_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/ants/output/"${SUBJ}"_ants_be_error.txt ants_be.sh
 
 done
