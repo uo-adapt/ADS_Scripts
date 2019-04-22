@@ -267,3 +267,34 @@ Current processing step:
 >> 3dTproject -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2~TEMP~_DMT_TMP.nii.gz -ort /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_confmat.1D -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2~TEMP~_DMT_TMP_REG.nii.gz
                              -   -   -
 >> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2~TEMP~_DMT_TMP_REG /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2~TEMP~_DMT_TMP_REG
+· @0.2 
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2~TEMP~_DMT_TMP_REG.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/ses-wave2/func/sub-ADS1421_ses-wave2_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz -t 1.400000
+
+
+
+Current processing step:
+@6 Spatially filtering image
+····································································
+· @6.1 
+· @6.2 [Configuring SUSAN]
+· @6.4 
+· @6.6 
+· @6.10a [Filter: susan]
+· @6.10b [Smoothing kernel: 2 mm]
+· @6.11 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_img_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_referenceVolumeBrain.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_referenceVolumeBrain.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_mask.nii.gz -p 50
+                             -   -   -
+>> 601.248901 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz 450.93667575000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_referenceVolumeBrain.nii.gz 450.93667575000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_img_sm2.nii.gz
