@@ -1,0 +1,139 @@
+Lmod has detected the following error: These module(s) exist but cannot be
+loaded as requested: "c3d"
+   Try: "module spider c3d" to see how to load the module(s).
+
+
+
+
+
+
+Current processing step:
+@1 Localising subject metadata...
+····································································
+· @1.1 [Parsing subject identifiers]
+· @1.1a [Creating output directory]
+· @1.1b [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007]
+· @1.2 [Initialising space mapping]
+· @1.3 [Initialising derivative maps]
+· @1.4 [Initialising atlas system]
+· @1.5 Ingress
+· @1.5.1 [Native space: sub-ADS4007_anatomical]
+· @1.5.2a [Standard space: MNI]
+· @1.5.3a [Anatomical space: sub-ADS4007_anatomical]
+· @1.5 [Priming analytic audit]
+· @1.6 [Priming quality assessment]
+
+
+
+Current processing step:
+@2 Localising image
+····································································
+· @2.1 [Verifying that images are present]
+· @2.2 [Conforming and localising images]
+
+
+
+Current processing step:
+@3 Localising design
+····································································
+· @3.1 [Writing localised design]
+· @3.2 [Evaluating subject variables]
+                             -   -   -
+>> rln /xcpEngine/space/MNI/MNI-1x1x1.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/template.nii.gz
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/sub-ADS4007.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~.nii.gz
+                             -   -   -
+>> 12-10-1
+                             -   -   -
+>> 12-1
+· @0.1 
+
+
+
+Current processing step:
+@0 Ensure matching orientation
+····································································
+· @0.1a Input: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~.nii.gz
+· @0.1b Template: /xcpEngine/space/MNI/MNI-1x1x1.nii.gz
+· @0.1c Output root: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007_
+· @0.1d LPI -> RPI
+[7m*+ WARNING:[0m   If you are performing spatial transformations on an oblique dset, 
+  such as /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~.nii.gz,
+  or viewing/combining it with volumes of differing obliquity,
+  you should consider running: 
+     3dWarp -deoblique 
+  on this and  other oblique datasets in the same session.
+ See 3dWarp -help for details.
+++ Oblique dataset:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~.nii.gz is 2.975127 degrees from plumb.
+
+
+
+Current processing step:
+@1 ANTs cortical thickness pipeline
+····································································
+· @1.1a Input: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~_RPI.nii.gz
+· @1.1b Template: /xcpEngine/space/MNI/MNI-1x1x1.nii.gz
+· @1.1c Output root: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007_
+· @1.x Delegating control to ANTsCT
+                             -   -   -
+>> antsCorticalThickness.sh -d 3 -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~_RPI.nii.gz -e /xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz -m /xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz -p /xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007_ -s nii.gz -t /xcpEngine/space/MNI/MNI-1x1x1.nii.gz -f /xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz -g 1 -w 0.25 -b Socrates[1] -j 0 -u 0 -v 0 -q 0
+
+    Using antsCorticalThickness with the following arguments:
+      image dimension         = 3
+      anatomical image        = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~_RPI.nii.gz
+      brain template          = /xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz
+      extraction prior        = /xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz
+      extraction reg. mask    = /xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz
+      segmentation prior      = /xcpEngine/space/MNI/MNI_priors/MNI-priors-%03d.nii.gz
+      output prefix           = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007_
+      output image suffix     = nii.gz
+      registration template   = /xcpEngine/space/MNI/MNI-1x1x1.nii.gz
+
+    ANTs parameters:
+      metric                  = CC[fixedImage,movingImage,1,4]
+      regularization          = 
+      transformation          = SyN[0.1,3,0]
+      max iterations          = 100x100x70x20
+
+    DiReCT parameters:
+      convergence             = [45,0.0,10]
+      thickness prior         = 10
+      gradient step size      = 0.025
+      smoothing sigma         = 1.5
+
+    Other parameters:
+      run quick               = 0
+      debug mode              = 0
+      denoise images          = 1
+      float precision         = 0
+      use random seeding      = 0
+      prior combinations      = WM[4]
+
+
+    Using antsBrainExtraction with the following arguments:
+      image dimension         = 3
+      anatomical image        = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007~TEMP~_RPI.nii.gz
+      extraction template     = /xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz
+      extraction reg. mask    = /xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz
+      extraction prior        = /xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz
+      output prefix           = /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4007/struc/sub-ADS4007_
+      output image suffix     = nii.gz
+
+    N4 parameters (pre brain extraction):
+      convergence             = [50x50x50x50,0.0000001]
+      shrink factor           = 4
+      B-spline parameters     = [200]
+
+    Atropos parameters (extraction):
+       convergence            = [3,0.0]
+       likelihood             = Gaussian
+       initialization         = kmeans[3]
+       mrf                    = [0.1,1x1x1]
+       use clock random seed  = 0
+
+WARNING: In /tmp/ants/build/ITKv5-install/include/ITK-5.0/itkMultiStartOptimizerv4.hxx, line 200
+MultiStartOptimizerv4Template (0x555555e2cb90): An exception occurred in sub-optimization number 67.  If too many of these occur, you may need to set a different set of initial parameters.
+
+WARNING: In /tmp/ants/build/ITKv5-install/include/ITK-5.0/itkMultiStartOptimizerv4.hxx, line 200
+MultiStartOptimizerv4Template (0x555555e2cb90): An exception occurred in sub-optimization number 229.  If too many of these occur, you may need to set a different set of initial parameters.
+
