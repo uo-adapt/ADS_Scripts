@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #
 # This script calls on brain
 # extraction tool to use on 

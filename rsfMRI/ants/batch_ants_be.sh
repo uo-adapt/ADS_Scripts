@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 #
 # This batch file calls on your subject
 # list (named subject_list.txt). And 
