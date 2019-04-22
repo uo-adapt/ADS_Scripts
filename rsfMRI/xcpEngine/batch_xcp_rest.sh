@@ -5,6 +5,14 @@
 
 # Set group and study variables
 
+module load singularity
+module load afni
+module load ants
+module load fsl
+module load c3d
+module load R
+module load python3
+
 group_dir=/projects/adapt_lab/shared
 study="ADS"
 
