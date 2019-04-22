@@ -758,3 +758,43 @@ Current processing step:
 >> atlas_set segmentation RegionalMeanAlffZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/segmentation/sub-ADS5508_ses-wave2_segmentation_mean_alffZ.csv
                              -   -   -
 >> atlas_set segmentation RegionalMeanReho /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/segmentation/sub-ADS5508_ses-wave2_segmentation_mean_reho.csv
+                             -   -   -
+>> atlas_set segmentation RegionalMeanRehoZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/segmentation/sub-ADS5508_ses-wave2_segmentation_mean_rehoZ.csv
+· @1.3.5 
+· @1.3.6 
+· @1.3.7 
+· @1.3.8 
+· @1.3.9 
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -s vol -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/segmentation/sub-ADS5508_ses-wave2_segmentation_vol.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_vol -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_names.1D -p sub-ADS5508,ses-wave2 -w 0
+· @u.6 Volume over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz -nzvoxels /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz pixdim1
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz pixdim2
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2_atlas/sub-ADS5508_ses-wave2_segmentation.nii.gz pixdim3
+                             -   -   -
+>> 3.281000 *3.281000 *5.000000
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_vol-quantifyAtlas_segmentation_vol.1D -a vol_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/sub-ADS5508_ses-wave2~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/roiquant/segmentation/sub-ADS5508_ses-wave2_segmentation_vol.csv -p sub-ADS5508,ses-wave2 -s 53.824805000000000000
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/norm/sub-ADS5508_ses-wave2~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Normalising using ANTs
+····································································
+· @1.1 [Selecting transforms to apply]
+· @1.2 [Normalising primary dataset]
+· @1.3 [Applying composite diffeomorphism to primary dataset]
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/sub-ADS5508_ses-wave2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS5508/ses-wave2/norm/sub-ADS5508_ses-wave2_std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS5508/ses-wave2/..//anat/sub-ADS5508_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
