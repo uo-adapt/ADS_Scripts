@@ -11,7 +11,7 @@ module load python3
 
 cd /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 
-export XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
+XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 SIMG=/projects/adapt_lab/shared/containers/xcpEngine.simg
 HOME=/projects/adapt_lab/shared/ADS
 

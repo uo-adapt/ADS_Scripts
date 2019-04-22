@@ -29,6 +29,8 @@ TEMP_COHORT=${FULL_COHORT}.${ID}.csv # creates the csv file
 echo $HEADER > $TEMP_COHORT # Writes the header row to the file
 echo $LINE >> $TEMP_COHORT # Writes the subject specific row to the file
 
+XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
+
 # This gets the session and the runs, becasue I couldn't figure out a way to pass a variable with a comma in it, so we'll just have to put them together in the job script
 
 ses=${TEMP_COHORT#*,}
@@ -36,7 +38,7 @@ ses=${ses%%,*}
 run=${TEMP_COHORT##*,}
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run} --job-name xcp_rest_"${ID}" --partition=short --time=3:00:00 --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run},XCPEDIR=${XCPEDIR} --job-name xcp_rest_"${ID}" --partition=short --time=3:00:00 --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
 
 
 done
