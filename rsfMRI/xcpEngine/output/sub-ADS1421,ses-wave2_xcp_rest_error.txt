@@ -1126,3 +1126,66 @@ Current processing step:
 · @2.1 Resampling to 6mm isotropic: minimally preprocessed
                              -   -   -
 >> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-pp-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/prestats/sub-ADS1421_ses-wave2_preprocessed.nii.gz -rmode Li
+· @2.2 Resampling to 6mm isotropic: denoised
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-dn-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-dn.nii.gz -rmode Li
+· @2.4 Aligning depth map to sequence space
+                             -   -   -
+>> 13-12-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-onion-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-onion.nii.gz -rmode NN
+
+
+
+Current processing step:
+@3 Preparing summary graphics
+····································································
+· @3.1 Acquiring arguments
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1421/ses-wave2/func/sub-ADS1421_ses-wave2_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> 0.167*1.400000 
+                             -   -   -
+>> 0.083*1.400000 
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/confound2/mc/sub-ADS1421_ses-wave2_dvars-std.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_dvar.1D
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/confound2/mc/sub-ADS1421_ses-wave2_fd.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_fd.1D
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/confound2/mc/sub-ADS1421_ses-wave2_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_rms1.1D
+· @3.2 Generating visuals
+                             -   -   -
+>> ${XCPEDIR}/utils/voxts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-pp-rs.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-dn-rs.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-onion-rs.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2_voxts.png -t DV:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_dvar.1D:1.5,RMS:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_rms1.1D:.116200000,FD:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_fd.1D:.233800000 -n /xcpEngine/atlas/segmentation3/segmentation3NodeNames.txt
+Error: Unequal parameter lengths: x (4), label (3)
+Execution halted
+
+
+
+Current processing step:
+@4 Estimating loss of temporal degrees of freedom
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2_tdof.txt
+· @4.1 90 nuisance parameters regressed
+· @4.4 Total lost tDOF: 90
+
+
+
+Current processing step:
+@5 Estimating post-processing DVARS
+····································································
+· @5.1 [Computing DVARS]
+Error in if (visited[t] == 1) { : argument is of length zero
+Execution halted
+                             -   -   -
+>> ${XCPEDIR}/utils/dvars -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/regress/sub-ADS1421_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2_dvars -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~ -d 1 -b /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~-referenceVolumeBrain.nii.gz
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/confound2/mc/sub-ADS1421_ses-wave2_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_rms.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave2/qcfc/sub-ADS1421_ses-wave2~TEMP~_rms.1D

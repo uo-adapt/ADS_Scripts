@@ -1162,3 +1162,28 @@ Current processing step:
 · @3.2 Generating visuals
                              -   -   -
 >> ${XCPEDIR}/utils/voxts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~-pp-rs.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~-dn-rs.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~-onion-rs.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2_voxts.png -t DV:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~_dvar.1D:1.5,RMS:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~_rms1.1D:.116200000,FD:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~_fd.1D:.233800000 -n /xcpEngine/atlas/segmentation3/segmentation3NodeNames.txt
+
+
+
+Current processing step:
+@4 Estimating loss of temporal degrees of freedom
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2_tdof.txt
+· @4.1 76 nuisance parameters regressed
+· @4.4 Total lost tDOF: 76
+
+
+
+Current processing step:
+@5 Estimating post-processing DVARS
+····································································
+· @5.1 [Computing DVARS]
+Error in if (visited[t] == 1) { : argument is of length zero
+Execution halted
+                             -   -   -
+>> ${XCPEDIR}/utils/dvars -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/regress/sub-ADS4107_ses-wave2_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2_dvars -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~ -d 1 -b /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~-referenceVolumeBrain.nii.gz
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/confound2/mc/sub-ADS4107_ses-wave2_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~_rms.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4107/ses-wave2/qcfc/sub-ADS4107_ses-wave2~TEMP~_rms.1D
