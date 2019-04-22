@@ -21,4 +21,3 @@ bash xcpEngine -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA
 	-o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data \
 	-t 2 \
 	-r /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine \
-	-i \$TMPDIR
