@@ -298,3 +298,203 @@ Current processing step:
 >> 1026.249023 *3/4
                              -   -   -
 >> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz 769.68676725000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolumeBrain.nii.gz 769.68676725000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz_usan_size.nii.gz
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/sub-ADS4111_ses-wave2_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Functional connectome: gordon333
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> fslstats /xcpEngine/atlas/gordon333/gordon333MNI.nii.gz -R
+                             -   -   -
+>> 333.000000<=1
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /xcpEngine/atlas/gordon333/gordon333MNI.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_struct.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2_atlas/sub-ADS4111_ses-wave2_gordon333.nii.gz -n MultiLabel -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS4111/ses-wave2/..//anat/sub-ADS4111_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2_atlas/sub-ADS4111_ses-wave2_gordon333.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333.nii.gz
+                             -   -   -
+>> 14-11-1
+                             -   -   -
+>> 14-1
+· @1.3 Computing network timeseries
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/roi2ts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2_atlas/sub-ADS4111_ses-wave2_gordon333.nii.gz -l /xcpEngine/atlas/gordon333/gordon333NodeIndex.1D
+Warning messages:
+1: Warning: node  210  contains one voxel
+ 
+2: Warning: node  285  contains one voxel
+ 
+3: Warning: node  329  contains one voxel
+ 
+· @1.4 Computing adjacency matrix
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_network.txt
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333.net
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_missing.txt
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/adjmat2pajek.R -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_network.txt -t N
+· @1.5 Determining node coverage
+                             -   -   -
+>> ${XCPEDIR}/utils/missingIdx.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon/gordon333/sub-ADS4111_ses-wave2_gordon333_network.txt
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Computing voxelwise ReHo
+····································································
+· @1.1 Determining voxel neighbourhood
+· @1.2c Vertices
+· @1.3 Computing regional homogeneity (ReHo)
+                             -   -   -
+>> 3dReHo -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz -nneigh 27
+· @1.4 Standardising ReHo values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz -sub 0.185092 -div 0.093646 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_rehoZ.nii.gz
+
+
+
+Current processing step:
+@2 Spatially filtering ReHo map
+····································································
+· @2.1a Filter: susan
+· @2.2b Smoothing kernel: 2 mm
+· @2.2 
+· @2.4 
+· @2.4.2 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -p 50
+                             -   -   -
+>> 1026.249023 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho.nii.gz 769.68676725000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz 769.68676725000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz_usan_size.nii.gz
+· @2.5 Standardising ReHo values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_reho_sm2.nii.gz -sub 0.171100 -div 0.078251 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho/sub-ADS4111_ses-wave2_rehoZ_sm2.nii.gz
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Spatially filtering image
+····································································
+· @1.1 
+· @1.2 [Configuring SUSAN]
+· @1.4 
+· @1.6 
+· @1.7a 
+
+
+
+Current processing step:
+@2 Amplitude of low-frequency fluctuations
+····································································
+· @2.0 At smoothness 0 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz
+· @2.5 Computing square root of amplitudes
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz -sqrt /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz
+· @2.6 Extracting power spectrum at the low frequency band
+                             -   -   -
+>> 0.01*510*1.400000
+                             -   -   -
+>> 0.08*510*1.400000
+                             -   -   -
+>> 7.14000000-1
+                             -   -   -
+>> 57.12000000-7.14000000+1
+· @2.7a 0.01 Hz is approximately position 6
+· @2.7b of the power spectrum. There are about 51 frequency
+· @2.7d positions corresponding to the passband (0.08 - 0.01 Hz)
+· @2.7e in the power spectrum.
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SQRT.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SLOW.nii.gz 6 51
+· @2.8 Computing the amplitude of low-frequency fluctuations (ALFF)
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS-SLOW.nii.gz -Tmean -mul 51 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz
+· @2.9 Standardising ALFF values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alff.nii.gz -sub 4339.535105 -div 2756.516017 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2_alffZ.nii.gz
+· @2.0 At smoothness 2 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress/sub-ADS4111_ses-wave2_img_sm2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff/sub-ADS4111_ses-wave2~TEMP~PS.nii.gz
