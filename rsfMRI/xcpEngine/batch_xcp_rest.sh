@@ -5,14 +5,6 @@
 
 # Set group and study variables
 
-module load singularity
-module load afni
-module load ants
-module load fsl
-module load c3d
-module load R
-module load python3
-
 group_dir=/projects/adapt_lab/shared
 study="ADS"
 
@@ -43,9 +35,8 @@ ses=${TEMP_COHORT#*,}
 ses=${ses%%,*}
 run=${TEMP_COHORT##*,}
 
-XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run},XCPEDIR=${XCPEDIR} --job-name xcp_rest_"${ID}" --partition=short --time=3:00:00 --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run} --job-name xcp_rest_"${ID}" --partition=short --time=3:00:00 --mem=40G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
 
 
 done
