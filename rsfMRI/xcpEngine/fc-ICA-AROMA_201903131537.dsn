@@ -47,9 +47,9 @@ pipeline=prestats,confound2,regress,fcon,reho,alff,roiquant,norm,qcfc
 # 1 PRESTATS
 ###################################################################
 
-prestats_rerun[1]=1
+prestats_rerun[1]=0
 prestats_cleanup[1]=1
-prestats_process[1]=DVO-MPR-STM-MCO-BXT
+prestats_process[1]=FMP
 
 ###################################################################
 # 2 CONFOUND2
@@ -58,8 +58,10 @@ prestats_process[1]=DVO-MPR-STM-MCO-BXT
 confound2_rps[2]=0
 confound2_rms[2]=0
 confound2_wm[2]=1
+confound_wm_ero[2]=5
 confound2_csf[2]=1
-confound2_gsr[2]=0
+confound_csf_ero[2]=10
+confound2_gsr[2]=1
 confound2_acompcor[2]=0
 confound2_tcompcor[2]=0
 confound2_aroma[2]=1
@@ -90,13 +92,13 @@ regress_usan[3]=default
 regress_usan_space[3]=
 regress_rerun[3]=0
 regress_cleanup[3]=1
-regress_process[3]=TMP-REG
+regress_process[3]=DMT-TMP-REG
 
 ###################################################################
 # 4 FCON
 ###################################################################
 
-fcon_atlas[4]=power264
+fcon_atlas[4]=gordon333
 fcon_metric[4]=corrcoef
 fcon_thr[4]=N
 fcon_window[4]=10
@@ -130,9 +132,9 @@ alff_cleanup[6]=1
 # 7 ROIQUANT
 ###################################################################
 
-roiquant_atlas[7]=power264
+roiquant_atlas[7]=gordon333
 roiquant_globals[7]=1
-roiquant_vol[7]=0
+roiquant_vol[7]=1
 roiquant_rerun[7]=0
 roiquant_cleanup[7]=1
 
@@ -146,7 +148,7 @@ norm_cleanup[8]=1
 ##################################################################
 # 9 QCFC
 ###################################################################
-qcfc_atlas[9]=power264
+qcfc_atlas[9]=gordon333
 qcfc_sig[9]=fdr
 qcfc_rerun[9]=0
 qcfc_cleanup[9]=1

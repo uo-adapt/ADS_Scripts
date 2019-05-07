@@ -1,0 +1,23 @@
+mkdir: cannot create directory ‘struc’: File exists
+
+    Using antsBrainExtraction with the following arguments:
+      image dimension         = 3
+      anatomical image        = sub-ADS124_desc-preproc_T1w.nii.gz
+      extraction template     = /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/MNI/MNI-1x1x1Head.nii.gz
+      extraction reg. mask    = /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/MNI/MNI-1x1x1MaskDilated.nii.gz
+      extraction prior        = /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/MNI/MNI-1x1x1BrainPrior.nii.gz
+      output prefix           = ./struc/sub-ADS124_
+      output image suffix     = _ExtractedBrain0N4.nii.gz
+
+    N4 parameters (pre brain extraction):
+      convergence             = [50x50x50x50,0.0000001]
+      shrink factor           = 4
+      B-spline parameters     = [200]
+
+    Atropos parameters (extraction):
+       convergence            = [3,0.0]
+       likelihood             = Gaussian
+       initialization         = kmeans[3]
+       mrf                    = [0.1,1x1x1]
+       use clock random seed  = 0
+

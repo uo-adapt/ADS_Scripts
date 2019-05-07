@@ -1,13 +1,6 @@
 [Detected that xcp is in a container]
-Received options: -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS4111,ses-wave2.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 3 -i $TMPDIR
+Received options: -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS4111,ses-wave2.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 2 -i $TMPDIR
 $XCPEDIR is /xcpEngine
-
-
-======================== Checking Inputs =============================
-
-
-
-OK
 
 Constructing a pipeline based on user specifications
 ····································································
@@ -20,17 +13,17 @@ Constructing a pipeline based on user specifications
 
 Checking general dependencies
 ····································································
-· Version AFNI           AFNI_19.0.01 
-· Version ANTs           3.0.0.0.dev14-g21614 
+· Version AFNI           AFNI_19.1.01 
+· Version ANTs           3.0.0.0 
 · Version FSL            fsl-5.0.10 
 · Version C3D            1.1.0 
 · Version JQ             jq-1.5
-· Version XCP Engine     xcpEngine-v0.7.0-prerelease
+· Version XCP Engine     xcpEngine-v1.0
 · R version              3.3.3 
 · R scripting front-end  3.3.3 
 · · RNifti version       0.10.0
-· · optparse version     1.6.1
-· · pracma version       2.2.2
+· · optparse version     1.6.2
+· · pracma version       2.2.5
 · · signal version       0.7.6
 ····································································
 All general dependencies are present.
@@ -118,17 +111,10 @@ Localiser complete
 [I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
 [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats]
 NATIVE:LPI TEMPLATE:RPI
-
-Usage: fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize>
-       fslroi <input> <output> <tmin> <tsize>
-
-       fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize> <tmin> <tsize>
-Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a size will set it to the full image extent for that dimension.
-
-· [A major error has occurred.]
-· [The processing stream will now abort.]
-· [Preparing diagnostics]
+No non steady state volumes
 ····································································
+Processing step complete:
+getting data from frmiprep directory
 
 
 
@@ -143,28 +129,16 @@ Module Workflow Map
 · @0.1e
 · @0.1f
 · @0.1
-· @1
-· @1.1
-· @1.4
-· ERROR
+· @
+· @
+· @
+· @
+· @0.2
+· FINISH
 ····································································
 
 
-
-····································································
-· [An error occurred while processing module prestats.]
-· [The error was detected at signpost @1.4.]
-· [The most recent command logged was]
-· [fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_RPI_DVO.nii.gz]
-· [For additional details, view the processing log. For improved]
-· [diagnostics, increment verbosity using the -t option.]
-· []
-· [Processing failed to produce required output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/prestats/sub-ADS4111_ses-wave2~TEMP~_RPI_DVO.nii.gz]
-· []
-· [stream abort]
-····································································
-
-
+Module complete
 
 
 
@@ -181,11 +155,52 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+#                                                                 #
+#  ·                   CONFOUND MODEL MODULE                   ·  #
+#                                                                 #
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/confound2]
+The nuisance matrix is being selected base on design files
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Generating confound matrix
 ····································································
+Processing step complete:
+Validating confound model
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.1.1
+· @1.1.3
+· @1.1.5
+· @1.1.6
+· @1.2
+· @1.3
+· @1.5
+· @1.7
+· @1.8
+· @1.6
+· @2
+· @2.1a
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -202,11 +217,74 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                CONFOUND REGRESSION MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/regress]
+Design files  
+1.400000
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Demeaning and detrending BOLD timeseries
 ····································································
+Processing step complete:
+Temporally filtering image and confounds
+····································································
+Processing step complete:
+Converting BOLD timeseries to confound residuals
+····································································
+Processing step complete:
+Spatially filtering image
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· @7
+· @7.2
+· @7.5a
+· @7.5b
+· @7.6
+· @2
+· @2.2
+· @2.3
+· @2.5
+· @2.6
+· @2.8
+· @2.12a
+· @2.12b
+· @2.12c
+· @4
+· @4.2
+· @4.3
+· @4.5
+· @4.6
+· @0.2
+· @6
+· @6.1
+· @6.2
+· @6.4
+· @6.6
+· @6.10a
+· @6.10b
+· @6.11
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -223,11 +301,41 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗               FUNCTIONAL CONNECTOME MODULE                ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/fcon]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Functional connectome: gordon333
+
+
+
+Module Workflow Map
 ····································································
+· START
+· @0.1
+· @1
+· @1.2
+· @1.2.2
+· @1.3
+· @1.4
+· @1.5
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -244,11 +352,50 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                REGIONAL HOMOGENEITY MODULE                ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/reho]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Computing voxelwise ReHo
 ····································································
+Processing step complete:
+Spatially filtering ReHo map
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2c
+· @1.3
+· @1.4
+· @2
+· @2.1a
+· @2.2b
+· @2.2
+· @2.4
+· @2.4.2
+· @2.5
+· @0.1
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -265,11 +412,69 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗      AMPLITUDE OF LOW-FREQUENCY FLUCTUATIONS MODULE       ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/alff]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Spatially filtering image
 ····································································
+Processing step complete:
+Amplitude of low-frequency fluctuations
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @1.4
+· @1.6
+· @1.7a
+· @2
+· @2.0
+· @2.1
+· @2.3
+· @2.4
+· @2.5
+· @2.6
+· @2.7a
+· @2.7b
+· @2.7d
+· @2.7e
+· @2.8
+· @2.9
+· @2.0
+· @2.1
+· @2.3
+· @2.4
+· @2.5
+· @2.6
+· @2.7a
+· @2.7b
+· @2.7d
+· @2.7e
+· @2.8
+· @2.9
+· @0.1
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -286,11 +491,72 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗             ATLAS-BASED QUANTIFICATION MODULE             ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/roiquant]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Regional quantification: gordon333
 ····································································
+Processing step complete:
+Regional quantification: global
+····································································
+Processing step complete:
+Regional quantification: segmentation
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0.1
+· @1
+· @1.2
+· @1.2.1
+· @1.2.7
+· @1.3.3
+· @1.3.4
+· @1.3.5
+· @1.3.6
+· @1.3.7
+· @1.3.8
+· @1.3.9
+· @1
+· @1.2
+· @1.2.2
+· @1.3.3
+· @1.3.4
+· @1.3.5
+· @1.3.6
+· @1.3.7
+· @1.3.8
+· @1.3.9
+· @1
+· @1.2
+· @1.2.2
+· @1.3.3
+· @1.3.4
+· @1.3.5
+· @1.3.6
+· @1.3.7
+· @1.3.8
+· @1.3.9
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -307,11 +573,69 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                IMAGE NORMALISATION MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/norm]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Normalising using ANTs
 ····································································
+Processing step complete:
+Quality assessment
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @1.3
+· @1.4
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.6
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @1.5
+· @1.8
+· @2.0
+· @2
+· @2.1
+· @2.2
+· FINISH
+····································································
+
+
+Module complete
 
 
 
@@ -328,11 +652,61 @@ Module Workflow Map
 
 [Delegating control to module]
 
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗           FUNCTIONAL QUALITY ASSESSMENT MODULE            ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/sub-ADS4111_ses-wave2.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS4111/ses-wave2/qcfc]
 ····································································
-· [Module failure occurred in a number of subjects. They have been]
-· [removed from further analysis.]
-· · [sub-ADS4111_ses-wave2 removed from analysis]
+Processing step complete:
+Preparing depth map
 ····································································
+Processing step complete:
+Aligning depth map
+····································································
+Processing step complete:
+Preparing summary graphics
+····································································
+Processing step complete:
+Estimating loss of temporal degrees of freedom
+····································································
+Processing step complete:
+Estimating post-processing DVARS
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.2
+· @2
+· @2.1
+· @2.2
+· @2.4
+· @3
+· @3.1
+· @3.2
+· @4
+· @4.1
+· @4.4
+· @5
+· @5.1
+· FINISH
+····································································
+
+
+Module complete
 
 
 

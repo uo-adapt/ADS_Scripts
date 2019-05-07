@@ -1,36 +1,29 @@
 [Detected that xcp is in a container]
-Received options: -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS1421,ses-wave3.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 3 -i $TMPDIR
+Received options: -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS3124,ses-wave2.csv -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data -t 3 -i $TMPDIR
 $XCPEDIR is /xcpEngine
-
-
-======================== Checking Inputs =============================
-
-
-
-OK
 
 Constructing a pipeline based on user specifications
 ····································································
 · [D][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn]
 · [I][$TMPDIR]
-· [C][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS1421,ses-wave3.csv]
+· [C][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS3124,ses-wave2.csv]
 · [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data]
 · [M][Executing serially]
 ····································································
 
 Checking general dependencies
 ····································································
-· Version AFNI           AFNI_19.0.01 
-· Version ANTs           3.0.0.0.dev14-g21614 
+· Version AFNI           AFNI_19.1.01 
+· Version ANTs           3.0.0.0 
 · Version FSL            fsl-5.0.10 
 · Version C3D            1.1.0 
 · Version JQ             jq-1.5
-· Version XCP Engine     xcpEngine-v0.7.0-prerelease
+· Version XCP Engine     xcpEngine-v1.0
 · R version              3.3.3 
 · R scripting front-end  3.3.3 
 · · RNifti version       0.10.0
-· · optparse version     1.6.1
-· · pracma version       2.2.2
+· · optparse version     1.6.2
+· · pracma version       2.2.5
 · · signal version       0.7.6
 ····································································
 All general dependencies are present.
@@ -103,68 +96,11 @@ Localiser complete
 
 [Delegating control to module]
 
-
-
-###################################################################
-#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
-#                                                                 #
-#  ⊗                 FMRI PREPROCESSING MODULE                 ⊗  #
-#                                                                 #
-#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
-###################################################################
-
-
-
-[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/sub-ADS1421_ses-wave3.nii.gz]
-[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/prestats]
-NATIVE:LPI TEMPLATE:RPI
-
-Usage: fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize>
-       fslroi <input> <output> <tmin> <tsize>
-
-       fslroi <input> <output> <xmin> <xsize> <ymin> <ysize> <zmin> <zsize> <tmin> <tsize>
-Note: indexing (in both time and space) starts with 0 not 1! Inputting -1 for a size will set it to the full image extent for that dimension.
-
-· [A major error has occurred.]
-· [The processing stream will now abort.]
-· [Preparing diagnostics]
 ····································································
-
-
-
-Module Workflow Map
+· [Module failure occurred in a number of subjects. They have been]
+· [removed from further analysis.]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
-· START
-· @0
-· @0.1a
-· @0.1b
-· @0.1c
-· @0.1d
-· @0.1e
-· @0.1f
-· @0.1
-· @1
-· @1.1
-· @1.4
-· ERROR
-····································································
-
-
-
-····································································
-· [An error occurred while processing module prestats.]
-· [The error was detected at signpost @1.4.]
-· [The most recent command logged was]
-· [fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/prestats/sub-ADS1421_ses-wave3~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/prestats/sub-ADS1421_ses-wave3~TEMP~_RPI_DVO.nii.gz]
-· [For additional details, view the processing log. For improved]
-· [diagnostics, increment verbosity using the -t option.]
-· []
-· [Processing failed to produce required output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1421/ses-wave3/prestats/sub-ADS1421_ses-wave3~TEMP~_RPI_DVO.nii.gz]
-· []
-· [stream abort]
-····································································
-
-
 
 
 
@@ -184,7 +120,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -205,7 +141,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -226,7 +162,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -247,7 +183,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -268,7 +204,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -289,7 +225,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -310,7 +246,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
@@ -331,7 +267,7 @@ Module Workflow Map
 ····································································
 · [Module failure occurred in a number of subjects. They have been]
 · [removed from further analysis.]
-· · [sub-ADS1421_ses-wave3 removed from analysis]
+· · [sub-ADS3124_ses-wave2 removed from analysis]
 ····································································
 
 
