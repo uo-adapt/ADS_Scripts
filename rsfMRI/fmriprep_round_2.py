@@ -25,7 +25,7 @@ subjectdir_contents = [html for html in subjectdir_contents if '.html' not in ht
 
 subjectdir_contents = list(set(subjectdir_contents) - set(html_list))
 
-
+subjectdir_contents.sort()
 
 with open(os.path.join(codedir,"subject_list.txt"), mode="w") as outfile:  # also, tried mode="rb"
     for subject in subjectdir_contents:
