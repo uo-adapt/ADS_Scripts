@@ -15,7 +15,7 @@ scriptsFolder = "Scripts"
 # Directories
 parentdir = os.path.join(os.sep, "projects", group, "shared", study) # folder that contains bidsdir and codedir
 fmiprepdir = os.path.join(parentdir, "data", "BIDS_data", "derivatives", "fmriprep")
-codedir = os.path.join(parentdir, scriptsFolder, "org", "conversion") # Contains subject_list.txt, config file, and dcm2bids_batch.py
+codedir = os.path.join(parentdir, scriptsFolder, "rsfMIR") # Contains subject_list.txt, config file, and dcm2bids_batch.py
 
 subjectdir_contents = os.listdir(fmiprepdir)
 subjectdir_contents.sort()
