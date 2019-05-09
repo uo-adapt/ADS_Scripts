@@ -45,4 +45,41 @@ Captured warning (<class 'ImportWarning'>): can't resolve package from __spec__ 
 /usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
   return f(*args, **kwds)
 Captured warning (<class 'PendingDeprecationWarning'>): the matrix subclass is not the recommended way to represent matrices or deal with linear algebra (see https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html). Please adjust your code to use regular ndarray.
-slurmstepd: error: *** JOB 3162560 ON n065 CANCELLED AT 2019-02-17T15:34:45 DUE TO TIME LIMIT ***
+/usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/usr/local/miniconda/lib/python3.6/site-packages/skimage/__init__.py:80: ResourceWarning: unclosed file <_io.TextIOWrapper name='/usr/local/miniconda/lib/python3.6/site-packages/pytest.py' mode='r' encoding='utf-8'>
+  imp.find_module('pytest')
+/usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+/usr/local/miniconda/lib/python3.6/importlib/_bootstrap.py:219: ImportWarning: can't resolve package from __spec__ or __package__, falling back on __name__ and __path__
+  return f(*args, **kwds)
+Traceback (most recent call last):
+  File "/usr/local/miniconda/bin/fmriprep", line 11, in <module>
+    sys.exit(main())
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/cli/run.py", line 440, in main
+    sentry_sdk=sentry_sdk)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 348, in generate_reports
+    for subject_label in subject_list
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 348, in <listcomp>
+    for subject_label in subject_list
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 336, in run_reports
+    report = Report(reportlet_path, config, out_dir, run_uuid, out_filename, sentry_sdk=sentry_sdk)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 72, in __init__
+    self._load_config(config)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 78, in _load_config
+    self.index(config['sections'])
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 120, in index
+    self.index_error_dir(error_dir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/fmriprep/viz/reports.py", line 184, in index_error_dir
+    self.sentry_sdk.add_breadcrumb(fingerprint, 'fatal')
+  File "/usr/local/miniconda/lib/python3.6/site-packages/sentry_sdk/api.py", line 54, in add_breadcrumb
+    return hub.add_breadcrumb(*args, **kwargs)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/sentry_sdk/hub.py", line 254, in add_breadcrumb
+    crumb = dict(crumb or ())
+ValueError: dictionary update sequence element #0 has length 1; 2 is required
+Sentry is attempting to send 1 pending error messages
+Waiting up to 2.0 seconds
+Press Ctrl-C to quit
+Captured warning (<class 'ResourceWarning'>): unclosed <socket.socket fd=7, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=6, laddr=('172.20.11.58', 60422), raddr=('35.188.42.15', 443)>
