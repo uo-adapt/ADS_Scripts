@@ -29,7 +29,7 @@ tasks = {"rest"}
 # Change this to either be anatomical (anat) or functional (rest)
 preproc= "func"
 
-subjectdir_contents = os.listdir(xcpdir)
+subjectdir_contents = os.listdir(fmriprepdir)
 
 subjectdir_contents = list(filter(lambda k: 'sub-' in k, subjectdir_contents))
 subjectdir_contents = [x for x in subjectdir_contents if not '.html' in x]
@@ -47,6 +47,6 @@ for task in tasks:
                 if os.path.isdir(wavepath):
                     filepath = os.path.join(wavepath,preproc,subject + "_" + wave + "_task-" + task + "_space-T1w_desc-preproc_bold.nii.gz")
                     if os.path.isfile(filepath):
-                        row = [subject + "," + wave + "," + filepath + "," + os.path.join(xcpdir,subject,"struc")]
+                        row = [subject + "," + wave + "," + filepath + "," + os.path.join(fmriprepdir,subject,"anat")]
                         writer.writerow(row)
                         
