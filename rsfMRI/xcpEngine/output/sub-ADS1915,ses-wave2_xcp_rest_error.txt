@@ -88,7 +88,7 @@ ls: cannot access '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmr
 >> fslmaths sub-ADS1915_ses-wave2_imgmask.nii.gz -mul sub-ADS1915_ses-wave2_structmask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_mask.nii.gz
 Image Exception : #22 :: ERROR: Could not open image sub-ADS1915_ses-wave2_structmask
 terminate called after throwing an instance of 'RBD_COMMON::BaseException'
-/xcpEngine/core/functions/exec_fsl: line 1: 131137 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
+/xcpEngine/core/functions/exec_fsl: line 1: 12396 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
 rm: cannot remove 'sub-ADS1915_ses-wave2_structmask.nii.gz': No such file or directory
                              -   -   -
 >> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_mask.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1915/anat/*BrainSegmentation.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_segmentation.nii.gz -overwrite
@@ -115,3 +115,9 @@ Execution halted
 · @0.2 
                              -   -   -
 >> imcp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2~TEMP~_FMP.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_preprocessed.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS1915/ses-wave2/func/sub-ADS1915_ses-wave2_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_preprocessed.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_preprocessed.nii.gz -t 1.400000
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_preprocessed.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_preprocessed.nii.gz -overwrite

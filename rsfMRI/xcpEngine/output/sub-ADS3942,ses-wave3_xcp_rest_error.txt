@@ -88,7 +88,7 @@ ls: cannot access '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmr
 >> fslmaths sub-ADS3942_ses-wave3_imgmask.nii.gz -mul sub-ADS3942_ses-wave3_structmask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_mask.nii.gz
 Image Exception : #22 :: ERROR: Could not open image sub-ADS3942_ses-wave3_structmask
 terminate called after throwing an instance of 'RBD_COMMON::BaseException'
-/xcpEngine/core/functions/exec_fsl: line 1: 57310 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
+/xcpEngine/core/functions/exec_fsl: line 1: 60811 Aborted                 (core dumped) ${FSLDIR}/bin/"${@}"
 rm: cannot remove 'sub-ADS3942_ses-wave3_structmask.nii.gz': No such file or directory
                              -   -   -
 >> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_mask.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS3942/anat/*BrainSegmentation.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_segmentation.nii.gz -overwrite
@@ -119,3 +119,5 @@ Execution halted
 >> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS3942/ses-wave3/func/sub-ADS3942_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
                              -   -   -
 >> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_preprocessed.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_preprocessed.nii.gz -t 1.400000
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_preprocessed.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats/sub-ADS3942_ses-wave3_preprocessed.nii.gz -overwrite
