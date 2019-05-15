@@ -40,3 +40,167 @@ Current processing step:
 ····································································
 · @3.1 [Writing localised design]
 · @3.2 [Evaluating subject variables]
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@0 Ensure matching orientation
+····································································
+· @0.1a Input: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~.nii.gz
+· @0.1b Template: /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· @0.1c Output root:
+· @0.1d checking the orientation of img and template
+                             -   -   -
+>> 3dinfo -orient /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 3dinfo -orient /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· @0.1e img and template orientation are not the same
+· @0.1f make it: LPI -> RPI
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~_RPI.nii.gz
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~.nii.gz
+· @0.1 
+
+
+
+Current processing step:
+@ getting data from frmiprep directory
+····································································
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~_FMP
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/func/sub-ADS2403_ses-wave3_task-rest_desc-confounds_regressors.tsv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/func/sub-ADS2403_ses-wave3_task-rest_space-T1w_boldref.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolume.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/func/sub-ADS2403_ses-wave3_task-rest_space-T1w_desc-brain_mask.nii.gz -prefix sub-ADS2403_ses-wave3_imgmask.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/..//anat/sub-ADS2403_desc-brain_mask.nii.gz -prefix sub-ADS2403_ses-wave3_structmask.nii.gz -overwrite
+                             -   -   -
+>> fslmaths sub-ADS2403_ses-wave3_imgmask.nii.gz -mul sub-ADS2403_ses-wave3_structmask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_mask.nii.gz
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/..//anat/sub-ADS2403_dseg.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_segmentation.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/..//anat/sub-ADS2403_desc-preproc_T1w.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_struct.nii.gz -overwrite
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolumeBrain.nii.gz
+· @ generate new /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3_spaces.json with spaceMetadata
+· @ Quality assessment
+                             -   -   -
+>> ${XCPEDIR}/utils/maskOverlap.R -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_segmentation.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_referenceVolumeBrain.nii.gz
+· [Cross-correlation:    0.9435356 ]
+· [Coverage:             1 ]
+· [Jaccard coefficient:  0.9224 ]
+· [Dice coefficient:     0.9596338 ]
+· @0.2 
+                             -   -   -
+>> imcp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3~TEMP~_FMP.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS2403/ses-wave3/func/sub-ADS2403_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz -t 1.400000
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz -overwrite
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_preprocessed.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+                             -   -   -
+>> mkdir -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc
+
+
+
+Current processing step:
+@1 Generating confound matrix
+····································································
+· @1.1 Generating temporal mask
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j stdVARS -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_dvars-std.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j rps -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_realignment.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j fd -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relRMS.1D
+· @1.1.1 [Computing framewise displacement]
+                             -   -   -
+>> ${XCPEDIR}/utils/fd.R -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_realignment.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_fd.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_spatial_sd.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_ts_quality_index.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_ts_outliers.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz -S
+                             -   -   -
+>> 3dTqual -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz
+                             -   -   -
+>> 3dToutcount -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relRMS.1D
+· @1.1.3 [Selecting quality criteria]
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3-nFlags.1D
+· @1.1.5 [Applying framewise threshold to time series]
+                             -   -   -
+>> ${XCPEDIR}/utils/tmask.R -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3-nFlags.1D -t 0.5 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_tmask.1D -m 0
+· @1.1.6 [Evaluating data quality]
+· @1.2 relative maximum motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relRMS.1D -o max -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relMaxRMS.txt
+· @1.3 relative mean motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relRMS.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relMeanRMS.txt
+· @1.5 Including csf
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j csf -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_csf.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x null -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_csf.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D
+· @1.7 Including gsr
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j gsr -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_gsr.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_gsr.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D
+· @1.8 Including wm
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j wm -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_wm.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_wm.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D
+· @1.6 Including aroma
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_fmriconf.tsv -j aroma -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_aroma.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_aroma.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_confmat.1D
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz
+
+
+
+Current processing step:
+@2 Validating confound model
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/sub-ADS2403_ses-wave3_modelParameterCount.txt
+· @2.1a 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/regress/sub-ADS2403_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+· @0.1 
+
+
+
+Current processing step:
+@7 Demeaning and detrending BOLD timeseries
+····································································
+· @7.2 
+· @7.5a [Applying polynomial detrend]
+· @7.5b [Order: 2]
+                             -   -   -
+>> ${XCPEDIR}/utils/dmdt.R -d 2 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/sub-ADS2403_ses-wave3.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/regress/sub-ADS2403_ses-wave3~TEMP~_DMT.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/prestats/sub-ADS2403_ses-wave3_mask.nii.gz
