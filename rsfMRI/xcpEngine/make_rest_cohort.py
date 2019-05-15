@@ -38,7 +38,7 @@ subjectdir_contents.sort()
 for task in tasks:
     with open(os.path.join(codedir, task + '_cohort.csv'),'w') as f1:
         writer=csv.writer(f1, delimiter='\t',lineterminator='\n',)
-        head = ["id0,id1,img,antsct"]
+        head = ["id0,id1,img,anat"]
         writer.writerow(head)
         for subject, wave in [(subject,wave) for subject in subjectdir_contents for wave in waves]:
             subjectpath = os.path.join(fmriprepdir,subject)
