@@ -8,6 +8,247 @@ Subject directory: /projects/adapt_lab/shared/ADS/data/BIDS_data
 Starting on: rest
 
 
+190526-18:53:20,443 nipype.workflow IMPORTANT:
+	 
+    Running fMRIPREP version 1.2.4:
+      * BIDS dataset path: /projects/adapt_lab/shared/ADS/data/BIDS_data.
+      * Participant list: ['ADS9622'].
+      * Run identifier: 20190526-185320_41f0183b-460b-46bf-bc8f-89fee1f38f1c.
+    
+190526-18:53:39,874 nipype.workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS9622/ses-wave2/func/sub-ADS9622_ses-wave2_task-rest_bold.nii.gz" (0.06 GB / 510 TRs). Memory resampled/largemem=0.22/0.51 GB.
+190526-18:53:39,936 nipype.workflow IMPORTANT:
+	 No single-band-reference found for sub-ADS9622_ses-wave2_task-rest_bold.nii.gz
+190526-18:53:43,52 nipype.workflow IMPORTANT:
+	 Slice-timing correction will be included.
+190526-18:53:47,981 nipype.workflow IMPORTANT:
+	 SDC: fieldmap estimation of type "phasediff" intended for /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS9622/ses-wave2/func/sub-ADS9622_ses-wave2_task-rest_bold.nii.gz found.
+190526-18:53:50,876 nipype.workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+190526-18:53:55,996 nipype.workflow IMPORTANT:
+	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS9622/ses-wave3/func/sub-ADS9622_ses-wave3_task-rest_bold.nii.gz" (0.05 GB / 510 TRs). Memory resampled/largemem=0.22/0.49 GB.
+190526-18:53:56,57 nipype.workflow IMPORTANT:
+	 No single-band-reference found for sub-ADS9622_ses-wave3_task-rest_bold.nii.gz
+190526-18:53:57,722 nipype.workflow IMPORTANT:
+	 Slice-timing correction will be included.
+190526-18:53:58,298 nipype.workflow IMPORTANT:
+	 SDC: fieldmap estimation of type "phasediff" intended for /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS9622/ses-wave3/func/sub-ADS9622_ses-wave3_task-rest_bold.nii.gz found.
+190526-18:54:01,207 nipype.workflow IMPORTANT:
+	 Creating BOLD surface-sampling workflow.
+190526-18:54:11,400 nipype.workflow IMPORTANT:
+	 Works derived from this fMRIPrep execution should include the following boilerplate:
+
+
+Results included in this manuscript come from preprocessing
+performed using *fMRIPprep* 1.2.4
+(@fmriprep1; @fmriprep2; RRID:SCR_016216),
+which is based on *Nipype* 1.1.6
+(@nipype1; @nipype2; RRID:SCR_002502).
+
+Anatomical data preprocessing
+
+: A total of 2 T1-weighted (T1w) images were found within the input
+BIDS dataset.
+All of them were corrected for intensity non-uniformity (INU)
+using `N4BiasFieldCorrection` [@n4, ANTs 2.2.0].
+A T1w-reference map was computed after registration of
+2 T1w images (after INU-correction) using
+`mri_robust_template` [FreeSurfer 6.0.1, @fs_template].
+The T1w-reference was then skull-stripped using `antsBrainExtraction.sh`
+(ANTs 2.2.0), using OASIS as target template.
+Brain surfaces were reconstructed using `recon-all` [FreeSurfer 6.0.1,
+RRID:SCR_001847, @fs_reconall], and the brain mask estimated
+previously was refined with a custom variation of the method to reconcile
+ANTs-derived and FreeSurfer-derived segmentations of the cortical
+gray-matter of Mindboggle [RRID:SCR_002438, @mindboggle].
+Spatial normalization to the ICBM 152 Nonlinear Asymmetrical
+template version 2009c [@mni, RRID:SCR_008796] was performed
+through nonlinear registration with `antsRegistration`
+[ANTs 2.2.0, RRID:SCR_004757, @ants], using
+brain-extracted versions of both T1w volume and template.
+Brain tissue segmentation of cerebrospinal fluid (CSF),
+white-matter (WM) and gray-matter (GM) was performed on
+the brain-extracted T1w using `fast` [FSL 5.0.9, RRID:SCR_002823,
+@fsl_fast].
+
+
+Functional data preprocessing
+
+: For each of the 2 BOLD runs found per subject (across all
+tasks and sessions), the following preprocessing was performed.
+First, a reference volume and its skull-stripped version were generated
+using a custom methodology of *fMRIPrep*.
+A deformation field to correct for susceptibility distortions was estimated
+based on a field map that was co-registered to the BOLD reference,
+using a custom workflow of *fMRIPrep* derived from D. Greve's `epidewarp.fsl`
+[script](http://www.nmr.mgh.harvard.edu/~greve/fbirn/b0/epidewarp.fsl) and
+further improvements of HCP Pipelines [@hcppipelines].
+Based on the estimated susceptibility distortion, an
+unwarped BOLD reference was calculated for a more accurate
+co-registration with the anatomical reference.
+The BOLD reference was then co-registered to the T1w reference using
+`bbregister` (FreeSurfer) which implements boundary-based registration [@bbr].
+Co-registration was configured with nine degrees of freedom to account
+for distortions remaining in the BOLD reference.
+Head-motion parameters with respect to the BOLD reference
+(transformation matrices, and six corresponding rotation and translation
+parameters) are estimated before any spatiotemporal filtering using
+`mcflirt` [FSL 5.0.9, @mcflirt].
+BOLD runs were slice-time corrected using `3dTshift` from
+AFNI 20160207 [@afni, RRID:SCR_005927].
+The BOLD time-series, were resampled to surfaces on the following
+spaces: *fsaverage5*, *fsnative*.
+The BOLD time-series (including slice-timing correction when applied)
+were resampled onto their original, native space by applying
+a single, composite transform to correct for head-motion and
+susceptibility distortions.
+These resampled BOLD time-series will be referred to as *preprocessed
+BOLD in original space*, or just *preprocessed BOLD*.
+First, a reference volume and its skull-stripped version were generated
+using a custom methodology of *fMRIPrep*.
+Automatic removal of motion artifacts using independent component analysis
+[ICA-AROMA, @aroma] was performed on the *preprocessed BOLD on MNI space*
+time-series after removal of non-steady state volumes and spatial smoothing
+with an isotropic, Gaussian kernel of 6mm FWHM (full-width half-maximum).
+Corresponding "non-aggresively" denoised runs were produced after such
+smoothing.
+Additionally, the "aggressive" noise-regressors were collected and placed
+in the corresponding confounds file.
+The BOLD time-series were resampled to MNI152NLin2009cAsym standard space,
+generating a *preprocessed BOLD run in MNI152NLin2009cAsym space*.
+First, a reference volume and its skull-stripped version were generated
+using a custom methodology of *fMRIPrep*.
+Several confounding time-series were calculated based on the
+*preprocessed BOLD*: framewise displacement (FD), DVARS and
+three region-wise global signals.
+FD and DVARS are calculated for each functional run, both using their
+implementations in *Nipype* [following the definitions by @power_fd_dvars].
+The three global signals are extracted within the CSF, the WM, and
+the whole-brain masks.
+Additionally, a set of physiological regressors were extracted to
+allow for component-based noise correction [*CompCor*, @compcor].
+Principal components are estimated after high-pass filtering the
+*preprocessed BOLD* time-series (using a discrete cosine filter with
+128s cut-off) for the two *CompCor* variants: temporal (tCompCor)
+and anatomical (aCompCor).
+Six tCompCor components are then calculated from the top 5% variable
+voxels within a mask covering the subcortical regions.
+This subcortical mask is obtained by heavily eroding the brain mask,
+which ensures it does not include cortical GM regions.
+For aCompCor, six components are calculated within the intersection of
+the aforementioned mask and the union of CSF and WM masks calculated
+in T1w space, after their projection to the native space of each
+functional run (using the inverse BOLD-to-T1w transformation).
+The head-motion estimates calculated in the correction step were also
+placed within the corresponding confounds file.
+All resamplings can be performed with *a single interpolation
+step* by composing all the pertinent transformations (i.e. head-motion
+transform matrices, susceptibility distortion correction when available,
+and co-registrations to anatomical and template spaces).
+Gridded (volumetric) resamplings were performed using `antsApplyTransforms` (ANTs),
+configured with Lanczos interpolation to minimize the smoothing
+effects of other kernels [@lanczos].
+Non-gridded (surface) resamplings were performed using `mri_vol2surf`
+(FreeSurfer).
+
+
+Many internal operations of *fMRIPrep* use
+*Nilearn* 0.5.0 [@nilearn, RRID:SCR_001362],
+mostly within the functional processing workflow.
+For more details of the pipeline, see [the section corresponding
+to workflows in *fMRIPrep*'s documentation](https://fmriprep.readthedocs.io/en/latest/workflows.html "FMRIPrep's documentation").
+
+
+### References
+
+
+190526-18:55:25,541 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.autorecon1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/autorecon1".
+190526-18:55:25,625 nipype.interface INFO:
+	 recon-all complete : Not running
+190526-18:55:25,626 nipype.workflow INFO:
+	 [Node] Running "autorecon1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+echo recon-all: nothing to do
+190526-18:55:25,633 nipype.interface INFO:
+	 recon-all complete : Not running
+190526-18:55:25,784 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.autorecon1".
+190526-18:55:31,109 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
+190526-18:55:31,153 nipype.workflow INFO:
+	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted")
+190526-18:55:31,170 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+190526-18:55:35,507 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+190526-18:55:35,582 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+190526-18:55:35,585 nipype.workflow INFO:
+	 [Node] Running "autorecon2_vol" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+190526-18:55:35,592 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+190526-18:55:44,249 nipype.workflow WARNING:
+	 [Node] Error on "fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS9622_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol)
+190526-18:55:44,434 nipype.workflow ERROR:
+	 Node autorecon2_vol failed to run on host n066.
+190526-18:55:44,440 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS9622/log/20190526-185320_41f0183b-460b-46bf-bc8f-89fee1f38f1c/crash-20190526-185544-pettitta-autorecon2_vol-a66c9cff-2706-4235-ae64-3bf6fa59c187.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
+    self.raise_exception(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS9622 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
+Standard output:
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+Actual FREESURFER_HOME /opt/freesurfer
+-rw-rw-r-- 1 pettitta adapt_lab 239453 May 26 18:15 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/recon-all.log
+Linux n066 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+ERROR: it appears that recon-all is already running
+for sub-ADS9622 based on the presence of /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/IsRunning.lh+rh. It could
+also be that recon-all was running at one point but
+died in an unexpected way. If it is the case that there
+is a process running, you can kill it and start over or
+just let it run. If the process has died, you should type:
+
+rm /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS9622/scripts/IsRunning.lh+rh
+
+and re-run. Or you can add -no-isrunning to the recon-all
+command-line. The contents of this file are:
+----------------------------------------------------------
+------------------------------
+SUBJECT sub-ADS9622
+HEMI    lh rh
+DATE Sun May 26 18:13:32 UTC 2019
+USER pettitta
+HOST n053
+PROCESSID 159554 
+PROCESSOR x86_64
+OS Linux
+Linux n053 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+$Id: recon-all,v 1.580.2.16 2017/01/18 14:11:24 zkaufman Exp $
+----------------------------------------------------------
+Standard error:
+
+Return code: 1
+
+190526-18:56:32,469 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS9622_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol
 
 
 
