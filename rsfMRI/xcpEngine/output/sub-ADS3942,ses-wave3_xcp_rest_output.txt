@@ -4,55 +4,231 @@ $XCPEDIR is /xcpEngine
 
 Constructing a pipeline based on user specifications
 ····································································
-· [D]Missing or empty design file
-· [D]Aborting
-___________________________________________________________________
+· [D][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537_1.dsn]
+· [I][$TMPDIR]
+· [C][/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS3942,ses-wave3.csv]
+· [O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data]
+· [M][Executing serially]
+····································································
 
-   Usage: xcpEngine -d <design> <options>
+Checking general dependencies
+····································································
+· Version AFNI           AFNI_19.1.01 
+· Version ANTs           3.0.0.0 
+· Version FSL            fsl-5.0.10 
+· Version C3D            1.1.0 
+· Version JQ             jq-1.5
+· Version XCP Engine     xcpEngine-v1.0
+· R version              3.3.3 
+· R scripting front-end  3.3.3 
+· · RNifti version       0.10.0
+· · optparse version     1.6.2
+· · pracma version       2.2.5
+· · signal version       0.7.6
+····································································
+All general dependencies are present.
 
-   Compulsory arguments:
-    -d : Primary design file for pipeline:
-         The design file specifies the pipeline modules to
-         be included in the current analysis and configures
-         any parameters necessary to run the modules.
-    -c : Cohort file for pipeline input:
-         A comma-separated catalogue of the analytic sample.
-         Each row corresponds to a subject, and each column
-         corresponds either to an identifier or to an input.
-    -o : Parent directory for pipeline output:
-         A valid path on the current filesystem specifying
-         the directory wherein all output from the current
-         analysis will be written.
+Checking environment
+All environmental variables are defined.
 
-   Optional arguments:
-    -m : Execution mode:
-         Input can either be 's' (for serial execution on a
-         single machine)[default], 'c' (for execution on a
-         computing cluster) or a path to a file (for execution
-         on a computing cluster, subject to the specifications
-         defined in the file).
-    -i : Scratch space for pipeline intermediates:
-         Some systems operate more quickly when temporary
-         files are written in a dedicated scratch space. This
-         argument enables a scratch space for intermediates.
-    -r : Root directory for inputs:
-         If all paths defined in the cohort file are defined
-         relative to a root directory, then this argument will
-         define the root directory. Otherwise, all paths will
-         be treated as absolute.
-    -t : Trace:
-         Integer value ( 0 - 3 ) that indicates the level
-         of verbosity during module execution. Higher
-         levels reduce readability but provide useful
-         information for troubleshooting.
-         0  [default]: Human-readable explanations of
-            processing steps and error traces only.
-         1: Explicitly trace module-level computations.
-            Print a workflow map when execution completes.
-         2: Explicitly trace module- and utility-level
-            computations.
-         3: All commands called by the module and all
-            children are traced and explicitly replicated
-            in a log file.
+Checking module-specific dependencies
 
 
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+#  [0;31m⊗[0m                      XCP [0;31m★ ★ ★[0m ENGINE                     [0;31m⊗[0m  #
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m LOCALISER [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                   XCP ENGINE LOCALISER                    ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+source space map '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS3942/anat/struc/*ExtractedBrain0N4.nii.gz' is not an image
+····································································
+Processing step complete:
+Localising subject metadata...
+····································································
+Processing step complete:
+Localising image
+····································································
+Processing step complete:
+Localising design
+
+
+Localiser complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m prestats [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                 FMRI PREPROCESSING MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/sub-ADS3942_ses-wave3.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/prestats]
+NATIVE:LPI TEMPLATE:RPI
+····································································
+Processing step complete:
+getting data from frmiprep directory
+
+
+
+Module Workflow Map
+····································································
+· START
+· @0
+· @0.1a
+· @0.1b
+· @0.1c
+· @0.1d
+· @0.1e
+· @0.1f
+· @0.1
+· @
+· @
+· @
+· @0.2
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m confound2 [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+#                                                                 #
+#  ·                   CONFOUND MODEL MODULE                   ·  #
+#                                                                 #
+#  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  ·  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/sub-ADS3942_ses-wave3.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/confound2]
+The nuisance matrix is being selected base on design files
+····································································
+Processing step complete:
+Generating confound matrix
+····································································
+Processing step complete:
+Validating confound model
+
+
+
+Module Workflow Map
+····································································
+· START
+· @1
+· @1.1
+· @1.1.1
+· @1.1.3
+· @1.1.5
+· @1.1.6
+· @1.2
+· @1.3
+· @1.5
+· @1.7
+· @1.8
+· @1.6
+· @2
+· @2.1a
+· FINISH
+····································································
+
+
+Module complete
+
+
+
+###################################################################
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+#                                                                 #
+                  CURRENTLY PROCESSING MODULE:
+                         [0;31m★[0m regress [0;31m★[0m
+#                                                                 #
+#  [0;31m⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗[0m  #
+###################################################################
+
+
+
+[Delegating control to module]
+
+
+
+###################################################################
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+#                                                                 #
+#  ⊗                CONFOUND REGRESSION MODULE                 ⊗  #
+#                                                                 #
+#  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  ⊗  #
+###################################################################
+
+
+
+[I][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/sub-ADS3942_ses-wave3.nii.gz]
+[O][/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS3942/ses-wave3/regress]
+Design files  
+1.400000
