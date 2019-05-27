@@ -204,3 +204,55 @@ Current processing step:
 · @7.5b [Order: 2]
                              -   -   -
 >> ${XCPEDIR}/utils/dmdt.R -d 2 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_mask.nii.gz
+· @7.6 [Executing detrend: Confound matrix]
+                             -   -   -
+>> ${XCPEDIR}/utils/1dDMDT.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/confound2/sub-ADS1915_ses-wave2_confmat.1D -d 2 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_confmat.1D
+
+
+
+Current processing step:
+@2 Temporally filtering image and confounds
+····································································
+· @2.2 
+· @2.3 
+· @2.5 
+· @2.6 
+· @2.8 
+· @2.12a [butterworth filter]
+· @2.12b [High pass frequency: 0.01]
+· @2.12c [Low pass frequency: 0.08]
+                             -   -   -
+>> ${XCPEDIR}/utils/tfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP.nii.gz -a 1.400000 -f butterworth -h 0.01 -l 0.08 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_mask.nii.gz -r 1 -d 2 -1 confmat:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_confmat.1D
+                             -   -   -
+>> remove_ext /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT.nii.gz pixdim4
+· @u.4 
+· @u.8 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/genfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP.nii.gz -f butterworth -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/prestats/sub-ADS1915_ses-wave2_mask.nii.gz -c 0.01 -l 0.08 -r 1 -d 2
+· @u.8.3 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP_confmat.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/1dGenfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_confmat.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP_confmat.1D -f butterworth -t 1.400000 -c 0.01 -l 0.08 -r 1 -d 2
+
+
+
+Current processing step:
+@4 Converting BOLD timeseries to confound residuals
+····································································
+· @4.2 
+· @4.3 
+                             -   -   -
+>> mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP_confmat.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2_confmat.1D
+· @4.5 [Computing confound correlations]
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2_confmat.1D
+· @4.6 [Executing detrend]
+                             -   -   -
+>> 3dTproject -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP.nii.gz -ort /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2_confmat.1D -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2~TEMP~_DMT_TMP_REG.nii.gz
