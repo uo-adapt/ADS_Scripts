@@ -1,0 +1,13 @@
+subj=sub-ADS1915
+mri_vol2surf --mov ~/Desktop/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
+--out lh.sub-ADS1915_ses-wave2.mgh \
+--reg  ~/Desktop/fmriprep/sub-ADS1915/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--hemi lh \
+--interp nearest 
+
+
+mri_segstats \
+--annot sub-ADS1915 lh aparc \
+--i ~/Desktop/freesurfer/sub-ADS1915/surf/lh.sub-ADS1915_ses-wave2.mgh \
+--sum lh_1_16.sum.txt \
+--avgwf lh_1_16.wav.txt

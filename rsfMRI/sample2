@@ -13,13 +13,22 @@ lta_convert --initk ${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
 --subject ${subj} 
 
 
-mri_vol2surf --src /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
---out lh.sub-ADS1915_ses-wave2.mgz \
---srcreg  ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+mri_vol2surf --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
+--out lh.sub-ADS1915_ses-wave2.mgh \
+--reg  ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
 --hemi lh \
 --projfrac 0.5 \
 --interp nearest \
 --trgsubject ${subj}
+--reshape
+
+
+mri_vol2surf --mov func.nii --reg register.dat --projfrac 0.5 --interp nearest --hemi lh --o lh.func.mgh 
+
+mris_convert -f ./lh.sub-ADS1915_ses-wave2.mgh \
+  lh.white \
+  ./surface_time_series_lh.gii
+
 
 freesurfer=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
 subj=sub-ADS1915

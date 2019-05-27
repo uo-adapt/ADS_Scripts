@@ -25,6 +25,10 @@ mri_vol2surf --src ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
     --interp nearest \
     --trgsubject ${subj}
 
+mris_convert -f ./sub-ADS1915_ses-wave2_in_cortex.nativespace.mgz \
+  lh.white \
+  ./surface_time_series_lh.gii
+
 
 freeview -f $SUBJECTS_DIR/sub-ADS1915/surf/lh.inflated:annot=aparc.annot:annot_outline=1:overlay=sub-ADS1915_ses-wave2_in_cortex.nativespace.mgz:overlay_threshold=2,5 \
 -viewport 3d
