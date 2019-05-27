@@ -33,7 +33,7 @@
 ###################################################################
 
 analysis=fc_$(whoami)
-design=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn
+design=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537_1.dsn
 sequence=anatomical
 standard=MNI%2x2x2
 
