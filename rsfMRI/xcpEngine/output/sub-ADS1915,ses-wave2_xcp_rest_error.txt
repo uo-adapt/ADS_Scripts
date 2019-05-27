@@ -935,3 +935,23 @@ Current processing step:
 >> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t-1.nii.gz 0 509
                              -   -   -
 >> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/regress/sub-ADS1915_ses-wave2_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t.nii.gz 1 510
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t-1.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-tdiff-sq.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-t-1.nii.gz -div /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-predictedSD.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-tdiff-vox-std.nii.gz
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-tdiff-sq.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-raw.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-std.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-vox.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-dvars-tdiff-vox-std.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-std.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-mean.txt
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/confound2/mc/sub-ADS1915_ses-wave2_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~_rms.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/qcfc/sub-ADS1915_ses-wave2~TEMP~_rms.1D

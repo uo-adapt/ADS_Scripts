@@ -939,3 +939,19 @@ Current processing step:
 >> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-t-1.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-tdiff-sq.nii.gz
                              -   -   -
 >> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-t-1.nii.gz -div /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-predictedSD.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-tdiff-vox-std.nii.gz
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-tdiff-sq.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-raw.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-std.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-vox.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-dvars-tdiff-vox-std.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-std.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-mean.txt
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/confound2/mc/sub-ADS2403_ses-wave3_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~_rms.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS2403/ses-wave3/qcfc/sub-ADS2403_ses-wave3~TEMP~_rms.1D
