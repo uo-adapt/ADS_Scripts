@@ -8,13 +8,16 @@
 
 # This script uses FSL tools eddy_correct and dtifit.
 
-# load fsl
+# load fsl and freesurfer
 module load fsl
+module load freesurfer
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh
 
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
 scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc/wave2"
 outputdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc"
+freesurferdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives"
 
 # Select options
 masks="TRUE"
@@ -50,29 +53,34 @@ eddy_correct sub-"${subid}"_ses-wave2_dwi.nii.gz sub-"${subid}"_ses-wave2_dwi_ed
 cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
 cp sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz data.nii.gz
 
-# [Register it to the brain extracted freesurfer output]
-# convert freesurfer brain.mgz to nifti 
-# MRI Convert to nifti
-# fslreorient2std brain.nii.gz brain_reor
-
 # Linear registration of brain extracted freesurfer to standard space
-mkdir reg
-cd reg
+mkdir ../anat
+mkdir ../anat/reg
+cd ../anat/reg
 echo "${subid}" linear registration mprage to MNI
 
+# convert freesurfer brain extracted brainmask.mgz to nifti 
+mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brainmask.mgz brainmask.nii.gz
+
+# lineart transform the brainmask.nii.gz to MNI space and create a transformation matrix
+flirt -in brainmask.nii.gz -ref ${FSLDIR}/data/standard/MNI152_T1_1mm_brain -out brainmask_MNI.nii.gz -omat brainmask2mni.mat -dof 6
+
+# convert freesurfer non-brain extracted brain.mgz to nifti 
+mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brain.mgz brain.nii.gz
+
+# nonlineart transform the brain.nii.gz to MNI space using the previously generated transformation matrix
+fnirt --in=brain.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --iout=brain2mni.nii.gz --cout=brain_warpcoef
 
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
 cd "$outputdir"/"${subid}"/ses-wave2/dwi
 dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
-# if epi_reg, B0 -> freesurfer (BET) -> use omat to register FA to freesurfer (BET)
-
-# flirt FA or use EPI_reg to brain extracted freesurfer output
+# flirt FA to brain extracted freesurfer output
 
 cd "$outputdir"/"${subid}"/ses-wave2/anat/reg
-echo "${subid}" linear registration FA map to mprage
-/packages/fsl/5.0.10/install/bin/flirt -in "$outputdir"/"${subid}"/ses-wave2/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-wave2/anat/[freesurfer brain] -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+echo "${subid}" linear registration FA map to freesurfer
+flirt -in "$outputdir"/"${subid}"/ses-wave2/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-wave2/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
 
 # Inverse of transformation above (i.e., creating image to transform standard-space masks into diffusion space)
 echo inverting "${subid}" FA-to-structural transformation
