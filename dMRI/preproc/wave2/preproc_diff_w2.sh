@@ -17,7 +17,7 @@ source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
 scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc/wave2"
 outputdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc"
-freesurferdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives"
+freesurferdir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer"
 
 # Select options
 masks="TRUE"
@@ -28,16 +28,19 @@ errorlog=""$scriptsdir"/output/errorlog_preprocdiff.txt"
 # Create error log file
 touch "${errorlog}"
 
-if [ $(ls "$datadir"/sub-"${subid}"/ses-wave2/dwi/*.nii.gz | wc -l) -eq 1 ]; then
+for wave in wave2 wave3
+
+
+if [ $(ls "$datadir"/sub-"${subid}"/ses-${wave}/dwi/*.nii.gz | wc -l) -eq 1 ]; then
 
 # Extract B0 images from nifti files & combine in single volume.
-mkdir -p "$outputdir"/"${subid}"/ses-wave2/
-cd "$outputdir"/"${subid}"/ses-wave2/
-cp -R "$datadir"/sub-"${subid}"/ses-wave2/dwi .
+mkdir -p "$outputdir"/"${subid}"/ses-${wave}/
+cd "$outputdir"/"${subid}"/ses-${wave}/
+cp -R "$datadir"/sub-"${subid}"/ses-${wave}/dwi .
 cd dwi/
 echo making "${subid}" b0 image
-fslroi sub-"${subid}"_ses-wave2_dwi.nii.gz b0_1 0 -1 0 -1 0 -1 0 1
-fslroi sub-"${subid}"_ses-wave2_dwi.nii.gz b0_2 0 -1 0 -1 0 -1 10 1
+fslroi sub-"${subid}"_ses-${wave}_dwi.nii.gz b0_1 0 -1 0 -1 0 -1 0 1
+fslroi sub-"${subid}"_ses-${wave}_dwi.nii.gz b0_2 0 -1 0 -1 0 -1 10 1
 fslmerge -a b0_merge b0_1.nii.gz b0_2.nii.gz
 
 # Preparing to run eddy_correct
@@ -45,15 +48,16 @@ fslmaths b0_merge.nii.gz -Tmean b0_merge_mean
 bet b0_merge_mean.nii.gz b0_bet_brain -m
 
 # Find a way to make new files titled 'bvals' 'bvecs'[]
-cp sub-"${subid}"_ses-wave2_dwi.bval bvals
-cp sub-"${subid}"_ses-wave2_dwi.bvec bvecs
+cp sub-"${subid}"_ses-${wave}_dwi.bval bvals
+cp sub-"${subid}"_ses-${wave}_dwi.bvec bvecs
 
 echo running "${subid}" eddy_correct
-eddy_correct sub-"${subid}"_ses-wave2_dwi.nii.gz sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz b0_bet_brain_mask.nii.gz
+eddy_correct sub-"${subid}"_ses-${wave}_dwi.nii.gz sub-"${subid}"_ses-${wave}_dwi_eddy_correct.nii.gz b0_bet_brain_mask.nii.gz
 cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
-cp sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz data.nii.gz
+cp sub-"${subid}"_ses-${wave}_dwi_eddy_correct.nii.gz data.nii.gz
 
 # Linear registration of brain extracted freesurfer to standard space
+cd "$outputdir"/"${subid}"/ses-${wave}/
 mkdir ../anat
 mkdir ../anat/reg
 cd ../anat/reg
@@ -73,24 +77,25 @@ fnirt --in=brain.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --i
 
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
-cd "$outputdir"/"${subid}"/ses-wave2/dwi
+cd "$outputdir"/"${subid}"/ses-${wave}/dwi
 dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
 # flirt FA to brain extracted freesurfer output
 
-cd "$outputdir"/"${subid}"/ses-wave2/anat/reg
+cd "$outputdir"/"${subid}"/ses-${wave}/anat/reg
 echo "${subid}" linear registration FA map to freesurfer
-flirt -in "$outputdir"/"${subid}"/ses-wave2/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-wave2/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
 
 # Inverse of transformation above (i.e., creating image to transform standard-space masks into diffusion space)
 echo inverting "${subid}" FA-to-structural transformation
-/packages/fsl/5.0.10/install/bin/convert_xfm -omat struct2FA.mat -inverse "$outputdir"/"${subid}"/ses-wave2/anat/reg/FA2struct.mat
+/packages/fsl/5.0.10/install/bin/convert_xfm -omat struct2FA.mat -inverse "$outputdir"/"${subid}"/ses-${wave}/anat/reg/FA2struct.mat
 
 
 
 else
 # Making a note of missing files in error log
 echo "ERROR: no files; nothing to preprocess"
-echo "$datadir"/sub-"${subid}"/ses-wave2/dwi: MISSING DIFFUSION SEQUENCES >> $errorlog
+echo "$datadir"/sub-"${subid}"/ses-${wave}/dwi: MISSING DIFFUSION SEQUENCES >> $errorlog
 fi
 
+done
