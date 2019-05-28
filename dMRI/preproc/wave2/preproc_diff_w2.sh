@@ -31,7 +31,7 @@ touch "${errorlog}"
 for wave in wave2 wave3
 
 
-if [ $(ls "$datadir"/sub-"${subid}"/ses-${wave}/dwi/*.nii.gz | wc -l) -eq 1 ]; then
+if [ $(ls "$datadir"/sub-"${subid}"/ses-$"{wave}"/dwi/*.nii.gz | wc -l) -eq 1 ]; then
 
 # Extract B0 images from nifti files & combine in single volume.
 mkdir -p "$outputdir"/"${subid}"/ses-${wave}/
