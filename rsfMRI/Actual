@@ -3,8 +3,8 @@ fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
 xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
 output=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_processed
-subj=sub-ADS2403
-wave=ses-wave3
+subj=sub-ADS1915
+wave=ses-wave2
 
 lta_convert --initk ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
 --outlta ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
@@ -25,11 +25,12 @@ tkregister2 --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz --reg ${subj}_re
 
 
 mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
---out ${output}/${subj}/${wave}/lh.${subj}_${wave}.mgh \
---reg  ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--out ${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh \
+--reg  ${subj}_register.dat \
 --hemi lh \
 --interp nearest 
 
+freeview -f ${freesurfer}/${subj}/surf/lh.inflated:overlay=${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh
 
 mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --out ${output}/${subj}/${wave}/lh.${subj}_${wave}.mgh \
