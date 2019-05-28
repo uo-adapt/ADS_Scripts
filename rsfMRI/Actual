@@ -1,13 +1,47 @@
-subj=sub-ADS1915
-mri_vol2surf --mov ~/Desktop/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
---out lh.sub-ADS1915_ses-wave2.mgh \
---reg  ~/Desktop/fmriprep/sub-ADS1915/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+freesurfer=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
+xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
+output=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_processed
+subj=sub-ADS2403
+wave=ses-wave3
+
+lta_convert --initk ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
+--outlta ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
+--outreg ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--src ${fmriprep}/${subj}/anat/${subj}_desc-preproc_T1w.nii.gz \
+--trg ${freesurfer}/${subj}/mri/T1.mgz \
+--subject ${subj} 
+
+tkregister2 --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz --reg ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat --surf
+
+
+bbregister --s $subj --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
+--reg ${subj}_register.dat --init-header --bold
+
+#tkregisterfv --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz --reg sub-ADS1915_register.dat --surfs
+
+tkregister2 --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz --reg ${subj}_register.dat --surf
+
+
+mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
+--out ${output}/${subj}/${wave}/lh.${subj}_${wave}.mgh \
+--reg  ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
 --hemi lh \
 --interp nearest 
 
 
+mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
+--out ${output}/${subj}/${wave}/lh.${subj}_${wave}.mgh \
+--reg  ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--hemi lh \
+--interp nearest 
+
+
+freeview -f ${freesurfer}/${subj}/surf/lh.inflated:overlay=${output}/${subj}/${wave}/lh.${subj}_${wave}.mgh
+
 mri_segstats \
---annot sub-ADS1915 lh aparc \
---i ~/Desktop/freesurfer/sub-ADS1915/surf/lh.sub-ADS1915_ses-wave2.mgh \
+--annot ${subj} lh aparc \
+--i ~/Desktop/freesurfer/${subj}/surf/lh.${subj}_${wave}.mgh \
 --sum lh_1_16.sum.txt \
 --avgwf lh_1_16.wav.txt

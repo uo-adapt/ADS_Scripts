@@ -53,9 +53,9 @@ cp sub-"${subid}"_ses-wave2_dwi_eddy_correct.nii.gz data.nii.gz
 # [Register it to the brain extracted freesurfer output]
 # convert freesurfer brain.mgz to nifti 
 # MRI Convert to nifti
-# fslrieront2std brain.nii.gz brain_reor
+# fslreorient2std brain.nii.gz brain_reor
 
-# Linear registration of mprage to standard space
+# Linear registration of brain extracted freesurfer to standard space
 mkdir reg
 cd reg
 echo "${subid}" linear registration mprage to MNI
