@@ -58,9 +58,9 @@ cp sub-"${subid}"_ses-${wave}_dwi_eddy_correct.nii.gz data.nii.gz
 
 # Linear registration of brain extracted freesurfer to standard space
 cd "$outputdir"/"${subid}"/ses-${wave}/
-mkdir ../anat
-mkdir ../anat/reg
-cd ../anat/reg
+mkdir anat
+mkdir anat/reg
+cd anat/reg
 echo "${subid}" linear registration mprage to MNI
 
 # convert freesurfer brain extracted brainmask.mgz to nifti 
