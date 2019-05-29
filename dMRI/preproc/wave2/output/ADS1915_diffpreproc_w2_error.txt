@@ -1,0 +1,17 @@
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 31: 191664 Killed                  fnirt --in=brain.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --iout=brain2mni.nii.gz --cout=brain_warpcoef
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 85: cd: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave2/anat/reg: No such file or directory
+Image Exception : #22 :: ERROR: Could not open image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave2/anat/brainmask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 31: 192263 Aborted                 (core dumped) flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+Could not open matrix file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave2/anat/reg/FA2struct.mat
+Cannot read input-matrix
+mkdir: cannot create directory ‘../anat’: File exists
+mkdir: cannot create directory ‘../anat/reg’: File exists
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 31:  1911 Killed                  fnirt --in=brain.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --iout=brain2mni.nii.gz --cout=brain_warpcoef
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 85: cd: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave3/anat/reg: No such file or directory
+Image Exception : #22 :: ERROR: Could not open image /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave3/anat/brainmask
+terminate called after throwing an instance of 'RBD_COMMON::BaseException'
+/cm/local/apps/slurm/var/spool/job7463411/slurm_script: line 31:  2492 Aborted                 (core dumped) flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+Could not open matrix file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/dMRI_preproc/ADS1915/ses-wave3/anat/reg/FA2struct.mat
+Cannot read input-matrix
+slurmstepd: error: Detected 2 oom-kill event(s) in step 7463411.batch cgroup. Some of your processes may have been killed by the cgroup out-of-memory handler.
