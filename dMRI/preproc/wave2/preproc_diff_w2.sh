@@ -84,7 +84,7 @@ dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
 cd "$outputdir"/"${subid}"/ses-${wave}/anat/reg
 echo "${subid}" linear registration FA map to freesurfer
-flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/reg/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
 
 # Inverse of transformation above (i.e., creating image to transform standard-space masks into diffusion space)
 echo inverting "${subid}" FA-to-structural transformation
