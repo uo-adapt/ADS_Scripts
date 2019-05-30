@@ -67,7 +67,7 @@ echo "${subid}" linear registration mprage to MNI
 mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brainmask.mgz brainmask.nii.gz
 
 # lineart transform the brainmask.nii.gz to MNI space and create a transformation matrix
-flirt -in brainmask.nii.gz -ref ${FSLDIR}/data/standard/MNI152_T1_1mm_brain -out brainmask_MNI.nii.gz -omat brainmask2mni.mat -dof 6
+flirt -in brainmask.nii.gz -ref ${FSLDIR}/data/standard/MNI152_T1_1mm_brain -out brainmask_MNI.nii.gz -omat brainmask2mni.mat -dof 12
 
 # convert freesurfer non-brain extracted brain.mgz to nifti 
 mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brain.mgz brain.nii.gz

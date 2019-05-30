@@ -28,7 +28,8 @@ mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --out ${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh \
 --reg  ${subj}_register.dat \
 --hemi lh \
---interp nearest 
+--interp nearest \
+--projfrac-avg 0 1 0.05 # projects 
 
 freeview -f ${freesurfer}/${subj}/surf/lh.inflated:overlay=${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh
 
