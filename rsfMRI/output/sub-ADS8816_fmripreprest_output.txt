@@ -8,24 +8,24 @@ Subject directory: /projects/adapt_lab/shared/ADS/data/BIDS_data
 Starting on: rest
 
 
-190508-19:17:38,821 nipype.workflow IMPORTANT:
+190530-22:35:46,302 nipype.workflow IMPORTANT:
 	 
     Running fMRIPREP version 1.2.4:
       * BIDS dataset path: /projects/adapt_lab/shared/ADS/data/BIDS_data.
       * Participant list: ['ADS8816'].
-      * Run identifier: 20190508-191738_e906ec89-681a-4137-9e80-436982572c17.
+      * Run identifier: 20190530-223546_5151a6d7-8194-47e9-9b76-a701e74c140b.
     
-190508-19:17:55,682 nipype.workflow IMPORTANT:
+190530-22:36:04,444 nipype.workflow IMPORTANT:
 	 Creating bold processing workflow for "/projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS8816/ses-wave2/func/sub-ADS8816_ses-wave2_task-rest_bold.nii.gz" (0.05 GB / 510 TRs). Memory resampled/largemem=0.21/0.47 GB.
-190508-19:17:55,710 nipype.workflow IMPORTANT:
+190530-22:36:04,474 nipype.workflow IMPORTANT:
 	 No single-band-reference found for sub-ADS8816_ses-wave2_task-rest_bold.nii.gz
-190508-19:17:57,634 nipype.workflow IMPORTANT:
+190530-22:36:06,343 nipype.workflow IMPORTANT:
 	 Slice-timing correction will be included.
-190508-19:18:00,81 nipype.workflow IMPORTANT:
+190530-22:36:08,752 nipype.workflow IMPORTANT:
 	 SDC: fieldmap estimation of type "phasediff" intended for /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS8816/ses-wave2/func/sub-ADS8816_ses-wave2_task-rest_bold.nii.gz found.
-190508-19:18:01,136 nipype.workflow IMPORTANT:
+190530-22:36:09,800 nipype.workflow IMPORTANT:
 	 Creating BOLD surface-sampling workflow.
-190508-19:18:04,661 nipype.workflow IMPORTANT:
+190530-22:36:13,296 nipype.workflow IMPORTANT:
 	 Works derived from this fMRIPrep execution should include the following boilerplate:
 
 
@@ -148,182 +148,8 @@ to workflows in *fMRIPrep*'s documentation](https://fmriprep.readthedocs.io/en/l
 ### References
 
 
-190508-19:18:28,912 nipype.workflow INFO:
+190530-22:36:37,422 nipype.workflow INFO:
 	 [Node] Setting-up "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon1".
-190508-19:18:28,973 nipype.interface INFO:
-	 recon-all complete : Not running
-190508-19:18:28,973 nipype.workflow INFO:
+190530-22:36:37,480 nipype.workflow INFO:
 	 [Node] Running "autorecon1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
-echo recon-all: nothing to do
-190508-19:18:28,976 nipype.interface INFO:
-	 recon-all complete : Not running
-190508-19:18:29,64 nipype.workflow INFO:
-	 [Node] Finished "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon1".
-190508-19:18:32,416 nipype.workflow INFO:
-	 [Node] Setting-up "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
-190508-19:18:32,467 nipype.workflow INFO:
-	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted")
-190508-19:18:32,476 nipype.workflow INFO:
-	 [Node] Finished "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
-190508-19:18:35,422 nipype.workflow INFO:
-	 [Node] Setting-up "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
-190508-19:18:35,483 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
-190508-19:18:35,485 nipype.workflow INFO:
-	 [Node] Running "autorecon2_vol" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
-recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
-190508-19:18:35,488 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -nogcareg -nocanorm -nocareg -nonormalization2 -nomaskbfs -nosegmentation -nofill
-190509-03:08:42,128 nipype.workflow INFO:
-	 [Node] Finished "fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol".
-190509-03:08:48,459 nipype.workflow INFO:
-	 [Node] Setting-up "_autorecon_surfs0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
-190509-03:08:48,468 nipype.workflow INFO:
-	 [Node] Setting-up "_autorecon_surfs1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
-190509-03:08:48,506 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix -nowhite -nosmooth2 -noinflate2 -nocurvHK -nocurvstats -nosphere -nosurfreg
-190509-03:08:48,509 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix
-190509-03:08:48,510 nipype.workflow INFO:
-	 [Node] Running "_autorecon_surfs0" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
-recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix -nowhite -nosmooth2 -noinflate2 -nocurvHK -nocurvstats -nosphere -nosurfreg
-190509-03:08:48,513 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix -nowhite -nosmooth2 -noinflate2 -nocurvHK -nocurvstats -nosphere -nosurfreg
-190509-03:08:48,519 nipype.workflow INFO:
-	 [Node] Running "_autorecon_surfs1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
-recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix
-190509-03:08:48,522 nipype.interface INFO:
-	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix
-190509-03:09:20,962 nipype.workflow WARNING:
-	 [Node] Error on "_autorecon_surfs0" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0)
-190509-03:09:21,777 nipype.workflow ERROR:
-	 Node _autorecon_surfs0 failed to run on host n033.
-190509-03:09:21,861 nipype.workflow ERROR:
-	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS8816/log/20190508-191738_e906ec89-681a-4137-9e80-436982572c17/crash-20190509-030921-pettitta-_autorecon_surfs0-07e7404e-4abc-4c88-94e1-bb2fffb02099.txt
-Traceback (most recent call last):
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
-    result['result'] = node.run(updatehash=updatehash)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
-    result = self._run_interface(execute=True)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
-    return self._run_command(execute)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
-    result = self._interface.run(cwd=outdir)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
-    runtime = self._run_interface(runtime)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
-    self.raise_exception(runtime)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
-    ).format(**runtime.dictcopy()))
-RuntimeError: Command:
-recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix -nowhite -nosmooth2 -noinflate2 -nocurvHK -nocurvstats -nosphere -nosurfreg
-Standard output:
-Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
-Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
-INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
-Actual FREESURFER_HOME /opt/freesurfer
--rw-rw-r-- 1 pettitta adapt_lab 196601 Feb 19 11:15 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all-lh.log
-Linux n033 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-'/opt/freesurfer/bin/recon-all' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all.local-copy'
-#--------------------------------------------
-#@# Jacobian white lh Thu May  9 03:08:49 UTC 2019
-/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts
-
- mris_jacobian ../surf/lh.white.preaparc ../surf/lh.sphere.reg ../surf/lh.jacobian_white 
-
-reading surface from ../surf/lh.white.preaparc...
-
-ERROR: 
-      MRISreadVertexPositions(../surf/lh.sphere.reg): surfaces differ. Main: 804314 verts 1608624 faces, ../surf/lh.sphere.reg: 0 verts 0 faces
-Surfaces may be out-of-date
-
-
-No such file or directory
-mris_jacobian: could not read target surface ../surf/lh.sphere.reg
-No such file or directory
-Linux n033 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-
-recon-all -s sub-ADS8816 exited with ERRORS at Thu May  9 03:09:20 UTC 2019
-
-For more details, see the log file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all-lh.log
-To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
-
-Standard error:
-
-Return code: 1
-
-190509-03:09:31,332 nipype.workflow WARNING:
-	 [Node] Error on "_autorecon_surfs1" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1)
-190509-03:09:31,795 nipype.workflow ERROR:
-	 Node _autorecon_surfs1 failed to run on host n033.
-190509-03:09:31,796 nipype.workflow ERROR:
-	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS8816/log/20190508-191738_e906ec89-681a-4137-9e80-436982572c17/crash-20190509-030931-pettitta-_autorecon_surfs1-36f7f356-803e-401e-a6d5-70e06666371c.txt
-Traceback (most recent call last):
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
-    result['result'] = node.run(updatehash=updatehash)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
-    result = self._run_interface(execute=True)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
-    return self._run_command(execute)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
-    result = self._interface.run(cwd=outdir)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
-    runtime = self._run_interface(runtime)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
-    self.raise_exception(runtime)
-  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
-    ).format(**runtime.dictcopy()))
-RuntimeError: Command:
-recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -notessellate -nosmooth1 -noinflate1 -noqsphere -nofix
-Standard output:
-Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
-Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
-INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
-Actual FREESURFER_HOME /opt/freesurfer
--rw-rw-r-- 1 pettitta adapt_lab 125704 Feb 19 11:18 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all-rh.log
-Linux n033 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-'/opt/freesurfer/bin/recon-all' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all.local-copy'
-#--------------------------------------------
-#@# Make White Surf rh Thu May  9 03:08:49 UTC 2019
-/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts
-
- mris_make_surfaces -aseg ../mri/aseg.presurf -white white.preaparc -noaparc -whiteonly -mgz -T1 brain.finalsurfs sub-ADS8816 rh 
-
-using white.preaparc as white matter name...
-only generating white matter surface
-using aseg volume ../mri/aseg.presurf to prevent surfaces crossing the midline
-not using aparc to prevent surfaces crossing the midline
-INFO: assuming MGZ format for volumes.
-using brain.finalsurfs as T1 volume...
-$Id: mris_make_surfaces.c,v 1.164.2.4 2016/12/13 22:26:32 zkaufman Exp $
-$Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
-reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/mri/filled.mgz...
-reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/mri/brain.finalsurfs.mgz...
-reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/mri/../mri/aseg.presurf.mgz...
-reading volume /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/mri/wm.mgz...
-44939 bright wm thresholded.
-3207 bright non-wm voxels segmented.
-reading original surface position from /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/surf/rh.orig...
-freadFloat: fread failed
-mris_make_surfaces: vertex 174757 z coordinate -131865472019881849712676704270417920.000000!
-Linux n033 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-
-recon-all -s sub-ADS8816 exited with ERRORS at Thu May  9 03:09:31 UTC 2019
-
-For more details, see the log file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS8816/scripts/recon-all-rh.log
-To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
-
-Standard error:
-
-Return code: 1
-
-190509-03:09:33,794 nipype.workflow ERROR:
-	 could not run node: fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon_surfs
-190509-03:09:33,795 nipype.workflow ERROR:
-	 could not run node: fmriprep_wf.single_subject_ADS8816_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon_surfs
-
-
-
-done
-
--------------------------------
+recon-all -autorecon1 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS8816/ses-wave2/anat/sub-ADS8816_ses-wave2_T1w.nii.gz -noskullstrip -hires -openmp 8 -subjid sub-ADS8816 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -expert /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8816_wf/anat_preproc_wf/surface_recon_wf/autorecon1/expert.opts
