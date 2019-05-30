@@ -5,6 +5,8 @@
 # Load FSL
 module load fsl
 
+NOBATCH=true
+
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
 scriptsdir="/projects/adapt_lab/shared/ADS/Scripts/dMRI/preproc/wave2"
