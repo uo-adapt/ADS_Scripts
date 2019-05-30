@@ -28,7 +28,7 @@ if [[ -f "$data" && -f "$bvecs" && -f "$bvals" && -f "$b0mask" ]]; then
 # Fitting a probabilistic diffusion model
 # Note: This last command takes a couple days to run
 echo running "${subid}" bedpostx
-bedpostx "$outputdir"/"${subid}"/ses-wave2/dwi
+bedpostx "$outputdir"/"${subid}"/ses-wave2/dwi --NOBATCH=true
 
 echo "${subid}" preprocessing completed. Next step - tractography.
 # Congratulations!  You are now ready to perform tractography.
