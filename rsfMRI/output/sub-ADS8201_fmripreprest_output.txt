@@ -191,3 +191,43 @@ mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/B
 recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
 190530-23:44:04,43 nipype.interface INFO:
 	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-00:03:28,65 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190531-00:03:43,790 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+190531-00:03:43,795 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-00:03:43,869 nipype.workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta
+190531-00:03:44,675 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-00:03:59,600 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+190531-00:03:59,665 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-00:03:59,745 nipype.workflow INFO:
+	 [Node] Running "lta_2_itk" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt
+190531-00:04:00,578 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-11:52:53,423 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS8201_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol".
+190531-11:52:59,332 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+190531-11:52:59,344 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS8201_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+190531-11:52:59,411 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-11:52:59,415 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-11:52:59,416 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-11:52:59,418 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-11:52:59,424 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs0" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-11:52:59,426 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS8201 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 

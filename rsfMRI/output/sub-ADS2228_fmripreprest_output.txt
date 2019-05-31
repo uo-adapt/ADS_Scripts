@@ -167,3 +167,67 @@ to workflows in *fMRIPrep*'s documentation](https://fmriprep.readthedocs.io/en/l
 190530-21:21:36,69 nipype.workflow INFO:
 	 [Node] Running "autorecon1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
 recon-all -autorecon1 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/anat_template_wf/t1_merge/sub-ADS2228_ses-wave2_T1w_template.nii.gz -noskullstrip -hires -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -expert /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/autorecon1/expert.opts
+190531-00:18:19,337 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.autorecon1".
+190531-00:18:25,61 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm".
+190531-00:18:25,64 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
+190531-00:18:25,65 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190531-00:18:25,91 nipype.workflow INFO:
+	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted")
+190531-00:18:25,434 nipype.workflow INFO:
+	 [Node] Running "fsnative_2_t1_xfm" ("fmriprep.interfaces.freesurfer.PatchedRobustRegister"), a CommandLine Interface with command:
+mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS2228/mri/T1.mgz --dst /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/anat_template_wf/t1_merge/sub-ADS2228_ses-wave2_T1w_template.nii.gz
+190531-00:19:06,681 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+190531-00:19:10,590 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+190531-00:19:11,57 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-00:19:11,90 nipype.workflow INFO:
+	 [Node] Running "autorecon2_vol" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-00:19:11,104 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-00:48:18,499 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190531-00:48:36,24 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+190531-00:48:36,106 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-00:48:36,187 nipype.workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta
+190531-00:48:37,120 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-00:48:54,35 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+190531-00:48:54,122 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-00:48:54,202 nipype.workflow INFO:
+	 [Node] Running "lta_2_itk" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt
+190531-00:48:55,132 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-12:54:52,255 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS2228_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol".
+190531-12:54:57,412 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs0" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs0".
+190531-12:54:57,420 nipype.workflow INFO:
+	 [Node] Setting-up "_autorecon_surfs1" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS2228_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon_surfs/mapflow/_autorecon_surfs1".
+190531-12:54:57,458 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-12:54:57,460 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs0" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-12:54:57,463 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi lh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-12:54:57,527 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-12:54:57,560 nipype.workflow INFO:
+	 [Node] Running "_autorecon_surfs1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-12:54:57,563 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon-hemi rh -noparcstats -nocortparc2 -noparcstats2 -nocortparc3 -noparcstats3 -nopctsurfcon -nohyporelabel -noaparc2aseg -noapas2aseg -nosegstats -nowmparc -nobalabels -openmp 8 -subjid sub-ADS2228 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 

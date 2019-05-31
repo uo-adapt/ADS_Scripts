@@ -153,3 +153,141 @@ to workflows in *fMRIPrep*'s documentation](https://fmriprep.readthedocs.io/en/l
 190530-21:21:21,198 nipype.workflow INFO:
 	 [Node] Running "autorecon1" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
 recon-all -autorecon1 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS7701/ses-wave2/anat/sub-ADS7701_ses-wave2_T1w.nii.gz -noskullstrip -hires -openmp 8 -subjid sub-ADS7701 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer -expert /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/autorecon1/expert.opts
+190531-03:06:51,80 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.autorecon1".
+190531-03:06:56,828 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm".
+190531-03:06:56,835 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/skull_strip_extern".
+190531-03:06:56,836 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190531-03:06:56,853 nipype.workflow INFO:
+	 [Node] Running "skull_strip_extern" ("fmriprep.interfaces.freesurfer.FSInjectBrainExtracted")
+190531-03:06:57,139 nipype.workflow INFO:
+	 [Node] Running "fsnative_2_t1_xfm" ("fmriprep.interfaces.freesurfer.PatchedRobustRegister"), a CommandLine Interface with command:
+mri_robust_register --satit --iscale --lta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/mri/T1.mgz --dst /projects/adapt_lab/shared/ADS/data/BIDS_data/sub-ADS7701/ses-wave2/anat/sub-ADS7701_ses-wave2_T1w.nii.gz
+190531-03:07:39,574 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.skull_strip_extern".
+190531-03:07:42,330 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol".
+190531-03:07:42,693 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS7701 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-03:07:42,726 nipype.workflow INFO:
+	 [Node] Running "autorecon2_vol" ("nipype.interfaces.freesurfer.preprocess.ReconAll"), a CommandLine Interface with command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS7701 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-03:07:42,729 nipype.interface INFO:
+	 resume recon-all : recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS7701 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+190531-03:16:23,606 nipype.workflow WARNING:
+	 [Node] Error on "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol" (/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/autorecon_resume_wf/autorecon2_vol)
+190531-03:16:25,200 nipype.workflow ERROR:
+	 Node autorecon2_vol failed to run on host n023.
+190531-03:16:25,256 nipype.workflow ERROR:
+	 Saving crash info to /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS7701/log/20190530-212034_fea5e02b-d820-4630-9e1e-aa4e098771c8/crash-20190531-031625-pettitta-autorecon2_vol-196f7fc2-9e03-4726-b101-3788627acd04.txt
+Traceback (most recent call last):
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/plugins/multiproc.py", line 69, in run_node
+    result['result'] = node.run(updatehash=updatehash)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 473, in run
+    result = self._run_interface(execute=True)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 557, in _run_interface
+    return self._run_command(execute)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/pipeline/engine/nodes.py", line 637, in _run_command
+    result = self._interface.run(cwd=outdir)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 511, in run
+    runtime = self._run_interface(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 898, in _run_interface
+    self.raise_exception(runtime)
+  File "/usr/local/miniconda/lib/python3.6/site-packages/nipype/interfaces/base/core.py", line 835, in raise_exception
+    ).format(**runtime.dictcopy()))
+RuntimeError: Command:
+recon-all -autorecon2-volonly -openmp 8 -subjid sub-ADS7701 -sd /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer 
+Standard output:
+Subject Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+Current Stamp: freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1-f53a55a
+INFO: SUBJECTS_DIR is /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+Actual FREESURFER_HOME /opt/freesurfer
+-rw-rw-r-- 1 pettitta adapt_lab 99218 May 31 03:06 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/scripts/recon-all.log
+Linux n023 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+'/opt/freesurfer/bin/recon-all' -> '/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/scripts/recon-all.local-copy'
+#-------------------------------------
+#@# EM Registration Fri May 31 03:07:44 UTC 2019
+/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/mri
+
+ mri_em_register -rusage /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/touch/rusage.mri_em_register.dat -uns 3 -mask brainmask.mgz nu.mgz /opt/freesurfer/average/RB_all_2016-05-10.vc700.gca transforms/talairach.lta 
+
+setting unknown_nbr_spacing = 3
+using MR volume brainmask.mgz to mask input volume...
+
+== Number of threads available to mri_em_register for OpenMP = 8 == 
+reading 1 input volumes...
+logging results to talairach.log
+reading '/opt/freesurfer/average/RB_all_2016-05-10.vc700.gca'...
+average std = 7.3   using min determinant for regularization = 5.3
+0 singular and 841 ill-conditioned covariance matrices regularized
+reading 'nu.mgz'...
+INFO: MRImask() using MRImaskDifferentGeometry()
+INFO: MRImask() using MRImaskDifferentGeometry()
+INFO: MRImask() using MRImaskDifferentGeometry()
+INFO: MRImask() using MRImaskDifferentGeometry()
+INFO: MRImask() using MRImaskDifferentGeometry()
+freeing gibbs priors...done.
+accounting for voxel sizes in initial transform
+bounding unknown intensity as < 6.3 or > 503.7 
+total sample mean = 78.8 (1011 zeros)
+************************************************
+spacing=8, using 2830 sample points, tol=1.00e-05...
+************************************************
+register_mri: find_optimal_transform
+find_optimal_transform: nsamples 2830, passno 0, spacing 8
+GCAhistoScaleImageIntensities: could not find wm peak
+resetting wm mean[0]: 98 --> 107
+resetting gm mean[0]: 61 --> 61
+input volume #1 is the most T1-like
+using real data threshold=17.0
+skull bounding box = (97, 88, 61) --> (417, 375, 431)
+using (204, 184, 246) as brain centroid...
+mean wm in atlas = 107, using box (164,148,200) --> (243, 219,291) to find MRI wm
+before smoothing, mri peak at 85
+robust fit to distribution - 26 +- 3.2
+distribution too broad for accurate scaling - disabling
+WARNING2: gca.c::GCAhistoScaleImageIntensities: h_mri->nbins=86, mri_peak=91
+after smoothing, mri peak at 0, scaling input intensities by inf
+Numerical result out of range
+Linux n023 3.10.0-862.14.4.el7.x86_64 #1 SMP Fri Sep 21 09:07:21 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+
+recon-all -s sub-ADS7701 exited with ERRORS at Fri May 31 03:16:23 UTC 2019
+
+For more details, see the log file /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS7701/scripts/recon-all.log
+To report a problem, see http://surfer.nmr.mgh.harvard.edu/fswiki/BugReporting
+
+Standard error:
+
+Return code: 1
+
+190531-03:26:28,681 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.fsnative_2_t1_xfm".
+190531-03:26:32,433 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm".
+190531-03:26:32,434 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-03:26:32,464 nipype.workflow INFO:
+	 [Node] Running "t1_2_fsnative_xfm" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/fsnative_2_t1_xfm/T1_robustreg.lta --invert --outlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta
+190531-03:26:32,568 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.t1_2_fsnative_xfm".
+190531-03:26:36,432 nipype.workflow INFO:
+	 [Node] Setting-up "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk" in "/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk".
+190531-03:26:36,432 nipype.workflow INFO:
+	 [Node] Outdated cache found for "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-03:26:36,471 nipype.workflow INFO:
+	 [Node] Running "lta_2_itk" ("fmriprep.interfaces.freesurfer.PatchedLTAConvert"), a CommandLine Interface with command:
+lta_convert --inlta /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/surface_recon_wf/t1_2_fsnative_xfm/out.lta --outitk /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/working_bids_fmripreprest/fmriprep_wf/single_subject_ADS7701_wf/anat_preproc_wf/anat_derivatives_wf/lta_2_itk/out.txt
+190531-03:26:36,574 nipype.workflow INFO:
+	 [Node] Finished "fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.anat_derivatives_wf.lta_2_itk".
+190531-03:26:39,874 nipype.workflow ERROR:
+	 could not run node: fmriprep_wf.single_subject_ADS7701_wf.anat_preproc_wf.surface_recon_wf.autorecon_resume_wf.autorecon2_vol
+
+
+
+done
+
+-------------------------------
