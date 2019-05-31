@@ -6,23 +6,10 @@ output=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_processe
 subj=sub-ADS1915
 wave=ses-wave2
 
-lta_convert --initk ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
---outlta ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
---outreg ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
---src ${fmriprep}/${subj}/anat/${subj}_desc-preproc_T1w.nii.gz \
---trg ${freesurfer}/${subj}/mri/T1.mgz \
---subject ${subj} 
-
-tkregister2 --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz --reg ${fmriprep}/${subj}/anat/${subj}_from-T1w_to-fsnative_mode-image_xfm.dat --surf
-
-
 bbregister --s $subj --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --reg ${subj}_register.dat --init-header --bold
 
-#tkregisterfv --mov /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS1915/ses-wave2/sub-ADS1915_ses-wave2.nii.gz --reg sub-ADS1915_register.dat --surfs
-
 tkregister2 --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz --reg ${subj}_register.dat --surf
-
 
 mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --out ${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh \

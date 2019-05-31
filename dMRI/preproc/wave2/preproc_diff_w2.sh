@@ -70,10 +70,10 @@ mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}
 flirt -in brainmask.nii.gz -ref ${FSLDIR}/data/standard/MNI152_T1_1mm_brain -out brainmask_MNI.nii.gz -omat brainmask2mni.mat -dof 12
 
 # convert freesurfer non-brain extracted brain.mgz to nifti 
-mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brain.mgz brain.nii.gz
+mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/orig.mgz orig.nii.gz
 
 # nonlineart transform the brain.nii.gz to MNI space using the previously generated transformation matrix
-fnirt --in=brain.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --iout=brain2mni.nii.gz --cout=brain_warpcoef
+fnirt --in=orig.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=orig2mni.mat --iout=orig_mni.nii.gz --cout=brain_warpcoef
 
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
