@@ -4,11 +4,10 @@
 ####################################################################
 
 # SETUP FSL HERE (however it is done on your system)
-# export FSLDIR=/programs/fsl/
-# source ${FSLDIR}/etc/fslconf/fsl.sh
+module load fsl
 
 # SETUP FREESUFER HERE (however it is done on your system)
-# module load freesurfer/5.3.0
+ module load freesurfer
 
 ####################################################################
 ####################################################################
