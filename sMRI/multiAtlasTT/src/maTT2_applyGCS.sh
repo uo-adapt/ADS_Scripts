@@ -115,6 +115,7 @@ then
 fi
 
 # make full path, add forward slash too
+echo "first testing" $inputFSDir
 inputFSDir=$(readlink -f ${inputFSDir})/
 echo testing $inputFSDir
 outputDir=${outputDir}/
