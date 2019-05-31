@@ -25,9 +25,9 @@ export atlasList="schaefer100-yeo17 schaefer200-yeo17 yeo17 yeo17dil"
 ####################################################################
 # subject variables
 
-subj=sub-ADS1915
+subj="sub-ADS1915"
 inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer"
-outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/${subj}"
+outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/"${subj}""
 mkdir -p ${outputDir}
 
 ####################################################################
