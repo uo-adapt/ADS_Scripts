@@ -5,7 +5,6 @@
 # Load FSL
 module load fsl
 
-NOBATCH=true
 
 # Set directory names
 datadir="/projects/adapt_lab/shared/ADS/data/BIDS_data"
@@ -28,7 +27,7 @@ if [[ -f "$data" && -f "$bvecs" && -f "$bvals" && -f "$b0mask" ]]; then
 # Fitting a probabilistic diffusion model
 # Note: This last command takes a couple days to run
 echo running "${subid}" bedpostx
-bedpostx "$outputdir"/"${subid}"/ses-wave3/dwi --NOBATCH=true
+bedpostx "$outputdir"/"${subid}"/ses-wave3/dwi
 
 echo "${subid}" preprocessing completed. Next step - tractography.
 # Congratulations!  You are now ready to perform tractography.
