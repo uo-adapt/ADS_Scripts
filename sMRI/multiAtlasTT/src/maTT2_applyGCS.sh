@@ -116,7 +116,7 @@ fi
 
 # make full path, add forward slash too
 echo "first testing" $inputFSDir
-inputFSDir=$(readlink -f ${inputFSDir})/
+inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer"
 echo testing $inputFSDir
 outputDir=${outputDir}/
 
