@@ -203,20 +203,21 @@ mkdir -p ${tempFSSubj}/mri/
 
 # surf
 echo ${inputFSDir} is here to stay
-cp -asv ${inputFSDir}/surf/?h.sphere.reg ${tempFSSubj}/surf/
-cp -asv ${inputFSDir}/surf/?h.white ${tempFSSubj}/surf/
-cp -asv ${inputFSDir}/surf/?h.pial ${tempFSSubj}/surf/
-cp -asv ${inputFSDir}/surf/?h.smoothwm ${tempFSSubj}/surf/
-cp -asv ${inputFSDir}/surf/?h.sulc ${tempFSSubj}/surf/
-cp -asv ${inputFSDir}/surf/?h.thickness ${tempFSSubj}/surf/
+echo ${tempFSSubj} is too
+cp -asv ${inputFSDir}surf/?h.sphere.reg ${tempFSSubj}/surf/
+cp -asv ${inputFSDir}surf/?h.white ${tempFSSubj}/surf/
+cp -asv ${inputFSDir}surf/?h.pial ${tempFSSubj}/surf/
+cp -asv ${inputFSDir}surf/?h.smoothwm ${tempFSSubj}/surf/
+cp -asv ${inputFSDir}surf/?h.sulc ${tempFSSubj}/surf/
+cp -asv ${inputFSDir}surf/?h.thickness ${tempFSSubj}/surf/
 
 # label
-cp -asv ${inputFSDir}/label/?h.cortex.label ${tempFSSubj}/label/
+cp -asv ${inputFSDir}label/?h.cortex.label ${tempFSSubj}/label/
 
 # mri
-cp -asv ${inputFSDir}/mri/aseg.mgz ${tempFSSubj}/mri/
-cp -asv ${inputFSDir}/mri/ribbon.mgz ${tempFSSubj}/mri/
-cp -asv ${inputFSDir}/mri/rawavg.mgz ${tempFSSubj}/mri/
+cp -asv ${inputFSDir}mri/aseg.mgz ${tempFSSubj}/mri/
+cp -asv ${inputFSDir}mri/ribbon.mgz ${tempFSSubj}/mri/
+cp -asv ${inputFSDir}mri/rawavg.mgz ${tempFSSubj}/mri/
 
 # reset SUJECTS_DIR to the new inputFSDir
 export SUBJECTS_DIR=${outputDir}/tmpFsDir
