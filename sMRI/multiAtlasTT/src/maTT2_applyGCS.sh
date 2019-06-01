@@ -116,7 +116,7 @@ fi
 
 # make full path, add forward slash too
 inputFSDir=$(readlink -f ${inputFSDir})/
-outputDir=${outputDir}/
+outputDir=${outputDir}
 
 # check existence of FS directory
 if [[ ! -d ${inputFSDir} ]]
