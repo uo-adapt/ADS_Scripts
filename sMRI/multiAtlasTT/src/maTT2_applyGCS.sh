@@ -202,6 +202,7 @@ mkdir -p ${tempFSSubj}/label/
 mkdir -p ${tempFSSubj}/mri/
 
 # surf
+echo ${inputFSDir} is here to stay
 cp -asv ${inputFSDir}/surf/?h.sphere.reg ${tempFSSubj}/surf/
 cp -asv ${inputFSDir}/surf/?h.white ${tempFSSubj}/surf/
 cp -asv ${inputFSDir}/surf/?h.pial ${tempFSSubj}/surf/
