@@ -154,7 +154,7 @@ subj=$(basename $inputFSDir)
 if [[ -z ${atlasBaseDir} ]]
 then
     echo "atlasBaseDir is unset"
-    atlasBaseDir=${PWD}/atlas_data/    
+    atlasBaseDir=${PWD}/atlas_data    
     if [[ ! -d ${atlasBaseDir} ]]
     then
         echo "cannot find the atlas_data; please set and retry"
