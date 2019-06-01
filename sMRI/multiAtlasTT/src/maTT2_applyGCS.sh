@@ -116,7 +116,7 @@ fi
 
 # make full path, add forward slash too
 inputFSDir=$(readlink -f ${inputFSDir})/
-outputDir=${outputDir}
+outputDir=${outputDir}/
 
 # check existence of FS directory
 if [[ ! -d ${inputFSDir} ]]
@@ -135,18 +135,19 @@ then
 fi
 
 # check if we can make output dir
-mkdir -p ${outputDir} || \
+mkdir -p ${outputDir}/ || \
     { echo "could not make output dir; exiting" ; exit 1 ; } 
 
 ####################################################################
 ####################################################################
 
 # setup note-taking
-OUT=${outputDir}notes.txt
+OUT=${outputDir}/notes.txt
 touch $OUT
 
 # also make this a full path
-outputDir=$(readlink -f ${outputDir})/
+outputDir=$(readlink -f ${outputDir})
+echo ${outputDir}
 
 # set subj variable to fs dir name, as is freesurfer custom
 subj=$(basename $inputFSDir)
@@ -192,8 +193,8 @@ done
 ####################################################################
 ####################################################################
 
-mkdir -p ${outputDir}tmpFsDir/${subj}/
-tempFSSubj=${outputDir}tmpFsDir/${subj}
+mkdir -p ${outputDir}/tmpFsDir/${subj}/
+tempFSSubj=${outputDir}/tmpFsDir/${subj}/
 
 # copy minimally to speed up
 mkdir -p ${tempFSSubj}/surf/
@@ -217,7 +218,7 @@ cp -asv ${inputFSDir}/mri/ribbon.mgz ${tempFSSubj}/mri/
 cp -asv ${inputFSDir}/mri/rawavg.mgz ${tempFSSubj}/mri/
 
 # reset SUJECTS_DIR to the new inputFSDir
-export SUBJECTS_DIR=${outputDir}tmpFsDir/
+export SUBJECTS_DIR=${outputDir}/tmpFsDir/
 
 ####################################################################
 ####################################################################
@@ -226,7 +227,7 @@ echo ${atlasBaseDir}
 for atlas in ${atlasList}
 do
  
-    if [[ -e ${outputDir}${atlas}/${atlas}.mgz ]]
+    if [[ -e ${outputDir}/${atlas}/${atlas}.mgz ]]
     then 
         continue 
     fi
@@ -242,7 +243,7 @@ do
             continue
         fi
 
-        mkdir -p ${outputDir}${atlas}/
+        mkdir -p ${outputDir}/${atlas}/
 
         # mris_ca_label [options] <subject> <hemi> <canonsurf> <classifier> <outputfile>
         cmd="${FREESURFER_HOME}/bin/mris_ca_label \
@@ -253,7 +254,7 @@ do
                     ${hemi} \
                     ${tempFSSubj}/surf/${hemi}.sphere.reg \
                     ${currentGCS} \
-                    ${outputDir}${atlas}/${hemi}.${atlas}.annot \
+                    ${outputDir}/${atlas}/${hemi}.${atlas}.annot \
 		    "
         echo $cmd #state the command
         log $cmd
@@ -265,16 +266,16 @@ do
 
     done # for hemi in lh rh
 
-    if [[ ! -f ${outputDir}${atlas}/${hemi}.${atlas}.annot ]] || \
-        [[ ! -f ${outputDir}${atlas}/${hemi}.${atlas}.annot ]]
+    if [[ ! -f ${outputDir}/${atlas}/${hemi}.${atlas}.annot ]] || \
+        [[ ! -f ${outputDir}/${atlas}/${hemi}.${atlas}.annot ]]
     then
         echo "problem making the atlas: ${atlas} ...skipping"
         continue
     else
-        ln -s ${outputDir}${atlas}/lh.${atlas}.annot ${tempFSSubj}/label/lh.${atlas}.annot
-        ln -s ${outputDir}${atlas}/rh.${atlas}.annot ${tempFSSubj}/label/rh.${atlas}.annot
+        ln -s ${outputDir}/${atlas}/lh.${atlas}.annot ${tempFSSubj}/label/lh.${atlas}.annot
+        ln -s ${outputDir}/${atlas}/rh.${atlas}.annot ${tempFSSubj}/label/rh.${atlas}.annot
         # and link the LUT to the output
-        ln -s ${atlasBaseDir}/${atlas}/LUT_${atlas}.txt ${outputDir}${atlas}/LUT_${atlas}.txt
+        ln -s ${atlasBaseDir}/${atlas}/LUT_${atlas}.txt ${outputDir}/${atlas}/LUT_${atlas}.txt
     fi
 
     # mri_aparc2aseg
@@ -282,7 +283,7 @@ do
             --s ${subj} \
             --annot ${atlas} \
             --volmask \
-            --o ${outputDir}${atlas}/${atlas}.mgz \
+            --o ${outputDir}/${atlas}/${atlas}.mgz \
 	    "
     echo $cmd #state the command
     log $cmd 
@@ -290,10 +291,10 @@ do
 
     # convert out of freesurfer space
     cmd="${FREESURFER_HOME}/bin/mri_label2vol \
-		    --seg ${outputDir}${atlas}/${atlas}.mgz \
+		    --seg ${outputDir}/${atlas}/${atlas}.mgz \
 		    --temp ${tempFSSubj}/mri/rawavg.mgz \
-		    --o ${outputDir}${atlas}/${atlas}.nii.gz \
-		    --regheader ${outputDir}${atlas}/${atlas}.mgz \
+		    --o ${outputDir}/${atlas}/${atlas}.nii.gz \
+		    --regheader ${outputDir}/${atlas}/${atlas}.mgz \
 		    "
     echo $cmd #state the command
     log $cmd >> $OUT
@@ -310,36 +311,36 @@ done # for atlas in atlasList
 
 atlasListArray=($(echo ${atlasList}))
 pickAtlas=${atlasListArray[0]}
-subjAparcAseg=${outputDir}${pickAtlas}/${pickAtlas}.nii.gz
+subjAparcAseg=${outputDir}/${pickAtlas}/${pickAtlas}.nii.gz
 
 if [[ ! -e ${subjAparcAseg} ]]
 then
     echo "problem. could not read subjAparcAseg: ${subjAparcAseg}"
     exit 1
 else
-    ln -s ${subjAparcAseg} ${outputDir}subj_aparc+aseg_ln.nii.gz 
+    ln -s ${subjAparcAseg} ${outputDir}/subj_aparc+aseg_ln.nii.gz 
 fi
 
 ####################################################################
 ####################################################################
 # get gm ribbom if does not exits
 
-if [[ ! -e ${outputDir}${subj}_cortical_mask.nii.gz ]]
+if [[ ! -e ${outputDir}/${subj}_cortical_mask.nii.gz ]]
 then
 
     # let's get a lh and rh, get largest component of each
     cmd="${FREESURFER_HOME}/bin/mri_binarize \
             --i ${subjAparcAseg} \
             --min 1000 --max 1999 --binval 1 \
-            --o ${outputDir}lh.tmp_cort_mask.nii.gz \
+            --o ${outputDir}/lh.tmp_cort_mask.nii.gz \
         "     
     echo $cmd #state the command
     log $cmd >> $OUT
     eval $cmd #execute the command
     cmd="${FREESURFER_HOME}/bin/mri_extract_largest_CC \
             -T 1 \
-            ${outputDir}lh.tmp_cort_mask.nii.gz \
-            ${outputDir}lh.tmp_cort_mask.nii.gz \
+            ${outputDir}/lh.tmp_cort_mask.nii.gz \
+            ${outputDir}/lh.tmp_cort_mask.nii.gz \
         "     
     echo $cmd #state the command
     log $cmd >> $OUT
@@ -348,15 +349,15 @@ then
     cmd="${FREESURFER_HOME}/bin/mri_binarize \
             --i ${subjAparcAseg} \
             --min 2000 --max 2999 --binval 1 \
-            --o ${outputDir}rh.tmp_cort_mask.nii.gz \
+            --o ${outputDir}/rh.tmp_cort_mask.nii.gz \
         "     
     echo $cmd #state the command
     log $cmd >> $OUT
     eval $cmd #execute the command
     cmd="${FREESURFER_HOME}/bin/mri_extract_largest_CC \
             -T 1 \
-            ${outputDir}rh.tmp_cort_mask.nii.gz \
-            ${outputDir}rh.tmp_cort_mask.nii.gz \
+            ${outputDir}/rh.tmp_cort_mask.nii.gz \
+            ${outputDir}/rh.tmp_cort_mask.nii.gz \
         "     
     echo $cmd #state the command
     log $cmd >> $OUT
@@ -364,16 +365,16 @@ then
 
     # write out the combined cortical_mask
     cmd="${FREESURFER_HOME}/bin/mris_calc \
-            -o ${outputDir}${subj}_cortical_mask.nii.gz \
-            ${outputDir}lh.tmp_cort_mask.nii.gz \
-            add ${outputDir}rh.tmp_cort_mask.nii.gz \
+            -o ${outputDir}/${subj}_cortical_mask.nii.gz \
+            ${outputDir}/lh.tmp_cort_mask.nii.gz \
+            add ${outputDir}/rh.tmp_cort_mask.nii.gz \
         "
     echo $cmd
     log $cmd >> $OUT
     eval $cmd
 
     # remove the tmp
-    ls ${outputDir}?h.tmp_cort_mask.nii.gz && rm ${outputDir}?h.tmp_cort_mask.nii.gz
+    ls ${outputDir}/?h.tmp_cort_mask.nii.gz && rm ${outputDir}/?h.tmp_cort_mask.nii.gz
 
 fi
 
@@ -381,7 +382,7 @@ fi
 ####################################################################
 # get subcort if does not exist
 
-if [[ ! -e ${outputDir}${subj}_subcort_mask.nii.gz ]]
+if [[ ! -e ${outputDir}/${subj}_subcort_mask.nii.gz ]]
 then
 
     # function inputs:
@@ -408,7 +409,7 @@ fi
 for atlas in ${atlasList}
 do
 
-    atlasOutputDir=${outputDir}${atlas}/
+    atlasOutputDir=${outputDir}/${atlas}/
 
     if [[ -e ${atlasOutputDir}/${atlas}_rmap.nii.gz ]]
     then
@@ -434,7 +435,7 @@ do
     # look at only cortical
     cmd="${FSLDIR}/bin/fslmaths \
             ${atlasOutputDir}/${atlas}.nii.gz \
-            -mas ${outputDir}${subj}_cortical_mask.nii.gz \
+            -mas ${outputDir}/${subj}_cortical_mask.nii.gz \
             ${atlasOutputDir}/${atlas}.nii.gz \
             -odt int \
         "
@@ -468,7 +469,7 @@ do
     # remove any stuff in area of subcortical (shouldnt be there anyways...)
     cmd="${FSLDIR}/bin/fslmaths \
             ${atlasOutputDir}/${atlas}_rmap.nii.gz \
-            -mas ${outputDir}${subj}_subcort_mask_binv.nii.gz \
+            -mas ${outputDir}/${subj}_subcort_mask_binv.nii.gz \
             ${atlasOutputDir}/${atlas}_rmap.nii.gz \
             -odt int \
         "
@@ -480,7 +481,7 @@ do
     maxCortical=$(fslstats ${atlasOutputDir}/${atlas}_rmap.nii.gz -R | awk '{print int($2)}')
     # add the max value to subcort, theshold out areas that should be 0
     cmd="${FSLDIR}/bin/fslmaths \
-            ${outputDir}${subj}_subcort_mask.nii.gz \
+            ${outputDir}/${subj}_subcort_mask.nii.gz \
             -add ${maxCortical} \
             -thr $(( ${maxCortical} + 1 ))
             ${atlasOutputDir}/${subj}_subcort_mask_${atlas}tmp.nii.gz \
@@ -508,7 +509,7 @@ done
 
 # delete extra stuff
 # the temp fsDirectory we setup at very beginning
-ls -d ${outputDir}tmpFsDir/ && rm -r ${outputDir}tmpFsDir/
+ls -d ${outputDir}/tmpFsDir/ && rm -r ${outputDir}/tmpFsDir/
 
 } # main
 
