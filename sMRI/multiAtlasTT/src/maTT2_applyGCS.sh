@@ -194,7 +194,7 @@ done
 ####################################################################
 
 mkdir -p ${outputDir}/tmpFsDir/${subj}/
-tempFSSubj=${outputDir}/tmpFsDir/${subj}/
+tempFSSubj=${outputDir}/tmpFsDir/${subj}
 
 # copy minimally to speed up
 mkdir -p ${tempFSSubj}/surf/
@@ -218,7 +218,7 @@ cp -asv ${inputFSDir}/mri/ribbon.mgz ${tempFSSubj}/mri/
 cp -asv ${inputFSDir}/mri/rawavg.mgz ${tempFSSubj}/mri/
 
 # reset SUJECTS_DIR to the new inputFSDir
-export SUBJECTS_DIR=${outputDir}/tmpFsDir/
+export SUBJECTS_DIR=${outputDir}/tmpFsDir
 
 ####################################################################
 ####################################################################
