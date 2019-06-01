@@ -60,7 +60,7 @@ start=`date +%s`
 cmd="${scriptBaseDir}/src/maTT2_applyGCS.sh \
         -d ${inputFSDir} \
         -o ${outputDir} \
-        -f 5p3 \
+        -f 6p0 \
     "
 echo $cmd 
 eval $cmd | tee -a ${OUT}
