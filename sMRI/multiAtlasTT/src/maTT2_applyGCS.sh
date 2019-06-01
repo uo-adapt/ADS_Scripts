@@ -221,7 +221,7 @@ export SUBJECTS_DIR=${outputDir}/tmpFsDir/
 
 ####################################################################
 ####################################################################
-
+echo ${atlasBaseDir}
 # run it
 for atlas in ${atlasList}
 do
