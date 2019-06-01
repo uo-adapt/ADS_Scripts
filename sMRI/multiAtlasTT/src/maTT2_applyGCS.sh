@@ -193,7 +193,7 @@ done
 ####################################################################
 
 mkdir -p ${outputDir}tmpFsDir/${subj}/
-tempFSSubj=${outputDir}tmpFsDir/${subj}/
+tempFSSubj=${outputDir}tmpFsDir/${subj}
 
 # copy minimally to speed up
 mkdir -p ${tempFSSubj}/surf/
