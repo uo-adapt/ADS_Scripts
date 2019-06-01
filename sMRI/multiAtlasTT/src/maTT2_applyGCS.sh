@@ -219,8 +219,6 @@ cp -asv ${inputFSDir}mri/aseg.mgz ${tempFSSubj}/mri/
 cp -asv ${inputFSDir}mri/ribbon.mgz ${tempFSSubj}/mri/
 cp -asv ${inputFSDir}mri/rawavg.mgz ${tempFSSubj}/mri/
 
-cp -asv ${inputFSDir} ${tempFSSubj}
-
 # reset SUJECTS_DIR to the new inputFSDir
 export SUBJECTS_DIR=${outputDir}/tmpFsDir
 
