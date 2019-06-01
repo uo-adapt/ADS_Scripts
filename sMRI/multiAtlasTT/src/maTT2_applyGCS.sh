@@ -234,7 +234,7 @@ do
     for hemi in lh rh
     do
 
-        currentGCS=${atlasBaseDir}/${atlas}/${hemi}.${atlas}_${fsVersion}.gcs
+        currentGCS=${atlasBaseDir}${atlas}/${hemi}.${atlas}_${fsVersion}.gcs
 
         if [[ ! -f ${currentGCS} ]]
         then
