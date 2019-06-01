@@ -25,7 +25,7 @@ export atlasList="gordon333"
 # subject variables
 
 subj="sub-ADS1915"
-inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer"
+inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/"${subj}""
 outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/"${subj}""
 mkdir -p ${outputDir}
 
