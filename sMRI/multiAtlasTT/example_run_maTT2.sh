@@ -7,7 +7,7 @@
 module load fsl
 
 # SETUP FREESUFER HERE (however it is done on your system)
- module load freesurfer
+module load freesurfer
 
 ####################################################################
 ####################################################################
