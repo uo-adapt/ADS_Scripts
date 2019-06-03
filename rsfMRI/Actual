@@ -16,7 +16,7 @@ mri_vol2surf --mov ${xcp}/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --reg  ${subj}_register.dat \
 --hemi lh \
 --interp nearest \
---projfrac-avg 0 1 0.05 # projects 
+--projfrac-avg .3 .7 0.05 # projects to .3 and .7 of the way through cortical ribbon. Reduces partial volume effects while also avoids confounding signals due to veins on the pial surface. Signal is most specific towards the white matter, but stronges at the (though less specific) at the pial
 
 freeview -f ${freesurfer}/${subj}/surf/lh.inflated:overlay=${output}/${subj}/${wave}/lh.${subj}_${wave}_test.mgh
 

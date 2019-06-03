@@ -18,14 +18,14 @@ export scriptBaseDir=${PWD}/
 # nspn500 gordon333 yeo17 yeo17dil hcp-mmp schaefer100-yeo17 
 # schaefer200-yeo17 schaefer400-yeo17 schaefer600-yeo17 schaefer800-yeo17 
 # schaefer1000-yeo17
-export atlasList="schaefer100-yeo17 schaefer200-yeo17 yeo17 yeo17dil"
+export atlasList="gordon333 yeo17 hcp-mmp yeo17dil"
 
 ####################################################################
 ####################################################################
 # subject variables
 
 subj="sub-ADS1915"
-inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer"
+inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/"${subj}""
 outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/"${subj}""
 mkdir -p ${outputDir}
 
@@ -57,10 +57,10 @@ touch $OUT
 
 start=`date +%s`
 
-cmd="${scriptBaseDir}/src/maTT2_applyGCS.sh \
+cmd="${scriptBaseDir}src/maTT2_applyGCS.sh \
         -d ${inputFSDir} \
         -o ${outputDir} \
-        -f 5p3 \
+        -f 6p0 \
     "
 echo $cmd 
 eval $cmd | tee -a ${OUT}
