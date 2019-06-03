@@ -56,6 +56,8 @@ eddy_correct sub-"${subid}"_ses-${wave}_dwi.nii.gz sub-"${subid}"_ses-${wave}_dw
 cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
 cp sub-"${subid}"_ses-${wave}_dwi_eddy_correct.nii.gz data.nii.gz
 
+# run fdt_rotate_bvecs on bvals and bvecs
+
 # Linear registration of brain extracted freesurfer to standard space
 cd "$outputdir"/"${subid}"/ses-${wave}/
 mkdir anat
