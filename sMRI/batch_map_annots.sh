@@ -17,5 +17,5 @@ SUBJLIST=`cat sub_test.txt`
 # 
 for SUBJ in $SUBJLIST
 do
-sbatch --export SUBID=${SUBJ} --job-name mapANNOTs_w2_"${SUBJ}" --partition=short --mem-per-cpu=1G --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/wave2/output/"${SUBJ}"_mapANNOTs_w2_output.txt -e "${STUDY}"/Scripts/sMRI/wave2/output/"${SUBJ}"_mapANNOTs_w2_error.txt job_map_annots_w2.sh
+sbatch --export SUBID=${SUBJ} --job-name mapANNOTs_"${SUBJ}" --partition=short --mem-per-cpu=1G --cpus-per-task=1 -o "${STUDY}"/Scripts/sMRI/output/"${SUBJ}"_mapANNOTs_output.txt -e "${STUDY}"/Scripts/sMRI/output/"${SUBJ}"_mapANNOTs_error.txt job_map_annots.sh
 done
