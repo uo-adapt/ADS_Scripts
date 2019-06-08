@@ -33,7 +33,7 @@ rhlabels=`cat rhlabels.txt`
 pushd $SUBJECTS_DIR/$SUBID/label/ && mkdir fromannots && popd
 pushd $SUBJECTS_DIR/$SUBID/mri/ && mkdir fromannots && popd
 
-SUBID="${SUBID}"_ses-wave2.long.$SUBID
+SUBID="${SUBID}"
 echo $SUBJECTS_DIR/$SUBID
 
 for annot in $lhannots; do
