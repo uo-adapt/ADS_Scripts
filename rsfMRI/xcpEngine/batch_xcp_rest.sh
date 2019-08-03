@@ -38,7 +38,7 @@ ses=${ses%%,*}
 run=${TEMP_COHORT##*,}
 
 
-sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run},XCPEDIR=${XCPEDIR} --job-name xcp_rest_"${ID}" --partition=short --time=1:00:00 --mem=20G -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
+sbatch --export ALL,ID=${ID},TEMP_COHORT=${TEMP_COHORT},ses=${ses},run=${run},XCPEDIR=${XCPEDIR} --job-name xcp_rest_"${ID}" --partition=short --time=1:00:00 --mem=20G -A adapt_lab -o "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_output.txt -e "${group_dir}"/"${study}"/Scripts/rsfMRI/xcpEngine/output/"${ID}"_xcp_rest_error.txt xcp_rest.sh
 
 
 done
