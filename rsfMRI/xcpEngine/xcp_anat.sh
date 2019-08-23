@@ -11,11 +11,9 @@ module load python3
 
 cd /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 
-XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
+export XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 SIMG=/projects/adapt_lab/shared/containers/xcpEngine.simg
 HOME=/projects/adapt_lab/shared/ADS
-
-echo ${DATA_ROOT} "hello"
 
 singularity run -B ${DATA_ROOT}:${HOME} $SIMG \
    -d ${HOME}/Scripts/rsfMRI/xcpEngine/anat-Minimal_201903162306.dsn \
