@@ -1,0 +1,1044 @@
+Lmod has detected the following error: These module(s) exist but cannot be
+loaded as requested: "c3d"
+   Try: "module spider c3d" to see how to load the module(s).
+
+
+
+
+
+
+Current processing step:
+@1 Localising subject metadata...
+····································································
+· @1.1 [Parsing subject identifiers]
+· @1.1a [Creating output directory]
+· @1.1b [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3]
+· @1.2 [Initialising space mapping]
+· @1.3 [Initialising derivative maps]
+· @1.4 [Initialising atlas system]
+· @1.5 Ingress
+/xcpEngine/core/functions/import_metadata: line 16: ${2}: ambiguous redirect
+/xcpEngine/core/functions/import_metadata: line 16: ${2}: ambiguous redirect
+· @1.5.1 [Native space: sub-ADS331_ses-wave3_anatomical]
+· @1.5.2a [Standard space: MNI]
+· @1.5.3a [Anatomical space: sub-ADS331_ses-wave3_anatomical]
+· @1.5 [Priming analytic audit]
+· @1.6 [Priming quality assessment]
+
+
+
+Current processing step:
+@2 Localising image
+····································································
+· @2.1 [Verifying that images are present]
+· @2.2 [Conforming and localising images]
+
+
+
+Current processing step:
+@3 Localising design
+····································································
+· @3.1 [Writing localised design]
+· @3.2 [Evaluating subject variables]
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@0 Ensure matching orientation
+····································································
+· @0.1a Input: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~.nii.gz
+· @0.1b Template: /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· @0.1c Output root:
+· @0.1d checking the orientation of img and template
+                             -   -   -
+>> 3dinfo -orient /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 3dinfo -orient /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· @0.1e img and template orientation are not the same
+· @0.1f make it: LPI -> RPI
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~_RPI.nii.gz
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~_RPI.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~.nii.gz
+· @0.1 
+
+
+
+Current processing step:
+@ getting data from frmiprep directory
+····································································
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~_FMP
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_desc-confounds_regressors.tsv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_space-T1w_boldref.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_space-T1w_desc-brain_mask.nii.gz -prefix sub-ADS331_ses-wave3_imgmask.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_desc-brain_mask.nii.gz -prefix sub-ADS331_ses-wave3_structmask.nii.gz -overwrite
+                             -   -   -
+>> fslmaths sub-ADS331_ses-wave3_imgmask.nii.gz -mul sub-ADS331_ses-wave3_structmask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_dseg.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -overwrite
+                             -   -   -
+>> 3dresample -master /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_desc-preproc_T1w.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_struct.nii.gz -overwrite
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz
+· @ generate new /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_spaces.json with spaceMetadata
+· @ Quality assessment
+                             -   -   -
+>> ${XCPEDIR}/utils/maskOverlap.R -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz
+· [Cross-correlation:    0.9476907 ]
+· [Coverage:             1 ]
+· [Jaccard coefficient:  0.9289732 ]
+· [Dice coefficient:     0.9631789 ]
+· @0.2 
+                             -   -   -
+>> imcp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3~TEMP~_FMP.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz -t 1.400000
+                             -   -   -
+>> 3dresample -orient RPI -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz -overwrite
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+                             -   -   -
+>> mkdir -p /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc
+
+
+
+Current processing step:
+@1 Generating confound matrix
+····································································
+· @1.1 Generating temporal mask
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j stdVARS -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_dvars-std.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j rps -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_realignment.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j fd -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D
+· @1.1.1 [Computing framewise displacement]
+                             -   -   -
+>> ${XCPEDIR}/utils/fd.R -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_realignment.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_fd.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_spatial_sd.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_ts_quality_index.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_ts_outliers.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz -S
+                             -   -   -
+>> 3dTqual -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> 3dToutcount -automask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D
+· @1.1.3 [Selecting quality criteria]
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3-nFlags.1D
+· @1.1.5 [Applying framewise threshold to time series]
+                             -   -   -
+>> ${XCPEDIR}/utils/tmask.R -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3-nFlags.1D -t 0.5 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_tmask.1D -m 0
+· @1.1.6 [Evaluating data quality]
+· @1.2 relative maximum motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D -o max -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relMaxRMS.txt
+· @1.3 relative mean motion
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relMeanRMS.txt
+· @1.5 Including csf
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j csf -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_csf.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x null -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_csf.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D
+· @1.7 Including gsr
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j gsr -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_gsr.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_gsr.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D
+· @1.8 Including wm
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j wm -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_wm.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_wm.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D
+· @1.6 Including aroma
+                             -   -   -
+>> ${XCPEDIR}/utils/generate_confmat.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_fmriconf.tsv -j aroma -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_aroma.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/mbind.R -x /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D -y /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_aroma.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+
+
+
+Current processing step:
+@2 Validating confound model
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_modelParameterCount.txt
+· @2.1a 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+· @0.1 
+
+
+
+Current processing step:
+@7 Demeaning and detrending BOLD timeseries
+····································································
+· @7.2 
+· @7.5a [Applying polynomial detrend]
+· @7.5b [Order: 2]
+                             -   -   -
+>> ${XCPEDIR}/utils/dmdt.R -d 2 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz
+· @7.6 [Executing detrend: Confound matrix]
+                             -   -   -
+>> ${XCPEDIR}/utils/1dDMDT.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/sub-ADS331_ses-wave3_confmat.1D -d 2 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_confmat.1D
+
+
+
+Current processing step:
+@2 Temporally filtering image and confounds
+····································································
+· @2.2 
+· @2.3 
+· @2.5 
+· @2.6 
+· @2.8 
+· @2.12a [butterworth filter]
+· @2.12b [High pass frequency: 0.01]
+· @2.12c [Low pass frequency: 0.08]
+                             -   -   -
+>> ${XCPEDIR}/utils/tfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP.nii.gz -a 1.400000 -f butterworth -h 0.01 -l 0.08 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -r 1 -d 2 -1 confmat:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_confmat.1D
+                             -   -   -
+>> remove_ext /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT.nii.gz pixdim4
+· @u.4 
+· @u.8 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/genfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP.nii.gz -f butterworth -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -c 0.01 -l 0.08 -r 1 -d 2
+· @u.8.3 
+                             -   -   -
+>> rm -rf /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_confmat.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/1dGenfilter.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_confmat.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_confmat.1D -f butterworth -t 1.400000 -c 0.01 -l 0.08 -r 1 -d 2
+
+
+
+Current processing step:
+@4 Converting BOLD timeseries to confound residuals
+····································································
+· @4.2 
+· @4.3 
+                             -   -   -
+>> mv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_confmat.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_confmat.1D
+· @4.5 [Computing confound correlations]
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_confmat.1D
+· @4.6 [Executing detrend]
+                             -   -   -
+>> 3dTproject -input /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP.nii.gz -ort /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_confmat.1D -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_REG.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_REG /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_REG
+· @0.2 
+                             -   -   -
+>> immv /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3~TEMP~_DMT_TMP_REG.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> ${XCPEDIR}/utils/addTR.py -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -t 1.400000
+
+
+
+Current processing step:
+@6 Spatially filtering image
+····································································
+· @6.1 
+· @6.2 [Configuring SUSAN]
+· @6.4 
+· @6.6 
+· @6.10a [Filter: susan]
+· @6.10b [Smoothing kernel: 2 mm]
+· @6.11 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -p 50
+                             -   -   -
+>> 938.643311 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz 703.98248325000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz 703.98248325000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz_usan_size.nii.gz
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/sub-ADS331_ses-wave3_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Functional connectome: gordon333
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> fslstats /xcpEngine/atlas/gordon333/gordon333MNI.nii.gz -R
+                             -   -   -
+>> 333.000000<=1
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /xcpEngine/atlas/gordon333/gordon333MNI.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_struct.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n MultiLabel -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333.nii.gz
+                             -   -   -
+>> 14-11-1
+                             -   -   -
+>> 14-1
+· @1.3 Computing network timeseries
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/roi2ts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -l /xcpEngine/atlas/gordon333/gordon333NodeIndex.1D
+· @1.4 Computing adjacency matrix
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_network.txt
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333.net
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_missing.txt
+                             -   -   -
+>> ${XCPEDIR}/utils/ts2adjmat.R -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_ts.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/adjmat2pajek.R -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_network.txt -t N
+· @1.5 Determining node coverage
+                             -   -   -
+>> ${XCPEDIR}/utils/missingIdx.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/fcon/gordon333/sub-ADS331_ses-wave3_gordon333_network.txt
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Computing voxelwise ReHo
+····································································
+· @1.1 Determining voxel neighbourhood
+· @1.2c Vertices
+· @1.3 Computing regional homogeneity (ReHo)
+                             -   -   -
+>> 3dReHo -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz -nneigh 27
+· @1.4 Standardising ReHo values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -sub 0.150261 -div 0.077163 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz
+
+
+
+Current processing step:
+@2 Spatially filtering ReHo map
+····································································
+· @2.1a Filter: susan
+· @2.2b Smoothing kernel: 2 mm
+· @2.2 
+· @2.4 
+· @2.4.2 
+                             -   -   -
+>> ${XCPEDIR}/utils/sfilter -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -s susan -k 2 -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -u /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz
+· @u.3 
+                             -   -   -
+>> 2/2.35482004503
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -p 50
+                             -   -   -
+>> 938.643311 *3/4
+                             -   -   -
+>> susan /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz 703.98248325000000000000 .84932180028836145990 3 1 1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz 703.98248325000000000000 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz_usan_size.nii.gz
+· @2.5 Standardising ReHo values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -sub 0.138692 -div 0.063823 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ_sm2.nii.gz
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Spatially filtering image
+····································································
+· @1.1 
+· @1.2 [Configuring SUSAN]
+· @1.4 
+· @1.6 
+· @1.7a 
+
+
+
+Current processing step:
+@2 Amplitude of low-frequency fluctuations
+····································································
+· @2.0 At smoothness 0 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS.nii.gz
+· @2.5 Computing square root of amplitudes
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS.nii.gz -sqrt /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SQRT.nii.gz
+· @2.6 Extracting power spectrum at the low frequency band
+                             -   -   -
+>> 0.01*510*1.400000
+                             -   -   -
+>> 0.08*510*1.400000
+                             -   -   -
+>> 7.14000000-1
+                             -   -   -
+>> 57.12000000-7.14000000+1
+· @2.7a 0.01 Hz is approximately position 6
+· @2.7b of the power spectrum. There are about 51 frequency
+· @2.7d positions corresponding to the passband (0.08 - 0.01 Hz)
+· @2.7e in the power spectrum.
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SQRT.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SLOW.nii.gz 6 51
+· @2.8 Computing the amplitude of low-frequency fluctuations (ALFF)
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SLOW.nii.gz -Tmean -mul 51 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz
+· @2.9 Standardising ALFF values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -sub 3669.626685 -div 2303.013752 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz
+· @2.0 At smoothness 2 mm
+· @2.1 Ensuring integer periods
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz pixdim4
+· @2.3 
+                             -   -   -
+>> ln -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz
+· @2.4 Computing power spectrum
+                             -   -   -
+>> fslpspec /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~EVEN.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS.nii.gz
+· @2.5 Computing square root of amplitudes
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS.nii.gz -sqrt /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SQRT.nii.gz
+· @2.6 Extracting power spectrum at the low frequency band
+                             -   -   -
+>> 0.01*510*1.400000
+                             -   -   -
+>> 0.08*510*1.400000
+                             -   -   -
+>> 7.14000000-1
+                             -   -   -
+>> 57.12000000-7.14000000+1
+· @2.7a 0.01 Hz is approximately position 6
+· @2.7b of the power spectrum. There are about 51 frequency
+· @2.7d positions corresponding to the passband (0.08 - 0.01 Hz)
+· @2.7e in the power spectrum.
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SQRT.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SLOW.nii.gz 6 51
+· @2.8 Computing the amplitude of low-frequency fluctuations (ALFF)
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3~TEMP~PS-SLOW.nii.gz -Tmean -mul 51 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff_sm2.nii.gz
+· @2.9 Standardising ALFF values
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -M
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff_sm2.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -S
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff_sm2.nii.gz -sub 1122.827023 -div 651.553508 -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ_sm2.nii.gz
+· @0.1 
+· @0.1 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolume.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3_referenceVolume.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -R
+
+
+
+Current processing step:
+@1 Regional quantification: gordon333
+····································································
+· @1.2 Mapping network to image space
+· @1.2.1 
+· @1.2.7 
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333.nii.gz
+                             -   -   -
+>> 14-11-1
+                             -   -   -
+>> 14-1
+· @1.3.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/nodeCoverage.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -x /xcpEngine/atlas/gordon333/gordon333NodeIndex.1D -n /xcpEngine/atlas/gordon333/gordon333NodeNames.txt
+· @1.3.4 Computing atlas statistics
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alff.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_alff -d anatomical_alff -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n gordon333 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alff over gordon333
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_alff-quantifyAtlas_gordon333_mean.1D -a anatomical_alff_mean_gordon333 -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alff.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alffZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_alffZ -d anatomical_alffZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n gordon333 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alffZ over gordon333
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_alffZ-quantifyAtlas_gordon333_mean.1D -a anatomical_alffZ_mean_gordon333 -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alffZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_reho.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_reho -d anatomical_reho -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n gordon333 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical reho over gordon333
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_reho-quantifyAtlas_gordon333_mean.1D -a anatomical_reho_mean_gordon333 -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_reho.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_rehoZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_rehoZ -d anatomical_rehoZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n gordon333 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical rehoZ over gordon333
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_mean_rehoZ-quantifyAtlas_gordon333_mean.1D -a anatomical_rehoZ_mean_gordon333 -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_rehoZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> atlas_set gordon333 RegionalMeanAlff /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alff.csv
+                             -   -   -
+>> atlas_set gordon333 RegionalMeanAlffZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_alffZ.csv
+                             -   -   -
+>> atlas_set gordon333 RegionalMeanReho /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_reho.csv
+                             -   -   -
+>> atlas_set gordon333 RegionalMeanRehoZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_mean_rehoZ.csv
+· @1.3.5 
+· @1.3.6 
+· @1.3.7 
+· @1.3.8 
+· @1.3.9 
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -s vol -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_vol.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_vol -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -n gordon333 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.6 Volume over gordon333
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz -nzvoxels /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz pixdim1
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz pixdim2
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_gordon333.nii.gz pixdim3
+                             -   -   -
+>> 3.281000 *3.281000 *5.000000
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_vol-quantifyAtlas_gordon333_vol.1D -a vol_gordon333 -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_gordon333_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/gordon333/sub-ADS331_ses-wave3_gordon333_vol.csv -p sub-ADS331,ses-wave3 -s 53.824805000000000000
+
+
+
+Current processing step:
+@1 Regional quantification: global
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global.nii.gz
+                             -   -   -
+>> 14-11-1
+                             -   -   -
+>> 14-1
+· @1.3.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/nodeCoverage.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -x /xcpEngine/atlas/global/globalNodeIndex.1D -n /xcpEngine/atlas/global/globalNodeNames.txt
+· @1.3.4 Computing atlas statistics
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alff.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_alff -d anatomical_alff -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -n global -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alff over global
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_alff-quantifyAtlas_global_mean.1D -a anatomical_alff_mean_global -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alff.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alffZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_alffZ -d anatomical_alffZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -n global -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alffZ over global
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_alffZ-quantifyAtlas_global_mean.1D -a anatomical_alffZ_mean_global -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alffZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_reho.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_reho -d anatomical_reho -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -n global -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical reho over global
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_reho-quantifyAtlas_global_mean.1D -a anatomical_reho_mean_global -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_reho.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_rehoZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_rehoZ -d anatomical_rehoZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -n global -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical rehoZ over global
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_mean_rehoZ-quantifyAtlas_global_mean.1D -a anatomical_rehoZ_mean_global -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_rehoZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> atlas_set global RegionalMeanAlff /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alff.csv
+                             -   -   -
+>> atlas_set global RegionalMeanAlffZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_alffZ.csv
+                             -   -   -
+>> atlas_set global RegionalMeanReho /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_reho.csv
+                             -   -   -
+>> atlas_set global RegionalMeanRehoZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_mean_rehoZ.csv
+· @1.3.5 
+· @1.3.6 
+· @1.3.7 
+· @1.3.8 
+· @1.3.9 
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -s vol -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_vol.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_vol -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -n global -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.6 Volume over global
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz -nzvoxels /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz pixdim1
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz pixdim2
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_global.nii.gz pixdim3
+                             -   -   -
+>> 3.281000 *3.281000 *5.000000
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_vol-quantifyAtlas_global_vol.1D -a vol_global -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_global_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/global/sub-ADS331_ses-wave3_global_vol.csv -p sub-ADS331,ses-wave3 -s 53.824805000000000000
+
+
+
+Current processing step:
+@1 Regional quantification: segmentation
+····································································
+· @1.2 Mapping network to image space
+· @1.2.2 
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation.nii.gz
+                             -   -   -
+>> 14-11-1
+                             -   -   -
+>> 14-1
+· @1.3.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/nodeCoverage.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -x /xcpEngine/atlas/segmentation3/segmentation3NodeIndex.1D -n /xcpEngine/atlas/segmentation3/segmentation3NodeNames.txt
+· @1.3.4 Computing atlas statistics
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alff.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_alff -d anatomical_alff -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alff over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_alff-quantifyAtlas_segmentation_mean.1D -a anatomical_alff_mean_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alff.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alffZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_alffZ -d anatomical_alffZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical alffZ over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_alffZ-quantifyAtlas_segmentation_mean.1D -a anatomical_alffZ_mean_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alffZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_reho.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_reho -d anatomical_reho -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical reho over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_reho-quantifyAtlas_segmentation_mean.1D -a anatomical_reho_mean_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_reho.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -v /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz -s mean -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_rehoZ.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_rehoZ -d anatomical_rehoZ -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.1 Mean anatomical rehoZ over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -nzmean /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_mean_rehoZ-quantifyAtlas_segmentation_mean.1D -a anatomical_rehoZ_mean_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_rehoZ.csv -p sub-ADS331,ses-wave3
+                             -   -   -
+>> atlas_set segmentation RegionalMeanAlff /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alff.csv
+                             -   -   -
+>> atlas_set segmentation RegionalMeanAlffZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_alffZ.csv
+                             -   -   -
+>> atlas_set segmentation RegionalMeanReho /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_reho.csv
+                             -   -   -
+>> atlas_set segmentation RegionalMeanRehoZ /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_mean_rehoZ.csv
+· @1.3.5 
+· @1.3.6 
+· @1.3.7 
+· @1.3.8 
+· @1.3.9 
+                             -   -   -
+>> ${XCPEDIR}/utils/quantifyAtlas -s vol -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_vol.csv -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_vol -a /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -n segmentation -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -p sub-ADS331,ses-wave3 -w 0
+· @u.6 Volume over segmentation
+                             -   -   -
+>> 3dROIstats -1DRformat -nomeanout -nobriklab -roisel /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_idx.1D -mask /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz -nzvoxels /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz pixdim1
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz pixdim2
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3_atlas/sub-ADS331_ses-wave3_segmentation.nii.gz pixdim3
+                             -   -   -
+>> 3.281000 *3.281000 *5.000000
+· @u.8 
+                             -   -   -
+>> ${XCPEDIR}/utils/rs2rq.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_vol-quantifyAtlas_segmentation_vol.1D -a vol_segmentation -n /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/sub-ADS331_ses-wave3~TEMP~_segmentation_names.1D -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/roiquant/segmentation/sub-ADS331_ses-wave3_segmentation_vol.csv -p sub-ADS331,ses-wave3 -s 53.824805000000000000
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~.nii.gz
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+
+
+
+Current processing step:
+@1 Normalising using ANTs
+····································································
+· @1.1 [Selecting transforms to apply]
+· @1.2 [Normalising primary dataset]
+· @1.3 [Applying composite diffeomorphism to primary dataset]
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.4 [Applying composite diffeomorphism to derivative images:]
+· @1.5 [alff]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_alffStd.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [alffZ]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_alffZStd.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [alffZ_sm2]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alffZ_sm2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_alffZ_sm2Std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [alff_sm2]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/alff/sub-ADS331_ses-wave3_alff_sm2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_alff_sm2Std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [img_sm2]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_img_sm2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_img_sm2Std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [mask]
+· @1.6 
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_mask.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_maskStd.nii.gz -n NearestNeighbor -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [referenceVolumeBrain]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_referenceVolumeBrain.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [reho]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_rehoStd.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [rehoZ]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_rehoZStd.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [rehoZ_sm2]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_rehoZ_sm2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_rehoZ_sm2Std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @1.5 [reho_sm2]
+· @1.8 
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/reho/sub-ADS331_ses-wave3_reho_sm2.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_reho_sm2Std.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-T1w_to-MNI152NLin2009cAsym_mode-image_xfm.h5
+· @2.0 
+
+
+
+Current processing step:
+@2 Quality assessment
+····································································
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz -bin /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-seq2std_mask.nii.gz
+· @2.1 [Computing registration quality metrics]
+                             -   -   -
+>> ${XCPEDIR}/utils/maskOverlap.R -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-seq2std_mask.nii.gz -r /xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· [Cross-correlation:    0.8900727 ]
+· [Coverage:             0.959646 ]
+· [Jaccard coefficient:  0.8483631 ]
+· [Dice coefficient:     0.9179615 ]
+· @2.2 [Preparing slicewise rendering]
+                             -   -   -
+>> ${XCPEDIR}/utils/regslicer -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz -t /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~ -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_seq2std
+· @u.1 
+                             -   -   -
+>> slicer /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz /xcpEngine/space/MNI/MNI-2x2x2.nii.gz -s 2 -x 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sla.png -x 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slb.png -x 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slc.png -x 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sld.png -y 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sle.png -y 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slf.png -y 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slg.png -y 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slh.png -z 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sli.png -z 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slj.png -z 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slk.png -z 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sll.png
+                             -   -   -
+>> pngappend /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sla.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slb.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slc.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sld.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sle.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slf.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slg.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slh.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sli.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slj.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slk.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sll.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target1.png
+                             -   -   -
+>> slicer /xcpEngine/space/MNI/MNI-2x2x2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz -s 2 -x 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sla.png -x 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slb.png -x 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slc.png -x 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sld.png -y 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sle.png -y 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slf.png -y 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slg.png -y 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slh.png -z 0.35 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sli.png -z 0.45 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slj.png -z 0.55 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slk.png -z 0.65 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sll.png
+                             -   -   -
+>> pngappend /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sla.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slb.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slc.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sld.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sle.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slf.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slg.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slh.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sli.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slj.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slk.png + /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sll.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target2.png
+                             -   -   -
+>> pngappend /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target1.png - /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target2.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_seq2std.png
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sla.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slb.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slc.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sld.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sle.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slf.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slg.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slh.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sli.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slj.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_slk.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_sll.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target1.png /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3~TEMP~-regslicer_source2target2.png
+                             -   -   -
+>> rln /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_std.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/sub-ADS331_ses-wave3.nii.gz
+                             -   -   -
+>> 12-11-1
+                             -   -   -
+>> 12-1
+/xcpEngine/core/functions/rerun: line 3: ((: == 1 : syntax error: operand expected (error token is "== 1 ")
+
+
+
+Current processing step:
+@1 Preparing depth map
+····································································
+· @1.1 Segmentation: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz
+· @1.2 Output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_depthMap.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/unique.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz
+                             -   -   -
+>> ${XCPEDIR}/utils/layerLabels -l /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~ -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_depthMap.nii.gz
+· @u.1 
+                             -   -   -
+>> ${XCPEDIR}/utils/unique.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz
+· @u.2 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -thr 1 -uthr 1 -div 1 -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz
+                             -   -   -
+>> ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz MaurerDistance /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz
+· @u.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/val2pct.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz
+· @u.4 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz -mul 100 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz -mul 100 -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-1.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz
+· @u.2 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -thr 2 -uthr 2 -div 2 -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz
+                             -   -   -
+>> ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz MaurerDistance /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz
+· @u.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/val2pct.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz
+· @u.4 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz -mul 200 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz -mul 100 -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-2.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz
+· @u.2 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_segmentation.nii.gz -thr 3 -uthr 3 -div 3 -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz
+                             -   -   -
+>> ImageMath 3 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz MaurerDistance /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz -sub 1 -mul -1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz
+· @u.3 
+                             -   -   -
+>> ${XCPEDIR}/utils/val2pct.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz -m /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz
+· @u.4 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz -mul 300 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz -mul 100 -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-class-3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz
+· @u.5 
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-1.nii.gz -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-2.nii.gz -add /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-layerLabels-depth-3.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_depthMap.nii.gz
+
+
+
+Current processing step:
+@2 Aligning depth map
+····································································
+· @2.1 Resampling to 6mm isotropic: minimally preprocessed
+                             -   -   -
+>> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-pp-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_preprocessed.nii.gz -rmode Li
+· @2.2 Resampling to 6mm isotropic: denoised
+                             -   -   -
+>> 13-11-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dn-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dn.nii.gz -rmode Li
+· @2.4 Aligning depth map to sequence space
+                             -   -   -
+>> 13-12-1
+                             -   -   -
+>> 13-1
+                             -   -   -
+>> 3dresample -dxyz 6 6 6 -prefix /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-onion-rs.nii.gz -inset /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-onion.nii.gz -rmode NN
+
+
+
+Current processing step:
+@3 Preparing summary graphics
+····································································
+· @3.1 Acquiring arguments
+                             -   -   -
+>> fslval /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/func/sub-ADS331_ses-wave3_task-rest_space-T1w_desc-preproc_bold.nii.gz pixdim4
+                             -   -   -
+>> 0.167*1.400000 
+                             -   -   -
+>> 0.083*1.400000 
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_dvars-std.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_dvar.1D
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_fd.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_fd.1D
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_rms1.1D
+· @3.2 Generating visuals
+                             -   -   -
+>> ${XCPEDIR}/utils/voxts.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-pp-rs.nii.gz,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dn-rs.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-onion-rs.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_voxts.png -t DV:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_dvar.1D:1.5,RMS:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_rms1.1D:.116200000,FD:/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_fd.1D:.233800000 -n /xcpEngine/atlas/segmentation3/segmentation3NodeNames.txt
+
+
+
+Current processing step:
+@4 Estimating loss of temporal degrees of freedom
+····································································
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_tdof.txt
+· @4.1 60 nuisance parameters regressed
+· @4.4 Total lost tDOF: 60
+
+
+
+Current processing step:
+@5 Estimating post-processing DVARS
+····································································
+· @5.1 [Computing DVARS]
+                             -   -   -
+>> antsApplyTransforms -e 3 -d 3 -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/norm/sub-ADS331_ses-wave3_referenceVolumeBrainStd.nii.gz -r /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/prestats/sub-ADS331_ses-wave3_struct.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep/sub-ADS331/ses-wave3/..//anat/sub-ADS331_from-MNI152NLin2009cAsym_to-T1w_mode-image_xfm.h5
+                             -   -   -
+>> ${XCPEDIR}/utils/dvars -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars -s /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~ -d 1 -b /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -Tperc 25 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-lowerQuartile.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -Tperc 75 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-upperQuartile.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-upperQuartile.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-lowerQuartile.nii.gz -div 1.34897950039 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-temporalSD.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz -Tar1 /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-temporalAR.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-temporalAR.nii.gz -mul -1 -add 1 -mul 2 -sqrt -mul /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-temporalSD.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-predictedSD.nii.gz
+                             -   -   -
+>> fslstats /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-predictedSD.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> fslnvols /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t-1.nii.gz 0 509
+                             -   -   -
+>> fslroi /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/regress/sub-ADS331_ses-wave3_residualised.nii.gz /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t.nii.gz 1 510
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t-1.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-tdiff-sq.nii.gz
+                             -   -   -
+>> fslmaths /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t.nii.gz -sub /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-t-1.nii.gz -div /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-predictedSD.nii.gz -sqr /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-tdiff-vox-std.nii.gz
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-tdiff-sq.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-raw.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-std.1D
+                             -   -   -
+>> rm -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-vox.1D
+                             -   -   -
+>> fslstats -t /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-dvars-tdiff-vox-std.nii.gz -k /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~-referenceVolumeBrain.nii.gz -M
+                             -   -   -
+>> ${XCPEDIR}/utils/1dTool.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-std.1D -o mean -f /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-mean.txt
+                             -   -   -
+>> cp /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/confound2/mc/sub-ADS331_ses-wave3_relRMS.1D /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_rms.1D
+                             -   -   -
+>> ${XCPEDIR}/utils/featureCorrelation.R -i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3_dvars-std.1D,/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS331/ses-wave3/qcfc/sub-ADS331_ses-wave3~TEMP~_rms.1D
+/xcpEngine/core/functions/cleanup: line 3: ((: == 1 : syntax error: operand expected (error token is "== 1 ")
