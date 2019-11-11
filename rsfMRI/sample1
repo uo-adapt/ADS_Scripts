@@ -8,15 +8,15 @@ subj=sub-ADS1915
 
 cd $subj
 
-BOLD=sub-ADS1915_ses-wave3.nii.gz
+BOLD=sub-ADS1915_ses-wave2.nii.gz
 
 for HEMI in lh rh; do
-    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave3 \
+    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave2 \
         --template $BOLD --mkmask --outvol $HEMI.mask.nii.gz
 done
 
 
-bbregister --s $subj --mov ${xcp}/${subj}/ses-wave3/sub-ADS1915_ses-wave3.nii.gz \
+bbregister --s $subj --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
 --reg ${subj}_register.dat --init-header --bold
 
 tkregister2 --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz --reg ${subj}_register.dat --surf
