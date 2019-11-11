@@ -1,14 +1,22 @@
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
 fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
+xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
+
+cd $xcp
+
 subj=sub-ADS1915
-BOLD=sub-ADS1915_ses-wave2.nii.gz
+
+cd $subj
+
+BOLD=sub-ADS1915_ses-wave3.nii.gz
+
 for HEMI in lh rh; do
-    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave2 \
+    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave3 \
         --template $BOLD --mkmask --outvol $HEMI.mask.nii.gz
 done
 
 
-bbregister --s $subj --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
+bbregister --s $subj --mov ${xcp}/${subj}/ses-wave3/sub-ADS1915_ses-wave3.nii.gz \
 --reg ${subj}_register.dat --init-header --bold
 
 tkregister2 --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz --reg ${subj}_register.dat --surf
