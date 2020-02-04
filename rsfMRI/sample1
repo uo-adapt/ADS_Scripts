@@ -1,7 +1,15 @@
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
 fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
+xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
+
+cd $xcp
+
 subj=sub-ADS1915
+
+cd $subj
+
 BOLD=sub-ADS1915_ses-wave2.nii.gz
+
 for HEMI in lh rh; do
     mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave2 \
         --template $BOLD --mkmask --outvol $HEMI.mask.nii.gz
