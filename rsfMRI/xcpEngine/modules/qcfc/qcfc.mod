@@ -153,7 +153,7 @@ if [[ ! -s ${voxts[cxt]} ]] \
    ###################################################################
    # Assign default thresholds for DVARS, FD, and RMS.
    ###################################################################
-   trep=$(exec_fsl fslval ${img} pixdim4)
+   trep=$(exec_fsl fslval ${img[sub]} pixdim4)
    dv_thresh=1.5
    fd_thresh=$( arithmetic "0.167*${trep}")
    rms_thresh=$(arithmetic "0.083*${trep}")
@@ -246,6 +246,23 @@ if [[ -n ${q[nVolCensored]}         ]]
    subroutine                 @4.3  ${q[nVolCensored]} volumes censored
    tDOF=$(( ${tDOF}           +     ${q[nVolCensored]}         ))
 fi
+
+if [[ -n ${q[nSpikesFD]}         ]]
+   then
+   subroutine                 @4.3  ${q[nSpikesFD]} number of spikes FD
+   tDOF=$(( ${tDOF}           +     ${q[nSpikesFD]}         ))
+fi
+
+if [[ -n ${q[nSpikesDV]}         ]]
+   then
+   subroutine                 @4.3  ${q[nSpikesDV]} number of spikes FD
+   tDOF=$(( ${tDOF}           +     ${q[nSpikesDV]}         ))
+fi
+
+
+nSpikesDV 
+
+
 subroutine                    @4.4  Total lost tDOF: ${tDOF}
 echo ${tDOF}                  >>    ${t_dof[cxt]}
 routine_end

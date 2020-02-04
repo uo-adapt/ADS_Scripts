@@ -184,6 +184,9 @@ DICTIONARY
 # If BBR is the cost function being used, a white matter mask
 # must be extracted from the user-specified tissue segmentation.
 ###################################################################
+
+coreg_seg[cxt]=${segmentation[sub]}
+
 if [[ ${coreg_cfunc[cxt]} == bbr ]]; then
 if [[ ! -e ${seq2struct_mat[cxt]} ]] \
 || rerun
@@ -317,11 +320,12 @@ if [[ ! -e ${coreg_dice[cxt]} ]] \
    then
    routine                    @5    Quality assessment
    subroutine                 @5.1
-   exec_fsl fslmaths ${seq2struct_img[cxt]} -bin ${seq2struct_mask}
+   exec_fsl fslmaths  ${struct_head[sub]} -bin -mul ${seq2struct_img[cxt]} \
+    ${seq2struct_img[cxt]}
    registration_quality=( $(exec_xcp \
       maskOverlap.R           \
-      -m ${seq2struct_mask}   \
-      -r ${struct[sub]}) )
+      -m ${seq2struct_img[cxt]}   \
+      -r ${struct_head[sub]}) )
    echo  ${registration_quality[0]} > ${coreg_cross_corr[cxt]}
    echo  ${registration_quality[1]} > ${coreg_coverage[cxt]}
    echo  ${registration_quality[2]} > ${coreg_jaccard[cxt]}
@@ -335,27 +339,27 @@ if [[ ! -e ${coreg_dice[cxt]} ]] \
    # Determine whether each quality index warrants flagging the
    # coregistration for poor quality.
    ################################################################
-   cc_min=$(strslice    ${coreg_qacut[cxt]} 1)
-   co_min=$(strslice    ${coreg_qacut[cxt]} 2)
-   jc_min=$(strslice    ${coreg_qacut[cxt]} 3)
-   dc_min=$(strslice    ${coreg_qacut[cxt]} 4)
-   cc_flag=$(arithmetic ${registration_quality[0]}'<'${cc_min})
-   co_flag=$(arithmetic ${registration_quality[1]}'<'${co_min})
-   jc_flag=$(arithmetic ${registration_quality[2]}'<'${jc_min})
-   dc_flag=$(arithmetic ${registration_quality[3]}'<'${dc_min})
-   declare  -A  flags
-   flags=(  [cc_flag]="Cross-correlation"
-            [co_flag]="Target coverage"
-            [jc_flag]="Jaccard coefficient"
-            [dc_flag]="Dice coefficient"     )
-   for f in "${!flags[@]}"
-      do
-      if (( ${!f} == 1 ))
-         then
-         subroutine           @5.2  [${flags[$f]} flagged]
-         flag=1
-      fi
-   done
+   #cc_min=$(strslice    ${coreg_qacut[cxt]} 1)
+   #co_min=$(strslice    ${coreg_qacut[cxt]} 2)
+   #jc_min=$(strslice    ${coreg_qacut[cxt]} 3)
+   #dc_min=$(strslice    ${coreg_qacut[cxt]} 4)
+   #cc_flag=$(arithmetic ${registration_quality[0]}'<'${cc_min})
+   #co_flag=$(arithmetic ${registration_quality[1]}'<'${co_min})
+   #jc_flag=$(arithmetic ${registration_quality[2]}'<'${jc_min})
+   #dc_flag=$(arithmetic ${registration_quality[3]}'<'${dc_min})
+   #declare  -A  flags
+   #flags=(  [cc_flag]="Cross-correlation"
+           # [co_flag]="Target coverage"
+           # [jc_flag]="Jaccard coefficient"
+           # [dc_flag]="Dice coefficient"     )
+  # for f in "${!flags[@]}"
+     # do
+      #if (( ${!f} == 1 ))
+       #  then
+        # subroutine           @5.2  [${flags[$f]} flagged]
+        # flag=1
+     # fi
+  # done
    routine_end
 fi
 
@@ -405,12 +409,13 @@ if (( ${flag} == 1 ))
    registration_quality_alt=( $(
    exec_xcp    maskOverlap.R  \
       -m       ${intermediate}_seq2struct_alt_mask.nii.gz \
-      -r       ${struct[sub]}) )
+      -r       ${structmask[sub]}) )
    ################################################################
    # Compare the metrics to the old ones. The decision is made
    # based on the `decide` configuration if coregistration is
    # repeated due to quality control failure.
    ################################################################
+   
    decision=$(arithmetic ${registration_quality_alt[${coreg_decide[cxt]}]}'>'\
                              ${registration_quality[${coreg_decide[cxt]}]})
    if (( ${decision} == 1 ))
@@ -452,7 +457,7 @@ if (( ${registered} == 1  ))
    subroutine                 @7.1  [Slicewise rendering]
    exec_xcp regslicer               \
       -s    ${seq2struct_img[cxt]}  \
-      -t    ${struct[sub]}          \
+      -t    ${struct_head[sub]}          \
       -i    ${intermediate}         \
       -o    ${outdir}/${prefix}_seq2struct
    routine_end
@@ -520,7 +525,7 @@ if ! is_image ${struct2seq_img[cxt]} \
       -e 3 -d 3                     \
       -r ${sourceReference[cxt]}    \
       -o ${struct2seq_img[cxt]}     \
-      -i ${struct[sub]}             \
+      -i ${struct_head[sub]}             \
       -t ${struct2seq[cxt]}
 fi
 routine_end
@@ -533,8 +538,7 @@ routine_end
 # Re-extract the brain using the high-precision structural mask if
 # requested.
 ###################################################################
-if (( ${coreg_mask[cxt]} == 1 ))
-   then
+
    if ! is_image ${remasked[cxt]} \
    || rerun
       then
@@ -555,11 +559,116 @@ if (( ${coreg_mask[cxt]} == 1 ))
             -mul  ${mask[cxt]}      ${meanIntensityBrain[cxt]}
       routine_end
    fi
-fi
+
+###################################################################
+# copy structural image from prestats for ASL
+###################################################################
+
+if  [[ -d ${anatdir[sub]} ]]; then 
+
+    subroutine @1.2 register the asl and m0 to struct space
+    gm_seq=${out}/coreg/${prefix}_gm2seq.nii.gz 
+    wm_seq=${out}/coreg/${prefix}_wm2seq.nii.gz 
+    csf_seq=${out}/coreg/${prefix}_csf2seq.nii.gz 
+    mask1=${out}/coreg/temporay_mask_seq.nii.gz 
+    mask=${out}/coreg/${prefix}_mask.nii.gz
+
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${gm[sub]} -t ${struct2seq[cxt]} \
+        -o ${gm_seq} -n Linear
+   output gm2seq   ${out}/coreg/${prefix}_gm2seq.nii.gz
+
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${wm[sub]} -t ${struct2seq[cxt]} \
+        -o ${wm_seq} -n Linear
+   output wm2seq ${out}/coreg/${prefix}_wm2seq.nii.gz
+   
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${csf[sub]} -t ${struct2seq[cxt]} \
+        -o ${csf_seq} -n Linear
+
+   output csf2seq ${out}/coreg/${prefix}_csf2seq.nii.gz 
 
 
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolumeBrain[sub]} \
+        -i ${structmask[sub]} -t ${struct2seq[cxt]} \
+        -o ${mask1} -n Linear
+   
+    exec_fsl fslmaths ${mask1} -mul ${mask[sub]} ${out}/coreg/${prefix}_mask.nii.gz 
+
+   output  mask ${out}/coreg/${prefix}_mask.nii.gz
+   rm -rf $mask1
+   exec_fsl  fslmaths ${referenceVolume[sub]} -mul ${mask[cxt]} \
+         ${referenceVolumeBrain[sub]}
+
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolumeBrain[sub]} \
+        -i ${segmentation[sub]} -t ${struct2seq[cxt]} \
+        -o ${out}/coreg/${prefix}_segmentation.nii.gz  -n Linear
+
+   output segmentation ${out}/coreg/${prefix}_segmentation.nii.gz
+   
+   exec_fsl immv $out/prestats/${prefix}_struct_brain  $out/coreg/${prefix}_target
+   exec_sys rm  -rf ${out}/prestats/${prefix}_struct* ${out}/prestats/${prefix}_csf.nii.gz
+   exec_sys rm -rf ${out}/prestats/${prefix}_wm.nii.gz  ${out}/prestats/${prefix}_gm.nii.gz 
+   exec_sys rm -rf  ${out}/prestats/${prefix}_segmentation.nii.gz 
+   
+   
+   
+elif  [[ -d ${antsct[sub]}  ]] || [[ -f ${t1w[sub]} ]];  then
+
+    subroutine @1.2 register the asl and m0 to struct space
+    gm_seq=${out}/coreg/${prefix}_gm2seq.nii.gz 
+    wm_seq=${out}/coreg/${prefix}_wm2seq.nii.gz 
+    csf_seq=${out}/coreg/${prefix}_csf2seq.nii.gz 
+    mask1=${out}/coreg/temporay_mask_seq.nii.gz 
+    mask=${out}/coreg/${prefix}_mask.nii.gz
+    seg_seq=${out}/coreg/${prefix}_segmentation.nii.gz
+
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${gm[sub]} -t ${struct2seq[cxt]} \
+        -o ${gm_seq} -n Linear
+   output gm2seq   ${out}/coreg/${prefix}_gm2seq.nii.gz
 
 
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${wm[sub]} -t ${struct2seq[cxt]} \
+        -o ${wm_seq} -n Linear
+   output wm2seq ${out}/coreg/${prefix}_wm2seq.nii.gz
+   
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${csf[sub]} -t ${struct2seq[cxt]} \
+        -o ${csf_seq} -n Linear
+   output csf2seq ${out}/coreg/${prefix}_csf2seq.nii.gz
+
+   exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolume[sub]} \
+        -i ${segmentation[sub]} -t ${struct2seq[cxt]} \
+        -o ${seg_seq} -n Linear
+   output segmentation  ${out}/coreg/${prefix}_segmentation.nii.gz
+
+    exec_ants antsApplyTransforms -e 3 -d 3 -r ${referenceVolumeBrain[sub]} \
+        -i ${structmask[sub]} -t ${struct2seq[cxt]} \
+        -o ${mask1} -n Linear
+   
+   exec_fsl fslmaths ${mask1} -mul ${mask[sub]} ${out}/coreg/${prefix}_mask.nii.gz 
+   output  mask ${out}/coreg/${prefix}_mask.nii.gz
+
+
+    exec_fsl  fslmaths ${referenceVolume[sub]} -mul ${mask[cxt]} \
+         ${referenceVolumeBrain[sub]}
+     
+
+   rm -rf $mask1
+   #exec_fsl imcp ${struct[sub]}  $out/coreg/${prefix}_target
+   exec_sys rm   ${out}/prestats/${prefix}_csf* 2>/dev/null
+   exec_sys rm -rf ${out}/prestats/${prefix}_wm*  ${out}/prestats/${prefix}_gm* 2>/dev/null
+   exec_fsl imcp  ${segmentation[sub]} ${out}/coreg/${prefix}_segmentation
+   output segmentation ${out}/coreg/${prefix}_segmentation.nii.gz
+
+else 
+
+    echo " No Structural image "
+
+fi  
 
 subroutine                    @0.1
 completion

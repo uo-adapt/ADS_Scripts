@@ -12,6 +12,8 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
            apt-utils \
            bzip2 \
            ca-certificates \
+           python3-dev \
+           gcc \
            curl \
            locales \
            unzip \
@@ -35,40 +37,38 @@ RUN export ND_ENTRYPOINT="/neurodocker/startup.sh" \
     fi \
     && chmod -R 777 /neurodocker && chmod a+s /neurodocker
 
-ENV CONDA_DIR="/opt/miniconda-latest" \
-    PATH="/opt/miniconda-latest/bin:$PATH"
-RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
-    && echo "Downloading Miniconda installer ..." \
-    && conda_installer="/tmp/miniconda.sh" \
-    && curl -fsSL --retry 5 -o "$conda_installer" https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
-    && bash "$conda_installer" -b -p /opt/miniconda-latest \
-    && rm -f "$conda_installer" \
-    && conda update -yq -nbase conda \
-    && conda config --system --prepend channels conda-forge \
-    && conda config --system --set auto_update_conda false \
-    && conda config --system --set show_channel_urls true \
-    && sync && conda clean -tipsy && sync \
-    && conda create -y -q --name neuro \
-    && conda install -y -q --name neuro \
-           python=2 \
-           numpy \
-           pandas \
-           traits \
-           scikit-learn \
-    && conda install -y -q --name neuro libgfortran==1 \
-    && sync && conda clean -tipsy && sync \
-    && bash -c "source activate neuro \
-    &&   pip install  --no-cache-dir \
-             nipype \
-             nibabel" \
-    && rm -rf ~/.cache/pip/* \
-    && sync
+#ENV CONDA_DIR="/opt/miniconda-latest" \
+    #PATH="/opt/miniconda-latest/bin:$PATH"
+#RUN export PATH="/opt/miniconda-latest/bin:$PATH" \
+   # && echo "Downloading Miniconda installer ..." \
+    #&& conda_installer="/tmp/miniconda.sh" \
+    #&& curl -fsSL --retry 5 -o "$conda_installer" https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+    #&& bash "$conda_installer" -b -p /opt/miniconda-latest \
+    #&& rm -f "$conda_installer" \
+    #&& conda update -yq -nbase conda \
+    #&& conda config --system --prepend channels conda-forge \
+    #&& conda config --system --set auto_update_conda false \
+    #&& conda config --system --set show_channel_urls true \
+    #&& sync && conda clean -tipsy && sync \
+    #&& conda create -y -q --name neuro \
+   # && conda install -y -q --name neuro \
+RUN apt-get update \
+  && apt-get install -y python3-pip python3-dev \
+  && cd /usr/local/bin \
+  && ln -s /usr/bin/python3 python \
+  && pip3 install --upgrade pip
+RUN  pip install --no-cache-dir numpy pandas traits scikit-learn 
+RUN  pip install --no-cache-dir nipype nibabel niworkflows nilearn matplotlib 
+RUN  rm -rf ~/.cache/pip/* && sync
+RUN  apt-get update
 
 ENV FSLDIR="/opt/fsl-5.0.10" \
     PATH="/opt/fsl-5.0.10/bin:$PATH"
 RUN apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
            bc \
+           git \
+           wget \
            dc \
            file \
            libfontconfig1 \
@@ -127,12 +127,14 @@ RUN apt-get update -qq \
            xvfb \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
-    && curl -sSL --retry 5 -o /tmp/toinstall.deb http://mirrors.kernel.org/debian/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb \
-    && dpkg -i /tmp/toinstall.deb \
-    && rm /tmp/toinstall.deb \
-    && curl -sSL --retry 5 -o /tmp/toinstall.deb http://mirrors.kernel.org/debian/pool/main/libp/libpng/libpng12-0_1.2.49-1%2Bdeb7u2_amd64.deb \
-    && dpkg -i /tmp/toinstall.deb \
-    && rm /tmp/toinstall.deb \
+    && curl -sSL --retry 5 -o /tmp/libxp6_1.0.2-2_amd64.deb http://mirrors.kernel.org/debian/pool/main/libx/libxp/libxp6_1.0.2-2_amd64.deb \
+    && dpkg -i /tmp/libxp6_1.0.2-2_amd64.deb \
+    && rm /tmp/libxp6_1.0.2-2_amd64.deb \
+    && apt-get clean && apt-get update && apt-get -f install &&  dpkg --configure -a && apt-get update \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+    && curl -o /tmp/libpng12-0_1.2.50-2+deb8u3_amd64.deb -sSL http://mirrors.kernel.org/debian/pool/main/libp/libpng/libpng12-0_1.2.50-2+deb8u3_amd64.deb \
+    && dpkg -i /tmp/libpng12-0_1.2.50-2+deb8u3_amd64.deb \
+    && rm /tmp/libpng12-0_1.2.50-2+deb8u3_amd64.deb \
     && apt-get install -f \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
@@ -150,36 +152,37 @@ RUN apt-get update -qq \
 RUN bash -c 'export PATH=/opt/afni-latest:$PATH && rPkgsInstall -pkgs ALL && rPkgsInstall -pkgs optparse,pracma,RNifti,svglite,signal,reshape2,ggplot2,lme4'
 
 # Installing ANTs latest from source
+ARG ANTS_SHA=51855944553a73960662d3e4f7c1326e584b23b2
 ADD https://cmake.org/files/v3.11/cmake-3.11.4-Linux-x86_64.sh /cmake-3.11.4-Linux-x86_64.sh
 ENV ANTSPATH="/opt/ants-latest/bin" \
     PATH="/opt/ants-latest/bin:$PATH" \
     LD_LIBRARY_PATH="/opt/ants-latest/lib:$LD_LIBRARY_PATH"
 RUN mkdir /opt/cmake \
-  && sh /cmake-3.11.4-Linux-x86_64.sh --prefix=/opt/cmake --skip-license \
-  && ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake \
-  && apt-get update -qq \
+    && sh /cmake-3.11.4-Linux-x86_64.sh --prefix=/opt/cmake --skip-license \
+    && ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake \
+    && apt-get update -qq \
     && apt-get install -y -q --no-install-recommends \
-           g++ \
-           gcc \
-           git \
-           make \
-           zlib1g-dev \
-           imagemagick \
-           procps \
+    g++ \
+    gcc \
+    make \
+    zlib1g-dev \
+    imagemagick \
+    && mkdir /tmp/ants \
+    && cd /tmp \
+    && curl -sSLO https://github.com/ANTsX/ANTs/archive/${ANTS_SHA}.zip \
+    && unzip ${ANTS_SHA}.zip \
+    && mv ANTs-${ANTS_SHA} /tmp/ants/source \
+    && rm ${ANTS_SHA}.zip \
     && mkdir -p /tmp/ants/build \
-    && git config --global url."https://".insteadOf git:// \
-    && git clone https://github.com/ANTsX/ANTs.git /tmp/ants/source \
     && cd /tmp/ants/build \
+    && git config --global url."https://".insteadOf git:// \
     && cmake -DBUILD_SHARED_LIBS=ON /tmp/ants/source \
     && make -j1 \
     && mkdir -p /opt/ants-latest \
     && mv bin lib /opt/ants-latest/ \
     && mv /tmp/ants/source/Scripts/* /opt/ants-latest/bin \
     && rm -rf /tmp/ants \
-    && rm -rf /opt/cmake /usr/local/bin/cmake \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
+    && rm -rf /opt/cmake /usr/local/bin/cmake
 
 ENV C3DPATH="/opt/convert3d-nightly" \
     PATH="/opt/convert3d-nightly/bin:$PATH"
@@ -188,9 +191,35 @@ RUN echo "Downloading Convert3D ..." \
     && curl -fsSL --retry 5 https://sourceforge.net/projects/c3d/files/c3d/Nightly/c3d-nightly-Linux-x86_64.tar.gz/download \
     | tar -xz -C /opt/convert3d-nightly --strip-components 1
 
+RUN curl -sSL https://surfer.nmr.mgh.harvard.edu/pub/dist/freesurfer/6.0.1/freesurfer-Linux-centos6_x86_64-stable-pub-v6.0.1.tar.gz | tar zxv --no-same-owner -C /opt \
+    --exclude='freesurfer/diffusion' \
+    --exclude='freesurfer/docs' \
+    --exclude='freesurfer/fsfast' \
+    --exclude='freesurfer/lib/cuda' \
+    --exclude='freesurfer/lib/qt' \
+    --exclude='freesurfer/matlab' \
+    --exclude='freesurfer/mni/share/man' \
+    --exclude='freesurfer/subjects/fsaverage_sym' \
+    --exclude='freesurfer/subjects/fsaverage3' \
+    --exclude='freesurfer/subjects/fsaverage4' \
+    --exclude='freesurfer/subjects/cvs_avg35' \
+    --exclude='freesurfer/subjects/cvs_avg35_inMNI152' \
+    --exclude='freesurfer/subjects/bert' \
+    --exclude='freesurfer/subjects/lh.EC_average' \
+    --exclude='freesurfer/subjects/rh.EC_average' \
+    --exclude='freesurfer/subjects/sample-*.mgz' \
+    --exclude='freesurfer/subjects/V1_average' \
+    --exclude='freesurfer/trctrain'
+
+RUN apt-get install -y -q --no-install-recommends procps 
+
+
 RUN sed -i '$iexport XCPEDIR=/xcpEngine' $ND_ENTRYPOINT
 
 RUN sed -i '$iexport PATH=$PATH:$XCPEDIR' $ND_ENTRYPOINT
+
+
+RUN echo 'export USER="${USER:=`whoami`}"' >> "$ND_ENTRYPOINT"
 
 ADD . /xcpEngine
 
@@ -199,7 +228,7 @@ RUN bash -c \
     && wget -nv https://upenn.box.com/shared/static/i30llenk6s37kv8nkqxgulwylaxp928g.xz \
     && tar xvfJm i30llenk6s37kv8nkqxgulwylaxp928g.xz \
     && rm i30llenk6s37kv8nkqxgulwylaxp928g.xz'
-
+    
 
 RUN bash -c 'BRAINATLAS=/xcpEngine/atlas BRAINSPACE=/xcpEngine/space XCPEDIR=/xcpEngine FSLDIR=/opt/fsl-5.0.10 AFNI_PATH=/opt/afni-latest C3D_PATH=/opt/convert3d-nightly/bin ANTSPATH=/opt/ants-latest/bin /xcpEngine/xcpReset \
     && BRAINATLAS=/xcpEngine/atlas BRAINSPACE=/xcpEngine/space XCPEDIR=/xcpEngine /xcpEngine/utils/repairMetadata'
@@ -208,11 +237,25 @@ RUN bash -c 'echo R_ENVIRON_USER\="" >> /usr/lib/R/etc/Renviron \
           && echo R_PROFILE_USER\="" >> /usr/lib/R/etc/Renviron \
           && chmod a+rx /xcpEngine/xcpEngine'
 
+ENV workbench="/xcpEngine/thirdparty/workbench/bin_rh_linux64" \
+    PATH="/xcpEngine/thirdparty/workbench/bin_rh_linux64:$PATH"
+
+ENV FREESURFER_HOME="/opt/freesurfer" \
+    PATH="/opt/freesurfer:$PATH"
+
 ENV XCPEDIR="/xcpEngine" \
     AFNI_PATH="/opt/afni-latest/" \
+    FREESURFER_HOME="/opt/freesurfer" \
+    workbench="/xcpEngine/thirdparty/workbench/bin_rh_linux64"  \
     C3D_PATH="/opt/convert3d-nightly/bin/" \
-    PATH="$PATH:/xcpEngine"
-
+    PATH="$PATH:/xcpEngine" 
 RUN mkdir /data /out /work /design /cohort
+
+RUN wget https://github.com/a3sha2/xcpEngine/blob/master/utils/license.txt  \
+  && mv license.txt /opt/freesurfer/    
+RUN mkdir /run/uuidd
+RUN apt-get install -y -q --no-install-recommends uuid-runtime 
+
+RUN pip install --no-cache-dir flywheel-sdk numpy pandas scipy sentry_sdk psutil
 
 ENTRYPOINT ["/xcpEngine/xcpEngine"]

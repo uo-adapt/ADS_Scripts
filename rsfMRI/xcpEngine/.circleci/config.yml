@@ -10,9 +10,9 @@ jobs:
     working_directory: /tmp/src/xcpEngine
     steps:
       - run:
-          name: Install parallel gzip and python3
+          name: Install parallel gzip tar and python3
           command: |
-            apk add --no-cache pigz python3
+            apk add --no-cache pigz tar python3
       - restore_cache:
           keys:
             - docker-v2-{{ .Branch }}-{{ epoch }}
@@ -62,14 +62,6 @@ jobs:
             docker save neurodebian:stretch  pennbbl/xcpengine:latest \
             | pigz -8 -p 3 > /tmp/cache/docker.tar.gz
 
-      - run:
-          name: pyTest io
-          command: |
-            docker run --rm -it \
-                -v /tmp:/tmp \
-                --entrypoint /opt/miniconda-latest/envs/neuro/bin/py.test \
-                pennbbl/xcpengine:latest \
-                /xcpEngine/testing/cmdline
 
       - persist_to_workspace:
           root: /tmp

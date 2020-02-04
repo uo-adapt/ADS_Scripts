@@ -126,7 +126,7 @@ if [[ ${regress} == despike ]]; then
     elif [[ ${regress} == censor ]]; then 
      censor[cxt]=1
      else 
-     echo "Default settings will be applied "
+     echo "Design files  "
 fi
 
 if [[ -n ${temporalfilter} ]]; then
@@ -204,7 +204,7 @@ while (( ${#rem} > 0 ))
       routine                 @7    Demeaning and detrending BOLD timeseries
       demean_detrend       --SIGNPOST=${signpost}           \
                            --ORDER=${regress_dmdt[cxt]}     \
-                           --INPUT=${intermediate}          \
+                           --INPUT=${img}          \
                            --OUTPUT=${intermediate}_${cur}  \
                            --1DDT=${regress_1ddt[cxt]}      \
                            --CONFIN=${confproc[cxt]}        \
@@ -391,6 +391,13 @@ if (( ${censor[cxt]} != 0 ))
    nvol_censored=$(( ${nvol_pre}   -   ${nvol_post} ))
    subroutine                 @5.6  [${nvol_censored} volumes censored]
    echo ${nvol_censored}            >> ${n_volumes_censored[cxt]}
+
+   routine_end
+   else 
+   
+   nvol_censored=0
+   echo ${nvol_censored}         >> ${n_volumes_censored[cxt]}
+
    routine_end
 fi
 
@@ -410,6 +417,8 @@ if is_image ${intermediate_root}${buffer}.nii.gz
    subroutine                 @0.2
    processed=$(readlink -f    ${intermediate}.nii.gz)
    exec_fsl immv ${processed} ${denoised[cxt]}
+   trep=$(exec_fsl fslval ${img[sub]} pixdim4)
+   exec_xcp addTR.py -i ${denoised[cxt]} -o ${denoised[cxt]} -t ${trep} 
 else
    subroutine                 @0.3
    abort_stream \
@@ -442,3 +451,5 @@ routine_end
 
 
 completion
+
+

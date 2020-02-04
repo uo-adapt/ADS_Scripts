@@ -60,7 +60,7 @@ portability, relative path definitions are recommended where possible. If relati
 provided, then the call to ``xcpEngine`` should include the ``-r`` flag, which accepts as its
 argument the path relative to which cohort paths were defined. For instance, the provided example
 would yield a value of
-``/data/example/derivatives/fmriprep/sub-01/ses-01/anat/sub-01_ses-01_desc-preproc_T1w.nii.gz`` for
+``/data/example/derivatives/fmriprep/sub-01/ses-01/anat/sub-01_ses-01_T1w.nii.gz`` for
 ``img``.::
 
   -r /data/example/derivatives/fmriprep
@@ -68,7 +68,7 @@ would yield a value of
 with::
 
   id0,id1,img
-  sub-01,ses-01,sub-01/ses-01/anat/sub-01_ses-01_desc-preproc_T1w.nii.gz
+  sub-01,ses-01,sub-01/ses-01/anat/sub-01_T1w.nii.gz
 
 
 This is particularly useful for using directories mounted in Singularity.
@@ -85,10 +85,10 @@ anatomical image should receive the header ``img``. **Anatomical processing must
 ``FMRIPREP`` and before functional processing**.::
 
   id0,id1,img
-  sub-01,ses-01,sub-01/ses-01/anat/sub-01_ses-01_desc-preproc_T1w.nii.gz
-  sub-01,ses-02,sub-01/ses-02/anat/sub-01_ses-02_desc-preproc_T1w.nii.gz
-  sub-02,ses-01,sub-02/ses-01/anat/sub-02_ses-01_desc-preproc_T1w.nii.gz
-  sub-03,ses-01,sub-03/ses-01/anat/sub-03_ses-01_desc-preproc_T1w.nii.gz
+  sub-01,ses-01,sub-01/ses-01/anat/sub-01_ses-01_T1w.nii.gz
+  sub-01,ses-02,sub-01/ses-02/anat/sub-01_ses-02_T1w.nii.gz
+  sub-02,ses-01,sub-02/ses-01/anat/sub-02_ses-01_T1w.nii.gz
+  sub-03,ses-01,sub-03/ses-01/anat/sub-03_ses-01_T1w.nii.gz
 
 Again, the structural pipeline *is not necessary to run the functional pipeline* in most cases.
 
@@ -125,6 +125,31 @@ like::
 
 The first line of this cohort file would process the image
 ``${DATA_ROOT}/sub-01/ses-01/func/sub-01_ses-01_task-rest_space-T1w_desc-preproc_bold.nii.gz``.
+
+ASL processing
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The ASL processing requires ASL image, M0 scan for caibration (if available). In the absence of M0 scan, the average  
+control volumes is used as reference or M0 scan (scale=1). The ASL processing requires anatomical processing directory of either 
+`FMRIPREP` or the :ref:`struc`: module  of `xcpEngine`. Here is an example of cohort file with anatomical directory of `FMRIPREP`.::
+
+  id0,img,m0,anatdir
+  sub-1,/path/to/asl.nii.gz,/path/to/m0.nii.gz,fmriprep/sub-xx/anat
+
+
+With the :ref:`struc`: directory of the `xcpEngine` output, the cohort file is shown below.::
+
+  id0,img,m0,antsct
+  sub-1,/path/to/asl.nii.gz,/path/to/m0.nii.gz,/path/to/struc
+
+
+Without :ref:`struc`: or anatomical directory of `FMRIPREP`, the anatomical image can be included in the design file.::
+
+  id0,img,m0,t1w
+  sub-1,/path/to/asl.nii.gz,/path/to/m0.nii.gz,/path/to/struc/t1w.nii.gz 
+
+
+
 
 Subject variables
 ------------------

@@ -81,14 +81,22 @@ nvol                =   img_data.shape[1]
 
 tmask  = np.loadtxt(opts.tmask) 
 indices = tmask.shape[-1]
-t_obs=np.array(np.where(tmask==0))
+t_obs=np.array(np.where(tmask != 0))
 
-tmask2=np.where(tmask==0)
+tmask2=np.where(tmask != 0)
     ##########################################################################
     # Total timespan of seen observations, in seconds
     ##########################################################################
 seen_samples            =   (t_obs + 1) * t_rep
 timespan                =   np.max(seen_samples) - np.min(seen_samples)
+if timespan == 0:
+     img_data1            =   img.get_fdata()
+     img_out2        =   nib.Nifti1Image(dataobj=img_data1,
+                                                affine=img.affine,
+                                                header=img.header)
+     nib.save(img_out2, opts.out) 
+     raise ValueError('Only one volume is flagged.')
+
 n_samples_seen          =   seen_samples.shape[-1]
 if n_samples_seen == nvol:
      raise ValueError('No interpolation is necessary for this dataset.')
