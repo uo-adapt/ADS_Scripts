@@ -1,22 +1,310 @@
-Lmod has detected the following error: These module(s) exist but cannot be
-loaded as requested: "c3d"
-   Try: "module spider c3d" to see how to load the module(s).
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ImportError: No module named sentry_sdk
 
 
 
-/xcpEngine/xcpEngine: line 6: /packages/fsl/5.0.10/install/etc/fslconf/fsl.sh: No such file or directory
-/xcpEngine/xcpEngine: line 64: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/constants: No such file or directory
-/xcpEngine/xcpEngine: line 65: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/library.sh: No such file or directory
-/xcpEngine/xcpEngine: line 66: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/cluster_submit: No such file or directory
-/xcpEngine/xcpEngine: line 196: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/validateDesign: No such file or directory
-/xcpEngine/xcpEngine: line 197: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/validateIntermediate: No such file or directory
-/xcpEngine/xcpEngine: line 198: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/validateCohort: No such file or directory
-/xcpEngine/xcpEngine: line 199: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/validateOutput: No such file or directory
-/xcpEngine/xcpEngine: line 200: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/validateMode: No such file or directory
-/xcpEngine/xcpEngine: line 225: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/checkDependenciesXCP: No such file or directory
-mkdir: cannot create directory ‘/dependencies’: Read-only file system
-/xcpEngine/xcpEngine: line 231: /dependencies/_202002041542_pipelineDescription.json: No such file or directory
-/xcpEngine/xcpEngine: line 244: printx: command not found
-/xcpEngine/xcpEngine: line 257: printx: command not found
-/xcpEngine/xcpEngine: line 424: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/terminatePipeline: No such file or directory
-/xcpEngine/xcpEngine: line 425: printx: command not found
+Current processing step:
+Localising subject metadata...
+····································································
+· [Parsing subject identifiers]
+· [Creating output directory]
+· [/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS110/ses-wave3]
+· [Initialising space mapping]
+· [Initialising derivative maps]
+· [Initialising atlas system]
+· Ingress
+/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/import_metadata: line 16: ${2}: ambiguous redirect
+/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/import_metadata: line 16: ${2}: ambiguous redirect
+· [Native space: sub-ADS110_ses-wave3_anatomical]
+· [Standard space: MNI]
+· [Anatomical space: sub-ADS110_ses-wave3_anatomical]
+· [Priming analytic audit]
+· [Priming quality assessment]
+
+
+
+Current processing step:
+Localising image
+····································································
+· [Verifying that images are present]
+· [Conforming and localising images]
+
+
+
+Current processing step:
+Localising design
+····································································
+· [Writing localised design]
+· [Evaluating subject variables]
+
+
+
+Current processing step:
+Ensure matching orientation
+····································································
+· Input: /tmp/sub-ADS110_ses-wave3-prestats-131431406~TEMP~.nii.gz
+· Template: /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/MNI/MNI-2x2x2.nii.gz
+· Output root:
+· checking the orientation of img and template
+· img and template orientation are not the same
+· make it: LPI -> RPI
+
+
+
+Current processing step:
+getting data from fmriprep directory
+····································································
+· generate new /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS110/ses-wave3/sub-ADS110_ses-wave3_spaces.json with spaceMetadata
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/OASIS/OASIS_transforms/MNI-OASIS_0Affine.mat: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/OASIS/OASIS_transforms/MNI-OASIS_1Warp.nii.gz: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/OASIS/OASIS_transforms/OASIS-MNI_0Warp.nii.gz: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/OASIS/OASIS_transforms/OASIS-MNI_1Affine.mat: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/PNC/PNC_transforms/MNI-PNC_0Affine.mat: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/PNC/PNC_transforms/MNI-PNC_1Warp.nii.gz: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/PNC/PNC_transforms/PNC-MNI_0Warp.nii.gz: No such file or directory
+ls: cannot access /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/space/PNC/PNC_transforms/PNC-MNI_1Affine.mat: No such file or directory
+· Quality assessment
+· [Cross-correlation:    0.9716853 ]
+· [Coverage:             1 ]
+· [Jaccard coefficient:  0.9621404 ]
+· [Dice coefficient:     0.9807049 ]
+Traceback (most recent call last):
+  File "/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/utils/addTR.py", line 7, in <module>
+    import nibabel as nib
+ImportError: No module named nibabel
+
+
+
+Current processing step:
+Generating confound matrix
+····································································
+· Generating temporal mask
+· [Computing framewise displacement]
+· [Selecting quality criteria]
+· [Applying framewise threshold to time series]
+· [Evaluating data quality]
+· relative maximum motion
+· relative mean motion
+· Including csf
+· Including gsr
+· Including wm
+· Including aroma
+
+
+
+Current processing step:
+Validating confound model
+····································································
+
+
+
+Current processing step:
+Demeaning and detrending BOLD timeseries
+····································································
+· [Applying polynomial detrend]
+· [Order: 2]
+· [Executing detrend: Confound matrix]
+
+
+
+Current processing step:
+Temporally filtering image and confounds
+····································································
+· [butterworth filter]
+· [High pass frequency: 0.01]
+· [Low pass frequency: 0.08]
+
+
+
+Current processing step:
+Converting BOLD timeseries to confound residuals
+····································································
+· [Computing confound correlations]
+· [Executing detrend]
+Traceback (most recent call last):
+  File "/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/utils/addTR.py", line 7, in <module>
+    import nibabel as nib
+ImportError: No module named nibabel
+
+
+
+Current processing step:
+Spatially filtering image
+····································································
+· [Configuring SUSAN]
+· [Filter: susan]
+· [Smoothing kernel: 2 mm]
+
+
+
+Current processing step:
+Functional connectome: gordon333
+····································································
+· Mapping network to image space
+· Computing network timeseries
+Warning messages:
+1: Warning: node  65  contains one voxel
+ 
+2: Warning: node  69  contains one voxel
+ 
+3: Warning: node  285  contains one voxel
+ 
+4: Warning: node  329  contains one voxel
+ 
+· Computing adjacency matrix
+· Determining node coverage
+
+
+
+Current processing step:
+Computing voxelwise ReHo
+····································································
+· Determining voxel neighbourhood
+· Vertices
+· Computing regional homogeneity (ReHo)
+· Standardising ReHo values
+
+
+
+Current processing step:
+Spatially filtering ReHo map
+····································································
+· Filter: susan
+· Smoothing kernel: 2 mm
+· Standardising ReHo values
+
+
+
+Current processing step:
+Spatially filtering image
+····································································
+· [Configuring SUSAN]
+
+
+
+Current processing step:
+Amplitude of low-frequency fluctuations
+····································································
+· At smoothness 0 mm
+· Ensuring integer periods
+· Computing power spectrum
+· Computing square root of amplitudes
+· Extracting power spectrum at the low frequency band
+· 0.01 Hz is approximately position 4
+· of the power spectrum. There are about 37 frequency
+· positions corresponding to the passband (0.08 - 0.01 Hz)
+· in the power spectrum.
+· Computing the amplitude of low-frequency fluctuations (ALFF)
+· Standardising ALFF values
+· At smoothness 2 mm
+· Ensuring integer periods
+· Computing power spectrum
+· Computing square root of amplitudes
+· Extracting power spectrum at the low frequency band
+· 0.01 Hz is approximately position 4
+· of the power spectrum. There are about 37 frequency
+· positions corresponding to the passband (0.08 - 0.01 Hz)
+· in the power spectrum.
+· Computing the amplitude of low-frequency fluctuations (ALFF)
+· Standardising ALFF values
+
+
+
+Current processing step:
+Regional quantification: gordon333
+····································································
+· Mapping network to image space
+Warning messages:
+1: Warning: node  65  contains one voxel
+ 
+2: Warning: node  69  contains one voxel
+ 
+3: Warning: node  285  contains one voxel
+ 
+4: Warning: node  329  contains one voxel
+ 
+· Computing atlas statistics
+· Mean anatomical alff over gordon333
+· Mean anatomical alffZ over gordon333
+· Mean anatomical reho over gordon333
+· Mean anatomical rehoZ over gordon333
+· Volume over gordon333
+
+
+
+Current processing step:
+Regional quantification: global
+····································································
+· Mapping network to image space
+· Computing atlas statistics
+· Mean anatomical alff over global
+· Mean anatomical alffZ over global
+· Mean anatomical reho over global
+· Mean anatomical rehoZ over global
+· Volume over global
+
+
+
+Current processing step:
+Regional quantification: segmentation
+····································································
+· Mapping network to image space
+· Computing atlas statistics
+· Mean anatomical alff over segmentation
+· Mean anatomical alffZ over segmentation
+· Mean anatomical reho over segmentation
+· Mean anatomical rehoZ over segmentation
+· Volume over segmentation
+/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/rerun: line 3: == 1 : syntax error: operand expected (error token is "== 1 ")
+
+
+
+Current processing step:
+Preparing depth map
+····································································
+· Segmentation: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS110/ses-wave3/prestats/sub-ADS110_ses-wave3_segmentation.nii.gz
+· Output: /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data/sub-ADS110/ses-wave3/qcfc/sub-ADS110_ses-wave3_depthMap.nii.gz
+
+
+
+Current processing step:
+Aligning depth map
+····································································
+· Resampling to 6mm isotropic: minimally preprocessed
+· Resampling to 6mm isotropic: denoised
+· Aligning depth map to sequence space
+
+
+
+Current processing step:
+Preparing summary graphics
+····································································
+· Acquiring arguments
+· Generating visuals
+
+
+
+Current processing step:
+Estimating loss of temporal degrees of freedom
+····································································
+· 52 nuisance parameters regressed
+· 0 volumes censored
+/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/modules/qcfc/qcfc.mod: line 263: nSpikesDV: command not found
+· Total lost tDOF: 52
+
+
+
+Current processing step:
+Estimating post-processing DVARS
+····································································
+· [Computing DVARS]
+/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/functions/cleanup: line 3: == 1 : syntax error: operand expected (error token is "== 1 ")
+Traceback (most recent call last):
+  File "/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/report.py", line 7, in <module>
+    import nibabel as nib
+ImportError: No module named nibabel
+Traceback (most recent call last):
+  File "/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/core/sentry_setup.py", line 8, in <module>
+    import sentry_sdk
+ImportError: No module named sentry_sdk
