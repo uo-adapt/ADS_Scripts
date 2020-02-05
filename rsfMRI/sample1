@@ -4,44 +4,40 @@ xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
 
 cd $xcp
 
-subj=sub-ADS1915
-
+subj=sub-ADS1003
+wave=wave2
 cd $subj
 
-BOLD=sub-ADS1915_ses-wave2.nii.gz
+BOLD=${subj}_ses-$wave.nii.gz
 
 for HEMI in lh rh; do
-    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1915_ses-wave2 \
+    mri_surf2vol --hemi $HEMI --fillribbon --identity sub-ADS1003_ses-wave2 \
         --template $BOLD --mkmask --outvol $HEMI.mask.nii.gz
 done
 
 
-bbregister --s $subj --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
+bbregister --s ${subj} --mov ${xcp}/${subj}/ses-$wave/${subj}_ses-$wave.nii.gz \
 --reg ${subj}_register.dat --init-header --bold
 
-tkregister2 --mov ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz --reg ${subj}_register.dat --surf
+tkregister2 --mov ${xcp}/${subj}/ses-$wave/${subj}_ses-$wave.nii.gz --reg ${subj}_register.dat --surf
 
---s
-
-xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
-
-mri_vol2surf --src ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2.nii.gz \
-    --out sub-ADS1915_ses-wave2_in_cortex.nativespace.mgz \
-    --reg sub-ADS1915_register.dat \
+mri_vol2surf --src ${xcp}/${subj}/ses-$wave/${subj}_ses-$wave.nii.gz \
+    --out ${subj}_ses-$wave_in_cortex.nativespace.mgz \
+    --reg ${subj}_register.dat \
     --hemi lh \
     --projfrac 0.5 \
     --interp nearest \
     --trgsubject ${subj}
 
-mris_convert -f ./sub-ADS1915_ses-wave2_in_cortex.nativespace.mgz \
+mris_convert -f ./${subj}_ses-$wave_in_cortex.nativespace.mgz \
   lh.white \
   ./surface_time_series_lh.gii
 
 
-freeview -f $SUBJECTS_DIR/sub-ADS1915/surf/lh.inflated:annot=aparc.annot:annot_outline=1:overlay=sub-ADS1915_ses-wave2_in_cortex.nativespace.mgz:overlay_threshold=2,5 \
+freeview -f $SUBJECTS_DIR/${subj}/surf/lh.inflated:annot=aparc.annot:annot_outline=1:overlay=${subj}_ses-$wave_in_cortex.nativespace.mgz:overlay_threshold=2,5 \
 -viewport 3d
 
 
 xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data
 
-mris_sample_parc -ct FooColorLUT.txt ${subj} lh ${xcp}/${subj}/ses-wave2/sub-ADS1915_ses-wave2_atlas/sub-ADS1915_ses-wave2_gordon333.nii.gz ${subj}_gordon.annot
+mris_sample_parc -ct FooColorLUT.txt ${subj} lh ${xcp}/${subj}/ses-${wave}/${subj}_ses-${wave}_atlas/${subj}_ses-${wave}_gordon333.nii.gz ${subj}_gordon.annot
