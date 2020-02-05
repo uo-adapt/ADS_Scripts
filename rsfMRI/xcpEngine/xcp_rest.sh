@@ -10,14 +10,10 @@ module load python3
 
 cd /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
 
-export XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine
-SIMG=/projects/adapt_lab/shared/containers/xcpEngine.simg
-HOME=/projects/adapt_lab/shared/ADS
+export XCPEDIR=/projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngi
 
 ./xcpEngine\
-   -d ${HOME}/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_202002041521.dsn \
-   -c "${TEMP_COHORT}",${ses} \
-   -o ${HOME}/data/BIDS_data/derivatives/xcpEngine/data \
-   -t 2 \
-   -i \$TMPDIR
-
+  -d /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/fc-ICA-AROMA_201903131537.dsn \
+  -c /projects/adapt_lab/shared/ADS/Scripts/rsfMRI/xcpEngine/rest_cohort.csv.sub-ADS1003,ses-wave2.csv \
+  -i \$TMPDIR \
+  -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine/data 
