@@ -8,4 +8,4 @@
 #SBATCH --nodes=1               ### Number of nodes needed for the job
 #SBATCH --ntasks-per-node=1     ### Number of tasks to be launched per Node
  
-./example_run_maTT2.sh                         # run your actual program
+./job_multiAtlasTT.sh                         # run your actual program
