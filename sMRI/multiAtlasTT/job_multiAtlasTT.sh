@@ -24,9 +24,9 @@ export atlasList="gordon333 yeo17 hcp-mmp yeo17dil"
 ####################################################################
 # subject variables
 
-subj=$SUBJ
-inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/${SUBJ}"
-outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/${SUBJ}"
+subj="${SUBJ}"
+inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/"${subj}""
+outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/"${subj}""
 mkdir -p ${outputDir}
 
 ####################################################################
