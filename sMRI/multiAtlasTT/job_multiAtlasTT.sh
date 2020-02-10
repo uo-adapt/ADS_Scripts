@@ -27,7 +27,7 @@ export atlasList="gordon333 yeo17 hcp-mmp yeo17dil"
 subj=${SUBID}
 
 inputFSDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/"${subj}""
-outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/"${subj}""
+outputDir="/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/"${subj}""/masks
 mkdir -p ${outputDir}
 
 ####################################################################

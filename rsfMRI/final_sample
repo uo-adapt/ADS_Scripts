@@ -1,0 +1,44 @@
+freesurfer=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
+xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
+subj=sub-ADS1003
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
+cd ${fmriprep}/${subj}/anat
+
+
+lta_convert --initk ${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
+--outlta ${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
+--outreg ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--src ${subj}_desc-preproc_T1w.nii.gz \
+--trg ${freesurfer}/${subj}/mri/T1.mgz \
+--subject ${subj} 
+
+mri_vol2surf --mov ${xcp}/data/${subj}/ses-wave2/${subj}_ses-wave2.nii.gz \
+--out ${freesurfer}/${subj}/surf/lh.${subj}_ses-wave2_xcp.mgh \
+--reg  ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--hemi lh \
+--projfrac 0.5 \
+--interp nearest \
+--trgsubject ${subj} \
+--reshape
+
+mris_sample_parc ${subj} lh ${xcp}/${subj}/ses-${wave}/${subj}_ses-${wave}_atlas/${subj}_ses-${wave}_gordon333.nii.gz ${subj}_gordon.annot
+
+mri_annotation2label --subject ${subj} \
+    --hemi rh \
+    --annotation rh.gordon333.annot \
+    --outdir $SUBJECTS_DIR/${subj}/label \
+    --surface white
+
+mris_convert -f ./lh.${subj}_ses-wave2.mgh \
+  lh.white \
+  ./surface_time_series_lh.gii
+
+freesurfer=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
+subj=sub-ADS1003
+freeview -f ${freesurfer}/${subj}/surf/lh.inflated:overlay=lh.thickness:overlay_threshold=0.1,3::name=inflated_thickness:visible=1 \
+${freesurfer}/${subj}/surf/lh.inflated:visible=0 \
+${freesurfer}/${subj}/surf/lh.white:visible=0 \
+${freesurfer}/${subj}/surf/lh.pial \
+--viewport 3d
