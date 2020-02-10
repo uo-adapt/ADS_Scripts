@@ -1,0 +1,549 @@
+/gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/src/maTT2_applyGCS.sh -d /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1003 -o /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003 -f 6p0
+using the atlasList exported to this script
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/lh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/lh.gordon333.annot
+# Thu Feb 6 08:34:47 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/lh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/lh.gordon333.annot
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/lh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/lh.gordon333.annot
+
+using /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/lh.gordon333_6p0.gcs...
+reading color table from GCSA file....
+average std = 0.5   using min determinant for regularization = 0.003
+0 singular and 45 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+0 labels changed using aseg
+relabeling using gibbs priors...
+000:   9633 changed, 1008726 examined...
+001:   1052 changed, 44627 examined...
+002:    180 changed, 6215 examined...
+003:     49 changed, 1089 examined...
+004:     23 changed, 298 examined...
+005:     11 changed, 143 examined...
+006:      6 changed, 64 examined...
+007:      3 changed, 38 examined...
+008:      2 changed, 14 examined...
+009:      2 changed, 11 examined...
+010:      2 changed, 12 examined...
+011:      0 changed, 13 examined...
+0 labels changed using aseg
+000: 435 total segments, 270 labels (9796 vertices) changed
+001: 175 total segments, 10 labels (997 vertices) changed
+002: 166 total segments, 1 labels (10 vertices) changed
+003: 165 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 252 changed)
+rationalizing unknown annotations with cortex label
+0 vertices marked for relabeling...
+0 labels changed in reclassification.
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/lh.gordon333.annot...
+classification took 2 minutes and 3 seconds.
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/rh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/rh.gordon333.annot
+# Thu Feb 6 08:36:50 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/rh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/rh.gordon333.annot
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/rh.gordon333_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/rh.gordon333.annot
+
+using /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//gordon333/rh.gordon333_6p0.gcs...
+reading color table from GCSA file....
+average std = 1.5   using min determinant for regularization = 0.022
+0 singular and 76 ill-conditioned covariance matrices regularized
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+0 labels changed using aseg
+relabeling using gibbs priors...
+000:   7921 changed, 815575 examined...
+001:    848 changed, 41262 examined...
+002:    115 changed, 5189 examined...
+003:     32 changed, 714 examined...
+004:      7 changed, 199 examined...
+005:      2 changed, 42 examined...
+006:      2 changed, 12 examined...
+007:      0 changed, 8 examined...
+0 labels changed using aseg
+000: 270 total segments, 97 labels (584 vertices) changed
+001: 173 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 212 changed)
+rationalizing unknown annotations with cortex label
+0 vertices marked for relabeling...
+0 labels changed in reclassification.
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/rh.gordon333.annot...
+classification took 1 minutes and 8 seconds.
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot gordon333 --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+# Thu Feb 6 08:37:58 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot gordon333 --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot gordon333 --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+
+SUBJECTS_DIR /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/
+subject sub-ADS1003
+outvol /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+useribbon 0
+baseoffset 0
+RipUnknown 0
+
+Reading lh white surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/lh.white
+
+Reading lh pial surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/lh.pial
+
+Loading lh annotations from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/label/lh.gordon333.annot
+
+Reading rh white surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/rh.white
+
+Reading rh pial surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/rh.pial
+
+Loading rh annotations from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/label/rh.gordon333.annot
+Have color table for lh white annotation
+Have color table for rh white annotation
+Loading ribbon segmentation from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/mri/ribbon.mgz
+
+Building hash of lh white
+
+Building hash of lh pial
+
+Building hash of rh white
+
+Building hash of rh pial
+
+Loading aseg from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/mri/aseg.mgz
+ASeg Vox2RAS: -----------
+-0.44922   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.44922  -115.00000;
+ 0.00000  -0.44922   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------------------------
+
+Labeling Slice
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+ 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+ 40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59 
+ 60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79 
+ 80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 
+100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 
+120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 
+140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 
+160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 
+180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 
+200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 
+220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 
+260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 
+280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 
+300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 
+320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 
+340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 
+360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 
+380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 
+400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 
+420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 
+440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 
+460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 
+480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 
+500 501 502 503 504 505 506 507 508 509 510 511 nctx = 5093952
+Used brute-force search on 0 voxels
+Writing output aseg to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_label2vol --seg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz --temp /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/rawavg.mgz --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --regheader /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.mgz
+Number of labels: 0
+Annot File:      (null)
+Template Volume: /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/rawavg.mgz
+Outut Volume: /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz
+Registration File: (null)
+Fill Threshold: 0
+Label Vox Vol:  1
+ProjType:       (null)
+ProjTypeId:     0
+ProjStart:      0
+ProjStop:       0
+ProjDelta:      0.1
+Subject:  (null)
+Hemi:     (null)
+UseNewASeg2Vol:  0
+DoLabelStatVol  0
+LabelCodeOffset  0
+setenv SUBJECTS_DIR /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/
+$Id: mri_label2vol.c,v 1.46 2014/12/08 21:11:54 greve Exp $
+Template RAS-to-Vox: --------
+-1.11110  -0.00000  -0.00000   88.00001;
+-0.00000  -0.00000  -2.22609   232.00000;
+-0.00000   2.22609  -0.00000   256.00000;
+-0.00000  -0.00000  -0.00000   1.00000;
+Template Voxel Volume: 0.181619
+nHits Thresh: 0
+Computing registration based on header
+RegMat: --------
+-0.99911   0.01412   0.03964  -0.00002;
+ 0.03964  -0.00056   0.99921   0.00000;
+-0.01413  -0.99990  -0.00000   0.00001;
+ 0.00000   0.00000   0.00000   1.00000;
+Label RAS-to-Vox: --------
+ 1.11012  -0.01569  -0.04405   88.00003;
+ 0.03145   2.22587   0.00000   231.99998;
+ 0.08824  -0.00125   2.22434   256.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+mri_label2vol done
+could not find GCS: /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17/lh.yeo17_6p0.gcs ...skipping
+could not find GCS: /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17/rh.yeo17_6p0.gcs ...skipping
+problem making the atlas: yeo17 ...skipping
+could not find GCS: /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//hcp-mmp/lh.hcp-mmp_6p0.gcs ...skipping
+could not find GCS: /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//hcp-mmp/rh.hcp-mmp_6p0.gcs ...skipping
+problem making the atlas: hcp-mmp ...skipping
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/lh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/lh.yeo17dil.annot
+# Thu Feb 6 09:43:03 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/lh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/lh.yeo17dil.annot
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/lh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 lh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/lh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/lh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/lh.yeo17dil.annot
+
+using /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/lh.yeo17dil_6p0.gcs...
+reading color table from GCSA file....
+average std = 0.6 4.0   using min determinant for regularization = 0.001
+0 singular and 19 ill-conditioned covariance matrices regularized
+input 1: CURVATURE FILE, flags 0, avgs 0, name sulc
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+0 labels changed using aseg
+relabeling using gibbs priors...
+000:   4735 changed, 1008726 examined...
+001:    571 changed, 22970 examined...
+002:    135 changed, 3329 examined...
+003:     36 changed, 744 examined...
+004:     14 changed, 206 examined...
+005:      5 changed, 74 examined...
+006:      3 changed, 23 examined...
+007:      3 changed, 13 examined...
+008:      1 changed, 17 examined...
+009:      1 changed, 8 examined...
+010:      1 changed, 7 examined...
+011:      0 changed, 7 examined...
+0 labels changed using aseg
+000: 193 total segments, 132 labels (6977 vertices) changed
+001: 63 total segments, 2 labels (1887 vertices) changed
+002: 61 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 28 changed)
+rationalizing unknown annotations with cortex label
+0 vertices marked for relabeling...
+0 labels changed in reclassification.
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/lh.yeo17dil.annot...
+classification took 0 minutes and 52 seconds.
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/rh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/rh.yeo17dil.annot
+# Thu Feb 6 09:43:56 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/rh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/rh.yeo17dil.annot
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_ca_label -l /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//label/rh.cortex.label -aseg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz -seed 1234 sub-ADS1003 rh /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//surf/rh.sphere.reg /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/rh.yeo17dil_6p0.gcs /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/rh.yeo17dil.annot
+
+using /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/aseg.mgz aseg volume to correct midline
+$Id: mris_ca_label.c,v 1.37 2014/02/04 17:46:42 fischl Exp $
+  $Id: mrisurf.c,v 1.781.2.6 2016/12/27 16:47:14 zkaufman Exp $
+reading atlas from /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT/atlas_data//yeo17dil/rh.yeo17dil_6p0.gcs...
+reading color table from GCSA file....
+average std = 1.8 4.1   using min determinant for regularization = 0.005
+0 singular and 7 ill-conditioned covariance matrices regularized
+input 1: CURVATURE FILE, flags 0, avgs 0, name sulc
+input 0: MEAN CURVATURE, flags 0, avgs 5, name mean_curvature
+labeling surface...
+0 labels changed using aseg
+relabeling using gibbs priors...
+000:   3298 changed, 815575 examined...
+001:    319 changed, 17283 examined...
+002:     50 changed, 1922 examined...
+003:     10 changed, 298 examined...
+004:      0 changed, 51 examined...
+0 labels changed using aseg
+000: 85 total segments, 27 labels (65 vertices) changed
+001: 58 total segments, 0 labels (0 vertices) changed
+10 filter iterations complete (10 requested, 10 changed)
+rationalizing unknown annotations with cortex label
+0 vertices marked for relabeling...
+0 labels changed in reclassification.
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/rh.yeo17dil.annot...
+classification took 0 minutes and 40 seconds.
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot yeo17dil --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+# Thu Feb 6 09:44:36 PST 2020 - - /packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot yeo17dil --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_aparc2aseg --s sub-ADS1003 --annot yeo17dil --volmask --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+
+SUBJECTS_DIR /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/
+subject sub-ADS1003
+outvol /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+useribbon 0
+baseoffset 0
+RipUnknown 0
+
+Reading lh white surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/lh.white
+
+Reading lh pial surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/lh.pial
+
+Loading lh annotations from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/label/lh.yeo17dil.annot
+
+Reading rh white surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/rh.white
+
+Reading rh pial surface 
+ /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/surf/rh.pial
+
+Loading rh annotations from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/label/rh.yeo17dil.annot
+Have color table for lh white annotation
+Have color table for rh white annotation
+Loading ribbon segmentation from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/mri/ribbon.mgz
+
+Building hash of lh white
+
+Building hash of lh pial
+
+Building hash of rh white
+
+Building hash of rh pial
+
+Loading aseg from /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir//sub-ADS1003/mri/aseg.mgz
+ASeg Vox2RAS: -----------
+-0.44922   0.00000   0.00000   115.00000;
+ 0.00000   0.00000   0.44922  -115.00000;
+ 0.00000  -0.44922   0.00000   115.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+-------------------------
+
+Labeling Slice
+  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18  19 
+ 20  21  22  23  24  25  26  27  28  29  30  31  32  33  34  35  36  37  38  39 
+ 40  41  42  43  44  45  46  47  48  49  50  51  52  53  54  55  56  57  58  59 
+ 60  61  62  63  64  65  66  67  68  69  70  71  72  73  74  75  76  77  78  79 
+ 80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95  96  97  98  99 
+100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 
+120 121 122 123 124 125 126 127 128 129 130 131 132 133 134 135 136 137 138 139 
+140 141 142 143 144 145 146 147 148 149 150 151 152 153 154 155 156 157 158 159 
+160 161 162 163 164 165 166 167 168 169 170 171 172 173 174 175 176 177 178 179 
+180 181 182 183 184 185 186 187 188 189 190 191 192 193 194 195 196 197 198 199 
+200 201 202 203 204 205 206 207 208 209 210 211 212 213 214 215 216 217 218 219 
+220 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236 237 238 239 
+240 241 242 243 244 245 246 247 248 249 250 251 252 253 254 255 256 257 258 259 
+260 261 262 263 264 265 266 267 268 269 270 271 272 273 274 275 276 277 278 279 
+280 281 282 283 284 285 286 287 288 289 290 291 292 293 294 295 296 297 298 299 
+300 301 302 303 304 305 306 307 308 309 310 311 312 313 314 315 316 317 318 319 
+320 321 322 323 324 325 326 327 328 329 330 331 332 333 334 335 336 337 338 339 
+340 341 342 343 344 345 346 347 348 349 350 351 352 353 354 355 356 357 358 359 
+360 361 362 363 364 365 366 367 368 369 370 371 372 373 374 375 376 377 378 379 
+380 381 382 383 384 385 386 387 388 389 390 391 392 393 394 395 396 397 398 399 
+400 401 402 403 404 405 406 407 408 409 410 411 412 413 414 415 416 417 418 419 
+420 421 422 423 424 425 426 427 428 429 430 431 432 433 434 435 436 437 438 439 
+440 441 442 443 444 445 446 447 448 449 450 451 452 453 454 455 456 457 458 459 
+460 461 462 463 464 465 466 467 468 469 470 471 472 473 474 475 476 477 478 479 
+480 481 482 483 484 485 486 487 488 489 490 491 492 493 494 495 496 497 498 499 
+500 501 502 503 504 505 506 507 508 509 510 511 nctx = 5093952
+Used brute-force search on 0 voxels
+Writing output aseg to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_label2vol --seg /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz --temp /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/rawavg.mgz --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.nii.gz --regheader /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.mgz
+Number of labels: 0
+Annot File:      (null)
+Template Volume: /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/sub-ADS1003//mri/rawavg.mgz
+Outut Volume: /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil/yeo17dil.nii.gz
+Registration File: (null)
+Fill Threshold: 0
+Label Vox Vol:  1
+ProjType:       (null)
+ProjTypeId:     0
+ProjStart:      0
+ProjStop:       0
+ProjDelta:      0.1
+Subject:  (null)
+Hemi:     (null)
+UseNewASeg2Vol:  0
+DoLabelStatVol  0
+LabelCodeOffset  0
+setenv SUBJECTS_DIR /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/
+$Id: mri_label2vol.c,v 1.46 2014/12/08 21:11:54 greve Exp $
+Template RAS-to-Vox: --------
+-1.11110  -0.00000  -0.00000   88.00001;
+-0.00000  -0.00000  -2.22609   232.00000;
+-0.00000   2.22609  -0.00000   256.00000;
+-0.00000  -0.00000  -0.00000   1.00000;
+Template Voxel Volume: 0.181619
+nHits Thresh: 0
+Computing registration based on header
+RegMat: --------
+-0.99911   0.01412   0.03964  -0.00002;
+ 0.03964  -0.00056   0.99921   0.00000;
+-0.01413  -0.99990  -0.00000   0.00001;
+ 0.00000   0.00000   0.00000   1.00000;
+Label RAS-to-Vox: --------
+ 1.11012  -0.01569  -0.04405   88.00003;
+ 0.03145   2.22587   0.00000   231.99998;
+ 0.08824  -0.00125   2.22434   256.00000;
+ 0.00000   0.00000   0.00000   1.00000;
+mri_label2vol done
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_binarize --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --min 1000 --max 1999 --binval 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003
+cmdline mri_binarize.bin --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --min 1000 --max 1999 --binval 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz 
+sysname  Linux
+hostname n001
+machine  x86_64
+user     pettitta
+
+input      /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz
+Binarizing based on threshold
+min        1000
+max        1999
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 1068239 values in range
+Counting number of voxels in first frame
+Found 1068239 voxels in final mask
+Count: 1068239 194012.343409 41811968 2.554864
+mri_binarize done
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_extract_largest_CC -T 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz
+threshold = 1
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_binarize --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --min 2000 --max 2999 --binval 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003
+cmdline mri_binarize.bin --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --min 2000 --max 2999 --binval 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz 
+sysname  Linux
+hostname n001
+machine  x86_64
+user     pettitta
+
+input      /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+Binarizing based on threshold
+min        2000
+max        2999
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 1175563 values in range
+Counting number of voxels in first frame
+Found 1175563 voxels in final mask
+Count: 1175563 213504.405339 41811968 2.811547
+mri_binarize done
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_extract_largest_CC -T 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+threshold = 1
+writing output to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+/packages/freesurfer/6.0.0/freesurfer/bin/mris_calc -o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_cortical_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz add /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//lh.tmp_cort_mask.nii.gz
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//rh.tmp_cort_mask.nii.gz
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_binarize --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --match 10 11 12 13 17 18 26 49 50 51 52 53 54 58 --binval 1 --binvalnot 0 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask1.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003
+cmdline mri_binarize.bin --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --match 10 11 12 13 17 18 26 49 50 51 52 53 54 58 --binval 1 --binvalnot 0 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask1.nii.gz 
+sysname  Linux
+hostname n001
+machine  x86_64
+user     pettitta
+
+input      /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask1.nii.gz
+Binarizing based on matching values
+nMatch 14
+ 0    10
+ 1    11
+ 2    12
+ 3    13
+ 4    17
+ 5    18
+ 6    26
+ 7    49
+ 8    50
+ 9    51
+10    52
+11    53
+12    54
+13    58
+binval        1
+binvalnot     0
+fstart = 0, fend = 0, nframes = 1
+Found 270127 values in range
+Counting number of voxels in first frame
+Found 270127 voxels in final mask
+Count: 270127 49060.156283 41811968 0.646052
+mri_binarize done
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_binarize --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --match 10 11 12 13 17 18 26 49 50 51 52 53 54 58 --binval 0 --binvalnot 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz
+
+$Id: mri_binarize.c,v 1.43 2016/06/09 20:46:21 greve Exp $
+cwd /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003
+cmdline mri_binarize.bin --i /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz --match 10 11 12 13 17 18 26 49 50 51 52 53 54 58 --binval 0 --binvalnot 1 --o /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz 
+sysname  Linux
+hostname n001
+machine  x86_64
+user     pettitta
+
+input      /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz
+frame      0
+nErode3d   0
+nErode2d   0
+output     /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz
+Binarizing based on matching values
+nMatch 14
+ 0    10
+ 1    11
+ 2    12
+ 3    13
+ 4    17
+ 5    18
+ 6    26
+ 7    49
+ 8    50
+ 9    51
+10    52
+11    53
+12    54
+13    58
+binval        0
+binvalnot     1
+fstart = 0, fend = 0, nframes = 1
+Found 270127 values in range
+Counting number of voxels in first frame
+Found 270127 voxels in final mask
+Count: 270127 49060.156283 41811968 0.646052
+mri_binarize done
+/packages/freesurfer/6.0.0/freesurfer/bin/mri_mask /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333/gordon333.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask1.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask2.nii.gz
+DoAbs = 0
+Writing masked volume to /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask2.nii.gz...done.
+python2.7 /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT//src/maTT_remap.py /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask2.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_remap_list.txt
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_remap_list.txt
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask1.nii.gz
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003temp_subcort_mask2.nii.gz
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333.nii.gz -thr 1001 -uthr 2173 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_cortical_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333.nii.gz -odt int
+python /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT//src/maTT_remap.py /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333_rmap.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//LUT_gordon333.txt
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333_rmap.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask.nii.gz -add -thr 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//sub-ADS1003_subcort_mask_gordon333tmp.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333_rmap.nii.gz -add /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//sub-ADS1003_subcort_mask_gordon333tmp.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//gordon333//gordon333_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17.nii.gz -thr -uthr /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_cortical_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17.nii.gz -odt int
+using py given to script
+python /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT//src/maTT_remap.py /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17_rmap.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//LUT_yeo17.txt
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17_rmap.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask.nii.gz -add -thr 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//sub-ADS1003_subcort_mask_yeo17tmp.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17_rmap.nii.gz -add /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//sub-ADS1003_subcort_mask_yeo17tmp.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17//yeo17_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp.nii.gz -thr -uthr /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_cortical_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp.nii.gz -odt int
+using py given to script
+python /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT//src/maTT_remap.py /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp_rmap.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//LUT_hcp-mmp.txt
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp_rmap.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask.nii.gz -add -thr 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//sub-ADS1003_subcort_mask_hcp-mmptmp.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp_rmap.nii.gz -add /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//sub-ADS1003_subcort_mask_hcp-mmptmp.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//hcp-mmp//hcp-mmp_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil.nii.gz -thr 1001 -uthr 2058 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_cortical_mask.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil.nii.gz -odt int
+using py given to script
+python /gpfs/projects/adapt_lab/shared/ADS/Scripts/sMRI/multiAtlasTT//src/maTT_remap.py /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil_rmap.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//LUT_yeo17dil.txt
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil_rmap.nii.gz -mas /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask_binv.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil_rmap.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//sub-ADS1003_subcort_mask.nii.gz -add -thr 1 /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//sub-ADS1003_subcort_mask_yeo17diltmp.nii.gz -odt int
+/packages/fsl/5.0.10/install/bin/fslmaths /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil_rmap.nii.gz -add /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//sub-ADS1003_subcort_mask_yeo17diltmp.nii.gz /gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//yeo17dil//yeo17dil_rmap.nii.gz -odt int
+/gpfs/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/masks/sub-ADS1003//tmpFsDir/
+runtime: 8132
