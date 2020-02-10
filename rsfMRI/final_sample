@@ -2,7 +2,7 @@ freesurfer=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer
 fmriprep=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/fmriprep
 xcp=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/xcpEngine
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
-subj=sub-ADS1003
+subj=sub-ADS1915
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
 cd ${fmriprep}/${subj}/anat
 
@@ -25,11 +25,17 @@ mri_vol2surf --mov ${xcp}/data/${subj}/ses-wave2/${subj}_ses-wave2.nii.gz \
 
 mris_sample_parc ${subj} lh ${xcp}/${subj}/ses-${wave}/${subj}_ses-${wave}_atlas/${subj}_ses-${wave}_gordon333.nii.gz ${subj}_gordon.annot
 
-mri_annotation2label --subject ${subj} \
+#mri_annotation2label --subject ${subj} \
     --hemi rh \
     --annotation rh.gordon333.annot \
     --outdir $SUBJECTS_DIR/${subj}/label \
     --surface white
+
+mri_segstats \
+--annot sub-ADS1915 lh gordon333 \
+--i /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/freesurfer/sub-ADS1915/surf/lh.sub-ADS1915_ses-wave2_xcp.mgh  \
+--sum /projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsMRI_processed/${subj}/{wave}test.txt \
+--avgwf test.wav.txt
 
 mris_convert -f ./lh.${subj}_ses-wave2.mgh \
   lh.white \
