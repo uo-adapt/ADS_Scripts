@@ -29,7 +29,7 @@ mri_vol2surf --src ${xcp}/${subj}/ses-$wave/${subj}_ses-$wave.nii.gz \
     --interp nearest \
     --trgsubject ${subj}
 
-mris_convert -f ./${subj}_ses-$wave_in_cortex.nativespace.mgz \
+mris_convert -f ./lh.${subj}_${wave}_xcp.mgh \
   lh.white \
   ./surface_time_series_lh.gii
 

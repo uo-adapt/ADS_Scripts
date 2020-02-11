@@ -1,0 +1,67 @@
+source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
+
+mv $SUBJECTS_DIR/masks/${subid}/gordon333/*annot $SUBJECTS_DIR/sub-ADS1915/label/
+
+mri_annotation2label --subject sub-ADS1915 \
+    --hemi lh \
+    --annotation gordon333 \
+    --outdir $SUBJECTS_DIR/sub-ADS1915/label \
+    --surface white
+
+subid="sub-ADS1915"
+
+cat << EOF > ${subid}.tkmedit.tcl
+for { set i 5 } { $i < 256 } { incr i 10 } {
+SetSlice $i
+RedrawScreen
+SaveTIFF ${subid}_screenshots/tkmedit-$i.tiff
+}
+exit
+
+
+for { set i 5 } { $i < 256 } { incr i 10 } {
+SetSlice $i
+RedrawScreen
+SaveTIFF janedoe_screenshots/tkmedit-$i.tiff
+}
+exit
+
+
+tkmedit ${subid} brain.finalsurfs.mgz -aseg -surfs -tcl sub-ADS1915.tkmedit.tcl
+
+tkmedit ${subid} brain.finalsurfs.mgz -tcl $FREESURFER_HOME/lib/tcl/fs-views.tcl
+
+tkmedit ${subid} brainmask.mgz -aux T1.mgz -surfs -tcl surfaces.tcl
+
+$ cat ${subid}.tksurfer.lh.tcl
+make_lateral_view;
+redraw;
+save_tiff ${subid}_screenshots/rh-lateral.tiff;
+rotate_brain_y 180;
+redraw;
+save_tiff ${subid}_screenshots/rh-medial.tiff;
+labl_import_annotation aparc.a2009s.annot;
+redraw;
+make_lateral_view;
+redraw;
+save_tiff ${subid}_screenshots/rh-annot-lateral.tiff;
+rotate_brain_y 180;
+redraw;
+save_tiff ${subid}_screenshots/rh-annot-medial.tiff;
+exit;
+$ cat ${subid}.tksurfer.rh.tcl
+make_lateral_view;
+redraw;
+save_tiff ${subid}_screenshots/rh-lateral.tiff;
+rotate_brain_y 180;
+redraw;
+save_tiff ${subid}_screenshots/rh-medial.tiff;
+labl_import_annotation aparc.a2009s.annot;
+redraw;
+make_lateral_view;
+redraw;
+save_tiff ${subid}_screenshots/rh-annot-lateral.tiff;
+rotate_brain_y 180;
+redraw;
+save_tiff ${subid}_screenshots/rh-annot-medial.tiff;
+exit;
