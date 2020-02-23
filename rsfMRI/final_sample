@@ -10,6 +10,8 @@ outdir=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_processe
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
 cd ${fmriprep}/${subj}/anat
 
+cp ${freesurfer}/${subj}/masks/gordon333/lh.gordon333.annot ${freesurfer}/${subj}/label
+
 mkdir -p ${outdir}
 
 lta_convert --initk ${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
@@ -30,7 +32,7 @@ mri_vol2surf --mov ${xcp}/data/${subj}/${wave}/${subj}_${wave}.nii.gz \
 
 mri_segstats \
 --annot ${subj} lh gordon333 \
---i ${freesurfer}/${subj}/surf/lh.${subj}_${wave}_xcp.mgh  \
+--i ${outdir}/lh.${subj}_${wave}_xcp.mgh  \
 --sum ${outdir}/${subj}_ses-${wave}_gordon_summary.txt \
 --avgwf ${outdir}/${subj}_ses-${wave}_raw_ts.wav.txt
 
