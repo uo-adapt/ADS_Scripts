@@ -56,8 +56,6 @@ eddy_correct sub-"${subid}"_ses-${wave}_dwi.nii.gz sub-"${subid}"_ses-${wave}_dw
 cp b0_bet_brain_mask.nii.gz nodif_brain_mask.nii.gz
 cp sub-"${subid}"_ses-${wave}_dwi_eddy_correct.nii.gz data.nii.gz
 
-# run fdt_rotate_bvecs on bvals and bvecs
-
 # Linear registration of brain extracted freesurfer to standard space
 cd "$outputdir"/"${subid}"/ses-${wave}/
 mkdir anat
@@ -65,17 +63,8 @@ mkdir anat/reg
 cd anat/reg
 echo "${subid}" linear registration mprage to MNI
 
-# convert freesurfer brain extracted brainmask.mgz to nifti 
+## convert freesurfer brain extracted brainmask.mgz to nifti 
 mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/brainmask.mgz brainmask.nii.gz
-
-# lineart transform the brainmask.nii.gz to MNI space and create a transformation matrix
-flirt -in brainmask.nii.gz -ref ${FSLDIR}/data/standard/MNI152_T1_1mm_brain -out brainmask_MNI.nii.gz -omat brainmask2mni.mat -dof 12
-
-# convert freesurfer non-brain extracted brain.mgz to nifti 
-mri_convert --in_type mgz --out_type nii --out_orientation RAS "${freesurferdir}"/sub-"${subid}"/mri/orig.mgz orig.nii.gz
-
-# nonlineart transform the brain.nii.gz to MNI space using the previously generated transformation matrix
-fnirt --in=orig.nii.gz --config=T1_2_MNI152_2mm.cnf --aff=brainmask2mni.mat --iout=orig_mni.nii.gz --cout=brain_warpcoef
 
 # Fitting diffusion tensors at each voxel.  This step outputs eigenvectors, mean diffusivity, & fractional anisotropy
 echo fitting "${subid}" tensors at each voxel
@@ -86,7 +75,7 @@ dtifit -k data.nii.gz -o dti -m nodif_brain_mask.nii.gz -r bvecs -b bvals -w
 
 cd "$outputdir"/"${subid}"/ses-${wave}/anat/reg
 echo "${subid}" linear registration FA map to freesurfer
-flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/reg/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 6 -interp trilinear
+flirt -in "$outputdir"/"${subid}"/ses-${wave}/dwi/dti_FA.nii.gz -ref "$outputdir"/"${subid}"/ses-${wave}/anat/reg/brainmask.nii.gz -out FA2struct -omat FA2struct.mat -bins 256 -cost corratio -searchrx -90 90 -searchry -90 90 -searchrz -90 90 -dof 7 -interp trilinear
 
 # Inverse of transformation above (i.e., creating image to transform standard-space masks into diffusion space)
 echo inverting "${subid}" FA-to-structural transformation

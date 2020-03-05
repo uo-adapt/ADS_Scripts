@@ -8,11 +8,18 @@ wave=ses-wave2
 outdir=/projects/adapt_lab/shared/ADS/data/BIDS_data/derivatives/rsfMRI_processed/${subj}/${wave}
 
 source /projects/adapt_lab/shared/ADS/Scripts/sMRI/SetUpFreeSurfer.sh 
-cd ${fmriprep}/${subj}/anat
+cd ${fmriprep}/${subj}/${wave}/anat
 
 cp ${freesurfer}/${subj}/masks/gordon333/lh.gordon333.annot ${freesurfer}/${subj}/label
 
 mkdir -p ${outdir}
+
+lta_convert --initk ${subj}_${wave}_from-orig_to-T1w_mode-image_xfm.txt  \
+--outlta ${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
+--outreg ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--src ../func/${subj}_${wave}_task-rest_space-T1w_desc-preproc_bold.nii.gz \
+--trg ${freesurfer}/${subj}/mri/orig.mgz \
+--subject ${subj} 
 
 lta_convert --initk ${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
 --outlta ${subj}_from-T1w_to-fsnative_mode-image_xfm.lta \
@@ -20,6 +27,16 @@ lta_convert --initk ${subj}_from-T1w_to-fsnative_mode-image_xfm.txt \
 --src ${subj}_desc-preproc_T1w.nii.gz \
 --trg ${freesurfer}/${subj}/mri/T1.mgz \
 --subject ${subj} 
+
+mri_vol2surf --mov ${fmriprep}/${subj}/${wave}/func/${subj}_${wave}_task-rest_space-T1w_desc-preproc_bold.nii.gz \
+--out ${outdir}/lh.${subj}_${wave}_xcp.mgh \
+--reg  ${subj}_from-T1w_to-fsnative_mode-image_xfm.dat \
+--hemi lh \
+--projfrac 0.5 \
+--interp nearest \
+--trgsubject ${subj} \
+--reshape
+
 
 mri_vol2surf --mov ${xcp}/data/${subj}/${wave}/${subj}_${wave}.nii.gz \
 --out ${outdir}/lh.${subj}_${wave}_xcp.mgh \

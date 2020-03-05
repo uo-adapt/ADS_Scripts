@@ -1,10 +1,19 @@
-Freesurfer T1 -> reorient 
+Freesurfer T1 -> reorient to fit MNI space
+	Freesurfer T1 space not oriented in the same way as MNI brain is oriented
+	FSL command fslreorient2std in brainmask.mgz.nii.gz
+
+
 Linear transformation (using brain extracted freesurfer brain) -> MNI  (using 12 dof)
 	Then get linear transformation matrix
 Nonlinear transformation (using non-brain extracted freesurfer brain) -> MNI (default dof)
-	Then get warp nifti file (inv_warp)
+	**Then get warp nifti file (inv_warp)
 
 
 Separately for DTI
 Calculate FA (dtifit)
 dti -> freesurfer_T1 (brain extracted)
+
+
+
+new thing
+Register FA to freesurfer T1.nii.gz image 
