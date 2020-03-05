@@ -23,11 +23,14 @@ errorlog=""$scriptsdir"/output/errorlog_bedpostx.txt"
 # Create error log file
 touch "${errorlog}"
 
+for wave in wave2 wave3
+
+do
 if [[ -f "$data" && -f "$bvecs" && -f "$bvals" && -f "$b0mask" ]]; then
 # Fitting a probabilistic diffusion model
 # Note: This last command takes a couple days to run
 echo running "${subid}" bedpostx
-bedpostx "$outputdir"/"${subid}"/ses-wave3/dwi
+bedpostx "$outputdir"/"${subid}"/ses-${wave}/dwi
 
 echo "${subid}" preprocessing completed. Next step - tractography.
 # Congratulations!  You are now ready to perform tractography.
@@ -35,7 +38,9 @@ echo "${subid}" preprocessing completed. Next step - tractography.
 else
 # Making a note of missing files in error log
 echo "ERROR: missing at least one file necessary for fitting diffusion model"
-echo "$outputdir"/"${subid}"/ses-wave2/dwi: MISSING BEDPOSTX INPUT FILES >> $errorlog
+echo "$outputdir"/"${subid}"/ses-${wave}/dwi: MISSING BEDPOSTX INPUT FILES >> $errorlog
 fi
 
 mv slurm* bedpost_output
+
+done
