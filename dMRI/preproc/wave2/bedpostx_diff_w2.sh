@@ -41,6 +41,4 @@ echo "ERROR: missing at least one file necessary for fitting diffusion model"
 echo "$outputdir"/"${subid}"/ses-${wave}/dwi: MISSING BEDPOSTX INPUT FILES >> $errorlog
 fi
 
-mv slurm* bedpost_output
-
 done
